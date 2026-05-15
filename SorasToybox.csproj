@@ -13,6 +13,7 @@
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
+    <None Remove="Assets\Statuses\status_ante.png" />
     <None Remove="Assets\Statuses\status_overclock.png" />
     <None Remove="Assets\Statuses\status_regen.png" />
   </ItemGroup>
@@ -24,6 +25,7 @@
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
+    <EmbeddedResource Include="Assets\Statuses\status_ante.png" />
     <EmbeddedResource Include="Assets\Statuses\status_overclock.png" />
     <EmbeddedResource Include="Assets\Statuses\status_regen.png" />
   </ItemGroup>

@@ -1,4 +1,5 @@
 ﻿using BrutalAPI;
+using SorasToybox.CustomStatuses;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -93,6 +94,48 @@ namespace SorasToybox.CustomStatusField
                 };
                 LoadedDBsHandler.IntentDB.AddNewBasicIntent("Rem_Status_Regeneration", RegenerationRemIntent);
             }
+
+            //Ante Status Effect
+            if (!LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Ante_ID"))
+            {
+                StatusEffectInfoSO ModuInfo = ScriptableObject.CreateInstance<StatusEffectInfoSO>();
+                ModuInfo._statusName = "Ante";
+                ModuInfo._description = "All damage and healing dealt and recieved is increased by the amount of Ante. Ante does not naturally decrease.";
+                ModuInfo.icon = ResourceLoader.LoadSprite("status_ante.png");
+
+
+                LoadedDBsHandler.StatusFieldDB.TryGetStatusEffect(StatusField.DivineProtection._StatusID, out StatusEffect_SO frail);
+                StatusEffectInfoSO baseinfo = frail.EffectInfo;
+
+                ModuInfo._applied_SE_Event = "event:/ApplyAnte";
+                ModuInfo._removed_SE_Event = baseinfo._removed_SE_Event;
+                ModuInfo._updated_SE_Event = baseinfo._updated_SE_Event;
+                //ModuInfo.
+                Ante modu = ScriptableObject.CreateInstance<Ante>();
+                modu._StatusID = "Ante_ID";
+                modu._EffectInfo = ModuInfo;
+                //modu.IsPositive = false;
+
+                LoadedDBsHandler.StatusFieldDB.AddNewStatusEffect(modu, true);
+
+                IntentInfoBasic AnteIntent = new()
+                {
+                    _color = Color.white,
+                    _sprite = ResourceLoader.LoadSprite("status_ante.png")
+                };
+                LoadedDBsHandler.IntentDB.AddNewBasicIntent("Status_Ante", AnteIntent);
+
+                IntentInfoBasic AnteRemIntent = new()
+                {
+                    _color = Color.gray,
+                    _sprite = ResourceLoader.LoadSprite("status_ante.png")
+                };
+                LoadedDBsHandler.IntentDB.AddNewBasicIntent("Rem_Status_Ante", AnteRemIntent);
+            }
+
+
+
         }
+
     }
 }
