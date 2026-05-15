@@ -13,6 +13,7 @@ namespace SorasToybox //Mod namespace
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
     public class SorasToybox : BaseUnityPlugin //replace 'ModName' with your mod's name. EX. "BrutalOrchestraMod"
     {
         public void Awake()
@@ -26,6 +27,7 @@ namespace SorasToybox //Mod namespace
             CustomPassive.Add();
             SentientArcanite.Add();
             Setset.Add();
+            BastardNimbus.Add();
         }
     }
 }
