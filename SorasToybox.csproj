@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Enemies\deadZizlet.png" />
+    <None Remove="Assets\Enemies\timelineZizlet.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
@@ -19,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Enemies\deadZizlet.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineZizlet.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
