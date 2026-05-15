@@ -22,7 +22,7 @@ namespace SorasToybox.Items
                 Item_ID = "Setset_TW",
                 Name = "Setset",
                 Flavour = "\"I will outlive these bastards.\"",
-                Description = "Gain Karmic as a passive.\nThe rest comes later.",
+                Description = "Gain Karmic as a passive.\nOn receiving any damage, gain 1 Ante.",
                 IsShopItem = false,
                 ShopPrice = 7,
                 StartsLocked = false,
