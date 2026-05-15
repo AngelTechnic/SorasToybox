@@ -87,7 +87,7 @@ namespace SorasToybox //Mod namespace
             Logger.LogInfo("New Items in inventory.");
 
             //Add enemies
-            Enemies.Zizlet.Add();
+            Zizlet.Add();
             //Log enemies (Do config thing with it)
             Logger.LogInfo("New Toys to break.");
             

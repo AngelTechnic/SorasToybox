@@ -48,8 +48,10 @@ namespace SorasToybox.Enemies
                 );
 
                 zizlet.AddPassives([Passives.Inanimate, Passives.MultiAttack2]);
-                LoadedAssetsHandler.GetEnemy("Zizlet_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Scrungie_EN").enemyTemplate;
+                
                 zizlet.AddEnemy(true, true, false);
+                //load assets after adding enemy
+                LoadedAssetsHandler.GetEnemy("Zizlet_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Scrungie_EN").enemyTemplate;
             }
         }
     }   
