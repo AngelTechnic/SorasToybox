@@ -26,7 +26,7 @@ namespace SorasToybox.CustomStatusField
                 StatusEffectInfoSO baseinfo = linked.EffectInfo;
 
                 //Sound events! Once I learn FMOD, _applied_SE_Event will become its own sound effect.
-                OverclockInfo._applied_SE_Event = baseinfo._applied_SE_Event;
+                OverclockInfo._applied_SE_Event = "event:/SorasSFX/StatusSFX/ApplyOverclock";
                 OverclockInfo._removed_SE_Event = baseinfo._removed_SE_Event;
                 OverclockInfo._updated_SE_Event = baseinfo._updated_SE_Event;
 

@@ -52,6 +52,9 @@
     <Reference Include="BrutalAPI">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\StreamingAssets\mods\BrutalAPI\plugins\BrutalAPI.dll</HintPath>
     </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\FMODUnity.dll</HintPath>
+    </Reference>
     <Reference Include="HarmonyXInterop">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BepInEx\core\HarmonyXInterop.dll</HintPath>
     </Reference>
