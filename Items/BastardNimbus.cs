@@ -27,7 +27,7 @@ namespace SorasToybox.Items
                 Item_ID = "BastardNimbus_TW",
                 Name = "Bastard Nimbus",
                 Flavour = "<color=#" + redID + "O</color>",
-                Description = "Gain Burning (1) and Cold-Blooded as passives.",
+                Description = "Gain Burning (1) and Cold-Blooded as passives. (WIP, doesn't do anything. Looks cool tho)",
                 IsShopItem = false,
                 ShopPrice = 7,
                 StartsLocked = false,
