@@ -1,9 +1,9 @@
-﻿using BepInEx;
-using BepInEx.Bootstrap;
-using BrutalAPI;
-global using SorasToybox.CustomPassives;
+﻿global using SorasToybox.CustomPassives;
 global using SorasToybox.CustomEffects;
 global using SorasToybox.Enemies;
+using BepInEx;
+using BepInEx.Bootstrap;
+using BrutalAPI;
 using SorasToybox.CustomStatusField;
 
 using SorasToybox.Items;
@@ -18,8 +18,8 @@ namespace SorasToybox //Mod namespace
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
-    public class SorasToybox : BaseUnityPlugin 
-
+    public class SorasToybox : BaseUnityPlugin
+    {
         //I stole the crossmod class from asdfagi :sob:
         public static class CrossMod
         {
