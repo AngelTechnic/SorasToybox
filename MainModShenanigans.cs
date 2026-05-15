@@ -1,11 +1,8 @@
-﻿global using SorasToybox.CustomPassives;
-global using SorasToybox.CustomEffects;
-global using SorasToybox.Enemies;
-using BepInEx;
+﻿using BepInEx;
 using BepInEx.Bootstrap;
 using BrutalAPI;
 using SorasToybox.CustomStatusField;
-
+using SorasToybox.CustomPassives;
 using SorasToybox.Items;
 using UnityEngine;
 
@@ -56,7 +53,7 @@ namespace SorasToybox //Mod namespace
             Logger.LogInfo("New Items in inventory.");
 
             //Add enemies
-            Zizlet.Add();
+
             //Log enemies (Do config thing with it)
             Logger.LogInfo("New Toys to break.");
             
