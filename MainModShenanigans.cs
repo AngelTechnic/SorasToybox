@@ -1,9 +1,11 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
 using BrutalAPI;
-using SorasToybox.CustomPassives;
+global using SorasToybox.CustomPassives;
+global using SorasToybox.CustomEffects;
+global using SorasToybox.Enemies;
 using SorasToybox.CustomStatusField;
-using SorasToybox.Enemies;
+
 using SorasToybox.Items;
 using UnityEngine;
 
