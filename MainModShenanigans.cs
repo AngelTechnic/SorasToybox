@@ -8,7 +8,7 @@ using SorasToybox.Items;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.0.3")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.0.4")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
