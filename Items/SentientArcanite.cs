@@ -15,6 +15,9 @@ namespace SorasToybox.Items
             StatusEffect_Apply_Effect overclockMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             overclockMe._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
 
+            //defining initial overclock stack amount here
+            int overclockStacks = 2;
+
             //Item setup
             PerformEffect_Item gayCrystal = new PerformEffect_Item("SentientArcanite_ID", null, false)
             {
@@ -32,8 +35,8 @@ namespace SorasToybox.Items
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects = 
                 [
-                    //Apply Overclock, 2 stacks, to Self.
-                    Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot),
+                    //Apply Overclock, use overclockStacks as amount, target Self.
+                    Effects.GenerateEffect(overclockMe, overclockStacks, Targeting.Slot_SelfSlot),
                 ]
             };
             //adds to treasure pool, and other stuff related to unlocks (but it's unlocked by default so don't worry about it)
