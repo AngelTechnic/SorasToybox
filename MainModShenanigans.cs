@@ -3,13 +3,15 @@ using BepInEx.Bootstrap;
 using BrutalAPI;
 using SorasToybox.CustomStatusField;
 using SorasToybox.CustomPassives;
+using SorasToybox.CustomEffects;
+using SorasToybox.Fools;
 using SorasToybox.Items;
 using UnityEngine;
 
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.0.6")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.0.7")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
@@ -21,7 +23,7 @@ namespace SorasToybox //Mod namespace
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
-
+            public static bool SaltEnemies = false;
             public static void Check()
             {
                 foreach (var plugin in Chainloader.PluginInfos)
@@ -29,6 +31,7 @@ namespace SorasToybox //Mod namespace
                     var metadata = plugin.Value.Metadata;
 
                     if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
+                    if (metadata.GUID == "000.saltenemies") { SaltEnemies = true; }
                 }
             }
         }
@@ -53,6 +56,10 @@ namespace SorasToybox //Mod namespace
             Logger.LogInfo("New Items in inventory.");
 
             //Add enemies
+
+            //Add fools
+            KarmaFool.Add();
+            Logger.LogInfo("She's here.");
 
             //Log enemies (Do config thing with it)
             Logger.LogInfo("New Toys to break.");

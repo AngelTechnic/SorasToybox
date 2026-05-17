@@ -7,6 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Fools\Karma\karma_agony.png" />
+    <None Remove="Assets\Fools\Karma\karma_back.png" />
+    <None Remove="Assets\Fools\Karma\karma_coming.png" />
+    <None Remove="Assets\Fools\Karma\karma_front.png" />
+    <None Remove="Assets\Fools\Karma\karma_menu.png" />
+    <None Remove="Assets\Fools\Karma\karma_menu_locked.png" />
+    <None Remove="Assets\Fools\Karma\karma_overworld.png" />
+    <None Remove="Assets\Fools\Karma\karma_rebalance.png" />
+    <None Remove="Assets\Fools\Karma\karma_sauce.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
@@ -19,6 +28,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_agony.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_back.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_coming.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_front.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_menu.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_menu_locked.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_overworld.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_rebalance.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_sauce.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
@@ -319,7 +337,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Enemies\" />
+    <Folder Include="Assets\Enemies\Bosses\" />
+    <Folder Include="Enemies\" />
   </ItemGroup>
 
 </Project>
