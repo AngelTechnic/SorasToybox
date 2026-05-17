@@ -21,6 +21,7 @@
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
+    <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
     <None Remove="Assets\Statuses\status_ante.png" />
     <None Remove="Assets\Statuses\status_overclock.png" />
@@ -42,6 +43,7 @@
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
     <EmbeddedResource Include="Assets\Statuses\status_ante.png" />
     <EmbeddedResource Include="Assets\Statuses\status_overclock.png" />
