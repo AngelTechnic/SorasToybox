@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using SorasToybox.CustomEffects;
+using SorasToybox.CustomStatuses;
 
 namespace SorasToybox.Fools
 {
@@ -28,6 +29,8 @@ namespace SorasToybox.Fools
             //Oh god there's gonna be so many friendly fire scripts i'm gonna dieeeeeeeeee
             DamageEffect damage = ScriptableObject.CreateInstance<DamageEffect>();
 
+            DamageEffect agonyDamage = ScriptableObject.CreateInstance<DamageEffect>();
+            agonyDamage._usePreviousExitValue = true;
 
             //borrowing the yinyang animation OR AT LEAST TRYING TO! FUUUUUUCK!!!!
             //Note to self if salt ever adds yinyang to not a bonus attack, come back to this
@@ -99,6 +102,7 @@ namespace SorasToybox.Fools
             rebalance.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_1_2), nameof(IntentType_GameIDs.Misc)]);
             rebalance.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
+            
 
 
             //Character setup
@@ -258,10 +262,167 @@ namespace SorasToybox.Fools
             hotsauce4.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            karma.AddLevelData(22, [hotsauce1]); 
-            karma.AddLevelData(27, [hotsauce2]);
-            karma.AddLevelData(33, [hotsauce3]);
-            karma.AddLevelData(40, [hotsauce4]);
+
+            //Agony effect shenanigans
+            AnimationVisualsEffect agonyVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            agonyVisuals._visuals = Visuals.HeartBreaker;
+            agonyVisuals._animationTarget = Targeting.Slot_Front;
+
+            TargetPerformEffectViaSubaction agony1Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            agony1Effects.effects =
+                [
+                    Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(damage, 4, Targeting.Slot_Front),
+                    Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.Slot_Front),
+                ];
+
+            TargetPerformEffectViaSubaction agony2Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            agony2Effects.effects =
+                [
+                    Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(damage, 5, Targeting.Slot_Front),
+                    Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-1, 0, 4])),
+                ];
+
+            TargetPerformEffectViaSubaction agony3Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            agony3Effects.effects =
+                [
+                    Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(damage, 7, Targeting.Slot_Front),
+                    Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-1, 0, 4])),
+                ];
+
+            TargetPerformEffectViaSubaction agony4Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            agony4Effects.effects =
+                [
+                    Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(damage, 8, Targeting.Slot_Front),
+                    Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4])),
+                ];
+
+            Ability agony1 = new Ability("Find Joy in Agony", "KarmaAgony1_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 4 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Yellow,
+                    Pigments.Yellow,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(agony1Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(agony1Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            agony1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_3_6)]);
+            agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Ante"]);
+            agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
+
+            Ability agony2 = new Ability("Find Delight in Agony", "KarmaAgony2_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 5 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Yellow,
+                    Pigments.Yellow,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(agony2Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(agony2Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            agony2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_3_6)]);
+            agony2.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4]), ["Status_Ante"]);
+            agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
+
+
+            Ability agony3 = new Ability("Find Delight in Agony", "KarmaAgony2_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Yellow,
+                    Pigments.Yellow,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(agony3Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(agony3Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10)]);
+            agony3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_7_10)]);
+            agony3.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4]), ["Status_Ante"]);
+            agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
+
+
+            Ability agony4 = new Ability("Find Enlightenment in Agony", "KarmaAgony4_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Yellow,
+                    Pigments.Yellow,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(agony4Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(agony4Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10)]);
+            agony4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_7_10)]);
+            agony4.AddIntentsToTarget(Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4]), ["Status_Ante"]);
+            agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
+
+            //What's Coming effect shenanigans
+            TargetPerformEffectViaSubaction whatsComing1 = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            whatsComing1.effects = [
+
+                ];
+
+
+
+
+            karma.AddLevelData(22, [hotsauce1, agony1]); 
+            karma.AddLevelData(27, [hotsauce2, agony2]);
+            karma.AddLevelData(33, [hotsauce3, agony3]);
+            karma.AddLevelData(40, [hotsauce4, agony4]);
 
             karma.AddCharacter(true, false);
         }
