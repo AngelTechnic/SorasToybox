@@ -198,7 +198,7 @@ namespace SorasToybox.Fools
             hotsauce1.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce2 = new Ability("Pour Some Medium Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce2 = new Ability("Pour Some Medium Sauce", "KarmaHotSauce2_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 2 Overclock to the Left and Right allies, and 1 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
@@ -221,7 +221,7 @@ namespace SorasToybox.Fools
             hotsauce2.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce3 = new Ability("Pour Some Hot Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce3 = new Ability("Pour Some Hot Sauce", "KarmaHotSauce3_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 2 Frail and 2 Overclock to the Left and Right allies, and 2 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
@@ -244,7 +244,7 @@ namespace SorasToybox.Fools
             hotsauce3.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce4 = new Ability("Pour Some Inferno Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce4 = new Ability("Pour Some Inferno Sauce", "KarmaHotSauce4_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 3 Frail and 3 Overclock to the Left and Right allies, and 2 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
