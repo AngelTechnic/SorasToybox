@@ -427,7 +427,7 @@ namespace SorasToybox.Fools
                 Effects.GenerateEffect(damage, 10, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(overclockMe, 1, Targeting.Slot_Front),
-                Effects.GenerateEffect(regenerateMe, 10, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 5, Targeting.Slot_Front),
             ];
 
             TargetPerformEffectViaSubaction whatsComing2Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
@@ -437,7 +437,7 @@ namespace SorasToybox.Fools
                 Effects.GenerateEffect(damage, 13, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(overclockMe, 1, Targeting.Slot_Front),
-                Effects.GenerateEffect(regenerateMe, 13, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 7, Targeting.Slot_Front),
             ];
 
             TargetPerformEffectViaSubaction whatsComing3Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
@@ -447,7 +447,7 @@ namespace SorasToybox.Fools
                 Effects.GenerateEffect(damage, 16, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_Front),
-                Effects.GenerateEffect(regenerateMe, 16, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 8, Targeting.Slot_Front),
             ];
 
             TargetPerformEffectViaSubaction whatsComing4Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
@@ -457,7 +457,7 @@ namespace SorasToybox.Fools
                 Effects.GenerateEffect(damage, 20, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_Front),
-                Effects.GenerateEffect(regenerateMe, 20, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 10, Targeting.Slot_Front),
             ];
 
             Ability whatsComing1 = new Ability("Get What's Coming", "KarmaWhatsComing1_A")
