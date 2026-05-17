@@ -462,7 +462,7 @@ namespace SorasToybox.Fools
 
             Ability whatsComing1 = new Ability("Get What's Coming", "KarmaWhatsComing1_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 10 damage to self and become Cursed. Apply 1 Overclock and 10 Regeneration to the Opposing.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 10 damage to self and become Cursed. Apply 1 Overclock and 5 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
                 Cost = [
                     Pigments.Red,
@@ -484,7 +484,7 @@ namespace SorasToybox.Fools
 
             Ability whatsComing2 = new Ability("Deserve What's Coming", "KarmaWhatsComing2_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 13 damage to self and become Cursed. Apply 1 Overclock and 13 Regeneration to the Opposing.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 13 damage to self and become Cursed. Apply 1 Overclock and 7 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
                 Cost = [
                     Pigments.Red,
@@ -506,7 +506,7 @@ namespace SorasToybox.Fools
 
             Ability whatsComing3 = new Ability("Own What's Coming", "KarmaWhatsComing3_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 16 damage to self and become Cursed. Apply 2 Overclock and 16 Regeneration to the Opposing.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 16 damage to self and become Cursed. Apply 2 Overclock and 8 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
                 Cost = [
                     Pigments.Red,
@@ -528,7 +528,7 @@ namespace SorasToybox.Fools
 
             Ability whatsComing4 = new Ability("Accept What's Coming", "KarmaWhatsComing4_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 20 damage to self and become Cursed. Apply 2 Overclock and 20 Regeneration to the Opposing.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 20 damage to self and become Cursed. Apply 2 Overclock and 10 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
                 Cost = [
                     Pigments.Red,
