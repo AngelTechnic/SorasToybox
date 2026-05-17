@@ -11,6 +11,7 @@
     <None Remove="Assets\Fools\Karma\karma_back.png" />
     <None Remove="Assets\Fools\Karma\karma_coming.png" />
     <None Remove="Assets\Fools\Karma\karma_front.png" />
+    <None Remove="Assets\Fools\Karma\karma_front_mad.png" />
     <None Remove="Assets\Fools\Karma\karma_menu.png" />
     <None Remove="Assets\Fools\Karma\karma_menu_locked.png" />
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
@@ -33,6 +34,7 @@
     <EmbeddedResource Include="Assets\Fools\Karma\karma_back.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_coming.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_front.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_front_mad.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_menu.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_menu_locked.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_overworld.png" />

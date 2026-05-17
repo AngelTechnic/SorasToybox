@@ -65,6 +65,19 @@ namespace SorasToybox.Fools
             dismalPopup._sprite = "passive_dismal";
             dismalPopup._isUnitCharacter = true;
 
+            //Sprites for when she gets mad that you whiffed cuz her normal moves do nothing if not opposing an enemy
+            ExtraCCSprites_BasicSO karmaExtra = ScriptableObject.CreateInstance<ExtraCCSprites_BasicSO>();
+            karmaExtra._DefaultID = "karma_default";
+            karmaExtra._frontSprite = ResourceLoader.LoadSprite("karma_front_mad.png");
+            karmaExtra._SpecialID = "karma_special";
+            karmaExtra._backSprite = ResourceLoader.LoadSprite("karma_back.png");
+
+            SetCasterExtraSpritesEffect karmaSprites = ScriptableObject.CreateInstance<SetCasterExtraSpritesEffect>();
+            karmaSprites._ExtraSpriteID = karmaExtra._SpecialID;
+            SetCasterExtraSpritesEffect karmaDefault = ScriptableObject.CreateInstance<SetCasterExtraSpritesEffect>();
+            karmaDefault._ExtraSpriteID = karmaExtra._DefaultID;
+
+
             Ability rebalance = new Ability("Rebalance", "KarmaRebalance_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 1 damage to self. Transfer all status effects to the Opposing.",
@@ -78,11 +91,15 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(rebalanceEffects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(rebalanceEffects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
 
             };
             rebalance.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_1_2), nameof(IntentType_GameIDs.Misc)]);
             rebalance.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
+
+
 
             //Character setup
             Character karma = new Character("Karma", "Karma_CH")
@@ -94,6 +111,7 @@ namespace SorasToybox.Fools
                 FrontSprite = ResourceLoader.LoadSprite("karma_front.png", new Vector2(0.5f, 0f), 32),
                 BackSprite = ResourceLoader.LoadSprite("karma_back.png", new Vector2(0.5f, 0f), 32),
                 OverworldSprite = ResourceLoader.LoadSprite("karma_overworld.png", new Vector2(0.5f, 0f), 32),
+                ExtraSprites = karmaExtra,
                 DamageSound = "event:/SorasSFX/Fools/KarmaHurt",
                 DeathSound = "event:/SorasSFX/Fools/KarmaDie",
                 DialogueSound = "event:/SorasSFX/Fools/KarmaDX",
@@ -162,6 +180,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce1Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce1Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
             hotsauce1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Frail)]);
@@ -169,9 +189,9 @@ namespace SorasToybox.Fools
             hotsauce1.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce2 = new Ability("Pour Some Mild Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce2 = new Ability("Pour Some Medium Sauce", "KarmaHotSauce1_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 1 Overclock to the Left and Right allies, and 1 Frail to self.",
+                Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 2 Overclock to the Left and Right allies, and 1 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
                 Cost = [
                     Pigments.Blue,
@@ -183,6 +203,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce2Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce2Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
             hotsauce2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Frail)]);
@@ -190,9 +212,9 @@ namespace SorasToybox.Fools
             hotsauce2.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce3 = new Ability("Pour Some Mild Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce3 = new Ability("Pour Some Hot Sauce", "KarmaHotSauce1_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 1 Overclock to the Left and Right allies, and 1 Frail to self.",
+                Description = "Force the Opposing enemy to do the following:\nApply 2 Frail and 2 Overclock to the Left and Right allies, and 2 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
                 Cost = [
                     Pigments.Blue,
@@ -204,6 +226,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce3Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce3Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
             hotsauce3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Frail)]);
@@ -211,9 +235,9 @@ namespace SorasToybox.Fools
             hotsauce3.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce4 = new Ability("Pour Some Mild Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce4 = new Ability("Pour Some Inferno Sauce", "KarmaHotSauce1_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 1 Overclock to the Left and Right allies, and 1 Frail to self.",
+                Description = "Force the Opposing enemy to do the following:\nApply 3 Frail and 3 Overclock to the Left and Right allies, and 2 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
                 Cost = [
                     Pigments.Blue,
@@ -225,6 +249,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce4Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce4Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
             hotsauce4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Frail)]);
