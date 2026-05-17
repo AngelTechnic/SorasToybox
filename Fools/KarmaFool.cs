@@ -24,6 +24,9 @@ namespace SorasToybox.Fools
             //Cursed application
             StatusEffect_Apply_Effect fuckYouGetCursed = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             fuckYouGetCursed._Status = StatusField.Cursed;
+            //Regeneration application
+            StatusEffect_Apply_Effect regenerateMe = ScriptableObject .CreateInstance<StatusEffect_Apply_Effect>();
+            regenerateMe._Status = StatusField.GetCustomStatusEffect("Regen_ID");
 
 
             //Oh god there's gonna be so many friendly fire scripts i'm gonna dieeeeeeeeee
@@ -122,8 +125,10 @@ namespace SorasToybox.Fools
                 BasicAbility = rebalance,
                 UnitTypes = ["FemaleID", "Sandwich_Fire", "Angel", "Primal"],
             };
+            karma.GenerateMenuCharacter(ResourceLoader.LoadSprite("karma_menu.png"), ResourceLoader.LoadSprite("karma_menu_locked.png"));
             //add passives!
             karma.AddPassives([Passives.GetCustomPassive("Karmic_PA"), Passives.GetCustomPassive("Dismal_PA")]);
+
 
             //Hot Sauce effect shenanigans
             AnimationVisualsEffect hotsauceVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
@@ -357,7 +362,7 @@ namespace SorasToybox.Fools
             agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
 
-            Ability agony3 = new Ability("Find Delight in Agony", "KarmaAgony2_A")
+            Ability agony3 = new Ability("Find Delight in Agony", "KarmaAgony3_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
@@ -411,18 +416,144 @@ namespace SorasToybox.Fools
             agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
             //What's Coming effect shenanigans
-            TargetPerformEffectViaSubaction whatsComing1 = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
-            whatsComing1.effects = [
+            AnimationVisualsEffect whatsComingVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            whatsComingVisuals._visuals = Visuals.Absolve;
+            whatsComingVisuals._animationTarget = Targeting.Slot_SelfSlot;
 
-                ];
+            TargetPerformEffectViaSubaction whatsComing1Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            whatsComing1Effects.effects = 
+            [
+                Effects.GenerateEffect(whatsComingVisuals, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(damage, 10, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(overclockMe, 1, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 10, Targeting.Slot_Front),
+            ];
+
+            TargetPerformEffectViaSubaction whatsComing2Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            whatsComing2Effects.effects =
+            [
+                Effects.GenerateEffect(whatsComingVisuals, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(damage, 13, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(overclockMe, 1, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 13, Targeting.Slot_Front),
+            ];
+
+            TargetPerformEffectViaSubaction whatsComing3Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            whatsComing3Effects.effects =
+            [
+                Effects.GenerateEffect(whatsComingVisuals, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(damage, 16, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 16, Targeting.Slot_Front),
+            ];
+
+            TargetPerformEffectViaSubaction whatsComing4Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            whatsComing4Effects.effects =
+            [
+                Effects.GenerateEffect(whatsComingVisuals, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(damage, 20, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_Front),
+                Effects.GenerateEffect(regenerateMe, 20, Targeting.Slot_Front),
+            ];
+
+            Ability whatsComing1 = new Ability("Get What's Coming", "KarmaWhatsComing1_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 10 damage to self and become Cursed. Apply 1 Overclock and 10 Regeneration to the Opposing.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Purple,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(whatsComing1Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(whatsComing1Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            whatsComing1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_7_10), nameof(IntentType_GameIDs.Status_Cursed)]);
+            whatsComing1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
+
+            Ability whatsComing2 = new Ability("Deserve What's Coming", "KarmaWhatsComing2_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 13 damage to self and become Cursed. Apply 1 Overclock and 13 Regeneration to the Opposing.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Purple,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(whatsComing2Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(whatsComing2Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            whatsComing2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_11_15), nameof(IntentType_GameIDs.Status_Cursed)]);
+            whatsComing2.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
+
+            Ability whatsComing3 = new Ability("Own What's Coming", "KarmaWhatsComing3_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 16 damage to self and become Cursed. Apply 2 Overclock and 16 Regeneration to the Opposing.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Purple,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(whatsComing3Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(whatsComing3Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            whatsComing3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_16_20), nameof(IntentType_GameIDs.Status_Cursed)]);
+            whatsComing3.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
+
+            Ability whatsComing4 = new Ability("Accept What's Coming", "KarmaWhatsComing4_A")
+            {
+                Description = "Force the Opposing enemy to do the following:\nDeal 20 damage to self and become Cursed. Apply 2 Overclock and 20 Regeneration to the Opposing.",
+                AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
+                Cost = [
+                    Pigments.Red,
+                    Pigments.Red,
+                    Pigments.Purple,
+                    ],
+
+                Effects =
+                    [
+                        Effects.GenerateEffect(whatsComing4Effects, 1, Targeting.Slot_Front, dismalFalse),
+                        Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(whatsComing4Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    ],
+            };
+            whatsComing4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_16_20), nameof(IntentType_GameIDs.Status_Cursed)]);
+            whatsComing4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
 
 
 
-
-            karma.AddLevelData(22, [hotsauce1, agony1]); 
-            karma.AddLevelData(27, [hotsauce2, agony2]);
-            karma.AddLevelData(33, [hotsauce3, agony3]);
-            karma.AddLevelData(40, [hotsauce4, agony4]);
+            karma.AddLevelData(22, [hotsauce1, agony1, whatsComing1]); 
+            karma.AddLevelData(27, [hotsauce2, agony2, whatsComing2]);
+            karma.AddLevelData(33, [hotsauce3, agony3, whatsComing3]);
+            karma.AddLevelData(40, [hotsauce4, agony4, whatsComing4]);
 
             karma.AddCharacter(true, false);
         }
