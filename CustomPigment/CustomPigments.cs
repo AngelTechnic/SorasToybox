@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using UnityEngine;
 
-namespace SorasToybox
+namespace SorasToybox.CustomPigment
 {
     public class CustomPigments
     {

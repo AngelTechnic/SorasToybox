@@ -111,7 +111,7 @@ namespace SorasToybox.Fools
             //Character setup
             Character karma = new Character("Karma", "Karma_CH")
             {
-                HealthColor = Pigments.Purple,
+                HealthColor = LoadedDBsHandler.PigmentDB.GetPigment("Broken"),
                 UsesBasicAbility = true,
                 UsesAllAbilities = false,
                 MovesOnOverworld = false,

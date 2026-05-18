@@ -66,9 +66,6 @@
     <Reference Include="0Harmony">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="0Harmony20">
-      <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BepInEx\core\0Harmony20.dll</HintPath>
-    </Reference>
     <Reference Include="Assembly-CSharp">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BepInEx\utils\PUBLIC-Assembly-CSharp.dll</HintPath>
     </Reference>

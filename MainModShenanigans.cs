@@ -4,8 +4,11 @@ using BrutalAPI;
 using SorasToybox.CustomStatusField;
 using SorasToybox.CustomPassives;
 using SorasToybox.CustomEffects;
+using SorasToybox.CustomPigment;
+using SorasToybox.MiscPatches;
 using SorasToybox.Fools;
 using SorasToybox.Items;
+using HarmonyLib;
 using UnityEngine;
 
 namespace SorasToybox //Mod namespace
@@ -45,6 +48,7 @@ namespace SorasToybox //Mod namespace
             //Add custom stuff
             CustomStatus.Add();
             CustomPassive.Add();
+            CustomPigments.Add();
             //Log custom stuff (Do config thing with it)
             Logger.LogInfo("Custom Effects in effect.");
 
