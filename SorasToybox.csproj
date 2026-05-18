@@ -24,6 +24,11 @@
     <None Remove="Assets\Items\item_setset_locked.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
+    <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
+    <None Remove="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
+    <None Remove="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />
+    <None Remove="Assets\Pigments\Broken\BrokenManaHealth.png" />
+    <None Remove="Assets\Pigments\Broken\BrokenManaUsed.png" />
     <None Remove="Assets\Statuses\status_ante.png" />
     <None Remove="Assets\Statuses\status_overclock.png" />
     <None Remove="Assets\Statuses\status_regen.png" />
@@ -47,6 +52,11 @@
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
+    <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
+    <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
+    <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />
+    <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaHealth.png" />
+    <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaUsed.png" />
     <EmbeddedResource Include="Assets\Statuses\status_ante.png" />
     <EmbeddedResource Include="Assets\Statuses\status_overclock.png" />
     <EmbeddedResource Include="Assets\Statuses\status_regen.png" />
@@ -342,7 +352,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\Enemies\Bosses\" />
-    <Folder Include="Enemies\" />
+    <Folder Include="Assets\Intents\" />
   </ItemGroup>
 
 </Project>
