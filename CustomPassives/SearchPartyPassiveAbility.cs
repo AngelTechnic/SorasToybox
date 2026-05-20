@@ -26,7 +26,6 @@ namespace SorasToybox.CustomPassives
         {
             if (args is IntegerReference integerReference)
             {
-                string note = "i got permission from tair";
                 IUnit unit = sender as IUnit;
                 IntegerReference integerReference2 = new IntegerReference(0);
                 CombatManager.Instance.ProcessImmediateAction(new CheckUnitsWithInfestationIAction("SearchParty_SV", integerReference), false);

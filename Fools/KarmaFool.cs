@@ -71,6 +71,7 @@ namespace SorasToybox.Fools
             dismalPopup._sprite = "passive_dismal";
             dismalPopup._isUnitCharacter = true;
 
+            //Excess popup in case i decide to implement that
             PassivePopUpOnTargetEffect excessPopup = ScriptableObject.CreateInstance<PassivePopUpOnTargetEffect>();
             excessPopup._name = "Excess";
             excessPopup._sprite = "passive_excess";

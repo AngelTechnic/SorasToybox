@@ -6,6 +6,7 @@ using SorasToybox.CustomPassives;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomPigment;
 using SorasToybox.MiscPatches;
+using SorasToybox.Enemies;
 using SorasToybox.Fools;
 using SorasToybox.Items;
 using HarmonyLib;
@@ -60,6 +61,8 @@ namespace SorasToybox //Mod namespace
             Logger.LogInfo("New Items in inventory.");
 
             //Add enemies
+            SEARCH.Add();
+            Logger.LogInfo("New things to break.");
 
             //Add fools
             KarmaFool.Add();
