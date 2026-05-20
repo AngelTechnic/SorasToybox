@@ -22,16 +22,20 @@ namespace SorasToybox.Enemies
             FieldEffect_Apply_Effect applyShield = ScriptableObject.CreateInstance<FieldEffect_Apply_Effect>();
             applyShield._Field = StatusField.Shield;
 
+            //Max health please
+            ChangeMaxHealthEffect maxHealth = ScriptableObject.CreateInstance<ChangeMaxHealthEffect>();
+
             //Basic damage
             DamageEffect damage = ScriptableObject.CreateInstance<DamageEffect>();
             damage._indirect = false;
 
             //Proportional damage to split self with. Also here's the hidden Pomni
-            ProportionalDamageEffect propDamage = ScriptableObject.CreateInstance<ProportionalDamageEffect>();
+            ProportionalCurHealthDamageEffect propDamage = ScriptableObject.CreateInstance<ProportionalCurHealthDamageEffect>();
             propDamage._indirect = false;
 
-
-
+            //sound events maybe?
+            //PlayCustomSoundEffect singleCelledOrganism = ScriptableObject.CreateInstance<PlayCustomSoundEffect>();
+            //singleCelledOrganism._Sound = "event:/SorasSFX/Enemies/SEARCH/SEARCHExtra"; 
 
             Enemy search = new Enemy("SEARCH", "SEARCH_EN")
             {
@@ -41,20 +45,17 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("timelineSEARCH.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineSEARCH", new Vector2(0.5f, 0f), 32),
-                DamageSound = "event:/Nothing",
-                DeathSound = "event:/Nothing",
+                DamageSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHHurt",
+                DeathSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHDie",
             };
-            search.AddPassives([Passives.GetCustomPassive("SearchParty_ID")]);
+            search.AddPassives([Passives.GetCustomPassive("SearchParty_PA")]);
 
             //Checking if still alive
             CheckIsAliveEffect amIAlive = ScriptableObject.CreateInstance<CheckIsAliveEffect>();
 
 
             //The actual becoming two effect, defined after the enemy is defined.
-            SpawnEnemyAnywhereWithHealthByPreviousEffect splitMe = ScriptableObject.CreateInstance<SpawnEnemyAnywhereWithHealthByPreviousEffect>();
-            splitMe.enemy = search.enemy;
-            splitMe._spawnTypeID = CombatType_GameIDs.Spawn_Basic.ToString();
-
+            CloneEnemyEffect splitMe = ScriptableObject.CreateInstance<CloneEnemyEffect>();
 
 
             //SPLIT ability
@@ -70,7 +71,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(amIAlive, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(splitMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
-                Rarity = Rarity.Rare,
+                Rarity = Rarity.Common,
                 Priority = Priority.Normal
             };
             searchSplit.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Damage_Prop", nameof(IntentType_GameIDs.Other_Spawn)]);
@@ -116,8 +117,8 @@ namespace SorasToybox.Enemies
                 Rarity = Rarity.Uncommon,
                 Priority = Priority.Normal
             };
-            searchShard.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Right)]);
-            searchShard.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            searchSliver.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Right)]);
+            searchSliver.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Damage_3_6)]);
 
             //SHELL ability
             Ability searchShell = new Ability("SHELL", "SEARCHShell_A")
@@ -142,13 +143,14 @@ namespace SorasToybox.Enemies
             //SUBSTANCE ability
             Ability searchSubstance = new Ability("SUBSTANCE", "SEARCHSubstance_A")
             {
-                Description = "Scars and slightly heals all enemies.",
+                Description = "Scars and slightly increases all enemies' max and current health.",
                 Cost = [Pigments.Blue, Pigments.Blue],
                 Visuals = Visuals.Genesis,
                 AnimationTarget = Targeting.Unit_AllAllies,
                 Effects =
                 [
                     Effects.GenerateEffect(applyScars, 1, Targeting.Unit_AllAllies),
+                    Effects.GenerateEffect(maxHealth, 2, Targeting.Unit_AllAllies),
                     Effects.GenerateEffect(heal, 2, Targeting.Unit_AllAllies),
                 ],
                 Rarity = Rarity.Rare,
