@@ -34,8 +34,8 @@ namespace SorasToybox.Enemies
             propDamage._indirect = false;
 
             //sound events maybe?
-            //PlayCustomSoundEffect singleCelledOrganism = ScriptableObject.CreateInstance<PlayCustomSoundEffect>();
-            //singleCelledOrganism._Sound = "event:/SorasSFX/Enemies/SEARCH/SEARCHExtra"; 
+            PlayCustomSoundEffect singleCelledOrganism = ScriptableObject.CreateInstance<PlayCustomSoundEffect>();
+            singleCelledOrganism._Sound = "event:/SorasSFX/Enemies/SEARCH/SEARCHExtra"; 
 
             Enemy search = new Enemy("SEARCH", "SEARCH_EN")
             {
@@ -61,7 +61,7 @@ namespace SorasToybox.Enemies
             //SPLIT ability
             Ability searchSplit = new Ability("SPLIT", "SEARCHSplit_A")
             {
-                Description = "Deals direct damage to this unit equal to half of its current health.If it survives, spawn an exact copy of this unit.",
+                Description = "Deals direct damage to this unit equal to half of its current health. If it survives, spawn an exact copy of this unit.",
                 Cost = [Pigments.Purple, Pigments.Red, Pigments.Blue,],
                 Visuals = Visuals.Mitosis,
                 AnimationTarget = Targeting.Slot_SelfSlot,
@@ -70,6 +70,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(propDamage, 50, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(amIAlive, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(splitMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(singleCelledOrganism, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
                 Rarity = Rarity.Common,
                 Priority = Priority.Normal
@@ -143,7 +144,7 @@ namespace SorasToybox.Enemies
             //SUBSTANCE ability
             Ability searchSubstance = new Ability("SUBSTANCE", "SEARCHSubstance_A")
             {
-                Description = "Scars and slightly increases all enemies' max and current health.",
+                Description = "Scars all enemies, and increases their max and current health.",
                 Cost = [Pigments.Blue, Pigments.Blue],
                 Visuals = Visuals.Genesis,
                 AnimationTarget = Targeting.Unit_AllAllies,
