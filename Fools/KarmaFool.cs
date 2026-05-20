@@ -71,6 +71,11 @@ namespace SorasToybox.Fools
             dismalPopup._sprite = "passive_dismal";
             dismalPopup._isUnitCharacter = true;
 
+            PassivePopUpOnTargetEffect excessPopup = ScriptableObject.CreateInstance<PassivePopUpOnTargetEffect>();
+            excessPopup._name = "Excess";
+            excessPopup._sprite = "passive_excess";
+            excessPopup._isUnitCharacter = true;
+
             //Sprites for when she gets mad that you whiffed cuz her normal moves do nothing if not opposing an enemy
             ExtraCCSprites_BasicSO karmaExtra = ScriptableObject.CreateInstance<ExtraCCSprites_BasicSO>();
             karmaExtra._DefaultID = "karma_default";
@@ -358,7 +363,7 @@ namespace SorasToybox.Fools
             };
             agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6)]);
             agony2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_3_6)]);
-            agony2.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4]), ["Status_Ante"]);
+            agony2.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4], true), ["Status_Ante"]);
             agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
 
@@ -385,7 +390,7 @@ namespace SorasToybox.Fools
             };
             agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10)]);
             agony3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_7_10)]);
-            agony3.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4]), ["Status_Ante"]);
+            agony3.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4], true), ["Status_Ante"]);
             agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
 
@@ -412,7 +417,7 @@ namespace SorasToybox.Fools
             };
             agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10)]);
             agony4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_7_10)]);
-            agony4.AddIntentsToTarget(Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4]), ["Status_Ante"]);
+            agony4.AddIntentsToTarget(Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4], true), ["Status_Ante"]);
             agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
             //What's Coming effect shenanigans

@@ -38,10 +38,27 @@ namespace SorasToybox.CustomPassives
             dismal._triggerOn = [TriggerCalls.OnBeingDamaged];
 
             Passives.AddCustomPassiveToPool("Dismal_PA", "Dismal", dismal);
-
-            //Glossary Entries!
             GlossaryPassives STKarmicInfo = new GlossaryPassives("Karmic", "On receiving damage, apply equivalent Regeneration to all allies.", ResourceLoader.LoadSprite("passive_karmic"));
             LoadedDBsHandler.GlossaryDB.AddNewPassive(STKarmicInfo);
+
+            //Search Party passive
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("SearchParty_PA"))
+            {
+                SearchPartyPassiveAbility preserve = ScriptableObject.CreateInstance<SearchPartyPassiveAbility>();
+                preserve._passiveName = "Search Party (1)";
+                preserve.passiveIcon = ResourceLoader.LoadSprite("passive_searchparty.png");
+                preserve._enemyDescription = "This enemy has additional attacks equal to the amount of units in combat with Search Party.";
+                preserve._characterDescription = "https://www.youtube.com/watch?v=zSFlvUxBrJA";
+                preserve.m_PassiveID = "SearchParty_PA";
+                preserve.doesPassiveTriggerInformationPanel = true;
+                preserve._triggerOn = new TriggerCalls[] { TriggerCalls.AttacksPerTurn };
+                preserve._modifyVal = 1;
+                //preserve.specialStoredData = lockstepState;
+                Passives.AddCustomPassiveToPool("SearchParty_PA", "Search Party", preserve);
+                GlossaryPassives STSearchPartyInfo = new GlossaryPassives("Search Party", "This character receives additional actions equal to the amount of other units in combat with Search Party.", ResourceLoader.LoadSprite("passive_searchparty"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STSearchPartyInfo);
+            }
+
         }
     }
 }

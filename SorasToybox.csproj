@@ -17,13 +17,17 @@
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
     <None Remove="Assets\Fools\Karma\karma_rebalance.png" />
     <None Remove="Assets\Fools\Karma\karma_sauce.png" />
+    <None Remove="Assets\Intents\propx_intent.png" />
+    <None Remove="Assets\Intents\prop_intent.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
+    <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
+    <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />
@@ -45,13 +49,17 @@
     <EmbeddedResource Include="Assets\Fools\Karma\karma_overworld.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_rebalance.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sauce.png" />
+    <EmbeddedResource Include="Assets\Intents\propx_intent.png" />
+    <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />
@@ -349,7 +357,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Enemies\Bosses\" />
-    <Folder Include="Assets\Intents\" />
   </ItemGroup>
 
 </Project>
