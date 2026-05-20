@@ -11,7 +11,7 @@ namespace SorasToybox.CustomEffects
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {
             exitAmount = 0;
-            if (caster.CurrentHealth <= 1) return false;
+            if (caster.CurrentHealth <= 0) return false;
             int final = caster.CurrentHealth;
             if (!(caster is EnemyCombat enemy)) return false;
             EnemySO en = enemy.Enemy;

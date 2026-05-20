@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Fools\Karma\karma_agony.png" />
     <None Remove="Assets\Fools\Karma\karma_back.png" />
@@ -40,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_agony.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_back.png" />

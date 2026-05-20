@@ -43,8 +43,8 @@ namespace SorasToybox.Enemies
                 HealthColor = Pigments.Red,
                 Size = 1,
                 CombatSprite = ResourceLoader.LoadSprite("timelineSEARCH.png", new Vector2(0.5f, 0f), 32),
-                OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32),
-                OverworldAliveSprite = ResourceLoader.LoadSprite("timelineSEARCH", new Vector2(0.5f, 0f), 32),
+                OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
+                OverworldAliveSprite = ResourceLoader.LoadSprite("timelineSEARCH.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHHurt",
                 DeathSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHDie",
             };
@@ -52,7 +52,6 @@ namespace SorasToybox.Enemies
 
             //Checking if still alive
             CheckIsAliveEffect amIAlive = ScriptableObject.CreateInstance<CheckIsAliveEffect>();
-
 
             //The actual becoming two effect, defined after the enemy is defined.
             CloneEnemyEffect splitMe = ScriptableObject.CreateInstance<CloneEnemyEffect>();
