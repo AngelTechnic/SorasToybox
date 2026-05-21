@@ -38,10 +38,7 @@ namespace SorasToybox.Fools
             //borrowing the yinyang animation OR AT LEAST TRYING TO! FUUUUUUCK!!!!
             //Note to self if salt ever adds yinyang to not a bonus attack, come back to this
             AttackVisualsSO rebalanceAnim = Visuals.Scales;
-            if (SorasToybox.CrossMod.SaltEnemies)
-            {
-                rebalanceAnim = LoadedAssetsHandler.GetEnemyAbility("Discord_A").visuals;
-            }
+
 
 
             AnimationVisualsEffect rebalanceVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();

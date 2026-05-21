@@ -47,6 +47,10 @@ namespace SorasToybox //Mod namespace
         {
             Logger.LogInfo("Morning."); //sends a message to the logging console confirming your mod is able to read info in this bracket
 
+
+            //CROSSMOD thank you
+            CrossMod.Check();
+
             //to add a seperate file, simply put the name of the .cs file and put .Add(); after. 
             //Characters
             //YourCharacter.Add(); //change this to whatever filename your fool's data is using. EX. TechCH.Add();
@@ -54,6 +58,9 @@ namespace SorasToybox //Mod namespace
             CustomStatus.Add();
             CustomPassive.Add();
             CustomPigments.Add();
+
+
+
             //Log custom stuff (Do config thing with it)
             Logger.LogInfo("Custom Effects in effect.");
 
@@ -64,6 +71,10 @@ namespace SorasToybox //Mod namespace
             //Log items (Do config thing with it)
             Logger.LogInfo("New Items in inventory.");
 
+            //Add fools
+            KarmaFool.Add();
+            Logger.LogInfo("She's here.");
+
             //Add enemies
             SEARCH.Add();
             if (CrossMod.Sofanthiels)
@@ -73,17 +84,20 @@ namespace SorasToybox //Mod namespace
 
             //Add encounters
             TestEncounter.Add();
-            Logger.LogInfo("New things to break.");
 
-            //Add fools
-            KarmaFool.Add();
-            Logger.LogInfo("She's here.");
-
+      
             //Log enemies (Do config thing with it)
-            Logger.LogInfo("New Toys to break.");
+            Logger.LogInfo("New Toys to play with.");
             
             //Final log
             Logger.LogInfo("Wake up.");
+
+            //Broken Pigment glossary cuz why not
+            //if statement to check if a keyword already exists?
+            //{
+               // LoadedDBsHandler.GlossaryDB.AddNewKeyword(new GlossaryKeywords("Broken Pigment", "Broken Pigment is a mostly inert pigment type produced by specific enemies or party members. Broken Pigment is useless for abilities, serving only to clog your pigment tray; however, should Overflow trigger, all existing Broken Pigment will shatter into nothing."));
+            //}
+            
         }
     }
 }

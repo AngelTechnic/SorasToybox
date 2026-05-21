@@ -53,7 +53,7 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(venganceMe, 1, Targeting.Slot_AllySides),
                 ],
-                Visuals = Visuals.Decimate,
+                Visuals = Visuals.Burn,
                 AnimationTarget = Targeting.Slot_AllySides,
                 Rarity = Rarity.Common,
                 Priority = Priority.Normal,
