@@ -103,7 +103,7 @@ namespace SorasToybox.Enemies
                 ]
             );
 
-            slatecarnate.AddEnemy(true, false, false);
+            slatecarnate.AddEnemy(true, true, false);
             Debug.Log("Slatecarnate real. Make sure you remove this!");
             LoadedAssetsHandler.GetEnemy("HeavensSlate_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("HeavensGatePurple_BOSS").enemyTemplate;
             
