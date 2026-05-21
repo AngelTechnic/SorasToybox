@@ -48,7 +48,7 @@ namespace SorasToybox.Enemies
                 DamageSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHHurt",
                 DeathSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHDie",
             };
-            search.AddPassives([Passives.GetCustomPassive("SearchParty_PA")]);
+            search.AddPassives([Passives.GetCustomPassive("SearchParty_PA"), Passives.Absorb]);
 
             //Checking if still alive
             CheckIsAliveEffect amIAlive = ScriptableObject.CreateInstance<CheckIsAliveEffect>();
