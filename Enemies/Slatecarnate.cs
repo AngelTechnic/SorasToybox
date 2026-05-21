@@ -27,9 +27,11 @@ namespace SorasToybox.Enemies
             };
             slatecarnate.AddPassives([Passives.Slippery, Passives.Dying, Passives.Withering]);
 
+            //Applying grit
             StatusEffect_Apply_Effect gritMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             gritMe._Status = StatusField.GetCustomStatusEffect("Grit_ID");
 
+            //Applying vengance mark yes i know it's supposed to be spelt "Vengeance" dont @ me it's not my fault
             StatusEffect_Apply_Effect venganceMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             venganceMe._Status = StatusField.GetCustomStatusEffect("VenganceMark_ID");
 
@@ -41,13 +43,13 @@ namespace SorasToybox.Enemies
             GenerateColorManaEffect purpleMana = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
             purpleMana.mana = Pigments.Purple;
 
-            //Checking if there's room
+            //Checking if there's room for more pigment
             CheckEntryOrMoreEmptyManaSlotsEffect slotcheck = ScriptableObject.CreateInstance<CheckEntryOrMoreEmptyManaSlotsEffect>();
 
             //The Big
             Ability slateBig = new Ability("The Big", "SlatecarnateBig_A")
             {
-                Description = "Applies Vengeance Mark to the Left and Right enemies.",
+                Description = "Inflicts Vengance Mark to the Left and Right enemies.",
                 Cost = [Pigments.Purple, Pigments.Purple],
                 Effects = 
                 [
@@ -104,7 +106,6 @@ namespace SorasToybox.Enemies
             );
 
             slatecarnate.AddEnemy(true, true, false);
-            Debug.Log("Slatecarnate real. Make sure you remove this!");
             LoadedAssetsHandler.GetEnemy("HeavensSlate_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("HeavensGatePurple_BOSS").enemyTemplate;
             
         }
