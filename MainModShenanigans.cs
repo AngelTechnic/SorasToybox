@@ -22,7 +22,7 @@ namespace SorasToybox //Mod namespace
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("frozenhawk.sofanthielsFools", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("sofanthiel.sofanthielsfools", BepInDependency.DependencyFlags.SoftDependency)]
     public class SorasToybox : BaseUnityPlugin
     {
         //I stole the crossmod class from asdfagi :sob:
@@ -37,9 +37,9 @@ namespace SorasToybox //Mod namespace
                 {
                     var metadata = plugin.Value.Metadata;
 
-                    if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
                     if (metadata.GUID == "000.saltenemies") { SaltEnemies = true; }
-                    if (metadata.GUID == "frozenhawk.sofanthielsFools") { Sofanthiels = true; }
+                    if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
+                    if (metadata.GUID == "sofanthiel.sofanthielsfools") { Sofanthiels = true; }
                 }
             }
         }
@@ -47,7 +47,11 @@ namespace SorasToybox //Mod namespace
         {
             Logger.LogInfo("Morning."); //sends a message to the logging console confirming your mod is able to read info in this bracket
 
-
+            //CROSSMOD thank you
+            CrossMod.Check();
+            Logger.LogInfo("Salt Enemies Crossmod: " + CrossMod.SaltEnemies);
+            Logger.LogInfo("Into The Abyss Crossmod: " + CrossMod.IntoTheAbyss);
+            Logger.LogInfo("Sofanthiels Crossmod: " + CrossMod.Sofanthiels);
 
             //to add a seperate file, simply put the name of the .cs file and put .Add(); after. 
             //Characters
@@ -59,8 +63,6 @@ namespace SorasToybox //Mod namespace
             //Log custom stuff (Do config thing with it)
             Logger.LogInfo("Custom Effects in effect.");
 
-            //CROSSMOD thank you
-            CrossMod.Check();
 
 
             //Add items
@@ -80,7 +82,7 @@ namespace SorasToybox //Mod namespace
             {
                 Slatecarnate.Add();
             }
-
+            Logger.LogInfo("Sofanthiels Crossmod: " + CrossMod.Sofanthiels);
             //Add encounters
             TestEncounter.Add();
 
