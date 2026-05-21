@@ -48,8 +48,6 @@ namespace SorasToybox //Mod namespace
             Logger.LogInfo("Morning."); //sends a message to the logging console confirming your mod is able to read info in this bracket
 
 
-            //CROSSMOD thank you
-            CrossMod.Check();
 
             //to add a seperate file, simply put the name of the .cs file and put .Add(); after. 
             //Characters
@@ -58,11 +56,12 @@ namespace SorasToybox //Mod namespace
             CustomStatus.Add();
             CustomPassive.Add();
             CustomPigments.Add();
-
-
-
             //Log custom stuff (Do config thing with it)
             Logger.LogInfo("Custom Effects in effect.");
+
+            //CROSSMOD thank you
+            CrossMod.Check();
+
 
             //Add items
             SentientArcanite.Add();
