@@ -60,12 +60,16 @@ namespace SorasToybox //Mod namespace
             //Add items
             SentientArcanite.Add();
             Setset.Add();
-            BastardNimbus.Add();
+            //BastardNimbus.Add();
             //Log items (Do config thing with it)
             Logger.LogInfo("New Items in inventory.");
 
             //Add enemies
             SEARCH.Add();
+            if (CrossMod.Sofanthiels)
+            {
+                Slatecarnate.Add();
+            }
 
             //Add encounters
             TestEncounter.Add();

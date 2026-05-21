@@ -71,7 +71,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(splitMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(singleCelledOrganism, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
-                Rarity = Rarity.Common,
+                Rarity = Rarity.Uncommon,
                 Priority = Priority.Normal
             };
             searchSplit.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Damage_Prop", nameof(IntentType_GameIDs.Other_Spawn)]);
@@ -97,7 +97,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(shardsliverVisuals, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 3, Targeting.Slot_Front),
                 ],
-                Rarity = Rarity.Uncommon,
+                Rarity = Rarity.Common,
                 Priority = Priority.Normal
             };
             searchShard.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Left)]);
@@ -114,7 +114,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(shardsliverVisuals, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 3, Targeting.Slot_Front),
                 ],
-                Rarity = Rarity.Uncommon,
+                Rarity = Rarity.Common,
                 Priority = Priority.Normal
             };
             searchSliver.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Right)]);
