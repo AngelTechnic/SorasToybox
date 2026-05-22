@@ -118,7 +118,7 @@ namespace SorasToybox.Enemies
 
             Ability litanyOtheringAbility = new Ability("Othering", "LitanyOthering_A")
             {
-                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right\nIf this is used 3 or more times, queue up \"Headhunter\".",
+                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right\nQueues up \"Headhunter\" because I don't know how to do stored values yet.",
                 Cost = [Pigments.Yellow],
                 Rarity = Rarity.Impossible,
                 Priority = Priority.VerySlow,
@@ -127,10 +127,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(iKindaFeelAwkwardAroundYouNGL, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<CheckHasUnitEffect>(), 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<SwapToSidesEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
-                    Effects.GenerateEffect(otheringGoUp, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(otheringGet, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(ThreePlus, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(imComingForYourHead, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1))
+                    Effects.GenerateEffect(imComingForYourHead, 1, Targeting.Slot_SelfSlot)
 
                 ],
             };
@@ -142,6 +139,7 @@ namespace SorasToybox.Enemies
                 ability = litanyHeadhunterAbility.GenerateEnemyAbility().ability,
                 rarity = Rarity.Impossible,
             };
+            imComingForYourHead._parentalAbility = headhunterQueue;
 
             ExtraAbilityInfo otheringParental = new()
             {
