@@ -28,6 +28,24 @@ namespace SorasToybox.Enemies
                 DeathSound = LoadedAssetsHandler.GetEnemy("Kookoo_EN").deathSound,
             };
 
+            //irid blooded setup here
+            GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+            GiveIridPigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("Iridescent");
+
+            PerformEffectPassiveAbility iridBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            iridBlooded.name = "IridBlooded_1_PA";
+            iridBlooded._passiveName = "Iridescent-Blooded (1)";
+            iridBlooded.m_PassiveID = "PigmentBlooded";
+            iridBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodIrid");
+            iridBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Iridescent pigment.";
+            iridBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment.";
+            iridBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+            iridBlooded.doesPassiveTriggerInformationPanel = true;
+            iridBlooded.effects =
+            [
+                Effects.GenerateEffect(GiveIridPigment, 1, Targeting.Slot_SelfSlot),
+            ];
+
             //PropX damage teehee
             ProportionalCurHealthDamageEffect die = ScriptableObject.CreateInstance<ProportionalCurHealthDamageEffect>();
             die._returnKillAsSuccess = true;
@@ -46,17 +64,22 @@ namespace SorasToybox.Enemies
             iKindaFeelAwkwardAroundYouNGL._Status = StatusField.DivineProtection;
 
 
-
-
             //Stored Values! dies.
-            UnitStoreData_ModIntSO otheringCounter = ScriptableObject.CreateInstance<UnitStoreData_ModIntSO>();
-            otheringCounter.m_Text = "Othering: {0}";
-            otheringCounter._UnitStoreDataID = "OtheringStoredValue";
+            UnitStoreData_ModIntSO otheringTracker = ScriptableObject.CreateInstance<UnitStoreData_ModIntSO>();
+            otheringTracker.m_Text = "Othering: {0}";
+            otheringTracker._UnitStoreDataID = "OtheringStoredValue";
+            otheringTracker.m_TextColor = new Color32(200, 200, 200, 255);
+            otheringTracker.m_CompareDataToThis = -1;
+            otheringTracker.m_ShowIfDataIsOver = true;
+            LoadedDBsHandler.MiscDB.AddNewUnitStoreData("OtheringStoredValue", otheringTracker);
 
             CasterStoredValueChangeEffect otheringGoUp = ScriptableObject.CreateInstance<CasterStoredValueChangeEffect>();
             otheringGoUp.m_unitStoredDataID = "OtheringStoredValue";
             otheringGoUp._minimumValue = 0;
+            otheringGoUp._exitValueIsChange = false;
             otheringGoUp._increase = true;
+            otheringGoUp._randomBetweenPrevious = false;
+            otheringGoUp._usePreviousExitValue = false;
 
             CasterStoredValueSetEffect otheringReset = ScriptableObject.CreateInstance<CasterStoredValueSetEffect>();
             otheringReset._valueName = "OtheringStoredValue";
@@ -71,7 +94,7 @@ namespace SorasToybox.Enemies
 
             Ability litanyCoerceAbility = new Ability("Coerce", "LitanyCoerce_A")
             {
-                Description = "Applies Infantile as a passive to the highest health enemy or enemies without it.\n(Once I figure this out) Resets \"Othering\" counter to 0.",
+                Description = "Applies Infantile as a passive to the highest health enemy or enemies without it.\nGenerates 3 Iridescent pigment.\nResets \"Othering\" counter to 0.",
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = Visuals.Providence,
                 AnimationTarget = Targeting.Slot_SelfSlot,
@@ -79,6 +102,7 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(cliqueAdopter, 1, Targeting.Unit_OtherAllies),
                     Effects.GenerateEffect(otheringReset, 0, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(GiveIridPigment, 3, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ExtremelyCommon,
                 Priority = Priority.VeryFast,
@@ -93,7 +117,7 @@ namespace SorasToybox.Enemies
             }
             else
             {
-                headhuntervisuals = Visuals.SliceAndDice;
+                headhuntervisuals = Visuals.Decimate;
             }
             //Litany Headhunter ability
             Ability litanyHeadhunterAbility = new Ability("Headhunter", "LitanyHeadhunter_A")
@@ -127,7 +151,10 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(iKindaFeelAwkwardAroundYouNGL, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<CheckHasUnitEffect>(), 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<SwapToSidesEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
-                    Effects.GenerateEffect(imComingForYourHead, 1, Targeting.Slot_SelfSlot)
+                    Effects.GenerateEffect(otheringGoUp, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(otheringGet, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(ThreePlus, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(imComingForYourHead, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
 
                 ],
             };
@@ -149,7 +176,9 @@ namespace SorasToybox.Enemies
 
             litany.AddPassives(
                 [
-                    Passives.ParentalGenerator(otheringParental), Passives.OverexertGenerator(9),
+                    Passives.GetCustomPassive("IridBlooded_1_PA"),
+                    Passives.ParentalGenerator(otheringParental), 
+                    Passives.OverexertGenerator(9),
                 ]);
 
             litany.AddEnemyAbilities(
