@@ -74,7 +74,11 @@ namespace SorasToybox //Mod namespace
             {
                 Slatecarnate.Add();
             }
-            Logger.LogInfo("Sofanthiels Crossmod: " + CrossMod.Sofanthiels);
+            //ITA Crossmod
+            if (CrossMod.IntoTheAbyss)
+            {
+                Litany.Add();
+            }
             //Add encounters
             TestEncounter.Add();
 

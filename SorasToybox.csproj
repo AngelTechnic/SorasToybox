@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <None Remove="Assets\Enemies\noCorpse.png" />
+    <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Fools\Karma\karma_agony.png" />
@@ -43,6 +44,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSlatecarnate.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_agony.png" />
@@ -363,6 +365,7 @@
 
   <ItemGroup>
     <Folder Include="Assets\Enemies\Bosses\" />
+    <Folder Include="Enemies\Bosses\" />
   </ItemGroup>
 
 </Project>
