@@ -21,10 +21,10 @@ namespace SorasToybox.Encounters
             };
             testMedium.CreateNewEnemyEncounterData(
             [
+                "WanderFellow_EN",
                 "Litany_EN",
-                "SEARCH_EN",
-                "SEARCH_EN",
-            ], [0, 1, 3]);
+                "WanderFellow_EN",
+            ], [1, 2, 3]);
 
             testMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);

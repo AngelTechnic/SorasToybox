@@ -14,6 +14,19 @@ namespace SorasToybox.Enemies
 {
     public class Litany
     {
+        //borrowing this whole method just for one fucking passive
+        public static void CheckerPassivePoolAdd(string id, string name, BasePassiveAbilitySO passive)
+        {
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains(id))
+            {
+                Debug.Log($"Passives | adding passive {name} ({id})");
+                Passives.AddCustomPassiveToPool(id, name, passive);
+            }
+            else
+            {
+                Debug.Log($"Passives | passive with id {id} already registered! skipping...");
+            }
+        }
         public static void Add()
         {
             Enemy litany = new Enemy("Litany", "Litany_EN")
@@ -45,6 +58,9 @@ namespace SorasToybox.Enemies
             [
                 Effects.GenerateEffect(GiveIridPigment, 1, Targeting.Slot_SelfSlot),
             ];
+
+            //dont forget to add it!
+            CheckerPassivePoolAdd("IridBlooded_1_PA", "Iridescent-Blooded (1)", iridBlooded);
 
             //PropX damage teehee
             ProportionalCurHealthDamageEffect die = ScriptableObject.CreateInstance<ProportionalCurHealthDamageEffect>();
@@ -142,7 +158,7 @@ namespace SorasToybox.Enemies
 
             Ability litanyOtheringAbility = new Ability("Othering", "LitanyOthering_A")
             {
-                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right\nQueues up \"Headhunter\" because I don't know how to do stored values yet.",
+                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right\nIf this was used at least 3 times, queues up \"Headhunter\".",
                 Cost = [Pigments.Yellow],
                 Rarity = Rarity.Impossible,
                 Priority = Priority.VerySlow,
@@ -174,12 +190,7 @@ namespace SorasToybox.Enemies
                 rarity = Rarity.Impossible,
             };
 
-            litany.AddPassives(
-                [
-                    Passives.GetCustomPassive("IridBlooded_1_PA"),
-                    Passives.ParentalGenerator(otheringParental), 
-                    Passives.OverexertGenerator(9),
-                ]);
+            litany.AddPassives([Passives.GetCustomPassive("IridBlooded_1_PA"), Passives.ParentalGenerator(otheringParental), Passives.OverexertGenerator(9)]);
 
             litany.AddEnemyAbilities(
                 [
