@@ -37,9 +37,11 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("timelineLitany.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineLitany.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
-                DamageSound = LoadedAssetsHandler.GetEnemy("Kookoo_EN").damageSound,
-                DeathSound = LoadedAssetsHandler.GetEnemy("Kookoo_EN").deathSound,
+                DamageSound = "event:/SorasSFX/Enemies/Litany/LitanyHurt",
+                DeathSound = "event:/SorasSFX/Enemies/Litany/LitanyDie",
             };
+
+            litany.PrepareEnemyPrefab("Assets/ToyboxEnemies/Litany/Litany Enemy.prefab", SorasToybox.assetbundle, null);
 
             //irid blooded setup here
             GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
@@ -73,7 +75,7 @@ namespace SorasToybox.Enemies
             //infantile popup. might need to revisit this idk.
             PassivePopUpOnTargetEffect imABaby = ScriptableObject.CreateInstance<PassivePopUpOnTargetEffect>();
             imABaby._name = "Infantile";
-            imABaby._sprite = "Passive_Infantile";
+            imABaby._sprite = Passives.Infantile.passiveIcon.name;
 
             //Divine Protection
             StatusEffect_Apply_Effect iKindaFeelAwkwardAroundYouNGL = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
@@ -117,13 +119,14 @@ namespace SorasToybox.Enemies
                 Effects =
                 [
                     Effects.GenerateEffect(cliqueAdopter, 1, Targeting.Unit_OtherAllies),
+                    Effects.GenerateEffect(imABaby, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(otheringReset, 0, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(GiveIridPigment, 3, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ExtremelyCommon,
                 Priority = Priority.VeryFast,
             };
-            litanyCoerceAbility.AddIntentsToTarget(Targeting.Unit_OtherAllies, ["Passive_Infantile"]);
+            litanyCoerceAbility.AddIntentsToTarget(Targeting.Unit_OtherAllies, [Passives.Infantile.passiveIcon.name]);
             litanyCoerceAbility.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc)]);
 
             AttackVisualsSO headhuntervisuals;
@@ -205,7 +208,7 @@ namespace SorasToybox.Enemies
                 ]);
             litany.AddEnemy(true, false, false);
             Debug.Log("Litany kinda added? It's very incomplete tho");
-            LoadedAssetsHandler.GetEnemy("Litany_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Kookoo_EN").enemyTemplate;
+            //LoadedAssetsHandler.GetEnemy("Litany_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Kookoo_EN").enemyTemplate;
 
         }
     }

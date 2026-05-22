@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="AssetBundles\sorastoybox" />
+    <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
@@ -44,6 +46,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="AssetBundles\sorastoybox" />
+    <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />

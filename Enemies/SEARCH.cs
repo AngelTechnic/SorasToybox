@@ -48,6 +48,7 @@ namespace SorasToybox.Enemies
                 DamageSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHHurt",
                 DeathSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHDie",
             };
+            search.PrepareEnemyPrefab("Assets/ToyboxEnemies/SEARCH/SEARCH_Enemy.prefab", SorasToybox.assetbundle, null);
             search.AddPassives([Passives.GetCustomPassive("SearchParty_PA"), Passives.Absorb]);
 
             //Checking if still alive
@@ -166,7 +167,7 @@ namespace SorasToybox.Enemies
             );
 
             search.AddEnemy(true, true, true);
-            LoadedAssetsHandler.GetEnemy("SEARCH_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("JumbleGuts_Hollowing_EN").enemyTemplate;
+            //LoadedAssetsHandler.GetEnemy("SEARCH_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("JumbleGuts_Hollowing_EN").enemyTemplate;
         }
     }
 }

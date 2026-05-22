@@ -16,7 +16,7 @@ using SorasToybox.Encounters;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.1.9")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.2.0")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
@@ -25,6 +25,7 @@ namespace SorasToybox //Mod namespace
     [BepInDependency("sofanthiel.sofanthielsfools", BepInDependency.DependencyFlags.SoftDependency)]
     public class SorasToybox : BaseUnityPlugin
     {
+        public static AssetBundle assetbundle;
         //I stole the crossmod class from asdfagi :sob:
         public static class CrossMod
         {
@@ -46,6 +47,8 @@ namespace SorasToybox //Mod namespace
         public void Awake()
         {
             Logger.LogInfo("Morning."); //sends a message to the logging console confirming your mod is able to read info in this bracket
+
+            assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
             //CROSSMOD thank you
             CrossMod.Check();
