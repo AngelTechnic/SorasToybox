@@ -50,8 +50,8 @@ namespace SorasToybox.Enemies
             iridBlooded._passiveName = "Iridescent-Blooded (1)";
             iridBlooded.m_PassiveID = "PigmentBlooded";
             iridBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodIrid");
-            iridBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Iridescent pigment.";
-            iridBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment.";
+            iridBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
+            iridBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
             iridBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
             iridBlooded.doesPassiveTriggerInformationPanel = true;
             iridBlooded.effects =
@@ -158,7 +158,7 @@ namespace SorasToybox.Enemies
 
             Ability litanyOtheringAbility = new Ability("Othering", "LitanyOthering_A")
             {
-                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right\nIf this was used at least 3 times, queues up \"Headhunter\".",
+                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right.\nIf this was used at least 3 times, queues up \"Headhunter\".",
                 Cost = [Pigments.Yellow],
                 Rarity = Rarity.Impossible,
                 Priority = Priority.VerySlow,
@@ -190,7 +190,14 @@ namespace SorasToybox.Enemies
                 rarity = Rarity.Impossible,
             };
 
-            litany.AddPassives([Passives.GetCustomPassive("IridBlooded_1_PA"), Passives.ParentalGenerator(otheringParental), Passives.OverexertGenerator(9)]);
+            litany.AddPassives(
+                [
+                    Passives.GetCustomPassive("IridBlooded_1_PA"), 
+                    Passives.ParentalGenerator(otheringParental), 
+                    Passives.OverexertGenerator(9),
+                    Passives.Withering,
+                ]
+            );
 
             litany.AddEnemyAbilities(
                 [
