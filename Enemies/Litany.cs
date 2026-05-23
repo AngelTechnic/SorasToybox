@@ -98,6 +98,7 @@ namespace SorasToybox.Enemies
             otheringGoUp._increase = true;
             otheringGoUp._randomBetweenPrevious = false;
             otheringGoUp._usePreviousExitValue = false;
+            otheringGoUp._exitValueIsChange = false;
 
             CasterStoredValueSetEffect otheringReset = ScriptableObject.CreateInstance<CasterStoredValueSetEffect>();
             otheringReset._valueName = "OtheringStoredValue";
@@ -110,6 +111,20 @@ namespace SorasToybox.Enemies
             ExtraVariableForNext_SVEffect otheringGet = ScriptableObject.CreateInstance<ExtraVariableForNext_SVEffect>();
             otheringGet.m_unitStoredDataID = "OtheringStoredValue";
 
+
+            //Animation signals oh boy
+            SetCasterAnimationParameterEffect otheringToZero = ScriptableObject.CreateInstance<SetCasterAnimationParameterEffect>();
+            otheringToZero._parameterName = "Othering";
+            otheringToZero._parameterValue = 0;
+            otheringToZero._UsePrevious = false;
+
+            SetCasterAnimationParameterEffect otheringSignalUp = ScriptableObject.CreateInstance<SetCasterAnimationParameterEffect>();
+            otheringSignalUp._parameterName = "Othering";
+            otheringSignalUp._parameterValue = 3;
+            otheringSignalUp._UsePrevious = true;
+
+
+
             Ability litanyCoerceAbility = new Ability("Coerce", "LitanyCoerce_A")
             {
                 Description = "Applies Infantile as a passive to the highest health enemy or enemies without it.\nGenerates 3 Iridescent pigment.\nResets \"Othering\" counter to 0.",
@@ -119,8 +134,8 @@ namespace SorasToybox.Enemies
                 Effects =
                 [
                     Effects.GenerateEffect(cliqueAdopter, 1, Targeting.Unit_OtherAllies),
-                    Effects.GenerateEffect(imABaby, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(otheringReset, 0, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(otheringToZero, 0, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(GiveIridPigment, 3, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ExtremelyCommon,
@@ -171,6 +186,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<CheckHasUnitEffect>(), 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<SwapToSidesEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     Effects.GenerateEffect(otheringGoUp, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(otheringSignalUp, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(otheringGet, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(ThreePlus, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(imComingForYourHead, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),

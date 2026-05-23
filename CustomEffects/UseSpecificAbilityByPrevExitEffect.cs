@@ -6,7 +6,7 @@ namespace SorasToybox.CustomEffects
 {
     public class UseSpecificAbilityByEntryEffect : EffectSO
     {
-        string note = "adapted from errants off of box of beasts";
+        //adapted from errants off of box of beasts
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {
             exitAmount = 0;
