@@ -11,6 +11,12 @@ namespace SorasToybox.Encounters
     {
         public static void Add()
         {
+            //encounter rules for Litany:
+            //Only 1 Litany per encounter
+            //try not to add too many grace enemies
+            //enemies that are naturally infantile can be really funny so go ahead
+            //enemies that are naturally parental are diabolical but go ahead
+
             if (LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3"))
             {
                 Portals.AddPortalSign("Litany_Sign", ResourceLoader.LoadSprite("timelineLitany", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);

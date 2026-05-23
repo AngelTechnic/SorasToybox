@@ -87,7 +87,7 @@ namespace SorasToybox.Fools
             karmaDefault._ExtraSpriteID = karmaExtra._DefaultID;
 
 
-            Ability rebalance = new Ability("Rebalance", "KarmaRebalance_A")
+            Ability rebalance = new Ability("Rebalance", "ST_KarmaRebalance_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 1 damage to self. Transfer all status effects to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_rebalance.png"),
@@ -178,7 +178,7 @@ namespace SorasToybox.Fools
 
             ];
             //Hotsauce ability (real no fake)
-            Ability hotsauce1 = new Ability("Pour Some Mild Sauce", "KarmaHotSauce1_A")
+            Ability hotsauce1 = new Ability("Pour Some Mild Sauce", "ST_KarmaHotSauce1_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 1 Overclock to the Left and Right allies, and 1 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
@@ -201,7 +201,7 @@ namespace SorasToybox.Fools
             hotsauce1.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce2 = new Ability("Pour Some Medium Sauce", "KarmaHotSauce2_A")
+            Ability hotsauce2 = new Ability("Pour Some Medium Sauce", "ST_KarmaHotSauce2_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 1 Frail and 2 Overclock to the Left and Right allies, and 1 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
@@ -224,7 +224,7 @@ namespace SorasToybox.Fools
             hotsauce2.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce3 = new Ability("Pour Some Hot Sauce", "KarmaHotSauce3_A")
+            Ability hotsauce3 = new Ability("Pour Some Hot Sauce", "ST_KarmaHotSauce3_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 2 Frail and 2 Overclock to the Left and Right allies, and 2 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
@@ -247,7 +247,7 @@ namespace SorasToybox.Fools
             hotsauce3.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Overclock"]);
             hotsauce3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability hotsauce4 = new Ability("Pour Some Inferno Sauce", "KarmaHotSauce4_A")
+            Ability hotsauce4 = new Ability("Pour Some Inferno Sauce", "ST_KarmaHotSauce4_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nApply 3 Frail and 3 Overclock to the Left and Right allies, and 2 Frail to self.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_sauce.png"),
@@ -312,7 +312,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4])),
                 ];
 
-            Ability agony1 = new Ability("Find Joy in Agony", "KarmaAgony1_A")
+            Ability agony1 = new Ability("Find Joy in Agony", "ST_KarmaAgony1_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 4 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
@@ -338,7 +338,7 @@ namespace SorasToybox.Fools
             agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Ante"]);
             agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
-            Ability agony2 = new Ability("Find Delight in Agony", "KarmaAgony2_A")
+            Ability agony2 = new Ability("Find Delight in Agony", "ST_KarmaAgony2_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 5 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
@@ -365,7 +365,7 @@ namespace SorasToybox.Fools
             agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
 
-            Ability agony3 = new Ability("Find Delight in Agony", "KarmaAgony3_A")
+            Ability agony3 = new Ability("Find Delight in Agony", "ST_KarmaAgony3_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
@@ -392,7 +392,7 @@ namespace SorasToybox.Fools
             agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
 
-            Ability agony4 = new Ability("Find Enlightenment in Agony", "KarmaAgony4_A")
+            Ability agony4 = new Ability("Find Enlightenment in Agony", "ST_KarmaAgony4_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
@@ -463,7 +463,7 @@ namespace SorasToybox.Fools
                 Effects.GenerateEffect(regenerateMe, 10, Targeting.Slot_Front),
             ];
 
-            Ability whatsComing1 = new Ability("Get What's Coming", "KarmaWhatsComing1_A")
+            Ability whatsComing1 = new Ability("Get What's Coming", "ST_KarmaWhatsComing1_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 10 damage to self and become Cursed. Apply 1 Overclock and 5 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
@@ -485,7 +485,7 @@ namespace SorasToybox.Fools
             whatsComing1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_7_10), nameof(IntentType_GameIDs.Status_Cursed)]);
             whatsComing1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
 
-            Ability whatsComing2 = new Ability("Deserve What's Coming", "KarmaWhatsComing2_A")
+            Ability whatsComing2 = new Ability("Deserve What's Coming", "ST_KarmaWhatsComing2_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 13 damage to self and become Cursed. Apply 1 Overclock and 7 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
@@ -507,7 +507,7 @@ namespace SorasToybox.Fools
             whatsComing2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_11_15), nameof(IntentType_GameIDs.Status_Cursed)]);
             whatsComing2.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
 
-            Ability whatsComing3 = new Ability("Own What's Coming", "KarmaWhatsComing3_A")
+            Ability whatsComing3 = new Ability("Own What's Coming", "ST_KarmaWhatsComing3_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 16 damage to self and become Cursed. Apply 2 Overclock and 8 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
@@ -529,7 +529,7 @@ namespace SorasToybox.Fools
             whatsComing3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_16_20), nameof(IntentType_GameIDs.Status_Cursed)]);
             whatsComing3.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Status_Regeneration"]);
 
-            Ability whatsComing4 = new Ability("Accept What's Coming", "KarmaWhatsComing4_A")
+            Ability whatsComing4 = new Ability("Accept What's Coming", "ST_KarmaWhatsComing4_A")
             {
                 Description = "Force the Opposing enemy to do the following:\nDeal 20 damage to self and become Cursed. Apply 2 Overclock and 10 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),

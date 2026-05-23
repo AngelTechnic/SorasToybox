@@ -59,7 +59,7 @@ namespace SorasToybox.Enemies
 
 
             //SPLIT ability
-            Ability searchSplit = new Ability("SPLIT", "SEARCHSplit_A")
+            Ability searchSplit = new Ability("SPLIT", "ST_SEARCHSplit_A")
             {
                 Description = "Deals direct damage to this unit equal to half of its current health. If it survives, spawn an exact copy of this unit.",
                 Cost = [Pigments.Purple, Pigments.Red, Pigments.Blue,],
@@ -88,7 +88,7 @@ namespace SorasToybox.Enemies
             swapRight._swapRight = true;
 
             //SHARD ability
-            Ability searchShard = new Ability("SHARD", "SEARCHShard_A")
+            Ability searchShard = new Ability("SHARD", "ST_SEARCHShard_A")
             {
                 Description = "Moves Left. Deals a Painful amount of damage to the Opposing party member.",
                 Cost = [Pigments.Red, Pigments.Red],
@@ -105,7 +105,7 @@ namespace SorasToybox.Enemies
             searchShard.AddIntentsToTarget(Targeting.Slot_OpponentLeft, [nameof(IntentType_GameIDs.Damage_3_6)]);
 
             //SLIVER ability
-            Ability searchSliver = new Ability("SLIVER", "SEARCHSliver_A")
+            Ability searchSliver = new Ability("SLIVER", "ST_SEARCHSliver_A")
             {
                 Description = "Moves Right. Deals a Painful amount of damage to the Opposing party member.",
                 Cost = [Pigments.Red, Pigments.Red],
@@ -122,7 +122,7 @@ namespace SorasToybox.Enemies
             searchSliver.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Damage_3_6)]);
 
             //SHELL ability
-            Ability searchShell = new Ability("SHELL", "SEARCHShell_A")
+            Ability searchShell = new Ability("SHELL", "ST_SEARCHShell_A")
             {
                 Description = "Applies 3 Shield to the Left and Right positions.",
                 Cost = [Pigments.Red, Pigments.Blue],
@@ -142,7 +142,7 @@ namespace SorasToybox.Enemies
             heal._directHeal = true;
 
             //SUBSTANCE ability
-            Ability searchSubstance = new Ability("SUBSTANCE", "SEARCHSubstance_A")
+            Ability searchSubstance = new Ability("SUBSTANCE", "ST_SEARCHSubstance_A")
             {
                 Description = "Scars all enemies, and increases their max and current health.",
                 Cost = [Pigments.Blue, Pigments.Blue],

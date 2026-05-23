@@ -125,7 +125,7 @@ namespace SorasToybox.Enemies
 
 
 
-            Ability litanyCoerceAbility = new Ability("Coerce", "LitanyCoerce_A")
+            Ability litanyCoerceAbility = new Ability("Coerce", "ST_LitanyCoerce_A")
             {
                 Description = "Applies Infantile as a passive to the highest health enemy or enemies without it, excluding this enemy.\nGenerates 3 Iridescent pigment.\nResets \"Othering\" counter to 0.",
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
@@ -154,7 +154,7 @@ namespace SorasToybox.Enemies
                 headhuntervisuals = Visuals.Decimate;
             }
             //Litany Headhunter ability
-            Ability litanyHeadhunterAbility = new Ability("Headhunter", "LitanyHeadhunter_A")
+            Ability litanyHeadhunterAbility = new Ability("Headhunter", "ST_LitanyHeadhunter_A")
             {
                 Description = "Deals damage to the opposing party member equal to their current health.\n\"why did you listen\"",
                 Cost = [Pigments.Purple],
@@ -174,7 +174,7 @@ namespace SorasToybox.Enemies
 
 
 
-            Ability litanyOtheringAbility = new Ability("Othering", "LitanyOthering_A")
+            Ability litanyOtheringAbility = new Ability("Othering", "ST_LitanyOthering_A")
             {
                 Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right.\nIncreases \"Othering\" counter by 1; if \"Othering\"  is at least 3, queues up \"Headhunter\".",
                 Cost = [Pigments.Yellow],
