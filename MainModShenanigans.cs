@@ -88,7 +88,7 @@ namespace SorasToybox //Mod namespace
             }
             //Add encounters
             TestEncounter.Add();
-
+            LitanyEncounters.Add();
       
             //Log enemies (Do config thing with it)
             Logger.LogInfo("New Toys to play with.");
