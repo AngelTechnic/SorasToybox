@@ -127,7 +127,7 @@ namespace SorasToybox.Enemies
 
             Ability litanyCoerceAbility = new Ability("Coerce", "LitanyCoerce_A")
             {
-                Description = "Applies Infantile as a passive to the highest health enemy or enemies without it.\nGenerates 3 Iridescent pigment.\nResets \"Othering\" counter to 0.",
+                Description = "Applies Infantile as a passive to the highest health enemy or enemies without it, excluding this enemy.\nGenerates 3 Iridescent pigment.\nResets \"Othering\" counter to 0.",
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = Visuals.Providence,
                 AnimationTarget = Targeting.Slot_SelfSlot,
