@@ -23,6 +23,8 @@ namespace SorasToybox //Mod namespace
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("sofanthiel.sofanthielsfools", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("asdfagi.A_Apocrypha", BepInDependency.DependencyFlags.SoftDependency)]
+
     public class SorasToybox : BaseUnityPlugin
     {
         public static AssetBundle assetbundle;
@@ -32,6 +34,7 @@ namespace SorasToybox //Mod namespace
             public static bool IntoTheAbyss = false;
             public static bool SaltEnemies = false;
             public static bool Sofanthiels = false;
+            public static bool AApocrypha = false;
             public static void Check()
             {
                 foreach (var plugin in Chainloader.PluginInfos)
@@ -41,6 +44,7 @@ namespace SorasToybox //Mod namespace
                     if (metadata.GUID == "000.saltenemies") { SaltEnemies = true; }
                     if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
                     if (metadata.GUID == "sofanthiel.sofanthielsfools") { Sofanthiels = true; }
+                    if (metadata.GUID == "asdfagi.A_Apocrypha") { AApocrypha = true; }
                 }
             }
         }

@@ -20,7 +20,6 @@ namespace SorasToybox.Encounters
                     //Where would we be without good music?
                     MusicEvent = "event:/SorasMusic/Enemies/LitanyMusic/Singsong",
                     RoarEvent = "event:/SorasSFX/Enemies/Litany/LitanyRoar",
-
                 };
 
                 litanyMedium.CreateNewEnemyEncounterData(
