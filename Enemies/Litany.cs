@@ -41,7 +41,7 @@ namespace SorasToybox.Enemies
                 DeathSound = "event:/SorasSFX/Enemies/Litany/LitanyDie",
             };
 
-            litany.PrepareEnemyPrefab("Assets/ToyboxEnemies/Litany/Litany Enemy.prefab", SorasToybox.assetbundle, null);
+            litany.PrepareEnemyPrefab("Assets/ToyboxEnemies/Litany/Litany Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Litany/Litany_Gibs.prefab").GetComponent<ParticleSystem>());
 
             //irid blooded setup here
             GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
