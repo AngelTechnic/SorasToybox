@@ -176,7 +176,7 @@ namespace SorasToybox.Enemies
 
             Ability litanyOtheringAbility = new Ability("Othering", "LitanyOthering_A")
             {
-                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right.\nIf this was used at least 3 times, queues up \"Headhunter\".",
+                Description = "Applies 1 Divine Protection to the Opposing party member.\nIf there isn't an Opposing party member, moves Left or Right.\nIncrease \"Othering\" counter by 1; if this was used at least 3 times, queues up \"Headhunter\".",
                 Cost = [Pigments.Yellow],
                 Rarity = Rarity.Impossible,
                 Priority = Priority.VerySlow,
@@ -223,8 +223,6 @@ namespace SorasToybox.Enemies
                     litanyCoerceAbility, litanyHeadhunterAbility,
                 ]);
             litany.AddEnemy(true, false, false);
-            Debug.Log("Litany kinda added? It's very incomplete tho");
-            //LoadedAssetsHandler.GetEnemy("Litany_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Kookoo_EN").enemyTemplate;
 
         }
     }
