@@ -29,9 +29,15 @@ namespace SorasToybox.Encounters
                     "Streetlight_EN",
                 ], null);
 
+                litanyMedium.CreateNewEnemyEncounterData(
+                [
+                    "Litany_EN",
+                    "Sycophant_EN",
+                    "Sycophant_EN",
+                ], null);
 
                 litanyMedium.AddEncounterToDataBases();
-                //EnemyEncounterUtils.AddEncounterToZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 0, ZoneType_GameIDs.Abyss_Medium, BundleDifficulty.Medium);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 4, "TheAbyss_Zone3", BundleDifficulty.Medium);
             }
         }
     }
