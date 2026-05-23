@@ -10,8 +10,12 @@ namespace SorasToybox.Encounters
     {
         public static void Add()
         {
-            Portals.AddPortalColor("MalachaiPortalColor", Color.gray);
-            Portals.AddPortalSign("Litany_Sign", ResourceLoader.LoadSprite("timelineLitany"), "MalachaiPortalColor");
+            if (!LoadedDBsHandler.PortalDB.m_PortalColors.ContainsKey("MalachaiPortalColor"))
+            {
+                Portals.AddPortalColor("MalachaiPortalColor", Color.gray);
+            }
+
+            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("timelineLitany"), "MalachaiPortalColor");
             EnemyEncounter_API testMedium = new EnemyEncounter_API(EncounterType.Specific, "H_Zone01_SoraTest_Medium_EnemyBundle", "Litany_Sign")
             {
                 //Where would we be without good music?

@@ -14,6 +14,25 @@ namespace SorasToybox.Encounters
             if (LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3"))
             {
                 Portals.AddPortalSign("Litany_Sign", ResourceLoader.LoadSprite("timelineLitany", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
+
+                EnemyEncounter_API litanyMedium = new EnemyEncounter_API(0, "H_ZoneAbyss_Litany_Medium_EnemyBundle", "Litany_Sign")
+                {
+                    //Where would we be without good music?
+                    MusicEvent = "event:/SorasMusic/Enemies/LitanyMusic/Singsong",
+                    RoarEvent = "event:/SorasSFX/Enemies/Litany/LitanyRoar",
+
+                };
+
+                litanyMedium.CreateNewEnemyEncounterData(
+                [
+                    "WanderFellow_EN",
+                    "Litany_EN",
+                    "Streetlight_EN",
+                ], null);
+
+
+                litanyMedium.AddEncounterToDataBases();
+                //EnemyEncounterUtils.AddEncounterToZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 0, ZoneType_GameIDs.Abyss_Medium, BundleDifficulty.Medium);
             }
         }
     }
