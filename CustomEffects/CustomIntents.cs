@@ -19,6 +19,7 @@ namespace SorasToybox.CustomEffects
         }
         public static void Add()
         {
+            //Intent for abilities that don't do anything/waste a turn.
             IntentInfoBasic DoNothingIntent = new()
             {
                 _color = Color.white,
@@ -61,6 +62,8 @@ namespace SorasToybox.CustomEffects
             };
             LoadedDBsHandler.IntentDB.AddNewBasicIntent("ColoIntent", colophonIntent);
 
+
+            //Proportional damage (stuff that does a portion of the target's current health as damage.
             if (!dintExists("Damage_Prop"))
             {
                 IntentInfoDamage Damage_Proportional = new()
@@ -74,6 +77,7 @@ namespace SorasToybox.CustomEffects
                 Intents.AddCustom_Damage_IntentToPool("Damage_Prop", Damage_Proportional);
             }
 
+            //Proportional damage (Extreme). Like proportional, but does AT LEAST 100% of the target's current health.
             if (!dintExists("Damage_PropEx"))
             {
                 IntentInfoDamage Damage_Proportional_Extreme = new()

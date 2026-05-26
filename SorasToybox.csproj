@@ -13,6 +13,7 @@
     <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
+    <None Remove="Assets\Enemies\timelineSusMung.png" />
     <None Remove="Assets\Fools\Karma\karma_agony.png" />
     <None Remove="Assets\Fools\Karma\karma_back.png" />
     <None Remove="Assets\Fools\Karma\karma_coming.png" />
@@ -33,6 +34,7 @@
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
+    <None Remove="Assets\Passives\passive_godray.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
@@ -52,6 +54,7 @@
     <EmbeddedResource Include="Assets\Enemies\timelineLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSlatecarnate.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineSusMung.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_agony.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_back.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_coming.png" />
@@ -72,6 +75,7 @@
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_godray.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
@@ -371,7 +375,6 @@
 
   <ItemGroup>
     <Folder Include="Assets\Enemies\Bosses\" />
-    <Folder Include="Enemies\Bosses\" />
   </ItemGroup>
 
 </Project>

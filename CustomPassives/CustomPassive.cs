@@ -1,5 +1,6 @@
 ﻿using BrutalAPI;
 using SorasToybox.Custom_Passives;
+using SorasToybox.CustomEffects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -59,6 +60,47 @@ namespace SorasToybox.CustomPassives
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STSearchPartyInfo);
             }
 
+            //Fragile passive woo yea woo
+            if (LoadedDBsHandler.PigmentDB.GetPigment("Broken") != null)
+            {
+                // Fragile - broken pigment-related passive from Undivine Comedy (thanks WolfaCola)
+                PerformDoubleEffectPassiveAbility Fragile = ScriptableObject.CreateInstance<PerformDoubleEffectPassiveAbility>();
+                Fragile.name = "ST_Fragile_PA";
+                Fragile._passiveName = "Fragile";
+                Fragile.m_PassiveID = "Fragile";
+                Fragile.passiveIcon = ResourceLoader.LoadSprite("Fragile");
+                Fragile._characterDescription = "This party member's health will be Broken upon taking direct damage.\nThis party member also shatters all Broken pigment upon death.\nBroken Pigment naturally shatters upon overflow.";
+                Fragile._enemyDescription = "This enemy's health will be Broken upon taking direct damage.\nThis enemy also shatters all Broken pigment upon death.\nBroken Pigment naturally shatters upon overflow.";
+
+                ChangeToRandomHealthColorEffect setBroken = ScriptableObject.CreateInstance<ChangeToRandomHealthColorEffect>();
+                setBroken._healthColors = [LoadedDBsHandler.PigmentDB.GetPigment("Broken")];
+
+                Fragile._triggerOn = [TriggerCalls.OnDirectDamaged];
+                Fragile._secondTriggerOn = [TriggerCalls.OnDeath];
+                Fragile.effects =
+                [
+                    Effects.GenerateEffect(setBroken, 1, Targeting.Slot_SelfSlot),
+                ];
+                Fragile._secondEffects =
+                [
+                    Effects.GenerateEffect(ScriptableObject.CreateInstance<ShatterBrokenPigmentEffect>()),
+                ];
+                if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Fragile_PA")) { Passives.AddCustomPassiveToPool("Fragile_PA", "Fragile", Fragile); }
+            }
+
+            if (!LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Illuminated_ID"))
+            {
+                StatusEffectPassiveAbility godray = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();
+                godray._Status = StatusField.GetCustomStatusEffect("Illuminated_ID");
+                godray.m_PassiveID = "Godray_PA";
+                godray.passiveIcon = ResourceLoader.LoadSprite("passive_godray.png");
+                godray._characterDescription = "This party member is permanently Illuminated and takes half damage from all sources.";
+                godray._enemyDescription = "This enemy is permanently Illuminated and takes half damage from all sources.";
+                godray.doesPassiveTriggerInformationPanel = true;
+
+
+                Passives.AddCustomPassiveToPool("Godray_PA", "Godray", godray);
+            }
         }
     }
 }
