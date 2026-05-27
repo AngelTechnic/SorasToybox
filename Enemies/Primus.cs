@@ -79,7 +79,7 @@ namespace SorasToybox.Enemies
                 Rarity = Rarity.Rare,
                 Effects =
                 [
-                    Effects.GenerateEffect(absolveMe, 4, ohtwofour),
+                    Effects.GenerateEffect(absolveMe, 2, ohtwofour),
                 ]
             };
             primusAbsol024.AddIntentsToTarget(ohtwofour, ["Field_Absolution"]);
@@ -93,7 +93,7 @@ namespace SorasToybox.Enemies
                 Rarity = Rarity.Rare,
                 Effects =
                 [
-                    Effects.GenerateEffect(absolveMe, 4, onethree),
+                    Effects.GenerateEffect(absolveMe, 2, onethree),
                 ]
             };
             primusAbsol13.AddIntentsToTarget(onethree, ["Field_Absolution"]);
