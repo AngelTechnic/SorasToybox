@@ -40,6 +40,7 @@ namespace SorasToybox.Enemies
                 OverworldAliveSprite = LoadedAssetsHandler.GetEnemy("Supergiant_EN").enemyOverworldSprite,
                 DamageSound = LoadedAssetsHandler.GetEnemy("TrueNobody_BOSS").damageSound,
                 DeathSound = LoadedAssetsHandler.GetEnemy("TrueNobody_BOSS").deathSound,
+                UnitTypes = ["Primal"],
             };
 
             ChangeMusicEffect torealmus = ScriptableObject.CreateInstance<ChangeMusicEffect>();

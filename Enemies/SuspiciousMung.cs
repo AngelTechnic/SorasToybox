@@ -12,8 +12,10 @@ namespace SorasToybox.Enemies
     {
         public static void Add()
         {
+
+
             AnimationVisualsEffect jumpscareHaha = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
-            jumpscareHaha._visuals = Visuals.EndIt;
+            jumpscareHaha._visuals = Visuals.DemonCore;
             jumpscareHaha._animationTarget = Targeting.Slot_SelfSlot;
 
             SpawnEnemyAnywhereEffect move = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
@@ -45,6 +47,7 @@ namespace SorasToybox.Enemies
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineSusMung.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetEnemy("Mung_EN").damageSound,
                 DeathSound = LoadedAssetsHandler.GetEnemy("Mung_EN").deathSound,
+                UnitTypes = ["Fish"],
             };
             susMung.AddPassives(new BasePassiveAbilitySO[] { susMungBecomesPrimusDecay });
 

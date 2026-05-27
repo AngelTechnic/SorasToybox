@@ -35,7 +35,7 @@ namespace SorasToybox.Enemies
                 HealthColor = Pigments.Grey,
                 Size = 1,
                 CombatSprite = ResourceLoader.LoadSprite("timelineLitany.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
-                OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
+                OverworldDeadSprite = ResourceLoader.LoadSprite("deadLitany.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineLitany.png", (Vector2?)new Vector2(0.5f, 0f), 32, (Assembly)null),
                 DamageSound = "event:/SorasSFX/Enemies/Litany/LitanyHurt",
                 DeathSound = "event:/SorasSFX/Enemies/Litany/LitanyDie",
