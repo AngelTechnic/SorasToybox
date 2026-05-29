@@ -9,8 +9,11 @@
   <ItemGroup>
     <None Remove="AssetBundles\sorastoybox" />
     <None Remove="AssetBundles\sorastoybox.meta" />
+    <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
+    <None Remove="Assets\Enemies\timelineDozer.png" />
+    <None Remove="Assets\Enemies\timelineDozerWoke.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
@@ -51,8 +54,11 @@
   <ItemGroup>
     <EmbeddedResource Include="AssetBundles\sorastoybox" />
     <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
+    <EmbeddedResource Include="Assets\Enemies\deadDozer.png" />
     <EmbeddedResource Include="Assets\Enemies\deadLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineDozer.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineDozerWoke.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSlatecarnate.png" />
