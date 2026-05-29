@@ -112,7 +112,7 @@ namespace SorasToybox.CustomPassives
                 itchy.name = "Itchy_PA";
                 itchy._passiveName = "Itchy";
                 itchy.passiveIcon = ResourceLoader.LoadSprite("passive_itchy.png");
-                itchy._enemyDescription = "When this enemy is directly damaged, they will perform their next action, and then gain another to replace the one they just performed.";
+                itchy._enemyDescription = "This enemy can't wait to act. In response to any ability usage or party member movement, they will perform their next action, and then gain another to replace the one they just performed.";
                 //ch desc
                 itchy.m_PassiveID = "Itchy_ID";
                 itchy.doesPassiveTriggerInformationPanel = true;

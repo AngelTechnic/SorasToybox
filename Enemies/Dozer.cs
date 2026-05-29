@@ -137,7 +137,7 @@ namespace SorasToybox.Enemies
             dozerAwakeEyesClosed.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Other_Transform_Instument)]);
 
             QueueTimelineAbilityByNameEffect napTime = ScriptableObject.CreateInstance<QueueTimelineAbilityByNameEffect>();
-            napTime._abilityName = "ST_DozerEyesClosed_A";
+            napTime._abilityName = "Eyes Closed";
 
             //Setting up patient here
             PerformEffectPassiveAbility patientPassive = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
@@ -164,6 +164,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(trackMe, 12, Targeting.Slot_Front),
                 ],
             };
+            dozerAwakeMorningAlarm.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Tracked"]);
 
             //Ok abilities go here.
             Ability dozersleepZees = new Ability("ZZZ", "ST_DozerZZZ_A")
