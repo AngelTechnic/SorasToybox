@@ -141,7 +141,7 @@ namespace SorasToybox.Enemies
                 Rarity = Rarity.ExtremelyCommon,
                 Priority = Priority.VeryFast,
             };
-            litanyCoerceAbility.AddIntentsToTarget(Targeting.Unit_OtherAllies, [Passives.Infantile.passiveIcon.name]);
+            litanyCoerceAbility.AddIntentsToTarget(Targeting.Unit_OtherAllies, [nameof(IntentType_GameIDs.PA_Infantile)]);
             litanyCoerceAbility.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc)]);
 
             AttackVisualsSO headhuntervisuals;
@@ -223,6 +223,7 @@ namespace SorasToybox.Enemies
                     litanyCoerceAbility, litanyHeadhunterAbility,
                 ]);
             litany.AddEnemy(true, false, false);
+            Debug.Log("Litany loaded");
 
         }
     }
