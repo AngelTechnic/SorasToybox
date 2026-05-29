@@ -39,6 +39,7 @@
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
+    <None Remove="Assets\Passives\passive_itchy.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
@@ -84,6 +85,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
     <EmbeddedResource Include="Assets\Passives\passive_godray.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_itchy.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />

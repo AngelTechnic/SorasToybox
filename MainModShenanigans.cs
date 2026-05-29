@@ -90,6 +90,13 @@ namespace SorasToybox //Mod namespace
                 Litany.Add();
             }
 
+
+            //ITA AND Salt
+            if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
+            {
+                Dozer.Add();
+            }
+
             if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends)
             {
                 Primus.Add();
