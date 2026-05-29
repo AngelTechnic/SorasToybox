@@ -17,7 +17,7 @@ namespace SorasToybox.CustomPassives
             karmic.name = "Karmic_PA";
             karmic._passiveName = "Karmic";
             karmic.m_PassiveID = "Karmic";
-            karmic.passiveIcon = ResourceLoader.LoadSprite("passive_karmic");
+            karmic.passiveIcon = ResourceLoader.LoadSprite("passive_karmic.png");
             karmic._characterDescription = "On receiving damage, apply equivalent Regeneration to all party members.";
             karmic._enemyDescription = "On receiving damage, apply equivalent Regeneration to all enemies.";
             karmic._triggerOn = [TriggerCalls.OnDamaged];
@@ -31,7 +31,7 @@ namespace SorasToybox.CustomPassives
             dismal.name = "Dismal_PA";
             dismal._passiveName = "Dismal";
             dismal.m_PassiveID = "Dismal";
-            dismal.passiveIcon = ResourceLoader.LoadSprite("passive_dismal");
+            dismal.passiveIcon = ResourceLoader.LoadSprite("passive_dismal.png");
             dismal._characterDescription = "This party member does not take wrong pigment or overflow damage. Instead, their abilities will be cast from themselves.";
             dismal._enemyDescription = "This enemy is begging for the embrace of death.";
             dismal._damageType = CombatType_GameIDs.Dmg_Pigment.ToString();

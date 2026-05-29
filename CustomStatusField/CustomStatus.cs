@@ -19,7 +19,7 @@ namespace SorasToybox.CustomStatusField
                 StatusEffectInfoSO OverclockInfo = ScriptableObject.CreateInstance<StatusEffectInfoSO>();
                 OverclockInfo._statusName = "Overclock";
                 OverclockInfo._description = "While Overclocked, all direct damage dealt is doubled.\nPerforming an ability reduces Overclock by 1.";
-                OverclockInfo.icon = ResourceLoader.LoadSprite("status_overclock");
+                OverclockInfo.icon = ResourceLoader.LoadSprite("status_overclock.png");
 
                 //Inheriting info from basegame status (Linked)
                 LoadedDBsHandler.StatusFieldDB.TryGetStatusEffect("Linked_ID", out StatusEffect_SO linked);

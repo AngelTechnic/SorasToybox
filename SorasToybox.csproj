@@ -35,6 +35,7 @@
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
+    <None Remove="Assets\Passives\Fragile.png" />
     <None Remove="Assets\Passives\IconPatient.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
@@ -83,6 +84,7 @@
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
+    <EmbeddedResource Include="Assets\Passives\Fragile.png" />
     <EmbeddedResource Include="Assets\Passives\IconPatient.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
