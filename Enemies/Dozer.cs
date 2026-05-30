@@ -199,7 +199,7 @@ namespace SorasToybox.Enemies
                 dozersleepZees,
                 dozerSleepEyesOpen,
                 ]);
-            dozerSleep.AddEnemy(false, false, false);
+            dozerSleep.AddEnemy(true, true, false);
             dozerAwake.AddEnemyAbilities(
                 [
                 dozerAwakeMorningAlarm,
@@ -207,7 +207,7 @@ namespace SorasToybox.Enemies
                 ]);
             //moving the awake dozer passives down here so they get loaded after everything else is set up
             dozerAwake.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Itchy_PA"), patientPassive]);
-            dozerAwake.AddEnemy(false, false, false);
+            dozerAwake.AddEnemy(true, true, false);
 
             Debug.Log("Dozer loaded");
 

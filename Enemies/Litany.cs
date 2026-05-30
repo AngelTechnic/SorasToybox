@@ -222,7 +222,7 @@ namespace SorasToybox.Enemies
                 [
                     litanyCoerceAbility, litanyHeadhunterAbility,
                 ]);
-            litany.AddEnemy(true, false, false);
+            litany.AddEnemy(true, true, false);
             Debug.Log("Litany loaded");
 
         }
