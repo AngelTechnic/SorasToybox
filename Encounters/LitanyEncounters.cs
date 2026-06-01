@@ -30,19 +30,8 @@ namespace SorasToybox.Encounters
                     RoarEvent = "event:/SorasSFX/Enemies/Litany/LitanyRoar",
                 };
 
-                litanyMedium.CreateNewEnemyEncounterData(
-                [
-                    "WanderFellow_EN",
-                    "Litany_EN",
-                    "Streetlight_EN",
-                ], null);
-
-                litanyMedium.CreateNewEnemyEncounterData(
-                [
-                    "Litany_EN",
-                    "Sycophant_EN",
-                    "Sycophant_EN",
-                ], null);
+                litanyMedium.CreateNewEnemyEncounterData(["WanderFellow_EN", "Litany_EN", "Streetlight_EN"], null);
+                litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "Sycophant_EN", "Sycophant_EN"], null);
                 litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "WRK_EN", "Streetlight_EN"], null);
                 litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "WRK_EN", "Wug_EN"], null);
                 if (SorasToybox.CrossMod.AApocrypha)

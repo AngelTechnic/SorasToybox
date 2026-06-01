@@ -2,7 +2,7 @@
 using System.Reflection;
 using BrutalAPI;
 using SorasToybox;
-using SorasToybox.Assets;
+using SorasToybox.CustomEffects;
 using UnityEngine;
 
 
@@ -21,7 +21,7 @@ namespace SorasToybox.Enemies
                 Health = 1024,
                 HealthColor = Pigments.Red,
                 CombatSprite = ResourceLoader.LoadSprite("timelineDeathmatch", new Vector2(0.5f, 0f), 32),
-                OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32)
+                OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineDeathmatch", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").damageSound,
                 DeathSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").deathSound,

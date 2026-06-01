@@ -29,12 +29,7 @@ namespace SorasToybox.Encounters
                 };
 
                 //Medium dozer encounts go down here
-                dozerMedium.CreateNewEnemyEncounterData(
-                    [
-                        "Parfait_EN",
-                        "Dozer_EN",
-                        "Wug_EN",
-                    ], null);
+                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "Parfait_EN", "Wug_EN"], null);
                 dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "WanderFellow_EN", "Wug_EN"], null);
                 dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "Wug_EN", "Wug_EN", "Streetlight_EN"], null);
                 dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "EyePalm_EN", "EyePalm_EN"], null);
