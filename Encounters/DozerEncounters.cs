@@ -18,14 +18,17 @@ namespace SorasToybox.Encounters
             //try to play with warping player movement so Dozer's tracked is more dangerous.
             if (LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3"))
             {
+                //dozer's sign! it's called this VVVVV
                 Portals.AddPortalSign("Dozer_Sign", ResourceLoader.LoadSprite("timelineDozer.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
 
+                //initializing mediumdozer encounters, here's the sound events too.
                 EnemyEncounter_API dozerMedium = new EnemyEncounter_API(0, "H_ZoneAbyss_Dozer_Medium_EnemyBundle", "Dozer_Sign")
                 {
                     MusicEvent = "event:/SorasMusic/Enemies/DozerMusic/GrapeGrappleGravity",
                     RoarEvent = "event:/SorasSFX/Enemies/Dozer/DozerRoar",
                 };
 
+                //Medium dozer encounts go down here
                 dozerMedium.CreateNewEnemyEncounterData(
                     [
                         "Parfait_EN",

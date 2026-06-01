@@ -1,11 +1,36 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using SorasToybox.CustomEffects;
+using System.Reflection;
+using BrutalAPI;
+using SorasToybox;
+using SorasToybox.Assets;
+using UnityEngine;
 
-namespace SorasToybox.Enemies.Bosses
+
+namespace SorasToybox.Enemies
 {
     public class Deathmatch
     {
+        public static void Add()
+        {
+            AddPassiveEffect youAndMeBabyAintNothinButMammals = ScriptableObject.CreateInstance<AddPassiveEffect>();
+            youAndMeBabyAintNothinButMammals._passiveToAdd = Passives.GetCustomPassive("Mammal_PA");
+
+            //Basic unit setup
+            Enemy deathmatchEnemy = new Enemy("Deathmatch", "Deathmatch_BOSS")
+            {
+                Health = 1024,
+                HealthColor = Pigments.Red,
+                CombatSprite = ResourceLoader.LoadSprite("timelineDeathmatch", new Vector2(0.5f, 0f), 32),
+                OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32)
+                OverworldAliveSprite = ResourceLoader.LoadSprite("timelineDeathmatch", new Vector2(0.5f, 0f), 32),
+                DamageSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").damageSound,
+                DeathSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").deathSound,
+            };
+            deathmatchEnemy.AddUnitType("FemaleID");
+            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA")]);
+
+            //Borrowing Wriggling Sacrifice assets until I learn unity.
+            LoadedAssetsHandler.GetEnemy("Deathmatch_BOSS").enemyTemplate = LoadedAssetsHandler.GetEnemy("WrigglingSacrifice_EN").enemyTemplate;
+        }
     }
 }

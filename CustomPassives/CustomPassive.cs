@@ -120,7 +120,7 @@ namespace SorasToybox.CustomPassives
                 itchy._triggerOn = (LoadedAssetsHandler.GetEnemy("GreyBot_EN").passiveAbilities[0] as PerformEffectPassiveAbility)._triggerOn;
                 itchy.effects = (LoadedAssetsHandler.GetEnemy("BlueSky_BOSS").passiveAbilities[0] as PerformEffectPassiveAbility).effects;
                 Passives.AddCustomPassiveToPool("Itchy_PA", "Itchy", itchy);
-                GlossaryPassives STItchyInfo = new GlossaryPassives("Itchy", "This enemy can't wait to act. In response to any party member movement or ability usage, they will perform their next action, and then gain another to replace the one they just performed.", ResourceLoader.LoadSprite("passive_itchy"));
+                GlossaryPassives STItchyInfo = new GlossaryPassives("Itchy", "This enemy can't wait to act. In response to any party member manually moving or using an ability, they will perform their next action, and then gain another to replace the one they just performed.", ResourceLoader.LoadSprite("passive_itchy"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STItchyInfo);
             }
         }
