@@ -43,6 +43,14 @@ namespace SorasToybox.Encounters
                     "Sycophant_EN",
                     "Sycophant_EN",
                 ], null);
+                litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "WRK_EN", "Streetlight_EN"], null);
+                litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "WRK_EN", "Wug_EN"], null);
+                if (SorasToybox.CrossMod.AApocrypha)
+                {
+                    litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "MachineGnomes_EN", "Streetlight_EN"], null);
+                    litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "BFElemental_EN", "Wug_EN"], null);
+                    litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "BasicElemental_EN", "Sycophant_EN"], null);
+                }
 
                 litanyMedium.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 4, "TheAbyss_Zone3", BundleDifficulty.Medium);
