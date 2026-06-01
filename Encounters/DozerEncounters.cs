@@ -35,6 +35,15 @@ namespace SorasToybox.Encounters
                         "Dozer_EN",
                         "Wug_EN",
                     ], null);
+                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "WanderFellow_EN", "Wug_EN"], null);
+                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "Wug_EN", "Wug_EN", "Streetlight_EN"], null);
+                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "EyePalm_EN", "EyePalm_EN"], null);
+                if (SorasToybox.CrossMod.AApocrypha)
+                {
+                    dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "WanderFellow_EN", "MachineGnomes_EN"], null);
+                    dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "BasicElemental_EN", "Wug_EN"], null);
+                    dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "BasicElemental_EN", "MachineGnomes_EN"], null);
+                }
 
 
                 dozerMedium.AddEncounterToDataBases();
