@@ -19,8 +19,10 @@ namespace SorasToybox.Encounters
 
             if (LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3"))
             {
+                //litany sign here VVVVV
                 Portals.AddPortalSign("Litany_Sign", ResourceLoader.LoadSprite("timelineLitany", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
-
+                
+                //initializing medium encounters
                 EnemyEncounter_API litanyMedium = new EnemyEncounter_API(0, "H_ZoneAbyss_Litany_Medium_EnemyBundle", "Litany_Sign")
                 {
                     //Where would we be without good music?
