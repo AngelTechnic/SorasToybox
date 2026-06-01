@@ -104,7 +104,7 @@ namespace SorasToybox.Enemies
             };
 
             //If greasy fools is installed you get something funny!
-            AttackVisualsSO dozerEyesClosedVisuals = new AttackVisualsSO();
+            AttackVisualsSO dozerEyesClosedVisuals = ScriptableObject.CreateInstance<AttackVisualsSO>();
             if (LoadedAssetsHandler.GetCharacterAbility("sleep_4") != null)
             {
                 dozerEyesClosedVisuals = LoadedAssetsHandler.GetCharacterAbility("sleep_4").visuals;

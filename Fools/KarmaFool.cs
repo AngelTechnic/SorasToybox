@@ -45,6 +45,10 @@ namespace SorasToybox.Fools
             rebalanceVisuals._visuals = rebalanceAnim;
             rebalanceVisuals._animationTarget = Targeting.Slot_SelfSlot;
 
+            AnimationVisualsEffect goEffYourself = ScriptableObject .CreateInstance<AnimationVisualsEffect>();
+            goEffYourself._visuals = Visuals.Insult;
+            goEffYourself._animationTarget = Targeting.Slot_SelfSlot;
+
 
             //anyway here's rebalance
             TargetPerformEffectViaSubaction rebalanceEffects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
@@ -100,7 +104,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(rebalanceEffects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(rebalanceEffects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
 
@@ -192,7 +197,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce1Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce1Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
@@ -215,7 +221,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce2Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce2Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
@@ -238,7 +245,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce3Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce3Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
@@ -261,7 +269,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(hotsauce4Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(hotsauce4Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ]
             };
@@ -329,7 +338,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(agony1Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(agony1Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -355,7 +365,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(agony2Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(agony2Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -382,7 +393,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(agony3Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(agony3Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -409,7 +421,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(agony4Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(agony4Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -478,7 +491,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(whatsComing1Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(whatsComing1Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -500,7 +514,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(whatsComing2Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(whatsComing2Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -522,7 +537,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(whatsComing3Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(whatsComing3Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
@@ -544,7 +560,8 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(whatsComing4Effects, 1, Targeting.Slot_Front, dismalFalse),
                         Effects.GenerateEffect(dismalPopup, 1, Targeting.Slot_SelfSlot, dismalTrue),
                         Effects.GenerateEffect(whatsComing4Effects, 1, Targeting.Slot_SelfSlot, dismalTrue),
-                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(goEffYourself, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [1, 3])),
+                        Effects.GenerateEffect(karmaSprites, 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([false, false], [2, 4])),
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
