@@ -474,7 +474,7 @@ namespace SorasToybox.Fools
             whatsComing4Effects.effects =
             [
                 Effects.GenerateEffect(whatsComingVisuals, 1, Targeting.Slot_SelfSlot),
-                Effects.GenerateEffect(damage, 20, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(damage, 19, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(fuckYouGetCursed, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_Front),
                 Effects.GenerateEffect(regenerateMe, 10, Targeting.Slot_Front),
@@ -551,7 +551,7 @@ namespace SorasToybox.Fools
 
             Ability whatsComing4 = new Ability("Accept What's Coming", "ST_KarmaWhatsComing4_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 20 damage to self and become Cursed. Apply 2 Overclock and 10 Regeneration to the Opposing.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 19 damage to self and become Cursed. Apply 2 Overclock and 10 Regeneration to the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_coming.png"),
                 Cost = [
                     Pigments.Red,
