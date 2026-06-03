@@ -291,6 +291,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 4, Targeting.Slot_Front),
                     Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(anteUp, 1, Targeting.Slot_Front),
                 ];
 
@@ -300,6 +301,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 5, Targeting.Slot_Front),
                     Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-1, 0, 4])),
                 ];
 
@@ -309,6 +311,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 7, Targeting.Slot_Front),
                     Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-1, 0, 4])),
                 ];
 
@@ -318,12 +321,13 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(agonyVisuals, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 8, Targeting.Slot_Front),
                     Effects.GenerateEffect(agonyDamage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(anteUp, 1, Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4])),
                 ];
 
             Ability agony1 = new Ability("Find Joy in Agony", "ST_KarmaAgony1_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 4 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 4 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to self and the Opposing.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
                 Cost = [
                     Pigments.Red,
@@ -343,14 +347,14 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
-            agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6), ("Status_Ante")]);
             agony1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_3_6)]);
             agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Ante"]);
             agony1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
 
             Ability agony2 = new Ability("Find Delight in Agony", "ST_KarmaAgony2_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 5 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 5 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to self and the Opposing and Left. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
                 Cost = [
                     Pigments.Red,
@@ -370,7 +374,7 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
-            agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_3_6), ("Status_Ante")]);
             agony2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_3_6)]);
             agony2.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4], true), ["Status_Ante"]);
             agony2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
@@ -378,7 +382,7 @@ namespace SorasToybox.Fools
 
             Ability agony3 = new Ability("Find Delight in Agony", "ST_KarmaAgony3_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to self and the Opposing and Left. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
                 Cost = [
                     Pigments.Red,
@@ -398,7 +402,7 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
-            agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10)]);
+            agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10), ("Status_Ante")]);
             agony3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_7_10)]);
             agony3.AddIntentsToTarget(Targeting.GenerateSlotTarget([-1, 0, 4], true), ["Status_Ante"]);
             agony3.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
@@ -406,7 +410,7 @@ namespace SorasToybox.Fools
 
             Ability agony4 = new Ability("Find Enlightenment in Agony", "ST_KarmaAgony4_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to the Opposing and Left. This assumes the grid wraps around.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to self and the Opposing, Left, and Right. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
                 Cost = [
                     Pigments.Red,
@@ -426,7 +430,7 @@ namespace SorasToybox.Fools
                         Effects.GenerateEffect(karmaDefault, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     ],
             };
-            agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10)]);
+            agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_7_10), ("Status_Ante")]);
             agony4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Damage_7_10)]);
             agony4.AddIntentsToTarget(Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4], true), ["Status_Ante"]);
             agony4.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Hidden)]);
