@@ -42,7 +42,6 @@ namespace SorasToybox.Items
             };
 
             ItemUtils.AddItemToShopStatsCategoryAndGamePool(snatchedChains.item, new ItemModdedUnlockInfo(snatchedChains.Item_ID, ResourceLoader.LoadSprite("noCorpse", null, 32, null), "SorasToybox_Slate_Antagonist_ACH"));
-            Debug.Log("Roughly 3 Snatched Chains loaded! Make sure you remove this from its file later.");
         }
     }
 }
