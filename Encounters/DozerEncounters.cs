@@ -42,7 +42,7 @@ namespace SorasToybox.Encounters
 
 
                 dozerMedium.AddEncounterToDataBases();
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Dozer_Medium_EnemyBundle", 4, "TheAbyss_Zone3", BundleDifficulty.Medium);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Dozer_Medium_EnemyBundle", 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
             }
         }
     }

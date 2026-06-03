@@ -42,7 +42,7 @@ namespace SorasToybox.Encounters
                 }
 
                 litanyMedium.AddEncounterToDataBases();
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 4, "TheAbyss_Zone3", BundleDifficulty.Medium);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 10, "TheAbyss_Zone3", BundleDifficulty.Medium);
             }
         }
     }
