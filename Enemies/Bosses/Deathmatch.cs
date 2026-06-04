@@ -15,6 +15,9 @@ namespace SorasToybox.Enemies
             AddPassiveEffect youAndMeBabyAintNothinButMammals = ScriptableObject.CreateInstance<AddPassiveEffect>();
             youAndMeBabyAintNothinButMammals._passiveToAdd = Passives.GetCustomPassive("Mammal_PA");
 
+            StatusEffectCheckerEffect hasAnte = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
+            hasAnte._status = StatusField.GetCustomStatusEffect("Ante_ID");
+
             //Basic unit setup
             Enemy deathmatchEnemy = new Enemy("Deathmatch", "Deathmatch_BOSS")
             {

@@ -84,7 +84,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
                 ],
             };
-            accelerator1.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy"]);
+            accelerator1.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_3_6)]);
 
             Ability accelerator2 = new Ability("Decay Accelerator", "ST_MercurieAccelerator2_A")
             {
@@ -101,7 +101,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
                 ],
             };
-            accelerator2.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy"]);
+            accelerator2.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
 
             Ability accelerator3 = new Ability("Rot Accelerator", "ST_MercurieAccelerator3_A")
             {
@@ -118,7 +118,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
                 ],
             };
-            accelerator3.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy"]);
+            accelerator3.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
 
             Ability accelerator4 = new Ability("Entropy Accelerator", "ST_MercurieAccelerator4_A")
             {
@@ -135,7 +135,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
                 ],
             };
-            accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy"]);
+            accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_11_15)]);
 
 
             //The End of Days/An Age/An Era/Time
