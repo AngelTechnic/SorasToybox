@@ -403,6 +403,15 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\UnityEngine.XRModule.dll</HintPath>
     </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\YarnSpinner.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Compiler">
+      <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\YarnSpinner.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Unity">
+      <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\YarnSpinner.Unity.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>
