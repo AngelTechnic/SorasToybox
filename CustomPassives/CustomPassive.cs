@@ -1,9 +1,12 @@
-﻿using BrutalAPI;
+﻿using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Text;
+using BrutalAPI;
 using SorasToybox.Custom_Passives;
 using SorasToybox.CustomEffects;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using SorasToybox.CustomOther;
+using HarmonyLib;
 using UnityEngine;
 
 namespace SorasToybox.CustomPassives
@@ -123,6 +126,121 @@ namespace SorasToybox.CustomPassives
                 GlossaryPassives STItchyInfo = new GlossaryPassives("Itchy", "This enemy can't wait to act. In response to any party member manually moving or using an ability, they will perform their next action, and then gain another to replace the one they just performed.", ResourceLoader.LoadSprite("passive_itchy"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STItchyInfo);
             }
+        }
+
+        // Bonus Suite: Multiple Bonus Attack Passive to replace Alt Attacks
+        public static BasePassiveAbilitySO BonusSuiteGenerator(List<ExtraAbilityInfo> bonusAbilities)
+        {
+            List<string> names = [];
+            List<ExtraAbilityInfo> weights = [];
+            foreach (ExtraAbilityInfo ability in bonusAbilities)
+            {
+                if (ability == null || ability.ability == null)
+                {
+                    Debug.Log("Bonus ability " + ability.ability.name + " does not exist.");
+                    return null;
+                }
+                names.Add(ability.ability._abilityName);
+                for (int i = 0; i < ability.rarity.rarityValue; i++)
+                {
+                    weights.Add(ability);
+                }
+                if (ability.rarity.canBeRerolled)
+                {
+                    ability.rarity = Rarity.Impossible;
+                }
+                else
+                {
+                    ability.rarity = Rarity.ImpossibleNoReroll;
+                }
+            }
+
+            BonusSuitePassiveAbility bonusSuitePassiveAbility = ScriptableObject.CreateInstance<BonusSuitePassiveAbility>();
+
+            bonusSuitePassiveAbility.name = "BonusSuite_" + string.Join("_", names) + "_PA";
+            bonusSuitePassiveAbility.m_PassiveID = "BonusSuite_" + string.Join("_", names);
+            bonusSuitePassiveAbility._passiveName = "Bonus Suite";
+            bonusSuitePassiveAbility._characterDescription = "This passive is not meant for party members.";
+            bonusSuitePassiveAbility._enemyDescription = "This enemy will perform one of the following moves as a bonus action each turn:" + "\n" + string.Join("\n", names);
+            bonusSuitePassiveAbility.passiveIcon = ResourceLoader.LoadSprite("IconBonusSuite");
+            bonusSuitePassiveAbility._triggerOn = [TriggerCalls.ExtraAdditionalAttacks];
+            bonusSuitePassiveAbility.conditions = [];
+            bonusSuitePassiveAbility.doesPassiveTriggerInformationPanel = false;
+            bonusSuitePassiveAbility.specialStoredData = null;
+            bonusSuitePassiveAbility._suiteAbilities = weights;
+            return bonusSuitePassiveAbility;
+        }
+
+        // Bonus Suite variants with reroll capabilities
+        public static BasePassiveAbilitySO BonusSuiteRerollGenerator(string rerollType, List<ExtraAbilityInfo> bonusAbilities)
+        {
+            List<string> names = [];
+            List<ExtraAbilityInfo> weights = [];
+            foreach (ExtraAbilityInfo ability in bonusAbilities)
+            {
+                if (ability == null || ability.ability == null)
+                {
+                    Debug.Log("Bonus ability " + ability.ability.name + " does not exist.");
+                    return null;
+                }
+                names.Add(ability.ability._abilityName);
+                for (int i = 0; i < ability.rarity.rarityValue; i++)
+                {
+                    weights.Add(ability);
+                }
+                if (ability.rarity.canBeRerolled)
+                {
+                    ability.rarity = Rarity.Impossible;
+                }
+                else
+                {
+                    ability.rarity = Rarity.ImpossibleNoReroll;
+                }
+            }
+
+            string typeID = "Invalid";
+            string typeDisplay = "";
+            string typeDesc = "Someone set the rerollType incorrectly!";
+            string typeIcon = "IconBonusSuiteAlt";
+            TriggerCalls[] typeTriggers = [];
+            EffectorConditionSO[] typeConditions = [];
+            switch (rerollType)
+            {
+                case "Formless":
+                    typeID = rerollType;
+                    typeDisplay = "Formless";
+                    typeDesc = "On being directly damaged, reroll the ability added by this passive.";
+                    typeIcon = "IconBonusSuiteFormless";
+                    typeTriggers = [TriggerCalls.OnDirectDamaged];
+                    typeConditions = [ScriptableObject.CreateInstance<UnitAliveEffectorCondition>()];
+                    break;
+                case "PartyAction":
+                    typeID = rerollType;
+                    typeDisplay = "Semimaterial";
+                    typeDesc = "On any party member performing an ability, reroll the ability added by this passive.";
+                    typeIcon = "IconBonusSuiteImmaterial";
+                    typeTriggers = [TriggerCalls.OnAnyAbilityUsed];
+                    typeConditions = [ScriptableObject.CreateInstance<UnitAliveEffectorCondition>(), ScriptableObject.CreateInstance<IsPlayerTurnEffectorCondition>()];
+                    break;
+            }
+
+            BonusSuiteWithRerollConditionPassiveAbility bonusSuitePassiveAbility = ScriptableObject.CreateInstance<BonusSuiteWithRerollConditionPassiveAbility>();
+
+            bonusSuitePassiveAbility.name = "BonusSuiteReroll_" + typeID + "_" + string.Join("_", names) + "_PA";
+            bonusSuitePassiveAbility.m_PassiveID = "BonusSuiteReroll_" + typeID + "_" + string.Join("_", names);
+            bonusSuitePassiveAbility._passiveName = "Bonus Suite (" + typeDisplay + ")";
+            bonusSuitePassiveAbility._characterDescription = "This passive is still not meant for party members.";
+            bonusSuitePassiveAbility._enemyDescription = "This enemy will perform one of the following moves as a bonus action each turn:" + "\n" + string.Join("\n", names) + "\n\n" + typeDesc;
+            bonusSuitePassiveAbility.passiveIcon = ResourceLoader.LoadSprite(typeIcon);
+            bonusSuitePassiveAbility._triggerOn = [TriggerCalls.ExtraAdditionalAttacks];
+            bonusSuitePassiveAbility.conditions = [];
+            bonusSuitePassiveAbility.doesPassiveTriggerInformationPanel = false;
+            bonusSuitePassiveAbility.specialStoredData = null;
+            bonusSuitePassiveAbility._suiteAbilities = weights;
+            bonusSuitePassiveAbility._secondDoesPerformPopUp = true;
+            bonusSuitePassiveAbility._secondTriggerOn = typeTriggers;
+            bonusSuitePassiveAbility._secondPerformConditions = typeConditions;
+            return bonusSuitePassiveAbility;
         }
 
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedSaltLockstep = [];

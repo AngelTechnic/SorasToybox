@@ -1,5 +1,6 @@
 ﻿using BrutalAPI;
 using SorasToybox.CustomEffects;
+using SorasToybox.CustomPassives;
 using System;
 using System.Collections.Generic;
 using System.Security.Cryptography;
@@ -24,11 +25,13 @@ namespace SorasToybox.Enemies
                 DamageSound = "event:/SorasSFX/Fools/KarmaHurt",
                 DeathSound = "event:/SorasSFX/Fools/KarmaDie",
             };
-            //adding some passives. Excess and bonus suite have to wait for now.
-            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA")]);
+
 
             StatusEffect_Apply_Effect divineProtect = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             divineProtect._Status = StatusField.DivineProtection;
+
+            StatusEffect_Apply_Effect anteUp = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            anteUp._Status = StatusField.GetCustomStatusEffect("Ante_ID");
 
             DamageEffect damage = ScriptableObject.CreateInstance<DamageEffect>();
 
@@ -41,7 +44,57 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(punchingVisuals, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damage, 3, Targeting.Slot_Front),
+                    Effects.GenerateEffect(anteUp, 1, Targeting.Slot_SelfSlot),
                 ];
+
+            SwapToOneSideEffect swapLeft = ScriptableObject.CreateInstance<SwapToOneSideEffect>();
+            swapLeft._swapRight = false;
+
+            SwapToOneSideEffect swapRight = ScriptableObject.CreateInstance<SwapToOneSideEffect>();
+            swapRight._swapRight = true;
+
+
+
+            Ability cantForgive = new Ability("Can't Forgive", "ST_ShameLeft_A")
+            {
+                Description = "Move the strongest enemy or enemies Left, then make them deal a Painful amount of damage to their Opposing party members. Grant the affected enemies 1 Ante.",
+                Rarity = Rarity.Impossible,
+                Priority = Priority.Fast,
+                Effects =
+                [
+                    Effects.GenerateEffect(swapLeft, 1, Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false)),
+                    Effects.GenerateEffect(punchingBagPunchesYou, 1, Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false)),
+
+                ]
+            };
+            cantForgive.AddIntentsToTarget(Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false), [nameof(IntentType_GameIDs.Swap_Left), nameof(IntentType_GameIDs.Damage_3_6), "Status_Ante"]);
+
+
+            Ability wontForget = new Ability("Won't Forget", "ST_ShameRight_A")
+            {
+                Description = "Move the strongest enemy or enemies Right, then make them deal a Painful amount of damage to their Opposing party members. Grant the affected enemies 1 Ante.",
+                Rarity = Rarity.Impossible,
+                Priority= Priority.Fast,
+                Effects =
+                [
+                    Effects.GenerateEffect(swapRight, 1, Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false)),
+                    Effects.GenerateEffect(punchingBagPunchesYou, 1, Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false)),
+                ]
+
+            };
+            wontForget.AddIntentsToTarget(Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false), [nameof(IntentType_GameIDs.Swap_Right), nameof(IntentType_GameIDs.Damage_3_6), "Status_Ante"]);
+
+            ExtraAbilityInfo shameextraleft = new()
+            {
+                ability = cantForgive.GenerateEnemyAbility().ability,
+                rarity = Rarity.Common,
+            };
+
+            ExtraAbilityInfo shameextraright = new()
+            {
+                ability = wontForget.GenerateEnemyAbility().ability,
+                rarity = Rarity.Common,
+            };
 
             Ability imNotInTheWrongHere = new Ability("I'm Not In The Wrong Here", "ST_ShameProtection_A")
             {
@@ -113,15 +166,19 @@ namespace SorasToybox.Enemies
 
             burningShame.PrepareEnemyPrefab("Assets/ToyboxEnemies/Burning Shame/BurningShame Enemy.prefab", SorasToybox.assetbundle, null);
 
+            //adding some passives. Excess and bonus suite have to wait for now.
+            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
+
             burningShame.AddEnemyAbilities(
                 [
                     imNotInTheWrongHere,
                     dontHideFromMe,
                     yourFaultForever,
                 ]);
+
+
             //these can be spawned by the sepulchre cuz it's funny
             burningShame.AddEnemy(true, true, false);
-            Debug.Log("Shames loaded, you should delete this");
         }
     }
 }

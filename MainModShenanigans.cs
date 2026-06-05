@@ -16,7 +16,7 @@ using SorasToybox.Encounters;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.2.7")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.3.0")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
@@ -93,6 +93,7 @@ namespace SorasToybox //Mod namespace
             {
                 Litany.Add();
                 BurningShame.Add();
+                Deathmatch.Add();
             }
 
 
@@ -113,6 +114,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss)
             {
                 LitanyEncounters.Add();
+                DeathmatchEncounter.Add();
             }
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
             {

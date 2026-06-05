@@ -3,6 +3,7 @@ using System.Reflection;
 using BrutalAPI;
 using SorasToybox;
 using SorasToybox.CustomEffects;
+using SorasToybox.CustomOther;
 using UnityEngine;
 
 
@@ -17,6 +18,8 @@ namespace SorasToybox.Enemies
 
             StatusEffectCheckerEffect hasAnte = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
             hasAnte._status = StatusField.GetCustomStatusEffect("Ante_ID");
+            hasAnte._allTargetsHaveStatusEffect = false;
+
 
             StatusEffect_Apply_Effect anteByPrevious = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             anteByPrevious._MultPreviousExitValueForEntry = true;
@@ -76,12 +79,46 @@ namespace SorasToybox.Enemies
 
             //Instinct passive and whatnot
             PerformEffectPassiveAbility deathmatchInstinct = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            deathmatchInstinct.name = "ST_InstinctDeathmatch_PA";
             deathmatchInstinct._passiveName = "Instinct";
-            deathmatchInstinct.m_PassiveID = "DMInstinct_PA";
+            deathmatchInstinct.m_PassiveID = "DMInstinct";
+            deathmatchInstinct._characterDescription = "The fact that you have this means that I hate you.";
             deathmatchInstinct._enemyDescription = "On entering combat, apply Mammal as a passive to all party members.";
             deathmatchInstinct.passiveIcon = ResourceLoader.LoadSprite("Instinct.png");
             deathmatchInstinct._triggerOn = [TriggerCalls.OnCombatStart];
             deathmatchInstinct.effects = [Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents)];
+            Passives.AddCustomPassiveToPool("ST_InstinctDeathmatch_PA", "Instinct", deathmatchInstinct);
+
+            //Deployment passive
+            ReturnValueComparatorEffectorCondition fifteenOrMore = ScriptableObject.CreateInstance<ReturnValueComparatorEffectorCondition>();
+            fifteenOrMore._lessThan = false;
+            fifteenOrMore._comparator = 15;
+
+            //copied directly from dune thresher
+            SpawnEnemyAnywhereEffect CallReinforcements = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
+            CallReinforcements.enemy = LoadedAssetsHandler.GetEnemy("BurningShame_EN");
+            CallReinforcements._spawnTypeID = CombatType_GameIDs.Spawn_Basic.ToString();
+
+            AnimationVisualsEffect deploymentVis = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            deploymentVis._visuals = Visuals.BodySnatcher;
+            deploymentVis._animationTarget = Targeting.Slot_SelfSlot;
+
+            PerformEffectPassiveAbility deathmatchDeployment = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            deathmatchDeployment.name = "ST_DeploymentDeathmatch_PA";
+            deathmatchDeployment.m_PassiveID = "DeploymentDeathmatch";
+            deathmatchDeployment._passiveName = "Deployment (15)";
+            deathmatchDeployment.passiveIcon = ResourceLoader.LoadSprite("IconDeployment");
+            deathmatchDeployment._characterDescription = "HOW DID YOU GET THIS? THIS DOES NOT BELONG HERE. YOU DO NOT BELONG IN PURGATORY.";
+            deathmatchDeployment._enemyDescription = "On receiving 15 or more damage, a Burning Shame will crawl from the inflicted wound.";
+            deathmatchDeployment.doesPassiveTriggerInformationPanel = true;
+            deathmatchDeployment._triggerOn = [TriggerCalls.OnDirectDamaged];
+            deathmatchDeployment.conditions = [fifteenOrMore];
+            deathmatchDeployment.effects =
+            [
+                Effects.GenerateEffect(deploymentVis, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(CallReinforcements, 1, Targeting.Slot_SelfSlot),
+            ];
+            Passives.AddCustomPassiveToPool("ST_DeploymentDeathmatch_PA", "Deployment (15)", deathmatchDeployment);
 
 
             //Basic unit setup
@@ -89,13 +126,24 @@ namespace SorasToybox.Enemies
             {
                 Health = 1024,
                 HealthColor = Pigments.Red,
-                CombatSprite = ResourceLoader.LoadSprite("timelineDeathmatch", new Vector2(0.5f, 0f), 32),
+                Size = 1,
+                CombatSprite = ResourceLoader.LoadSprite("TimelineDeathmatchBoss", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32),
-                OverworldAliveSprite = ResourceLoader.LoadSprite("timelineDeathmatch", new Vector2(0.5f, 0f), 32),
+                OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDeathmatchBoss", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").damageSound,
                 DeathSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").deathSound,
                 UnitTypes = ["FemaleID"],
             };
+
+            //making deathmatch end the game
+            SpecialSceneEndingSetUpEffect specialSceneEndingSetUpEffect = ScriptableObject.CreateInstance<SpecialSceneEndingSetUpEffect>();
+            specialSceneEndingSetUpEffect._shouldCombatEnd = false;
+            specialSceneEndingSetUpEffect._specialScene = SpecialSceneType.HardEnding;
+            deathmatchEnemy.CombatEnterEffects =
+            [
+                Effects.GenerateEffect(specialSceneEndingSetUpEffect, 1, Targeting.Slot_SelfSlot, null),
+            ];
+
             //deathmatch has no gibs rn
             deathmatchEnemy.PrepareEnemyPrefab("Assets/ToyboxEnemies/Deathmatch/Deathmatch Boss.prefab", SorasToybox.assetbundle, null);
 
@@ -116,8 +164,7 @@ namespace SorasToybox.Enemies
                 Rarity = Rarity.Uncommon,
 
             };
-            judgement.AddIntentsToTarget(Targeting.Slot_OpponentLeft, [nameof(IntentType_GameIDs.Damage_1_2)]);
-            judgement.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Ante"]);
+
 
             Ability prosecution = new Ability("Prosecution", "ST_DMProsecution_A")
             {
@@ -129,8 +176,7 @@ namespace SorasToybox.Enemies
                 ],
                 Rarity = Rarity.Uncommon,
             };
-            prosecution.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Damage_1_2)]);
-            prosecution.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Ante"]);
+
 
             Ability trial = new Ability("Trial", "ST_DMTrial_A")
             {
@@ -154,7 +200,53 @@ namespace SorasToybox.Enemies
                 ],
             };
 
-            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("BrokenBlooded_1_PA")]);
+            AttackVisualsSO hangingVisuals = ScriptableObject.CreateInstance<AttackVisualsSO>();
+            hangingVisuals = Visuals.Headshot;
+
+
+            AnimationVisualsEffect hangingVisEffect = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            hangingVisEffect._visuals = hangingVisuals;
+
+
+            TargetPerformEffectViaSubaction hangingEffects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            hangingEffects.effects =
+            [
+                    Effects.GenerateEffect(hasAnte, 15, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(hangman, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+            ];
+
+            
+
+            Ability hanging = new Ability("Hanging", "ST_DMHanging_A")
+            {
+                Description = "If any party members have 15 or more Ante, give them what they deserve.\nRepeats Instinct.",
+                Rarity = Rarity.Impossible,
+                Effects =
+                [
+                    Effects.GenerateEffect(hasAnte, 15, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(hangingVisEffect, 1, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(hangingEffects, 1, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents),
+                ],
+            };
+            hanging.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
+
+            ExtraAbilityInfo deathmatchExtra = new()
+            {
+                ability = hanging.GenerateEnemyAbility().ability,
+                rarity = Rarity.ImpossibleNoReroll,
+            };
+
+            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, Passives.BonusAttackGenerator(deathmatchExtra)]);
+
+            deathmatchEnemy.AddEnemyAbilities([
+                judgement,
+                prosecution,
+                trial,
+                error,
+                ]);
+
+            deathmatchEnemy.AddEnemy(true, false, false);
         }
     }
 }

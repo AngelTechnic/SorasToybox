@@ -11,6 +11,7 @@
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
+    <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
     <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
@@ -46,8 +47,13 @@
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
     <None Remove="Assets\Passives\Fragile.png" />
+    <None Remove="Assets\Passives\IconBonusSuite.png" />
+    <None Remove="Assets\Passives\IconBonusSuiteFormless.png" />
+    <None Remove="Assets\Passives\IconBonusSuiteImmaterial.png" />
+    <None Remove="Assets\Passives\IconDeployment.png" />
     <None Remove="Assets\Passives\IconPatient.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
+    <None Remove="Assets\Passives\Instinct.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
@@ -70,6 +76,7 @@
     <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\overworldburningshame.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\deadDozer.png" />
     <EmbeddedResource Include="Assets\Enemies\deadLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
@@ -105,8 +112,13 @@
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />
+    <EmbeddedResource Include="Assets\Passives\IconBonusSuite.png" />
+    <EmbeddedResource Include="Assets\Passives\IconBonusSuiteFormless.png" />
+    <EmbeddedResource Include="Assets\Passives\IconBonusSuiteImmaterial.png" />
+    <EmbeddedResource Include="Assets\Passives\IconDeployment.png" />
     <EmbeddedResource Include="Assets\Passives\IconPatient.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
+    <EmbeddedResource Include="Assets\Passives\Instinct.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
     <EmbeddedResource Include="Assets\Passives\passive_godray.png" />
