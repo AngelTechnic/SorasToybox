@@ -9,6 +9,8 @@
   <ItemGroup>
     <None Remove="AssetBundles\sorastoybox" />
     <None Remove="AssetBundles\sorastoybox.meta" />
+    <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
+    <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
@@ -66,6 +68,8 @@
   <ItemGroup>
     <EmbeddedResource Include="AssetBundles\sorastoybox" />
     <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\overworldburningshame.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\deadDozer.png" />
     <EmbeddedResource Include="Assets\Enemies\deadLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
@@ -412,10 +416,6 @@
     <Reference Include="YarnSpinner.Unity">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\YarnSpinner.Unity.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Assets\Enemies\Bosses\" />
   </ItemGroup>
 
 </Project>

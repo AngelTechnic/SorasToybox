@@ -92,6 +92,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss)
             {
                 Litany.Add();
+                BurningShame.Add();
             }
 
 
@@ -106,8 +107,9 @@ namespace SorasToybox //Mod namespace
                 Primus.Add();
                 SuspiciousMung.Add();
             }
-                //Add encounters
-                TestEncounter.Add();
+            //Add encounters
+            TestEncounter.Add();
+
             if (CrossMod.IntoTheAbyss)
             {
                 LitanyEncounters.Add();
@@ -121,6 +123,7 @@ namespace SorasToybox //Mod namespace
             {
                 SusMungEncounter.Add();
             }
+
             
             //Log enemies (Do config thing with it)
             Logger.LogInfo("New Toys to play with.");

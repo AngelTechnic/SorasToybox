@@ -25,6 +25,8 @@ namespace SorasToybox.Fools
             StatusEffect_Apply_Effect overclockMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             overclockMe._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
 
+            StatusEffectCheckerEffect hasAtrophy = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
+            hasAtrophy._status = StatusField.GetCustomStatusEffect("Atrophy_ID");
 
             RemoveStatusEffectEffect noMalfunction = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
             noMalfunction._status = StatusField.GetCustomStatusEffect("Malfunction_ID");
@@ -66,7 +68,7 @@ namespace SorasToybox.Fools
             };
             mercurie.GenerateMenuCharacter(ResourceLoader.LoadSprite("mercurie_menu.png"), ResourceLoader.LoadSprite("mercurie_menu_locked.png"));
             mercurie.AddPassives([Passives.GetCustomPassive("Erasure_PA")]);
-
+            mercurie.SetMenuCharacterAsFullDPS();
 
             //Waste/Decay/Rot/Entropy Accelerator
             Ability accelerator1 = new Ability("Waste Accelerator", "ST_MercurieAccelerator1_A")
