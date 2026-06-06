@@ -61,7 +61,8 @@ namespace SorasToybox.CustomStatusField
                 //Basic Info (Initialization, Name, Description, Icon)
                 StatusEffectInfoSO ModuInfo = ScriptableObject.CreateInstance<StatusEffectInfoSO>();
                 ModuInfo._statusName = "Regeneration";
-                ModuInfo._description = "At the end of each round, this unit will heal for half of their stacks of Regeneration and then lose stacks of Regeneration equivalent to the amount they healed. Will always attempt to heal at least 1 health.";
+                ModuInfo._description = "At the end of each round, this unit will heal for half of their stacks of Regeneration and then lose stacks of Regeneration equivalent to the amount they healed. Will always attempt to heal at least 1 health.\n" +
+                    "At the end of combat, receive all remaining Regeneration as healing.";
                 ModuInfo.icon = ResourceLoader.LoadSprite("status_regen.png");
 
                 //Inheriting info from basegame status (Linked)
