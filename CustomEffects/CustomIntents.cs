@@ -403,6 +403,9 @@ namespace SorasToybox.CustomEffects
             };
             LoadedDBsHandler.IntentDB.AddNewBasicIntent("Passive_Suicidal", suicidal);
 
+
+
+
         }
     }
 }

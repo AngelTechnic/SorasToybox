@@ -1,10 +1,11 @@
-﻿using System;
-using System.Reflection;
-using BrutalAPI;
+﻿using BrutalAPI;
 using SorasToybox;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomOther;
+using System;
+using System.Reflection;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 namespace SorasToybox.Enemies
@@ -77,17 +78,41 @@ namespace SorasToybox.Enemies
             swapRight._swapRight = true;
 
 
-            //Instinct passive and whatnot
+            //Instinct passive and whatnot 
+            StatusEffect_Apply_Effect anteUp = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            anteUp._Status = StatusField.GetCustomStatusEffect("Ante_ID");
+
+            IntentInfoBasic InstinctIntent = new IntentInfoBasic
+            {
+                _color = Color.white,
+                _sprite = ResourceLoader.LoadSprite("Instinct.png", null, 32, null),
+            };
+            LoadedDBsHandler.IntentDB.AddNewBasicIntent("Passive_Instinct", InstinctIntent);
+
+            TargetPerformEffectViaSubaction instinctEffects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            instinctEffects.effects = 
+            [
+                Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents), 
+                Effects.GenerateEffect(anteUp, 1, Targeting.Unit_AllOpponents)
+            ];
+
             PerformEffectPassiveAbility deathmatchInstinct = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
             deathmatchInstinct.name = "ST_InstinctDeathmatch_PA";
             deathmatchInstinct._passiveName = "Instinct";
             deathmatchInstinct.m_PassiveID = "DMInstinct";
             deathmatchInstinct._characterDescription = "The fact that you have this means that I hate you.";
-            deathmatchInstinct._enemyDescription = "On entering combat, apply Mammal as a passive to all party members.";
+            deathmatchInstinct._enemyDescription = "On entering combat, apply 1 Ante, and Mammal as a passive, to all party members.";
             deathmatchInstinct.passiveIcon = ResourceLoader.LoadSprite("Instinct.png");
             deathmatchInstinct._triggerOn = [TriggerCalls.OnCombatStart];
-            deathmatchInstinct.effects = [Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents)];
+            deathmatchInstinct.effects = 
+                [
+                    Effects.GenerateEffect(instinctEffects, 1, Targeting.Slot_SelfSlot),
+                ];
             Passives.AddCustomPassiveToPool("ST_InstinctDeathmatch_PA", "Instinct", deathmatchInstinct);
+
+            PassivePopUpOnTargetEffect instinctPopup = ScriptableObject.CreateInstance<PassivePopUpOnTargetEffect>();
+            instinctPopup._sprite = "Instinct";
+            instinctPopup._name = "Instinct";
 
             //Deployment passive
             ReturnValueComparatorEffectorCondition fifteenOrMore = ScriptableObject.CreateInstance<ReturnValueComparatorEffectorCondition>();
@@ -124,7 +149,7 @@ namespace SorasToybox.Enemies
             //Basic unit setup
             Enemy deathmatchEnemy = new Enemy("Deathmatch", "Deathmatch_BOSS")
             {
-                Health = 1024,
+                Health = 333,
                 HealthColor = Pigments.Red,
                 Size = 1,
                 CombatSprite = ResourceLoader.LoadSprite("TimelineDeathmatchBoss", new Vector2(0.5f, 0f), 32),
@@ -162,7 +187,8 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.Uncommon,
-
+                Visuals = Visuals.Bellow,
+                AnimationTarget = Targeting.Slot_Front,
             };
 
 
@@ -175,31 +201,37 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(swapRight, 1, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.Uncommon,
+                Visuals = Visuals.Bellow,
+                AnimationTarget = Targeting.Slot_Front,
             };
 
 
             Ability trial = new Ability("Trial", "ST_DMTrial_A")
             {
-                Description = "Moves the Left party member to the Right, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\r\n",
+                Description = "Moves the Left party member to the Right, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\nMoves Right.",
                 Rarity = Rarity.VeryRare,
                 Effects =
                 [
                     Effects.GenerateEffect(swapRight, 1, Targeting.Slot_OpponentLeft),
                     Effects.GenerateEffect(trialerrorEffect, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(swapRight, 1, Targeting.Slot_SelfSlot),
                 ],
             };
 
             Ability error = new Ability("Error", "ST_DMError_A")
             {
-                Description = "Moves the Right party member to the Left, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\r\n",
+                Description = "Moves the Right party member to the Left, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\nMoves Left.",
                 Rarity = Rarity.VeryRare,
                 Effects =
                 [
                     Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_OpponentRight),
                     Effects.GenerateEffect(trialerrorEffect, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_SelfSlot),
                 ],
             };
 
+
+            //THE FOLLOWING ABILITY USED TO BE NAMED HANGING IM SORRYYYYYYY
             AttackVisualsSO hangingVisuals = ScriptableObject.CreateInstance<AttackVisualsSO>();
             hangingVisuals = Visuals.Headshot;
 
@@ -208,45 +240,163 @@ namespace SorasToybox.Enemies
             hangingVisEffect._visuals = hangingVisuals;
 
 
+            RemoveStatusEffectEffect noAnte = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
+            noAnte._status = StatusField.GetCustomStatusEffect("Ante_ID");
+
             TargetPerformEffectViaSubaction hangingEffects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             hangingEffects.effects =
             [
                     Effects.GenerateEffect(hasAnte, 15, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(hangman, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(noAnte, 1, Targeting.Unit_OtherAllies, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(hangman, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
             ];
 
-            
-
-            Ability hanging = new Ability("Hanging", "ST_DMHanging_A")
+            AttackVisualsSO dooranim2;
+            if (SorasToybox.CrossMod.SaltEnemies)
             {
-                Description = "If any party members have 15 or more Ante, give them what they deserve.\nRepeats Instinct.",
+                dooranim2 = LoadedAssetsHandler.GetEnemyAbility("Die4U_A").visuals;
+            }
+            else
+            {
+                dooranim2 = Visuals.Clobber_Left;
+            }
+
+
+            Ability hangingJudge = new Ability("Hanging Judge", "ST_DMHangingJudge_A")
+            {
+                Description = "Repeats Instinct.",
+                Rarity = Rarity.ImpossibleNoReroll,
+                AnimationTarget = Targeting.Slot_SelfSlot,
+                Visuals = dooranim2,
+                Effects =
+                [
+                    Effects.GenerateEffect(instinctPopup, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(instinctEffects, 1, Targeting.Slot_SelfSlot),
+
+                ]
+            };
+            hangingJudge.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Passive_Instinct"]);
+
+
+            UseSpecificAbilityByEntryEffect queueHangingJudge = ScriptableObject.CreateInstance<UseSpecificAbilityByEntryEffect>();
+            queueHangingJudge.usePrev = false;
+
+            ExtraAbilityInfo executionQueue = new()
+            {
+                ability = hangingJudge.GenerateEnemyAbility().ability,
+                rarity = Rarity.Impossible,
+            };
+            queueHangingJudge._parentalAbility = executionQueue;
+
+            Ability execution = new Ability("Death Row", "ST_DMExecution_A")
+            {
+                Description = "If any party members have 15 or more Ante, the first against the wall gets what they deserve.\nQueues the ability \"Hanging Judge\".",
                 Rarity = Rarity.Impossible,
                 Effects =
                 [
                     Effects.GenerateEffect(hasAnte, 15, Targeting.Unit_AllOpponents),
                     Effects.GenerateEffect(hangingVisEffect, 1, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(hangingEffects, 1, Targeting.Unit_AllOpponents),
-                    Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(queueHangingJudge, 1, Targeting.Slot_SelfSlot),
                 ],
             };
-            hanging.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
+            execution.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
+            execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Additional)]);
+
+            //EXCESS
+            Ability admission = new Ability("Admission", "ST_DMExcessAbility_A")
+            {
+                Description = "Removes Ante from all party members, then applies the amount removed to the weakest party member.",
+                AnimationTarget = Targeting.Spec_Unit_AllOpponents_Weakest,
+                Visuals = Visuals.Misery,
+                Rarity = Rarity.ImpossibleNoReroll,
+                Effects =
+                [
+                    Effects.GenerateEffect(noAnte, 1, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(anteByPrevious, 1, Targeting.Spec_Unit_AllOpponents_Weakest),
+                ]
+            };
+            admission.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Rem_Status_Ante"]);
+            admission.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_Weakest, ["Status_Ante"]);
+
+
+
+            UseSpecificAbilityByEntryEffect queueAdmission = ScriptableObject.CreateInstance<UseSpecificAbilityByEntryEffect>();
+            queueAdmission.usePrev = false;
+
+            ExtraAbilityInfo extraExcessAdmission = new()
+            {
+                ability = admission.GenerateEnemyAbility().ability,
+                rarity = Rarity.ImpossibleNoReroll,
+            };
+            queueAdmission._parentalAbility = extraExcessAdmission;
+
+            PerformEffectPassiveAbility dmExcess = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            dmExcess.name = "DMExcess_PA";
+            dmExcess._passiveName = "Excess (Admission)";
+            dmExcess.m_PassiveID = "Excess_PA";
+            dmExcess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
+            dmExcess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"Admission\".";
+            dmExcess._characterDescription = "nah";
+            dmExcess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
+            dmExcess.effects = [
+                Effects.GenerateEffect(queueAdmission,1,Targeting.Slot_SelfSlot),
+                ];
+            dmExcess.doesPassiveTriggerInformationPanel = true;
+
+
+
+            Passives.AddCustomPassiveToPool("DMExcess_PA", "Excess (Admission)", dmExcess);
+
+
+
 
             ExtraAbilityInfo deathmatchExtra = new()
             {
-                ability = hanging.GenerateEnemyAbility().ability,
+                ability = execution.GenerateEnemyAbility().ability,
                 rarity = Rarity.ImpossibleNoReroll,
             };
 
-            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, Passives.BonusAttackGenerator(deathmatchExtra)]);
+            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra)]);
 
             deathmatchEnemy.AddEnemyAbilities([
                 judgement,
                 prosecution,
                 trial,
                 error,
+                hangingJudge,
+                admission,
                 ]);
 
             deathmatchEnemy.AddEnemy(true, false, false);
+
+
+            //achievements
+            string achievementID = "DeathmatchBoss_ACH";
+            string unlockID = "Deathmatch_BOSS";
+            string itemID = "SentientArcanite_TW";
+
+            BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, itemID);
+            UnlockableModData unlockData = new UnlockableModData(unlockID);
+            unlockData.hasModdedAchievementUnlock = true;
+            unlockData.moddedAchievementID = achievementID;
+            unlockData.hasItemUnlock = true;
+            unlockData.items = [itemID];
+                
+            ListedUnlockCheck unlockCheck = ScriptableObject.CreateInstance<ListedUnlockCheck>();
+            unlockCheck.unlockID = unlockID;
+            unlockCheck.unlockData = unlockData;
+            Unlocks.AddUnlock_BeatBoss(unlockCheck);
+
+            ModdedAchievements bossAchievement = new ModdedAchievements("The Antagonist", "Extinguish the Deathmatch.", ResourceLoader.LoadSprite("Ach_Boss_Deathmatch", null, 32, null), achievementID);
+            bossAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.BossesTitleLabel);
+            string[] deathmatchTips =
+            [
+                "We should just give up. We're not cut out for this... what? What am I saying?",
+                "Wow, you REALLY need to make better choices in friends.",
+                "Was that us? That can't have been us. I'm sorry."
+            ];
+            BrutalAPI.Dialogues.AddCustom_GameOver_BossLines("Deathmatch_BOSS", deathmatchTips);
         }
     }
 }

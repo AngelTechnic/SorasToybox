@@ -143,6 +143,22 @@ namespace SorasToybox.Fools
             //The End of Days/An Age/An Era/Time
             Ability theEnd1 = new Ability("The End of Days", "ST_MercurieTheEnd1_A")
             {
+                Description = "Deal 3 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
+                AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
+                Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
+                Visuals = Visuals.FingerGuns,
+                AnimationTarget = Targeting.Slot_OpponentSides,
+                Effects =
+                [
+                    Effects.GenerateEffect(normalDamage, 3, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(atrophyAgain, 1, Targeting.Unit_AllOpponents),
+                ],
+            };
+            theEnd1.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            theEnd1.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Atrophy"]);
+
+            Ability theEnd2 = new Ability("The End of An Age", "ST_MercurieTheEnd2_A")
+            {
                 Description = "Deal 4 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
                 Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
@@ -154,10 +170,10 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Unit_AllOpponents),
                 ],
             };
-            theEnd1.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_3_6)]);
-            theEnd1.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Atrophy"]);
+            theEnd2.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_3_6)]);
+            theEnd2.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Atrophy"]);
 
-            Ability theEnd2 = new Ability("The End of An Age", "ST_MercurieTheEnd2_A")
+            Ability theEnd3 = new Ability("The End of An Era", "ST_MercurieTheEnd3_A")
             {
                 Description = "Deal 6 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
@@ -170,35 +186,19 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Unit_AllOpponents),
                 ],
             };
-            theEnd2.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_3_6)]);
-            theEnd2.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Atrophy"]);
-
-            Ability theEnd3 = new Ability("The End of An Era", "ST_MercurieTheEnd3_A")
-            {
-                Description = "Deal 8 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
-                AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
-                Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
-                Visuals = Visuals.FingerGuns,
-                AnimationTarget = Targeting.Slot_OpponentSides,
-                Effects =
-                [
-                    Effects.GenerateEffect(normalDamage, 8, Targeting.Slot_OpponentSides),
-                    Effects.GenerateEffect(atrophyAgain, 1, Targeting.Unit_AllOpponents),
-                ],
-            };
             theEnd3.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_7_10)]);
             theEnd3.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Atrophy"]);
 
             Ability theEnd4 = new Ability("The End of Time", "ST_MercurieTheEnd4_A")
             {
-                Description = "Deal 10 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
+                Description = "Deal 7 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
                 Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.FingerGuns,
                 AnimationTarget = Targeting.Slot_OpponentSides,
                 Effects =
                 [
-                    Effects.GenerateEffect(normalDamage, 10, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(normalDamage, 7, Targeting.Slot_OpponentSides),
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Unit_AllOpponents),
                 ],
             };

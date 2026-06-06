@@ -1,9 +1,11 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UIElements.Experimental;
 
 namespace SorasToybox.Items
 {
@@ -25,10 +27,10 @@ namespace SorasToybox.Items
                 Description = "Gain Karmic as a passive.\nOn receiving any damage, gain 1 Ante.",
                 IsShopItem = false,
                 ShopPrice = 7,
-                StartsLocked = false,
+                StartsLocked = true,
 
                 Icon = ResourceLoader.LoadSprite("item_setset"),
-                OnUnlockUsesTHE = true,
+                OnUnlockUsesTHE = false,
                 //gives this passive to user
                 EquippedModifiers = [wearablePassive],
                 //Trigger on...?
@@ -40,6 +42,27 @@ namespace SorasToybox.Items
                 ]
             };
             ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(sufferingBuildsCharacter.item, new ItemModdedUnlockInfo(sufferingBuildsCharacter.Item_ID, ResourceLoader.LoadSprite("item_setset_locked", null, 32, null), "SorasToybox_Karma_Antagonist_ACH"));
+            //unlock this
+            string achievementID = "SorasToybox_Karma_Antagonist_ACH";
+            string unlockID = "SorasToybox_Karma_Antagonist_Unlock";
+
+
+
+            BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, sufferingBuildsCharacter.Item_ID);
+
+            UnlockableModData unlockData = new UnlockableModData(unlockID)
+            {
+                hasModdedAchievementUnlock = true,
+                moddedAchievementID = achievementID,
+                hasItemUnlock = true,
+                items = [sufferingBuildsCharacter.Item_ID],
+            };
+
+            FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
+            unlockCheck.AddUnlockData("Karma_CH", unlockData);
+
+            ModdedAchievements unlockAchievement = new ModdedAchievements("Setset", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Karma", null, 32, null), achievementID);
+            unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLable", "The Antagonist");
         } 
     }
 }

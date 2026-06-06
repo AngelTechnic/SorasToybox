@@ -166,14 +166,65 @@ namespace SorasToybox.Enemies
 
             burningShame.PrepareEnemyPrefab("Assets/ToyboxEnemies/Burning Shame/BurningShame Enemy.prefab", SorasToybox.assetbundle, null);
 
+            //Excess setup
+            StatusEffect_Apply_Effect doAlacrity = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            doAlacrity._Status = StatusField.GetCustomStatusEffect("Alacrity_ID");
+
+            DirectDeathEffect tripsOnABananaPeelAndDies = ScriptableObject.CreateInstance<DirectDeathEffect>();
+
+            Ability template = new Ability("I Only See Evil In You", "ST_BurningShameExcess_A")
+            {
+                Description = "Grants the strongest enemy 1 Alacrity. Self-destructs.",
+                Cost = [],
+                Visuals = Visuals.Bell,
+                AnimationTarget = Targeting.Spec_Unit_AllAllies_Strongest,
+                Effects =
+                [
+                    Effects.GenerateEffect(doAlacrity, 1, Targeting.Spec_Unit_AllAllies_Strongest),
+                    Effects.GenerateEffect(tripsOnABananaPeelAndDies, 1, Targeting.Slot_SelfSlot),
+                ],
+                Rarity = Rarity.Impossible,
+                Priority = Priority.VerySlow,
+            };
+            template.AddIntentsToTarget(Targeting.Spec_Unit_AllAllies_Strongest, ["Status_Alacrity"]);
+            template.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_Death)]);
+
+            UseSpecificAbilityByEntryEffect queueacro = ScriptableObject.CreateInstance<UseSpecificAbilityByEntryEffect>();
+            queueacro.usePrev = false;
+            PerformEffectPassiveAbility excess = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            excess.name = "Excess_Shame_PA";
+            excess._passiveName = "Excess (I Only See Evil In You)";
+            excess.m_PassiveID = "Excess_PA";
+            excess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
+            excess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"I Only See Evil In You\".";
+            excess._characterDescription = "nah";
+            excess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
+            excess.effects = [
+                Effects.GenerateEffect(queueacro,1,Targeting.Slot_SelfSlot),
+                ];
+
+            excess.doesPassiveTriggerInformationPanel = true;
+            ExtraAbilityInfo extraAbilityInfo = new ExtraAbilityInfo();
+            extraAbilityInfo.ability = template.ability;
+            extraAbilityInfo.cost = new ManaColorSO[]
+            {
+                Pigments.Purple,
+                Pigments.Purple
+            };
+            extraAbilityInfo.rarity = Rarity.ImpossibleNoReroll;
+            queueacro._parentalAbility = extraAbilityInfo;
+            Passives.AddCustomPassiveToPool("Excess_Shame_PA", "Excess (I Only See Evil In You)", excess);
+
+
             //adding some passives. Excess and bonus suite have to wait for now.
-            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
+            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), excess, CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
 
             burningShame.AddEnemyAbilities(
                 [
                     imNotInTheWrongHere,
                     dontHideFromMe,
                     yourFaultForever,
+                    template,
                 ]);
 
 
