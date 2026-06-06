@@ -12,6 +12,7 @@
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPearl.png" />
+    <None Remove="Assets\Enemies\Bosses\DeathmatchPortal.png" />
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
@@ -80,6 +81,7 @@
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchPearl.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchPortal.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\overworldburningshame.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />

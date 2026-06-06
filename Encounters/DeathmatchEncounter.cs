@@ -27,6 +27,7 @@ namespace SorasToybox.Encounters
                 "Deathmatch_BOSS",
             ], [2]);
             deathmatchBoss.AddEncounterToDataBases();
+            LoadedDBsHandler._PortalDB.AddBackgroundPortal("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPortal", new Vector2?(new Vector2(0.5f, 0f)), 50, null));
             EnemyEncounterUtils.AddEncounterToCustomZoneSelector("Deathmatch_BOSS", 0, "TheAbyss_Zone3", BundleDifficulty.Boss);
         }
     }
