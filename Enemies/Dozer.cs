@@ -1,4 +1,6 @@
-﻿using BrutalAPI;
+﻿using BepInEx;
+using BrutalAPI;
+using FMOD;
 using SorasToybox.CustomEffects;
 using System;
 using System.Collections.Generic;
@@ -10,6 +12,7 @@ namespace SorasToybox.Enemies
 {
     public class Dozer
     {
+        //thanks april
         public class DozerDynamicMusicEffect : EffectSO
         {
             public static int Amount = 0;
@@ -18,11 +21,57 @@ namespace SorasToybox.Enemies
             public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
             {
                 exitAmount = 0;
-                if (CombatManager.Instance._stats.audioController.MusicCombatEvent.getParameterByName("DozerGoesWoke", out float num) == FMOD.RESULT.OK)
+                bool GOING = Amount > 0;
+                if (Add) Amount++;
+                else Amount--;
+                if ((Amount > 0) == GOING) return Amount > 0;
+                if (Amount > 0)
                 {
-                    CombatManager.Instance._stats.audioController.MusicCombatEvent.setParameterByName("DozerGoesWoke", Add ? num + entryVariable : (entryVariable > num ? 0 : num - entryVariable));
+                    if (changeMusic != null)
+                    {
+                        try { changeMusic.Abort(); } catch { UnityEngine.Debug.LogWarning("black star thread failed to shut down."); }
+                    }
+                    changeMusic = new System.Threading.Thread(GO);
+                    changeMusic.Start();
                 }
-                return true;
+                else
+                {
+                    if (changeMusic != null)
+                    {
+                        try { changeMusic.Abort(); } catch { UnityEngine.Debug.LogWarning("black star thread failed to shut down."); }
+                    }
+                    changeMusic = new System.Threading.Thread(STOP);
+                    changeMusic.Start();
+                }
+                return Amount > 0;
+            }
+
+            public static System.Threading.Thread changeMusic;
+            public static void GO()
+            {
+                int start = 0;
+                if (CombatManager.Instance._stats.audioController.MusicCombatEvent.getParameterByName("DozerGoesWoke", out float num) == RESULT.OK) start = (int)num;
+                //UnityEngine.Debug.Log("going: " + start);
+                for (int i = start; i <= 100 && Amount > 0; i++)
+                {
+                    CombatManager.Instance._stats.audioController.MusicCombatEvent.setParameterByName("DozerGoesWoke", i);
+                    System.Threading.Thread.Sleep(20);
+                    //if (i > 95) UnityEngine.Debug.Log("we;re getting there properly");
+                }
+                //UnityEngine.Debug.Log("done");
+            }
+            public static void STOP()
+            {
+                int start = 0;
+                if (CombatManager.Instance._stats.audioController.MusicCombatEvent.getParameterByName("DozerGoesWoke", out float num) == RESULT.OK) start = (int)num;
+                //UnityEngine.Debug.Log("going: " + start);
+                for (int i = start; i >= 0 && Amount <= 0; i--)
+                {
+                    CombatManager.Instance._stats.audioController.MusicCombatEvent.setParameterByName("DozerGoesWoke", i);
+                    System.Threading.Thread.Sleep(20);
+                    //if (i < 5) UnityEngine.Debug.Log("we;re getting there properly");
+                }
+                //UnityEngine.Debug.Log("done");
             }
         }
         public static void Add()
@@ -208,10 +257,6 @@ namespace SorasToybox.Enemies
             //moving the awake dozer passives down here so they get loaded after everything else is set up
             dozerAwake.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Itchy_PA"), patientPassive]);
             dozerAwake.AddEnemy(true, true, false);
-
-            Debug.Log("Dozer loaded");
-
-
         }
     }
 }
