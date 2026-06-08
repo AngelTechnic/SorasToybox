@@ -174,7 +174,7 @@ namespace SorasToybox.Enemies
             //Dozer goes back to sleep
             Ability dozerAwakeEyesClosed = new Ability("Eyes Closed", "ST_DozerEyesClosed_A")
             {
-                Description = "Back to bed.",
+                Description = "Back to bed.\n\"will you wake up tomorrow?\"",
                 Rarity = Rarity.Impossible,
                 Visuals = dozerEyesClosedVisuals,
                 AnimationTarget = Targeting.Slot_SelfSlot,
