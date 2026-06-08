@@ -1,4 +1,6 @@
-﻿using BrutalAPI;
+﻿using BepInEx;
+using BrutalAPI;
+using FMOD;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomPassives;
 using System;
@@ -12,6 +14,22 @@ namespace SorasToybox.Enemies
 {
     public class BurningShame
     {
+
+        public class ShameDynamicMusicEffect : EffectSO
+        {
+            public static int Amount = 0;
+            public static void Reset() => Amount = 0;
+            public bool Add = true;
+            public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
+            {
+                exitAmount = 0;
+                if (CombatManager.Instance._stats.audioController.MusicCombatEvent.getParameterByName("DeathmatchShames", out float num) == FMOD.RESULT.OK)
+                {
+                    CombatManager.Instance._stats.audioController.MusicCombatEvent.setParameterByName("DeathmatchShames", Add ? num + entryVariable : (entryVariable > num ? 0 : num - entryVariable));
+                }
+                return true;
+            }
+        }
         public static void  Add()
         {
             Enemy burningShame = new Enemy("Burning Shame", "BurningShame_EN")
@@ -26,6 +44,21 @@ namespace SorasToybox.Enemies
                 DeathSound = "event:/SorasSFX/Fools/KarmaDie",
             };
 
+            //Dynamic music implementing, borrowed from Prioress code
+            ShameDynamicMusicEffect add = ScriptableObject.CreateInstance<ShameDynamicMusicEffect>();
+            add.Add = true;
+            ShameDynamicMusicEffect remove = ScriptableObject.CreateInstance<ShameDynamicMusicEffect>();
+            remove.Add = false;
+
+
+            burningShame.CombatEnterEffects = new EffectInfo[]
+            {
+                Effects.GenerateEffect(add,1),
+            };
+            burningShame.CombatExitEffects = new EffectInfo[]
+            {
+                Effects.GenerateEffect(remove,1),
+            };
 
             StatusEffect_Apply_Effect divineProtect = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             divineProtect._Status = StatusField.DivineProtection;

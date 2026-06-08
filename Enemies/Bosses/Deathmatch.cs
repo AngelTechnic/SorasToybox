@@ -77,6 +77,18 @@ namespace SorasToybox.Enemies
             SwapToOneSideEffect swapRight = ScriptableObject.CreateInstance<SwapToOneSideEffect>();
             swapRight._swapRight = true;
 
+            CasterInOneEdgeCheckEffect CheckLeft = ScriptableObject.CreateInstance<CasterInOneEdgeCheckEffect>();
+            CheckLeft._right = false;
+
+            CasterInOneEdgeCheckEffect CheckRight = ScriptableObject.CreateInstance<CasterInOneEdgeCheckEffect>();
+            CheckRight._right = true;
+
+
+            PreviousEffectCondition PreviousTrue = ScriptableObject.CreateInstance<PreviousEffectCondition>();
+            PreviousTrue.wasSuccessful = true;
+
+            PreviousEffectCondition PreviousFalse = ScriptableObject.CreateInstance<PreviousEffectCondition>();
+            PreviousFalse.wasSuccessful = false;
 
             //Instinct passive and whatnot 
             StatusEffect_Apply_Effect anteUp = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
@@ -180,11 +192,13 @@ namespace SorasToybox.Enemies
 
             Ability judgement = new Ability("Judgement", "ST_DMJudgement_A")
             {
-                Description = "Makes the Opposing party member deal a little damage to their left party member, then gain Ante equal to the result. Moves Left.",
+                Description = "Makes the Opposing party member deal a little damage to their left party member, then gain Ante equal to the result. Moves Left, assuming the grid wraps around.",
                 Effects =
                 [
                     Effects.GenerateEffect(judgementEffect, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(CheckLeft, 1, Targeting.Slot_SelfSlot, PreviousFalse),
+                    Effects.GenerateEffect(ScriptableObject.CreateInstance<MirrorPositionEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([true, false], [1, 2])),
                 ],
                 Rarity = Rarity.Uncommon,
                 Visuals = Visuals.Bellow,
@@ -194,11 +208,13 @@ namespace SorasToybox.Enemies
 
             Ability prosecution = new Ability("Prosecution", "ST_DMProsecution_A")
             {
-                Description = "Makes the Opposing party member deal a little damage to their right party member, then gain Ante equal to the result. Moves Right.",
+                Description = "Makes the Opposing party member deal a little damage to their right party member, then gain Ante equal to the result. Moves Right, assuming the grid wraps around.",
                 Effects =
                 [
                     Effects.GenerateEffect(prosecutionEffect, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(swapRight, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(CheckRight, 1, Targeting.Slot_SelfSlot, PreviousFalse),
+                    Effects.GenerateEffect(ScriptableObject.CreateInstance<MirrorPositionEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([true, false], [1, 2])),
                 ],
                 Rarity = Rarity.Uncommon,
                 Visuals = Visuals.Bellow,
@@ -208,25 +224,29 @@ namespace SorasToybox.Enemies
 
             Ability trial = new Ability("Trial", "ST_DMTrial_A")
             {
-                Description = "Moves the Left party member to the Right, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\nMoves Right.",
+                Description = "Moves the Left party member to the Right, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\nMoves Right, assuming the grid wraps around.",
                 Rarity = Rarity.VeryRare,
                 Effects =
                 [
                     Effects.GenerateEffect(swapRight, 1, Targeting.Slot_OpponentLeft),
                     Effects.GenerateEffect(trialerrorEffect, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(swapRight, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(CheckRight, 1, Targeting.Slot_SelfSlot, PreviousFalse),
+                    Effects.GenerateEffect(ScriptableObject.CreateInstance<MirrorPositionEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([true, false], [1, 2])),
                 ],
             };
 
             Ability error = new Ability("Error", "ST_DMError_A")
             {
-                Description = "Moves the Right party member to the Left, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\nMoves Left.",
+                Description = "Moves the Right party member to the Left, then makes the Opposing party member deal almost no damage to themselves, gaining Ante equal to the result.\nMoves Left, assuming the grid wraps around.",
                 Rarity = Rarity.VeryRare,
                 Effects =
                 [
                     Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_OpponentRight),
                     Effects.GenerateEffect(trialerrorEffect, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(CheckLeft, 1, Targeting.Slot_SelfSlot, PreviousFalse),
+                    Effects.GenerateEffect(ScriptableObject.CreateInstance<MirrorPositionEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([true, false], [1, 2])),
                 ],
             };
 
@@ -309,7 +329,7 @@ namespace SorasToybox.Enemies
                 Description = "Removes Ante from all party members, then applies the amount removed to the weakest party member.",
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_Weakest,
                 Visuals = Visuals.Misery,
-                Rarity = Rarity.ImpossibleNoReroll,
+                Rarity = Rarity.ImpossibleNoReroll, 
                 Effects =
                 [
                     Effects.GenerateEffect(noAnte, 1, Targeting.Unit_AllOpponents),

@@ -14,7 +14,7 @@ namespace SorasToybox.Encounters
             Portals.AddPortalSign("Deathmatch_Sign", ResourceLoader.LoadSprite("TimelineDeathmatchBoss", null, 32, null), Portals.BossIDColor);
             EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")
             {
-                MusicEvent = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/Killswitch",
+                MusicEvent = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/In The Depths",
                 RoarEvent = LoadedAssetsHandler.GetCharacter("Lilith_CH").dxSound,
                 UsesCustomOverworldRoom = true,
                 CustomOverworldRoomID = "AbyssBossPortalRoom",
