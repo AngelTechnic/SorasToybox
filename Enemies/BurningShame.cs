@@ -213,13 +213,13 @@ namespace SorasToybox.Enemies
                 AnimationTarget = Targeting.Spec_Unit_AllAllies_Strongest,
                 Effects =
                 [
-                    Effects.GenerateEffect(doAlacrity, 1, Targeting.Spec_Unit_AllAllies_Strongest),
+                    Effects.GenerateEffect(doAlacrity, 1, Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false)),
                     Effects.GenerateEffect(tripsOnABananaPeelAndDies, 1, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.Impossible,
                 Priority = Priority.VerySlow,
             };
-            template.AddIntentsToTarget(Targeting.Spec_Unit_AllAllies_Strongest, ["Status_Alacrity"]);
+            template.AddIntentsToTarget(Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false), ["Status_Alacrity"]);
             template.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Damage_Death)]);
 
             UseSpecificAbilityByEntryEffect queueacro = ScriptableObject.CreateInstance<UseSpecificAbilityByEntryEffect>();
