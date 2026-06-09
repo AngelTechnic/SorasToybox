@@ -51,6 +51,17 @@ namespace SorasToybox.Fools
             DamageEffect damageDeadIsTrue = ScriptableObject.CreateInstance<DamageEffect>();
             damageDeadIsTrue._returnKillAsSuccess = true;
 
+            //funny sound effect from mythos if it exists
+            string deathSound = "";
+            if (SorasToybox.CrossMod.MythosFriends)
+            {
+                deathSound = LoadedAssetsHandler.GetEnemy("DimensionalShambler_EN").deathSound;
+            } 
+            else
+            {
+                deathSound = LoadedAssetsHandler.GetEnemy("Estelle_EN").deathSound;
+            }
+
 
             Character mercurie = new Character("Mercurie", "Mercurie_CH")
             {
@@ -62,7 +73,7 @@ namespace SorasToybox.Fools
                 BackSprite = ResourceLoader.LoadSprite("mercurie_back.png", new Vector2(0.5f, 0f), 32),
                 OverworldSprite = ResourceLoader.LoadSprite("mercurie_overworld.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = "event:/EstelleHurt", 
-                DeathSound = "event:/EstelleDie", 
+                DeathSound = deathSound, 
                 DialogueSound = "event:/EstelleRoar", 
                 UnitTypes = ["FemaleID", "Zoincaillan", "Angel"],
             };

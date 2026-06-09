@@ -197,6 +197,7 @@ namespace SorasToybox.Enemies
             };
             yourFaultForever.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), "Rem_Status_Sealed", "Status_Ante", "Status_Sealed"]);
 
+            //dont ask why i prep the prefab here of all places idc
             burningShame.PrepareEnemyPrefab("Assets/ToyboxEnemies/Burning Shame/BurningShame Enemy.prefab", SorasToybox.assetbundle, null);
 
             //Excess setup

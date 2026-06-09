@@ -16,11 +16,12 @@ using SorasToybox.Encounters;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.3.2")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.3.3")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("AnimatedGlitch.GlitchsFreaks", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("Tairbaz.MythosFriends", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("sofanthiel.sofanthielsfools", BepInDependency.DependencyFlags.SoftDependency)]
@@ -33,6 +34,7 @@ namespace SorasToybox //Mod namespace
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
+            public static bool GlitchsFreaks = false;
             public static bool MythosFriends = false;
             public static bool SaltEnemies = false;
             public static bool Sofanthiels = false;
@@ -45,6 +47,7 @@ namespace SorasToybox //Mod namespace
 
                     if (metadata.GUID == "000.saltenemies") { SaltEnemies = true; }
                     if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
+                    if (metadata.GUID == "AnimatedGlitch.GlitchsFreaks") { GlitchsFreaks = true;  }
                     if (metadata.GUID == "Tairbaz.MythosFriends") { MythosFriends = true; }
                     if (metadata.GUID == "sofanthiel.sofanthielsfools") { Sofanthiels = true; }
                     if (metadata.GUID == "asdfagi.A_Apocrypha") { AApocrypha = true; }
