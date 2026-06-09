@@ -21,6 +21,7 @@ namespace SorasToybox //Mod namespace
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("TairbazPeep.EnemyPack", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.GlitchsFreaks", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("Tairbaz.MythosFriends", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
@@ -34,6 +35,7 @@ namespace SorasToybox //Mod namespace
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
+            public static bool EnemyPack = false;
             public static bool GlitchsFreaks = false;
             public static bool MythosFriends = false;
             public static bool SaltEnemies = false;
@@ -47,6 +49,7 @@ namespace SorasToybox //Mod namespace
 
                     if (metadata.GUID == "000.saltenemies") { SaltEnemies = true; }
                     if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
+                    if (metadata.GUID == "TairbazPeep.EnemyPack") { EnemyPack = true; }
                     if (metadata.GUID == "AnimatedGlitch.GlitchsFreaks") { GlitchsFreaks = true;  }
                     if (metadata.GUID == "Tairbaz.MythosFriends") { MythosFriends = true; }
                     if (metadata.GUID == "sofanthiel.sofanthielsfools") { Sofanthiels = true; }
@@ -139,7 +142,17 @@ namespace SorasToybox //Mod namespace
             //Add items
             SentientArcanite.Add();
             Setset.Add();
-            //BastardNimbus.Add();
+            //Doula Unlocks
+            if (CrossMod.EnemyPack)
+            {
+                BastardNimbus.Add();
+            }
+            //March Unlocks
+            if (CrossMod.GlitchsFreaks)
+            {
+                GhostPepper.Add();
+            }
+            //Sofanthiels Deathmatch Unlocks
             if (CrossMod.Sofanthiels)
             {
                 Roughly3SnatchedChains.Add();

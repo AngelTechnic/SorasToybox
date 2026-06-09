@@ -11,6 +11,12 @@
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
+    <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
+    <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
+    <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
+    <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
+    <None Remove="Assets\Achievements\March Unlocks\MarchPearl.png" />
+    <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach _Osman_Karma.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPearl.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPortal.png" />
@@ -50,6 +56,8 @@
     <None Remove="Assets\Intents\prop_intent.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
+    <None Remove="Assets\Items\item_ghostpepper.png" />
+    <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
@@ -58,6 +66,7 @@
     <None Remove="Assets\Passives\IconBonusSuiteFormless.png" />
     <None Remove="Assets\Passives\IconBonusSuiteImmaterial.png" />
     <None Remove="Assets\Passives\IconDeployment.png" />
+    <None Remove="Assets\Passives\IconFireskull.png" />
     <None Remove="Assets\Passives\IconPatient.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\Instinct.png" />
@@ -83,8 +92,14 @@
     <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\March Unlocks\MarchPearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach _Osman_Karma.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
-    <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchPearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\DeathmatchPearl.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchPortal.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\deathmatch_nameplate.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\deathmatch_splash.png" />
@@ -122,6 +137,8 @@
     <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
+    <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
@@ -130,6 +147,7 @@
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteFormless.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteImmaterial.png" />
     <EmbeddedResource Include="Assets\Passives\IconDeployment.png" />
+    <EmbeddedResource Include="Assets\Passives\IconFireskull.png" />
     <EmbeddedResource Include="Assets\Passives\IconPatient.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
     <EmbeddedResource Include="Assets\Passives\Instinct.png" />
@@ -445,8 +463,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Achievements\Heaven Unlocks\" />
-    <Folder Include="Assets\Achievements\Osman Sinnoks Unlocks\" />
     <Folder Include="Items\Unlocks\" />
   </ItemGroup>
 

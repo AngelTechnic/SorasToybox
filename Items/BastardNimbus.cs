@@ -16,25 +16,47 @@ namespace SorasToybox.Items
 
             //Burning (1) by retrieving from Firebird (salt enemies)
             ExtraPassiveAbility_Wearable_SMS iBleedFire = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
-            iBleedFire._extraPassiveAbility = Passives.GetCustomPassive("");
+            iBleedFire._extraPassiveAbility = Passives.GetCustomPassive("Blazing_PA"); 
 
             //Cold-Blooded
             ExtraPassiveAbility_Wearable_SMS butIllNeverBurn = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
-            butIllNeverBurn._extraPassiveAbility = Passives.GetCustomPassive("");
+            butIllNeverBurn._extraPassiveAbility = Passives.GetCustomPassive("MadeOfFire_PA");
 
             PerformEffect_Item rrod = new PerformEffect_Item("BastardNimbus_ID", null, false)
             {
                 Item_ID = "BastardNimbus_TW",
                 Name = "Bastard Nimbus",
                 Flavour = "<color=#" + redID + ">O</color>",
-                Description = "Gain Burning (1) and Cold-Blooded as passives. (WIP, doesn't do anything. Looks cool tho)",
+                Description = "Gain Blazing and Made Of Fire as passives.",
                 IsShopItem = false,
                 ShopPrice = 7,
-                StartsLocked = false,
-
+                StartsLocked = true,
+                EquippedModifiers = [iBleedFire, butIllNeverBurn],
                 Icon = ResourceLoader.LoadSprite("item_bastard_nimbus"),
             };
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(rrod.item, new ItemModdedUnlockInfo(rrod.Item_ID, ResourceLoader.LoadSprite("item_bastard_nimbus_locked", null, 32, null), "SorasToybox_Karma_Dreamer_ACH"));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(rrod.item, new ItemModdedUnlockInfo(rrod.Item_ID, ResourceLoader.LoadSprite("item_bastard_nimbus_locked", null, 32, null), "SorasToybox_Karma_Abstraction_ACH"));
+
+            //unlock this
+            string achievementID = "SorasToybox_Karma_Abstraction_ACH";
+            string unlockID = "SorasToybox_Karma_Abstraction_Unlock";
+
+
+
+            BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, rrod.Item_ID);
+
+            UnlockableModData unlockData = new UnlockableModData(unlockID)
+            {
+                hasModdedAchievementUnlock = true,
+                moddedAchievementID = achievementID,
+                hasItemUnlock = true,
+                items = [rrod.Item_ID],
+            };
+
+            FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("DoulaBoss", ResourceLoader.LoadSprite("DoulaPearl", null, 32, null));
+            unlockCheck.AddUnlockData("Karma_CH", unlockData);
+
+            ModdedAchievements unlockAchievement = new ModdedAchievements("Bastard Nimbus", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Karma", null, 32, null), achievementID);
+            unlockAchievement.AddNewAchievementToCUSTOMCategory("AbstractionTitleLabel", "The Abstraction");
         }
     }
 }

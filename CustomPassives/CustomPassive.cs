@@ -126,6 +126,19 @@ namespace SorasToybox.CustomPassives
                 GlossaryPassives STItchyInfo = new GlossaryPassives("Itchy", "This enemy can't wait to act. In response to any party member manually moving or using an ability, they will perform their next action, and then gain another to replace the one they just performed.", ResourceLoader.LoadSprite("passive_itchy"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STItchyInfo);
             }
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("MadeOfFire_PA"))
+            {
+                DamageTypeImmunityPassiveAbility fireproofPassive = ScriptableObject.CreateInstance<DamageTypeImmunityPassiveAbility>();
+                fireproofPassive.name = "MadeOfFire_PA";
+                fireproofPassive._passiveName = "Made Of Fire";
+                fireproofPassive.m_PassiveID = "MadeOfFire";
+                fireproofPassive.passiveIcon = ResourceLoader.LoadSprite("IconFireskull");
+                fireproofPassive._characterDescription = "This party member is unaffected by Fire and immune to fire damage.";
+                fireproofPassive._enemyDescription = "This enemy is unaffected by Fire and immune to fire damage.";
+                fireproofPassive.doesPassiveTriggerInformationPanel = false;
+                fireproofPassive._triggerOn = [TriggerCalls.OnBeingDamaged];
+                fireproofPassive._damageType = CombatType_GameIDs.Dmg_Fire.ToString();
+            }
         }
 
         // Bonus Suite: Multiple Bonus Attack Passive to replace Alt Attacks
