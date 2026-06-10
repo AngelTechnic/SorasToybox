@@ -63,6 +63,12 @@ namespace SorasToybox.Items
                 OnUnlockUsesTHE = false,
             };
 
+            ghostPepper.item._ItemTypeIDs =
+            [
+                "FoodID",
+                "Drink",
+            ];
+
             ItemUtils.AddItemToShopStatsCategoryAndGamePool(ghostPepper.item, new ItemModdedUnlockInfo(ghostPepper.Item_ID, ResourceLoader.LoadSprite("item_ghostpepper_locked", null, 32, null), "SorasToybox_Karma_Inevitable_ACH"));
             //unlock this
             string achievementID = "SorasToybox_Karma_Inevitable_ACH";

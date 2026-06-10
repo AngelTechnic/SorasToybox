@@ -10,6 +10,8 @@
     <None Remove="AssetBundles\sorastoybox" />
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
+    <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
+    <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
@@ -58,6 +60,8 @@
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_ghostpepper.png" />
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
+    <None Remove="Assets\Items\item_megahammer.png" />
+    <None Remove="Assets\Items\item_megahammer_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
@@ -91,6 +95,8 @@
     <EmbeddedResource Include="AssetBundles\sorastoybox" />
     <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Deathmatch.png" />
+    <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
@@ -139,6 +145,8 @@
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_megahammer.png" />
+    <EmbeddedResource Include="Assets\Items\item_megahammer_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />

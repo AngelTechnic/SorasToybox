@@ -62,7 +62,7 @@ namespace SorasToybox.Items
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Setset", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Karma", null, 32, null), achievementID);
-            unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLable", "The Antagonist");
+            unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
         } 
     }
 }

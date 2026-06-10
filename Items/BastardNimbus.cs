@@ -33,7 +33,13 @@ namespace SorasToybox.Items
                 StartsLocked = true,
                 EquippedModifiers = [iBleedFire, butIllNeverBurn],
                 Icon = ResourceLoader.LoadSprite("item_bastard_nimbus"),
+                OnUnlockUsesTHE = true,
             };
+            rrod.item._ItemTypeIDs =
+            [
+                ItemType_GameIDs.Magic.ToString(),
+            ];
+
             ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(rrod.item, new ItemModdedUnlockInfo(rrod.Item_ID, ResourceLoader.LoadSprite("item_bastard_nimbus_locked", null, 32, null), "SorasToybox_Karma_Abstraction_ACH"));
 
             //unlock this

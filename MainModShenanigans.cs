@@ -152,6 +152,12 @@ namespace SorasToybox //Mod namespace
             {
                 GhostPepper.Add();
             }
+            //Blue Skies Unlocks
+            if (CrossMod.SaltEnemies)
+            {
+                MegaHammer.Add();
+            }
+
             //Sofanthiels Deathmatch Unlocks
             if (CrossMod.Sofanthiels)
             {
