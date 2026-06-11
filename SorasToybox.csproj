@@ -12,6 +12,7 @@
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
@@ -58,6 +59,8 @@
     <None Remove="Assets\Intents\prop_intent.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
+    <None Remove="Assets\Items\item_entrenchingtool.png" />
+    <None Remove="Assets\Items\item_entrenchingtool_locked.png" />
     <None Remove="Assets\Items\item_ghostpepper.png" />
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
@@ -97,6 +100,7 @@
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
@@ -143,6 +147,8 @@
     <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_entrenchingtool.png" />
+    <EmbeddedResource Include="Assets\Items\item_entrenchingtool_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer.png" />
@@ -468,10 +474,6 @@
     <Reference Include="YarnSpinner.Unity">
       <HintPath>F:\SteamLibrary\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\Managed\YarnSpinner.Unity.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Items\Unlocks\" />
   </ItemGroup>
 
 </Project>

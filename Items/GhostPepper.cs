@@ -56,7 +56,7 @@ namespace SorasToybox.Items
                 SecondaryTriggerOn = [TriggerCalls.OnRoundFinished],
                 SecondaryEffects =
                 [
-                    Effects.GenerateEffect(devourVis, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(devourVis, 1, Targeting.Slot_AllySides),
                     Effects.GenerateEffect(leftBite, 1, Targeting.Slot_AllyLeft),
                     Effects.GenerateEffect(rightBite, 1, Targeting.Slot_AllyRight),
                 ],

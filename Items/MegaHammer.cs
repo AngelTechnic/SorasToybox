@@ -63,7 +63,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Karma_Dreamer_ACH";
             string unlockID = "SorasToybox_Karma_Dreamer_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(mcHammer.item, new ItemModdedUnlockInfo(mcHammer.Item_ID, ResourceLoader.LoadSprite("item_megahammer_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(mcHammer.item, new ItemModdedUnlockInfo(mcHammer.Item_ID, ResourceLoader.LoadSprite("item_megahammer_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, mcHammer.Item_ID);
 
