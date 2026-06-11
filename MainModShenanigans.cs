@@ -12,6 +12,7 @@ using SorasToybox.Items;
 using HarmonyLib;
 using UnityEngine;
 using SorasToybox.Encounters;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 
 namespace SorasToybox //Mod namespace
 {
@@ -141,7 +142,7 @@ namespace SorasToybox //Mod namespace
 
             //Add items
             SentientArcanite.Add();
-            Setset.Add();
+
             //Doula Unlocks
             if (CrossMod.EnemyPack)
             {
@@ -157,6 +158,11 @@ namespace SorasToybox //Mod namespace
             {
                 MegaHammer.Add();
             }
+            //DM Unlocks go here I think.
+            EntrenchingTool.Add();
+
+            //ST deathmatch unlocks
+            Setset.Add();
 
             //Sofanthiels Deathmatch Unlocks
             if (CrossMod.Sofanthiels)

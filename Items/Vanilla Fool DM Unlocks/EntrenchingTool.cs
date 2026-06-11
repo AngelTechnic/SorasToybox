@@ -27,6 +27,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
                 DoesPopUpInfo = true,
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_entrenchingtool"),
+                TriggerOn = TriggerCalls.OnWillApplyDamage,
                 SecondaryTriggerOn = [TriggerCalls.OnAbilityWillBeUsed],
                 SecondaryEffects =
                 [
