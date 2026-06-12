@@ -65,8 +65,6 @@
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
     <None Remove="Assets\Items\item_megahammer_locked.png" />
-    <None Remove="Assets\Items\item_milkshake.png" />
-    <None Remove="Assets\Items\item_milkshake_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
@@ -156,8 +154,8 @@
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer_locked.png" />
-    <EmbeddedResource Include="Assets\Items\item_milkshake.png" />
-    <EmbeddedResource Include="Assets\Items\item_milkshake_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_goldmilkshake.png" />
+    <EmbeddedResource Include="Assets\Items\item_goldmilkshake_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
