@@ -9,7 +9,7 @@ namespace SorasToybox.CustomEffects
     {
         public override bool MeetCondition(IEffectorChecks effector, object args)
         {
-            return effector.CurrentHealth <= 512;
+            return effector.CurrentHealth <= 222;
         }
     }
 }

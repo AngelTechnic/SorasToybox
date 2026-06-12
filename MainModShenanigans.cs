@@ -143,6 +143,11 @@ namespace SorasToybox //Mod namespace
             //Add items
             SentientArcanite.Add();
 
+
+            //remember character order is: Mercurie, Karma
+            //Osman Unlocks
+            Milkshake.Add();
+
             //Doula Unlocks
             if (CrossMod.EnemyPack)
             {

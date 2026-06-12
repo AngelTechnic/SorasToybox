@@ -19,7 +19,7 @@
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\MarchPearl.png" />
-    <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach _Osman_Karma.png" />
+    <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPearl.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPortal.png" />
@@ -65,6 +65,8 @@
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
     <None Remove="Assets\Items\item_megahammer_locked.png" />
+    <None Remove="Assets\Items\item_milkshake.png" />
+    <None Remove="Assets\Items\item_milkshake_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
@@ -107,7 +109,8 @@
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\MarchPearl.png" />
-    <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach _Osman_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\DeathmatchPearl.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchPortal.png" />
@@ -153,6 +156,8 @@
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_milkshake.png" />
+    <EmbeddedResource Include="Assets\Items\item_milkshake_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />

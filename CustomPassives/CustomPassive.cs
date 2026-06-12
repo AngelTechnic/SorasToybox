@@ -35,7 +35,7 @@ namespace SorasToybox.CustomPassives
             dismal._passiveName = "Dismal";
             dismal.m_PassiveID = "Dismal";
             dismal.passiveIcon = ResourceLoader.LoadSprite("passive_dismal.png");
-            dismal._characterDescription = "This party member does not take wrong pigment or overflow damage. Instead, their abilities will be cast from themselves.";
+            dismal._characterDescription = "This party member does not take wrong pigment or overflow damage. On using the wrong pigment to perform this party member's own abilities, this party member targets herself instead of her Opponent.";
             dismal._enemyDescription = "This enemy is begging for the embrace of death.";
             dismal._damageType = CombatType_GameIDs.Dmg_Pigment.ToString();
             dismal.doesPassiveTriggerInformationPanel = false;
