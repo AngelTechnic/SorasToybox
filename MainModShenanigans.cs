@@ -24,6 +24,7 @@ namespace SorasToybox //Mod namespace
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("TairbazPeep.EnemyPack", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.GlitchsFreaks", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("AnimatedGlitch.Siren", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("Tairbaz.MythosFriends", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("sofanthiel.sofanthielsfools", BepInDependency.DependencyFlags.SoftDependency)]
@@ -38,6 +39,7 @@ namespace SorasToybox //Mod namespace
             public static bool IntoTheAbyss = false;
             public static bool EnemyPack = false;
             public static bool GlitchsFreaks = false;
+            public static bool Siren = false;
             public static bool MythosFriends = false;
             public static bool SaltEnemies = false;
             public static bool Sofanthiels = false;
@@ -52,6 +54,7 @@ namespace SorasToybox //Mod namespace
                     if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
                     if (metadata.GUID == "TairbazPeep.EnemyPack") { EnemyPack = true; }
                     if (metadata.GUID == "AnimatedGlitch.GlitchsFreaks") { GlitchsFreaks = true;  }
+                    if (metadata.GUID == "AnimatedGlitch.Siren") { Siren = true; }
                     if (metadata.GUID == "Tairbaz.MythosFriends") { MythosFriends = true; }
                     if (metadata.GUID == "sofanthiel.sofanthielsfools") { Sofanthiels = true; }
                     if (metadata.GUID == "asdfagi.A_Apocrypha") { AApocrypha = true; }
@@ -66,16 +69,13 @@ namespace SorasToybox //Mod namespace
 
             //CROSSMOD thank you
             CrossMod.Check();
-            Logger.LogInfo("Salt Enemies Crossmod: " + CrossMod.SaltEnemies);
-            Logger.LogInfo("Into The Abyss Crossmod: " + CrossMod.IntoTheAbyss);
-            Logger.LogInfo("Sofanthiels Crossmod: " + CrossMod.Sofanthiels);
 
             //to add a seperate file, simply put the name of the .cs file and put .Add(); after. 
             //Characters
             //YourCharacter.Add(); //change this to whatever filename your fool's data is using. EX. TechCH.Add();
             //Add custom stuff
             CustomStatus.Add();
-            CustomPassive.Add();
+            CustomPassives.CustomPassive.Add();
             CustomPigments.Add();
             //Log custom stuff (Do config thing with it)
             Logger.LogInfo("Custom Effects in effect.");
@@ -110,6 +110,12 @@ namespace SorasToybox //Mod namespace
                 Dozer.Add();
             }
 
+
+            if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies && LoadedDBsHandler.StatusFieldDB._StatusEffects.ContainsKey("Destabilized_ID"))
+            {
+                HumorIrid.Add();
+            }
+
             if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends)
             {
                 Primus.Add();
@@ -127,6 +133,7 @@ namespace SorasToybox //Mod namespace
             {
                 DozerEncounters.Add();
             }
+
 
             if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends)
             {

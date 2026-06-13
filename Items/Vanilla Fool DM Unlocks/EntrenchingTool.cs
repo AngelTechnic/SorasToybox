@@ -24,11 +24,12 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
                 Description = "This party member now deals 50% more damage, but will move randomly Left or Right when using an ability.",
                 IsShopItem = true,
                 ShopPrice = 10,
-                DoesPopUpInfo = true,
+                DoesPopUpInfo = false,
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_entrenchingtool"),
                 TriggerOn = TriggerCalls.OnWillApplyDamage,
                 SecondaryTriggerOn = [TriggerCalls.OnAbilityWillBeUsed],
+                SecondaryDoesPopUpInfo = true,
                 SecondaryEffects =
                 [
                     Effects.GenerateEffect(rocketJump, 1, Targeting.Slot_SelfSlot),

@@ -141,6 +141,33 @@ namespace SorasToybox.CustomPassives
             }
         }
 
+        //Bloat Generator thank GOD
+        public static BasePassiveAbilitySO BloatGenerator(int amount)
+        {
+            return GetOrCreatePassive(GeneratedBloat, amount, delegate (int x)
+            {
+                StatusEffect_Apply_Effect applyEdema = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+                applyEdema._Status = StatusField.GetCustomStatusEffect("Edema_ID");
+                //PercentageEffectCondition
+                PerformEffectPassiveAbility performEffectPassiveAbility = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                performEffectPassiveAbility.name = $"Bloat_{x}_PA";
+                performEffectPassiveAbility.m_PassiveID = "Bloat_ID";
+                performEffectPassiveAbility._passiveName = $"Bloat ({x})";
+                performEffectPassiveAbility._characterDescription = $"This character gains {x} Edema at the end of each round.";
+                performEffectPassiveAbility._enemyDescription = $"This enemy gains {x} Edema at the end of each round.";
+                performEffectPassiveAbility.passiveIcon = ResourceLoader.LoadSprite("bloatPassive.png");
+                performEffectPassiveAbility._triggerOn = new TriggerCalls[1] { TriggerCalls.OnRoundFinished };
+                performEffectPassiveAbility.effects = new EffectInfo[1] {
+                    Effects.GenerateEffect(applyEdema, x, Targeting.Slot_SelfSlot),
+                };
+                performEffectPassiveAbility.conditions = new EffectorConditionSO[0] { };
+                performEffectPassiveAbility.doesPassiveTriggerInformationPanel = true;
+                performEffectPassiveAbility.specialStoredData = LoadedDBsHandler.MiscDB.GetUnitStoreData("Bloat_SV");
+                return performEffectPassiveAbility;
+            });
+        }
+
+
         // Bonus Suite: Multiple Bonus Attack Passive to replace Alt Attacks
         public static BasePassiveAbilitySO BonusSuiteGenerator(List<ExtraAbilityInfo> bonusAbilities)
         {
@@ -255,6 +282,8 @@ namespace SorasToybox.CustomPassives
             bonusSuitePassiveAbility._secondPerformConditions = typeConditions;
             return bonusSuitePassiveAbility;
         }
+
+        private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedBloat = [];
 
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedSaltLockstep = [];
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedSaltCadence = [];

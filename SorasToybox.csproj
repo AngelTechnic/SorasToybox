@@ -33,6 +33,7 @@
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
+    <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
@@ -68,6 +69,7 @@
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
+    <None Remove="Assets\Passives\bloatPassive.png" />
     <None Remove="Assets\Passives\Fragile.png" />
     <None Remove="Assets\Passives\IconBonusSuite.png" />
     <None Remove="Assets\Passives\IconBonusSuiteFormless.png" />
@@ -122,6 +124,7 @@
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineDozer.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineDozerWoke.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineHumorIridescent.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSlatecarnate.png" />
@@ -159,6 +162,7 @@
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
+    <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuite.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteFormless.png" />

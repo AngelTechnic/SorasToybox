@@ -12,6 +12,21 @@ namespace SorasToybox.Enemies
 {
     public class Deathmatch
     {
+        public class DeathmatchPinchMusicEffect : EffectSO
+        {
+            public static int Amount = 0;
+            public static void Reset() => Amount = 0;
+            public bool Add = true;
+            public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
+            {
+                exitAmount = 0;
+                if (CombatManager.Instance._stats.audioController.MusicCombatEvent.getParameterByName("DeathmatchPinch", out float num) == FMOD.RESULT.OK)
+                {
+                    CombatManager.Instance._stats.audioController.MusicCombatEvent.setParameterByName("DeathmatchPinch", Add ? num + entryVariable : (entryVariable > num ? 0 : num - entryVariable));
+                }
+                return true;
+            }
+        }
         public static void Add()
         {
             AddPassiveEffect youAndMeBabyAintNothinButMammals = ScriptableObject.CreateInstance<AddPassiveEffect>();
@@ -101,9 +116,16 @@ namespace SorasToybox.Enemies
             };
             LoadedDBsHandler.IntentDB.AddNewBasicIntent("Passive_Instinct", InstinctIntent);
 
+            DeathmatchPinchMusicEffect add = ScriptableObject.CreateInstance<DeathmatchPinchMusicEffect>();
+            add.Add = true;
+            DeathmatchAltMusicCondition amIWeakEnough = ScriptableObject.CreateInstance<DeathmatchAltMusicCondition>();
+
+
+
             TargetPerformEffectViaSubaction instinctEffects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             instinctEffects.effects = 
             [
+                Effects.GenerateEffect(add, 1, Targeting.Slot_SelfSlot, amIWeakEnough),
                 Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents), 
                 Effects.GenerateEffect(anteUp, 1, Targeting.Unit_AllOpponents)
             ];

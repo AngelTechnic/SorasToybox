@@ -92,7 +92,7 @@ namespace SorasToybox.Enemies
                 DamageSound = "event:/SorasSFX/Enemies/Dozer/DozerHurt",
                 DeathSound = "event:/SorasSFX/Enemies/Dozer/DozerDie",
             };
-            dozerSleep.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Reflex_PA")]);
+            dozerSleep.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassives.CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Reflex_PA")]);
             dozerSleep.PrepareEnemyPrefab("Assets/ToyboxEnemies/Dozer/Dozer Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Dozer/DozerGibs.prefab").GetComponent<ParticleSystem>());
 
 
@@ -255,7 +255,7 @@ namespace SorasToybox.Enemies
                 dozerAwakeEyesClosed,
                 ]);
             //moving the awake dozer passives down here so they get loaded after everything else is set up
-            dozerAwake.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Itchy_PA"), patientPassive]);
+            dozerAwake.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassives.CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Itchy_PA"), patientPassive]);
             dozerAwake.AddEnemy(true, true, false);
         }
     }

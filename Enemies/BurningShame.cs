@@ -251,7 +251,7 @@ namespace SorasToybox.Enemies
 
 
             //adding some passives. Excess and bonus suite have to wait for now.
-            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), excess, CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
+            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), excess, CustomPassives.CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
 
             burningShame.AddEnemyAbilities(
                 [

@@ -5,11 +5,11 @@ using SorasToybox;
 
 namespace SorasToybox.CustomEffects
 {
-    public class DeathmatchAltMusicCondition : EffectorConditionSO
+    public class DeathmatchAltMusicCondition : EffectConditionSO
     {
-        public override bool MeetCondition(IEffectorChecks effector, object args)
+        public override bool MeetCondition(IUnit caster, EffectInfo[] effects, int currentIndex)
         {
-            return effector.CurrentHealth <= 222;
+            return caster.CurrentHealth <= 175;
         }
     }
 }
