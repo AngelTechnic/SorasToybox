@@ -200,7 +200,8 @@ namespace SorasToybox.Enemies
                 ]
             };
             inviteStorm.AddIntentsToTarget(Targeting.Slot_AllySides, ["Passive_Blooded"]);
-            inviteStorm.AddIntentsToTarget(Targeting.AllUnits, ["Status_Destabilized"]);
+            inviteStorm.AddIntentsToTarget(Targeting.Unit_AllAllies, ["Status_Destabilized"]);
+            inviteStorm.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Destabilized"]);
             inviteStorm.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Rem_Status_Edema"]);
             inviteStorm.AddIntentsToTarget(Targeting.GenerateUnitTarget_Specific_Health(true, true, false, true), ["Status_Celerity"]);
 
