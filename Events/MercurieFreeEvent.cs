@@ -13,8 +13,8 @@ namespace SorasToybox.Events
             string text = "Mercurie_Dialogue";
             string text2 = "Mercurie_FreeFool";
             string text3 = "Mercurie_Sign";
-            OverworldRooms.Prepare_NPC_RoomPrefab("Assets/ToyboxRooms/Mercurie Room/MercurieFree.prefab", text2, SorasToybox.assetbundle);
-            YarnProgram yarnProgram = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxRooms/Mercurie Room/MercurieFreeFool.yarn"));
+            OverworldRooms.Prepare_NPC_RoomPrefab("Assets/ToyboxRooms/MercurieRoom/MercurieFree.prefab", text2, SorasToybox.assetbundle);
+            YarnProgram yarnProgram = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxRooms/MercurieRoom/MercurieFreeFool.yarn"));
             Dialogues.AddCustom_DialogueProgram(text, yarnProgram);
             Dialogues.CreateAndAddCustom_DialogueSO(text, yarnProgram, text, "SorasToybox.Mercurie.TryHire");
             Portals.AddPortalSign(text3, ResourceLoader.LoadSprite("mercurie_overworld", new Vector2(0.5f, 0f), 32), Portals.NPCIDColor);

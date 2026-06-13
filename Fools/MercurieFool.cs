@@ -74,7 +74,7 @@ namespace SorasToybox.Fools
                 OverworldSprite = ResourceLoader.LoadSprite("mercurie_overworld.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = "event:/EstelleHurt", 
                 DeathSound = deathSound, 
-                DialogueSound = "event:/EstelleRoar", 
+                DialogueSound = "event:/EstelleRoar",
                 UnitTypes = ["FemaleID", "Zoincaillan", "Angel"],
             };
             mercurie.GenerateMenuCharacter(ResourceLoader.LoadSprite("mercurie_menu.png"), ResourceLoader.LoadSprite("mercurie_menu_locked.png"));
@@ -305,6 +305,12 @@ namespace SorasToybox.Fools
             mercurie.AddLevelData(18, [accelerator4, theEnd4, clock4]);
 
             mercurie.AddCharacter(true, false);
+
+            SpeakerBundle speakerBundleMercurie = new SpeakerBundle();
+            speakerBundleMercurie.bundleTextColor = new Color32(96, 215, 181, 255);
+            speakerBundleMercurie.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
+            speakerBundleMercurie.portrait = ResourceLoader.LoadSprite("mercurie_talk", new Vector2(0.5f, 0f), 32);
+            var dia = Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[0]);
         }
     }
 }
