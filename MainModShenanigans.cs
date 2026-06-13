@@ -13,6 +13,7 @@ using HarmonyLib;
 using UnityEngine;
 using SorasToybox.Encounters;
 using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using SorasToybox.Events;
 
 namespace SorasToybox //Mod namespace
 {
@@ -87,7 +88,11 @@ namespace SorasToybox //Mod namespace
                 MercurieFool.Add();
             }
             KarmaFool.Add();
-            Logger.LogInfo("She's here.");
+
+            if (CrossMod.IntoTheAbyss)
+            {
+                MercurieFreeEvent.Add();
+            }    
 
             //Add enemies
             SEARCH.Add();
