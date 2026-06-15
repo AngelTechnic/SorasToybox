@@ -310,6 +310,17 @@ namespace SorasToybox.Fools
             speakerBundleMercurie.bundleTextColor = new Color32(96, 215, 181, 255);
             speakerBundleMercurie.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
             speakerBundleMercurie.portrait = ResourceLoader.LoadSprite("mercurie_talk", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleMercurieMad = new SpeakerBundle();
+            speakerBundleMercurieMad.bundleTextColor = new Color32(96, 215, 181, 255);
+            speakerBundleMercurieMad.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
+            speakerBundleMercurie.portrait = ResourceLoader.LoadSprite("mercurie_talkmad", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleMercurieFront = new SpeakerBundle();
+            speakerBundleMercurieFront.bundleTextColor = new Color32(96, 215, 181, 255);
+            speakerBundleMercurieFront.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
+            speakerBundleMercurieFront.portrait = ResourceLoader.LoadSprite("mercurie_front", new Vector2(0.5f, 0f), 32);
+
             var dia = Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[0]);
         }
     }

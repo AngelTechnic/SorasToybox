@@ -1,0 +1,234 @@
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.CustomOther;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Text;
+//using static A_Apocrypha.Encounters.Orph.H;
+//using static UnityEngine.GraphicsBuffer;
+
+namespace SorasToybox.Fools
+{
+    public class JournalHandler
+    {
+        public static void Add()
+        {
+            Debug.Log("Journal Mode | activated! beginning setup...");
+
+            //JOURNAL TARGET LISTS
+            //MERCURIE
+            Dictionary<string, string> targetListMercurie = new Dictionary<string, string>();
+            targetListMercurie.Add("SEARCH_EN", "SEARCH");
+            targetListMercurie.Add("Lexem_EN", "Lexem");
+            targetListMercurie.Add("AmalgamatedAssessor_BOSS", "Assessor");
+            targetListMercurie.Add("Minotaur_EN", "Minotaur");
+            targetListMercurie.Add("Deathmatch_BOSS", "Deathmatch");
+            targetListMercurie.Add("Boulder_Inert_EN", "BoulderFirst");
+            targetListMercurie.Add("Boulder_ToBuddy_EN", "BoulderFirst");
+            targetListMercurie.Add("Boulder_ToChiglen_EN", "BoulderFirst");
+            targetListMercurie.Add("Boulder_EN", "BoulderReal");
+            targetListMercurie.Add("BoulderBuddy_EN", "BoulderBuddy");
+            targetListMercurie.Add("ElChiglen_EN", "ElChiglen");
+
+
+            string mercurieDiaID = "Mercurie_Journal_Dialogue";
+            YarnProgram mercurieYarn = AApocrypha.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/MercurieJournalScript.yarn"));
+            Dialogues.AddCustom_DialogueProgram(mercurieDiaID, mercurieYarn);
+            DialogueSO mercurieDialogue = Dialogues.CreateAndAddCustom_DialogueSO(mercurieDiaID, mercurieYarn, mercurieDiaID, "SorasToybox.Mercurie.Journal");
+
+
+            //MERCURIE JOURNAL
+            if (LoadedAssetsHandler.GetCharacter("Mercurie_CH") != null)
+            {
+                Debug.Log("Journal Mode | Mercurie journal setup");
+                JournalSetup("Mercurie_CH", "Mercurie", "Mercurie", ["she", "her", "her"], "Mercurie's Journal", "Space-age. Woah.", "", targetListMercurie, targetAltListMercurie, mercurieDialogue);
+            }
+
+            //AMBROSE
+            /*Dictionary<string, string> targetListAmbrose = new Dictionary<string, string>();
+            targetListAmbrose.Add("CrimsonLogos_EN", "LogosCrimson");
+            targetListAmbrose.Add("CeruleanLogos_EN", "LogosCerulean");
+            targetListAmbrose.Add("AureateLogos_EN", "LogosAureate");
+            targetListAmbrose.Add("RegentLogos_EN", "LogosRegent");
+            targetListAmbrose.Add("DiscordantLogos_EN", "LogosDisco");
+            targetListAmbrose.Add("EphialtesOrguis_EN", "OrguisGeneric");
+            targetListAmbrose.Add("ApatelosOrguis_EN", "OrguisGeneric");
+            targetListAmbrose.Add("PanopticOrguis_EN", "OrguisGeneric");
+            targetListAmbrose.Add("HamalatOrguis_EN", "OrguisGeneric");
+            targetListAmbrose.Add("Blemmigan_EN", "Blemmigan");
+            targetListAmbrose.Add("UttershroomSpore_EN", "Uttershroom");
+            targetListAmbrose.Add("Minotaur_EN", "Minotaur");
+
+
+
+            Dictionary<string, Dictionary<string, string>> targetAltListAmbrose = new Dictionary<string, Dictionary<string, string>>();
+
+            if (LoadedAssetsHandler.GetCharacter("Soreka_CH") != null)
+            {
+                Dictionary<string, string> targetListAmbroseSoreka = new Dictionary<string, string>();
+                targetListAmbroseSoreka.Add("EphialtesOrguis_EN", "OrguisIridescent");
+                targetListAmbroseSoreka.Add("ApatelosOrguis_EN", "OrguisClusterfuck");
+                targetListAmbroseSoreka.Add("PanopticOrguis_EN", "OrguisEntropic");
+                targetListAmbroseSoreka.Add("HamalatOrguis_EN", "OrguisWhite");
+                targetAltListAmbrose.Add("Soreka_CH", targetListAmbroseSoreka);
+            }
+
+            string ambroseDiaID = "Ambrose_Journal_Dialogue";
+            YarnProgram ambroseYarn = AApocrypha.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/Apocrypha_Misc/AmbroseJournalScript.yarn"));
+            Dialogues.AddCustom_DialogueProgram(ambroseDiaID, ambroseYarn);
+            DialogueSO ambroseDialogue = Dialogues.CreateAndAddCustom_DialogueSO(ambroseDiaID, ambroseYarn, ambroseDiaID, "AApocrypha.Ambrose.Journal");
+
+            //NAUDIZ 4
+            Dictionary<string, string> targetListNaudiz = new Dictionary<string, string>();
+            targetListNaudiz.Add("SandSifter_EN", "SandSifter");
+            targetListNaudiz.Add("DuneThresher_EN", "DuneThresher");
+            targetListNaudiz.Add("HazardHauler_Siren_EN", "HazardHauler");
+            targetListNaudiz.Add("AmalgamatedAssessor_BOSS", "Assessor");
+            targetListNaudiz.Add("Minotaur_EN", "Minotaur");
+            targetListNaudiz.Add("Gammamite_EN", "Gammamite");
+            targetListNaudiz.Add("TuringTarpit_EN", "TuringTarpit");
+            targetListNaudiz.Add("Eater_Invis_EN", "InvisEater");
+            targetListNaudiz.Add("CobaltCurator_EN", "CobaltCurator");
+
+            Dictionary<string, Dictionary<string, string>> targetAltListNaudiz4 = new Dictionary<string, Dictionary<string, string>>();
+
+            string naudizDiaID = "Naudiz4_Journal_Dialogue";
+            YarnProgram naudizYarn = AApocrypha.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/Apocrypha_Misc/Naudiz4JournalScript.yarn"));
+            Dialogues.AddCustom_DialogueProgram(naudizDiaID, naudizYarn);
+            DialogueSO naudizDialogue = Dialogues.CreateAndAddCustom_DialogueSO(naudizDiaID, naudizYarn, naudizDiaID, "AApocrypha.Naudiz4.Journal");
+
+            //WHITLOCK
+            Dictionary<string, string> targetListWhitlock = new Dictionary<string, string>();
+            targetListWhitlock.Add("Ungod_EN", "Ungod");
+            targetListWhitlock.Add("Gizo_EN", "Gizo");
+            targetListWhitlock.Add("NakedGizo_EN", "Gizo2");
+            targetListWhitlock.Add("Blemmigan_EN", "Blemmigan");
+            targetListWhitlock.Add("UttershroomSpore_EN", "Uttershroom");
+            targetListWhitlock.Add("Knight_EN", "Chess");
+            targetListWhitlock.Add("PawnA_EN", "Chess");
+            targetListWhitlock.Add("Yin_EN", "Chess");
+            targetListWhitlock.Add("Yang_EN", "Chess");
+            targetListWhitlock.Add("Bloatfinger_EN", "Bloatfinger");
+            targetListWhitlock.Add("StillLife_EN", "DeadGuy");
+            targetListWhitlock.Add("Home_EN", "CallOfTheVoid");
+
+            Dictionary<string, Dictionary<string, string>> targetAltListWhitlock = new Dictionary<string, Dictionary<string, string>>();
+
+            if (LoadedAssetsHandler.GetCharacter("Kneynsberg_CH") != null)
+            {
+                Dictionary<string, string> targetListWhitlockKneynsberg = new Dictionary<string, string>();
+                targetListWhitlockKneynsberg.Add("Blemmigan_EN", "BlemmiganKneynsberg");
+                targetAltListWhitlock.Add("Kneynsberg_CH", targetListWhitlockKneynsberg);
+            }
+
+            string whitlockDiaID = "Whitlock_Journal_Dialogue";
+            YarnProgram whitlockYarn = AApocrypha.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/Apocrypha_Misc/WhitlockJournalScript.yarn"));
+            Dialogues.AddCustom_DialogueProgram(whitlockDiaID, whitlockYarn);
+            DialogueSO whitlockDialogue = Dialogues.CreateAndAddCustom_DialogueSO(whitlockDiaID, whitlockYarn, whitlockDiaID, "AApocrypha.Whitlock.Journal");
+
+            //AMBROSE JOURNAL
+            if (LoadedAssetsHandler.GetCharacter("Ambrose_CH") != null)
+            {
+                Debug.Log("Journal Mode | Dr. Ambrose journal setup");
+                JournalSetup("Ambrose_CH", "Ambrose", "Dr. Ambrose", ["he", "him", "his"], "Dr. Ambrose's Journal", "Overflowing with pages. Lightly singed.", "", targetListAmbrose, targetAltListAmbrose, ambroseDialogue);
+            }
+            //NAUDIZ 4 JOURNAL
+            if (LoadedAssetsHandler.GetCharacter("Naudiz4_CH") != null)
+            {
+                Debug.Log("Journal Mode | Naudiz 4 journal setup");
+                JournalSetup("Naudiz4_CH", "Naudiz4", "Naudiz 4", ["it", "it", "its"], "Naudiz-Class Analysis Module", "Broad-spectrum analysis!", "", targetListNaudiz, targetAltListNaudiz4, naudizDialogue);
+            }
+            //WHITLOCK JOURNAL
+            if (LoadedAssetsHandler.GetCharacter("Whitlock_CH") != null)
+            {
+                Debug.Log("Journal Mode | Whitlock journal setup");
+                JournalSetup("Whitlock_CH", "Whitlock", "Whitlock", ["she", "her", "her"], "Whitlock's Journal", "One journal, many faces.", "", targetListWhitlock, targetAltListWhitlock, whitlockDialogue);
+            }
+        }            */
+        public static void JournalSetup(string foolID, string foolIDnoCH, string foolName, string[] pronouns, string itemName, string flavorText, string hint, Dictionary<string, string> targets, Dictionary<string, Dictionary<string, string>> altTargets, DialogueSO dialogue)
+        {
+            SpecificOpponentsByJournalListTargeting journalTargeting = ScriptableObject.CreateInstance<SpecificOpponentsByJournalListTargeting>();
+            journalTargeting._journalList = targets;
+            journalTargeting.getAllUnitSelfSlots = false;
+            journalTargeting.targetUnitAllySlots = false;
+            journalTargeting.slotOffsets = [0];
+
+            StartJournalDialogueEffect consultEffect = ScriptableObject.CreateInstance<StartJournalDialogueEffect>();
+            consultEffect._journalList = targets;
+            consultEffect._altJournalList = altTargets;
+            consultEffect._dialogue = dialogue;
+
+            Ability consult = new Ability("Consult Journal", "SorasToybox_ConsultJournal_" + foolIDnoCH + "_A")
+            {
+                Description = foolName + " will consult " + pronouns[2] + " Journal to look up information about the Opposing enemy." +
+                "\nValid targets are denoted by this ability's Intents.",
+                AbilitySprite = ResourceLoader.LoadSprite("IconLaziestJournalModeIconEver"),
+                Cost = [Pigments.Grey],
+                //Visuals = CustomVisuals.StaticVisualsSO,
+                //AnimationTarget = Targeting.AllUnits,
+                Effects =
+                [
+                    Effects.GenerateEffect(consultEffect, 1, Targeting.Slot_Front),
+                ],
+                Rarity = Rarity.AbsurdlyRare,
+                Priority = Priority.VeryFast
+            };
+            consult.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc)]);
+            consult.AddIntentsToTarget(journalTargeting, [nameof(IntentType_GameIDs.Misc_Hidden)]);
+
+            ExtraAbility_Wearable_SMS journalWear = ScriptableObject.CreateInstance<ExtraAbility_Wearable_SMS>();
+            journalWear._extraAbility = consult.GenerateCharacterAbility(true);
+
+            PerformEffect_Item journalItem = new PerformEffect_Item("Journal_" + foolID + "_ID", null, false)
+            {
+                Item_ID = "Journal_" + foolID + "_ExtraW",
+                Name = itemName,
+                Flavour = "\"" + flavorText + "\"",
+                Description = foolName + " can use Consult Journal to offer " + pronouns[2] + " insights regarding the Opposing enemy." + hint,
+                IsShopItem = false,
+                ShopPrice = 1,
+                StartsLocked = true,
+                DoesPopUpInfo = false,
+                Icon = ResourceLoader.LoadSprite("JournalItem" + foolIDnoCH),
+                TriggerOn = TriggerCalls.OnMiscPlayerTurnStart,
+                Effects =
+                [
+                ],
+                EquippedModifiers = [journalWear],
+            };
+            ItemUtils.JustAddItemSoItCanBeLoaded(journalItem.item);
+            LoadedAssetsHandler.GetCharacter(foolID).passiveAbilities.Add(GenerateJournalPassive(foolID, foolName, pronouns, journalItem.item, targets));
+        }
+
+        public static BasePassiveAbilitySO GenerateJournalPassive(string foolID, string foolName, string[] pronouns, BaseWearableSO item, Dictionary<string, string> targets)
+        {
+            // example: Ambrose_CH, Dr. Ambrose, [he, him, his], journalAmbrose.item
+            IsCharacterEffectorCondition IsCharacter = ScriptableObject.CreateInstance<IsCharacterEffectorCondition>();
+            IsCharacter._passIfTrue = true;
+
+            CharacterHasItemEffectorCondition EmptyHanded = ScriptableObject.CreateInstance<CharacterHasItemEffectorCondition>();
+            EmptyHanded._passIfTrue = false;
+
+            CasterSetItemEffect journalSet = ScriptableObject.CreateInstance<CasterSetItemEffect>();
+            journalSet._item = item;
+
+            PerformEffectPassiveAbility journalPassive = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            journalPassive.name = "JournalMode_" + foolID + "_PA";
+            journalPassive._passiveName = "Journal Mode";
+            journalPassive.m_PassiveID = "JournalMode";
+            journalPassive.passiveIcon = ResourceLoader.LoadSprite("IconJournalMode");
+            journalPassive._characterDescription = "If " + foolName + " has no item on combat start, " + pronouns[0] + " will receive a Journal, letting " + pronouns[1] + " provide information about certain enemies.";
+            journalPassive._enemyDescription = "This enemy is well-read, but I doubt that it will want to tell you anything.";
+            journalPassive._triggerOn = [TriggerCalls.OnCombatStart];
+            journalPassive.conditions = [IsCharacter, EmptyHanded];
+            journalPassive.doesPassiveTriggerInformationPanel = true;
+            journalPassive.effects =
+            [
+                Effects.GenerateEffect(journalSet),
+            ];
+
+            return journalPassive;
+        }
+    }
+}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using BrutalAPI;
 
-namespace A_Apocrypha.CustomOther
+namespace SorasToybox.CustomOther
 {
     public class SpecificOpponentSlotsByStatusTargeting : BaseCombatTargettingSO
     {
