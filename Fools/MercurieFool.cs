@@ -321,6 +321,12 @@ namespace SorasToybox.Fools
             speakerBundleMercurieFront.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
             speakerBundleMercurieFront.portrait = ResourceLoader.LoadSprite("mercurie_front", new Vector2(0.5f, 0f), 32);
 
+
+            SpeakerBundle speakerBundleMercurieBack = new SpeakerBundle();
+            speakerBundleMercurieBack.bundleTextColor = new Color32(96, 215, 181, 255);
+            speakerBundleMercurieBack.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
+            speakerBundleMercurieBack.portrait = ResourceLoader.LoadSprite("mercurie_back", new Vector2(0.5f, 0f), 32);
+
             var dia = Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[0]);
         }
     }

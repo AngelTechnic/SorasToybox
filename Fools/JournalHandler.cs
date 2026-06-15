@@ -41,7 +41,7 @@ namespace SorasToybox.Fools
             }
 
             string mercurieDiaID = "Mercurie_Journal_Dialogue";
-            YarnProgram mercurieYarn = SorasToybox.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/MercurieJournalScript.yarn"));
+            YarnProgram mercurieYarn = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/MercurieJournalScript.yarn"));
             Dialogues.AddCustom_DialogueProgram(mercurieDiaID, mercurieYarn);
             DialogueSO mercurieDialogue = Dialogues.CreateAndAddCustom_DialogueSO(mercurieDiaID, mercurieYarn, mercurieDiaID, "SorasToybox.Mercurie.Journal");
 
