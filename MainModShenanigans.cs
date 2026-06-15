@@ -89,6 +89,8 @@ namespace SorasToybox //Mod namespace
             }
             KarmaFool.Add();
 
+            JournalHandler.Add();
+
             if (CrossMod.IntoTheAbyss)
             {
                 MercurieFreeEvent.Add();
