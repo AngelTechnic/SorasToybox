@@ -145,6 +145,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss)
             {
                 MercurieFreeEvent.Add();
+                KarmaFreeEvent.Add();
             }
 
 
