@@ -600,7 +600,7 @@ namespace SorasToybox.Fools
 
             SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
             speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
-            speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetEnemy("Deathmath_BOSS").damageSound;
+            speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetEnemy("Deathmatch_BOSS").damageSound;
             speakerBundleDeathmatch.portrait = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
 
             SpeakerBundle speakerBundleDozer = new SpeakerBundle();
