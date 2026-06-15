@@ -581,7 +581,7 @@ namespace SorasToybox.Fools
             karma.AddLevelData(40, [hotsauce4, agony4, whatsComing4]);
 
             karma.AddCharacter(true, false);
-            Debug.Log("OK so karma is loaded");
+
             //yapshenanigans
             SpeakerBundle speakerBundleKarma = new SpeakerBundle();
             speakerBundleKarma.bundleTextColor = new Color32(255, 0, 0, 255);
@@ -624,7 +624,7 @@ namespace SorasToybox.Fools
 
             Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
             Dialogues.CreateAndAddCustom_SpeakerData("Dozer", speakerBundleDozer, true, false, new SpeakerEmote[0]);
-            Debug.Log("SpeakerBundle Nonsense");
+
         }
     }
 }
