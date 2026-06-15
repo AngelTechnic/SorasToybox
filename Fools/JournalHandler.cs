@@ -81,6 +81,13 @@ namespace SorasToybox.Fools
             YarnProgram karmaYarn = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/KarmaJournalScript.yarn"));
             Dialogues.AddCustom_DialogueProgram(karmaDiaID, karmaYarn);
             DialogueSO karmaDialogue = Dialogues.CreateAndAddCustom_DialogueSO(karmaDiaID, karmaYarn, karmaDiaID, "SorasToybox.Karma.Journal");
+
+            //KARMA JOURNAL
+            if (LoadedAssetsHandler.GetCharacter("Karma_CH") != null)
+            {
+                UnityEngine.Debug.Log("Journal Mode | Karma journal setup");
+                JournalSetup("Karma_CH", "Karma", "Karma", ["she", "her", "her"], "Karma's Journal", "A palpable sense of ire emanates from the hardbook cover.", "", targetListKarma, targetAltListKarma, karmaDialogue);
+            }
         }
 
             //AMBROSE
