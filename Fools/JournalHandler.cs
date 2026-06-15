@@ -1,6 +1,8 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
 using SorasToybox.CustomOther;
+using SorasToybox.CustomEffects;
+using UnityEngine;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -14,7 +16,7 @@ namespace SorasToybox.Fools
     {
         public static void Add()
         {
-            Debug.Log("Journal Mode | activated! beginning setup...");
+            UnityEngine.Debug.Log("Journal Mode | activated! beginning setup...");
 
             //JOURNAL TARGET LISTS
             //MERCURIE
@@ -49,9 +51,10 @@ namespace SorasToybox.Fools
             //MERCURIE JOURNAL
             if (LoadedAssetsHandler.GetCharacter("Mercurie_CH") != null)
             {
-                Debug.Log("Journal Mode | Mercurie journal setup");
+                UnityEngine.Debug.Log("Journal Mode | Mercurie journal setup");
                 JournalSetup("Mercurie_CH", "Mercurie", "Mercurie", ["she", "her", "her"], "Mercurie's Journal", "Space-age. Woah.", "", targetListMercurie, targetAltListMercurie, mercurieDialogue);
             }
+        }
 
             //AMBROSE
             /*Dictionary<string, string> targetListAmbrose = new Dictionary<string, string>();

@@ -5,6 +5,7 @@ using System.Text;
 using UnityEngine;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomStatuses;
+using Yarn;
 
 namespace SorasToybox.Fools
 {
@@ -327,7 +328,24 @@ namespace SorasToybox.Fools
             speakerBundleMercurieBack.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
             speakerBundleMercurieBack.portrait = ResourceLoader.LoadSprite("mercurie_back", new Vector2(0.5f, 0f), 32);
 
-            var dia = Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[0]);
+            Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[3]
+            {
+                new SpeakerEmote
+                {
+                    emotion = "Front",
+                    bundle = speakerBundleMercurieFront,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Back",
+                    bundle = speakerBundleMercurieBack,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Mad",
+                    bundle = speakerBundleMercurieMad,
+                },
+            });
         }
     }
 }

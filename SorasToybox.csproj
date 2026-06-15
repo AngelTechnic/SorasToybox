@@ -38,6 +38,9 @@
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Enemies\timelineSusMung.png" />
+    <None Remove="Assets\Fools\Journal Mode\IconJournalMode.png" />
+    <None Remove="Assets\Fools\Journal Mode\IconLaziestJournalModeIconEver.png" />
+    <None Remove="Assets\Fools\Journal Mode\JournalItemMercurie.png" />
     <None Remove="Assets\Fools\Karma\karma_agony.png" />
     <None Remove="Assets\Fools\Karma\karma_back.png" />
     <None Remove="Assets\Fools\Karma\karma_coming.png" />
@@ -131,6 +134,9 @@
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSlatecarnate.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSusMung.png" />
+    <EmbeddedResource Include="Assets\Fools\Journal Mode\IconJournalMode.png" />
+    <EmbeddedResource Include="Assets\Fools\Journal Mode\IconLaziestJournalModeIconEver.png" />
+    <EmbeddedResource Include="Assets\Fools\Journal Mode\JournalItemMercurie.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_agony.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_back.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_coming.png" />
