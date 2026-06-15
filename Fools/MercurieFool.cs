@@ -315,7 +315,7 @@ namespace SorasToybox.Fools
             SpeakerBundle speakerBundleMercurieMad = new SpeakerBundle();
             speakerBundleMercurieMad.bundleTextColor = new Color32(96, 215, 181, 255);
             speakerBundleMercurieMad.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;
-            speakerBundleMercurie.portrait = ResourceLoader.LoadSprite("mercurie_talkmad", new Vector2(0.5f, 0f), 32);
+            speakerBundleMercurieMad.portrait = ResourceLoader.LoadSprite("mercurie_talkmad", new Vector2(0.5f, 0f), 32);
 
             SpeakerBundle speakerBundleMercurieFront = new SpeakerBundle();
             speakerBundleMercurieFront.bundleTextColor = new Color32(96, 215, 181, 255);
