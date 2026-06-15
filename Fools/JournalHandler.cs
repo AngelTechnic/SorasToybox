@@ -79,7 +79,7 @@ namespace SorasToybox.Fools
 
             string karmaDiaID = "Karma_Journal_Dialogue";
             YarnProgram karmaYarn = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/KarmaJournalScript.yarn"));
-            Dialogues.AddCustom_DialogueProgram(mercurieDiaID, mercurieYarn);
+            Dialogues.AddCustom_DialogueProgram(karmaDiaID, karmaYarn);
             DialogueSO karmaDialogue = Dialogues.CreateAndAddCustom_DialogueSO(karmaDiaID, karmaYarn, karmaDiaID, "SorasToybox.Karma.Journal");
         }
 
