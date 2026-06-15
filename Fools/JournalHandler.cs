@@ -76,6 +76,11 @@ namespace SorasToybox.Fools
                 targetListKarmaVane.Add("Home_EN", "HomeVane");
                 targetAltListKarma.Add("Vane_CH", targetListKarmaVane);
             }
+
+            string karmaDiaID = "Karma_Journal_Dialogue";
+            YarnProgram karmaYarn = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/KarmaJournalScript.yarn"));
+            Dialogues.AddCustom_DialogueProgram(mercurieDiaID, mercurieYarn);
+            DialogueSO karmaDialogue = Dialogues.CreateAndAddCustom_DialogueSO(karmaDiaID, karmaYarn, karmaDiaID, "SorasToybox.Karma.Journal");
         }
 
             //AMBROSE
