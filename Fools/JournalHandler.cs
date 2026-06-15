@@ -54,6 +54,28 @@ namespace SorasToybox.Fools
                 UnityEngine.Debug.Log("Journal Mode | Mercurie journal setup");
                 JournalSetup("Mercurie_CH", "Mercurie", "Mercurie", ["she", "her", "her"], "Mercurie's Journal", "Space-age. Woah.", "", targetListMercurie, targetAltListMercurie, mercurieDialogue);
             }
+
+            //KARMA
+            Dictionary<string, string> targetListKarma = new Dictionary<string, string>();
+            targetListKarma.Add("Deathmatch_BOSS", "Deathmatch");
+            targetListKarma.Add("Minotaur_EN", "Minotaur");
+            targetListKarma.Add("Litany_EN", "Faceless");
+            targetListKarma.Add("Faceless_EN", "Faceless");
+            targetListKarma.Add("VoxPopuli_EN", "Faceless");
+            targetListKarma.Add("Dozer_EN", "Dozer");
+            targetListKarma.Add("DozerAwake_EN", "DozerAwake");
+            targetListKarma.Add("Mime_EN", "Mime");
+            targetListKarma.Add("Kookoo_EN", "Kookoo");
+            targetListKarma.Add("Home_EN", "Home");
+
+            Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
+
+            if (LoadedAssetsHandler.GetCharacter("Vane_CH") != null)
+            {
+                Dictionary<string, string> targetListKarmaVane = new Dictionary<string, string>();
+                targetListKarmaVane.Add("Home_EN", "HomeVane");
+                targetAltListKarma.Add("Vane_CH", targetListKarmaVane);
+            }
         }
 
             //AMBROSE

@@ -580,6 +580,49 @@ namespace SorasToybox.Fools
             karma.AddLevelData(40, [hotsauce4, agony4, whatsComing4]);
 
             karma.AddCharacter(true, false);
+
+            //yapshenanigans
+            SpeakerBundle speakerBundleKarma = new SpeakerBundle();
+            speakerBundleKarma.bundleTextColor = new Color32(255, 0, 0, 255);
+            speakerBundleKarma.dialogueSound = LoadedAssetsHandler.GetCharacter("Karma_CH").dxSound;
+            speakerBundleKarma.portrait = ResourceLoader.LoadSprite("karma_front", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleKarmaBlank = new SpeakerBundle();
+            speakerBundleKarmaBlank.bundleTextColor = new Color32(255, 0, 0, 255);
+            speakerBundleKarmaBlank.dialogueSound = LoadedAssetsHandler.GetCharacter("Karma_CH").dxSound;
+            speakerBundleKarmaBlank.portrait = ResourceLoader.LoadSprite("karma_back", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleKarmaMad = new SpeakerBundle();
+            speakerBundleKarmaMad.bundleTextColor = new Color32(255, 0, 0, 255);
+            speakerBundleKarmaMad.dialogueSound = LoadedAssetsHandler.GetCharacter("Karma_CH").dxSound;
+            speakerBundleKarmaMad.portrait = ResourceLoader.LoadSprite("karma_front_mad", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
+            speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
+            speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").dxSound;
+            speakerBundleDeathmatch.portrait = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleDozer = new SpeakerBundle();
+            speakerBundleDozer.bundleTextColor = new Color32(255, 255, 0, 255);
+            speakerBundleDozer.dialogueSound = LoadedAssetsHandler.GetEnemy("Dozer_EN").damageSound;
+            speakerBundleDozer.portrait = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
+
+            Dialogues.CreateAndAddCustom_SpeakerData("Karma", speakerBundleKarma, true, false, new SpeakerEmote[2]
+            {
+                new SpeakerEmote
+                {
+                    emotion = "Blank",
+                    bundle = speakerBundleKarmaBlank,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Mad",
+                    bundle = speakerBundleKarmaMad,
+                },
+            });
+
+            Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
+            Dialogues.CreateAndAddCustom_SpeakerData("Dozer", speakerBundleDozer, true, false, new SpeakerEmote[0]);
         }
     }
 }
