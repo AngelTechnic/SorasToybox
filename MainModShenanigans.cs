@@ -80,21 +80,7 @@ namespace SorasToybox //Mod namespace
             CustomPigments.Add();
             //Log custom stuff (Do config thing with it)
             Logger.LogInfo("Custom Effects in effect.");
-
-
-            //Add fools
-            if (CrossMod.IntoTheAbyss)
-            {
-                MercurieFool.Add();
-            }
-            KarmaFool.Add();
-
-            JournalHandler.Add();
-
-            if (CrossMod.IntoTheAbyss)
-            {
-                MercurieFreeEvent.Add();
-            }    
+ 
 
             //Add enemies
             SEARCH.Add();
@@ -147,7 +133,21 @@ namespace SorasToybox //Mod namespace
                 SusMungEncounter.Add();
             }
 
-            
+            //Add fools
+            if (CrossMod.IntoTheAbyss)
+            {
+                MercurieFool.Add();
+            }
+            KarmaFool.Add();
+
+            JournalHandler.Add();
+
+            if (CrossMod.IntoTheAbyss)
+            {
+                MercurieFreeEvent.Add();
+            }
+
+
             //Log enemies (Do config thing with it)
             Logger.LogInfo("New Toys to play with.");
 
