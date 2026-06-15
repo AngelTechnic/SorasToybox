@@ -147,6 +147,8 @@ namespace SorasToybox //Mod namespace
                 MercurieFreeEvent.Add();
                 KarmaFreeEvent.Add();
             }
+            //for testing events
+            //FreeFoolEventTester.Add();
 
 
             //Log enemies (Do config thing with it)
