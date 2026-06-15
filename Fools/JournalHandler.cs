@@ -31,9 +31,17 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("BoulderBuddy_EN", "BoulderBuddy");
             targetListMercurie.Add("ElChiglen_EN", "ElChiglen");
 
+            Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
+
+            if (LoadedAssetsHandler.GetCharacter("Soreka_CH") != null)
+            {
+                Dictionary<string, string> targetListMercurieSoreka = new Dictionary<string, string>();
+                targetListMercurieSoreka.Add("AmalgamatedAssessor_BOSS", "AssessorSoreka");
+                targetAltListMercurie.Add("Soreka_CH", targetListMercurieSoreka);
+            }
 
             string mercurieDiaID = "Mercurie_Journal_Dialogue";
-            YarnProgram mercurieYarn = AApocrypha.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/MercurieJournalScript.yarn"));
+            YarnProgram mercurieYarn = SorasToybox.assetBundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxMisc/MercurieJournalScript.yarn"));
             Dialogues.AddCustom_DialogueProgram(mercurieDiaID, mercurieYarn);
             DialogueSO mercurieDialogue = Dialogues.CreateAndAddCustom_DialogueSO(mercurieDiaID, mercurieYarn, mercurieDiaID, "SorasToybox.Mercurie.Journal");
 
