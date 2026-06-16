@@ -15,6 +15,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
+    <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
@@ -64,10 +65,13 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_theend.png" />
     <None Remove="Assets\Intents\propx_intent.png" />
     <None Remove="Assets\Intents\prop_intent.png" />
+    <None Remove="Assets\Items\fortyproof_bottletoss.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_entrenchingtool.png" />
     <None Remove="Assets\Items\item_entrenchingtool_locked.png" />
+    <None Remove="Assets\Items\item_fortyproof.png" />
+    <None Remove="Assets\Items\item_fortyproof_locked.png" />
     <None Remove="Assets\Items\item_ghostpepper.png" />
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
@@ -111,6 +115,7 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
@@ -161,10 +166,13 @@
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_theend.png" />
     <EmbeddedResource Include="Assets\Intents\propx_intent.png" />
     <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
+    <EmbeddedResource Include="Assets\Items\fortyproof_bottletoss.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_entrenchingtool.png" />
     <EmbeddedResource Include="Assets\Items\item_entrenchingtool_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_fortyproof.png" />
+    <EmbeddedResource Include="Assets\Items\item_fortyproof_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer.png" />

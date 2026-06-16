@@ -168,6 +168,7 @@ namespace SorasToybox //Mod namespace
             //Doula Unlocks
             if (CrossMod.EnemyPack)
             {
+                FortyProof.Add();
                 BastardNimbus.Add();
             }
             //March Unlocks
