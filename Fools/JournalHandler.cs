@@ -32,6 +32,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("Boulder_EN", "BoulderReal");
             targetListMercurie.Add("BoulderBuddy_EN", "BoulderBuddy");
             targetListMercurie.Add("ElChiglen_EN", "ElChiglen");
+            targetListMercurie.Add("SandSifter_EN", "SandSifter");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -40,6 +41,13 @@ namespace SorasToybox.Fools
                 Dictionary<string, string> targetListMercurieSoreka = new Dictionary<string, string>();
                 targetListMercurieSoreka.Add("AmalgamatedAssessor_BOSS", "AssessorSoreka");
                 targetAltListMercurie.Add("Soreka_CH", targetListMercurieSoreka);
+            }
+
+            if (LoadedAssetsHandler.GetCharacter("Naudiz4_CH") != null)
+            {
+                Dictionary<string, string> targetListMercurieNaudiz = new Dictionary<string, string>();
+                targetListMercurieNaudiz.Add("SandSifter_EN", "SandSifterNaudiz4");
+                targetAltListMercurie.Add("Naudiz4_CH", targetListMercurieNaudiz);
             }
 
             string mercurieDiaID = "Mercurie_Journal_Dialogue";
@@ -52,7 +60,7 @@ namespace SorasToybox.Fools
             if (LoadedAssetsHandler.GetCharacter("Mercurie_CH") != null)
             {
                 UnityEngine.Debug.Log("Journal Mode | Mercurie journal setup");
-                JournalSetup("Mercurie_CH", "Mercurie", "Mercurie", ["she", "her", "her"], "Mercurie's Journal", "Space-age. Woah.", "", targetListMercurie, targetAltListMercurie, mercurieDialogue);
+                JournalSetup("Mercurie_CH", "Mercurie", "Mercurie", ["she", "her", "her"], "Ministry-Issue Datapad", "Space-age. Woah.", "", targetListMercurie, targetAltListMercurie, mercurieDialogue);
             }
 
             //KARMA

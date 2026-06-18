@@ -115,7 +115,14 @@ namespace SorasToybox //Mod namespace
                 SuspiciousMung.Add();
             }
             //add encounters
-
+            try
+            {
+                SEARCHEncounters.Add();
+            }
+            catch
+            {
+                Debug.Log("SEARCH encounters failed to load.");
+            }
 
             if (CrossMod.IntoTheAbyss)
             {

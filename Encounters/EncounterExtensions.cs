@@ -60,7 +60,7 @@ namespace SorasToybox.Encounters
                 }
                 catch
                 {
-                    Debug.LogWarning("Encounter Extensions | no enemy with id " + eval + " - skipping encounter!");
+                    UnityEngine.Debug.LogWarning("Encounter Extensions | no enemy with id " + eval + " - skipping encounter!");
                     valid = false;
                     break;
                 }
@@ -106,7 +106,7 @@ namespace SorasToybox.Encounters
                 }
                 catch
                 {
-                    Debug.LogWarning("Encounter Extensions | no enemy with id " + eval + " - skipping encounter!");
+                    UnityEngine.Debug.LogWarning("Encounter Extensions | no enemy with id " + eval + " - skipping encounter!");
                     valid = false;
                     break;
                 }

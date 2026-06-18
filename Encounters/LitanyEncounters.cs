@@ -30,15 +30,15 @@ namespace SorasToybox.Encounters
                     RoarEvent = "event:/SorasSFX/Enemies/Litany/LitanyRoar",
                 };
 
-                litanyMedium.CreateNewEnemyEncounterData(["WanderFellow_EN", "Litany_EN", "Streetlight_EN"], null);
-                litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "Sycophant_EN", "Sycophant_EN"], null);
-                litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "WRK_EN", "Streetlight_EN"], null);
-                litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "WRK_EN", "Wug_EN"], null);
+                litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "WanderFellow_EN", 1, "Streetlight_EN");
+                litanyMedium.SimpleAddEncounter(1, "Litany_EN", 2, "Sycophant_EN");
+                litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "WRK_EN", 1, "Streetlight_EN");
+                litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "WRK_EN", 1, "Wug_EN");
                 if (SorasToybox.CrossMod.AApocrypha)
                 {
-                    litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "MachineGnomes_EN", "Streetlight_EN"], null);
-                    litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "BFElemental_EN", "Wug_EN"], null);
-                    litanyMedium.CreateNewEnemyEncounterData(["Litany_EN", "BasicElemental_EN", "Sycophant_EN"], null);
+                    litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "MachineGnomes_EN", 1, "Streetlight_EN");
+                    litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "BFElemental_EN", 1, "Wug_EN");
+                    litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "BasicElemental_EN", 1, "Sycophant_EN");
                 }
 
                 litanyMedium.AddEncounterToDataBases();

@@ -29,15 +29,15 @@ namespace SorasToybox.Encounters
                 };
 
                 //Medium dozer encounts go down here
-                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "Parfait_EN", "Wug_EN"], null);
-                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "WanderFellow_EN", "Wug_EN"], null);
-                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "Wug_EN", "Wug_EN", "Streetlight_EN"], null);
-                dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "EyePalm_EN", "EyePalm_EN"], null);
+                dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "Parfait_EN", 1, "Wug_EN");
+                dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "WanderFellow_EN", 1, "Wug_EN");
+                dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 2, "Wug_EN", 1, "Streetlight_EN");
+                dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 2 ,"EyePalm_EN");
                 if (SorasToybox.CrossMod.AApocrypha)
                 {
-                    dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "WanderFellow_EN", "MachineGnomes_EN"], null);
-                    dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "BasicElemental_EN", "Wug_EN"], null);
-                    dozerMedium.CreateNewEnemyEncounterData(["Dozer_EN", "BasicElemental_EN", "MachineGnomes_EN"], null);
+                    dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "WanderFellow_EN", 1, "MachineGnomes_EN");
+                    dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "BasicElemental_EN", 1, "Wug_EN");
+                    dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "BasicElemental_EN", 1, "MachineGnomes_EN");
                 }
 
 
