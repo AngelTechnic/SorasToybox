@@ -114,23 +114,63 @@ namespace SorasToybox //Mod namespace
                 Primus.Add();
                 SuspiciousMung.Add();
             }
-            //Add encounters
-            TestEncounter.Add();
+            //add encounters
+
 
             if (CrossMod.IntoTheAbyss)
             {
-                LitanyEncounters.Add();
-                DeathmatchEncounter.Add();
+                try
+                {
+                    TestEncounter.Add();
+                }
+                catch
+                {
+                    Debug.Log("Test encounter failed to load.");
+                }
+
+                try
+                {
+                    LitanyEncounters.Add();
+                }
+                catch 
+                {
+                    Debug.Log("Litany encounters failed to load.");
+                }
+                try
+                {
+                    DeathmatchEncounter.Add();
+                }
+                catch
+                {
+                    Debug.Log("\"THAT\" encounter failed to load.");
+                }
+
             }
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
             {
-                DozerEncounters.Add();
+                try
+                {
+                    DozerEncounters.Add();
+                }
+                catch
+                {
+                    Debug.Log("Dozer encounters failed to load.");
+                }
+
             }
 
 
             if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends)
             {
-                SusMungEncounter.Add();
+                try
+                {
+                    SusMungEncounter.Add();
+                }
+                catch
+                {
+                    Debug.Log("Mung encounter failed to load.");
+                }
+
             }
 
             //Add fools
