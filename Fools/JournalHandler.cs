@@ -33,6 +33,9 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("BoulderBuddy_EN", "BoulderBuddy");
             targetListMercurie.Add("ElChiglen_EN", "ElChiglen");
             targetListMercurie.Add("SandSifter_EN", "SandSifter");
+            targetListMercurie.Add("SandSifterSummon_EN", "SandSifterSummon");
+            targetListMercurie.Add("SuspiciousMung_EN", "SusMung");
+            targetListMercurie.Add("SkullHermit_Hidden_EN", "Hermit1");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -75,6 +78,9 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Mime_EN", "Mime");
             targetListKarma.Add("Kookoo_EN", "Kookoo");
             targetListKarma.Add("Home_EN", "Home");
+            targetListKarma.Add("Primus_EN", "Primus");
+            targetListKarma.Add("Nolocimes_Batretne_BOSS", "Katalixi");
+            targetListKarma.Add("SkullHermit_Hidden_EN", "Hermit1");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 
@@ -283,5 +289,24 @@ namespace SorasToybox.Fools
 
             return journalPassive;
         }
+
+        public static void AddMiscSpeakers()
+        {
+            Sprite blankSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
+            speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
+            speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").dxSound;
+            speakerBundleDeathmatch.portrait = blankSprite;
+            Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
+
+            SpeakerBundle speakerBundleDozer = new SpeakerBundle();
+            speakerBundleDozer.bundleTextColor = new Color32(255, 255, 0, 255);
+            speakerBundleDozer.dialogueSound = LoadedAssetsHandler.GetEnemy("Dozer_EN").damageSound;
+            speakerBundleDozer.portrait = blankSprite;
+            Dialogues.CreateAndAddCustom_SpeakerData("Dozer", speakerBundleDozer, true, false, new SpeakerEmote[0]);
+
+        }
+
     }
 }

@@ -53,6 +53,8 @@
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
     <None Remove="Assets\Fools\Karma\karma_rebalance.png" />
     <None Remove="Assets\Fools\Karma\karma_sauce.png" />
+    <None Remove="Assets\Fools\Mercurie\mercuriemain_talk.png" />
+    <None Remove="Assets\Fools\Mercurie\mercuriemain_talkmad.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_accelerator.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_back.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_clock.png" />
@@ -154,6 +156,8 @@
     <EmbeddedResource Include="Assets\Fools\Karma\karma_overworld.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_rebalance.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sauce.png" />
+    <EmbeddedResource Include="Assets\Fools\Mercurie\mercuriemain_talk.png" />
+    <EmbeddedResource Include="Assets\Fools\Mercurie\mercuriemain_talkmad.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_accelerator.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_back.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_clock.png" />

@@ -346,6 +346,46 @@ namespace SorasToybox.Fools
                     bundle = speakerBundleMercurieMad,
                 },
             });
+
+            SpeakerBundle speakerBundleMercurieMain = new SpeakerBundle();
+            speakerBundleMercurieMain.bundleTextColor = speakerBundleMercurie.bundleTextColor;
+            speakerBundleMercurieMain.dialogueSound = speakerBundleMercurie.dialogueSound;
+            speakerBundleMercurieMain.portrait = ResourceLoader.LoadSprite("mercuriemain_talk", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleMercurieMainMad = new SpeakerBundle();
+            speakerBundleMercurieMainMad.bundleTextColor = speakerBundleMercurieMad.bundleTextColor;
+            speakerBundleMercurieMainMad.dialogueSound = speakerBundleMercurieMad.dialogueSound;
+            speakerBundleMercurieMainMad.portrait = ResourceLoader.LoadSprite("mercuriemain_talkmad", new Vector2(0.5f, 0f), 32);
+
+            SpeakerBundle speakerBundleMercurieMainFront = new SpeakerBundle();
+            speakerBundleMercurieMainFront.bundleTextColor = speakerBundleMercurieFront.bundleTextColor;
+            speakerBundleMercurieMainFront.dialogueSound = speakerBundleMercurieFront.dialogueSound;
+            speakerBundleMercurieMainFront.portrait = ResourceLoader.LoadSprite("mercurie_front", new Vector2(0.5f, 0f), 32);
+
+
+            SpeakerBundle speakerBundleMercurieMainBack = new SpeakerBundle();
+            speakerBundleMercurieMainBack.bundleTextColor = speakerBundleMercurieBack.bundleTextColor;
+            speakerBundleMercurieMainBack.dialogueSound = speakerBundleMercurieBack.dialogueSound;
+            speakerBundleMercurieMainBack.portrait = ResourceLoader.LoadSprite("mercurie_back", new Vector2(0.5f, 0f), 32);
+
+            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurie, false, false, new SpeakerEmote[3]
+            {
+                new SpeakerEmote
+                {
+                    emotion = "Front",
+                    bundle = speakerBundleMercurieMainFront,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Back",
+                    bundle = speakerBundleMercurieMainBack,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Mad",
+                    bundle = speakerBundleMercurieMainMad,
+                },
+            });
         }
     }
 }
