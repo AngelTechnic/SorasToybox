@@ -36,6 +36,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("SandSifterSummon_EN", "SandSifterSummon");
             targetListMercurie.Add("SuspiciousMung_EN", "SusMung");
             targetListMercurie.Add("SkullHermit_Hidden_EN", "Hermit1");
+            targetListMercurie.Add("CobaltCurator_EN", "CobaltCurator");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -50,6 +51,7 @@ namespace SorasToybox.Fools
             {
                 Dictionary<string, string> targetListMercurieNaudiz = new Dictionary<string, string>();
                 targetListMercurieNaudiz.Add("SandSifter_EN", "SandSifterNaudiz4");
+                targetListMercurieNaudiz.Add("CobaltCurator_EN", "CobaltCuratorNaudiz4");
                 targetAltListMercurie.Add("Naudiz4_CH", targetListMercurieNaudiz);
             }
 
