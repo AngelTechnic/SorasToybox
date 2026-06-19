@@ -360,7 +360,10 @@ namespace SorasToybox.Enemies
             deathmatchDismal._characterDescription = "This party member is looking for a reason to hurt you.";
             deathmatchDismal._triggerOn = [TriggerCalls.OnDeath];
             deathmatchDismal.doesPassiveTriggerInformationPanel = false;
-            deathmatchDismal.effects = [Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot)];
+            deathmatchDismal.effects = 
+                [
+                    Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot),
+                ];
 
             Passives.AddCustomPassiveToPool("ST_DismalDeathmatch_PA", "Dismal", deathmatchDismal);
 

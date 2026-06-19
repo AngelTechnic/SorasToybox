@@ -61,6 +61,8 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Defiant To The End", "Do not give in and admit to the Antagonist.", ResourceLoader.LoadSprite("Ach_Tragedy_Deathmatch", null, 32, null), AMachievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.TragediesTitleLabel);
+
+            Unlocks.AddUnlock_ByID(unlockData);
         }
     }
 }
