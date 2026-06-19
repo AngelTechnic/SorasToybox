@@ -12,7 +12,7 @@ using SorasToybox.CustomPassives;
 
 namespace SorasToybox
 {
-    public static class ExcessNotificationHook
+    public static class STExcessNotificationHook
     {
         public static void CalculateOverflow(Action<PlayerTurnEndSecondPartAction, CombatStats> orig, PlayerTurnEndSecondPartAction self, CombatStats stats)
         {
@@ -20,15 +20,15 @@ namespace SorasToybox
             orig(self, stats);
             if (startedInOverflow && stats.overflowMana.OverflowManaAmount <= 0)
             {
-                foreach (CharacterCombat chara in CombatManager.Instance._stats.CharactersOnField.Values) CombatManager.Instance.PostNotification(OnExcessTriggered.ToString(), chara, null);
-                foreach (EnemyCombat chara in CombatManager.Instance._stats.EnemiesOnField.Values) CombatManager.Instance.PostNotification(OnExcessTriggered.ToString(), chara, null);
+                foreach (CharacterCombat chara in CombatManager.Instance._stats.CharactersOnField.Values) CombatManager.Instance.PostNotification(OnSTExcessTriggered.ToString(), chara, null);
+                foreach (EnemyCombat chara in CombatManager.Instance._stats.EnemiesOnField.Values) CombatManager.Instance.PostNotification(OnSTExcessTriggered.ToString(), chara, null);
             }
         }
 
-        public static TriggerCalls OnExcessTriggered => (TriggerCalls)6682573;
+        public static TriggerCalls OnSTExcessTriggered => (TriggerCalls)6682573;
         public static void Setup()
         {
-            IDetour hook = new Hook(typeof(PlayerTurnEndSecondPartAction).GetMethod(nameof(PlayerTurnEndSecondPartAction.CalculateOverflow), ~BindingFlags.Default), typeof(ExcessNotificationHook).GetMethod(nameof(CalculateOverflow), ~BindingFlags.Default));
+            IDetour hook = new Hook(typeof(PlayerTurnEndSecondPartAction).GetMethod(nameof(PlayerTurnEndSecondPartAction.CalculateOverflow), ~BindingFlags.Default), typeof(STExcessNotificationHook).GetMethod(nameof(CalculateOverflow), ~BindingFlags.Default));
         }
     }
 
@@ -36,7 +36,7 @@ namespace SorasToybox
     {
         public static void Add()
         {
-            ExcessNotificationHook.Setup();
+            STExcessNotificationHook.Setup();
             /*
             Ability template = new Ability("Template", "ExcessTemplate_A")
             {
@@ -59,7 +59,7 @@ namespace SorasToybox
             excess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
             excess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"Template\".";
             excess._characterDescription = "nah";
-            excess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
+            excess._triggerOn = [STExcessNotificationHook.OnSTExcessTriggered];
             excess.effects = [
                 Effects.GenerateEffect(queueacro,1,Slots.Self),
                 ];
