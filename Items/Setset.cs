@@ -13,7 +13,7 @@ namespace SorasToybox.Items
     {
         public static void Add()
         {
-            //Creating function that calls for Overclock
+            //Creating function that calls for Ante
             StatusEffect_Apply_Effect anteUp = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             anteUp._Status = StatusField.GetCustomStatusEffect("Ante_ID");
 

@@ -10,6 +10,7 @@
     <None Remove="AssetBundles\sorastoybox" />
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
+    <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
@@ -68,6 +69,8 @@
     <None Remove="Assets\Intents\propx_intent.png" />
     <None Remove="Assets\Intents\prop_intent.png" />
     <None Remove="Assets\Items\fortyproof_bottletoss.png" />
+    <None Remove="Assets\Items\item_amsseveredhead.png" />
+    <None Remove="Assets\Items\item_amsseveredhead_locked.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_entrenchingtool.png" />
@@ -97,6 +100,7 @@
     <None Remove="Assets\Passives\passive_itchy.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
     <None Remove="Assets\Passives\passive_lockstep.png" />
+    <None Remove="Assets\Passives\passive_overtuned.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
@@ -112,6 +116,7 @@
     <EmbeddedResource Include="AssetBundles\sorastoybox" />
     <EmbeddedResource Include="AssetBundles\sorastoybox.meta" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Deathmatch.png" />
+    <EmbeddedResource Include="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
@@ -171,6 +176,8 @@
     <EmbeddedResource Include="Assets\Intents\propx_intent.png" />
     <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
     <EmbeddedResource Include="Assets\Items\fortyproof_bottletoss.png" />
+    <EmbeddedResource Include="Assets\Items\item_amsseveredhead.png" />
+    <EmbeddedResource Include="Assets\Items\item_amsseveredhead_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_entrenchingtool.png" />
@@ -202,6 +209,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_itchy.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
     <EmbeddedResource Include="Assets\Passives\passive_lockstep.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_overtuned.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostSelected.png" />

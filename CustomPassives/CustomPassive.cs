@@ -91,10 +91,11 @@ namespace SorasToybox.CustomPassives
                 if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Fragile_PA")) { Passives.AddCustomPassiveToPool("Fragile_PA", "Fragile", Fragile); }
             }
 
-            if (!LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Illuminated_ID"))
+            //godray
+            if (LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Illuminated_ID"))
             {
                 StatusEffectPassiveAbility godray = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();
-                godray.name = "Godray_PA";
+                godray.name = "ST_Godray_PA";
                 godray._passiveName = "Godray";
                 godray._Status = StatusField.GetCustomStatusEffect("Illuminated_ID");
                 godray.m_PassiveID = "Godray_ID";
@@ -104,7 +105,26 @@ namespace SorasToybox.CustomPassives
                 godray.doesPassiveTriggerInformationPanel = true;
 
 
-                Passives.AddCustomPassiveToPool("Godray_PA", "Godray", godray);
+                Passives.AddCustomPassiveToPool("ST_Godray_PA", "Godray", godray);
+                GlossaryPassives STGodrayInfo = new GlossaryPassives("Godray", "This party member/enemy is permanently Illuminated and takes half damage from all sources.", ResourceLoader.LoadSprite("passive_godray"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STGodrayInfo);
+            }
+
+
+            if (LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Overclock_ID"))
+            {
+                StatusEffectPassiveAbility overtuned = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();
+                overtuned.name = "ST_Overtuned_PA";
+                overtuned._passiveName = "Overtuned";
+                overtuned.m_PassiveID = "Overtuned_ID";
+                overtuned._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
+                overtuned.passiveIcon = ResourceLoader.LoadSprite("passive_overtuned.png");
+                overtuned._characterDescription = "This party member is permanently Overclocked and deals double direct damage.";
+                overtuned._enemyDescription = "This enemy is permanently Overclocked and deals double direct damage.";
+                overtuned.doesPassiveTriggerInformationPanel = true;
+                Passives.AddCustomPassiveToPool("ST_Overtuned_PA", "Overtuned", overtuned);
+                GlossaryPassives STOvertunedInfo = new GlossaryPassives("Overtuned", "This party member/enemy is permanently Overclocked and deals double direct damage.", ResourceLoader.LoadSprite("passive_overtuned"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STOvertunedInfo);
             }
 
             //stole this wholesale from radio ooooops

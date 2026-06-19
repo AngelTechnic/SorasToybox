@@ -130,6 +130,7 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(anteUp, 1, Targeting.Unit_AllOpponents)
             ];
 
+
             PerformEffectPassiveAbility deathmatchInstinct = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
             deathmatchInstinct.name = "ST_InstinctDeathmatch_PA";
             deathmatchInstinct._passiveName = "Instinct";
@@ -178,6 +179,7 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(CallReinforcements, 1, Targeting.Slot_SelfSlot),
             ];
             Passives.AddCustomPassiveToPool("ST_DeploymentDeathmatch_PA", "Deployment (15)", deathmatchDeployment);
+
 
 
             //Basic unit setup
@@ -345,6 +347,26 @@ namespace SorasToybox.Enemies
             execution.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
             execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Additional)]);
 
+            //adding tragedy achievement.
+            TryUnlockAchievementEffect deathmatchTragedyUnlock = ScriptableObject.CreateInstance<TryUnlockAchievementEffect>();
+            deathmatchTragedyUnlock._unlockID = "SorasToybox_Deathmatch_Tragedy_Unlock";
+
+            PerformEffectPassiveAbility deathmatchDismal = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            deathmatchDismal.name = "ST_DismalDeathmatch_PA";
+            deathmatchDismal.m_PassiveID = "DismalDeathmatch";
+            deathmatchDismal._passiveName = "Dismal";
+            deathmatchDismal.passiveIcon = ResourceLoader.LoadSprite("passive_dismal.png");
+            deathmatchDismal._enemyDescription = "This enemy is looking for a reason to hurt you.";
+            deathmatchDismal._characterDescription = "This party member is looking for a reason to hurt you.";
+            deathmatchDismal._triggerOn = [TriggerCalls.OnDeath];
+            deathmatchDismal.doesPassiveTriggerInformationPanel = false;
+            deathmatchDismal.effects = [Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot)];
+
+            Passives.AddCustomPassiveToPool("ST_DismalDeathmatch_PA", "Dismal", deathmatchDismal);
+
+            RemovePassiveEffect noDismalForYou = ScriptableObject.CreateInstance<RemovePassiveEffect>();
+            noDismalForYou.m_PassiveID = "DismalDeathmatch";
+
             //EXCESS
             Ability admission = new Ability("Admission", "ST_DMExcessAbility_A")
             {
@@ -356,6 +378,7 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(noAnte, 1, Targeting.Unit_AllOpponents),
                     Effects.GenerateEffect(anteByPrevious, 1, Targeting.Spec_Unit_AllOpponents_Weakest),
+                    Effects.GenerateEffect(noDismalForYou, 1, Targeting.Slot_SelfSlot),
                 ]
             };
             admission.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Rem_Status_Ante"]);
@@ -399,7 +422,11 @@ namespace SorasToybox.Enemies
                 rarity = Rarity.ImpossibleNoReroll,
             };
 
-            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra)]);
+
+
+
+
+            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra), deathmatchDismal]);
 
             deathmatchEnemy.AddEnemyAbilities([
                 judgement,
