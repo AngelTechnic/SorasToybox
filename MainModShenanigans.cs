@@ -93,6 +93,7 @@ namespace SorasToybox //Mod namespace
             {
                 Litany.Add();
                 BurningShame.Add();
+                AMsSeveredHead.Add();
                 Deathmatch.Add();
             }
 
@@ -206,7 +207,7 @@ namespace SorasToybox //Mod namespace
 
             //Add items
             SentientArcanite.Add();
-            AMsSeveredHead.Add();
+
 
             //remember character order is: Mercurie, Karma
             //Osman Unlocks
