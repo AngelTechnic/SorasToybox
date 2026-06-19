@@ -32,7 +32,7 @@ namespace SorasToybox
         }
     }
 
-    public static class SaltExcessPassive
+    public static class STVersionOfSaltExcessPassive
     {
         public static void Add()
         {
