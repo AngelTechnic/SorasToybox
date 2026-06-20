@@ -93,6 +93,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Nolocimes_Batretne_BOSS", "Katalixi");
             targetListKarma.Add("SkullHermit_Hidden_EN", "Hermit1");
             targetListKarma.Add("RiftMiniboss_EN", "RiftMiniboss");
+            targetListKarma.Add("ArtilleryWitch_EN", "ArtilleryWitch");
 
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
