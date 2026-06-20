@@ -225,19 +225,19 @@ namespace SorasToybox.Enemies
 
             UseSpecificAbilityByEntryEffect queueacro = ScriptableObject.CreateInstance<UseSpecificAbilityByEntryEffect>();
             queueacro.usePrev = false;
-            PerformEffectPassiveAbility excess = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
-            excess.name = "Excess_Shame_PA";
-            excess._passiveName = "Excess (I Only See Evil In You)";
-            excess.m_PassiveID = "Excess_PA";
-            excess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
-            excess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"I Only See Evil In You\".";
-            excess._characterDescription = "nah";
-            excess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
-            excess.effects = [
+            PerformEffectPassiveAbility shameExcess = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            shameExcess.name = "Excess_Shame_PA";
+            shameExcess._passiveName = "Excess (I Only See Evil In You)";
+            shameExcess.m_PassiveID = "Excess_PA";
+            shameExcess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
+            shameExcess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"I Only See Evil In You\".";
+            shameExcess._characterDescription = "nah";
+            shameExcess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
+            shameExcess.effects = [
                 Effects.GenerateEffect(queueacro,1,Targeting.Slot_SelfSlot),
                 ];
 
-            excess.doesPassiveTriggerInformationPanel = true;
+            shameExcess.doesPassiveTriggerInformationPanel = true;
             ExtraAbilityInfo extraAbilityInfo = new ExtraAbilityInfo();
             extraAbilityInfo.ability = template.ability;
             extraAbilityInfo.cost = new ManaColorSO[]
@@ -247,11 +247,11 @@ namespace SorasToybox.Enemies
             };
             extraAbilityInfo.rarity = Rarity.ImpossibleNoReroll;
             queueacro._parentalAbility = extraAbilityInfo;
-            Passives.AddCustomPassiveToPool("Excess_Shame_PA", "Excess (I Only See Evil In You)", excess);
+            Passives.AddCustomPassiveToPool("Excess_Shame_PA", "Excess (I Only See Evil In You)", shameExcess);
 
 
             //adding some passives. Excess and bonus suite have to wait for now.
-            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), excess, CustomPassives.CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
+            burningShame.AddPassives([Passives.Withering, Passives.GetCustomPassive("Fragile_PA"), shameExcess  , CustomPassives.CustomPassive.BonusSuiteRerollGenerator("Formless", [shameextraleft, shameextraright])]);
 
             burningShame.AddEnemyAbilities(
                 [
