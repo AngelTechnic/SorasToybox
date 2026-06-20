@@ -232,7 +232,7 @@ namespace SorasToybox.Enemies
             excess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
             excess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"I Only See Evil In You\".";
             excess._characterDescription = "nah";
-            excess._triggerOn = [STExcessNotificationHook.OnSTExcessTriggered];
+            excess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
             excess.effects = [
                 Effects.GenerateEffect(queueacro,1,Targeting.Slot_SelfSlot),
                 ];

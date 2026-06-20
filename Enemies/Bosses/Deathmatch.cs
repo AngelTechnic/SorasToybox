@@ -5,6 +5,7 @@ using SorasToybox.CustomOther;
 using System;
 using System.Reflection;
 using UnityEngine;
+using SorasToybox.CustomPassives;
 using UnityEngine.SocialPlatforms.Impl;
 
 
@@ -406,7 +407,7 @@ namespace SorasToybox.Enemies
             dmExcess.passiveIcon = ResourceLoader.LoadSprite("passive_excess.png");
             dmExcess._enemyDescription = "Whenever overflow is triggered, this enemy will queue the ability \"Admission\".";
             dmExcess._characterDescription = "nah";
-            dmExcess._triggerOn = [STExcessNotificationHook.OnSTExcessTriggered];
+            dmExcess._triggerOn = [ExcessNotificationHook.OnExcessTriggered];
             dmExcess.effects = [
                 Effects.GenerateEffect(queueAdmission,1,Targeting.Slot_SelfSlot),
                 ];
