@@ -37,6 +37,15 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("SuspiciousMung_EN", "SusMung");
             targetListMercurie.Add("SkullHermit_Hidden_EN", "Hermit1");
             targetListMercurie.Add("CobaltCurator_EN", "CobaltCurator");
+            targetListMercurie.Add("EphialtesOrguis_EN", "EphialtesOrguis");
+            targetListMercurie.Add("ApatelosOrguis_EN", "ApatelosOrguis");
+            targetListMercurie.Add("PanopticOrguis_EN", "PanopticOrguis");
+            targetListMercurie.Add("HamalatOrguis_EN", "HamalatOrguis");
+            targetListMercurie.Add("ArtilleryWitch_EN", "ArtilleryWitch");
+            targetListMercurie.Add("Tillinghast_BOSS", "Tillinghast");
+            targetListMercurie.Add("DiscShaped_Liquivore_BOSS", "TerrorFromBeyond");
+            targetListMercurie.Add("Tumbleweed_Liquivore_BOSS", "TerrorFromBeyond");
+            targetListMercurie.Add("Ophidian_Liquivore_BOSS", "TerrorFromBeyond");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -83,6 +92,8 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Primus_EN", "Primus");
             targetListKarma.Add("Nolocimes_Batretne_BOSS", "Katalixi");
             targetListKarma.Add("SkullHermit_Hidden_EN", "Hermit1");
+            targetListKarma.Add("RiftMiniboss_EN", "RiftMiniboss");
+
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 
