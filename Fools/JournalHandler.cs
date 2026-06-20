@@ -46,6 +46,8 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("DiscShaped_Liquivore_BOSS", "TerrorFromBeyond");
             targetListMercurie.Add("Tumbleweed_Liquivore_BOSS", "TerrorFromBeyond");
             targetListMercurie.Add("Ophidian_Liquivore_BOSS", "TerrorFromBeyond");
+            targetListMercurie.Add("RiftMiniboss_EN", "RiftMiniboss");
+            targetListMercurie.Add("BastardZygote_EN", "Zygote");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -94,6 +96,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("SkullHermit_Hidden_EN", "Hermit1");
             targetListKarma.Add("RiftMiniboss_EN", "RiftMiniboss");
             targetListKarma.Add("ArtilleryWitch_EN", "ArtilleryWitch");
+            targetListKarma.Add("BastardZygote_EN", "Zygote");
 
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
