@@ -93,7 +93,6 @@ namespace SorasToybox //Mod namespace
             {
                 Litany.Add();
                 BurningShame.Add();
-                AMsSeveredHead.Add();
                 Deathmatch.Add();
             }
 
@@ -200,14 +199,14 @@ namespace SorasToybox //Mod namespace
 
 
             //Log enemies (Do config thing with it)
-            Logger.LogInfo("New Toys to play with.");
+
 
 
 
 
             //Add items
             SentientArcanite.Add();
-
+            AMsSeveredHead.Add();
 
             //remember character order is: Mercurie, Karma
             //Osman Unlocks
@@ -227,13 +226,16 @@ namespace SorasToybox //Mod namespace
             //Blue Skies Unlocks
             if (CrossMod.SaltEnemies)
             {
+                MemoryOfArtrodus.Add();
                 MegaHammer.Add();
             }
             //DM Unlocks go here I think.
             EntrenchingTool.Add();
 
             //ST deathmatch unlocks
+            MemoryOfGriyadin.Add();
             Setset.Add();
+
 
             //Sofanthiels Deathmatch Unlocks
             if (CrossMod.Sofanthiels)

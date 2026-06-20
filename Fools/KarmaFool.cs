@@ -142,7 +142,7 @@ namespace SorasToybox.Fools
             //Hot Sauce effect shenanigans
             AnimationVisualsEffect hotsauceVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             hotsauceVisuals._visuals = Visuals.OilSlicked;
-            hotsauceVisuals._animationTarget = Targeting.Slot_SelfSlot;
+            hotsauceVisuals._animationTarget = Targeting.Slot_SelfAll_AndSides;
 
             TargetPerformEffectViaSubaction hotsauce1Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             hotsauce1Effects.effects =
@@ -439,7 +439,7 @@ namespace SorasToybox.Fools
             //What's Coming effect shenanigans
             AnimationVisualsEffect whatsComingVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             whatsComingVisuals._visuals = Visuals.Misery;
-            whatsComingVisuals._animationTarget = Targeting.Slot_SelfSlot;
+            whatsComingVisuals._animationTarget = Targeting.Slot_SelfAll;
 
             TargetPerformEffectViaSubaction whatsComing1Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             whatsComing1Effects.effects = 

@@ -12,9 +12,12 @@
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
+    <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
@@ -81,6 +84,10 @@
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
     <None Remove="Assets\Items\item_megahammer_locked.png" />
+    <None Remove="Assets\Items\item_memoryofartrodus.png" />
+    <None Remove="Assets\Items\item_memoryofartrodus_locked.png" />
+    <None Remove="Assets\Items\item_memoryofgriyadin.png" />
+    <None Remove="Assets\Items\item_memoryofgriyadin_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
@@ -118,9 +125,12 @@
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
@@ -190,6 +200,10 @@
     <EmbeddedResource Include="Assets\Items\item_megahammer_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_goldmilkshake.png" />
     <EmbeddedResource Include="Assets\Items\item_goldmilkshake_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_memoryofartrodus.png" />
+    <EmbeddedResource Include="Assets\Items\item_memoryofartrodus_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_memoryofgriyadin.png" />
+    <EmbeddedResource Include="Assets\Items\item_memoryofgriyadin_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />

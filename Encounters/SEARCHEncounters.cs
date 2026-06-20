@@ -24,12 +24,25 @@ namespace SorasToybox.Encounters
                 RoarEvent = "event:/SorasSFX/Enemies/SEARCH/SEARCHRoar",
             };
 
-            searchEasy.SimpleAddEncounter(1, "SEARCH_EN", 1, "Mung_EN");
+            searchEasy.SimpleAddEncounter(1, "SEARCH_EN", 3, "Mung_EN");
+            searchEasy.SimpleAddEncounter(2, "SEARCH_EN", 1, "MudLung_EN");
 
 
             searchEasy.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Easy_EnemyBundle", 6, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Easy);
 
+
+            EnemyEncounter_API searchMedium = new(0, "H_Zone01_SEARCH_Medium_EnemyBundle", "SEARCH_Sign")
+            {
+                MusicEvent = "event:/SorasMusic/Enemies/SEARCHMusic/TimestopperTactics",
+                RoarEvent = "event:/SorasSFX/Enemies/SEARCH/SEARCHRoar",
+            };
+
+            searchMedium.SimpleAddEncounter(2, "SEARCH_EN", 1, "FlaMinGoa_EN");
+
+
+            searchMedium.AddEncounterToDataBases();
+            EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Medium_EnemyBundle", 6, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
         }
     }
 }

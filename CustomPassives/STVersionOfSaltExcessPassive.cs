@@ -25,7 +25,7 @@ namespace SorasToybox
             }
         }
 
-        public static TriggerCalls OnSTExcessTriggered => (TriggerCalls)6682573;
+        public static TriggerCalls OnSTExcessTriggered => (TriggerCalls)9991409;
         public static void Setup()
         {
             IDetour hook = new Hook(typeof(PlayerTurnEndSecondPartAction).GetMethod(nameof(PlayerTurnEndSecondPartAction.CalculateOverflow), ~BindingFlags.Default), typeof(STExcessNotificationHook).GetMethod(nameof(CalculateOverflow), ~BindingFlags.Default));
