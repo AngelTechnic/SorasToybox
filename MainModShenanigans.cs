@@ -230,7 +230,14 @@ namespace SorasToybox //Mod namespace
             {
                 WorldOfHassle.Add();
                 CharybdisItem.Add();
-            }    
+            }
+            //Katalixi Unlocks
+            if (CrossMod.IntoTheAbyss)
+            {
+                LonelyHike.Add();
+                //PrincessItem.Add();
+            }
+
             //Blue Skies Unlocks
             if (CrossMod.SaltEnemies)
             {

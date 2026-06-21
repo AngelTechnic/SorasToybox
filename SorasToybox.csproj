@@ -22,6 +22,7 @@
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
+    <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Mercurie.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\MarchPearl.png" />
     <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Karma.png" />
@@ -88,6 +89,8 @@
     <None Remove="Assets\Items\item_fortyproof_locked.png" />
     <None Remove="Assets\Items\item_ghostpepper.png" />
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
+    <None Remove="Assets\Items\item_lonelyhike.png" />
+    <None Remove="Assets\Items\item_lonelyhike_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
     <None Remove="Assets\Items\item_megahammer_locked.png" />
     <None Remove="Assets\Items\item_memoryofartrodus.png" />
@@ -143,6 +146,7 @@
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\MarchPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Karma.png" />
@@ -210,6 +214,8 @@
     <EmbeddedResource Include="Assets\Items\item_fortyproof_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_lonelyhike.png" />
+    <EmbeddedResource Include="Assets\Items\item_lonelyhike_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_goldmilkshake.png" />
