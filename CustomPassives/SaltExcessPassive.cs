@@ -25,7 +25,7 @@ namespace SorasToybox
             }
         }
 
-        public static TriggerCalls OnExcessTriggered => (TriggerCalls)6682573;
+        public static TriggerCalls OnExcessTriggered => (TriggerCalls)9991049;
         public static void Setup()
         {
             IDetour hook = new Hook(typeof(PlayerTurnEndSecondPartAction).GetMethod(nameof(PlayerTurnEndSecondPartAction.CalculateOverflow), ~BindingFlags.Default), typeof(ExcessNotificationHook).GetMethod(nameof(CalculateOverflow), ~BindingFlags.Default));

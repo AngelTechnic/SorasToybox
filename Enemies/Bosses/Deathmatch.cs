@@ -412,9 +412,6 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(queueAdmission,1,Targeting.Slot_SelfSlot),
                 ];
             dmExcess.doesPassiveTriggerInformationPanel = true;
-
-
-
             Passives.AddCustomPassiveToPool("DMExcess_PA", "Excess (Admission)", dmExcess);
 
 
