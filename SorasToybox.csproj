@@ -24,6 +24,7 @@
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\MarchPearl.png" />
+    <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Karma.png" />
     <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Mercurie.png" />
     <None Remove="Assets\Achievements\Nobody Unlocks\NobodyPearl.png" />
     <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
@@ -73,11 +74,14 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_theend.png" />
     <None Remove="Assets\Intents\propx_intent.png" />
     <None Remove="Assets\Intents\prop_intent.png" />
+    <None Remove="Assets\Items\charybdis_spiritreaper.png" />
     <None Remove="Assets\Items\fortyproof_bottletoss.png" />
     <None Remove="Assets\Items\item_amsseveredhead.png" />
     <None Remove="Assets\Items\item_amsseveredhead_locked.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
+    <None Remove="Assets\Items\item_charybdis.png" />
+    <None Remove="Assets\Items\item_charybdis_locked.png" />
     <None Remove="Assets\Items\item_entrenchingtool.png" />
     <None Remove="Assets\Items\item_entrenchingtool_locked.png" />
     <None Remove="Assets\Items\item_fortyproof.png" />
@@ -141,6 +145,7 @@
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\MarchPearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\NobodyPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Karma.png" />
@@ -191,11 +196,14 @@
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_theend.png" />
     <EmbeddedResource Include="Assets\Intents\propx_intent.png" />
     <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
+    <EmbeddedResource Include="Assets\Items\charybdis_spiritreaper.png" />
     <EmbeddedResource Include="Assets\Items\fortyproof_bottletoss.png" />
     <EmbeddedResource Include="Assets\Items\item_amsseveredhead.png" />
     <EmbeddedResource Include="Assets\Items\item_amsseveredhead_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus.png" />
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_charybdis.png" />
+    <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_entrenchingtool.png" />
     <EmbeddedResource Include="Assets\Items\item_entrenchingtool_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_fortyproof.png" />

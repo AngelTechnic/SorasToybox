@@ -79,6 +79,7 @@ namespace SorasToybox //Mod namespace
             CustomPassives.CustomPassive.Add();
             CustomPigments.Add();
             //Log custom stuff (Do config thing with it)
+            SaltExcessPassive.Add();
             Logger.LogInfo("Custom Effects in effect.");
  
 
@@ -228,6 +229,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss)
             {
                 WorldOfHassle.Add();
+                CharybdisItem.Add();
             }    
             //Blue Skies Unlocks
             if (CrossMod.SaltEnemies)

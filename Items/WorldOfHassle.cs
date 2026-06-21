@@ -5,7 +5,7 @@ using BrutalAPI;
 using BrutalAPI.Items;
 using UnityEngine;
 using SorasToybox.CustomEffects;
-using JetBrains.Annotations;
+
 
 namespace SorasToybox.Items
 {
@@ -16,22 +16,35 @@ namespace SorasToybox.Items
             ExtraPassiveAbility_Wearable_SMS getErasure = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
             getErasure._extraPassiveAbility = Passives.GetCustomPassive("Erasure_PA");
 
-            HealEffect Heal = ScriptableObject.CreateInstance<HealEffect>();
-            Heal._directHeal = true;
-            Heal.usePreviousExitValue = true;
-            Heal._onlyIfHasHealthOver0 = true;
+            RemoveStatusEffectEffect noSpotlight = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
+            noSpotlight._status = StatusField.Spotlight;
 
-            PerformEffectAddingResult_Item mickeyMilan = new PerformEffectAddingResult_Item("ST_WorldOfHassle_ID", null, false)
+            StatusEffect_Apply_Effect getSpotlight = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getSpotlight._Status = StatusField.Spotlight;
+
+            StatusEffectCheckerEffect hasSpotlight = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
+            hasSpotlight._status = StatusField.Spotlight;
+
+            StatusEffect_Apply_Effect getAnte = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getAnte._Status = StatusField.GetCustomStatusEffect("Ante_ID");
+
+            PerformEffect_Item mickeyMilan = new PerformEffect_Item("ST_WorldOfHassle_ID", null, false)
             {
                 Item_ID = "WorldOfHassle_SW",
                 Name = "World of Hassle",
                 Flavour = "\"Step back into the limelight.\"",
-                Description = "Gain Erasure as a passive.\nWhenever this party member takes damage, heal the Left and Right party members by an equal amount.\nHealing assumes the grid wraps around.",
+                Description = "Gain Erasure as a passive.\nWhen this party member is damaged, gain 1 Ante.",
                 TriggerOn = TriggerCalls.OnDamaged,
-                Effects = [Effects.GenerateEffect(Heal, 1, Targeting.GenerateSlotTarget([-4, -1, 0, 1, 4], true))],
+                Effects = 
+                [
+                    Effects.GenerateEffect(getSpotlight, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(getAnte, 1, Targeting.Slot_SelfSlot),
+                ],
+                EquippedModifiers = [getErasure],
                 StartsLocked = true,
                 ShopPrice = 9,
                 Icon = ResourceLoader.LoadSprite("item_worldofhassle"),
+                IsShopItem = true,
             };
 
             //Unlock this
