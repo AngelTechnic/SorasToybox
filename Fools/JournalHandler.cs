@@ -48,6 +48,10 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("Ophidian_Liquivore_BOSS", "TerrorFromBeyond");
             targetListMercurie.Add("RiftMiniboss_EN", "RiftMiniboss");
             targetListMercurie.Add("BastardZygote_EN", "Zygote");
+            targetListMercurie.Add("YesMan_EN", "YesMan");
+            targetListMercurie.Add("Sycophant_EN", "Sycophant");
+            targetListMercurie.Add("925er_EN", "925er");
+            targetListMercurie.Add("WanderFellow_EN", "WanderFellow");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -97,6 +101,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("RiftMiniboss_EN", "RiftMiniboss");
             targetListKarma.Add("ArtilleryWitch_EN", "ArtilleryWitch");
             targetListKarma.Add("BastardZygote_EN", "Zygote");
+            targetListKarma.Add("WhistlingWhitmore_BOSS", "Whitmore");
 
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
@@ -311,18 +316,32 @@ namespace SorasToybox.Fools
         {
             Sprite blankSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
 
-            SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
-            speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
-            speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").dxSound;
-            speakerBundleDeathmatch.portrait = blankSprite;
-            Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Deathmatch_BOSS"))
+            {
+                SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
+                speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
+                speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").dxSound;
+                speakerBundleDeathmatch.portrait = blankSprite;
+                Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
+            }
 
-            SpeakerBundle speakerBundleDozer = new SpeakerBundle();
-            speakerBundleDozer.bundleTextColor = new Color32(255, 255, 0, 255);
-            speakerBundleDozer.dialogueSound = LoadedAssetsHandler.GetEnemy("Dozer_EN").damageSound;
-            speakerBundleDozer.portrait = blankSprite;
-            Dialogues.CreateAndAddCustom_SpeakerData("Dozer", speakerBundleDozer, true, false, new SpeakerEmote[0]);
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Dozer_EN"))
+            {
+                SpeakerBundle speakerBundleDozer = new SpeakerBundle();
+                speakerBundleDozer.bundleTextColor = new Color32(255, 255, 0, 255);
+                speakerBundleDozer.dialogueSound = LoadedAssetsHandler.GetEnemy("Dozer_EN").damageSound;
+                speakerBundleDozer.portrait = blankSprite;
+                Dialogues.CreateAndAddCustom_SpeakerData("Dozer", speakerBundleDozer, true, false, new SpeakerEmote[0]);
+            }
 
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("925er_EN"))
+            {
+                SpeakerBundle speakerBundle925er = new SpeakerBundle();
+                speakerBundle925er.bundleTextColor = new Color32(64, 64, 64, 255);
+                speakerBundle925er.dialogueSound = LoadedAssetsHandler.GetEnemy("925er_EN").damageSound;
+                speakerBundle925er.portrait = blankSprite;
+                Dialogues.CreateAndAddCustom_SpeakerData("925er", speakerBundle925er, true, false, new SpeakerEmote[0]);
+            }
         }
 
     }

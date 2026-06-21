@@ -223,6 +223,12 @@ namespace SorasToybox //Mod namespace
             {
                 GhostPepper.Add();
             }
+
+            //Nobody Unlocks
+            if (CrossMod.IntoTheAbyss)
+            {
+                WorldOfHassle.Add();
+            }    
             //Blue Skies Unlocks
             if (CrossMod.SaltEnemies)
             {

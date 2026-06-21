@@ -24,6 +24,8 @@
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\MarchPearl.png" />
+    <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Mercurie.png" />
+    <None Remove="Assets\Achievements\Nobody Unlocks\NobodyPearl.png" />
     <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPearl.png" />
@@ -91,6 +93,8 @@
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
+    <None Remove="Assets\Items\item_worldofhassle.png" />
+    <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Passives\bloatPassive.png" />
     <None Remove="Assets\Passives\Fragile.png" />
     <None Remove="Assets\Passives\IconBonusSuite.png" />
@@ -137,6 +141,8 @@
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\MarchPearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\NobodyPearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
@@ -207,6 +213,8 @@
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_worldofhassle.png" />
+    <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuite.png" />
