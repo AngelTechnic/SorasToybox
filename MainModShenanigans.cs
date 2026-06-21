@@ -226,16 +226,16 @@ namespace SorasToybox //Mod namespace
             }
 
             //Nobody Unlocks
-            if (CrossMod.IntoTheAbyss)
+            if (CrossMod.IntoTheAbyss && LoadedAssetsHandler.LoadedEnemies.ContainsKey("Nobody_BOSS"))
             {
                 WorldOfHassle.Add();
                 CharybdisItem.Add();
             }
             //Katalixi Unlocks
-            if (CrossMod.IntoTheAbyss)
+            if (CrossMod.IntoTheAbyss && LoadedAssetsHandler.LoadedEnemies.ContainsKey("Nolocimes_Batretne_BOSS"))
             {
                 LonelyHike.Add();
-                //PrincessItem.Add();
+                PrincessItem.Add();
             }
 
             //Blue Skies Unlocks
