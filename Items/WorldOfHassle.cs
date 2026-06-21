@@ -24,7 +24,7 @@ namespace SorasToybox.Items
             PerformEffectAddingResult_Item mickeyMilan = new PerformEffectAddingResult_Item("ST_WorldOfHassle_ID", null, false)
             {
                 Item_ID = "WorldOfHassle_SW",
-                Name = "World Of Hassle",
+                Name = "World of Hassle",
                 Flavour = "\"Step back into the limelight.\"",
                 Description = "Gain Erasure as a passive.\nWhenever this party member takes damage, heal the Left and Right party members by an equal amount.\nHealing assumes the grid wraps around.",
                 TriggerOn = TriggerCalls.OnDamaged,
