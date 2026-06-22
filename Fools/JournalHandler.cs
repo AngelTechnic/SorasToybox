@@ -348,8 +348,8 @@ namespace SorasToybox.Fools
             {
                 SpeakerBundle speakerBundleSTMalachai = new SpeakerBundle();
                 speakerBundleSTMalachai.bundleTextColor = new Color32(255, 255, 255, 255);
-                speakerBundleSTMalachai.dialogueSound = "event:/MalachaiDx";
-                speakerBundleSTMalachai.portrait = ResourceLoader.LoadSprite("malachai.png", new Vector2(0.5f, 0f), 32);
+                speakerBundleSTMalachai.dialogueSound = LoadedAssetsHandler.GetCharacter("TrueMalachai_CH").dxSound;
+                speakerBundleSTMalachai.portrait = LoadedAssetsHandler.GetCharacter("TrueMalachai_CH").characterSprite;
                 Dialogues.CreateAndAddCustom_SpeakerData("STMalachai", speakerBundleSTMalachai, true, false, new SpeakerEmote[0]);
 
             }
