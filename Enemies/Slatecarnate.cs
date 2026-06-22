@@ -35,6 +35,12 @@ namespace SorasToybox.Enemies
             StatusEffect_Apply_Effect venganceMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             venganceMe._Status = StatusField.GetCustomStatusEffect("VenganceMark_ID");
 
+            RemoveStatusEffectEffect noVengeance = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
+            noVengeance._status = StatusField.GetCustomStatusEffect("VenganceMark_ID");
+
+            StatusEffectCheckerEffect hasVengnce = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
+            hasVengnce._status = StatusField.GetCustomStatusEffect("VenganceMark_ID");
+
             //Generating red pigment
             GenerateColorManaEffect redMana = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
             redMana.mana = Pigments.Red;
@@ -49,11 +55,16 @@ namespace SorasToybox.Enemies
             //The Big
             Ability slateBig = new Ability("The Big", "SlatecarnateBig_A")
             {
-                Description = "Inflicts Vengance Mark to the Left and Right enemies.",
+                Description = "Inflicts Vengance Mark to the Left and Right enemies. If they already had it, they get it removed.",
                 Cost = [Pigments.Purple, Pigments.Purple],
                 Effects = 
                 [
-                    Effects.GenerateEffect(venganceMe, 1, Targeting.Slot_AllySides),
+                    Effects.GenerateEffect(hasVengnce, 1, Targeting.Slot_AllyLeft),
+                    Effects.GenerateEffect(noVengeance, 1, Targeting.Slot_AllyLeft, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(venganceMe, 1, Targeting.Slot_AllyLeft, Effects.CheckPreviousEffectCondition(false, 1)),
+                    Effects.GenerateEffect(hasVengnce, 1, Targeting.Slot_AllyRight),
+                    Effects.GenerateEffect(noVengeance, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(venganceMe, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(false, 1)),
                 ],
                 Visuals = Visuals.Burn,
                 AnimationTarget = Targeting.Slot_AllySides,

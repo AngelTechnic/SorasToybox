@@ -102,6 +102,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("ArtilleryWitch_EN", "ArtilleryWitch");
             targetListKarma.Add("BastardZygote_EN", "Zygote");
             targetListKarma.Add("WhistlingWhitmore_BOSS", "Whitmore");
+            targetListKarma.Add("Malachai_EN", "Malachai");
 
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
@@ -342,7 +343,16 @@ namespace SorasToybox.Fools
                 speakerBundle925er.portrait = blankSprite;
                 Dialogues.CreateAndAddCustom_SpeakerData("925er", speakerBundle925er, true, false, new SpeakerEmote[0]);
             }
-        }
 
+            if (LoadedAssetsHandler.LoadedCharacters.ContainsKey("TrueMalachai_CH"))
+            {
+                SpeakerBundle speakerBundleSTMalachai = new SpeakerBundle();
+                speakerBundleSTMalachai.bundleTextColor = new Color32(255, 255, 255, 255);
+                speakerBundleSTMalachai.dialogueSound = "event:/MalachaiDx";
+                speakerBundleSTMalachai.portrait = ResourceLoader.LoadSprite("malachai.png", new Vector2(0.5f, 0f), 32);
+                Dialogues.CreateAndAddCustom_SpeakerData("STMalachai", speakerBundleSTMalachai, true, false, new SpeakerEmote[0]);
+
+            }
+        }
     }
 }
