@@ -581,6 +581,7 @@ namespace SorasToybox.Fools
             karma.AddLevelData(40, [hotsauce4, agony4, whatsComing4]);
 
 
+            //cheevos
             //karma.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Karma_Witness_ACH");
             //karma.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Karma_Divine_ACH");
             if (SorasToybox.CrossMod.EnemyPack) { karma.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Karma_Abstraction_ACH"); }
