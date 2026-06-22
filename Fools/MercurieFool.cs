@@ -305,7 +305,7 @@ namespace SorasToybox.Fools
             mercurie.AddLevelData(13, [accelerator3, theEnd3, clock3]);
             mercurie.AddLevelData(18, [accelerator4, theEnd4, clock4]);
 
-
+            //cheevos
             mercurie.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Mercurie_Witness_ACH");
             //mercurie.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Mercurie_Divine_ACH");
             if (SorasToybox.CrossMod.EnemyPack) { mercurie.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Mercurie_Abstraction_ACH"); }
