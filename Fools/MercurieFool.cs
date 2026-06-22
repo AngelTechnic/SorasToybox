@@ -47,7 +47,7 @@ namespace SorasToybox.Fools
 
 
             DamageEffect normalDamage = ScriptableObject.CreateInstance<DamageEffect>();
-            
+
 
             DamageEffect damageDeadIsTrue = ScriptableObject.CreateInstance<DamageEffect>();
             damageDeadIsTrue._returnKillAsSuccess = true;
@@ -57,7 +57,7 @@ namespace SorasToybox.Fools
             if (SorasToybox.CrossMod.MythosFriends)
             {
                 deathSound = LoadedAssetsHandler.GetEnemy("DimensionalShambler_EN").deathSound;
-            } 
+            }
             else
             {
                 deathSound = LoadedAssetsHandler.GetEnemy("Estelle_EN").deathSound;
@@ -73,8 +73,8 @@ namespace SorasToybox.Fools
                 FrontSprite = ResourceLoader.LoadSprite("mercurie_front.png", new Vector2(0.5f, 0f), 32),
                 BackSprite = ResourceLoader.LoadSprite("mercurie_back.png", new Vector2(0.5f, 0f), 32),
                 OverworldSprite = ResourceLoader.LoadSprite("mercurie_overworld.png", new Vector2(0.5f, 0f), 32),
-                DamageSound = "event:/EstelleHurt", 
-                DeathSound = deathSound, 
+                DamageSound = "event:/EstelleHurt",
+                DeathSound = deathSound,
                 DialogueSound = "event:/EstelleRoar",
                 UnitTypes = ["FemaleID", "Zoincaillan", "Angel"],
             };
@@ -305,8 +305,19 @@ namespace SorasToybox.Fools
             mercurie.AddLevelData(13, [accelerator3, theEnd3, clock3]);
             mercurie.AddLevelData(18, [accelerator4, theEnd4, clock4]);
 
+
+            mercurie.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Mercurie_Witness_ACH");
+            //mercurie.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Mercurie_Divine_ACH");
+            if (SorasToybox.CrossMod.EnemyPack) { mercurie.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Mercurie_Abstraction_ACH"); }
+            //if (SorasToybox.CrossMod.GlitchsFreaks) { mercurie.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Mercurie_Inevitable_ACH"); }
+            if (SorasToybox.CrossMod.IntoTheAbyss) { mercurie.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Mercurie_Forgotten_ACH"); }
+            if (SorasToybox.CrossMod.IntoTheAbyss) { mercurie.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Mercurie_Boundary_ACH"); }
+            if (SorasToybox.CrossMod.SaltEnemies) { mercurie.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Mercurie_Dreamer_ACH"); }
+            mercurie.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Mercurie_Antagonist_ACH");
             mercurie.AddCharacter(true, false);
 
+
+            //SpeakerBundle nonsense
             SpeakerBundle speakerBundleMercurie = new SpeakerBundle();
             speakerBundleMercurie.bundleTextColor = new Color32(96, 215, 181, 255);
             speakerBundleMercurie.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").dxSound;

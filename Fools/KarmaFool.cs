@@ -580,6 +580,15 @@ namespace SorasToybox.Fools
             karma.AddLevelData(33, [hotsauce3, agony3, whatsComing3]);
             karma.AddLevelData(40, [hotsauce4, agony4, whatsComing4]);
 
+
+            //karma.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Karma_Witness_ACH");
+            //karma.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Karma_Divine_ACH");
+            if (SorasToybox.CrossMod.EnemyPack) { karma.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Karma_Abstraction_ACH"); }
+            if (SorasToybox.CrossMod.GlitchsFreaks) { karma.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Karma_Inevitable_ACH"); }
+            if (SorasToybox.CrossMod.IntoTheAbyss) { karma.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Karma_Forgotten_ACH"); }
+            if (SorasToybox.CrossMod.IntoTheAbyss) { karma.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Karma_Boundary_ACH"); }
+            if (SorasToybox.CrossMod.SaltEnemies) { karma.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Karma_Dreamer_ACH"); }
+            karma.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Karma_Antagonist_ACH");
             karma.AddCharacter(true, false);
 
             //yapshenanigans
