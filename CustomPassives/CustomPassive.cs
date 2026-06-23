@@ -45,6 +45,42 @@ namespace SorasToybox.CustomPassives
             GlossaryPassives STKarmicInfo = new GlossaryPassives("Karmic", "On receiving damage, apply equivalent Regeneration to all allies.", ResourceLoader.LoadSprite("passive_karmic"));
             LoadedDBsHandler.GlossaryDB.AddNewPassive(STKarmicInfo);
 
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Escapist_PA"))
+            {
+                PerformEffectPassiveAbility escape = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                escape.name = "Escapist_PA";
+                escape._passiveName = "Escapist";
+                escape.passiveIcon = ResourceLoader.LoadSprite("EscapistPassive.png");
+                escape.m_PassiveID = "Escapist_PA";
+                escape._enemyDescription = "On using an ability, move to a random unoccupied position.";
+                escape._characterDescription = escape._enemyDescription;
+                escape._triggerOn = [TriggerCalls.OnAbilityUsed];
+                escape.conditions = [];
+                escape.effects = [Effects.GenerateEffect(ScriptableObject.CreateInstance<MoveToRandomEmptyTileEffect>(), 1, Targeting.Slot_SelfSlot)];
+                Passives.AddCustomPassiveToPool("Escapist_PA", "Escapist", escape);
+                GlossaryPassives STEscapistInfo = new GlossaryPassives("Escapist", "On using an ability, move to a random unoccupied position.", ResourceLoader.LoadSprite("EscapistPassive"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STEscapistInfo);
+            }
+
+            //Houdini!
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Houdini_PA"))
+            {
+                PerformEffectPassiveAbility houdini = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                houdini.name = "Houdini_PA";
+                houdini._passiveName = "Houdini";
+                houdini.passiveIcon = ResourceLoader.LoadSprite("HoudiniPassive.png");
+                houdini.m_PassiveID = "Houdini_PA";
+                houdini._enemyDescription = "On being directly damaged, move to a random unoccupied position.";
+                houdini._characterDescription = houdini._enemyDescription;
+                houdini._triggerOn = [TriggerCalls.OnDirectDamaged];
+                houdini.conditions = [];
+                houdini.effects = [Effects.GenerateEffect(ScriptableObject.CreateInstance<MoveToRandomEmptyTileEffect>(), 1, Targeting.Slot_SelfSlot)];
+                Passives.AddCustomPassiveToPool("Houdini_PA", "Houdini", houdini);
+                GlossaryPassives STHoudiniInfo = new GlossaryPassives("Houdini", "On being directly damaged, move to a random unoccupied position.", ResourceLoader.LoadSprite("HoudiniPassive"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STHoudiniInfo);
+            }
+
+
             //Search Party passive
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("SearchParty_PA"))
             {
@@ -126,6 +162,22 @@ namespace SorasToybox.CustomPassives
                 GlossaryPassives STOvertunedInfo = new GlossaryPassives("Overtuned", "This party member/enemy is permanently Overclocked and deals double direct damage.", ResourceLoader.LoadSprite("passive_overtuned"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STOvertunedInfo);
             }
+
+            //godray
+            StatusEffectPassiveAbility deathbound = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();
+            deathbound.name = "ST_Deathbound_PA";
+            deathbound._passiveName = "Deathbound";
+            deathbound._Status = StatusField.Linked;
+            deathbound.m_PassiveID = "Deathbound_ID";
+            deathbound.passiveIcon = ResourceLoader.LoadSprite("passive_deathbound.png");
+            deathbound._characterDescription = "This party member is permanently Linked.";
+            deathbound._enemyDescription = "This enemy is permanently Linked.";
+            deathbound.doesPassiveTriggerInformationPanel = true;
+
+
+            Passives.AddCustomPassiveToPool("ST_Deathbound_PA", "Deathbound", deathbound);
+            GlossaryPassives STDeathboundInfo = new GlossaryPassives("Deathbound", "This party member/enemy is permanently Linked.", ResourceLoader.LoadSprite("passive_godray"));
+            LoadedDBsHandler.GlossaryDB.AddNewPassive(STDeathboundInfo);
 
             //stole this wholesale from radio ooooops
             if (SorasToybox.CrossMod.SaltEnemies)

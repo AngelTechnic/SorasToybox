@@ -222,6 +222,8 @@ namespace SorasToybox //Mod namespace
             //March Unlocks
             if (CrossMod.GlitchsFreaks)
             {
+                FriendlyGearYinimro.Add();
+                ClockKing.Add();
                 GhostPepper.Add();
             }
 

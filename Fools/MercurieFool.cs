@@ -309,7 +309,7 @@ namespace SorasToybox.Fools
             mercurie.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Mercurie_Witness_ACH");
             //mercurie.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Mercurie_Divine_ACH");
             if (SorasToybox.CrossMod.EnemyPack) { mercurie.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Mercurie_Abstraction_ACH"); }
-            //if (SorasToybox.CrossMod.GlitchsFreaks) { mercurie.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Mercurie_Inevitable_ACH"); }
+            if (SorasToybox.CrossMod.GlitchsFreaks) { mercurie.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Mercurie_Inevitable_ACH"); }
             if (SorasToybox.CrossMod.IntoTheAbyss) { mercurie.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Mercurie_Forgotten_ACH"); }
             if (SorasToybox.CrossMod.IntoTheAbyss) { mercurie.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Mercurie_Boundary_ACH"); }
             if (SorasToybox.CrossMod.SaltEnemies) { mercurie.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Mercurie_Dreamer_ACH"); }

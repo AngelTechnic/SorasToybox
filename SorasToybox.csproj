@@ -26,6 +26,7 @@
     <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Mercurie.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\KatalixiPearl.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
+    <None Remove="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <None Remove="Assets\Achievements\March Unlocks\MarchPearl.png" />
     <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Karma.png" />
     <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Mercurie.png" />
@@ -40,10 +41,12 @@
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
     <None Remove="Assets\Enemies\deadDozer.png" />
+    <None Remove="Assets\Enemies\DeadGearYinimro.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
+    <None Remove="Assets\Enemies\TimelineFriendlyGearYinimro.png" />
     <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
@@ -77,6 +80,7 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_theend.png" />
     <None Remove="Assets\Intents\propx_intent.png" />
     <None Remove="Assets\Intents\prop_intent.png" />
+    <None Remove="Assets\Intents\timelineDamage_intent.png" />
     <None Remove="Assets\Items\charybdis_spiritreaper.png" />
     <None Remove="Assets\Items\fortyproof_bottletoss.png" />
     <None Remove="Assets\Items\item_amsseveredhead.png" />
@@ -85,6 +89,8 @@
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_charybdis.png" />
     <None Remove="Assets\Items\item_charybdis_locked.png" />
+    <None Remove="Assets\Items\item_clockking.png" />
+    <None Remove="Assets\Items\item_clockking_locked.png" />
     <None Remove="Assets\Items\item_entrenchingtool.png" />
     <None Remove="Assets\Items\item_entrenchingtool_locked.png" />
     <None Remove="Assets\Items\item_fortyproof.png" />
@@ -108,7 +114,9 @@
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
     <None Remove="Assets\Passives\bloatPassive.png" />
+    <None Remove="Assets\Passives\EscapistPassive.png" />
     <None Remove="Assets\Passives\Fragile.png" />
+    <None Remove="Assets\Passives\HoudiniPassive.png" />
     <None Remove="Assets\Passives\IconBonusSuite.png" />
     <None Remove="Assets\Passives\IconBonusSuiteFormless.png" />
     <None Remove="Assets\Passives\IconBonusSuiteImmaterial.png" />
@@ -117,6 +125,7 @@
     <None Remove="Assets\Passives\IconPatient.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\Instinct.png" />
+    <None Remove="Assets\Passives\passive_deathbound.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
@@ -133,6 +142,12 @@
     <None Remove="Assets\Statuses\status_ante.png" />
     <None Remove="Assets\Statuses\status_overclock.png" />
     <None Remove="Assets\Statuses\status_regen.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Items\item_clockking.png" />
+    <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -170,10 +185,12 @@
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\deadDozer.png" />
+    <EmbeddedResource Include="Assets\Enemies\DeadGearYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\deadLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\noCorpse.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineDozer.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineDozerWoke.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineFriendlyGearYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineHumorIridescent.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineLitany.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineSEARCH.png" />
@@ -207,6 +224,7 @@
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_theend.png" />
     <EmbeddedResource Include="Assets\Intents\propx_intent.png" />
     <EmbeddedResource Include="Assets\Intents\prop_intent.png" />
+    <EmbeddedResource Include="Assets\Intents\timelineDamage_intent.png" />
     <EmbeddedResource Include="Assets\Items\charybdis_spiritreaper.png" />
     <EmbeddedResource Include="Assets\Items\fortyproof_bottletoss.png" />
     <EmbeddedResource Include="Assets\Items\item_amsseveredhead.png" />
@@ -240,7 +258,9 @@
     <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
     <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
+    <EmbeddedResource Include="Assets\Passives\EscapistPassive.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />
+    <EmbeddedResource Include="Assets\Passives\HoudiniPassive.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuite.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteFormless.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteImmaterial.png" />
@@ -249,6 +269,7 @@
     <EmbeddedResource Include="Assets\Passives\IconPatient.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
     <EmbeddedResource Include="Assets\Passives\Instinct.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_deathbound.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
     <EmbeddedResource Include="Assets\Passives\passive_godray.png" />
