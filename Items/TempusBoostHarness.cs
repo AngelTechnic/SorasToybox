@@ -38,7 +38,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Mercurie_Divine_ACH";
             string unlockID = "SorasToybox_Mercurie_Divine_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(evilBirdSuit.item, new ItemModdedUnlockInfo(evilBirdSuit.Item_ID, ResourceLoader.LoadSprite("item_tempusharness_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(evilBirdSuit.item, new ItemModdedUnlockInfo(evilBirdSuit.Item_ID, ResourceLoader.LoadSprite("item_tempusharness_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, evilBirdSuit.Item_ID);
 
