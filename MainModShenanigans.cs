@@ -93,6 +93,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss)
             {
                 Litany.Add();
+                GearYinimro.Add();
                 BurningShame.Add();
                 Deathmatch.Add();
             }
@@ -144,6 +145,8 @@ namespace SorasToybox //Mod namespace
                 {
                     Debug.Log("Litany encounters failed to load.");
                 }
+
+                GearYinimroEncounters.Add();
                 try
                 {
                     DeathmatchEncounter.Add();

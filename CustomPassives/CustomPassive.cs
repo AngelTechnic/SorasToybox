@@ -211,7 +211,75 @@ namespace SorasToybox.CustomPassives
                 fireproofPassive._triggerOn = [TriggerCalls.OnBeingDamaged];
                 fireproofPassive._damageType = CombatType_GameIDs.Dmg_Fire.ToString();
             }
+
+
+            //BLooded Stuff
+            //Red-blooded
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("RedBlooded_1_PA"))
+            {
+                //red blooded setup here
+                GenerateColorManaEffect GiveRedPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GiveRedPigment.mana = Pigments.Red;
+
+                PerformEffectPassiveAbility redBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                redBlooded.name = "RedBlooded_1_PA";
+                redBlooded._passiveName = "Red-Blooded (1)";
+                redBlooded.m_PassiveID = "PigmentBlooded";
+                redBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStoneBloodRed");
+                redBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Red pigment.";
+                redBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Red pigment.";
+                redBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                redBlooded.doesPassiveTriggerInformationPanel = true;
+                redBlooded.effects =
+                [
+                    Effects.GenerateEffect(GiveRedPigment, 1, Targeting.Slot_SelfSlot),
+                ];
+            }
+
+            //yellow blooded
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("YellowBlooded_1_PA"))
+            {
+                GenerateColorManaEffect GiveYellowPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GiveYellowPigment.mana = Pigments.Yellow;
+
+                PerformEffectPassiveAbility yellowBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                yellowBlooded.name = "YellowBlooded_1_PA";
+                yellowBlooded._passiveName = "Yellow-Blooded (1)";
+                yellowBlooded.m_PassiveID = "PigmentBlooded";
+                yellowBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodYellow");
+                yellowBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Yellow pigment.";
+                yellowBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment.";
+                yellowBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                yellowBlooded.doesPassiveTriggerInformationPanel = true;
+                yellowBlooded.effects =
+                [
+                    Effects.GenerateEffect(GiveYellowPigment, 1, Targeting.Slot_SelfSlot),
+                ];
+            }
+
+            //irid blooded
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("IridBlooded_1_PA"))
+            {
+                GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GiveIridPigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("Iridescent");
+
+                PerformEffectPassiveAbility iridBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                iridBlooded.name = "IridBlooded_1_PA";
+                iridBlooded._passiveName = "Iridescent-Blooded (1)";
+                iridBlooded.m_PassiveID = "PigmentBlooded";
+                iridBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodIrid");
+                iridBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
+                iridBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
+                iridBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                iridBlooded.doesPassiveTriggerInformationPanel = true;
+                iridBlooded.effects =
+                [
+                    Effects.GenerateEffect(GiveIridPigment, 1, Targeting.Slot_SelfSlot),
+                ];
+            }
         }
+
+
 
         //Bloat Generator thank GOD
         public static BasePassiveAbilitySO BloatGenerator(int amount)

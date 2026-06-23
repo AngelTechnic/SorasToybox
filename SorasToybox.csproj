@@ -48,6 +48,7 @@
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
     <None Remove="Assets\Enemies\TimelineFriendlyGearYinimro.png" />
+    <None Remove="Assets\Enemies\TimelineGearYinimro.png" />
     <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
@@ -127,6 +128,8 @@
     <None Remove="Assets\Passives\IconFireskull.png" />
     <None Remove="Assets\Passives\IconPatient.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
+    <None Remove="Assets\Passives\IconStonebloodRed.png" />
+    <None Remove="Assets\Passives\IconStonebloodYellow.png" />
     <None Remove="Assets\Passives\Instinct.png" />
     <None Remove="Assets\Passives\passive_deathbound.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
@@ -150,6 +153,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
   </ItemGroup>
@@ -274,6 +278,8 @@
     <EmbeddedResource Include="Assets\Passives\IconFireskull.png" />
     <EmbeddedResource Include="Assets\Passives\IconPatient.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
+    <EmbeddedResource Include="Assets\Passives\IconStonebloodRed.png" />
+    <EmbeddedResource Include="Assets\Passives\IconStonebloodYellow.png" />
     <EmbeddedResource Include="Assets\Passives\Instinct.png" />
     <EmbeddedResource Include="Assets\Passives\passive_deathbound.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />

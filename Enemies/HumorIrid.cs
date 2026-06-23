@@ -12,18 +12,7 @@ namespace SorasToybox.Enemies
 {
     public class HumorIrid
     {
-        public static void CheckerPassivePoolAdd(string id, string name, BasePassiveAbilitySO passive)
-        {
-            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains(id))
-            {
-                Debug.Log($"Passives | adding passive {name} ({id})");
-                Passives.AddCustomPassiveToPool(id, name, passive);
-            }
-            else
-            {
-                Debug.Log($"Passives | passive with id {id} already registered! skipping...");
-            }
-        }
+
         public static void Add()
         {
             StatusEffect_Apply_Effect celerityMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
@@ -41,26 +30,6 @@ namespace SorasToybox.Enemies
             edemaByPrevious._MultPreviousExitValueForEntry = true;
 
 
-            //irid blooded setup here
-            GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
-            GiveIridPigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("Iridescent");
-
-            PerformEffectPassiveAbility iridBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
-            iridBlooded.name = "IridBlooded_1_PA";
-            iridBlooded._passiveName = "Iridescent-Blooded (1)";
-            iridBlooded.m_PassiveID = "PigmentBlooded";
-            iridBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodIrid");
-            iridBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
-            iridBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
-            iridBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
-            iridBlooded.doesPassiveTriggerInformationPanel = true;
-            iridBlooded.effects =
-            [
-                Effects.GenerateEffect(GiveIridPigment, 1, Targeting.Slot_SelfSlot),
-            ];
-
-            //dont forget to add it!
-            CheckerPassivePoolAdd("IridBlooded_1_PA", "Iridescent-Blooded (1)", iridBlooded);
 
             AddPassiveEffect getIridBlooded = ScriptableObject.CreateInstance<AddPassiveEffect>();
             getIridBlooded._passiveToAdd = Passives.GetCustomPassive("IridBlooded_1_PA");

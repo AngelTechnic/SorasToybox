@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using SorasToybox;
 using UnityEngine;
 
 namespace SorasToybox.Encounters
@@ -10,25 +11,18 @@ namespace SorasToybox.Encounters
     {
         public static void Add()
         {
-            if (!LoadedDBsHandler.PortalDB.m_PortalColors.ContainsKey("MalachaiPortalColor"))
-            {
-                Portals.AddPortalColor("MalachaiPortalColor", Color.gray);
-            }
+            Portals.AddPortalColor("SoraTestColor", Color.gray);
 
-            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("timelineLitany"), "MalachaiPortalColor");
-            EnemyEncounter_API testMedium = new EnemyEncounter_API(EncounterType.Specific, "H_Zone01_SoraTest_Medium_EnemyBundle", "Litany_Sign")
+
+            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("TimelineGearYinimro", new Vector2(0.5f, 0f), 32), "SoraTestColor");
+            EnemyEncounter_API testMedium = new EnemyEncounter_API(0, "H_Zone01_SoraTest_Medium_EnemyBundle", "SoraTest_Sign")
             {
                 //Where would we be without good music?
-                MusicEvent = "event:/SorasMusic/Enemies/LitanyMusic/Singsong",
-                RoarEvent = "event:/SorasSFX/Enemies/Litany/LitanyRoar",
+                MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
+                RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
 
             };
-            testMedium.CreateNewEnemyEncounterData(
-            [
-                "WanderFellow_EN",
-                "Litany_EN",
-                "WanderFellow_EN",
-            ], [1, 2, 3]);
+            testMedium.CreateNewEnemyEncounterData(["GearYinimro_EN",], null);
 
             testMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);

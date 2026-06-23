@@ -13,20 +13,7 @@ using static UnityEngine.UI.CanvasScaler;
 namespace SorasToybox.Enemies
 {
     public class Litany
-    {
-        //borrowing this whole method just for one fucking passive
-        public static void CheckerPassivePoolAdd(string id, string name, BasePassiveAbilitySO passive)
-        {
-            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains(id))
-            {
-                Debug.Log($"Passives | adding passive {name} ({id})");
-                Passives.AddCustomPassiveToPool(id, name, passive);
-            }
-            else
-            {
-                Debug.Log($"Passives | passive with id {id} already registered! skipping...");
-            }
-        }
+    {   
         public static void Add()
         {
             Enemy litany = new Enemy("Litany", "Litany_EN")
@@ -42,27 +29,12 @@ namespace SorasToybox.Enemies
             };
 
             litany.PrepareEnemyPrefab("Assets/ToyboxEnemies/Litany/Litany Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Litany/Litany_Gibs.prefab").GetComponent<ParticleSystem>());
-
-            //irid blooded setup here
+           
+            
+            //iridescent
             GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
             GiveIridPigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("Iridescent");
 
-            PerformEffectPassiveAbility iridBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
-            iridBlooded.name = "IridBlooded_1_PA";
-            iridBlooded._passiveName = "Iridescent-Blooded (1)";
-            iridBlooded.m_PassiveID = "PigmentBlooded";
-            iridBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodIrid");
-            iridBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
-            iridBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment, an esoteric pigment that diffracts into different colors on round start.";
-            iridBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
-            iridBlooded.doesPassiveTriggerInformationPanel = true;
-            iridBlooded.effects =
-            [
-                Effects.GenerateEffect(GiveIridPigment, 1, Targeting.Slot_SelfSlot),
-            ];
-
-            //dont forget to add it!
-            CheckerPassivePoolAdd("IridBlooded_1_PA", "Iridescent-Blooded (1)", iridBlooded);
 
             //PropX damage teehee
             ProportionalCurHealthDamageEffect die = ScriptableObject.CreateInstance<ProportionalCurHealthDamageEffect>();
