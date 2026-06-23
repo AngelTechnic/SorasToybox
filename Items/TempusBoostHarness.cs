@@ -31,14 +31,14 @@ namespace SorasToybox.Items
                 StartsLocked = true,
                 EquippedModifiers = [becomeIrresolute, thisThingIsReallyUncomfortableOops],
                 OnUnlockUsesTHE = true,
-
+                Icon = ResourceLoader.LoadSprite("item_tempusharness"),
             };
 
             //unlock this
             string achievementID = "SorasToybox_Mercurie_Divine_ACH";
             string unlockID = "SorasToybox_Mercurie_Divine_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(evilBirdSuit.item, new ItemModdedUnlockInfo(evilBirdSuit.Item_ID, ResourceLoader.LoadSprite("item_goldmilkshake_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(evilBirdSuit.item, new ItemModdedUnlockInfo(evilBirdSuit.Item_ID, ResourceLoader.LoadSprite("item_tempusharness_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, evilBirdSuit.Item_ID);
 

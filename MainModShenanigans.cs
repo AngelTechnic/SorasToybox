@@ -213,6 +213,13 @@ namespace SorasToybox //Mod namespace
             //Osman Unlocks
             Milkshake.Add();
 
+            //Heaven unlocks
+            if (CrossMod.IntoTheAbyss)
+            {
+                TempusBoostHarness.Add();
+            }
+
+
             //Doula Unlocks
             if (CrossMod.EnemyPack)
             {

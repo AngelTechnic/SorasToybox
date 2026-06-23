@@ -22,6 +22,7 @@
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
+    <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Karma.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Mercurie.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\KatalixiPearl.png" />
@@ -110,6 +111,8 @@
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
+    <None Remove="Assets\Items\item_tempusharness.png" />
+    <None Remove="Assets\Items\item_tempusharness_locked.png" />
     <None Remove="Assets\Items\item_worldofhassle.png" />
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
@@ -145,6 +148,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
@@ -254,6 +258,8 @@
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_tempusharness.png" />
+    <EmbeddedResource Include="Assets\Items\item_tempusharness_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_worldofhassle.png" />
     <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
