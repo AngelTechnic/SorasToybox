@@ -19,6 +19,10 @@ namespace SorasToybox.Items
             gopnikTF._currentToMaxHealth = false;
             gopnikTF._enemyTransformation = LoadedAssetsHandler.GetEnemy("GigglingUsurper_EN");
 
+            //sound events maybe?
+            PlayCustomSoundEffect cykaBlyat = ScriptableObject.CreateInstance<PlayCustomSoundEffect>();
+            cykaBlyat._Sound = "event:/SorasSFX/Enemies/Misc/CykaBlyat";
+
             StatusEffect_Apply_Effect getTired = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getTired._Status = StatusField.GetCustomStatusEffect("Tired_ID");
 
@@ -37,6 +41,7 @@ namespace SorasToybox.Items
                 [
                     Effects.GenerateEffect(getDrunkVisuals),
                     Effects.GenerateEffect(gopnikTF),
+                    Effects.GenerateEffect(cykaBlyat),
                 ];
 
             AnimationVisualsEffect barFight = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
@@ -101,7 +106,7 @@ namespace SorasToybox.Items
             ];
 
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(fortyProof.item, new ItemModdedUnlockInfo(fortyProof.Item_ID, ResourceLoader.LoadSprite("item_fortyproof_locked", null, 32, null), "SorasToybox_Mercurie_Abstraction_ACH"));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(fortyProof.item, new ItemModdedUnlockInfo(fortyProof.Item_ID, ResourceLoader.LoadSprite("item_fortyproof_locked", null, 32, null), "SorasToybox_Mercurie_Abstraction_ACH"));
 
             //unlock this
             string achievementID = "SorasToybox_Mercurie_Abstraction_ACH";

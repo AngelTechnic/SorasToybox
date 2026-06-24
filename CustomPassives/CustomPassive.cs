@@ -234,6 +234,11 @@ namespace SorasToybox.CustomPassives
                 [
                     Effects.GenerateEffect(GiveRedPigment, 1, Targeting.Slot_SelfSlot),
                 ];
+                Passives.AddCustomPassiveToPool("RedBlooded_1_PA", "Red-Blooded (1)", redBlooded);
+            }
+            else
+            {
+                Debug.Log("Red-Blooded already exists, skipping...");
             }
 
             //yellow blooded
@@ -255,10 +260,15 @@ namespace SorasToybox.CustomPassives
                 [
                     Effects.GenerateEffect(GiveYellowPigment, 1, Targeting.Slot_SelfSlot),
                 ];
+                Passives.AddCustomPassiveToPool("YellowBlooded_1_PA", "Yellow-Blooded (1)", yellowBlooded);
+            }
+            else
+            {
+                Debug.Log("Yellow-Blooded already exists, skipping...");
             }
 
             //irid blooded
-            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("IridBlooded_1_PA"))
+            if ((LoadedDBsHandler.PigmentDB.GetPigment("Iridescent") != null) && !LoadedDBsHandler.PassiveDB._PassivesPool.Contains("IridBlooded_1_PA"))
             {
                 GenerateColorManaEffect GiveIridPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
                 GiveIridPigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("Iridescent");
@@ -276,6 +286,36 @@ namespace SorasToybox.CustomPassives
                 [
                     Effects.GenerateEffect(GiveIridPigment, 1, Targeting.Slot_SelfSlot),
                 ];
+                Passives.AddCustomPassiveToPool("IridBlooded_1_PA", "Iridescent-Blooded (1)", iridBlooded);
+            } else
+            {
+                Debug.Log("Iridescent-Blooded already exists, skipping...");
+            }
+
+            //broken blooded
+            if ((LoadedDBsHandler.PigmentDB.GetPigment("Broken") != null) && !LoadedDBsHandler.PassiveDB._PassivesPool.Contains("BrokenBlooded_1_PA"))
+            {
+                GenerateColorManaEffect GiveBrokenPigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GiveBrokenPigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("Broken");
+
+                PerformEffectPassiveAbility brokenBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                brokenBlooded.name = "BrokenBlooded_1_PA";
+                brokenBlooded._passiveName = "Broken-Blooded (1)";
+                brokenBlooded.m_PassiveID = "PigmentBlooded";
+                brokenBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodBroken");
+                brokenBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Broken pigment, a mostly inert pigment that shatters on overflow.";
+                brokenBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Broken pigment, a mostly inert pigment that shatters on overflow.";
+                brokenBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                brokenBlooded.doesPassiveTriggerInformationPanel = true;
+                brokenBlooded.effects =
+                [
+                    Effects.GenerateEffect(GiveBrokenPigment, 1, Targeting.Slot_SelfSlot),
+                ];
+                Passives.AddCustomPassiveToPool("BrokenBlooded_1_PA", "Broken-Blooded (1)", brokenBlooded);
+            }
+            else
+            {
+                Debug.Log("Broken-Blooded already exists, skipping...");
             }
         }
 

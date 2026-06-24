@@ -34,6 +34,7 @@ namespace SorasToybox.Encounters
                 litanyMedium.SimpleAddEncounter(1, "Litany_EN", 2, "Sycophant_EN");
                 litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "WRK_EN", 1, "Streetlight_EN");
                 litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "WRK_EN", 1, "Wug_EN");
+                litanyMedium.SimpleAddEncounter(1, "Litany_EN", 2, "GearYinimro_EN");
                 if (SorasToybox.CrossMod.AApocrypha)
                 {
                     litanyMedium.SimpleAddEncounter(1, "Litany_EN", 1, "MachineGnomes_EN", 1, "Streetlight_EN");

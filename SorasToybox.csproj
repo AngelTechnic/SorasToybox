@@ -74,6 +74,7 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_back.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_clock.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_front.png" />
+    <None Remove="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_menu.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_menu_locked.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_overworld.png" />
@@ -99,6 +100,8 @@
     <None Remove="Assets\Items\item_fortyproof_locked.png" />
     <None Remove="Assets\Items\item_ghostpepper.png" />
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
+    <None Remove="Assets\Items\item_healthhat.png" />
+    <None Remove="Assets\Items\item_healthhat_locked.png" />
     <None Remove="Assets\Items\item_lonelyhike.png" />
     <None Remove="Assets\Items\item_lonelyhike_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
@@ -109,6 +112,8 @@
     <None Remove="Assets\Items\item_memoryofgriyadin_locked.png" />
     <None Remove="Assets\Items\item_princess.png" />
     <None Remove="Assets\Items\item_princess_locked.png" />
+    <None Remove="Assets\Items\item_quesadilla.png" />
+    <None Remove="Assets\Items\item_quesadilla_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
@@ -127,6 +132,7 @@
     <None Remove="Assets\Passives\IconDeployment.png" />
     <None Remove="Assets\Passives\IconFireskull.png" />
     <None Remove="Assets\Passives\IconPatient.png" />
+    <None Remove="Assets\Passives\IconStonebloodBroken.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\IconStonebloodRed.png" />
     <None Remove="Assets\Passives\IconStonebloodYellow.png" />
@@ -154,6 +160,7 @@
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
+    <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
   </ItemGroup>
@@ -247,6 +254,8 @@
     <EmbeddedResource Include="Assets\Items\item_fortyproof_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_healthhat.png" />
+    <EmbeddedResource Include="Assets\Items\item_healthhat_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_lonelyhike.png" />
     <EmbeddedResource Include="Assets\Items\item_lonelyhike_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_megahammer.png" />
@@ -259,6 +268,8 @@
     <EmbeddedResource Include="Assets\Items\item_memoryofgriyadin_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_princess.png" />
     <EmbeddedResource Include="Assets\Items\item_princess_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_quesadilla.png" />
+    <EmbeddedResource Include="Assets\Items\item_quesadilla_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_sentient_arcanite.png" />
     <EmbeddedResource Include="Assets\Items\item_setset.png" />
     <EmbeddedResource Include="Assets\Items\item_setset_locked.png" />
@@ -277,6 +288,7 @@
     <EmbeddedResource Include="Assets\Passives\IconDeployment.png" />
     <EmbeddedResource Include="Assets\Passives\IconFireskull.png" />
     <EmbeddedResource Include="Assets\Passives\IconPatient.png" />
+    <EmbeddedResource Include="Assets\Passives\IconStonebloodBroken.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodIrid.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodRed.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodYellow.png" />

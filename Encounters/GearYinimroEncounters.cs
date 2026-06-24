@@ -16,24 +16,26 @@ namespace SorasToybox.Encounters
             //Try to play with the fact that they produce red, but milking them for it is dangerous
             //mix them with enemies that have unreliable pigment production like iridescent health or whatever.
 
-            if (LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3"))
+            if (Abyss.Exists)
             {
                 //Gear Sign!
                 Portals.AddPortalSign("GearYinimro_Sign", ResourceLoader.LoadSprite("TimelineGearYinimro.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
 
                 //initializing mediumdozer encounters, here's the sound events too.
-                EnemyEncounter_API gearYinimroMedium = new EnemyEncounter_API(0, "H_ZoneAbyss_GearYinimro_Medium_EnemyBundle", "GearYinimro_Sign")
+                EnemyEncounter_API gearYinimroAbyssMedium = new EnemyEncounter_API(0, Abyss.H.YinimroG.Med, "GearYinimro_Sign")
                 {
                     MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
                     RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
                 };
 
                 //Medium yinimro encounts go down here
-                gearYinimroMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN");
+                gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN");
+                gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 2, "AbandonedPuppet_EN");
+
+                gearYinimroAbyssMedium.AddEncounterToDataBases();
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Med, 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
 
 
-                gearYinimroMedium.AddEncounterToDataBases();
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_GearYinimro_Medium_EnemyBundle", 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
             }
         }
     }

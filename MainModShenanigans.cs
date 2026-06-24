@@ -18,7 +18,7 @@ using SorasToybox.Events;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.3.6")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.3.7")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
@@ -128,35 +128,13 @@ namespace SorasToybox //Mod namespace
 
             if (CrossMod.IntoTheAbyss)
             {
-                try
-                {
-                    TestEncounter.Add();
-                }
-                catch
-                {
-                    Debug.Log("Test encounter failed to load.");
-                }
-
-                try
-                {
-                    LitanyEncounters.Add();
-                }
-                catch 
-                {
-                    Debug.Log("Litany encounters failed to load.");
-                }
-
+                TestEncounter.Add();
+                LitanyEncounters.Add();
                 GearYinimroEncounters.Add();
-                try
-                {
-                    DeathmatchEncounter.Add();
-                }
-                catch
-                {
-                    Debug.Log("\"THAT\" encounter failed to load.");
-                }
-
+                CompatAbyssEncounters.Add();
+                DeathmatchEncounter.Add();
             }
+
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
             {
                 try
@@ -215,11 +193,13 @@ namespace SorasToybox //Mod namespace
             //remember character order is: Mercurie, Karma
             //Osman Unlocks
             Milkshake.Add();
+            Quesadilla.Add();
 
             //Heaven unlocks
             if (CrossMod.IntoTheAbyss)
             {
                 TempusBoostHarness.Add();
+                HealthHat.Add();
             }
 
 

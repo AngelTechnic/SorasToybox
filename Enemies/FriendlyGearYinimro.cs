@@ -76,7 +76,7 @@ namespace SorasToybox.Enemies
             //Ringading ding baby
             Ability friendGearYinimroBallisticGear = new Ability("Ballistic Gear", "ST_FriendlyBallisticGear_A")
             {
-                Description = "Deals damage to the highest health enemy (excluding self) boosted by the Length of the timeline.",
+                Description = "Deals damage to the highest health enemy (excluding self), boosted by the length of the timeline.",
                 Rarity = Rarity.Impossible,
                 Visuals = ballisticGearVis._visuals,
                 AnimationTarget = Targeting.GenerateUnitTarget_Specific_Health(true, true, false, false),
