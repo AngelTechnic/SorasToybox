@@ -33,6 +33,7 @@ namespace SorasToybox.Encounters
                 dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "WanderFellow_EN", 1, "Wug_EN");
                 dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 2, "Wug_EN", 1, "Streetlight_EN");
                 dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 2 ,"EyePalm_EN");
+                dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "GearYinimro_EN", 1, "Wug_EN");
                 if (SorasToybox.CrossMod.AApocrypha)
                 {
                     dozerMedium.SimpleAddEncounter(1, "Dozer_EN", 1, "WanderFellow_EN", 1, "MachineGnomes_EN");

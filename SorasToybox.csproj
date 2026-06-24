@@ -17,6 +17,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
@@ -122,6 +123,8 @@
     <None Remove="Assets\Items\item_worldofhassle.png" />
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <None Remove="Assets\Passives\bloatPassive.png" />
     <None Remove="Assets\Passives\EscapistPassive.png" />
     <None Remove="Assets\Passives\Fragile.png" />
@@ -157,6 +160,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
@@ -248,8 +252,8 @@
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
-    <EmbeddedResource Include="Assets\Items\item_entrenchingtool.png" />
-    <EmbeddedResource Include="Assets\Items\item_entrenchingtool_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_fortyproof.png" />
     <EmbeddedResource Include="Assets\Items\item_fortyproof_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_ghostpepper.png" />
@@ -278,6 +282,8 @@
     <EmbeddedResource Include="Assets\Items\item_worldofhassle.png" />
     <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
     <EmbeddedResource Include="Assets\Passives\EscapistPassive.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />

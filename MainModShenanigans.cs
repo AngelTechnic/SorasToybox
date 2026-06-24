@@ -12,7 +12,6 @@ using SorasToybox.Items;
 using HarmonyLib;
 using UnityEngine;
 using SorasToybox.Encounters;
-using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using SorasToybox.Events;
 
 namespace SorasToybox //Mod namespace
@@ -137,29 +136,13 @@ namespace SorasToybox //Mod namespace
 
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
             {
-                try
-                {
-                    DozerEncounters.Add();
-                }
-                catch
-                {
-                    Debug.Log("Dozer encounters failed to load.");
-                }
-
+                DozerEncounters.Add();
             }
 
 
             if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends)
             {
-                try
-                {
-                    SusMungEncounter.Add();
-                }
-                catch
-                {
-                    Debug.Log("Mung encounter failed to load.");
-                }
-
+                SusMungEncounter.Add();
             }
 
             //Add fools
@@ -238,6 +221,7 @@ namespace SorasToybox //Mod namespace
             }
             //DM Unlocks go here I think.
             EntrenchingTool.Add();
+            LaughingGas.Add();
 
             //ST deathmatch unlocks
             MemoryOfGriyadin.Add();

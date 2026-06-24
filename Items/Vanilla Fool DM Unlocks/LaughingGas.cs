@@ -20,18 +20,18 @@ namespace SorasToybox.Items
             StatusEffectCheckerEffect hasEcstasy = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
             hasEcstasy._status = StatusField.GetCustomStatusEffect("Ecstasy_ID");
 
+
             PerformEffect_Item laughingGas = new PerformEffect_Item("ST_LaughingGas_ID", null, false)
             {
-                Item_ID = "LaughingGas_SW",
-                Name = "Laughing Gas",
+                Item_ID = "NitrousOxideCanister_SW",
+                Name = "N2O Canister",
                 Flavour = "\"Enjoy the last ten minutes of your life!\"",
-                Description = "On turn start, gain 1 permanent Ecstasy; if you have 5 or more Ecstasy, die.",
+                Description = "On turn start, gain 1 permanent Ecstasy. 18% chance to die.",
                 Icon = ResourceLoader.LoadSprite("item_laughinggas"),
                 TriggerOn = TriggerCalls.OnTurnStart_Early,
                 Effects =
                 [
-                    Effects.GenerateEffect(hasEcstasy, 5, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(overdose, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(overdose, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(18)),
                     Effects.GenerateEffect(permanentEcstasy, 1, Targeting.Slot_SelfSlot),
                 ],
                 IsShopItem = true,
@@ -43,7 +43,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Thype_Antagonist_ACH";
             string unlockID = "SorasToybox_Thype_Antagonist_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(bigSpoon.item, new ItemModdedUnlockInfo(laughingGas.Item_ID, ResourceLoader.LoadSprite("item_laughinggas_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(laughingGas.item, new ItemModdedUnlockInfo(laughingGas.Item_ID, ResourceLoader.LoadSprite("item_laughinggas_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, laughingGas.Item_ID);
 
@@ -58,8 +58,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Thype", unlockData);
 
-
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Entrenching Tool", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Thype", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements("N2O Canister", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Thype", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
         }
     }

@@ -16,8 +16,6 @@ namespace SorasToybox.Encounters
                 abyssAdd = new AddTo(Abyss.H.Kookoo.Hard);
                 abyssAdd.SimpleAddGroup(1, "Kookoo_EN", 2, "GearYinimro_EN");
 
-                
-
             }
         }
     }

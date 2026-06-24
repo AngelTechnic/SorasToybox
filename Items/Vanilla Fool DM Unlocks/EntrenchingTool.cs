@@ -6,7 +6,7 @@ using BrutalAPI;
 using BrutalAPI.Items;
 using UnityEngine;
 
-namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
+namespace SorasToybox.Items
 {
     public class EntrenchingTool
     {

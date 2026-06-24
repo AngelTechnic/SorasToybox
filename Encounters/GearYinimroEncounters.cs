@@ -31,6 +31,10 @@ namespace SorasToybox.Encounters
                 //Medium yinimro encounts go down here
                 gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN");
                 gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 2, "AbandonedPuppet_EN");
+                gearYinimroAbyssMedium.SimpleAddEncounter(2, "GearYinimro_EN");
+                gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "YesMan_EN", 1, "Sycophant_EN");
+                gearYinimroAbyssMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "Sycophant_EN");
+                
 
                 gearYinimroAbyssMedium.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Med, 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
