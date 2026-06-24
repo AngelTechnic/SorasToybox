@@ -26,12 +26,12 @@ namespace SorasToybox.Items
                 Item_ID = "NitrousOxideCanister_SW",
                 Name = "N2O Canister",
                 Flavour = "\"Enjoy the last ten minutes of your life!\"",
-                Description = "On turn start, gain 1 permanent Ecstasy. 18% chance to die.",
+                Description = "On turn start, gain 1 permanent Ecstasy. 10% chance to die.",
                 Icon = ResourceLoader.LoadSprite("item_laughinggas"),
                 TriggerOn = TriggerCalls.OnTurnStart_Early,
                 Effects =
                 [
-                    Effects.GenerateEffect(overdose, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(18)),
+                    Effects.GenerateEffect(overdose, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(10)),
                     Effects.GenerateEffect(permanentEcstasy, 1, Targeting.Slot_SelfSlot),
                 ],
                 IsShopItem = true,
