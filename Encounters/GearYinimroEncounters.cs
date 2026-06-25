@@ -38,8 +38,6 @@ namespace SorasToybox.Encounters
 
                 gearYinimroAbyssMedium.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Med, 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
-
-
             }
         }
     }

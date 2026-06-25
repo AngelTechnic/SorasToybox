@@ -19,20 +19,33 @@ namespace SorasToybox.Enemies
             TimelineLengthDamageEffect ballisticGearDmg = ScriptableObject.CreateInstance<TimelineLengthDamageEffect>();
 
 
-            AnimationVisualsEffect inertiaBreakVis = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            AnimationVisualsEffect tick = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             if (LoadedAssetsHandler.GetEnemy("Kcolclock_EN") != null)
             {
-                inertiaBreakVis._visuals = LoadedAssetsHandler.GetEnemyAbility("KcolclockTock_A").visuals;
-            } else
-            {
-                inertiaBreakVis._visuals = Visuals.Wriggle;
+                tick._visuals = LoadedAssetsHandler.GetEnemyAbility("KcolclockTick_A").visuals;
             }
+            else
+            {
+                tick._visuals = Visuals.Wriggle;
+            }
+            tick._animationTarget = Targeting.Slot_SelfSlot;
+
+            AnimationVisualsEffect tock = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            if (LoadedAssetsHandler.GetEnemy("Kcolclock_EN") != null)
+            {
+                tock._visuals = LoadedAssetsHandler.GetEnemyAbility("KcolclockTock_A").visuals;
+            }
+            else
+            {
+                tock._visuals = Visuals.Wriggle;
+            }
+            tock._animationTarget = Targeting.Slot_SelfSlot;
 
 
             AnimationVisualsEffect ballisticGearVis = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
-            if (LoadedAssetsHandler.GetCharacter("Pike_CH") != null)
+            if (LoadedAssetsHandler.GetEnemy("WanderFellow_EN") != null)
             {
-                ballisticGearVis._visuals = LoadedAssetsHandler.GetCharacterAbility("PikeProtocol1").visuals;
+                ballisticGearVis._visuals = LoadedAssetsHandler.GetEnemyAbility("WFNowhere_A").visuals;
             }
             else
             {
@@ -63,10 +76,11 @@ namespace SorasToybox.Enemies
             {
                 Description = "Moves to a random unoccupied position. 50% chance to gain 3 Overclock.",
                 Rarity = Rarity.Common,
-                Visuals = inertiaBreakVis._visuals,
-                AnimationTarget = Targeting.Slot_SelfSlot,
+
                 Effects =
                 [
+                    Effects.GenerateEffect(tick, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(50)),
+                    Effects.GenerateEffect(tock, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     Effects.GenerateEffect(overclockMe, 3, Targeting.Slot_SelfSlot, Effects.ChanceCondition(50)),
                     Effects.GenerateEffect(escapistEffect, 1, Targeting.Slot_SelfSlot),
                 ]

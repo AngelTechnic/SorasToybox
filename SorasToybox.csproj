@@ -59,6 +59,7 @@
     <None Remove="Assets\Fools\Journal Mode\IconLaziestJournalModeIconEver.png" />
     <None Remove="Assets\Fools\Journal Mode\JournalItemKarma.png" />
     <None Remove="Assets\Fools\Journal Mode\JournalItemMercurie.png" />
+    <None Remove="Assets\Fools\Journal Mode\malachai.png" />
     <None Remove="Assets\Fools\Karma\karma_agony.png" />
     <None Remove="Assets\Fools\Karma\karma_back.png" />
     <None Remove="Assets\Fools\Karma\karma_coming.png" />
@@ -164,6 +165,7 @@
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
+    <EmbeddedResource Include="Assets\Fools\Journal Mode\malachai.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
