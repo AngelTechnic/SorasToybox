@@ -49,7 +49,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Karma_Divine_ACH";
             string unlockID = "SorasToybox_Karma_Divine_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(dkyHat.item, new ItemModdedUnlockInfo(dkyHat.Item_ID, ResourceLoader.LoadSprite("item_healthhat_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(dkyHat.item, new ItemModdedUnlockInfo(dkyHat.Item_ID, ResourceLoader.LoadSprite("item_healthhat_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, dkyHat.Item_ID);
 
