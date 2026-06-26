@@ -107,8 +107,10 @@ namespace SorasToybox.Fools
             targetListKarma.Add("BastardZygote_EN", "Zygote");
             targetListKarma.Add("WhistlingWhitmore_BOSS", "Whitmore");
             targetListKarma.Add("Malachai_EN", "Malachai");
-
-
+            targetListKarma.Add("OsmanSinnoks_BOSS", "OsmanSinnoks");
+            targetListKarma.Add("OsmanLeft_BOSS", "OsmanAndSinnoks");
+            targetListKarma.Add("OsmanRight_BOSS", "OsmanAndSinnoks");
+            targetListKarma.Add("Heaven_BOSS", "Heaven");
 
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
