@@ -16,12 +16,28 @@ namespace SorasToybox.Encounters
             //Try to play with the fact that they produce red, but milking them for it is dangerous
             //mix them with enemies that have unreliable pigment production like iridescent health or whatever.
 
+            //Gear Sign!
+            Portals.AddPortalSign("GearYinimro_Sign", ResourceLoader.LoadSprite("TimelineGearYinimro.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
+
+            //initializing Garden Gear Yinimro encounters, here's the sound events too.
+            EnemyEncounter_API gearYinimroGardenMedium = new EnemyEncounter_API(0, Garden.H.YinimroG.Med, "GearYinimro_Sign")
+            {
+                MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
+                RoarEvent = "event:/IntrusiveRoar",
+            };
+
+            //Won't somebody please help me?
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN");
+            gearYinimroGardenMedium.AddEncounterToDataBases();
+            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 9, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
+
+
+
             if (Abyss.Exists)
             {
-                //Gear Sign!
-                Portals.AddPortalSign("GearYinimro_Sign", ResourceLoader.LoadSprite("TimelineGearYinimro.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
 
-                //initializing mediumdozer encounters, here's the sound events too.
+
+                //initializing Abyss Gear Yinimro encounters, here's the sound events too.
                 EnemyEncounter_API gearYinimroAbyssMedium = new EnemyEncounter_API(0, Abyss.H.YinimroG.Med, "GearYinimro_Sign")
                 {
                     MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",

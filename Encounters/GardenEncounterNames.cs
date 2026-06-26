@@ -1,0 +1,550 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace SorasToybox.Encounters
+{
+    public static class Garden
+    {
+        public static class H
+        {
+            public static class InHerImage
+            {
+                public static string Easy => "H_Zone03_InHerImage_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_InHerImage_Medium_EnemyBundle";
+            }
+            public static class InHisImage
+            {
+                public static string Easy => "H_Zone03_InHisImage_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_InHisImage_Medium_EnemyBundle";
+            }
+            public static class ChoirBoy
+            {
+                public static string Easy => "H_Zone03_ChoirBoy_Easy_EnemyBundle";
+            }
+            public static class Shivering
+            {
+                public static string Med => "H_Zone03_ShiveringHomunculus_Medium_EnemyBundle";
+            }
+            public static class Skinning
+            {
+                public static string Med => "H_Zone03_SkinningHomunculus_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_SkinningHomunculus_Hard_EnemyBundle";
+            }
+            public static class Minister
+            {
+                public static string Easy => "H_Zone03_GigglingMinister_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_GigglingMinister_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_GigglingMinister_Hard_EnemyBundle";
+            }
+            public static class Sepulchre
+            {
+                public static string Hard => "H_Zone03_Sepulchre_Hard_EnemyBundle";
+            }
+            public static class XAndG
+            {
+                public static string Hard => "H_Zone03_Xiphactinus_Hard_EnemyBundle";
+            }
+
+
+            //hawthorne
+            public static class LittleAngel
+            {
+                public static string Easy => "H_Zone03_LittleAngel_Easy_EnemyBundle";
+            }
+            public static class StarGazer
+            {
+                public static string Easy => "H_Zone03_StarGazer_Easy_EnemyBundle";
+            }
+            public static class Jumble
+            {
+                public static class Grey
+                {
+                    public static string Med => "H_Zone03_RusticJumbleGuts_Medium_EnemyBundle";
+                }
+                //ita
+                public static class Entropic
+                {
+                    public static string Med => "H_Zone03_SuperpositionedJumbleGuts_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_SuperpositionedJumbleGuts_Hard_EnemyBundle";
+                }
+                public static class Iridescent
+                {
+                    public static string Med => "H_Zone03_AxiomaticJumbleGuts_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_AxiomaticJumbleGuts_Hard_EnemyBundle";
+                }
+                public static class GreyPurple
+                {
+                    public static string Med => "H_Zone03_JumbleGuts_Elapsing_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_JumbleGuts_Elapsing_Hard_EnemyBundle";
+                }
+                public static class PurpleGrey
+                {
+                    public static string Med => "H_Zone03_JumbleGuts_Elapsing_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_JumbleGuts_Elapsing_Hard_EnemyBundle";
+                }
+                public static class RedGrey
+                {
+                    public static string Med => "H_Zone03_JumbleGuts_Decanting_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_JumbleGuts_Decanting_Hard_EnemyBundle";
+                }
+                public static class GreyRed
+                {
+                    public static string Med => "H_Zone03_JumbleGuts_Decanting_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_JumbleGuts_Decanting_Hard_EnemyBundle";
+                }
+            }
+            public static class Spoggle
+            {
+                public static class Grey
+                {
+                    public static string Med => "H_Zone03_MortalSpoggle_Medium_EnemyBundle";
+                }
+                //ita
+                public static class Iridescent
+                {
+                    public static string Med => "H_Zone03_AkashicSpoggle_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_AkashicSpoggle_Hard_EnemyBundle";
+                }
+            }
+            public static class Satyr
+            {
+                public static string Med => "H_Zone03_Satyr_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Satyr_Hard_EnemyBundle";
+            }
+            public static class Flower
+            {
+                public static class Blue
+                {
+                    public static string Easy => "H_Zone03_BlueFlower_Easy_EnemyBundle";
+                    public static string Med => "H_Zone03_BlueFlower_Medium_EnemyBundle";
+                }
+                public static class Red
+                {
+                    public static string Easy => "H_Zone03_RedFlower_Easy_EnemyBundle";
+                    public static string Med => "H_Zone03_RedFlower_Medium_EnemyBundle";
+                }
+                public static class Grey
+                {
+                    public static string Med => "H_Zone03_GreyFlower_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_GreyFlower_Hard_EnemyBundle";
+                }
+            }
+            public static class Camera
+            {
+                public static string Med => "H_Zone03_MechanicalLens_Medium_EnemyBundle";
+            }
+            public static class ClockTower
+            {
+                public static string Hard => "H_Zone03_TheEndOfTime_Hard_EnemyBundle";
+            }
+            public static class WindSong
+            {
+                public static string Easy => "H_Zone03_WindSong_Easy_EnemyBundle";
+            }
+            public static class Tank
+            {
+                public static string Hard => "H_Zone03_SemiRealisticTank_Hard_EnemyBundle";
+            }
+            public static class TheDeep
+            {
+                public static string Hard => "H_Zone03_TheDeep_Hard_EnemyBundle";
+            }
+            public static class Grandfather
+            {
+                public static string Med => "H_Zone03_Grandfather_Med_EnemyBundle";
+            }
+            public static class MiniReaper
+            {
+                public static string Med => "H_Zone03_MiniReaper_Medium_EnemyBundle";
+            }
+            public static class EyePalm
+            {
+                public static string Easy => "H_Zone03_Medamaude_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_Medamaude_Medium_EnemyBundle";
+            }
+            public static class Merced
+            {
+                public static string Easy => "H_Zone03_Merced_Easy_EnemyBundle";
+                public static string Hard => "H_Zone03_Merced_Hard_EnemyBundle";
+            }
+            public static class Miriam
+            {
+                public static string Hard => "H_Zone03_Miriam_Hard_EnemyBundle";
+            }
+            public static class Shua
+            {
+                public static string Easy => "H_Zone03_Shua_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_Shua_Medium_EnemyBundle";
+            }
+            public static class GlassFigurine
+            {
+                public static string Easy => "H_Zone03_GlassFigurine_Easy_EnemyBundle";
+            }
+            public static class SnakeGod
+            {
+                public static string Hard => "H_Zone03_Kyotlokutla_Hard_EnemyBundle";
+            }
+            public static class Hunter
+            {
+                public static string Med => "H_Zone03_Hunter_Medium_EnemyBundle";
+            }
+            public static class Firebird
+            {
+                public static string Med => "H_Zone03_Firebird_Medium_EnemyBundle";
+            }
+            public static class BlackStar
+            {
+                public static string Easy => "H_Zone03_BlackStar_Easy_EnemyBundle";
+            }
+            public static class Indicator
+            {
+                public static string Easy => "H_Zone03_Indicator_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_Indicator_Medium_EnemyBundle";
+            }
+            public static class YNL
+            {
+                public static string Med => "H_Zone03_YourNewLife_Medium_EnemyBundle";
+            }
+            public static class Stoplight
+            {
+                public static string Med => "H_Zone03_MidnightTrafficLight_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_MidnightTrafficLight_Hard_EnemyBundle";
+            }
+            public static class GreyBot
+            {
+                public static string Med => "H_Zone03_GreyBot_Medium_EnemyBundle";
+            }
+            public static class GlassedSun
+            {
+                public static string Hard => "H_Zone03_GlassedSun_Hard_EnemyBundle";
+            }
+            public static class Ode
+            {
+                public static string Med => "H_Zone03_OdeToHumanity_Medium_EnemyBundle";
+            }
+            public static class EvilDog
+            {
+                public static string Med => "H_Zone03_ChienTindalou_Medium_EnemyBundle";
+            }
+            public static class Complimentary
+            {
+                public static string Med => "H_Zone03_Complimentary_Medium_EnemyBundle";
+            }
+            public static class PersonalAngel
+            {
+                public static string Med => "H_Zone03_PersonalAngel_Medium_EnemyBundle";
+            }
+            public static class Starless
+            {
+                public static string Med => "H_Zone03_Starless_Medium_EnemyBundle";
+            }
+            public static class Eyeless
+            {
+                public static string Hard => "H_Zone03_Eyeless_Hard_EnemyBundle";
+            }
+            public static class Pawn
+            {
+                public static string Easy => "H_Zone03_PawnA_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_PawnA_Medium_EnemyBundle";
+            }
+            public static class Yang
+            {
+                public static string Med => "H_Zone03_Yang_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Yang_Hard_EnemyBundle";
+            }
+            public static class Yin
+            {
+                public static string Hard => "H_Zone03_Yin_Hard_EnemyBundle";
+            }
+            public static class TortureMeNot
+            {
+                public static string Hard => "H_Zone03_TortureMeNot_Hard_EnemyBundle";
+            }
+            public static class Hauntling
+            {
+                public static string Easy => "H_Zone03_Hauntling_Easy_EnemyBundle";
+            }
+            public static class Insider
+            {
+                public static string Med => "H_Zone03_Insider_Medium_EnemyBundle";
+            }
+            public static class CorpseChan
+            {
+                public static string Med => "H_Zone03_CorpseChan_Medium_EnemyBundle";
+            }
+            public static class Damocles
+            {
+                public static string Easy => "H_Zone03_Damocles_Easy_EnemyBundle";
+            }
+            public static class Dark
+            {
+                public static string Med => "H_Zone03_InTheDark_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_InTheDark_Hard_EnemyBundle";
+            }
+            public static class Sundowner
+            {
+                public static string Med => "H_Zone03_Sundowner_Medium_EnemyBundle";
+            }
+            public static class Children
+            {
+                public static string Easy => "H_Zone03_ChildrenOfGod_Easy_EnemyBundle";
+            }
+            public static class Lunoscope
+            {
+                public static string Med => "H_Zone03_Lunoscope_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Lunoscope_Hard_EnemyBundle";
+            }
+            public static class Panopticon
+            {
+                public static string Med => "H_Zone03_Panopticon_Medium_EnemyBundle";
+            }
+            public static class Ecstasy99
+            {
+                public static string Med => "H_Zone03_ECSTASY99_Medium_EnemyBundle";
+            }
+
+            //ita
+            public static class Eater
+            {
+                public static string Hard => "H_Zone03_Eater_Hard_EnemyBundle";
+            }
+
+            public static class Icon
+            {
+                public static string Hard => "H_Zone03_Icon_Hard_EnemyBundle";
+            }
+
+            public static class Fleet
+            {
+                public static string Hard => "H_Zone03_Fleet_Hard_EnemyBundle";
+            }
+            public static class Casual
+            {
+                public static string Hard => "H_Zone03_Casual_Hard_EnemyBundle";
+            }
+
+            public static class Omission
+            {
+                public static string Med => "H_Zone03_Omission_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Omission_Hard_EnemyBundle";
+            }
+
+            public static class Kcolclock
+            {
+                public static string Med => "H_Zone03_Kcolclock_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Kcolclock_Hard_EnemyBundle";
+            }
+
+            public static class Vacuity
+            {
+                public static string Med => "H_Zone03_Vacuity_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Vacuity_Hard_EnemyBundle";
+            }
+
+            public static class WRK
+            {
+                public static string Easy => "H_Zone03_WRK_Easy_EnemyBundle";
+                public static string Med => "H_Zone03_WRK_Medium_EnemyBundle";
+            }
+
+            public static class Knight
+            {
+                public static string Med => "H_Zone03_Knight_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Knight_Hard_EnemyBundle";
+            }
+
+            public static class Bear
+            {
+                public static string Med => "H_Zone03_Bear_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Bear_Hard_EnemyBundle";
+            }
+
+            public static class Streetlight
+            {
+                public static string Med => "H_Zone03_Streetlight_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Streetlight_Hard_EnemyBundle";
+            }
+
+            public static class Vindicta
+            {
+                public static string Med => "H_Zone03_Vindicta_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Vindicta_Hard_EnemyBundle";
+            }
+
+            public static class Monad
+            {
+                public static string Med => "H_Zone03_Monad_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Monad_Hard_EnemyBundle";
+            }
+
+            public static class Faceless
+            {
+                public static string Med => "H_Zone03_Faceless_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Faceless_Hard_EnemyBundle";
+            }
+
+            public static class Transient
+            {
+                public static string Med => "H_Zone03_Transient_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Transient_Hard_EnemyBundle";
+            }
+
+            public static class Plato
+            {
+                public static string Med => "H_Zone03_Plato_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Plato_Hard_EnemyBundle";
+            }
+
+
+            //marmo
+            public static class Git
+            {
+                public static string Easy => "Marmo_Git_Easy_Bundle";
+                public static string Med => "Marmo_Git_Medium_Bundle";
+            }
+            public static class Attrition
+            {
+                public static string Easy => "Marmo_Attrition_Easy_Bundle";
+                public static string Med => "Marmo_Attrition_Medium_Bundle";
+            }
+
+            //eggkeeper
+            public static class EggKeeper
+            {
+                public static string Med => "ChoirBoy_Medium_Eggkeeper";
+            }
+
+            //HIF
+            public static class Nosestone
+            {
+                public static class Red
+                {
+                    public static string Med => "H_Zone03_ProlificNosestone_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_ProlificNosestone_Hard_EnemyBundle";
+                }
+                public static class Blue
+                {
+                    public static string Med => "H_Zone03_ScatterbrainedNosestone_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_ScatterbrainedNosestone_Hard_EnemyBundle";
+                }
+                public static class Yellow
+                {
+                    public static string Med => "H_Zone03_SweatingNosestone_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_SweatingNosestone_Hard_EnemyBundle";
+                }
+                public static class Purple
+                {
+                    public static string Med => "H_Zone03_MesmerizingNosestone_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_MesmerizingNosestone_Hard_EnemyBundle";
+                }
+                public static class Grey
+                {
+                    public static string Med => "H_Zone03_UninspiredNosestone_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_UninspiredNosestone_Hard_EnemyBundle";
+                }
+            }
+            //millie's fucked up colophons
+            public static class Colophon
+            {
+                public static class Green
+                {
+                    public static string Med => "H_Zone03_Disaffected_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Disaffected_Hard_EnemyBundle";
+                }
+                public static class Grey
+                {
+                    public static string Med => "H_Zone03_Immaculate_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Immaculate_Hard_EnemyBundle";
+                }
+                public static class Broken
+                {
+                    public static string Med => "H_Zone03_Fractured_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Fractured_Hard_EnemyBundle";
+                }
+                //aapocrypha
+                public static class Peppermint
+                {
+                    public static string Med => "H_Zone03_ColophonSaccharine_Medium_EnemyBundle";
+                }
+            }
+            //aapocrypha
+            public static class Simulacrum
+            {
+                public static string Hard => "H_Zone03_Simulacrum_Hard_EnemyBundle";
+            }
+            public static class MachineGnomes
+            {
+                public static string Med => "H_Zone03_MachineGnomes_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_MachineGnomes_Hard_EnemyBundle";
+            }
+            public static class Logos
+            {
+                public static class Red
+                {
+                    public static string Med => "H_Zone03_CrimsonLogos_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_CrimsonLogos_Hard_EnemyBundle";
+                }
+                public static class Blue
+                {
+                    public static string Med => "H_Zone03_CeruleanLogos_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_CeruleanLogos_Hard_EnemyBundle";
+                }
+                public static class Yellow
+                {
+                    public static string Med => "H_Zone03_AureateLogos_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_AureateLogos_Hard_EnemyBundle";
+                }
+                public static class Purple
+                {
+                    public static string Med => "H_Zone03_RegentLogos_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_RegentLogos_Hard_EnemyBundle";
+                }
+                public static class Broken
+                {
+                    //public static string Med => "H_Zone03_DiscordantLogos_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_DiscordantLogos_Hard_EnemyBundle";
+                }
+            }
+            public static class Sisters
+            {
+                public static string Med => "H_Zone03_OnesSisters_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_OnesSisters_Hard_EnemyBundle";
+            }
+            public static class EnlightenedVessel
+            {
+                public static string Med => "H_Zone03_EnlightenedVessel_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_EnlightenedVessel_Hard_EnemyBundle";
+            }
+
+            public static class Phobia
+            {
+                public static string Med => "H_Zone03_Phobias_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_Phobias_Hard_EnemyBundle";
+            }
+            public static class Aggregates
+            {
+                public static class White
+                {
+                    public static string Easy => "H_Zone03_WhiteAggregate_Easy_EnemyBundle";
+                    public static string Med => "H_Zone03_WhiteAggregate_Medium_EnemyBundle";
+                }
+            }
+
+            //toybox
+
+            //Yinimros
+            public static class YinimroG
+            {
+                public static string Med => "H_Zone03_GearYinimro_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_GearYinimro_Hard_EnemyBundle";
+            }
+
+            public static class YinimroP
+            {
+                public static string Med => "H_Zone03_ParadoxYinimro_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_ParadoxYinimro_Hard_EnemyBundle";
+            }
+        }
+    }
+}

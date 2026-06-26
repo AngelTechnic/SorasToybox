@@ -102,6 +102,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
             {
                 Dozer.Add();
+                ParadoxYinimro.Add();
             }
 
 

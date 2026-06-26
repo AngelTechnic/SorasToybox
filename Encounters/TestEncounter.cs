@@ -14,7 +14,7 @@ namespace SorasToybox.Encounters
             Portals.AddPortalColor("SoraTestColor", Color.gray);
 
 
-            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("TimelineGearYinimro", new Vector2(0.5f, 0f), 32), "SoraTestColor");
+            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("TimelineParadoxYinimro", new Vector2(0.5f, 0f), 32), "SoraTestColor");
             EnemyEncounter_API testMedium = new EnemyEncounter_API(0, "H_Zone01_SoraTest_Medium_EnemyBundle", "SoraTest_Sign")
             {
                 //Where would we be without good music?
@@ -22,7 +22,7 @@ namespace SorasToybox.Encounters
                 RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
 
             };
-            testMedium.CreateNewEnemyEncounterData(["GearYinimro_EN",], null);
+            testMedium.CreateNewEnemyEncounterData(["ParadoxYinimro_EN",], null);
 
             testMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
