@@ -229,7 +229,9 @@ namespace SorasToybox.Enemies
                 Visuals = Visuals.Bellow,
                 AnimationTarget = Targeting.Slot_Front,
             };
-
+            judgement.AddIntentsToTarget(Targeting.Slot_OpponentLeft, [nameof(IntentType_GameIDs.Damage_1_2)]);
+            judgement.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Ante"]);
+            judgement.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Left)]);
 
             Ability prosecution = new Ability("Prosecution", "ST_DMProsecution_A")
             {
@@ -245,7 +247,9 @@ namespace SorasToybox.Enemies
                 Visuals = Visuals.Bellow,
                 AnimationTarget = Targeting.Slot_Front,
             };
-
+            prosecution.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Damage_1_2)]);
+            prosecution.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Ante"]);
+            prosecution.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Right)]);
 
             Ability trial = new Ability("Trial", "ST_DMTrial_A")
             {
@@ -260,6 +264,9 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<MirrorPositionEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([true, false], [1, 2])),
                 ],
             };
+            trial.AddIntentsToTarget(Targeting.Slot_OpponentLeft, [nameof(IntentType_GameIDs.Swap_Right)]);
+            trial.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_1_2), "Status_Ante"]);
+            trial.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Right)]);
 
             Ability error = new Ability("Error", "ST_DMError_A")
             {
@@ -274,7 +281,9 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(ScriptableObject.CreateInstance<MirrorPositionEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckMultiplePreviousEffectsCondition([true, false], [1, 2])),
                 ],
             };
-
+            error.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Swap_Left)]);
+            error.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_1_2), "Status_Ante"]);
+            error.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Left)]);
 
             //THE FOLLOWING ABILITY USED TO BE NAMED HANGING IM SORRYYYYYYY
             AttackVisualsSO hangingVisuals = ScriptableObject.CreateInstance<AttackVisualsSO>();

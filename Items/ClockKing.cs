@@ -25,7 +25,7 @@ namespace SorasToybox.Items
                 Flavour = "\"*BONG*\"",
                 Description = "On combat start, attempts to summon a hacked Yinimro to fight for your side.",
                 IsShopItem = true,
-                ShopPrice = 139,
+                ShopPrice = 8,
                 DoesPopUpInfo = true,
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_clockking"), //item goes here
@@ -40,7 +40,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Mercurie_Inevitable_ACH";
             string unlockID = "SorasToybox_Mercurie_Inevitable_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(clockKing.item, new ItemModdedUnlockInfo(clockKing.Item_ID, ResourceLoader.LoadSprite("item_clockking_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(clockKing.item, new ItemModdedUnlockInfo(clockKing.Item_ID, ResourceLoader.LoadSprite("item_clockking_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, clockKing.Item_ID);
 

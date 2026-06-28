@@ -26,8 +26,8 @@ namespace SorasToybox.Items
                 Name = "TEMPUS Boost Harness",
                 Flavour = "\"Alternate timelines make my head hurt.\"",
                 Description = "Gain Irresolute and Skittish as passives.",
-                IsShopItem = false,
-                ShopPrice = 7,
+                IsShopItem = true,
+                ShopPrice = 10,
                 StartsLocked = true,
                 EquippedModifiers = [becomeIrresolute, thisThingIsReallyUncomfortableOops],
                 OnUnlockUsesTHE = true,
@@ -38,7 +38,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Mercurie_Divine_ACH";
             string unlockID = "SorasToybox_Mercurie_Divine_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(evilBirdSuit.item, new ItemModdedUnlockInfo(evilBirdSuit.Item_ID, ResourceLoader.LoadSprite("item_tempusharness_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(evilBirdSuit.item, new ItemModdedUnlockInfo(evilBirdSuit.Item_ID, ResourceLoader.LoadSprite("item_tempusharness_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, evilBirdSuit.Item_ID);
 
