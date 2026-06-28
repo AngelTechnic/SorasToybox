@@ -53,6 +53,7 @@
     <None Remove="Assets\Enemies\TimelineGearYinimro.png" />
     <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
+    <None Remove="Assets\Enemies\TimelineParadoxShade.png" />
     <None Remove="Assets\Enemies\TimelineParadoxYinimro.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
@@ -169,6 +170,7 @@
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineParadoxShade.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\malachai.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
