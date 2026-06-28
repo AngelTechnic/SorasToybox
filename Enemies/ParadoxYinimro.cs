@@ -86,7 +86,7 @@ namespace SorasToybox.Enemies
 
             paradoxShade.AddEnemyAbilities([uncertainty]);
 
-            paradoxShade.AddPassives([Passives.Infestation1, Passives.Withering, Passives.Catalyst, shadeRiposte]);
+            paradoxShade.AddPassives([Passives.Withering, Passives.Catalyst, shadeRiposte]);
 
             PlayCustomSoundEffect dunDun = ScriptableObject.CreateInstance<PlayCustomSoundEffect>();
             dunDun._Sound = LoadedAssetsHandler.GetEnemy("TaMaGoa_EN").damageSound;
