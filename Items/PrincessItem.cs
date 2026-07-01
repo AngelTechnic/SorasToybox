@@ -67,6 +67,11 @@ namespace SorasToybox.Items
                 Icon = ResourceLoader.LoadSprite("item_princess"),
             };
 
+            princess.item._ItemTypeIDs =
+            [
+                ItemType_GameIDs.Magic.ToString(),
+            ];
+
             //Construct shenanigans i think
             Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = LoadedAssetsHandler.GetCharacter("Doll_CH").passiveAbilities[0] as Connection_PerformEffectPassiveAbility;
             CasterAddRandomExtraAbilityEffect casterAddRandomExtraAbilityEffect = connection_PerformEffectPassiveAbility.connectionEffects[1].effect as CasterAddRandomExtraAbilityEffect;

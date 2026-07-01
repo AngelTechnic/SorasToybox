@@ -45,6 +45,11 @@ namespace SorasToybox.Items
 
             };
 
+            dkyHat.item._ItemTypeIDs =
+                [
+                    ItemType_GameIDs.Fabric.ToString(),
+                ];
+
             //unlock this
             string achievementID = "SorasToybox_Karma_Divine_ACH";
             string unlockID = "SorasToybox_Karma_Divine_Unlock";

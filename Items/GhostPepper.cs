@@ -60,13 +60,12 @@ namespace SorasToybox.Items
                     Effects.GenerateEffect(leftBite, 1, Targeting.Slot_AllyLeft),
                     Effects.GenerateEffect(rightBite, 1, Targeting.Slot_AllyRight),
                 ],
-                OnUnlockUsesTHE = false,
+                OnUnlockUsesTHE = true,
             };
 
             ghostPepper.item._ItemTypeIDs =
             [
                 "FoodID",
-                "Drink",
             ];
 
             ItemUtils.AddItemToShopStatsCategoryAndGamePool(ghostPepper.item, new ItemModdedUnlockInfo(ghostPepper.Item_ID, ResourceLoader.LoadSprite("item_ghostpepper_locked", null, 32, null), "SorasToybox_Karma_Inevitable_ACH"));

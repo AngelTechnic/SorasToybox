@@ -38,9 +38,15 @@ namespace SorasToybox.Items
                 [
                     Effects.GenerateEffect(anotherQuesadilla, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(50)),
                     Effects.GenerateEffect(yummers, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(35)),
-                ]
-
+                ],
+                OnUnlockUsesTHE = true,
             };
+
+            quesadilla.item._ItemTypeIDs =
+            [
+                "FoodID",
+            ];
+
 
             //unlock this
             string achievementID = "SorasToybox_Karma_Witness_ACH";

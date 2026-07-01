@@ -22,7 +22,7 @@ namespace SorasToybox.Items
 
             PerformEffect_Item evilBirdSuit = new PerformEffect_Item("ST_TempusHarness_ID", null, false)
             {
-                Item_ID = "TempusBoostHarness_TW",
+                Item_ID = "TempusBoostHarness_SW",
                 Name = "TEMPUS Boost Harness",
                 Flavour = "\"Alternate timelines make my head hurt.\"",
                 Description = "Gain Irresolute and Skittish as passives.",

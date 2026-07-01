@@ -20,7 +20,7 @@ namespace SorasToybox.Items
 
             PerformEffect_Item clockKing = new PerformEffect_Item("Clock King", null, false)
             {
-                Item_ID = "ClockKing_TW",
+                Item_ID = "ClockKing_SW",
                 Name = "Clock King",
                 Flavour = "\"*BONG*\"",
                 Description = "On combat start, attempts to summon a hacked Yinimro to fight for your side.",
