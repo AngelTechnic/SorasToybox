@@ -48,6 +48,7 @@ namespace SorasToybox.Encounters
                 };
 
                 paradoxYinimroAbyssHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "BurningShame_EN");
+                paradoxYinimroAbyssHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "GearYinimro_EN", 1, "Streetlight_EN");
 
                 paradoxYinimroAbyssHard.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroP.Hard, 3, "TheAbyss_Zone3", BundleDifficulty.Hard);
