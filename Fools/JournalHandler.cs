@@ -56,6 +56,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("GearYinimro_EN", "GearYinimro");
             targetListMercurie.Add("ParadoxYinimro_EN", "ParadoxYinimro");
             targetListMercurie.Add("ParadoxShade_EN", "ParadoxShade");
+            targetListMercurie.Add("March_BOSS", "March");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
