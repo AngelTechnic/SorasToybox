@@ -35,13 +35,11 @@ namespace SorasToybox.Encounters
 
             if (Abyss.Exists)
             {
-
-
                 //initializing Abyss Gear Yinimro encounters, here's the sound events too.
                 EnemyEncounter_API gearYinimroAbyssMedium = new EnemyEncounter_API(0, Abyss.H.YinimroG.Med, "GearYinimro_Sign")
                 {
                     MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
-                    RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
+                    RoarEvent = "event:/IntrusiveRoar", //LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
                 };
 
                 //Medium yinimro encounts go down here
@@ -50,10 +48,21 @@ namespace SorasToybox.Encounters
                 gearYinimroAbyssMedium.SimpleAddEncounter(2, "GearYinimro_EN");
                 gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "YesMan_EN", 1, "Sycophant_EN");
                 gearYinimroAbyssMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "Sycophant_EN");
-                
+
 
                 gearYinimroAbyssMedium.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Med, 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
+
+                EnemyEncounter_API gearYinimroAbyssHard = new EnemyEncounter_API(0, Abyss.H.YinimroG.Hard, "GearYinimro_Sign")
+                {
+                    MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
+                    RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
+                };
+
+                gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 2, "BurningShame_EN");
+
+                gearYinimroAbyssHard.AddEncounterToDataBases();
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Hard, 5, "TheAbyss_Zone3", BundleDifficulty.Hard);
             }
         }
     }
