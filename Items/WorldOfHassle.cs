@@ -66,7 +66,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Nobody_BOSS", ResourceLoader.LoadSprite("NobodyPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("World Of Hassle", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Nobody_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements("World of Hassle", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Nobody_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("ForgottenTitleLabel", "The Forgotten");
         }
     }

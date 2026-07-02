@@ -223,6 +223,7 @@ namespace SorasToybox //Mod namespace
             }
             //DM Unlocks go here I think.
             EntrenchingTool.Add();
+            FoodChain.Add();
             LaughingGas.Add();
 
             //ST deathmatch unlocks
