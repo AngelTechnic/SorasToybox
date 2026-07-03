@@ -17,12 +17,23 @@ namespace SorasToybox.Encounters
             Portals.AddPortalSign("ParadoxYinimro_Sign", ResourceLoader.LoadSprite("TimelineParadoxYinimro.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
             string paradoxSign = "ParadoxYinimro_Sign";
 
-            //initializing Garden Gear Yinimro encounters, here's the sound events too.
+            //initializing Garden Paradox Yinimro encounters, here's the sound events too.
             EnemyEncounter_API paradoxYinimroGardenMedium = new EnemyEncounter_API(0, Garden.H.YinimroP.Med, paradoxSign)
             {
                 MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
                 RoarEvent = "event:/IntrusiveRoar",
             };
+
+            EnemyEncounter_API paradoxYinimroGardenHard = new EnemyEncounter_API(0, Garden.H.YinimroP.Med, paradoxSign)
+            {
+                MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
+                RoarEvent = "event:/IntrusiveRoar",
+            };
+
+            paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "Psychopomp_EN", 1, "NextOfKin_EN");
+
+            paradoxYinimroGardenHard.AddEncounterToDataBases();
+            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroP.Hard, 9, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);
 
             if (Abyss.Exists)
             {
