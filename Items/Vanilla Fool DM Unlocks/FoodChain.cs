@@ -23,7 +23,7 @@ namespace SorasToybox.Items
                 Item_ID = "ST_FoodChain_SW",
                 Name = "Food Chain",
                 Flavour = "\"Parasocial Darwinism.\"",
-                Description = "Gain Overtuned as a passive. On combat start, damage the weakest party member, excluding self, for their current health. Good luck surviving this",
+                Description = "Gain Overtuned as a passive.\nOn combat start, damage the weakest party member, excluding self, for their current health. Good luck surviving this!",
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =
                 [
@@ -35,6 +35,12 @@ namespace SorasToybox.Items
                 Icon = ResourceLoader.LoadSprite("item_foodchain"),
                 IsShopItem = true,
             };
+
+            sosigLink.item._ItemTypeIDs =
+            [
+                "FoodID",
+                "Meat",
+            ];
 
             //unlock this
             string achievementID = "SorasToybox_Pearl_Antagonist_ACH";

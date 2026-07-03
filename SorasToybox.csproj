@@ -15,6 +15,7 @@
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
@@ -129,6 +130,8 @@
     <None Remove="Assets\Items\item_worldofhassle.png" />
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
@@ -172,6 +175,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
@@ -270,6 +274,8 @@
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_atomsmasher_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_badpublicity.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool.png" />

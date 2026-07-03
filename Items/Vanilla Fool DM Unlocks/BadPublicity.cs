@@ -69,7 +69,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Kleiver", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Atom Smasher", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Kleiver", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements("Bad Publicity", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Kleiver", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             if (SorasToybox.extradebug.Value)
