@@ -90,6 +90,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Ghost Pepper", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_March_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("InevitableTitleLabel", "The Inevitable");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Ghost Pepper.");
+            }
         }
     }
 }

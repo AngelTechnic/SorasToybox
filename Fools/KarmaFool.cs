@@ -591,7 +591,11 @@ namespace SorasToybox.Fools
             if (SorasToybox.CrossMod.SaltEnemies) { karma.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Karma_Dreamer_ACH"); }
             karma.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Karma_Antagonist_ACH");
             karma.AddCharacter(true, false);
-            Debug.Log("Added the Dismal.");
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Dismal.");
+            }
+
 
             //yapshenanigans
             SpeakerBundle speakerBundleKarma = new SpeakerBundle();

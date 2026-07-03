@@ -63,6 +63,11 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.TragediesTitleLabel);
 
             Unlocks.AddUnlock_ByID(unlockData);
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Extinction of Enmity.");
+            }
         }
     }
 }

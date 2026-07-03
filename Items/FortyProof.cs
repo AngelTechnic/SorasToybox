@@ -130,6 +130,10 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("Forty-Proof", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AbstractionTitleLabel", "The Abstraction");
 
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added Forty-Proof.");
+            }
         }
     }
 }

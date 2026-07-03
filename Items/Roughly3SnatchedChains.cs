@@ -31,7 +31,7 @@ namespace SorasToybox.Items
                 IsShopItem = true,
                 ShopPrice = 6,
                 DoesPopUpInfo = true,
-                StartsLocked = false, //note to self: when Deathmatch becomes a thing, make this locked.
+                StartsLocked = true, 
                 Icon = ResourceLoader.LoadSprite("noCorpse"), //item goes here
                 TriggerOn = TriggerCalls.OnCombatStart,
                 EquippedModifiers = [werePixiesSinceThe1960s],

@@ -156,7 +156,7 @@ namespace SorasToybox.Enemies
 
             Ability dontHideFromMe = new Ability("Don't Hide From Me", "ST_ShameStripper_A")
             {
-                Description = "Remove all status effects from the Left and Right party members. Damage them equal to the amount removed.",
+                Description = "Removes all status effects from the Left and Right party members. Makes them damage themselves equal to the amount removed.",
                 Rarity = Rarity.Common,
                 Visuals = Visuals.Gnaw,
                 AnimationTarget = Targeting.Slot_OpponentSides,

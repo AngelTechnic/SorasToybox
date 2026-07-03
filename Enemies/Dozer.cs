@@ -257,6 +257,10 @@ namespace SorasToybox.Enemies
             //moving the awake dozer passives down here so they get loaded after everything else is set up
             dozerAwake.AddPassives([Passives.GetCustomPassive("YellowBlooded_1_PA"), CustomPassives.CustomPassive.SaltLockstepGenerator(1), Passives.GetCustomPassive("Itchy_PA"), patientPassive]);
             dozerAwake.AddEnemy(true, true, false);
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("Dozer added (You snooze, you lose)");
+            }
         }
     }
 }

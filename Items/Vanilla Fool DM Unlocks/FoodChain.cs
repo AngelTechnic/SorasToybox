@@ -23,7 +23,7 @@ namespace SorasToybox.Items
                 Item_ID = "ST_FoodChain_SW",
                 Name = "Food Chain",
                 Flavour = "\"Parasocial Darwinism.\"",
-                Description = "Gain Overtuned as a passive. On combat start, kill the weakest party member, excluding self.",
+                Description = "Gain Overtuned as a passive. On combat start, damage the weakest party member, excluding self, for their current health. Good luck surviving this",
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =
                 [
@@ -57,6 +57,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Food Chain", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Pearl", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Food Chain.");
+            }
         }
     }
 }

@@ -57,6 +57,9 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("ParadoxYinimro_EN", "ParadoxYinimro");
             targetListMercurie.Add("ParadoxShade_EN", "ParadoxShade");
             targetListMercurie.Add("March_BOSS", "March");
+            targetListMercurie.Add("Sign_PrizedCatch_EN", "PrizedCatchSign");
+            targetListMercurie.Add("PrizedCatch_EN", "PrizedCatch");
+            targetListMercurie.Add("RealisticTank_EN", "RealisticTank");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -64,6 +67,7 @@ namespace SorasToybox.Fools
             {
                 Dictionary<string, string> targetListMercurieSoreka = new Dictionary<string, string>();
                 targetListMercurieSoreka.Add("AmalgamatedAssessor_BOSS", "AssessorSoreka");
+                targetListMercurieSoreka.Add("PrizedCatch_EN", "PrizedCatchSoreka");
                 targetAltListMercurie.Add("Soreka_CH", targetListMercurieSoreka);
             }
 
@@ -112,7 +116,9 @@ namespace SorasToybox.Fools
             targetListKarma.Add("OsmanLeft_BOSS", "OsmanAndSinnoks");
             targetListKarma.Add("OsmanRight_BOSS", "OsmanAndSinnoks");
             targetListKarma.Add("Heaven_BOSS", "Heaven");
-
+            targetListKarma.Add("Sign_PrizedCatch_EN", "PrizedCatchSign");
+            targetListKarma.Add("PrizedCatch_EN", "PrizedCatch");
+            targetListKarma.Add("RealisticTank_EN", "RealisticTank");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 

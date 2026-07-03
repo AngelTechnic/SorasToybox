@@ -81,6 +81,11 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("Mega Hammer", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_BlueSkies_Karma", null, 32, null), achievementID);
             unlockAchievement.IsSecret = true;
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BlueSky_BOSS", "The Dreamer");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Mega Hammer.");
+            }
         }
     }
 }

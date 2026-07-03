@@ -83,6 +83,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Charybdis", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Nobody_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("ForgottenTitleLabel", "The Forgotten");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added Charybdis.");
+            }
         }
     }
 }

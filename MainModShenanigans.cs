@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BepInEx.Bootstrap;
+using BepInEx.Configuration;
 using BrutalAPI;
 using SorasToybox.CustomStatusField;
 using SorasToybox.CustomPassives;
@@ -13,15 +14,16 @@ using HarmonyLib;
 using UnityEngine;
 using SorasToybox.Encounters;
 using SorasToybox.Events;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.3.7")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.0")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
-    [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("TairbazPeep.EnemyPack", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.GlitchsFreaks", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.Siren", BepInDependency.DependencyFlags.SoftDependency)]
@@ -34,6 +36,9 @@ namespace SorasToybox //Mod namespace
     {
         public static AssetBundle assetbundle;
         //I stole the crossmod class from asdfagi :sob:
+
+        public static ConfigEntry<bool> journalmode;
+        public static ConfigEntry<bool> extradebug;
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
@@ -64,6 +69,14 @@ namespace SorasToybox //Mod namespace
         public void Awake()
         {
             Logger.LogInfo("Morning."); //sends a message to the logging console confirming your mod is able to read info in this bracket
+
+            var harmony = new Harmony("Wavetamer.SorasToybox");
+            harmony.PatchAll();
+
+            //config shenanigans!
+            ConfigFile config = new ConfigFile(System.IO.Path.Combine(Paths.ConfigPath, "SorasToybox.cfg"), true);
+            journalmode = config.Bind("Gameplay - Misc", "Journal Mode", false, "EXPERIMENTAL - Set this to true to enable Journal Mode, giving certain fools the means to reveal more lore about themselves and their world of origin.");
+            extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
 
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
@@ -225,6 +238,9 @@ namespace SorasToybox //Mod namespace
             EntrenchingTool.Add();
             FoodChain.Add();
             LaughingGas.Add();
+            AtomSmasher.Add();
+            BadPublicity.Add();
+
 
             //ST deathmatch unlocks
             MemoryOfGriyadin.Add();

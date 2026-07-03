@@ -42,7 +42,7 @@ namespace SorasToybox.Items
                     Effects.GenerateEffect(imsecretlyintothis, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(ruined, 1, Targeting.Slot_SelfSlot),
                 ],
-
+                OnUnlockUsesTHE = false,
             };
 
             dkyHat.item._ItemTypeIDs =
@@ -72,6 +72,10 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("Healthy Headwear", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.DivineTitleLabel);
 
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added Healthy Headwear.");
+            }
         }
     }
 }

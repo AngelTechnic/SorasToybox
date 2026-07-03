@@ -65,6 +65,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Lonely Hike", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Katalixi_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BoundaryTitleLabel", "The Boundary");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Lonely hike.");
+            }
         }
     }
 }

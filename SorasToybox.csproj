@@ -16,7 +16,9 @@
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
@@ -127,8 +129,13 @@
     <None Remove="Assets\Items\item_worldofhassle.png" />
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />
     <None Remove="Assets\Passives\bloatPassive.png" />
     <None Remove="Assets\Passives\EscapistPassive.png" />
     <None Remove="Assets\Passives\Fragile.png" />
@@ -165,6 +172,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
@@ -261,6 +270,8 @@
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_badpublicity.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_fortyproof.png" />
@@ -291,8 +302,11 @@
     <EmbeddedResource Include="Assets\Items\item_worldofhassle.png" />
     <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />
     <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
     <EmbeddedResource Include="Assets\Passives\EscapistPassive.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />

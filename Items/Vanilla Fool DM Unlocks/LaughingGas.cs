@@ -12,32 +12,58 @@ namespace SorasToybox.Items
     {
         public static void Add()
         {
-            StatusEffect_ApplyRestrictor_Effect permanentEcstasy = ScriptableObject.CreateInstance<StatusEffect_ApplyRestrictor_Effect>();
-            permanentEcstasy._Status = StatusField.GetCustomStatusEffect("Ecstasy_ID");
+            StatusEffect_Apply_Effect ecstasyByPrevious = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            ecstasyByPrevious._MultPreviousExitValueForEntry = true;
+            ecstasyByPrevious._Status = StatusField.GetCustomStatusEffect("Ecstasy_ID");
 
-            DirectDeathEffect overdose = ScriptableObject.CreateInstance<DirectDeathEffect>();
+            StatusEffect_Apply_Effect scarMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            scarMe._Status = StatusField.Scars;
 
-            StatusEffectCheckerEffect hasEcstasy = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
-            hasEcstasy._status = StatusField.GetCustomStatusEffect("Ecstasy_ID");
+            DamageEffect damage = ScriptableObject.CreateInstance<DamageEffect>();
+            damage._indirect = true;
+            damage._returnKillAsSuccess = false;
 
+            RefreshAbilityUseEffect refresh = ScriptableObject.CreateInstance<RefreshAbilityUseEffect>();
+
+            Ability coughingFit = new Ability("Coughing Fit", "ST_CoughingFit_A")
+            {
+                Cost = [Pigments.Yellow],
+                Description = "Gain 1 Scar.\nDeal 1 damage to this party member.\nGain Ecstasy equal to the damage dealt.\nRefresh ability usage.",
+                AbilitySprite = ResourceLoader.LoadSprite("n2ocan_coughingfit"),
+                AnimationTarget = Targeting.Slot_SelfAll,
+                Visuals = Visuals.Melt,
+                Effects =
+                [
+                    Effects.GenerateEffect(scarMe, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(damage, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(ecstasyByPrevious, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(refresh, 1, Targeting.Slot_SelfSlot),
+                ],
+            };
+            coughingFit.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Status_Scars), nameof(IntentType_GameIDs.Damage_1_2), "Status_Ecstasy", nameof(IntentType_GameIDs.Other_Refresh)]);
+
+            ExtraAbility_Wearable_SMS laughingGasWearable = ScriptableObject.CreateInstance<ExtraAbility_Wearable_SMS>();
+            laughingGasWearable._extraAbility = coughingFit.GenerateCharacterAbility();
 
             PerformEffect_Item laughingGas = new PerformEffect_Item("ST_LaughingGas_ID", null, false)
             {
                 Item_ID = "NitrousOxideCanister_SW",
                 Name = "N2O Canister",
                 Flavour = "\"Enjoy the last ten minutes of your life!\"",
-                Description = "On turn start, gain 1 permanent Ecstasy. 10% chance to die.",
+                Description = "Gain \"Coughing Fit\" as an extra ability, hurting yourself in exchange for immediate power.",
                 Icon = ResourceLoader.LoadSprite("item_laughinggas"),
-                TriggerOn = TriggerCalls.OnTurnStart_Early,
-                Effects =
-                [
-                    Effects.GenerateEffect(overdose, 1, Targeting.Slot_SelfSlot, Effects.ChanceCondition(10)),
-                    Effects.GenerateEffect(permanentEcstasy, 1, Targeting.Slot_SelfSlot),
-                ],
+                TriggerOn = TriggerCalls.Count,
+                EquippedModifiers = [laughingGasWearable],
+                OnUnlockUsesTHE = true,
                 IsShopItem = true,
                 ShopPrice = 8,
                 StartsLocked = true,
             };
+
+            //Construct shenanigans i think
+            Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = LoadedAssetsHandler.GetCharacter("Doll_CH").passiveAbilities[0] as Connection_PerformEffectPassiveAbility;
+            CasterAddRandomExtraAbilityEffect casterAddRandomExtraAbilityEffect = connection_PerformEffectPassiveAbility.connectionEffects[1].effect as CasterAddRandomExtraAbilityEffect;
+            casterAddRandomExtraAbilityEffect._extraData = [.. casterAddRandomExtraAbilityEffect._extraData, laughingGasWearable];
 
             //unlock this
             string achievementID = "SorasToybox_Thype_Antagonist_ACH";
@@ -60,6 +86,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("N2O Canister", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Thype", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the N2O Canister.");
+            }
         }
     }
 }

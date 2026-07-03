@@ -63,6 +63,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Bastard Nimbus", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AbstractionTitleLabel", "The Abstraction");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Bastard Nimbus.");
+            }
         }
     }
 }

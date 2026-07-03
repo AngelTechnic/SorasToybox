@@ -57,6 +57,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Clock King", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_March_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("InevitableTitleLabel", "The Inevitable");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added Clock King.");
+            }
         }
     }
 }

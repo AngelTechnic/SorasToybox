@@ -315,7 +315,10 @@ namespace SorasToybox.Fools
             if (SorasToybox.CrossMod.SaltEnemies) { mercurie.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Mercurie_Dreamer_ACH"); }
             mercurie.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Mercurie_Antagonist_ACH");
             mercurie.AddCharacter(true, false);
-            Debug.Log("Added the Timewarped.");
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Timewarped.");
+            }
 
             //SpeakerBundle nonsense
             SpeakerBundle speakerBundleMercurie = new SpeakerBundle();
