@@ -14,8 +14,9 @@ namespace SorasToybox.Items
     {
         public static void Add()
         {
+            //yes i know it says GenGrey but i couldn't get it to work otherwise.
             GenerateColorManaEffect genGrey = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
-            genGrey.mana = Pigments.Grey;
+            genGrey.mana = LoadedDBsHandler.PigmentDB.GetPigment("White");
 
             StatusEffect_ApplyRestrictor_Effect permanentMisery = ScriptableObject.CreateInstance<StatusEffect_ApplyRestrictor_Effect>();
             permanentMisery._Status = StatusField.GetCustomStatusEffect("Misery_ID");

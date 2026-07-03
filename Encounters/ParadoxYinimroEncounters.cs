@@ -11,7 +11,7 @@ namespace SorasToybox.Encounters
         public static void Add()
         {
             //rules for Paradox Yinimro encounters:
-            //If you pair them with Images of any kind I'll kill you.
+            //If you pair them with Images of any kind I'll kill you. Next of Kin AT MOST.
 
             //Paradox Sign!
             Portals.AddPortalSign("ParadoxYinimro_Sign", ResourceLoader.LoadSprite("TimelineParadoxYinimro.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
@@ -24,16 +24,18 @@ namespace SorasToybox.Encounters
                 RoarEvent = "event:/IntrusiveRoar",
             };
 
-            EnemyEncounter_API paradoxYinimroGardenHard = new EnemyEncounter_API(0, Garden.H.YinimroP.Med, paradoxSign)
+            EnemyEncounter_API paradoxYinimroGardenHard = new EnemyEncounter_API(0, Garden.H.YinimroP.Hard, paradoxSign)
             {
                 MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
                 RoarEvent = "event:/IntrusiveRoar",
             };
 
             paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "Psychopomp_EN", 1, "NextOfKin_EN");
+            paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "ProdigalFoundling_EN", 1, "GigglingMinister_EN");
+            paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "RealisticTank_EN", 1, "FrowningChancellor_EN");
 
             paradoxYinimroGardenHard.AddEncounterToDataBases();
-            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroP.Hard, 9, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);
+            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroP.Hard, 5, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);
 
             if (Abyss.Exists)
             {
@@ -62,7 +64,7 @@ namespace SorasToybox.Encounters
                 paradoxYinimroAbyssHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "GearYinimro_EN", 1, "Streetlight_EN");
 
                 paradoxYinimroAbyssHard.AddEncounterToDataBases();
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroP.Hard, 3, "TheAbyss_Zone3", BundleDifficulty.Hard);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroP.Hard, 5, "TheAbyss_Zone3", BundleDifficulty.Hard);
             }
         }
     }
