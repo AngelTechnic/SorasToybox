@@ -167,7 +167,11 @@ namespace SorasToybox //Mod namespace
             }
             KarmaFool.Add();
             JournalHandler.AddMiscSpeakers();
-            JournalHandler.Add();
+            if (journalmode.Value) 
+            {
+                JournalHandler.Add();
+            }
+
 
             if (CrossMod.IntoTheAbyss)
             {
