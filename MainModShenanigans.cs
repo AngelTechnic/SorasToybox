@@ -236,6 +236,8 @@ namespace SorasToybox //Mod namespace
             }
             //DM Unlocks go here I think.
             EntrenchingTool.Add();
+            AuralViolation.Add();
+            ProcessedSludge.Add();
             FoodChain.Add();
             LaughingGas.Add();
             AtomSmasher.Add();

@@ -17,7 +17,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
                 Item_ID = "AtomSmasher_TW",
                 Name = "Atom Smasher",
                 Flavour = "\"What do elephants have to do with radiation? ...oh.\"",
-                Description = "On dealing damage to an enemy, inflict equal Collapse to them!",
+                Description = "On dealing damage to an enemy, inflict equal Collapse to them!\nThis ignores most modifiers.",
                 Icon = ResourceLoader.LoadSprite("item_atomsmasher"),
                 TriggerOn = TriggerCalls.OnWillApplyDamage,
                 Conditions = [ScriptableObject.CreateInstance<AtomSmasherCondition>()],
@@ -31,7 +31,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
             string achievementID = "SorasToybox_Griffin_Antagonist_ACH";
             string unlockID = "SorasToybox_Griffin_Antagonist_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(atomSmasher.item, new ItemModdedUnlockInfo(atomSmasher.Item_ID, ResourceLoader.LoadSprite("item_atomSmasher_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(atomSmasher.item, new ItemModdedUnlockInfo(atomSmasher.Item_ID, ResourceLoader.LoadSprite("item_atomsmasher_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, atomSmasher.Item_ID);
 
