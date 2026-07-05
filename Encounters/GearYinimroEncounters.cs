@@ -27,8 +27,9 @@ namespace SorasToybox.Encounters
             };
 
             //Won't somebody please help me?
-            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN");
-            gearYinimroGardenMedium.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN"); 
+            gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "SkeweringHomunculus_EN");
 
             gearYinimroGardenMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 9, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);

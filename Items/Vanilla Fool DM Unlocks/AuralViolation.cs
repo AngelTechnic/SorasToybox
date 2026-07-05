@@ -15,6 +15,10 @@ namespace SorasToybox.Items
             StatusEffect_Apply_Effect getMisery = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getMisery._Status = StatusField.GetCustomStatusEffect("Misery_ID");
 
+            AnimationVisualsEffect screamLikeALittleGirl = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            screamLikeALittleGirl._visuals = Visuals.Scream;
+            screamLikeALittleGirl._animationTarget = Targeting.Slot_FrontAndSides;
+
             PerformEffect_Item heScreamLoudAsFuck = new PerformEffect_Item("ST_AuralViolation_ID", null, false)
             {
                 Item_ID = "AuralViolation_SW",
@@ -29,6 +33,7 @@ namespace SorasToybox.Items
                 StartsLocked = true,
                 Effects =
                 [
+                    Effects.GenerateEffect(screamLikeALittleGirl, 1, Targeting.Slot_SelfAll),
                     Effects.GenerateEffect(getMisery, 2, Targeting.Slot_FrontAndSides),
                 ],
             };

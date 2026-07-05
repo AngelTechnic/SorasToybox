@@ -9,7 +9,7 @@ namespace SorasToybox.CustomEffects
     {
         public override bool MeetCondition(IUnit caster, EffectInfo[] effects, int currentIndex)
         {
-            return caster.CurrentHealth <= 175;
+            return caster.CurrentHealth <= 175 && caster.EntityID == "Deathmatch_BOSS";
         }
     }
 }

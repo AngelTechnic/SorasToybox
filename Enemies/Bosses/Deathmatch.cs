@@ -453,7 +453,7 @@ namespace SorasToybox.Enemies
             //achievements
             string achievementID = "DeathmatchBoss_ACH";
             string unlockID = "Deathmatch_BOSS";
-            string itemID = "SentientArcanite_TW";
+            string itemID = "UrbanSurvivalGuide_SW";
 
             BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, itemID);
             UnlockableModData unlockData = new UnlockableModData(unlockID);

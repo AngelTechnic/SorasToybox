@@ -129,6 +129,8 @@
     <None Remove="Assets\Items\item_setset_locked.png" />
     <None Remove="Assets\Items\item_tempusharness.png" />
     <None Remove="Assets\Items\item_tempusharness_locked.png" />
+    <None Remove="Assets\Items\item_urbansurvival.png" />
+    <None Remove="Assets\Items\item_urbansurvival_locked.png" />
     <None Remove="Assets\Items\item_worldofhassle.png" />
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
@@ -164,6 +166,7 @@
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
+    <None Remove="Assets\Passives\passive_hostile.png" />
     <None Remove="Assets\Passives\passive_itchy.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
     <None Remove="Assets\Passives\passive_lockstep.png" />
@@ -282,6 +285,8 @@
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_urbansurvival.png" />
+    <EmbeddedResource Include="Assets\Items\item_urbansurvival_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_atomsmasher_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_auralviolation.png" />
@@ -344,6 +349,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
     <EmbeddedResource Include="Assets\Passives\passive_godray.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_hostile.png" />
     <EmbeddedResource Include="Assets\Passives\passive_itchy.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
     <EmbeddedResource Include="Assets\Passives\passive_lockstep.png" />

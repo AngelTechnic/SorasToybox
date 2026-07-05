@@ -39,6 +39,7 @@ namespace SorasToybox //Mod namespace
 
         public static ConfigEntry<bool> journalmode;
         public static ConfigEntry<bool> extradebug;
+        public static ConfigEntry<bool> gardenantagonist;
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
@@ -77,6 +78,7 @@ namespace SorasToybox //Mod namespace
             ConfigFile config = new ConfigFile(System.IO.Path.Combine(Paths.ConfigPath, "SorasToybox.cfg"), true);
             journalmode = config.Bind("Gameplay - Misc", "Journal Mode", false, "EXPERIMENTAL - Set this to true to enable Journal Mode, giving certain fools the means to reveal more lore about themselves and their world of origin.");
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
+            gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
 
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
@@ -146,6 +148,10 @@ namespace SorasToybox //Mod namespace
                 GearYinimroEncounters.Add();
                 CompatAbyssEncounters.Add();
                 DeathmatchEncounter.Add();
+                if (gardenantagonist.Value)
+                {
+                    GardenDeathmatchEncounter.Add();
+                }
             }
 
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
@@ -190,6 +196,7 @@ namespace SorasToybox //Mod namespace
 
             //Add items
             SentientArcanite.Add();
+            UrbanSurvival.Add();
             AMsSeveredHead.Add();
 
             //remember character order is: Mercurie, Karma

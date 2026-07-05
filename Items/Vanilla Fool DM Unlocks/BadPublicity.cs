@@ -30,7 +30,7 @@ namespace SorasToybox.Items
                 Name = "Bad Publicity",
                 Flavour = "\"I miss the quiet.\"",
                 Description = "On turn end, gain Strength equal to the amount of Broken Pigment in the tray.\nYou are being followed.",
-                IsShopItem = true,
+                IsShopItem = false,
                 ShopPrice = 6,
                 DoesPopUpInfo = true,
                 StartsLocked = false, 

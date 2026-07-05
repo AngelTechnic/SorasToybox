@@ -33,7 +33,7 @@ namespace SorasToybox.Items
                 EquippedModifiers = [getOvertuned],
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Icon = ResourceLoader.LoadSprite("item_amsseveredhead"),
-                OnUnlockUsesTHE = false,
+                OnUnlockUsesTHE = true,
                 Effects =   
                 [
                     Effects.GenerateEffect(getCursed, 1, Targeting.Slot_SelfSlot),

@@ -11,7 +11,7 @@ namespace SorasToybox.Encounters
         public static void Add()
         {
             //rules for Paradox Yinimro encounters:
-            //If you pair them with Images of any kind I'll kill you. Next of Kin AT MOST.
+            //If you pair them with Images of any kind I'll kill you. Next of Kin AT MOST. I only added one Image encounter and that's it.
 
             //Paradox Sign!
             Portals.AddPortalSign("ParadoxYinimro_Sign", ResourceLoader.LoadSprite("TimelineParadoxYinimro.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
@@ -33,6 +33,7 @@ namespace SorasToybox.Encounters
             paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "Psychopomp_EN", 1, "NextOfKin_EN");
             paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "ProdigalFoundling_EN", 1, "GigglingMinister_EN");
             paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "RealisticTank_EN", 1, "FrowningChancellor_EN");
+            paradoxYinimroGardenHard.SimpleAddEncounter(1, "ParadoxYinimro_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
 
             paradoxYinimroGardenHard.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroP.Hard, 5, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);

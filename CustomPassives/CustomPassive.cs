@@ -80,6 +80,29 @@ namespace SorasToybox.CustomPassives
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STHoudiniInfo);
             }
 
+            //Hostile Passive (used for urban survival guide)
+            if (LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Ante_ID"))
+            {
+                StatusEffect_Apply_Effect getAnte = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+                getAnte._Status = StatusField.GetCustomStatusEffect("Ante_ID");
+
+                PerformEffectPassiveAbility hostile = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                hostile.name = "ST_Hostile_PA";
+                hostile._passiveName = "Hostile";
+                hostile.m_PassiveID = "Hostile_ID";
+                hostile.passiveIcon = ResourceLoader.LoadSprite("passive_hostile.png");
+                hostile._characterDescription = "On receiving any damage, gain 1 Ante.";
+                hostile._enemyDescription = "On receiving any damage, gain 1 Ante.";
+                hostile.doesPassiveTriggerInformationPanel = true;
+                hostile._triggerOn = [TriggerCalls.OnDamaged];
+                hostile.effects = [Effects.GenerateEffect(getAnte, 1, Targeting.Slot_SelfSlot)];
+
+
+                Passives.AddCustomPassiveToPool("ST_Hostile_PA", "Hostile", hostile);
+                GlossaryPassives STHostileInfo = new GlossaryPassives("Hostile", "On receiving any damage, gain 1 Ante.", ResourceLoader.LoadSprite("passive_hostile"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STHostileInfo);
+            }
+
 
             //Search Party passive
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("SearchParty_PA"))

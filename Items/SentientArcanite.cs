@@ -40,8 +40,7 @@ namespace SorasToybox.Items
                 ]
             };
             //adds to treasure pool, and other stuff related to unlocks (but it's unlocked by default so don't worry about it)
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(gayCrystal.item, new ItemModdedUnlockInfo(gayCrystal.Item_ID, ResourceLoader.LoadSprite("item_sentient_arcanite", null, 32, null), "SorasToybox_Misc_SentientArcanite_ACH"));
-
+            ItemUtils.JustAddItemSoItCanBeLoaded(gayCrystal.item);
         }
     }
 }
