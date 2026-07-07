@@ -254,6 +254,7 @@ namespace SorasToybox //Mod namespace
             FoodChain.Add();
             LaughingGas.Add();
             AtomSmasher.Add();
+            DriveItem.Add();
             BadPublicity.Add();
             LucifersHead.Add();
 

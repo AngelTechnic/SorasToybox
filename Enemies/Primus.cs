@@ -177,7 +177,10 @@ namespace SorasToybox.Enemies
             primusMiniboss.AddPassives([Passives.MultiAttack2, Passives.GetCustomPassive("Tinted_PA"), Passives.BonusAttackGenerator(primusBonus)]);
             primusMiniboss.AddEnemy(false, false, false);
             LoadedAssetsHandler.GetEnemy("Primus_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Supergiant_EN").enemyTemplate;
-
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("Added the Traces of Primus.");
+            }
         }
     }
 }

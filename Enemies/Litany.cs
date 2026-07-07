@@ -195,7 +195,10 @@ namespace SorasToybox.Enemies
                     litanyCoerceAbility, litanyHeadhunterAbility,
                 ]);
             litany.AddEnemy(true, true, false);
-            Debug.Log("Litany loaded");
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("Added Litany.");
+            }
 
         }
     }

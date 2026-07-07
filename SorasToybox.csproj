@@ -16,6 +16,7 @@
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
@@ -145,6 +146,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_auralviolation_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
@@ -192,6 +195,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
@@ -305,6 +309,8 @@
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_auralviolation_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_badpublicity.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_drive.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_drive_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_entrenchingtool_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_fortyproof.png" />

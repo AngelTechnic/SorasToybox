@@ -259,7 +259,7 @@ namespace SorasToybox.Enemies
             dozerAwake.AddEnemy(true, true, false);
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Dozer added (You snooze, you lose)");
+                UnityEngine.Debug.Log("Added Dozer.");
             }
         }
     }
