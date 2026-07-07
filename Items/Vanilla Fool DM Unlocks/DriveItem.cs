@@ -34,7 +34,7 @@ namespace SorasToybox.Items
                 Name = "Drive",
                 Flavour = "\"Sometimes you're stuck in the ground, and you never even knew it.\"",
                 Description = "On turn start, apply 2 Overclock to all party members that are standing in Constricted.\nOn turn end, apply 2 Constricted to this party member's slot.",
-                Icon = ResourceLoader.LoadSprite("item_lucifershead"),
+                Icon = ResourceLoader.LoadSprite("item_drive"),
                 TriggerOn = TriggerCalls.OnTurnFinished,
                 OnUnlockUsesTHE = false,
                 IsShopItem = false,
