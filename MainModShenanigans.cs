@@ -40,6 +40,7 @@ namespace SorasToybox //Mod namespace
         public static ConfigEntry<bool> journalmode;
         public static ConfigEntry<bool> extradebug;
         public static ConfigEntry<bool> gardenantagonist;
+        public static ConfigEntry<bool> altboundarymusic;
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
@@ -79,6 +80,7 @@ namespace SorasToybox //Mod namespace
             journalmode = config.Bind("Gameplay - Misc", "Journal Mode", false, "EXPERIMENTAL - Set this to true to enable Journal Mode, giving certain fools the means to reveal more lore about themselves and their world of origin.");
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
             gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
+            altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
 
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
@@ -253,6 +255,7 @@ namespace SorasToybox //Mod namespace
             LaughingGas.Add();
             AtomSmasher.Add();
             BadPublicity.Add();
+            LucifersHead.Add();
 
 
             //ST deathmatch unlocks
@@ -269,6 +272,11 @@ namespace SorasToybox //Mod namespace
             //Log items (Do config thing with it)
             Logger.LogInfo("New Items in inventory.");
 
+
+            if (SorasToybox.altboundarymusic.Value)
+            {
+                LoadedAssetsHandler.GetEnemyBundle("Katalixi_BOSS")._musicEventReference = "event:/SorasMusic/Enemies/Bosses/AltKatalixiMusic/SideQuest";
+            }
 
             //Final log
             Logger.LogInfo("Wake up.");

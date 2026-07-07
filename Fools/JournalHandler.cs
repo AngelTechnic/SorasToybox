@@ -60,6 +60,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("Sign_PrizedCatch_EN", "PrizedCatchSign");
             targetListMercurie.Add("PrizedCatch_EN", "PrizedCatch");
             targetListMercurie.Add("RealisticTank_EN", "RealisticTank");
+            targetListMercurie.Add("Nolocimes_Batretne_BOSS", "Katalixi");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -68,6 +69,7 @@ namespace SorasToybox.Fools
                 Dictionary<string, string> targetListMercurieSoreka = new Dictionary<string, string>();
                 targetListMercurieSoreka.Add("AmalgamatedAssessor_BOSS", "AssessorSoreka");
                 targetListMercurieSoreka.Add("PrizedCatch_EN", "PrizedCatchSoreka");
+                targetListMercurieSoreka.Add("Nolocimes_Batretne_BOSS", "KatalixiSoreka");
                 targetAltListMercurie.Add("Soreka_CH", targetListMercurieSoreka);
             }
 
@@ -361,13 +363,35 @@ namespace SorasToybox.Fools
                 Dialogues.CreateAndAddCustom_SpeakerData("925er", speakerBundle925er, true, false, new SpeakerEmote[0]);
             }
 
-            if (LoadedAssetsHandler.LoadedCharacters.ContainsKey("Malachai_EN"))
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Malachai_EN"))
             {
                 SpeakerBundle speakerBundleSTMalachai = new SpeakerBundle();
                 speakerBundleSTMalachai.bundleTextColor = new Color32(255, 255, 255, 255);
                 speakerBundleSTMalachai.dialogueSound = "event:/MalachaiDx";
                 speakerBundleSTMalachai.portrait = ResourceLoader.LoadSprite("malachai", new Vector2(0.5f, 0f), 32);
                 Dialogues.CreateAndAddCustom_SpeakerData("STMalachai", speakerBundleSTMalachai, true, true, new SpeakerEmote[0]);
+            }
+
+            if (LoadedAssetsHandler.LoadedCharacters.ContainsKey("Soreka_CH"))
+            {
+                SpeakerBundle speakerBundleSTSoreka = new SpeakerBundle();
+                speakerBundleSTSoreka.bundleTextColor = new Color32(95, 205, 228, 255);
+                speakerBundleSTSoreka.dialogueSound = LoadedAssetsHandler.GetCharacter("Soreka_CH").dxSound;
+                speakerBundleSTSoreka.portrait = ResourceLoader.LoadSprite("realsoreka_front", new Vector2(0.5f, 0f), 32);
+
+                SpeakerBundle speakerBundleSTSorekaSerious = new SpeakerBundle();
+                speakerBundleSTSorekaSerious.bundleTextColor = new Color32(95, 205, 228, 255);
+                speakerBundleSTSorekaSerious.dialogueSound = LoadedAssetsHandler.GetCharacter("Soreka_CH").dxSound;
+                speakerBundleSTSorekaSerious.portrait = ResourceLoader.LoadSprite("realsoreka_frontserious", new Vector2(0.5f, 0f), 32);
+
+                Dialogues.CreateAndAddCustom_SpeakerData("STSoreka", speakerBundleSTSoreka, true, true, new SpeakerEmote[1]
+                {
+                    new SpeakerEmote
+                    {
+                        emotion = "Serious",
+                        bundle = speakerBundleSTSorekaSerious,
+                    }
+                });
             }
         }
     }

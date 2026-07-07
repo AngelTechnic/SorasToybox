@@ -91,15 +91,15 @@ namespace SorasToybox.CustomPassives
                 hostile._passiveName = "Hostile";
                 hostile.m_PassiveID = "Hostile_ID";
                 hostile.passiveIcon = ResourceLoader.LoadSprite("passive_hostile.png");
-                hostile._characterDescription = "On receiving any damage, gain 1 Ante.";
-                hostile._enemyDescription = "On receiving any damage, gain 1 Ante.";
+                hostile._characterDescription = "On receiving damage, gain 1 Ante.";
+                hostile._enemyDescription = "On receiving damage, gain 1 Ante.";
                 hostile.doesPassiveTriggerInformationPanel = true;
-                hostile._triggerOn = [TriggerCalls.OnDamaged];
+                hostile._triggerOn = [TriggerCalls.OnDirectDamaged];
                 hostile.effects = [Effects.GenerateEffect(getAnte, 1, Targeting.Slot_SelfSlot)];
 
 
                 Passives.AddCustomPassiveToPool("ST_Hostile_PA", "Hostile", hostile);
-                GlossaryPassives STHostileInfo = new GlossaryPassives("Hostile", "On receiving any damage, gain 1 Ante.", ResourceLoader.LoadSprite("passive_hostile"));
+                GlossaryPassives STHostileInfo = new GlossaryPassives("Hostile", "On receiving damage, gain 1 Ante.", ResourceLoader.LoadSprite("passive_hostile"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STHostileInfo);
             }
 

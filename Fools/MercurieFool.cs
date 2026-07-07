@@ -347,7 +347,12 @@ namespace SorasToybox.Fools
             speakerBundleMercurieWarded.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").damageSound;
             speakerBundleMercurieWarded.portrait = ResourceLoader.LoadSprite("mercurie_frontwarded", new Vector2(0.5f, 0f), 32);
 
-            Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[4]
+            SpeakerBundle speakerBundleMercurieSad = new SpeakerBundle();
+            speakerBundleMercurieSad.bundleTextColor = new Color32(96, 215, 181, 255);
+            speakerBundleMercurieSad.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").deathSound;
+            speakerBundleMercurieSad.portrait = ResourceLoader.LoadSprite("mercurie_frontsad", new Vector2(0.5f, 0f), 32);
+
+            Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[5]
             {
                 new SpeakerEmote
                 {
@@ -368,6 +373,11 @@ namespace SorasToybox.Fools
                 {
                     emotion = "Warded",
                     bundle = speakerBundleMercurieWarded,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Sad",
+                    bundle = speakerBundleMercurieSad,
                 }
             });
 
@@ -397,7 +407,12 @@ namespace SorasToybox.Fools
             speakerBundleMercurieMainWarded.dialogueSound = speakerBundleMercurieWarded.dialogueSound;
             speakerBundleMercurieMainWarded.portrait = ResourceLoader.LoadSprite("mercurie_frontwarded", new Vector2(0.5f, 0f), 32);
 
-            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurie, false, false, new SpeakerEmote[4]
+            SpeakerBundle speakerBundleMercurieMainSad = new SpeakerBundle();
+            speakerBundleMercurieMainSad.bundleTextColor = speakerBundleMercurieSad.bundleTextColor;
+            speakerBundleMercurieMainSad.dialogueSound = speakerBundleMercurieSad.dialogueSound;
+            speakerBundleMercurieMainSad.portrait = ResourceLoader.LoadSprite("mercurie_frontsad", new Vector2(0.5f, 0f), 32);
+
+            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurie, false, false, new SpeakerEmote[5]
             {
                 new SpeakerEmote
                 {
@@ -418,6 +433,11 @@ namespace SorasToybox.Fools
                 {
                     emotion = "Warded",
                     bundle = speakerBundleMercurieMainWarded,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Sad",
+                    bundle = speakerBundleMercurieMainSad,
                 },
             });
         }

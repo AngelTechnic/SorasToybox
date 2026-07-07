@@ -16,6 +16,7 @@
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
@@ -68,6 +69,8 @@
     <None Remove="Assets\Fools\Journal Mode\JournalItemKarma.png" />
     <None Remove="Assets\Fools\Journal Mode\JournalItemMercurie.png" />
     <None Remove="Assets\Fools\Journal Mode\malachai.png" />
+    <None Remove="Assets\Fools\Journal Mode\realsoreka_front.png" />
+    <None Remove="Assets\Fools\Journal Mode\realsoreka_frontserious.png" />
     <None Remove="Assets\Fools\Karma\karma_agony.png" />
     <None Remove="Assets\Fools\Karma\karma_back.png" />
     <None Remove="Assets\Fools\Karma\karma_coming.png" />
@@ -84,6 +87,7 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_back.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_clock.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_front.png" />
+    <None Remove="Assets\Fools\Mercurie\mercurie_frontsad.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_menu.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_menu_locked.png" />
@@ -91,6 +95,7 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_talk.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_talkmad.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_theend.png" />
+    <None Remove="Assets\Fools\Whhvay\whhvay_overworld.png" />
     <None Remove="Assets\Intents\propx_intent.png" />
     <None Remove="Assets\Intents\prop_intent.png" />
     <None Remove="Assets\Intents\timelineDamage_intent.png" />
@@ -144,6 +149,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />
@@ -185,6 +192,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
@@ -197,7 +205,11 @@
     <EmbeddedResource Include="Assets\Enemies\TimelineParadoxShade.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\malachai.png" />
+    <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_front.png" />
+    <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_frontserious.png" />
+    <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontsad.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
+    <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_overworld.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
   </ItemGroup>
@@ -327,6 +339,8 @@
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />

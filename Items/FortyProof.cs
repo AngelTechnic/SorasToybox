@@ -54,10 +54,6 @@ namespace SorasToybox.Items
 
             ExtraAbility_Wearable_SMS bottleWearable = ScriptableObject.CreateInstance<ExtraAbility_Wearable_SMS>();
 
-            CasterAddOrRemoveExtraAbilityEffect bottleAdd = ScriptableObject.CreateInstance<CasterAddOrRemoveExtraAbilityEffect>();
-            bottleAdd._extraAbility = bottleWearable;
-            bottleAdd._removeExtraAbility = false;
-
             CasterAddOrRemoveExtraAbilityEffect bottleRemove = ScriptableObject.CreateInstance<CasterAddOrRemoveExtraAbilityEffect>();
             bottleRemove._extraAbility = bottleWearable;
             bottleRemove._removeExtraAbility = true;
@@ -91,12 +87,9 @@ namespace SorasToybox.Items
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_fortyproof"),
                 ShopPrice = 10,
-                TriggerOn = TriggerCalls.OnCombatStart,
+                EquippedModifiers = [bottleWearable],
+                TriggerOn = TriggerCalls.Count,
                 OnUnlockUsesTHE = false,
-                Effects =
-                [
-                    Effects.GenerateEffect(bottleAdd, 1, Targeting.Slot_SelfSlot),
-                ],
             };
 
             fortyProof.item._ItemTypeIDs =

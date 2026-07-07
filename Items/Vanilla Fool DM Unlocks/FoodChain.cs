@@ -34,6 +34,7 @@ namespace SorasToybox.Items
                 ShopPrice = 6,
                 Icon = ResourceLoader.LoadSprite("item_foodchain"),
                 IsShopItem = true,
+                OnUnlockUsesTHE = true,
             };
 
             sosigLink.item._ItemTypeIDs =

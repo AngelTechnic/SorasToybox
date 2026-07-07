@@ -17,6 +17,9 @@ namespace SorasToybox.Items
             AddPassiveEffect vegansAreBanned = ScriptableObject.CreateInstance<AddPassiveEffect>();
             vegansAreBanned._passiveToAdd = Passives.GetCustomPassive("Carnivorous_PA");
 
+            ExtraPassiveAbility_Wearable_SMS meatEater = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
+            meatEater._extraPassiveAbility = Passives.GetCustomPassive("Carnivorous_PA");
+
             DamageEffect eatMe = ScriptableObject.CreateInstance<DamageEffect>();
             
             AnimationVisualsEffect devourVis = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
@@ -47,6 +50,7 @@ namespace SorasToybox.Items
                 ShopPrice = 5,
                 DoesPopUpInfo = true,
                 StartsLocked = true,
+                EquippedModifiers = [meatEater],
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =
                 [

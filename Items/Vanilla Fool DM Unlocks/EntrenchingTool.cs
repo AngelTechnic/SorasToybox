@@ -20,7 +20,7 @@ namespace SorasToybox.Items
             {
                 Item_ID = "EntrenchingTool_SW",
                 Name = "Entrenching Tool",
-                Flavour = "\"Market Gardener\"",
+                Flavour = "\"Market Gardener.\"",
                 Description = "This party member now deals 50% more damage, but will move randomly Left or Right when using an ability.",
                 IsShopItem = true,
                 ShopPrice = 10,

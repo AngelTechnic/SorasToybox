@@ -17,6 +17,9 @@ namespace SorasToybox.Items
             AddPassiveEffect getHostile = ScriptableObject.CreateInstance<AddPassiveEffect>();
             getHostile._passiveToAdd = Passives.GetCustomPassive("ST_Hostile_PA");
 
+            ExtraPassiveAbility_Wearable_SMS hostileWearable = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
+            hostileWearable._extraPassiveAbility = Passives.GetCustomPassive("ST_Hostile_PA");
+
             PerformEffect_Item urbanSurvival = new("ST_UrbanSurvival_ID", null, false)
             {
                 Item_ID = "UrbanSurvivalGuide_SW",
@@ -26,6 +29,7 @@ namespace SorasToybox.Items
                 ShopPrice = 18,
                 IsShopItem = true,
                 StartsLocked = true,
+                EquippedModifiers = [hostileWearable],
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =
                 [
