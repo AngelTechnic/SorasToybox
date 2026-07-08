@@ -22,7 +22,7 @@ namespace SorasToybox.Items
             driveEffects.effects =
             [
                 Effects.GenerateEffect(amIConstricted, 1, Targeting.Slot_SelfSlot),
-                Effects.GenerateEffect(getOverclock, 2, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                Effects.GenerateEffect(getOverclock, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
             ];
 
             FieldEffect_Apply_Effect getConstricted = ScriptableObject.CreateInstance<FieldEffect_Apply_Effect>();
@@ -33,7 +33,7 @@ namespace SorasToybox.Items
                 Item_ID = "ST_Drive_TW",
                 Name = "Drive",
                 Flavour = "\"Sometimes you're stuck in the ground, and you never even knew it.\"",
-                Description = "On turn start, apply 2 Overclock to all party members that are standing in Constricted.\nOn turn end, apply 2 Constricted to this party member's slot.",
+                Description = "On turn start, apply 1 Overclock to all party members that are standing in Constricted.\nOn turn end, apply 2 Constricted to this party member's slot.",
                 Icon = ResourceLoader.LoadSprite("item_drive"),
                 TriggerOn = TriggerCalls.OnTurnFinished,
                 OnUnlockUsesTHE = false,

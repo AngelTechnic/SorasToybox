@@ -24,6 +24,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
@@ -149,6 +150,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_badpublicity_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_filmprojector.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_filmprojector_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
@@ -202,6 +205,7 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
@@ -343,6 +347,8 @@
     <EmbeddedResource Include="Assets\Items\item_worldofhassle.png" />
     <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_filmprojector.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_filmprojector_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
