@@ -45,11 +45,37 @@ namespace SorasToybox.Items
             ExtraAbility_Wearable_SMS laughingGasWearable = ScriptableObject.CreateInstance<ExtraAbility_Wearable_SMS>();
             laughingGasWearable._extraAbility = coughingFit.GenerateCharacterAbility();
 
+            //flavor rando attempt
+            String flavorText = "";
+            if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+            {
+                if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+                {
+                    flavorText = "\"Melt our tongues and become unglued.\"";
+                }
+                else
+                {
+                    flavorText = "\"All that haunts me is surely closure.\"";
+                }
+            }
+            else
+            {
+                if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+                {
+                    flavorText = "\"Carry me far into the tide.\"";
+                }
+                else
+                {
+                    flavorText = "\"Laugh as they go up in smoke.\"";
+                }
+            }
+
+
             PerformEffect_Item laughingGas = new PerformEffect_Item("ST_LaughingGas_ID", null, false)
             {
                 Item_ID = "NitrousOxideCanister_SW",
                 Name = "N2O Canister",
-                Flavour = "\"Melt our tongues and become unglued.\"",
+                Flavour = flavorText,
                 Description = "Gain \"Coughing Fit\" as an extra ability, hurting yourself in exchange for immediate power.",
                 Icon = ResourceLoader.LoadSprite("item_laughinggas"),
                 TriggerOn = TriggerCalls.Count,
@@ -60,27 +86,7 @@ namespace SorasToybox.Items
                 StartsLocked = true,
             };
 
-            if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
-            {
-                if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
-                {
-                    laughingGas.Flavour = "\"Melt our tongues and become unglued.\"";
-                } else
-                {
-                    laughingGas.Flavour = "\"All that haunts me is surely closure.\"";
-                }
-            }
-            else
-            {
-                if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
-                {
-                    laughingGas.Flavour = "\"Carry me far into the tide.\"";
-                }
-                else
-                {
-                    laughingGas.Flavour = "\"Laugh as they go up in smoke.\"";
-                }
-            }
+
 
             //Construct shenanigans i think
             Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = LoadedAssetsHandler.GetCharacter("Doll_CH").passiveAbilities[0] as Connection_PerformEffectPassiveAbility;
