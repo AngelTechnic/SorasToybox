@@ -87,6 +87,8 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("N2O Canister", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Thype", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
+            LoadedAssetsHandler.GetCharacter("Thype_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));
+
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("Added the N2O Canister.");

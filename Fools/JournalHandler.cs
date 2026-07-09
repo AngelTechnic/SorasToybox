@@ -340,7 +340,7 @@ namespace SorasToybox.Fools
             {
                 SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
                 speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
-                speakerBundleDeathmatch.dialogueSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").dxSound;
+                speakerBundleDeathmatch.dialogueSound = "event:/LilithDx";
                 speakerBundleDeathmatch.portrait = blankSprite;
                 Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
             }

@@ -58,6 +58,8 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("Entrenching Tool", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Boyle", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
+            LoadedAssetsHandler.GetCharacter("Boyle_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));
+
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("Added the Entrenching Tool.");

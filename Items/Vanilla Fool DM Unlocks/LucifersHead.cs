@@ -60,6 +60,8 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("Lucifer's Severed Head", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Formosus", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
+            LoadedAssetsHandler.GetCharacter("Formosus_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));
+
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("Added Lucifer's Severed Head.");

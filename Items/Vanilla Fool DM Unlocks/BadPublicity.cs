@@ -72,6 +72,8 @@ namespace SorasToybox.Items
             ModdedAchievements unlockAchievement = new ModdedAchievements("Bad Publicity", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Kleiver", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
+            LoadedAssetsHandler.GetCharacter("Kleiver_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));
+
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("Added Bad Publicity.");
