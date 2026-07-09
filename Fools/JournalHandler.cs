@@ -336,52 +336,68 @@ namespace SorasToybox.Fools
         {
             Sprite blankSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
 
-            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Deathmatch_BOSS"))
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Deathmatch_BOSS") == true)
             {
                 SpeakerBundle speakerBundleDeathmatch = new SpeakerBundle();
                 speakerBundleDeathmatch.bundleTextColor = new Color32(128, 0, 0, 255);
                 speakerBundleDeathmatch.dialogueSound = "event:/LilithDx";
                 speakerBundleDeathmatch.portrait = blankSprite;
                 Dialogues.CreateAndAddCustom_SpeakerData("Deathmatch", speakerBundleDeathmatch, true, false, new SpeakerEmote[0]);
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("Antag yap.");
+                }
             }
 
-            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Dozer_EN"))
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Dozer_EN") == true)
             {
                 SpeakerBundle speakerBundleDozer = new SpeakerBundle();
                 speakerBundleDozer.bundleTextColor = new Color32(255, 255, 0, 255);
                 speakerBundleDozer.dialogueSound = LoadedAssetsHandler.GetEnemy("Dozer_EN").damageSound;
                 speakerBundleDozer.portrait = blankSprite;
                 Dialogues.CreateAndAddCustom_SpeakerData("Dozer", speakerBundleDozer, true, false, new SpeakerEmote[0]);
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("Dozer yap.");
+                }
             }
 
-            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("925er_EN"))
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("925er_EN") == true)
             {
                 SpeakerBundle speakerBundle925er = new SpeakerBundle();
                 speakerBundle925er.bundleTextColor = new Color32(64, 64, 64, 255);
-                speakerBundle925er.dialogueSound = LoadedAssetsHandler.GetEnemy("925er_EN").damageSound;
+                speakerBundle925er.dialogueSound = "event:/925Hurt";
                 speakerBundle925er.portrait = blankSprite;
                 Dialogues.CreateAndAddCustom_SpeakerData("925er", speakerBundle925er, true, false, new SpeakerEmote[0]);
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("925er yap.");
+                }
             }
 
-            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Malachai_EN"))
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey("Malachai_EN") == true)
             {
                 SpeakerBundle speakerBundleSTMalachai = new SpeakerBundle();
                 speakerBundleSTMalachai.bundleTextColor = new Color32(255, 255, 255, 255);
                 speakerBundleSTMalachai.dialogueSound = "event:/MalachaiDx";
                 speakerBundleSTMalachai.portrait = ResourceLoader.LoadSprite("malachai", new Vector2(0.5f, 0f), 32);
                 Dialogues.CreateAndAddCustom_SpeakerData("STMalachai", speakerBundleSTMalachai, true, true, new SpeakerEmote[0]);
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("Malachai yap.");
+                }
             }
 
-            if (LoadedAssetsHandler.LoadedCharacters.ContainsKey("Soreka_CH"))
+            if (LoadedAssetsHandler.LoadedCharacters.ContainsKey("Soreka_CH") == true)
             {
                 SpeakerBundle speakerBundleSTSoreka = new SpeakerBundle();
                 speakerBundleSTSoreka.bundleTextColor = new Color32(95, 205, 228, 255);
-                speakerBundleSTSoreka.dialogueSound = LoadedAssetsHandler.GetCharacter("Soreka_CH").dxSound;
+                speakerBundleSTSoreka.dialogueSound = LoadedAssetsHandler.GetEnemy("Xiphactinus_EN").damageSound;
                 speakerBundleSTSoreka.portrait = ResourceLoader.LoadSprite("realsoreka_front", new Vector2(0.5f, 0f), 32);
 
                 SpeakerBundle speakerBundleSTSorekaSerious = new SpeakerBundle();
                 speakerBundleSTSorekaSerious.bundleTextColor = new Color32(95, 205, 228, 255);
-                speakerBundleSTSorekaSerious.dialogueSound = LoadedAssetsHandler.GetCharacter("Soreka_CH").dxSound;
+                speakerBundleSTSorekaSerious.dialogueSound = LoadedAssetsHandler.GetEnemy("Xiphactinus_EN").damageSound;
                 speakerBundleSTSorekaSerious.portrait = ResourceLoader.LoadSprite("realsoreka_frontserious", new Vector2(0.5f, 0f), 32);
 
                 Dialogues.CreateAndAddCustom_SpeakerData("STSoreka", speakerBundleSTSoreka, true, true, new SpeakerEmote[1]
@@ -392,6 +408,10 @@ namespace SorasToybox.Fools
                         bundle = speakerBundleSTSorekaSerious,
                     }
                 });
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("Wamer yap.");
+                }
             }
         }
     }
