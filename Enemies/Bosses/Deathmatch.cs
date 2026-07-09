@@ -192,8 +192,8 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("TimelineDeathmatchBoss", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDeathmatchBoss", new Vector2(0.5f, 0f), 32),
-                DamageSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").damageSound,
-                DeathSound = LoadedAssetsHandler.GetCharacter("Lilith_CH").deathSound,
+                DamageSound = "event:/LilithHurt",
+                DeathSound = "event:/LilithDie",
                 UnitTypes = ["FemaleID"],
             };
 

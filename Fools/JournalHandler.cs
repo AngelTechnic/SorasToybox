@@ -123,6 +123,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("RealisticTank_EN", "RealisticTank");
             targetListKarma.Add("Nobody_BOSS", "Nobody");
             targetListKarma.Add("TrueNobody_BOSS", "Nobody");
+            targetListKarma.Add("Giles_BOSS", "Giles");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 

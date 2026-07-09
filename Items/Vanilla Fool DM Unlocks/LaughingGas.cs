@@ -28,7 +28,7 @@ namespace SorasToybox.Items
             Ability coughingFit = new Ability("Coughing Fit", "ST_CoughingFit_A")
             {
                 Cost = [Pigments.Yellow],
-                Description = "Gain 1 Scar.\nDeal 1 damage to this party member.\nGain Ecstasy equal to the damage dealt.\nRefresh ability usage.",
+                Description = "Gain 1 Scar.\nDeal 1 indirect damage to this party member.\nGain Ecstasy equal to the damage dealt.\nRefresh ability usage.",
                 AbilitySprite = ResourceLoader.LoadSprite("n2ocan_coughingfit"),
                 AnimationTarget = Targeting.Slot_SelfAll,
                 Visuals = Visuals.Melt,
@@ -49,7 +49,7 @@ namespace SorasToybox.Items
             {
                 Item_ID = "NitrousOxideCanister_SW",
                 Name = "N2O Canister",
-                Flavour = "\"Enjoy the last ten minutes of your life!\"",
+                Flavour = "\"Melt our tongues and become unglued.\"",
                 Description = "Gain \"Coughing Fit\" as an extra ability, hurting yourself in exchange for immediate power.",
                 Icon = ResourceLoader.LoadSprite("item_laughinggas"),
                 TriggerOn = TriggerCalls.Count,
@@ -59,6 +59,28 @@ namespace SorasToybox.Items
                 ShopPrice = 8,
                 StartsLocked = true,
             };
+
+            if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+            {
+                if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+                {
+                    laughingGas.Flavour = "\"Melt our tongues and become unglued.\"";
+                } else
+                {
+                    laughingGas.Flavour = "\"All that haunts me is surely closure.\"";
+                }
+            }
+            else
+            {
+                if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+                {
+                    laughingGas.Flavour = "\"Carry me far into the tide.\"";
+                }
+                else
+                {
+                    laughingGas.Flavour = "\"Laugh as they go up in smoke.\"";
+                }
+            }
 
             //Construct shenanigans i think
             Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = LoadedAssetsHandler.GetCharacter("Doll_CH").passiveAbilities[0] as Connection_PerformEffectPassiveAbility;
