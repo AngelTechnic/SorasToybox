@@ -119,6 +119,7 @@ namespace SorasToybox //Mod namespace
             {
                 Dozer.Add();
                 ParadoxYinimro.Add();
+                Citygrazer.Add();
             }
 
 
@@ -159,6 +160,7 @@ namespace SorasToybox //Mod namespace
             {
                 DozerEncounters.Add();
                 ParadoxYinimroEncounters.Add();
+                GrazerEncounter.Add();
             }
 
 
@@ -206,11 +208,9 @@ namespace SorasToybox //Mod namespace
             Quesadilla.Add();
 
             //Heaven unlocks
-            if (CrossMod.IntoTheAbyss)
-            {
-                TempusBoostHarness.Add();
-                HealthHat.Add();
-            }
+            TempusBoostHarness.Add();
+            HealthHat.Add();
+
 
 
             //Doula Unlocks

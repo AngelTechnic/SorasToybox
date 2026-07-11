@@ -26,6 +26,7 @@ namespace SorasToybox.Fools
             StatusEffect_Apply_Effect overclockMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             overclockMe._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
 
+
             StatusEffectCheckerEffect hasAtrophy = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
             hasAtrophy._status = StatusField.GetCustomStatusEffect("Atrophy_ID");
 
@@ -44,6 +45,12 @@ namespace SorasToybox.Fools
 
             DamageEffect damageBoostedByAtrophy = ScriptableObject.CreateInstance<DamageEffect>();
             damageBoostedByAtrophy._usePreviousExitValue = true;
+
+            //for buffing accelerator.
+            StatusEffectCheckerEffect hasOverclock = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
+            hasOverclock._status = StatusField.GetCustomStatusEffect("Overclock_ID");
+
+            RefreshAbilityUseEffect refreshMe = ScriptableObject.CreateInstance<RefreshAbilityUseEffect>();
 
 
             DamageEffect normalDamage = ScriptableObject.CreateInstance<DamageEffect>();
@@ -85,9 +92,9 @@ namespace SorasToybox.Fools
             //Waste/Decay/Rot/Entropy Accelerator
             Ability accelerator1 = new Ability("Waste Accelerator", "ST_MercurieAccelerator1_A")
             {
-                Description = "Inflict 5 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.",
+                Description = "Inflict 5 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
@@ -96,15 +103,17 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             accelerator1.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_3_6)]);
 
             Ability accelerator2 = new Ability("Decay Accelerator", "ST_MercurieAccelerator2_A")
             {
-                Description = "Inflict 7 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.",
+                Description = "Inflict 7 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
@@ -113,15 +122,17 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             accelerator2.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
 
             Ability accelerator3 = new Ability("Rot Accelerator", "ST_MercurieAccelerator3_A")
             {
-                Description = "Inflict 9 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.",
+                Description = "Inflict 9 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
@@ -130,15 +141,17 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             accelerator3.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
 
             Ability accelerator4 = new Ability("Entropy Accelerator", "ST_MercurieAccelerator4_A")
             {
-                Description = "Inflict 11 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.",
+                Description = "Inflict 11 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
@@ -147,6 +160,8 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_11_15)]);
@@ -227,7 +242,7 @@ namespace SorasToybox.Fools
             {
                 Description = "Convert all Atrophy on this party member into Malfunction.\nDeal 6 damage to the Opposing enemy.\nIf this kills, gain 2 Overclock and remove all Malfunction from this party member.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_clock.png"),
-                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
                 Effects =
                 [
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_SelfSlot),
@@ -246,7 +261,7 @@ namespace SorasToybox.Fools
             {
                 Description = "Convert all Atrophy on this party member into Malfunction.\nDeal 7 damage to the Opposing enemy.\nIf this kills, gain 2 Overclock and remove all Malfunction from this party member.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_clock.png"),
-                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
                 Effects =
                 [
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_SelfSlot),
@@ -265,7 +280,7 @@ namespace SorasToybox.Fools
             {
                 Description = "Convert all Atrophy on this party member into Malfunction.\nDeal 8 damage to the Opposing enemy.\nIf this kills, gain 3 Overclock and remove all Malfunction from this party member.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_clock.png"),
-                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
                 Effects =
                 [
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_SelfSlot),
@@ -284,7 +299,7 @@ namespace SorasToybox.Fools
             {
                 Description = "Convert all Atrophy on this party member into Malfunction.\nDeal 9 damage to the Opposing enemy.\nIf this kills, gain 3 Overclock and remove all Malfunction from this party member.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_clock.png"),
-                Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Yellow],
                 Effects =
                 [
                     Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_SelfSlot),
@@ -300,10 +315,10 @@ namespace SorasToybox.Fools
             clock4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Rem_Status_Malfunction"]);
 
 
-            mercurie.AddLevelData(8, [accelerator1, theEnd1, clock1]);
-            mercurie.AddLevelData(10, [accelerator2, theEnd2, clock2]);
-            mercurie.AddLevelData(13, [accelerator3, theEnd3, clock3]);
-            mercurie.AddLevelData(18, [accelerator4, theEnd4, clock4]);
+            mercurie.AddLevelData(6, [accelerator1, theEnd1, clock1]);
+            mercurie.AddLevelData(8, [accelerator2, theEnd2, clock2]);
+            mercurie.AddLevelData(10, [accelerator3, theEnd3, clock3]);
+            mercurie.AddLevelData(13, [accelerator4, theEnd4, clock4]);
 
             //cheevos
             mercurie.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Mercurie_Witness_ACH");
