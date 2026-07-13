@@ -28,8 +28,8 @@ namespace SorasToybox.Events
             freeFoolEncounterSO._dialogue = text;
             freeFoolEncounterSO.encounterRoom = text2;
             ModdedNPCs.AddCustom_FreeFoolEncounter(text2, freeFoolEncounterSO);
-            ZoneBGDataBaseSO zoneBGDataBaseSO2 = LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_01") as ZoneBGDataBaseSO;
-            zoneBGDataBaseSO2._FreeFoolsPool.Add(text2);
+            ZoneBGDataBaseSO zoneBGDataBaseSO = LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_01") as ZoneBGDataBaseSO;
+            zoneBGDataBaseSO._FreeFoolsPool.Add(text2);
             Debug.Log("Free Fool Events | Far Shore | Mercurie");
         }
     }

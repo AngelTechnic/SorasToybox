@@ -45,6 +45,7 @@ namespace SorasToybox.Fools
 
             DamageEffect damageBoostedByAtrophy = ScriptableObject.CreateInstance<DamageEffect>();
             damageBoostedByAtrophy._usePreviousExitValue = true;
+            damageBoostedByAtrophy._indirect = true;
 
             //for buffing accelerator.
             StatusEffectCheckerEffect hasOverclock = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
@@ -92,7 +93,7 @@ namespace SorasToybox.Fools
             //Waste/Decay/Rot/Entropy Accelerator
             Ability accelerator1 = new Ability("Waste Accelerator", "ST_MercurieAccelerator1_A")
             {
-                Description = "Inflict 5 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 5 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -111,7 +112,7 @@ namespace SorasToybox.Fools
 
             Ability accelerator2 = new Ability("Decay Accelerator", "ST_MercurieAccelerator2_A")
             {
-                Description = "Inflict 7 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 7 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -130,7 +131,7 @@ namespace SorasToybox.Fools
 
             Ability accelerator3 = new Ability("Rot Accelerator", "ST_MercurieAccelerator3_A")
             {
-                Description = "Inflict 9 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 9 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -149,7 +150,7 @@ namespace SorasToybox.Fools
 
             Ability accelerator4 = new Ability("Entropy Accelerator", "ST_MercurieAccelerator4_A")
             {
-                Description = "Inflict 11 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 11 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
