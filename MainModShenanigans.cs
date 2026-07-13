@@ -40,6 +40,7 @@ namespace SorasToybox //Mod namespace
         public static ConfigEntry<bool> extradebug;
         public static ConfigEntry<bool> gardenantagonist;
         public static ConfigEntry<bool> altboundarymusic;
+        public static ConfigEntry<bool> altforgottenmusic;
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
@@ -80,7 +81,7 @@ namespace SorasToybox //Mod namespace
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
             gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
             altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
-
+            altforgottenmusic = config.Bind("Cosmetic Changes", "Alternate Nobody Music", false, "Alternative music for Nobody, from another Nobody. This is a personal thing I added for my own sake. If true, uses \"MX\" by RENREN. If false, uses, uh, the default theme?");
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
             //CROSSMOD thank you
@@ -188,7 +189,7 @@ namespace SorasToybox //Mod namespace
                 KarmaFreeEvent.Add();
             }
             //for testing events
-            FreeFoolEventTester.Add();
+            //FreeFoolEventTester.Add();
 
 
             //Log enemies (Do config thing with it)
@@ -277,6 +278,11 @@ namespace SorasToybox //Mod namespace
             if (SorasToybox.altboundarymusic.Value)
             {
                 LoadedAssetsHandler.GetEnemyBundle("Katalixi_BOSS")._musicEventReference = "event:/SorasMusic/Enemies/Bosses/AltKatalixiMusic/SideQuest";
+            }
+
+            if (SorasToybox.altforgottenmusic.Value)
+            {
+                LoadedAssetsHandler.GetEnemyBundle("Nobody_BOSS")._musicEventReference = "event:/SorasMusic/Enemies/Bosses/AltNobodyMusic/MX";
             }
 
             //Final log
