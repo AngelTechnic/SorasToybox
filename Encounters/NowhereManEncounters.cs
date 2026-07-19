@@ -64,7 +64,9 @@ namespace SorasToybox.Encounters
                 nowhereManHard.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.Nowhere.Hard, 7, "TheAbyss_Zone3", BundleDifficulty.Hard);
 
-                EnemyEncounter_API nowhereManFunny = new EnemyEncounter_API(0, "H_ZoneAbyss_NowhereBarbershop_Joke_EnemyBundle", nowhereSign)
+                Portals.AddPortalSign("NowhereQuartet_Sign", ResourceLoader.LoadSprite("timelineFourNowheres.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
+
+                EnemyEncounter_API nowhereManFunny = new EnemyEncounter_API(0, "H_ZoneAbyss_NowhereBarbershop_Joke_EnemyBundle", "NowhereQuartet_Sign")
                 {
                     MusicEvent = "event:/UpdatedSmilerMusic",
                     RoarEvent = "event:/SorasSFX/Enemies/NowhereMan/NowhereRoar",

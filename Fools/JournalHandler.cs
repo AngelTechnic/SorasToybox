@@ -99,6 +99,7 @@ namespace SorasToybox.Fools
             //KARMA
             Dictionary<string, string> targetListKarma = new Dictionary<string, string>();
             targetListKarma.Add("Deathmatch_BOSS", "Deathmatch");
+            targetListKarma.Add("BurningShame_EN", "BurningShame");
             targetListKarma.Add("Minotaur_EN", "Minotaur");
             targetListKarma.Add("Litany_EN", "Faceless");
             targetListKarma.Add("Faceless_EN", "Faceless");

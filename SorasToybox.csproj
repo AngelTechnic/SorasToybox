@@ -59,6 +59,7 @@
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
+    <None Remove="Assets\Enemies\timelineFourNowheres.png" />
     <None Remove="Assets\Enemies\TimelineFriendlyGearYinimro.png" />
     <None Remove="Assets\Enemies\TimelineGearYinimro.png" />
     <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
@@ -215,6 +216,7 @@
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\deadNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineFourNowheres.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineParadoxShade.png" />
