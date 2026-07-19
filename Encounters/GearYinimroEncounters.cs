@@ -47,6 +47,7 @@ namespace SorasToybox.Encounters
 
                 //Medium yinimro encounts go down here
                 gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN");
+                gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN", 1, "BurningShame_EN");
                 gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 2, "AbandonedPuppet_EN");
                 gearYinimroAbyssMedium.SimpleAddEncounter(2, "GearYinimro_EN");
                 gearYinimroAbyssMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "YesMan_EN", 1, "Sycophant_EN");
@@ -62,10 +63,17 @@ namespace SorasToybox.Encounters
                     RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
                 };
 
-                gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 2, "BurningShame_EN");
+                gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 2, "BurningShame_EN", 1, "Sycophant_EN");
+                gearYinimroAbyssHard.SimpleAddEncounter(2, "GearYinimro_EN", 2, "MachineGnomes_EN");
+                gearYinimroAbyssHard.SimpleAddEncounter(2, "GearYinimro_EN", 1, "WRK_EN", 1, "Streetlight_EN");
+                gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN", 1, "WRK_EN");
 
                 gearYinimroAbyssHard.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Hard, 5, "TheAbyss_Zone3", BundleDifficulty.Hard);
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("Gear Yinimro Encounters loaded.");
+                }
             }
         }
     }

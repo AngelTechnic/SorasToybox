@@ -84,7 +84,7 @@ namespace SorasToybox.Fools
                 DamageSound = "event:/EstelleHurt",
                 DeathSound = deathSound,
                 DialogueSound = "event:/EstelleRoar",
-                UnitTypes = ["FemaleID", "Zoincaillan", "Angel"],
+                UnitTypes = ["FemaleID", "Zoincaillan", "Angel", "Bird"],
             };
             mercurie.GenerateMenuCharacter(ResourceLoader.LoadSprite("mercurie_menu.png"), ResourceLoader.LoadSprite("mercurie_menu_locked.png"));
             mercurie.AddPassives([Passives.GetCustomPassive("Erasure_PA")]);

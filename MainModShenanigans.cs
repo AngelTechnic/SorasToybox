@@ -18,7 +18,7 @@ using SorasToybox.Events;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.2")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.3")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
@@ -121,6 +121,7 @@ namespace SorasToybox //Mod namespace
                 Dozer.Add();
                 ParadoxYinimro.Add();
                 Citygrazer.Add();
+                NowhereMan.Add();
             }
 
 
@@ -135,14 +136,8 @@ namespace SorasToybox //Mod namespace
                 SuspiciousMung.Add();
             }
             //add encounters
-            try
-            {
-                SEARCHEncounters.Add();
-            }
-            catch
-            {
-                Debug.Log("SEARCH encounters failed to load.");
-            }
+            SEARCHEncounters.Add();
+
 
             if (CrossMod.IntoTheAbyss)
             {
@@ -162,6 +157,7 @@ namespace SorasToybox //Mod namespace
                 DozerEncounters.Add();
                 ParadoxYinimroEncounters.Add();
                 GrazerEncounter.Add();
+                NowhereManEncounters.Add();
             }
 
 

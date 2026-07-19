@@ -62,6 +62,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("RealisticTank_EN", "RealisticTank");
             targetListMercurie.Add("Nolocimes_Batretne_BOSS", "Katalixi");
             targetListMercurie.Add("YNL_EN", "YourNewLife");
+            targetListMercurie.Add("NowhereMan_EN", "NowhereMan");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -125,6 +126,8 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Nobody_BOSS", "Nobody");
             targetListKarma.Add("TrueNobody_BOSS", "Nobody");
             targetListKarma.Add("Giles_BOSS", "Giles");
+            targetListKarma.Add("Bronzo2_EN", "Bronzo2");
+            targetListKarma.Add("NowhereMan_EN", "NowhereMan");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 

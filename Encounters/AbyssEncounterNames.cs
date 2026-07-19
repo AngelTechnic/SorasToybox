@@ -263,6 +263,12 @@ namespace SorasToybox.Encounters
                 public static string Hard => "H_ZoneAbyss_ParadoxYinimro_Hard_EnemyBundle";
             }
 
+            public static class Nowhere
+            {
+                public static string Med => "H_ZoneAbyss_NowhereMan_Medium_EnemyBundle";
+                public static string Hard => "H_ZoneAbyss_NowhereMan_Hard_EnemyBundle";
+            }
+
             //Grace guys
 
             public static class Mime

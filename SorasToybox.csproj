@@ -54,6 +54,7 @@
     <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\DeadGearYinimro.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
+    <None Remove="Assets\Enemies\deadNowhere.png" />
     <None Remove="Assets\Enemies\DeadParadoxYinimro.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
@@ -62,6 +63,7 @@
     <None Remove="Assets\Enemies\TimelineGearYinimro.png" />
     <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
     <None Remove="Assets\Enemies\timelineLitany.png" />
+    <None Remove="Assets\Enemies\timelineNowhere.png" />
     <None Remove="Assets\Enemies\TimelineParadoxShade.png" />
     <None Remove="Assets\Enemies\TimelineParadoxYinimro.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
@@ -211,8 +213,10 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Enemies\deadNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineParadoxShade.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\malachai.png" />

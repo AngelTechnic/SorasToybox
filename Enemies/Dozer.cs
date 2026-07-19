@@ -29,7 +29,7 @@ namespace SorasToybox.Enemies
                 {
                     if (changeMusic != null)
                     {
-                        try { changeMusic.Abort(); } catch { UnityEngine.Debug.LogWarning("black star thread failed to shut down."); }
+                        try { changeMusic.Abort(); } catch { UnityEngine.Debug.LogWarning("dozer thread failed to shut down."); }
                     }
                     changeMusic = new System.Threading.Thread(GO);
                     changeMusic.Start();
@@ -38,7 +38,7 @@ namespace SorasToybox.Enemies
                 {
                     if (changeMusic != null)
                     {
-                        try { changeMusic.Abort(); } catch { UnityEngine.Debug.LogWarning("black star thread failed to shut down."); }
+                        try { changeMusic.Abort(); } catch { UnityEngine.Debug.LogWarning("dozer thread failed to shut down."); }
                     }
                     changeMusic = new System.Threading.Thread(STOP);
                     changeMusic.Start();
@@ -76,7 +76,7 @@ namespace SorasToybox.Enemies
         }
         public static void Add()
         {
-            //Tracked passive
+            //Tracked status
             StatusEffect_Apply_Effect trackMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             trackMe._Status = StatusField.GetCustomStatusEffect("Tracked_ID");
 
