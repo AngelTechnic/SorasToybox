@@ -76,7 +76,7 @@ namespace SorasToybox.Encounters
                 nowhereManFunny.SimpleAddEncounter(4, "NowhereMan_EN");
                 nowhereManFunny.AddEncounterToDataBases();
 
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_NowhereBarbershop_Joke_EnemyBundle", 0, "TheAbyss_Zone3", BundleDifficulty.Hard);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_NowhereBarbershop_Joke_EnemyBundle", 1, "TheAbyss_Zone3", BundleDifficulty.Hard);
                 if (SorasToybox.extradebug.Value)
                 {
                     UnityEngine.Debug.Log("Nowhere Man Encounters loaded.");
