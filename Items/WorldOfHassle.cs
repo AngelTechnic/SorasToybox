@@ -28,11 +28,22 @@ namespace SorasToybox.Items
             StatusEffect_Apply_Effect getAnte = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getAnte._Status = StatusField.GetCustomStatusEffect("Ante_ID");
 
+            //flavor rando attempt
+            String flavorText = "";
+            if (UnityEngine.Random.Range((float)0.0, (float)1.0) > 0.5)
+            {
+                flavorText = "\"Step back into the limelight.\"";
+            }
+            else
+            {
+                flavorText = "\"Minute by minute, losing ground to an endless sprawl.\"";
+            }
+
             PerformEffect_Item mickeyMilan = new PerformEffect_Item("ST_WorldOfHassle_ID", null, false)
             {
                 Item_ID = "WorldOfHassle_SW",
                 Name = "World of Hassle",
-                Flavour = "\"Step back into the limelight.\"",
+                Flavour = flavorText,
                 Description = "Gain Erasure as a passive.\nWhen this party member is damaged, gain 1 Ante.",
                 TriggerOn = TriggerCalls.OnDamaged,
                 Effects = 

@@ -1,5 +1,6 @@
 ﻿using BepInEx;
 using BrutalAPI;
+using FMOD;
 using SorasToybox.CustomEffects;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,21 @@ namespace SorasToybox.Enemies
 {
     public class NowhereMan
     {
+        public class NowhereManMusicEffect : EffectSO
+        {
+            public static int Amount = 0;
+            public static void Reset() => Amount = 0;
+            public bool Add = true;
+            public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
+            {
+                exitAmount = 0;
+                if (CombatManager.Instance._stats.audioController.MusicCombatEvent.getParameterByName("NowhereNumbers", out float num) == FMOD.RESULT.OK)
+                {
+                    CombatManager.Instance._stats.audioController.MusicCombatEvent.setParameterByName("NowhereNumbers", Add ? num + entryVariable : (entryVariable > num ? 0 : num - entryVariable));
+                }
+                return true;
+            }
+        }
         public static void Add()
         {
 
@@ -47,6 +63,22 @@ namespace SorasToybox.Enemies
             //currently uses yinimro gibs
             nowhereMan.PrepareEnemyPrefab("Assets/ToyboxEnemies/Nowhere Man/Nowhere Man Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
 
+            //music
+            NowhereManMusicEffect add = ScriptableObject.CreateInstance<NowhereManMusicEffect>();
+            add.Add = true;
+
+            NowhereManMusicEffect remove = ScriptableObject.CreateInstance<NowhereManMusicEffect>();
+            remove.Add = false;
+            nowhereMan.CombatEnterEffects = new EffectInfo[]
+            {
+
+            };
+
+            nowhereMan.CombatExitEffects = new EffectInfo[]
+            {
+                Effects.GenerateEffect(add,1),
+            };
+
             // The absolute agony that is Lockstep
             CasterStoreValueSetterEffect fuck = ScriptableObject.CreateInstance<CasterStoreValueSetterEffect>();
             fuck.m_unitStoredDataID = "LockstepDir_SV";
@@ -65,7 +97,7 @@ namespace SorasToybox.Enemies
             }
             else
             {
-                dooranim2 = Visuals.Crush;
+                dooranim2 = Visuals.FingerGuns;
             }
             DamageEffect damage = ScriptableObject.CreateInstance<DamageEffect>();
 

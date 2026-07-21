@@ -42,6 +42,7 @@ namespace SorasToybox.Encounters
                 nowhereManMedium.SimpleAddEncounter(1, "NowhereMan_EN", 1, "YellowSibling_EN", 1, "Wug_EN");
                 nowhereManMedium.SimpleAddEncounter(1, "NowhereMan_EN", 1, "PurpleSibling_EN", 1, "Wug_EN");
 
+
                 nowhereManMedium.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.Nowhere.Med, 10, "TheAbyss_Zone3", BundleDifficulty.Medium);
 
@@ -52,6 +53,7 @@ namespace SorasToybox.Encounters
                 };
 
                 nowhereManHard.SimpleAddEncounter(2, "NowhereMan_EN");
+                nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "Parfait_EN", 1, "BurningShame_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "RedSibling_EN", 1, "BurningShame_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "BlueSibling_EN", 1, "BurningShame_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "YellowSibling_EN", 1, "BurningShame_EN");
