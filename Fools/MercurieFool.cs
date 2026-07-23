@@ -17,6 +17,10 @@ namespace SorasToybox.Fools
             StatusEffect_Apply_Effect atrophyMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             atrophyMe._Status = StatusField.GetCustomStatusEffect("Atrophy_ID");
 
+            StatusEffect_Apply_Effect atrophyAgain = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            atrophyAgain._Status = StatusField.GetCustomStatusEffect("Atrophy_ID");
+            atrophyAgain._MultPreviousExitValueForEntry = true;
+
             //Malfunction application
             StatusEffect_Apply_Effect malfunctionMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             malfunctionMe._Status = StatusField.GetCustomStatusEffect("Malfunction_ID");
@@ -38,14 +42,12 @@ namespace SorasToybox.Fools
             noAtrophy._status = StatusField.GetCustomStatusEffect("Atrophy_ID");
 
 
-            //These next two effects are for Accelerator
-            StatusEffect_Apply_Effect atrophyAgain = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
-            atrophyAgain._Status = StatusField.GetCustomStatusEffect("Atrophy_ID");
-            atrophyAgain._MultPreviousExitValueForEntry = true;
-
-            DamageEffect damageBoostedByAtrophy = ScriptableObject.CreateInstance<DamageEffect>();
-            damageBoostedByAtrophy._usePreviousExitValue = true;
-            damageBoostedByAtrophy._indirect = true;
+            //New Accelerator effect!!!
+            DamageWithStatusBonusEffect atrophyBoostedDamage = ScriptableObject.CreateInstance<DamageWithStatusBonusEffect>();
+            atrophyBoostedDamage._status = StatusField.GetCustomStatusEffect("Atrophy_ID");
+            atrophyBoostedDamage._bonusAmount = 1;
+            atrophyBoostedDamage._indirect = true;
+            atrophyBoostedDamage._bonusStacking = true;
 
             //for buffing accelerator.
             StatusEffectCheckerEffect hasOverclock = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
@@ -93,7 +95,7 @@ namespace SorasToybox.Fools
             //Waste/Decay/Rot/Entropy Accelerator
             Ability accelerator1 = new Ability("Waste Accelerator", "ST_MercurieAccelerator1_A")
             {
-                Description = "Inflict 5 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 5 Atrophy to the Opposing enemy, then deal indirect damage to them equal to the amount of Atrophy they have.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -101,18 +103,16 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(atrophyMe, 5, Targeting.Slot_Front),
-                    Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(atrophyBoostedDamage, 0, Targeting.Slot_Front),
                     Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
-            accelerator1.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_3_6)]);
+            accelerator1.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Atrophy", nameof(IntentType_GameIDs.Damage_3_6)]);
 
             Ability accelerator2 = new Ability("Decay Accelerator", "ST_MercurieAccelerator2_A")
             {
-                Description = "Inflict 7 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 7 Atrophy to the Opposing enemy, then deal indirect damage to them equal to the amount of Atrophy they have.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -120,18 +120,16 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(atrophyMe, 7, Targeting.Slot_Front),
-                    Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(atrophyBoostedDamage, 0, Targeting.Slot_Front),
                     Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
-            accelerator2.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
+            accelerator2.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
 
             Ability accelerator3 = new Ability("Rot Accelerator", "ST_MercurieAccelerator3_A")
             {
-                Description = "Inflict 9 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 9 Atrophy to the Opposing enemy, then deal indirect damage to them equal to the amount of Atrophy they have.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -139,18 +137,16 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(atrophyMe, 9, Targeting.Slot_Front),
-                    Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(atrophyBoostedDamage, 0, Targeting.Slot_Front),
                     Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
-            accelerator3.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
+            accelerator3.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Atrophy", nameof(IntentType_GameIDs.Damage_7_10)]);
 
             Ability accelerator4 = new Ability("Entropy Accelerator", "ST_MercurieAccelerator4_A")
             {
-                Description = "Inflict 11 Atrophy to the Opposing enemy. Remove all Atrophy from them, re-add it, then deal indirect damage equal to the amount re-applied.\nIf Overclocked, refresh.",
+                Description = "Inflict 11 Atrophy to the Opposing enemy, then deal indirect damage to them equal to the amount of Atrophy they have.\nIf Overclocked, refresh.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_accelerator.png"),
                 Cost = [Pigments.Red, Pigments.Yellow, Pigments.Yellow],
                 Visuals = Visuals.Melt,
@@ -158,14 +154,12 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(atrophyMe, 11, Targeting.Slot_Front),
-                    Effects.GenerateEffect(noAtrophy, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(atrophyAgain, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(damageBoostedByAtrophy, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(atrophyBoostedDamage, 0, Targeting.Slot_Front),
                     Effects.GenerateEffect(hasOverclock, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(refreshMe, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
-            accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Atrophy", "Status_Atrophy", nameof(IntentType_GameIDs.Damage_11_15)]);
+            accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Atrophy", nameof(IntentType_GameIDs.Damage_11_15)]);
 
 
             //The End of Days/An Age/An Era/Time

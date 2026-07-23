@@ -11,6 +11,11 @@ namespace SorasToybox.Fools
 {
     public class WhhvayFool
     {
+        public static void Add()
+        {
+            //Irradiated applicaiton
+            
 
+        }
     }
 }

@@ -59,9 +59,11 @@ namespace SorasToybox.Encounters
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "YellowSibling_EN", 1, "BurningShame_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "PurpleSibling_EN", 1, "BurningShame_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "YesMan_EN", 2, "BurningShame_EN");
+                nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "Litany_EN", 1, "Parfait_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "ParadoxYinimro_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "Kcolclock_EN");
                 nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "HandOfGod_EN");
+                nowhereManHard.SimpleAddEncounter(1, "NowhereMan_EN", 1, "Dozer_EN"); //This is the only fight where Dozer is not the main character.
 
                 nowhereManHard.AddEncounterToDataBases();
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.Nowhere.Hard, 7, "TheAbyss_Zone3", BundleDifficulty.Hard);
