@@ -167,11 +167,12 @@ namespace SorasToybox //Mod namespace
             }
 
             //Add fools
-            if (CrossMod.IntoTheAbyss)
-            {
-                MercurieFool.Add();
-            }
+            MercurieFool.Add();
             KarmaFool.Add();
+            if (CrossMod.AApocrypha)
+            {
+                WhhvayFool.Add();
+            }
             JournalHandler.AddMiscSpeakers();
             if (journalmode.Value) 
             {
@@ -183,6 +184,10 @@ namespace SorasToybox //Mod namespace
             {
                 MercurieFreeEvent.Add();
                 KarmaFreeEvent.Add();
+            }
+            if (CrossMod.AApocrypha && CrossMod.Siren)
+            {
+
             }
             //for testing events
             //FreeFoolEventTester.Add();
