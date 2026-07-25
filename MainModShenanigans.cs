@@ -18,7 +18,7 @@ using SorasToybox.Events;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.3")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.4")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
@@ -38,6 +38,7 @@ namespace SorasToybox //Mod namespace
 
         public static ConfigEntry<bool> journalmode;
         public static ConfigEntry<bool> extradebug;
+        public static ConfigEntry<bool> freefooltester;
         public static ConfigEntry<bool> gardenantagonist;
         public static ConfigEntry<bool> altboundarymusic;
         public static ConfigEntry<bool> altforgottenmusic;
@@ -79,6 +80,7 @@ namespace SorasToybox //Mod namespace
             ConfigFile config = new ConfigFile(System.IO.Path.Combine(Paths.ConfigPath, "SorasToybox.cfg"), true);
             journalmode = config.Bind("Gameplay - Misc", "Journal Mode", false, "EXPERIMENTAL - Set this to true to enable Journal Mode, giving certain fools the means to reveal more lore about themselves and their world of origin.");
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
+            freefooltester = config.Bind("Meta", "Free Fool Event Tester", false, "Set this to true to enable the free fool event tester.");
             gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
             altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
             altforgottenmusic = config.Bind("Cosmetic Changes", "Alternate Nobody Music", false, "Alternative music for Nobody, from another Nobody. This is a personal thing I added for my own sake. If true, uses \"MX\" by RENREN. If false, uses, uh, the default theme?");
@@ -187,10 +189,14 @@ namespace SorasToybox //Mod namespace
             }
             if (CrossMod.AApocrypha && CrossMod.Siren)
             {
-
+                WhhvayFreeEvent.Add();
             }
             //for testing events
-            //FreeFoolEventTester.Add();
+            if (freefooltester.Value)
+            {
+                FreeFoolEventTester.Add();
+            }
+
 
 
             //Log enemies (Do config thing with it)
@@ -204,7 +210,7 @@ namespace SorasToybox //Mod namespace
             UrbanSurvival.Add();
             AMsSeveredHead.Add();
 
-            //remember character order is: Mercurie, Karma
+            //remember character order is: Mercurie, Karma, Whhvay
             //Osman Unlocks
             Milkshake.Add();
             Quesadilla.Add();
