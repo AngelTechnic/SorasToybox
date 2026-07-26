@@ -22,7 +22,7 @@ namespace SorasToybox.Events
             //(LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_01") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_01") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray();
             (LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_02") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_02") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray();
             (LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_03") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("ZoneDB_Hard_03") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray();
-            if (SorasToybox.CrossMod.Siren && LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheSiren_Zone02")) { (LoadedAssetsHandler.GetZoneDB("TheSiren") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("TheSiren") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray(); }
+            if (SorasToybox.CrossMod.Siren) { (LoadedAssetsHandler.GetZoneDB("TheSiren") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("TheSiren") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray(); }
             if (SorasToybox.CrossMod.IntoTheAbyss && LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3")) { (LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray(); }
         }
     }

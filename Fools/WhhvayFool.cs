@@ -123,54 +123,160 @@ namespace SorasToybox.Fools
 
             Sprite abilitySprite = LoadedAssetsHandler.GetEnemyAbility("Chomp_A").abilitySprite;
 
-            Ability mutatedComplexion = new Ability("Mutated Complexion", "ST_MutatedComplexion_A")
+            //Piking it
+            StatusEffect_Apply_Effect getMisery = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getMisery._Status = StatusField.GetCustomStatusEffect("Misery_ID");
+
+            Ability bonus1 = new Ability("Mutated Surface", "WhhvayBonus1_A")
             {
-                Description = "Heal the Opposing party member(s) 2 health.\n50% chance to inflict 2 Irradiated on the Left and Right allies.",
-                Rarity = Rarity.Impossible,
+                Description = "Heal the Opposing party member 3 health, and gain 1 Misery.\n40% Chance to inflict 2 Irradiated on the Left and Right enemies.",
+                Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
                 Visuals = Visuals.UglyOnTheInside,
                 AnimationTarget = Targeting.Slot_SelfSlot,
                 Effects =
                 [
                     Effects.GenerateEffect(heal, 2, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getMisery, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides, Effects.ChanceCondition(40)),
+                ],
+                Rarity = Rarity.ImpossibleNoReroll,
+                Priority = Priority.VerySlow,
+            };
+            bonus1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_1_4)]);
+            bonus1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus1.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
+
+            Ability bonus2 = new Ability("Mutated Complexion", "WhhvayBonus2_A")
+            {
+                Description = "Heal the Opposing party member 5 health, and gain 2 Misery.\n50% Chance to inflict 2 Irradiated on the Left and Right enemies.",
+                Cost = [Pigments.Blue],
+                AbilitySprite = abilitySprite,
+                Visuals = Visuals.UglyOnTheInside,
+                AnimationTarget = Targeting.Slot_SelfSlot,
+                Effects =
+                [
+                    Effects.GenerateEffect(heal, 5, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getMisery, 2, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides, Effects.ChanceCondition(50)),
                 ],
+                Rarity = Rarity.ImpossibleNoReroll,
+                Priority = Priority.VerySlow,
             };
-            mutatedComplexion.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_1_4)]);
-            mutatedComplexion.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
-            ExtraAbilityInfo mutatedExtra = new()
+            bonus2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10)]);
+            bonus2.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus2.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
+
+            Ability bonus3 = new Ability("Mutated Expression", "WhhvayBonus3_A")
             {
-                ability = mutatedComplexion.GenerateEnemyAbility().ability,
+                Description = "Heal the Opposing party member 7 health, and gain 3 Misery.\n66% Chance to inflict 2 Irradiated on the Left and Right enemies.",
+                Cost = [Pigments.Blue],
+                AbilitySprite = abilitySprite,
+                Visuals = Visuals.UglyOnTheInside,
+                AnimationTarget = Targeting.Slot_SelfSlot,
+                Effects =
+                [
+                    Effects.GenerateEffect(heal, 7, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getMisery, 3, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides, Effects.ChanceCondition(66)),
+                ],
+                Rarity = Rarity.ImpossibleNoReroll,
+                Priority = Priority.VerySlow,
+            };
+            bonus3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10)]);
+            bonus3.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus3.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
+
+            Ability bonus4 = new Ability("Mutated Perspective", "WhhvayBonus4_A")
+            {
+                Description = "Heal the Opposing party member 9 health, and gain 4 Misery.\nInflict 2 Irradiated on the Left and Right enemies.",
+                Cost = [Pigments.Blue],
+                AbilitySprite = abilitySprite,
+                Visuals = Visuals.UglyOnTheInside,
+                AnimationTarget = Targeting.Slot_SelfSlot,
+                Effects =
+                [
+                    Effects.GenerateEffect(heal, 9, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getMisery, 4, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides),
+                ],
+                Rarity = Rarity.ImpossibleNoReroll,
+                Priority = Priority.VerySlow,
+            };
+            bonus4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10)]);
+            bonus4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus4.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
+
+            ExtraAbilityInfo extra1 = new()
+            {
+                ability = bonus1.ability,
+                //priority = Priority.ExtremelyFast,
+                rarity = Rarity.ImpossibleNoReroll,
+            };
+            ExtraAbilityInfo extra2 = new()
+            {
+                ability = bonus2.ability,
+                //priority = Priority.ExtremelyFast,
+                rarity = Rarity.ImpossibleNoReroll,
+            };
+            ExtraAbilityInfo extra3 = new()
+            {
+                ability = bonus3.ability,
+                //priority = Priority.ExtremelyFast,
+                rarity = Rarity.ImpossibleNoReroll,
+            };
+            ExtraAbilityInfo extra4 = new()
+            {
+                ability = bonus4.ability,
+                //priority = Priority.ExtremelyFast,
                 rarity = Rarity.ImpossibleNoReroll,
             };
 
-            AddTargetRandomExtraAbilityEffect addMutatedToTarget = ScriptableObject.CreateInstance<AddTargetRandomExtraAbilityEffect>();
-            addMutatedToTarget._extraAbilities = [mutatedExtra];
+            AddPassiveEffect add1 = ScriptableObject.CreateInstance<AddPassiveEffect>();
+            add1._passiveToAdd = Passives.BonusAttackGenerator(extra1);
 
-            QueueTimelineAbilityByNameEffect queueMutated = ScriptableObject.CreateInstance<QueueTimelineAbilityByNameEffect>();
-            queueMutated._abilityName = "Mutated Complexion";
+            AddPassiveEffect add2 = ScriptableObject.CreateInstance<AddPassiveEffect>();
+            add2._passiveToAdd = Passives.BonusAttackGenerator(extra2);
+            AddPassiveEffect add3 = ScriptableObject.CreateInstance<AddPassiveEffect>();
+            add3._passiveToAdd = Passives.BonusAttackGenerator(extra3);
+            AddPassiveEffect add4 = ScriptableObject.CreateInstance<AddPassiveEffect>();
+            add4._passiveToAdd = Passives.BonusAttackGenerator(extra4);
+
+            PopupPassiveIconEffect do1 = ScriptableObject.CreateInstance<PopupPassiveIconEffect>();
+            do1._passiveToPopup = add1._passiveToAdd;
+            PopupPassiveIconEffect do2 = ScriptableObject.CreateInstance<PopupPassiveIconEffect>();
+            do2._passiveToPopup = add2._passiveToAdd;
+            PopupPassiveIconEffect do3 = ScriptableObject.CreateInstance<PopupPassiveIconEffect>();
+            do3._passiveToPopup = add3._passiveToAdd;
+            PopupPassiveIconEffect do4 = ScriptableObject.CreateInstance<PopupPassiveIconEffect>();
+            do4._passiveToPopup = add4._passiveToAdd;
 
             TargetPerformEffectViaSubaction salvationSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             salvationSubAct.effects =
                 [
-                    Effects.GenerateEffect(queueMutated, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(add1, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(do1, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(reduceHealth, 2, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 2)),
                 ];
 
             AnimationVisualsEffect microwaveVisual = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             microwaveVisual._visuals = LoadedAssetsHandler.GetEnemyAbility("AApocrypha_Radiotherapy_A").visuals;
             microwaveVisual._animationTarget = Targeting.Slot_Front;
 
+            AnimationVisualsEffect microwaveVisual2 = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            microwaveVisual2._visuals = LoadedAssetsHandler.GetEnemyAbility("AApocrypha_Radiotherapy_A").visuals;
+            microwaveVisual2._animationTarget = Targeting.Slot_FrontAndSides;
+
             //Salvation Lies Within/Ahead/Beyond/Above: Force all enemies with status effects to queue up the ability "Mutated Complexion"/twice/thrice/four times. If this fails, inflict the Opposing enemy with 2/2/3/4 Irradiated.
             Ability salvation1 = new Ability("Salvation Lies Within", "ST_WhhvaySalvation1_A")
             {
-                Description = "Force all enemies with status effects to queue up the ability \"Mutated Complexion\" once.\nInflict the Opposing enemy with 2 Irradiated.",
+                Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Surface\"; if that fails, they lose 2 max health.\nInflict the Opposing enemy with 2 Irradiated.",
                 Visuals = Visuals.Scream,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
                 Effects =
                 [
-                    Effects.GenerateEffect(addMutatedToTarget, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
                     Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
                     Effects.GenerateEffect(microwaveVisual, 1, Targeting.Slot_SelfAll),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_Front),
@@ -182,18 +288,24 @@ namespace SorasToybox.Fools
             {
                 Debug.Log("salv 1");
             }
+
+            TargetPerformEffectViaSubaction salvation2SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            salvation2SubAct.effects =
+                [
+                    Effects.GenerateEffect(add2, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(do2, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(reduceHealth, 3, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 2)),
+                ];
             Ability salvation2 = new Ability("Salvation Lies Ahead", "ST_WhhvaySalvation2_A")
             {
-                Description = "Force all enemies with status effects to queue up the ability \"Mutated Complexion\" twice.\nInflict the Opposing enemy with 2 Irradiated.",
+                Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Complexion\"; if that fails, they lose 3 max health.\nInflict the Opposing enemy with 2 Irradiated.",
                 Visuals = Visuals.Scream,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
                 Effects =
                 [
-                    Effects.GenerateEffect(addMutatedToTarget, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
+                    Effects.GenerateEffect(salvation2SubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
                     Effects.GenerateEffect(microwaveVisual, 1, Targeting.Slot_SelfAll),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_Front),
                 ],
@@ -201,46 +313,63 @@ namespace SorasToybox.Fools
             salvation2.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
             salvation2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
 
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("salv 2");
+            }
+
+            TargetPerformEffectViaSubaction salvation3SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            salvation3SubAct.effects =
+                [
+                    Effects.GenerateEffect(add3, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(do1, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(reduceHealth, 4, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 2)),
+                ];
             Ability salvation3 = new Ability("Salvation Lies Beyond", "ST_WhhvaySalvation3_A")
             {
-                Description = "Force all enemies with status effects to queue up the ability \"Mutated Complexion\" thrice.\nInflict the Opposing enemy with 3 Irradiated.",
+                Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Expression\"; if that fails, they lose 4 max health.\nInflict the Opposing enemy with 3 Irradiated and the Left and Right enemies with 1.",
                 Visuals = Visuals.Scream,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
                 Effects =
                 [
-                    Effects.GenerateEffect(addMutatedToTarget, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(microwaveVisual, 1, Targeting.Slot_SelfAll),
+                    Effects.GenerateEffect(salvation3SubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
+                    Effects.GenerateEffect(microwaveVisual2, 1, Targeting.Slot_SelfAll),
                     Effects.GenerateEffect(getIrradiated, 3, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getIrradiated, 1, Targeting.Slot_OpponentSides),
                 ],
             };
             salvation3.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
-            salvation3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
-
+            salvation3.AddIntentsToTarget(Targeting.Slot_FrontAndSides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("salv 3");
+            }
+            TargetPerformEffectViaSubaction salvation4SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            salvation4SubAct.effects =
+                [
+                    Effects.GenerateEffect(add4, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(do4, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(reduceHealth, 5, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 2)),
+                ];
             Ability salvation4 = new Ability("Salvation Lies Above", "ST_WhhvaySalvation4_A")
             {
-                Description = "Force all enemies with status effects to queue up the ability \"Mutated Complexion\" four times.\nInflict the Opposing enemy with 4 Irradiated.",
+                Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Perspective\"; if that fails, they lose 5 max health.\nInflict the Opposing enemy with 4 Irradiated and the Left and Right enemies with 2.",
                 Visuals = Visuals.Scream,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
                 Effects =
                 [
-                    Effects.GenerateEffect(addMutatedToTarget, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(salvationSubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
-                    Effects.GenerateEffect(microwaveVisual, 1, Targeting.Slot_SelfAll),
+                    Effects.GenerateEffect(salvation4SubAct, 1, Targeting.Spec_Unit_AllOpponents_All_Status),
+                    Effects.GenerateEffect(microwaveVisual2, 1, Targeting.Slot_SelfAll),
                     Effects.GenerateEffect(getIrradiated, 4, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_OpponentSides),
                 ],
             };
             salvation4.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
-            salvation4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
+            salvation4.AddIntentsToTarget(Targeting.Slot_FrontAndSides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("salvation");
