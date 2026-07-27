@@ -1,7 +1,8 @@
-﻿using BepInEx;
+﻿global using UnityEngine;
+global using BrutalAPI;
+using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;
-using BrutalAPI;
 using SorasToybox.CustomStatusField;
 using SorasToybox.CustomPassives;
 using SorasToybox.CustomEffects;
@@ -11,7 +12,6 @@ using SorasToybox.Enemies;
 using SorasToybox.Fools;
 using SorasToybox.Items;
 using HarmonyLib;
-using UnityEngine;
 using SorasToybox.Encounters;
 using SorasToybox.Events;
 
