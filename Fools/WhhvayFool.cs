@@ -47,13 +47,24 @@ namespace SorasToybox.Fools
             whhvay.AddPassives([Passives.GetCustomPassive("ST_Godray_PA")]);
             whhvay.GenerateMenuCharacter(ResourceLoader.LoadSprite("whhvay_menu.png"), ResourceLoader.LoadSprite("whhvay_menu_locked.png"));
 
+            AttackVisualsSO bondsVis = ScriptableObject.CreateInstance<AttackVisualsSO>();
+            if (SorasToybox.CrossMod.Siren && SorasToybox.CrossMod.AApocrypha)
+            {
+                bondsVis = LoadedAssetsHandler.GetEnemyAbility("AApocrypha_Pygmalion_A").visuals;
+            }
+            else
+            {
+                bondsVis = Visuals.Scream;
+            }
+
+
             //Detacher/Dismantler/Destabilizer/Devourer of Bonds: Reduce the Opposing enemy's health by 5/7/10/12, then deal 4/6/8/10 damage to them. Inflict 2/3/4/5 Irradiated on the Left and Right enemies.
             Ability bonds1 = new Ability("Detacher of Bonds", "ST_WhhvayBonds1_A")
             {
                 Description = "Reduce the Opposing enemy's max health by 5, then deal 4 damage to them.\nInflict 2 Irradiated on the Left and Right enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
-                Visuals = Visuals.Melt,
+                Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
@@ -70,7 +81,7 @@ namespace SorasToybox.Fools
                 Description = "Reduce the Opposing enemy's max health by 7, then deal 6 damage to them.\nInflict 3 Irradiated on the Left and Right enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
-                Visuals = Visuals.Melt,
+                Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
@@ -87,7 +98,7 @@ namespace SorasToybox.Fools
                 Description = "Reduce the Opposing enemy's max health by 10, then deal 8 damage to them.\nInflict 4 Irradiated on the Left and Right enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
-                Visuals = Visuals.Melt,
+                Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
@@ -104,7 +115,7 @@ namespace SorasToybox.Fools
                 Description = "Reduce the Opposing enemy's max health by 12, then deal 10 damage to them.\nInflict 5 Irradiated on the Left and Right enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
-                Visuals = Visuals.Melt,
+                Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
@@ -115,15 +126,24 @@ namespace SorasToybox.Fools
             };
             bonds4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Other_MaxHealth), nameof(IntentType_GameIDs.Damage_21)]);
             bonds4.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Irradiated"]);
-            if (SorasToybox.extradebug.Value)
-            {
-                Debug.Log("bonds");
-            }
             HealEffect heal = ScriptableObject.CreateInstance<HealEffect>();
 
             Sprite abilitySprite = LoadedAssetsHandler.GetEnemyAbility("Chomp_A").abilitySprite;
 
             //Piking it
+            AttackVisualsSO praiseVis = ScriptableObject.CreateInstance<AttackVisualsSO>();
+            if (SorasToybox.CrossMod.Siren)
+            {
+                praiseVis = LoadedAssetsHandler.GetEnemyAbility("PraiseAB").visuals;
+            }
+            else
+            {
+                praiseVis = Visuals.UglyOnTheInside;
+            }
+
+            AttackVisualsSO gazeVis = ScriptableObject.CreateInstance<AttackVisualsSO>();
+            gazeVis = LoadedAssetsHandler.GetEnemyAbility("AApocrypha_InvokeChaos_A").visuals;
+
             StatusEffect_Apply_Effect getMisery = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getMisery._Status = StatusField.GetCustomStatusEffect("Misery_ID");
 
@@ -132,8 +152,8 @@ namespace SorasToybox.Fools
                 Description = "Heal the Opposing party member 3 health, and gain 1 Misery.\n40% Chance to inflict 2 Irradiated on the Left and Right enemies.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
-                Visuals = Visuals.UglyOnTheInside,
-                AnimationTarget = Targeting.Slot_SelfSlot,
+                Visuals = gazeVis,
+                AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(heal, 2, Targeting.Slot_Front),
@@ -152,8 +172,8 @@ namespace SorasToybox.Fools
                 Description = "Heal the Opposing party member 5 health, and gain 2 Misery.\n50% Chance to inflict 2 Irradiated on the Left and Right enemies.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
-                Visuals = Visuals.UglyOnTheInside,
-                AnimationTarget = Targeting.Slot_SelfSlot,
+                Visuals = gazeVis,
+                AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(heal, 5, Targeting.Slot_Front),
@@ -172,8 +192,8 @@ namespace SorasToybox.Fools
                 Description = "Heal the Opposing party member 7 health, and gain 3 Misery.\n66% Chance to inflict 2 Irradiated on the Left and Right enemies.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
-                Visuals = Visuals.UglyOnTheInside,
-                AnimationTarget = Targeting.Slot_SelfSlot,
+                Visuals = gazeVis,
+                AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(heal, 7, Targeting.Slot_Front),
@@ -192,8 +212,8 @@ namespace SorasToybox.Fools
                 Description = "Heal the Opposing party member 9 health, and gain 4 Misery.\nInflict 2 Irradiated on the Left and Right enemies.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
-                Visuals = Visuals.UglyOnTheInside,
-                AnimationTarget = Targeting.Slot_SelfSlot,
+                Visuals = gazeVis,
+                AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(heal, 9, Targeting.Slot_Front),
@@ -271,7 +291,7 @@ namespace SorasToybox.Fools
             Ability salvation1 = new Ability("Salvation Lies Within", "ST_WhhvaySalvation1_A")
             {
                 Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Surface\"; if that fails, they lose 2 max health.\nInflict the Opposing enemy with 2 Irradiated.",
-                Visuals = Visuals.Scream,
+                Visuals = praiseVis,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
@@ -284,10 +304,6 @@ namespace SorasToybox.Fools
             };
             salvation1.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
             salvation1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
-            if (SorasToybox.extradebug.Value)
-            {
-                Debug.Log("salv 1");
-            }
 
             TargetPerformEffectViaSubaction salvation2SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             salvation2SubAct.effects =
@@ -299,7 +315,7 @@ namespace SorasToybox.Fools
             Ability salvation2 = new Ability("Salvation Lies Ahead", "ST_WhhvaySalvation2_A")
             {
                 Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Complexion\"; if that fails, they lose 3 max health.\nInflict the Opposing enemy with 2 Irradiated.",
-                Visuals = Visuals.Scream,
+                Visuals = praiseVis,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
@@ -313,10 +329,6 @@ namespace SorasToybox.Fools
             salvation2.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
             salvation2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
 
-            if (SorasToybox.extradebug.Value)
-            {
-                Debug.Log("salv 2");
-            }
 
             TargetPerformEffectViaSubaction salvation3SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             salvation3SubAct.effects =
@@ -328,7 +340,7 @@ namespace SorasToybox.Fools
             Ability salvation3 = new Ability("Salvation Lies Beyond", "ST_WhhvaySalvation3_A")
             {
                 Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Expression\"; if that fails, they lose 4 max health.\nInflict the Opposing enemy with 3 Irradiated and the Left and Right enemies with 1.",
-                Visuals = Visuals.Scream,
+                Visuals = praiseVis,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
@@ -342,10 +354,7 @@ namespace SorasToybox.Fools
             };
             salvation3.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
             salvation3.AddIntentsToTarget(Targeting.Slot_FrontAndSides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
-            if (SorasToybox.extradebug.Value)
-            {
-                Debug.Log("salv 3");
-            }
+
             TargetPerformEffectViaSubaction salvation4SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             salvation4SubAct.effects =
                 [
@@ -356,7 +365,7 @@ namespace SorasToybox.Fools
             Ability salvation4 = new Ability("Salvation Lies Above", "ST_WhhvaySalvation4_A")
             {
                 Description = "Force all enemies with status effects to learn the Bonus Attack \"Mutated Perspective\"; if that fails, they lose 5 max health.\nInflict the Opposing enemy with 4 Irradiated and the Left and Right enemies with 2.",
-                Visuals = Visuals.Scream,
+                Visuals = praiseVis,
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_charge.png"),
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Blue],
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_All_Status,
@@ -370,10 +379,6 @@ namespace SorasToybox.Fools
             };
             salvation4.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_All_Status, [nameof(IntentType_GameIDs.Other_Refresh)]);
             salvation4.AddIntentsToTarget(Targeting.Slot_FrontAndSides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
-            if (SorasToybox.extradebug.Value)
-            {
-                Debug.Log("salvation");
-            }
 
             //Deal 3/4/5/6 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them. Make them inflict 1/1/2/3 Irradiated to themselves and their Left and Right allies.
             ChangeMaxHealthByCurrentHealthEffect trimHealth = ScriptableObject.CreateInstance<ChangeMaxHealthByCurrentHealthEffect>();
@@ -471,10 +476,6 @@ namespace SorasToybox.Fools
                 ],
             };
             warp4.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_7_10), nameof(IntentType_GameIDs.Other_MaxHealth_Alt), "Status_Irradiated"]);
-            if (SorasToybox.extradebug.Value)
-            {
-                Debug.Log("warp");
-            }
 
             whhvay.AddLevelData(4, [bonds1, salvation1, warp1]);
             whhvay.AddLevelData(5, [bonds2, salvation2, warp2]);
