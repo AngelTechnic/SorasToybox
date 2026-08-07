@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using BrutalAPI;
 using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
+using SorasToybox.CustomOther;
 using UnityEngine;
 
 namespace SorasToybox.Items
@@ -15,8 +17,13 @@ namespace SorasToybox.Items
             StatusEffect_Apply_Effect overclockMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             overclockMe._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
 
-            //defining initial overclock stack amount here
-            int overclockStacks = 2;
+            StatusEffect_Apply_Effect overclockByPrevious = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            overclockByPrevious._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
+            overclockByPrevious._MultPreviousExitValueForEntry = true;
+
+            CheckCasterOrTargetIsUnitTypeEffect howManyPrimals = ScriptableObject.CreateInstance<CheckCasterOrTargetIsUnitTypeEffect>();
+            howManyPrimals._UnitTypeID = "Primal";
+
 
             //Item setup
             PerformEffect_Item gayCrystal = new PerformEffect_Item("SentientArcanite_ID", null, false)
@@ -33,11 +40,13 @@ namespace SorasToybox.Items
                 OnUnlockUsesTHE = true,
                 //When does this item do its stuff?
                 TriggerOn = TriggerCalls.OnCombatStart,
-                Effects = 
+                Effects =
                 [
                     //Apply Overclock, use overclockStacks as amount, target Self.
-                    Effects.GenerateEffect(overclockMe, overclockStacks, Targeting.Slot_SelfSlot),
-                ]
+                    Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(howManyPrimals, 1, Targeting.AllUnits),
+                    Effects.GenerateEffect(overclockByPrevious, 1, Targeting.Slot_SelfSlot),
+                ],
             };
             //adds to treasure pool, and other stuff related to unlocks (but it's unlocked by default so don't worry about it)
             ItemUtils.JustAddItemSoItCanBeLoaded(gayCrystal.item);

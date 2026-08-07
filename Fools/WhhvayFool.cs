@@ -254,7 +254,6 @@ namespace SorasToybox.Fools
 
             AddPassiveEffect add1 = ScriptableObject.CreateInstance<AddPassiveEffect>();
             add1._passiveToAdd = Passives.BonusAttackGenerator(extra1);
-
             AddPassiveEffect add2 = ScriptableObject.CreateInstance<AddPassiveEffect>();
             add2._passiveToAdd = Passives.BonusAttackGenerator(extra2);
             AddPassiveEffect add3 = ScriptableObject.CreateInstance<AddPassiveEffect>();
@@ -334,7 +333,7 @@ namespace SorasToybox.Fools
             salvation3SubAct.effects =
                 [
                     Effects.GenerateEffect(add3, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(do1, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(do3, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(reduceHealth, 4, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 2)),
                 ];
             Ability salvation3 = new Ability("Salvation Lies Beyond", "ST_WhhvaySalvation3_A")

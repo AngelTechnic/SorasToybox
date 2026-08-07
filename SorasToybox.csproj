@@ -19,6 +19,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
@@ -174,6 +175,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_stretchmarks.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_stretchmarks_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />
     <None Remove="Assets\Passives\bloatPassive.png" />
     <None Remove="Assets\Passives\EscapistPassive.png" />
@@ -216,6 +219,7 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
@@ -385,6 +389,8 @@
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_stretchmarks.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_stretchmarks_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />
     <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
     <EmbeddedResource Include="Assets\Passives\EscapistPassive.png" />

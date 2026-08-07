@@ -2,7 +2,7 @@
 global using BrutalAPI;
 using BepInEx;
 using BepInEx.Bootstrap;
-using BepInEx.Configuration;
+using BepInEx.Configuration;    
 using SorasToybox.CustomStatusField;
 using SorasToybox.CustomPassives;
 using SorasToybox.CustomEffects;
@@ -14,6 +14,7 @@ using SorasToybox.Items;
 using HarmonyLib;
 using SorasToybox.Encounters;
 using SorasToybox.Events;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 
 namespace SorasToybox //Mod namespace
 {
@@ -256,9 +257,10 @@ namespace SorasToybox //Mod namespace
             }
             //DM Unlocks go here I think.
             EntrenchingTool.Add();
+            StretchMarks.Add();
             AuralViolation.Add();
             ProcessedSludge.Add();
-            FoodChain.Add();
+            FoodChain.Add();    
             LaughingGas.Add();
             AtomSmasher.Add();
             DriveItem.Add();

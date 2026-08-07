@@ -52,7 +52,7 @@ namespace SorasToybox.Items
 
             //unlock this
             string achievementID = "SorasToybox_Kleiver_Antagonist_ACH";
-            string unlockID = "SorasToybox_Griffin_Antagonist_Unlock";
+            string unlockID = "SorasToybox_Kleiver_Antagonist_Unlock";
 
             ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(badPublicity.item, new ItemModdedUnlockInfo(badPublicity.Item_ID, ResourceLoader.LoadSprite("item_badpublicity_locked", null, 32, null), achievementID));
 

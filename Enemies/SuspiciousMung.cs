@@ -18,6 +18,8 @@ namespace SorasToybox.Enemies
             jumpscareHaha._visuals = Visuals.DemonCore;
             jumpscareHaha._animationTarget = Targeting.Slot_SelfSlot;
 
+            FleeTargetEffect gtfo = ScriptableObject.CreateInstance<FleeTargetEffect>();
+
             SpawnEnemyAnywhereEffect move = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
             move.givesExperience = true;
             move.enemy = LoadedAssetsHandler.GetEnemy("Primus_EN");
@@ -34,6 +36,7 @@ namespace SorasToybox.Enemies
             susMungBecomesPrimusDecay.effects = new EffectInfo[]
             {
                 Effects.GenerateEffect(jumpscareHaha, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(gtfo, 1, Targeting.Unit_OtherAllies),
                 Effects.GenerateEffect(move, 1, Targeting.Slot_SelfSlot),
             };
 
@@ -41,13 +44,13 @@ namespace SorasToybox.Enemies
             {
                 Health = 6,
                 HealthColor = Pigments.Red,
-                Size = 5,
+                Size = 1,
                 CombatSprite = ResourceLoader.LoadSprite("timelineSusMung.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineSusMung.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetEnemy("Mung_EN").damageSound,
                 DeathSound = LoadedAssetsHandler.GetEnemy("Mung_EN").deathSound,
-                UnitTypes = ["Fish"],
+                UnitTypes = ["Fish", "Primal"],
             };
             susMung.AddPassives(new BasePassiveAbilitySO[] { susMungBecomesPrimusDecay });
 
