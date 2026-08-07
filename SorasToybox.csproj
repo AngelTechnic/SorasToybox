@@ -60,6 +60,8 @@
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
+    <None Remove="Assets\Enemies\timelineFacelessNoFace.png" />
+    <None Remove="Assets\Enemies\timelineFakeFaceless.png" />
     <None Remove="Assets\Enemies\timelineFourNowheres.png" />
     <None Remove="Assets\Enemies\TimelineFriendlyGearYinimro.png" />
     <None Remove="Assets\Enemies\TimelineGearYinimro.png" />
@@ -202,6 +204,7 @@
     <None Remove="Assets\Passives\passive_karmic.png" />
     <None Remove="Assets\Passives\passive_lockstep.png" />
     <None Remove="Assets\Passives\passive_overtuned.png" />
+    <None Remove="Assets\Passives\passive_quicktempered.png" />
     <None Remove="Assets\Passives\passive_riposte.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
@@ -230,6 +233,8 @@
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\deadNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineFacelessNoFace.png" />
+    <EmbeddedResource Include="Assets\Enemies\timelineFakeFaceless.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineFourNowheres.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineGearYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineNowhere.png" />
@@ -416,6 +421,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
     <EmbeddedResource Include="Assets\Passives\passive_lockstep.png" />
     <EmbeddedResource Include="Assets\Passives\passive_overtuned.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_quicktempered.png" />
     <EmbeddedResource Include="Assets\Passives\passive_riposte.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />

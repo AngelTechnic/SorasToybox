@@ -42,7 +42,7 @@ namespace SorasToybox.Items
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =
                 [
-                    //Apply Overclock, use overclockStacks as amount, target Self.
+                    //Apply Overclock, check how many primal unittypes exist, then overclock self again.
                     Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(howManyPrimals, 1, Targeting.AllUnits),
                     Effects.GenerateEffect(overclockByPrevious, 1, Targeting.Slot_SelfSlot),

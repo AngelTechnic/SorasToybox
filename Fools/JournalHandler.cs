@@ -129,6 +129,8 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Giles_BOSS", "Giles");
             targetListKarma.Add("Bronzo2_EN", "Bronzo2");
             targetListKarma.Add("NowhereMan_EN", "NowhereMan");
+            targetListKarma.Add("Fakeless_EN", "Fakeless");
+            targetListKarma.Add("Crashout_EN", "Crashout");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 

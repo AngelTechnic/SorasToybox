@@ -115,6 +115,8 @@ namespace SorasToybox //Mod namespace
                 GearYinimro.Add();
                 BurningShame.Add();
                 Deathmatch.Add();
+                Crashout.Add();
+                FakeFaceless.Add();
             }
 
 
