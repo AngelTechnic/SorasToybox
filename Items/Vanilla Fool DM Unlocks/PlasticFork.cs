@@ -32,6 +32,7 @@ namespace SorasToybox.Items
                 Name = "Plastic Fork",
                 Item_ID = "PlasticFork_FishW",
                 Flavour = flavorText,
+                Icon = ResourceLoader.LoadSprite("item_plasticfork", null, 32, null),
                 Description = "This party member is one level higher than usual. At the end of combat, destroy the item this party member is holding.",
                 TriggerOn = TriggerCalls.OnCombatEnd,
                 DoesPopUpInfo = false,
