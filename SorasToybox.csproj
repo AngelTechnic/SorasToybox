@@ -27,6 +27,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mung.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_ShellyK.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
@@ -185,6 +186,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_plasticfork.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_plasticfork_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_stretchmarks.png" />
@@ -238,6 +241,7 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mung.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_ShellyK.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
@@ -412,6 +416,8 @@
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_plasticfork.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_plasticfork_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_stretchmarks.png" />

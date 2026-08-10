@@ -67,7 +67,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetUnlock_OsmanFinalBoss();
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("SlapdashQuesadilla", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Osman_Karma", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements("Slapdash     Quesadilla", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Osman_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.WitnessTitleLabel);
 
         }

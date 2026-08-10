@@ -1,4 +1,5 @@
 ﻿using SorasToybox.CustomEffects;
+using SorasToybox.CustomOther;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -73,14 +74,12 @@ namespace SorasToybox.Enemies
 
             GenerateCasterHealthManaEffect gimmePigment = ScriptableObject.CreateInstance<GenerateCasterHealthManaEffect>();
 
-            RemovePassiveEffect loseExample = ScriptableObject.CreateInstance<RemovePassiveEffect>();
-            loseExample.m_PassiveID = "ITA_Example_PA";
-            TargetPerformEffectViaSubaction loseExampleThenDie = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
-            loseExampleThenDie.effects =
-                [
-                    Effects.GenerateEffect(loseExample, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(calloutPostOnTwitter, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                ];
+
+            SpecificUnitsByPassiveTargeting allExamples = ScriptableObject.CreateInstance<SpecificUnitsByPassiveTargeting>();
+            allExamples._passive = Passives.GetCustomPassive("Example_PA");
+            allExamples.targetUnitAllySlots = true;
+            allExamples.slotOffsets = [0];
+
 
             //ok let's make abilities now.
             Ability kys = new Ability("ST_CrashoutKYS_A")
@@ -94,10 +93,11 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(getLinked, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(fullHeal, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(loseExampleThenDie, 1, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(calloutPostOnTwitter, 1, allExamples),
                 ]
             };
             kys.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Linked), nameof(IntentType_GameIDs.Heal_21)]);
+            kys.AddIntentsToTarget(allExamples, [nameof(IntentType_GameIDs.Damage_Death)]);
 
             AnimationVisualsEffect ripAndTear = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             ripAndTear._visuals = Visuals.RendRight;
@@ -185,7 +185,7 @@ namespace SorasToybox.Enemies
                 Description = "Spawn a Strawman, and reduce Abomination by 1 if that worked.\nGenerate two pigment of this enemy's health color.",
                 Rarity = Rarity.Uncommon,
                 Visuals = Visuals.BodySnatcher,
-                AnimationTarget = Targeting.Slot_Front,
+                AnimationTarget = Targeting.Slot_SelfAll,
                 Effects =
                 [
                     Effects.GenerateEffect(strawmake, 1, Targeting.Slot_Front),

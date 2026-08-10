@@ -268,6 +268,7 @@ namespace SorasToybox //Mod namespace
             AtomSmasher.Add();
             VenzaFool.Add();
             FishOutOfWater.Add();
+            PlasticFork.Add();
             DriveItem.Add();
             BadPublicity.Add();
             FilmProjector.Add();
