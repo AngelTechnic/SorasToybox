@@ -182,19 +182,19 @@ namespace SorasToybox.Enemies
             Ability kms = new Ability("ST_CrashoutKMS_A")
             {
                 Name = "Self-Realization Leads to Destruction",
-                Description = "If the opposing slot is empty, spawn a Strawman and reduce Abomination by 1.\nGenerate two pigment of this enemy's health color.",
+                Description = "Spawn a Strawman, and reduce Abomination by 1 if that worked.\nGenerate two pigment of this enemy's health color.",
                 Rarity = Rarity.Uncommon,
                 Visuals = Visuals.BodySnatcher,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
-                    Effects.GenerateEffect(checkHasUnit, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(strawmake, 1, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(false, 1)),
+                    Effects.GenerateEffect(strawmake, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(reduceAbomination, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 2)),
                     Effects.GenerateEffect(gimmePigment, 2, Targeting.Slot_SelfSlot),
                 ],
             };
-            kms.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Other_Spawn), nameof(IntentType_GameIDs.Mana_Generate)]);
+            kms.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Other_Spawn)]);
+            kms.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Mana_Generate)]);
 
             crashout.AddEnemyAbilities([
                 kys,

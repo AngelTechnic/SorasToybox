@@ -67,7 +67,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(noGutted, 1, Targeting.Spec_Unit_OtherAllies_Weakest),
                 ],
             };
-            words.AddIntentsToTarget(Targeting.Slot_AllyRight, [nameof(IntentType_GameIDs.Status_Gutted), "Heal_Unbounded", nameof(IntentType_GameIDs.Rem_Status_Gutted)]);
+            words.AddIntentsToTarget(Targeting.Spec_Unit_OtherAllies_Weakest, [nameof(IntentType_GameIDs.Status_Gutted), "Heal_Unbounded", nameof(IntentType_GameIDs.Rem_Status_Gutted)]);
 
             Ability acknowledgement = new Ability("ST_VenzaAcknowledgement_A")
             {
