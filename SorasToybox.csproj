@@ -24,6 +24,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mung.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
@@ -104,6 +105,12 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_talk.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_talkmad.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_theend.png" />
+    <None Remove="Assets\Fools\Venza\venza_apology.png" />
+    <None Remove="Assets\Fools\Venza\venza_back.png" />
+    <None Remove="Assets\Fools\Venza\venza_front.png" />
+    <None Remove="Assets\Fools\Venza\venza_overworld.png" />
+    <None Remove="Assets\Fools\Venza\venza_presence.png" />
+    <None Remove="Assets\Fools\Venza\venza_watching.png" />
     <None Remove="Assets\Fools\Whhvay\whhvay_back.png" />
     <None Remove="Assets\Fools\Whhvay\whhvay_backsword.png" />
     <None Remove="Assets\Fools\Whhvay\whhvay_charge.png" />
@@ -116,6 +123,7 @@
     <None Remove="Assets\Fools\Whhvay\whhvay_menu_locked.png" />
     <None Remove="Assets\Fools\Whhvay\whhvay_overworld.png" />
     <None Remove="Assets\Intents\colophon_intent.png" />
+    <None Remove="Assets\Intents\NewUnboundHealIntent.png" />
     <None Remove="Assets\Intents\propx_intent.png" />
     <None Remove="Assets\Intents\prop_intent.png" />
     <None Remove="Assets\Intents\timelineDamage_intent.png" />
@@ -169,6 +177,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_filmprojector.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_filmprojector_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_fishoutofwater.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_fishoutofwater_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
@@ -225,6 +235,7 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mung.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
@@ -245,6 +256,12 @@
     <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_frontserious.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontsad.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
+    <EmbeddedResource Include="Assets\Fools\Venza\venza_apology.png" />
+    <EmbeddedResource Include="Assets\Fools\Venza\venza_back.png" />
+    <EmbeddedResource Include="Assets\Fools\Venza\venza_front.png" />
+    <EmbeddedResource Include="Assets\Fools\Venza\venza_overworld.png" />
+    <EmbeddedResource Include="Assets\Fools\Venza\venza_presence.png" />
+    <EmbeddedResource Include="Assets\Fools\Venza\venza_watching.png" />
     <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_back.png" />
     <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_backsword.png" />
     <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_charge.png" />
@@ -257,6 +274,7 @@
     <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_menu_locked.png" />
     <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_overworld.png" />
     <EmbeddedResource Include="Assets\Intents\colophon_intent.png" />
+    <EmbeddedResource Include="Assets\Intents\NewUnboundHealIntent.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
   </ItemGroup>
@@ -386,6 +404,8 @@
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_filmprojector.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_filmprojector_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_fishoutofwater.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_fishoutofwater_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />

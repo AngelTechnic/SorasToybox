@@ -129,6 +129,10 @@ namespace SorasToybox.Enemies
 
             gearYinimro.AddPassives([Passives.GetCustomPassive("Houdini_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassives.CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient]);
             gearYinimro.AddEnemy(true, true, false);
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("Added Gear Yinimro.");
+            }
         }
     }
 }

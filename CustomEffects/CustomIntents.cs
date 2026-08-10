@@ -129,7 +129,15 @@ namespace SorasToybox.CustomEffects
                 //LoadedDBsHandler.IntentDB.AddNewDamageIntent("Damage_Round", Damage_Round);
                 Intents.AddCustom_Damage_IntentToPool("Damage_Unbound", Damage_Unbound);
             }
-
+            if (!dintExists("Heal_Unbounded"))
+            {
+                IntentInfoBasic Heal_Unbounded = new()
+                {
+                    _color = Color.white,
+                    _sprite = ResourceLoader.LoadSprite("NewUnboundHealIntent"),
+                };
+                LoadedDBsHandler.IntentDB.AddNewBasicIntent("Heal_Unbounded", Heal_Unbounded);
+            }
 
             IntentInfoBasic itemIntent = new()
             {
