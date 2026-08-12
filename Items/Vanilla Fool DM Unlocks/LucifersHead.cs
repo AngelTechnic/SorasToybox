@@ -55,7 +55,7 @@ namespace SorasToybox.Items
             };
 
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
-            unlockCheck.AddUnlockData("Formosus_CH", unlockData);
+            unlockCheck.AddUnlockData("Formosus", unlockData);
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Lucifer's Severed Head", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Formosus", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
