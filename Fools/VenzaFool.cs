@@ -1,4 +1,5 @@
 ﻿using SorasToybox.Custom_Effects;
+using SorasToybox.CustomEffects;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,10 +48,18 @@ namespace SorasToybox.Fools
                 DamageSound = "event:/SorasSFX/Enemies/Dozer/DozerHurt",
                 DeathSound = "event:/SorasSFX/Enemies/Dozer/DozerDie",
                 DialogueSound = "event:/SorasSFX/Enemies/Dozer/DozerRoar",
-                UnitTypes = ["Fish"],
+                UnitTypes = [UnitType_GameIDs.Fish.ToString(),],
                 StartsLocked = false,
             };
             venza.AddPassives([Passives.Withering, Passives.GetCustomPassive("Condense_PA")]);
+
+            TargetPerformEffectViaSubaction wordsSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            wordsSubAct.effects =
+                [
+                    Effects.GenerateEffect(getGutted, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(unboundHeal, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(noGutted, 1, Targeting.Slot_SelfSlot),
+                ];
 
             Ability words = new Ability("ST_VenzaWords_A")
             {
@@ -62,9 +71,7 @@ namespace SorasToybox.Fools
                 AnimationTarget = Targeting.Spec_Unit_OtherAllies_Weakest,
                 Effects =
                 [
-                    Effects.GenerateEffect(getGutted, 1, Targeting.Spec_Unit_OtherAllies_Weakest),
-                    Effects.GenerateEffect(unboundHeal, 1, Targeting.Spec_Unit_OtherAllies_Weakest),
-                    Effects.GenerateEffect(noGutted, 1, Targeting.Spec_Unit_OtherAllies_Weakest),
+                    Effects.GenerateEffect(wordsSubAct, 1, Targeting.Spec_Unit_OtherAllies_Weakest),
                 ],
             };
             words.AddIntentsToTarget(Targeting.Spec_Unit_OtherAllies_Weakest, [nameof(IntentType_GameIDs.Status_Gutted), "Heal_Unbounded", nameof(IntentType_GameIDs.Rem_Status_Gutted)]);

@@ -39,11 +39,13 @@ namespace SorasToybox.Items
                 EquippedModifiers = [levelUpWearable],
                 ShopPrice = 1,
                 IsShopItem = false,
-
+                OnUnlockUsesTHE = true,
                 Effects =
                 [
                     Effects.GenerateEffect(yummers, 1, Targeting.Slot_SelfSlot),
                 ],
+                UsesSpecialUnlockText = true,
+                SpecialUnlockID = UILocID.ItemFishLocationLabel,
 
             };
             //Unlock this
@@ -65,7 +67,7 @@ namespace SorasToybox.Items
             };
 
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
-            unlockCheck.AddUnlockData("Shelly K.", unlockData);
+            unlockCheck.AddUnlockData("ShellyK", unlockData);
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Plastic Fork", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_ShellyK", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");

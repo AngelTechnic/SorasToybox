@@ -38,8 +38,11 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(getMadMFer), Effects.GenerateEffect(weUltrachurchNow)
                 ];
 
+            ExtraCurrencyEffect prizemoney = ScriptableObject.CreateInstance<ExtraCurrencyEffect>();
+            prizemoney._isMultiplier = false;
+
             crashout.CombatEnterEffects = [Effects.GenerateEffect(combatEnterShit, 1, Targeting.Slot_SelfSlot)];
-            crashout.CombatExitEffects = [Effects.GenerateEffect(Treasure, 1)];
+            crashout.CombatExitEffects = [Effects.GenerateEffect(Treasure, 2), Effects.GenerateEffect(prizemoney, 10, Targeting.Slot_SelfSlot)];
 
             StatusEffect_Apply_Effect getLinked = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getLinked._Status = StatusField.Linked;
