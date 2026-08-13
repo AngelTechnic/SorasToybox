@@ -61,6 +61,7 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements("Memory of ARTRODUS", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_BlueSkies_Mercurie", null, 32, null), achievementID);
             unlockAchievement.IsSecret = true;
+            unlockAchievement.SecretDescription = "Unlocked a new item.";
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BlueSky_BOSS", "The Dreamer");
         }
     }

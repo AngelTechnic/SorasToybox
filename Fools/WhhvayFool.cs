@@ -498,7 +498,7 @@ namespace SorasToybox.Fools
 
             //yapshenanigans
             SpeakerBundle speakerBundleWhhvay = new SpeakerBundle();
-            speakerBundleWhhvay.bundleTextColor = new Color32(0, 255, 255, 255);
+            speakerBundleWhhvay.bundleTextColor = new Color32(111, 242, 36, 255);
             speakerBundleWhhvay.dialogueSound = LoadedAssetsHandler.GetCharacter("Whhvay_CH").dxSound;
             speakerBundleWhhvay.portrait = ResourceLoader.LoadSprite("whhvay_fronttalk", new Vector2(0.5f, 0f), 32);
 
