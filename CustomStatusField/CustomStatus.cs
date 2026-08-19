@@ -146,7 +146,7 @@ namespace SorasToybox.CustomStatusField
                 LoadedDBsHandler.StatusFieldDB.TryGetStatusEffect(StatusField.DivineProtection._StatusID, out StatusEffect_SO frail);
                 StatusEffectInfoSO baseinfo = frail.EffectInfo;
 
-                ModuInfo._applied_SE_Event = "event:/ApplyWhiplash";
+                ModuInfo._applied_SE_Event = "event:/SorasSFX/StatusSFX/ApplyWhiplash";
                 ModuInfo._removed_SE_Event = baseinfo._removed_SE_Event;
                 ModuInfo._updated_SE_Event = baseinfo._updated_SE_Event;
                 //ModuInfo.
@@ -154,7 +154,7 @@ namespace SorasToybox.CustomStatusField
 
                 var damageId = "Whiplash_Damage";
 
-                LoadedDBsHandler.CombatDB.AddNewSound(damageId, "event:/WhiplashDamage");
+                LoadedDBsHandler.CombatDB.AddNewSound(damageId, "event:/SorasSFX/StatusSFX/WhiplashDamage");
                 //TMP_ColorGradient tmp_ColorGradient = ScriptableObject.CreateInstance<TMP_ColorGradient>();
                 TMP_ColorGradient tmp_ColorGradient = ScriptableObject.CreateInstance<TMP_ColorGradient>();
                 Color32 c = new Color32(131, 125, 132, byte.MaxValue);
