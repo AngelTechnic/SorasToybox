@@ -3,6 +3,7 @@ using SorasToybox.CustomStatuses;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -134,6 +135,66 @@ namespace SorasToybox.CustomStatusField
                 LoadedDBsHandler.IntentDB.AddNewBasicIntent("Rem_Status_Ante", AnteRemIntent);
             }
 
+            if (!LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Whiplash_ID"))
+            {
+                StatusEffectInfoSO ModuInfo = ScriptableObject.CreateInstance<StatusEffectInfoSO>();
+                ModuInfo._statusName = "Whiplash";
+                ModuInfo._description = "Receiving any other damage causes you to take all accumulated Whiplash as additional damage.";
+                ModuInfo.icon = ResourceLoader.LoadSprite("status_whiplash.png");
+
+
+                LoadedDBsHandler.StatusFieldDB.TryGetStatusEffect(StatusField.DivineProtection._StatusID, out StatusEffect_SO frail);
+                StatusEffectInfoSO baseinfo = frail.EffectInfo;
+
+                ModuInfo._applied_SE_Event = "event:/ApplyWhiplash";
+                ModuInfo._removed_SE_Event = baseinfo._removed_SE_Event;
+                ModuInfo._updated_SE_Event = baseinfo._updated_SE_Event;
+                //ModuInfo.
+
+
+                var damageId = "Whiplash_Damage";
+
+                LoadedDBsHandler.CombatDB.AddNewSound(damageId, "event:/WhiplashDamage");
+                //TMP_ColorGradient tmp_ColorGradient = ScriptableObject.CreateInstance<TMP_ColorGradient>();
+                TMP_ColorGradient tmp_ColorGradient = ScriptableObject.CreateInstance<TMP_ColorGradient>();
+                Color32 c = new Color32(131, 125, 132, byte.MaxValue);
+                Color32 c2 = new Color32(69, 58, 72, byte.MaxValue);
+                tmp_ColorGradient.bottomLeft = c2;
+                tmp_ColorGradient.bottomRight = c;
+                tmp_ColorGradient.topLeft = c;
+                tmp_ColorGradient.topRight = c2;
+                bool flag3 = LoadedDBsHandler.CombatDB.m_TxtColorPool.ContainsKey("Whiplash_Damage");
+                if (flag3)
+                {
+                    LoadedDBsHandler.CombatDB.m_TxtColorPool["Whiplash_Damage"] = tmp_ColorGradient;
+                }
+                else
+                {
+                    LoadedDBsHandler.CombatDB.AddNewTextColor("Whiplash_Damage", tmp_ColorGradient);
+                }
+
+
+                Whiplash modu = ScriptableObject.CreateInstance<Whiplash>();
+                modu._StatusID = "Whiplash_ID";
+                modu._EffectInfo = ModuInfo;
+                //modu.IsPositive = false;
+
+                LoadedDBsHandler.StatusFieldDB.AddNewStatusEffect(modu, true);
+
+                IntentInfoBasic WhiplashIntent = new()
+                {
+                    _color = Color.white,
+                    _sprite = ResourceLoader.LoadSprite("status_whiplash.png")
+                };
+                LoadedDBsHandler.IntentDB.AddNewBasicIntent("Status_Whiplash", WhiplashIntent);
+
+                IntentInfoBasic WhiplashRemIntent = new()
+                {
+                    _color = Color.gray,
+                    _sprite = ResourceLoader.LoadSprite("status_whiplash.png")
+                };
+                LoadedDBsHandler.IntentDB.AddNewBasicIntent("Rem_Status_Whiplash", WhiplashRemIntent);
+            }
 
 
         }

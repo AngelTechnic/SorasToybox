@@ -228,6 +228,7 @@
     <None Remove="Assets\Statuses\status_ante.png" />
     <None Remove="Assets\Statuses\status_overclock.png" />
     <None Remove="Assets\Statuses\status_regen.png" />
+    <None Remove="Assets\Statuses\status_whiplash.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -458,6 +459,7 @@
     <EmbeddedResource Include="Assets\Statuses\status_ante.png" />
     <EmbeddedResource Include="Assets\Statuses\status_overclock.png" />
     <EmbeddedResource Include="Assets\Statuses\status_regen.png" />
+    <EmbeddedResource Include="Assets\Statuses\status_whiplash.png" />
   </ItemGroup>
 
   <ItemGroup>
