@@ -139,7 +139,7 @@ namespace SorasToybox.CustomStatusField
             {
                 StatusEffectInfoSO ModuInfo = ScriptableObject.CreateInstance<StatusEffectInfoSO>();
                 ModuInfo._statusName = "Whiplash";
-                ModuInfo._description = "Receiving any other damage causes you to take all accumulated Whiplash as additional damage.";
+                ModuInfo._description = "Upon receiving other damage of any kind, recieve damage equal to Whiplash and lose all Whiplash.   ";
                 ModuInfo.icon = ResourceLoader.LoadSprite("status_whiplash.png");
 
 

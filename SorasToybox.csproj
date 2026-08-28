@@ -22,6 +22,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Leviat.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mung.png" />
@@ -184,6 +185,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_fishoutofwater_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_identitypolitik.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_identitypolitik_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
@@ -240,6 +243,7 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Leviat.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mordrake.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mung.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
@@ -417,6 +421,8 @@
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_fishoutofwater_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_foodchain_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_identitypolitik.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_identitypolitik_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
