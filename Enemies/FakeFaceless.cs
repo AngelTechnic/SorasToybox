@@ -76,7 +76,7 @@ namespace SorasToybox.Enemies
             fakeless.enemy.abilities.Add(LoadedAssetsHandler.GetEnemy("Faceless_EN").abilities[0]);
             fakeless.AddPassives([Passives.GetCustomPassive("CrashoutPissed_PA"), CustomPassives.CustomPassive.SaltLockstepGenerator(1), Passives.Slippery, Passives.GetCustomPassive("Vandal_PA")]);
             fakeless.AddEnemy(false, false, false);
-            LoadedAssetsHandler.GetEnemy("Fakeless_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Faceless_EN").enemyTemplate;
+            fakeless.enemy.enemyTemplate = LoadedAssetsHandler.GetEnemy("Faceless_EN").enemyTemplate;
             if (SorasToybox.extradebug.Value)
             {
                 UnityEngine.Debug.Log("Added Fakeless.");

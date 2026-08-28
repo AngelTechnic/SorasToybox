@@ -22,7 +22,7 @@ namespace SorasToybox.Items
 
             StatusEffect_Apply_Effect strengthByPrevious = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             strengthByPrevious._MultPreviousExitValueForEntry = true;
-            strengthByPrevious._Status = StatusField.GetCustomStatusEffect("Strength_ID");
+            strengthByPrevious._Status = StatusField.GetCustomStatusEffect("Ecstasy_ID");
 
             DoublePerformEffect_Item badPublicity = new DoublePerformEffect_Item("ST_BadPublicity_ID", null, false)
             {

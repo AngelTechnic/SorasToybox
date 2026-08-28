@@ -285,6 +285,21 @@ namespace SorasToybox.Enemies
             error.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_1_2), "Status_Ante"]);
             error.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Left)]);
 
+            //let's spice things up a little whoops.
+            Ability witness = new Ability("ST_DMWitness_A")
+            {
+                Name = "Witness",
+                Description = "Summons a Burning Shame.\n\"It's     your fault, it's     your fault, it's     your fault, it's     your fault...\"",
+                Rarity = Rarity.Rare,
+                Visuals = Visuals.BodySnatcher,
+                AnimationTarget = Targeting.Slot_SelfSlot,
+                Effects =
+                [
+                    Effects.GenerateEffect(CallReinforcements, 1, Targeting.Slot_SelfSlot),
+                ],
+            };
+            witness.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Other_Spawn)]);
+
             //THE FOLLOWING ABILITY USED TO BE NAMED HANGING IM SORRYYYYYYY
             AttackVisualsSO hangingVisuals = ScriptableObject.CreateInstance<AttackVisualsSO>();
             hangingVisuals = Visuals.Headshot;
@@ -443,6 +458,7 @@ namespace SorasToybox.Enemies
                 prosecution,
                 trial,
                 error,
+                witness,
                 hangingJudge,
                 admission,
                 ]);

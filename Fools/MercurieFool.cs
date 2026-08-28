@@ -161,7 +161,6 @@ namespace SorasToybox.Fools
             };
             accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Atrophy", nameof(IntentType_GameIDs.Damage_11_15)]);
 
-
             //The End of Days/An Age/An Era/Time
             Ability theEnd1 = new Ability("The End of Days", "ST_MercurieTheEnd1_A")
             {
@@ -232,6 +231,12 @@ namespace SorasToybox.Fools
             clockVisuals._visuals = Visuals.Conductor;
             clockVisuals._animationTarget = Targeting.Slot_Front;
 
+            TargetPerformEffectViaSubaction noMalfSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            noMalfSubAct.effects =
+                [
+                    Effects.GenerateEffect(noMalfunction, 1, Targeting.Slot_SelfSlot),
+                ];
+
             //Clockmaker/watcher/keeper/stopper
             Ability clock1 = new Ability("Clockwatcher", "ST_MercurieClock1_A")
             {
@@ -245,7 +250,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(clockVisuals, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damageDeadIsTrue, 6, Targeting.Slot_Front),
                     Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(noMalfunction, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
+                    Effects.GenerateEffect(noMalfSubAct, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
                 ],
             };
             clock1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Rem_Status_Atrophy", "Status_Malfunction"]);
@@ -264,7 +269,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(clockVisuals, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damageDeadIsTrue, 7, Targeting.Slot_Front),
                     Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(noMalfunction, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
+                    Effects.GenerateEffect(noMalfSubAct, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
                 ],
             };
             clock2.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Rem_Status_Atrophy", "Status_Malfunction"]);
@@ -283,7 +288,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(clockVisuals, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damageDeadIsTrue, 8, Targeting.Slot_Front),
                     Effects.GenerateEffect(overclockMe, 3, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(noMalfunction, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
+                    Effects.GenerateEffect(noMalfSubAct, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
                 ],
             };
             clock3.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Rem_Status_Atrophy", "Status_Malfunction"]);
@@ -302,12 +307,19 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(clockVisuals, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damageDeadIsTrue, 9, Targeting.Slot_Front),
                     Effects.GenerateEffect(overclockMe, 3, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(noMalfunction, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
+                    Effects.GenerateEffect(noMalfSubAct, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
                 ],
             };
             clock4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Rem_Status_Atrophy", "Status_Malfunction"]);
             clock4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_7_10), nameof(IntentType_GameIDs.Misc_Hidden)]);
             clock4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock", "Rem_Status_Malfunction"]);
+
+            StatusEffect_Apply_Effect getWarded = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getWarded._Status = StatusField.GetCustomStatusEffect("Warded_ID");
+
+            RemoveStatusEffectEffect noWarded = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
+            noWarded._status = StatusField.GetCustomStatusEffect("Warded_ID");
+
 
 
             mercurie.AddLevelData(6, [accelerator1, theEnd1, clock1]);
@@ -362,7 +374,12 @@ namespace SorasToybox.Fools
             speakerBundleMercurieSad.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").deathSound;
             speakerBundleMercurieSad.portrait = ResourceLoader.LoadSprite("mercurie_frontsad", new Vector2(0.5f, 0f), 32);
 
-            Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[5]
+            SpeakerBundle speakerBundleMercurieScared = new SpeakerBundle();
+            speakerBundleMercurieScared.bundleTextColor = new Color32(96, 215, 181, 255);
+            speakerBundleMercurieScared.dialogueSound = LoadedAssetsHandler.GetCharacter("Mercurie_CH").deathSound;
+            speakerBundleMercurieScared.portrait = ResourceLoader.LoadSprite("mercurie_talkscared", new Vector2(0.5f, 0f), 32);
+
+            Dialogues.CreateAndAddCustom_SpeakerData("Mercurie", speakerBundleMercurie, true, false, new SpeakerEmote[6]
             {
                 new SpeakerEmote
                 {
@@ -388,7 +405,12 @@ namespace SorasToybox.Fools
                 {
                     emotion = "Sad",
                     bundle = speakerBundleMercurieSad,
-                }
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Scared",
+                    bundle = speakerBundleMercurieScared,
+                },
             });
 
             SpeakerBundle speakerBundleMercurieMain = new SpeakerBundle();
@@ -422,7 +444,12 @@ namespace SorasToybox.Fools
             speakerBundleMercurieMainSad.dialogueSound = speakerBundleMercurieSad.dialogueSound;
             speakerBundleMercurieMainSad.portrait = ResourceLoader.LoadSprite("mercurie_frontsad", new Vector2(0.5f, 0f), 32);
 
-            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurie, false, false, new SpeakerEmote[5]
+            SpeakerBundle speakerBundleMercurieMainScared = new SpeakerBundle();
+            speakerBundleMercurieMainScared.bundleTextColor = speakerBundleMercurie.bundleTextColor;
+            speakerBundleMercurieMainScared.dialogueSound = speakerBundleMercurie.dialogueSound;
+            speakerBundleMercurieMainScared.portrait = ResourceLoader.LoadSprite("mercuriemain_talkscared", new Vector2(0.5f, 0f), 32);
+
+            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurie, false, false, new SpeakerEmote[6]
             {
                 new SpeakerEmote
                 {
@@ -448,6 +475,11 @@ namespace SorasToybox.Fools
                 {
                     emotion = "Sad",
                     bundle = speakerBundleMercurieMainSad,
+                },
+                new SpeakerEmote
+                {
+                    emotion = "Scared",
+                    bundle = speakerBundleMercurieMainScared,
                 },
             });
         }

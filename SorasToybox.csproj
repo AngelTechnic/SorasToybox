@@ -94,6 +94,7 @@
     <None Remove="Assets\Fools\Karma\karma_sauce.png" />
     <None Remove="Assets\Fools\Mercurie\mercuriemain_talk.png" />
     <None Remove="Assets\Fools\Mercurie\mercuriemain_talkmad.png" />
+    <None Remove="Assets\Fools\Mercurie\mercuriemain_talkscared.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_accelerator.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_back.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_clock.png" />
@@ -105,6 +106,7 @@
     <None Remove="Assets\Fools\Mercurie\mercurie_overworld.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_talk.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_talkmad.png" />
+    <None Remove="Assets\Fools\Mercurie\mercurie_talkscared.png" />
     <None Remove="Assets\Fools\Mercurie\mercurie_theend.png" />
     <None Remove="Assets\Fools\Venza\venza_apology.png" />
     <None Remove="Assets\Fools\Venza\venza_back.png" />
@@ -259,8 +261,10 @@
     <EmbeddedResource Include="Assets\Fools\Journal Mode\malachai.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_front.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_frontserious.png" />
+    <EmbeddedResource Include="Assets\Fools\Mercurie\mercuriemain_talkscared.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontsad.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />
+    <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_talkscared.png" />
     <EmbeddedResource Include="Assets\Fools\Venza\venza_apology.png" />
     <EmbeddedResource Include="Assets\Fools\Venza\venza_back.png" />
     <EmbeddedResource Include="Assets\Fools\Venza\venza_front.png" />
