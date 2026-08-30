@@ -271,8 +271,9 @@ namespace SorasToybox //Mod namespace
             PlasticFork.Add();
             DriveItem.Add();
             BadPublicity.Add();
-            Identitypolitik.Add();
+            PassionlessSuffering.Add();
             FilmProjector.Add();
+            Identitypolitik.Add();
             LucifersHead.Add();
 
 

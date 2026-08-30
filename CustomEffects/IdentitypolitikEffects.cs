@@ -7,18 +7,15 @@ using UnityEngine;
 namespace SorasToybox.CustomEffects
 {
     public class IdentitypolitikCondition : EffectorConditionSO
-    {
+    {        
         public override bool MeetCondition(IEffectorChecks effector, object args)
         {
-            if (args is IntegerReference reference)
+            if (args is IntegerReference ex)
             {
-                StatusEffect_Apply_Effect whiplashMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
-                whiplashMe._Status = StatusField.GetCustomStatusEffect("Whiplash_ID");
+                if (ex.value <= 0) { return false; }
+                IUnit caster = effector as IUnit;
+                caster.ApplyStatusEffect(StatusField.GetCustomStatusEffect("Whiplash_ID"), ex.value);
 
-                CombatManager.Instance.AddSubAction(new EffectAction(new EffectInfo[]
-                {
-                    Effects.GenerateEffect(whiplashMe, reference.value, Targeting.Slot_SelfSlot),
-                }, effector as IUnit));
             }
             return false;
         }

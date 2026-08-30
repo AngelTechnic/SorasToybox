@@ -17,6 +17,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Cranes.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
@@ -191,6 +192,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_passionless.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_passionless_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_plasticfork.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_plasticfork_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
@@ -225,6 +228,7 @@
     <None Remove="Assets\Passives\passive_quicktempered.png" />
     <None Remove="Assets\Passives\passive_riposte.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
+    <None Remove="Assets\Passives\passive_suicidal.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />
@@ -239,6 +243,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Cranes.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
@@ -427,6 +432,8 @@
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_laughinggas_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_lucifershead_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_passionless.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_passionless_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_plasticfork.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_plasticfork_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_processedsludge.png" />
@@ -461,6 +468,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_quicktempered.png" />
     <EmbeddedResource Include="Assets\Passives\passive_riposte.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_suicidal.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />

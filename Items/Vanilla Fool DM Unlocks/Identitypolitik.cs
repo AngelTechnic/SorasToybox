@@ -17,15 +17,15 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
 
             PerformEffect_Item bloodyMask = new PerformEffect_Item("ST_Identitypolitik_ID", null, false)
             {
-                Item_ID = "Identitypolitik_TW",
+                Item_ID = "Identitypolitik_SW",
                 Name = "Identitypolitik",
                 Flavour = "\"For all the good that being 'you' does you.\"",
                 Description = "Gain Overtuned as a passive.\nOn dealing damage, gain equal Whiplash. Can you take what you dish out?",
-                TriggerOn = TriggerCalls.OnWillApplyDamage,
+                TriggerOn = TriggerCalls.OnDidApplyDamage,
                 Conditions = [ScriptableObject.CreateInstance<IdentitypolitikCondition>()],
                 EquippedModifiers = [getOvertuned],
                 StartsLocked = true,
-                ShopPrice = 6,
+                ShopPrice = 10,
                 Icon = ResourceLoader.LoadSprite("item_identitypolitik"),
                 IsShopItem = true,
                 OnUnlockUsesTHE = false,

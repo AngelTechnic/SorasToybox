@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-using BrutalAPI;
+﻿using BrutalAPI;
+using HarmonyLib;
 using SorasToybox.Custom_Passives;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomOther;
-using HarmonyLib;
+using System;
+using System.Collections.Generic;
+using System.Net;
+using System.Reflection;
+using System.Text;
 using UnityEngine;
 
 namespace SorasToybox.CustomPassives
@@ -186,6 +187,7 @@ namespace SorasToybox.CustomPassives
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STOvertunedInfo);
             }
 
+
             //godray
             StatusEffectPassiveAbility deathbound = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();
             deathbound.name = "ST_Deathbound_PA";
@@ -201,6 +203,29 @@ namespace SorasToybox.CustomPassives
             Passives.AddCustomPassiveToPool("ST_Deathbound_PA", "Deathbound", deathbound);
             GlossaryPassives STDeathboundInfo = new GlossaryPassives("Deathbound", "This party member/enemy is permanently Linked.", ResourceLoader.LoadSprite("passive_godray"));
             LoadedDBsHandler.GlossaryDB.AddNewPassive(STDeathboundInfo);
+
+            //lifting suicidal from the not workshop build and testing my ability to parse ILSpy's bullshit
+            if (!LoadedDBsHandler._PassiveDB._PassivesPool.Contains("ITA_Suicidal_PA"))
+            {
+                ChangeMaxHealthEffect loseHealth = ScriptableObject.CreateInstance<ChangeMaxHealthEffect>();
+                loseHealth._increase = false;
+
+                DirectDeathEffect kys = ScriptableObject.CreateInstance<DirectDeathEffect>();
+                kys._obliterationDeath = true;
+
+                PerformEffectPassiveAbility suicidal = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                suicidal.m_PassiveID = "ITA_Suicidal_PA";
+                suicidal.passiveIcon = ResourceLoader.LoadSprite("passive_suicidal");
+                suicidal._characterDescription = "This party member's maximum health decreases by 1 on turn start. If their maximum health cannot be decreased further, they will instantly die.";
+                suicidal._enemyDescription = "This enemy's maximum health decreases by 1 when they use an ability. If their maximum health cannot be decreased further, they will instantly die.";
+                suicidal._triggerOn = [TriggerCalls.OnTurnStart];
+                suicidal.effects =
+                [
+                    Effects.GenerateEffect(loseHealth, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(kys, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                ];
+                Passives.AddCustomPassiveToPool("ITA_Suicidal_PA", "Suicidal (1)", suicidal);
+            }
 
             //stole this wholesale from radio ooooops
             if (SorasToybox.CrossMod.SaltEnemies)
@@ -221,6 +246,7 @@ namespace SorasToybox.CustomPassives
                 GlossaryPassives STItchyInfo = new GlossaryPassives("Itchy", "This enemy can't wait to act. In response to any party member manually moving or using an ability, they will perform their next action, and then gain another to replace the one they just performed.", ResourceLoader.LoadSprite("passive_itchy"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STItchyInfo);
             }
+
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("MadeOfFire_PA"))
             {
                 DamageTypeImmunityPassiveAbility fireproofPassive = ScriptableObject.CreateInstance<DamageTypeImmunityPassiveAbility>();
