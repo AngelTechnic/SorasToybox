@@ -236,6 +236,7 @@
     <None Remove="Assets\Passives\passive_riposte.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Passives\passive_suicidal.png" />
+    <None Remove="Assets\Passives\ProductionPassive.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
     <None Remove="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />
@@ -483,6 +484,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_riposte.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
     <EmbeddedResource Include="Assets\Passives\passive_suicidal.png" />
+    <EmbeddedResource Include="Assets\Passives\ProductionPassive.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostSelected.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenManaCostUnselected.png" />

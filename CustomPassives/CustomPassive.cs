@@ -218,14 +218,14 @@ namespace SorasToybox.CustomPassives
 
             family.m_PassiveID = "Family_ID";
             family.passiveIcon = ResourceLoader.LoadSprite("passive_family.png");
-            family._triggerOn = [TriggerCalls.OnBeforeCombatStart, TriggerCalls.OnRoundFinished];
+            family._triggerOn = [TriggerCalls.OnBeforeCombatStart, TriggerCalls.TimelineEndReached];
             family.effects =
                 [
                     Effects.GenerateEffect(whereBabies, 1, Targeting.Unit_OtherAllies),
                     Effects.GenerateEffect(giveMeMoreMoves, 1, Targeting.Slot_SelfSlot),
                 ];
             family._characterDescription = "This party member is adopted and gets a cool hat. Not really, sorry. But could you imagine?";
-            family._enemyDescription = "At the start of the fight and the end of each round, gain Alacrity equal to the amount of other Infantile enemies present.";
+            family._enemyDescription = "At the start of the fight and the end of the timeline, gain Alacrity equal to the amount of other Infantile enemies present.";
             family.doesPassiveTriggerInformationPanel = true;
 
             Passives.AddCustomPassiveToPool("ST_Family_PA", "Family", family);
