@@ -1,20 +1,24 @@
-﻿global using UnityEngine;
-global using BrutalAPI;
+﻿global using BrutalAPI;
+global using UnityEngine;
 using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;    
-using SorasToybox.CustomStatusField;
-using SorasToybox.CustomPassives;
+using HarmonyLib;
+using MonoMod.RuntimeDetour;
 using SorasToybox.CustomEffects;
+using SorasToybox.CustomPassives;
 using SorasToybox.CustomPigment;
-using SorasToybox.MiscPatches;
+using SorasToybox.CustomStatusField;
+using SorasToybox.Encounters;
 using SorasToybox.Enemies;
+using SorasToybox.Events;
 using SorasToybox.Fools;
 using SorasToybox.Items;
-using HarmonyLib;
-using SorasToybox.Encounters;
-using SorasToybox.Events;
 using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using SorasToybox.MiscPatches;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
 
 namespace SorasToybox //Mod namespace
 {
@@ -43,6 +47,47 @@ namespace SorasToybox //Mod namespace
         public static ConfigEntry<bool> gardenantagonist;
         public static ConfigEntry<bool> altboundarymusic;
         public static ConfigEntry<bool> altforgottenmusic;
+
+        //i stole the following from ITA directly
+        public static void PCall(Action call)
+        {
+            try { call(); }
+            catch (Exception ex)
+            {
+                try
+                {
+                    Debug.LogError(call.GetMethodInfo().ReflectedType + " " + call.GetMethodInfo().Name + " FUCKING FAILED TO GET ADDED");
+                }
+                catch
+                {
+                    Debug.LogError("some fucking function failed to get added");
+                }
+
+                Debug.LogError(ex.ToString() + ex.Message + ex.StackTrace);
+            }
+        }
+        public static class NotificationHook
+        {
+            public static List<Action<string, object, object>> BeforeActions;
+            public static List<Action<string, object, object>> AfterActions;
+            public static void AddAction(Action<string, object, object> action, bool before = false)
+            {
+                if (BeforeActions == null) BeforeActions = new List<Action<string, object, object>>();
+                if (AfterActions == null) AfterActions = new List<Action<string, object, object>>();
+                if (before) BeforeActions.Add(action);
+                else AfterActions.Add(action);
+            }
+            public static void PostNotification(Action<CombatManager, string, object, object> orig, CombatManager self, string notificationName, object sender, object args)
+            {
+                if (BeforeActions != null) foreach (Action<string, object, object> action in BeforeActions) action(notificationName, sender, args);
+                orig(self, notificationName, sender, args);
+                if (AfterActions != null) foreach (Action<string, object, object> action in AfterActions) action(notificationName, sender, args);
+            }
+            public static void Setup()
+            {
+                IDetour hook = new Hook(typeof(CombatManager).GetMethod(nameof(CombatManager.PostNotification), ~BindingFlags.Default), typeof(NotificationHook).GetMethod(nameof(PostNotification), ~BindingFlags.Default));
+            }
+        }
         public static class CrossMod
         {
             public static bool IntoTheAbyss = false;
@@ -99,6 +144,7 @@ namespace SorasToybox //Mod namespace
             CustomPigments.Add();
             //Log custom stuff (Do config thing with it)
             SaltExcessPassive.Add();
+
             Logger.LogInfo("Custom Effects in effect.");
  
 
@@ -108,6 +154,13 @@ namespace SorasToybox //Mod namespace
             {
                 Slatecarnate.Add();
             }
+
+            //Siren Crossmod
+            if (CrossMod.Siren)
+            {
+                DendriteDesibon.Add();
+                StoneGertar.Add();
+            }    
             //ITA Crossmod
             if (CrossMod.IntoTheAbyss)
             {
@@ -210,6 +263,12 @@ namespace SorasToybox //Mod namespace
 
 
             //Add items
+            //sirencrossmod check
+            if (CrossMod.Siren)
+            {
+                StoneWateringCan.Add();
+            }
+
             SentientArcanite.Add();
             UrbanSurvival.Add();
             AMsSeveredHead.Add();

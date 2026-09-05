@@ -10,6 +10,7 @@
     <None Remove="AssetBundles\sorastoybox" />
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
+    <None Remove="Assets\Achievements\Ach_Boss_Desibon.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
@@ -56,6 +57,9 @@
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
+    <None Remove="Assets\Enemies\Bosses\TimelineDesibonBoss.png" />
+    <None Remove="Assets\Enemies\Bosses\TimelineDesibonRevengeBoss.png" />
+    <None Remove="Assets\Enemies\Bosses\timelineStoneGertarBoss.png" />
     <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\DeadGearYinimro.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
@@ -165,6 +169,8 @@
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
     <None Remove="Assets\Items\item_setset.png" />
     <None Remove="Assets\Items\item_setset_locked.png" />
+    <None Remove="Assets\Items\item_stonewateringcan.png" />
+    <None Remove="Assets\Items\item_stonewateringcan_locked.png" />
     <None Remove="Assets\Items\item_tempusharness.png" />
     <None Remove="Assets\Items\item_tempusharness_locked.png" />
     <None Remove="Assets\Items\item_urbansurvival.png" />
@@ -219,6 +225,7 @@
     <None Remove="Assets\Passives\passive_deathbound.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
+    <None Remove="Assets\Passives\passive_family.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
     <None Remove="Assets\Passives\passive_hostile.png" />
     <None Remove="Assets\Passives\passive_itchy.png" />
@@ -241,6 +248,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Desibon.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Cranes.png" />
@@ -258,6 +266,9 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDesibonBoss.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDesibonRevengeBoss.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\timelineStoneGertarBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\deadNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineFacelessNoFace.png" />
@@ -380,6 +391,8 @@
     <EmbeddedResource Include="Assets\Items\item_bastard_nimbus_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis.png" />
     <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_stonewateringcan.png" />
+    <EmbeddedResource Include="Assets\Items\item_stonewateringcan_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_urbansurvival.png" />
     <EmbeddedResource Include="Assets\Items\item_urbansurvival_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
@@ -459,6 +472,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_deathbound.png" />
     <EmbeddedResource Include="Assets\Passives\passive_dismal.png" />
     <EmbeddedResource Include="Assets\Passives\passive_excess.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_family.png" />
     <EmbeddedResource Include="Assets\Passives\passive_godray.png" />
     <EmbeddedResource Include="Assets\Passives\passive_hostile.png" />
     <EmbeddedResource Include="Assets\Passives\passive_itchy.png" />

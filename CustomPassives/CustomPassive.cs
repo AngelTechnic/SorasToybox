@@ -188,7 +188,7 @@ namespace SorasToybox.CustomPassives
             }
 
 
-            //godray
+            //deathbound
             StatusEffectPassiveAbility deathbound = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();
             deathbound.name = "ST_Deathbound_PA";
             deathbound._passiveName = "Deathbound";
@@ -199,10 +199,40 @@ namespace SorasToybox.CustomPassives
             deathbound._enemyDescription = "This enemy is permanently Linked.";
             deathbound.doesPassiveTriggerInformationPanel = true;
 
-
             Passives.AddCustomPassiveToPool("ST_Deathbound_PA", "Deathbound", deathbound);
-            GlossaryPassives STDeathboundInfo = new GlossaryPassives("Deathbound", "This party member/enemy is permanently Linked.", ResourceLoader.LoadSprite("passive_godray"));
+            GlossaryPassives STDeathboundInfo = new GlossaryPassives("Deathbound", "This party member/enemy is permanently Linked.", ResourceLoader.LoadSprite("passive_deathbound"));
             LoadedDBsHandler.GlossaryDB.AddNewPassive(STDeathboundInfo);
+
+
+            //family passive attempts
+            CheckPassiveAbilityEffect whereBabies = ScriptableObject.CreateInstance<CheckPassiveAbilityEffect>();
+            whereBabies.m_PassiveID = Passives.Infantile.m_PassiveID;
+
+            StatusEffect_Apply_Effect giveMeMoreMoves = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            giveMeMoreMoves._Status = StatusField.GetCustomStatusEffect("Alacrity_ID");
+            giveMeMoreMoves._MultPreviousExitValueForEntry = true;
+
+            PerformEffectPassiveAbility family = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            family.name = "ST_Family_PA";
+            family._passiveName = "Family";
+
+            family.m_PassiveID = "Family_ID";
+            family.passiveIcon = ResourceLoader.LoadSprite("passive_family.png");
+            family._triggerOn = [TriggerCalls.OnBeforeCombatStart, TriggerCalls.OnRoundFinished];
+            family.effects =
+                [
+                    Effects.GenerateEffect(whereBabies, 1, Targeting.Unit_OtherAllies),
+                    Effects.GenerateEffect(giveMeMoreMoves, 1, Targeting.Slot_SelfSlot),
+                ];
+            family._characterDescription = "This party member is adopted and gets a cool hat. Not really, sorry. But could you imagine?";
+            family._enemyDescription = "At the start of the fight and the end of each round, gain Alacrity equal to the amount of other Infantile enemies present.";
+            family.doesPassiveTriggerInformationPanel = true;
+
+            Passives.AddCustomPassiveToPool("ST_Family_PA", "Family", family);
+            GlossaryPassives STFamilyInfo = new GlossaryPassives("Family", family._enemyDescription, ResourceLoader.LoadSprite("passive_family"));
+            LoadedDBsHandler.GlossaryDB.AddNewPassive(STFamilyInfo);
+
+
 
             //lifting suicidal from the not workshop build and testing my ability to parse ILSpy's bullshit
             if (!LoadedDBsHandler._PassiveDB._PassivesPool.Contains("ITA_Suicidal_PA"))
