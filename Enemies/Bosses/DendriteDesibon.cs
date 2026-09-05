@@ -85,7 +85,7 @@ namespace SorasToybox.Enemies
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").damageSound,
-                DeathSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").deathSound,
+                DeathSound = "event:/SorasSFX/Enemies/Crashout/CrashoutHurt",
                 UnitTypes = ["FemaleID", "Robot", "Zoincaillan"],
             };
             //prefab for this binch
@@ -191,10 +191,13 @@ namespace SorasToybox.Enemies
             meep.AddIntentsToTarget(Targeting.Slot_AllyLeft, [nameof(IntentType_GameIDs.Status_Ruptured), nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Mana_Generate)]);
             meep.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Ruptured)]);
 
+            StatusEffect_Apply_Effect getWhiplash = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getWhiplash._Status = StatusField.GetCustomStatusEffect("Whiplash_ID");
+
             Ability sheep = new Ability("ST_DesibonSheep_A")
             {
                 Name = "SHEEP SHEEP",
-                Description = "Spawns a Stone Gertar.\nInflicts 1 Ruptured to the Opposing party member.",
+                Description = "Spawns a Stone Gertar.\nInflicts 4 Whiplash to the Opposing party member.",
                 Cost = [],
                 Priority = Priority.Fast,
                 AnimationTarget = Targeting.Slot_SelfAll,
@@ -202,12 +205,12 @@ namespace SorasToybox.Enemies
                 Effects =
                 [
                     Effects.GenerateEffect(spawnGertar, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(getRuptured, 3, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getWhiplash, 4, Targeting.Slot_Front),
                 ],
                 Rarity = Rarity.Rare,
             };
             sheep.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Other_Spawn)]);
-            sheep.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Ruptured)]);
+            sheep.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Whiplash"]);
 
             ExtraAbilityInfo sheepExtra = new()
             {
@@ -217,7 +220,7 @@ namespace SorasToybox.Enemies
 
 
             desibon.AddEnemyAbilities([
-                beep, meep,
+                beep, meep, sheep,
                 ]);
 
             desibon.AddPassives([desibonGetsPissedTheFuckOff, Passives.ParentalGenerator(sheepExtra), Passives.GetCustomPassive("ST_Family_PA")]);
@@ -230,14 +233,14 @@ namespace SorasToybox.Enemies
             }
 
             BackwardsUnlockCompatibility.TryLockItemBehindAchievement("DesibonBoss_ACH", "StoneWateringCan_SW");
-            UnlockableModData desibonBossUnlockData = new UnlockableModData("DesibonsRevenge_BOSS");
+            UnlockableModData desibonBossUnlockData = new UnlockableModData("DendriteDesibon_BOSS");
             desibonBossUnlockData.hasModdedAchievementUnlock = true;
             desibonBossUnlockData.moddedAchievementID = "DesibonBoss_ACH";
             desibonBossUnlockData.hasItemUnlock = true;
             desibonBossUnlockData.items = ["StoneWateringCan_SW"];
 
             ListedUnlockCheck desibonUnlockCheck = ScriptableObject.CreateInstance<ListedUnlockCheck>();
-            desibonUnlockCheck.unlockID = "DesibonsRevenge_BOSS";
+            desibonUnlockCheck.unlockID = "DendriteDesibon_BOSS";
             desibonUnlockCheck.unlockData = desibonBossUnlockData;
             Unlocks.AddUnlock_BeatBoss(desibonUnlockCheck);
 

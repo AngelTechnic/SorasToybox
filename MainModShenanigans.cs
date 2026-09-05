@@ -211,6 +211,11 @@ namespace SorasToybox //Mod namespace
                 }
             }
 
+            if (CrossMod.Siren)
+            {
+                DesibonEncounter.Add();
+            }
+
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
             {
                 DozerEncounters.Add();

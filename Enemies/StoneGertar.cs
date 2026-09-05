@@ -48,7 +48,7 @@ namespace SorasToybox.Enemies
                 Effects =
                 [
                     Effects.GenerateEffect(thisIsGoodNewsMark, 8, Targeting.Slot_Front),
-                    Effects.GenerateEffect(whiplashByPrevious, 2, Targeting.Slot_Front),
+                    Effects.GenerateEffect(whiplashByPrevious, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(harlemShuffle, 1, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(false, 2)),
                 ],
             };
@@ -85,7 +85,7 @@ namespace SorasToybox.Enemies
                 AnimationTarget = Targeting.Slot_SelfSlot,
                 Effects =
                 [
-                    Effects.GenerateEffect(fuckMyShitUpFam, 90, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(fuckMyShitUpFam, 100, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(sayNoMore, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(spillBlood, 0, Targeting.Slot_SelfSlot),
                     
