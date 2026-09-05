@@ -23,7 +23,7 @@ namespace SorasToybox.Enemies
                 UnitTypes = ["Robot", "Zoincaillan"],
             };
             stoneGertar.PrepareEnemyPrefab("Assets/ToyboxEnemies/StoneGertar/StoneGertar Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
-            stoneGertar.AddPassives([Passives.Infantile, Passives.Forgetful, Passives.Inanimate]);
+            stoneGertar.AddPassives([Passives.InfantileGenerator(5), Passives.Forgetful, Passives.Inanimate]);
 
             HealEffect thisIsGoodNewsMark = ScriptableObject.CreateInstance<HealEffect>();
             thisIsGoodNewsMark._directHeal = true;
