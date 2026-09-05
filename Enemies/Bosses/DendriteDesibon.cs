@@ -93,21 +93,9 @@ namespace SorasToybox.Enemies
             //the below changes the highlight to surround a specific part of this enemy's prefab
             desibon.enemy.enemyTemplate.m_Data.m_Renderer = desibon.enemy.enemyTemplate.m_Data.m_Locator.transform.Find("Sprite").Find("BodyAnchor").Find("Body").GetComponent<SpriteRenderer>();
 
-            //setting up production passive. now you can clone babies!
-            ClownPassiveAbility.Setup();
-            ClownPassiveAbility produce = ScriptableObject.CreateInstance<ClownPassiveAbility>();
-            produce._passiveName = "Production (Stone Gertar)";
-            produce.passiveIcon = ResourceLoader.LoadSprite("ProductionPassive.png");
-            produce.m_PassiveID = "ProductionCasual_PA";
-            produce._enemyDescription = "On any Infantile enemy being damaged, spawn a Stone Gertar.";
-            produce._characterDescription = "GREAT BIG FAT ASS WOOLY MAMMOTH";
-            produce.doesPassiveTriggerInformationPanel = true;
+            //yeet clown, only baby now
             SpawnEnemyAnywhereEffect spawnGertar = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
-            produce.effects = [
-                Effects.GenerateEffect(spawnGertar, 1, Targeting.Slot_SelfSlot)
-                ];
-            produce._triggerOn = [ClownPassiveAbility.Trigger];
-            Passives.AddCustomPassiveToPool("ProductionGertarDesibon_PA", "Production (Stone Gertar)", produce);
+            spawnGertar.enemy = LoadedAssetsHandler.GetEnemy("StoneGertar_EN");
 
             AnimationVisualsEffect jumpscareHaha = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             jumpscareHaha._visuals = Visuals.Messiah;
@@ -135,7 +123,7 @@ namespace SorasToybox.Enemies
             };
 
             //adding passives
-            desibon.AddPassives([desibonGetsPissedTheFuckOff, produce, Passives.GetCustomPassive("ST_Family_PA")]);
+
 
             //effect set up
             SwapToOneSideEffect moveLeft = ScriptableObject.CreateInstance<SwapToOneSideEffect>();
@@ -206,7 +194,7 @@ namespace SorasToybox.Enemies
             Ability sheep = new Ability("ST_DesibonSheep_A")
             {
                 Name = "SHEEP SHEEP",
-                Description = "Spawns a Stone Gertar.\nInflicts 3 Ruptured to the Opposing party member.",
+                Description = "Spawns a Stone Gertar.\nInflicts 1 Ruptured to the Opposing party member.",
                 Cost = [],
                 Priority = Priority.Fast,
                 AnimationTarget = Targeting.Slot_SelfAll,
@@ -221,9 +209,18 @@ namespace SorasToybox.Enemies
             sheep.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Other_Spawn)]);
             sheep.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Ruptured)]);
 
+            ExtraAbilityInfo sheepExtra = new()
+            {
+                ability = sheep.GenerateEnemyAbility().ability,
+                rarity = Rarity.Impossible,
+            };
+
+
             desibon.AddEnemyAbilities([
-                beep, meep, sheep,
+                beep, meep,
                 ]);
+
+            desibon.AddPassives([desibonGetsPissedTheFuckOff, Passives.ParentalGenerator(sheepExtra), Passives.GetCustomPassive("ST_Family_PA")]);
 
             desibon.AddEnemy(true, false, false);
 

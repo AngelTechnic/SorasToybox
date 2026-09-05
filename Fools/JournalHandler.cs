@@ -64,6 +64,9 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("YNL_EN", "YourNewLife");
             targetListMercurie.Add("NowhereMan_EN", "NowhereMan");
             targetListMercurie.Add("BFElemental_EN", "Brainfuck");
+            targetListMercurie.Add("DendriteDesibon_BOSS", "Desibon");
+            targetListMercurie.Add("DesibonsRevenge_BOSS", "DesibonsRevenge");
+            targetListMercurie.Add("StoneGertar_EN", "StoneGertar");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 

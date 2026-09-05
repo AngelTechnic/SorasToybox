@@ -7,7 +7,7 @@ namespace SorasToybox.CustomPassives
 {
     public class ClownPassiveAbility : PerformEffectPassiveAbility
     {
-        public static TriggerCalls Trigger => (TriggerCalls)1914194;
+        public static TriggerCalls Trigger => (TriggerCalls)3163163;
         public static bool Set;
         public static void Setup()
         {
