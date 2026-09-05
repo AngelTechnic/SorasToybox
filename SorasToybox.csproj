@@ -268,7 +268,7 @@
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDesibonBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDesibonRevengeBoss.png" />
-    <EmbeddedResource Include="Assets\Enemies\Bosses\timelineStoneGertarBoss.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineStoneGertarBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\deadNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineFacelessNoFace.png" />

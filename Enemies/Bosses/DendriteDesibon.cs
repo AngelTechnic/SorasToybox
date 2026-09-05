@@ -22,9 +22,9 @@ namespace SorasToybox.Enemies
                 Health = 100,
                 HealthColor = Pigments.Red,
                 Size = 1,
-                CombatSprite = ResourceLoader.LoadSprite("timelineDesibonRevengeBoss.png", new Vector2(0.5f, 0f), 32),
+                CombatSprite = ResourceLoader.LoadSprite("TimelineDesibonRevengeBoss.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
-                OverworldAliveSprite = ResourceLoader.LoadSprite("timelineDesibonRevengeBoss.png", new Vector2(0.5f, 0f), 32),
+                OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDesibonRevengeBoss.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").damageSound,
                 DeathSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").deathSound,
                 UnitTypes = ["FemaleID", "Robot", "Zoincaillan"],
@@ -81,9 +81,9 @@ namespace SorasToybox.Enemies
                 Health = 100,
                 HealthColor = Pigments.Grey,
                 Size = 1,
-                CombatSprite = ResourceLoader.LoadSprite("timelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
+                CombatSprite = ResourceLoader.LoadSprite("TimelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
-                OverworldAliveSprite = ResourceLoader.LoadSprite("timelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
+                OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").damageSound,
                 DeathSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").deathSound,
                 UnitTypes = ["FemaleID", "Robot", "Zoincaillan"],
@@ -218,6 +218,8 @@ namespace SorasToybox.Enemies
                 ],
                 Rarity = Rarity.Rare,
             };
+            sheep.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Other_Spawn)]);
+            sheep.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Ruptured)]);
 
             desibon.AddEnemyAbilities([
                 beep, meep, sheep,
