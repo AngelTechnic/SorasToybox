@@ -32,6 +32,8 @@ namespace SorasToybox.Encounters
             {
                 Debug.Log("Getting portal data");
             }
+
+
             Material portalMaterial = LoadedDBsHandler.MiscDB.GetMaterial(Misc.MaterialIDs.Portal.ToString()); //Get the portal material
             if (SorasToybox.extradebug.Value)
             {

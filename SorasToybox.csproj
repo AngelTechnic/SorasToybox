@@ -54,12 +54,12 @@
     <None Remove="Assets\Enemies\Bosses\DeathmatchPortal.png" />
     <None Remove="Assets\Enemies\Bosses\deathmatch_nameplate.png" />
     <None Remove="Assets\Enemies\Bosses\deathmatch_splash.png" />
+    <None Remove="Assets\Enemies\Bosses\DesibonPortal.png" />
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDesibonBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDesibonRevengeBoss.png" />
-    <None Remove="Assets\Enemies\Bosses\timelineStoneGertarBoss.png" />
     <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\DeadGearYinimro.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
@@ -267,9 +267,10 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\DesibonPortal.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDesibonBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineDesibonRevengeBoss.png" />
-    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineStoneGertarBoss.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\TimelineGeodeGertarBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\deadNowhere.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadParadoxYinimro.png" />
     <EmbeddedResource Include="Assets\Enemies\timelineFacelessNoFace.png" />

@@ -17,6 +17,9 @@ namespace SorasToybox.Enemies
             StatusEffect_Apply_Effect getAnte = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getAnte._Status = StatusField.GetCustomStatusEffect("Ante_ID");
 
+            StatusEffect_Apply_Effect getWhiplash = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getWhiplash._Status = StatusField.GetCustomStatusEffect("Whiplash_ID");
+
             Enemy desibonRevenge = new Enemy("Desibon's Revenge", "DesibonsRevenge_BOSS")
             {
                 Health = 100,
@@ -54,19 +57,21 @@ namespace SorasToybox.Enemies
             Ability baa = new Ability("ST_DesibonBaa_A")
             {
                 Name = "BAAHAAHAA",
-                Description = "Heals the Opposing party member, then inflicts Whiplash on them equal to the amount healed.\nIf no healing was dealt, inflicts 2 Ruptured to the Left and Right party members.\nGains 1 Ante.",
+                Description = "Heals the Opposing party member, then inflicts Whiplash on them equal to the amount healed.\nIf no healing was dealt, inflicts 2 Ruptured to them and 2 Whiplash to the Left and Right party members.\nGains 1 Ante.",
                 Rarity = Rarity.Common,
                 Visuals = Visuals.Slap,
+                AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(thisIsGoodNewsMark, 7, Targeting.Slot_Front),
                     Effects.GenerateEffect(whiplashByPrevious, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(getRuptured, 2, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(getRuptured, 2, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(false, 2)),
+                    Effects.GenerateEffect(getWhiplash, 2, Targeting.Slot_OpponentSides, Effects.CheckPreviousEffectCondition(false, 3)),
                     Effects.GenerateEffect(getAnte, 1, Targeting.Slot_SelfSlot),
                 ],
             };
-            baa.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10), "Status_Whiplash"]);
-            baa.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Status_Ruptured)]);
+            baa.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10), "Status_Whiplash", nameof(IntentType_GameIDs.Status_Ruptured)]);
+            baa.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Whiplash"]);
             baa.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Ante"]);
 
             desibonRevenge.AddEnemyAbilities([baa]);
@@ -95,7 +100,7 @@ namespace SorasToybox.Enemies
 
             //yeet clown, only baby now
             SpawnEnemyAnywhereEffect spawnGertar = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
-            spawnGertar.enemy = LoadedAssetsHandler.GetEnemy("StoneGertar_EN");
+            spawnGertar.enemy = LoadedAssetsHandler.GetEnemy("GeodeGertar_EN");
 
             AnimationVisualsEffect jumpscareHaha = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             jumpscareHaha._visuals = Visuals.Messiah;
@@ -191,13 +196,12 @@ namespace SorasToybox.Enemies
             meep.AddIntentsToTarget(Targeting.Slot_AllyLeft, [nameof(IntentType_GameIDs.Status_Ruptured), nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Mana_Generate)]);
             meep.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Status_Ruptured)]);
 
-            StatusEffect_Apply_Effect getWhiplash = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
-            getWhiplash._Status = StatusField.GetCustomStatusEffect("Whiplash_ID");
+
 
             Ability sheep = new Ability("ST_DesibonSheep_A")
             {
                 Name = "SHEEP SHEEP",
-                Description = "Spawns a Stone Gertar.\nInflicts 4 Whiplash to the Opposing party member.",
+                Description = "Spawns a Geode Gertar.\nInflicts 4 Whiplash to the Opposing party member.",
                 Cost = [],
                 Priority = Priority.Fast,
                 AnimationTarget = Targeting.Slot_SelfAll,

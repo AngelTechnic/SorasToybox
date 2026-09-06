@@ -27,7 +27,7 @@ namespace SorasToybox.Items
                 Name = "Stone Watering Can",
                 Item_ID = "StoneWateringCan_SW",
                 Flavour = "\"And now the flowers will grow!\"",
-                Description = "Inflict 1 Edema to all enemies at the start of each turn. On combat start, turn all Grey enemies into a different color",
+                Description = "Inflict 1 Edema to all enemies at the start of each turn.\nOn combat start, turn all Grey enemies into a different color.",
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =
                 [

@@ -5,25 +5,25 @@ using System.Text;
 
 namespace SorasToybox.Enemies
 {
-    public class StoneGertar
+    public class GeodeGertar
     {
         public static void Add()
         {
 
-            Enemy stoneGertar = new Enemy("Stone Gertar", "StoneGertar_EN")
+            Enemy geodeGertar = new Enemy("Geode Gertar", "GeodeGertar_EN")
             {
                 Health = 10,
                 HealthColor = Pigments.Grey,
                 Size = 1,
-                CombatSprite = ResourceLoader.LoadSprite("TimelineStoneGertarBoss.png", new Vector2(0.5f, 0f), 32),
+                CombatSprite = ResourceLoader.LoadSprite("TimelineGeodeGertarBoss.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
-                OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineStoneGertarBoss.png", new Vector2(0.5f, 0f), 32),
+                OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineGeodeGertarBoss.png", new Vector2(0.5f, 0f), 32),
                 DamageSound = LoadedAssetsHandler.GetEnemy("Tumult_EN").damageSound,
                 DeathSound = LoadedAssetsHandler.GetEnemy("Tumult_EN").deathSound,
                 UnitTypes = ["Robot", "Zoincaillan"],
             };
-            stoneGertar.PrepareEnemyPrefab("Assets/ToyboxEnemies/StoneGertar/StoneGertar Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
-            stoneGertar.AddPassives([Passives.InfantileGenerator(5), Passives.Forgetful, Passives.Inanimate]);
+            geodeGertar.PrepareEnemyPrefab("Assets/ToyboxEnemies/GeodeGertar/GeodeGertar Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
+            geodeGertar.AddPassives([Passives.InfantileGenerator(5), Passives.Forgetful, Passives.Inanimate]);
 
             HealEffect thisIsGoodNewsMark = ScriptableObject.CreateInstance<HealEffect>();
             thisIsGoodNewsMark._directHeal = true;
@@ -37,7 +37,7 @@ namespace SorasToybox.Enemies
 
 
 
-            Ability gertar1 = new Ability("ST_StoneGertarReverseLL_A")
+            Ability gertar1 = new Ability("ST_geodeGertarReverseLL_A")
             {
                 Name = "Reverse Life Leech",
                 Description = "Heals the Opposing party member. Inflicts Whiplash on them equal to twice the amount healed.\nIf no health was gained, moves the Opposing party member Left or Right.",
@@ -76,7 +76,7 @@ namespace SorasToybox.Enemies
             GenerateCasterHealthManaEffect spillBlood = ScriptableObject.CreateInstance<GenerateCasterHealthManaEffect>();
             
 
-            Ability gertar3 = new Ability("ST_StoneGertarSeeding_A")
+            Ability gertar3 = new Ability("ST_geodeGertarSeeding_A")
             {
                 Rarity = Rarity.Impossible,
                 Name = "Explosive Seeding",
@@ -102,7 +102,7 @@ namespace SorasToybox.Enemies
             AddPassiveEffect gainBonus = ScriptableObject.CreateInstance<AddPassiveEffect>();
             gainBonus._passiveToAdd = Passives.BonusAttackGenerator(gertarExtra);
 
-            Ability gertar2 = new Ability("ST_StoneGertarBlossom_A")
+            Ability gertar2 = new Ability("ST_geodeGertarBlossom_A")
             {
                 Name = "Blossom",
                 Description = "This enemy loses Inanimate, becomes Blue, inflicts 2 Petrified to the Opposing party member, and learns \"Explosive Seeding\"as a Bonus Attack.",
@@ -123,11 +123,11 @@ namespace SorasToybox.Enemies
             gertar2.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc), nameof(IntentType_GameIDs.Mana_Modify)]);
             gertar2.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Petrified"]);
 
-            stoneGertar.AddEnemyAbilities([
+            geodeGertar.AddEnemyAbilities([
                 gertar1, gertar2,
                 ]);
 
-            stoneGertar.AddEnemy(true, true, true);
+            geodeGertar.AddEnemy(true, true, true);
         }
     }
 }

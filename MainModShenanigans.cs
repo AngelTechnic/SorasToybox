@@ -158,7 +158,7 @@ namespace SorasToybox //Mod namespace
             //Siren Crossmod
             if (CrossMod.Siren)
             {
-                StoneGertar.Add();
+                GeodeGertar.Add();
                 DendriteDesibon.Add();
             }    
             //ITA Crossmod
