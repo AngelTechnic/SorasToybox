@@ -476,20 +476,20 @@ namespace SorasToybox.Fools
             };
             warp4.AddIntentsToTarget(Targeting.Slot_OpponentSides, [nameof(IntentType_GameIDs.Damage_7_10), nameof(IntentType_GameIDs.Other_MaxHealth_Alt), "Status_Irradiated"]);
 
-            whhvay.AddLevelData(4, [bonds1, salvation1, warp1]);
-            whhvay.AddLevelData(5, [bonds2, salvation2, warp2]);
-            whhvay.AddLevelData(6, [bonds3, salvation3, warp3]);
-            whhvay.AddLevelData(7, [bonds4, salvation4, warp4]);
+            whhvay.AddLevelData(6, [bonds1, salvation1, warp1]);
+            whhvay.AddLevelData(7, [bonds2, salvation2, warp2]);
+            whhvay.AddLevelData(8, [bonds3, salvation3, warp3]);
+            whhvay.AddLevelData(9, [bonds4, salvation4, warp4]);
 
             //cheevos
             //whhvay.AddFinalBossAchievementData(BossType_GameIDs.OsmanSinnoks.ToString(), "SorasToybox_Whhvay_Witness_ACH");
-            //whhvay.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Whhvay_Divine_ACH");
+            whhvay.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Whhvay_Divine_ACH");
             //if (SorasToybox.CrossMod.EnemyPack) { whhvay.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Whhvay_Abstraction_ACH"); }
             //if (SorasToybox.CrossMod.GlitchsFreaks) { whhvay.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Whhvay_Inevitable_ACH"); }
             //if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Whhvay_Forgotten_ACH"); }
             //if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Whhvay_Boundary_ACH"); }
             //if (SorasToybox.CrossMod.SaltEnemies) { whhvay.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Whhvay_Dreamer_ACH"); }
-            //whhvay.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Whhvay_Antagonist_ACH");
+            whhvay.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Whhvay_Antagonist_ACH");
             whhvay.AddCharacter(true, false);
             if (SorasToybox.extradebug.Value)
             {

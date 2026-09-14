@@ -11,7 +11,7 @@ namespace SorasToybox.Encounters
             Portals.AddPortalSign("Desibon_Sign", ResourceLoader.LoadSprite("TimelineDesibonBoss", new Vector2(0.5f, 0f), 32), Portals.BossIDColor);
             EnemyEncounter_API desibonBoss = new EnemyEncounter_API(EncounterType.Specific, "DendriteDesibon_BOSS", "Desibon_Sign")
             {
-                MusicEvent = "event:/VoxPopuliMusic",
+                MusicEvent = "event:/SorasMusic/Enemies/Bosses/DesibonMusic/RustyNails",
                 RoarEvent = "event:/VoxPopuliRoar",
                 UsesCustomOverworldRoom = true,
                 CustomOverworldRoomID = "SirenBossPortalRoom",

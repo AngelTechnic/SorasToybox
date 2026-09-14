@@ -170,7 +170,7 @@ namespace SorasToybox.CustomPassives
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STGodrayInfo);
             }
 
-
+            //Overtuned
             if (LoadedDBsHandler.StatusFieldDB.StatusEffects.ContainsKey("Overclock_ID"))
             {
                 StatusEffectPassiveAbility overtuned = ScriptableObject.CreateInstance<StatusEffectPassiveAbility>();

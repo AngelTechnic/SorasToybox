@@ -236,6 +236,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.AApocrypha)
             {
                 WhhvayFool.Add();
+                PsidocFool.Add();
             }
             JournalHandler.AddMiscSpeakers();
             if (journalmode.Value) 
@@ -286,6 +287,10 @@ namespace SorasToybox //Mod namespace
             //Heaven unlocks
             TempusBoostHarness.Add();
             HealthHat.Add();
+            if (CrossMod.AApocrypha)
+            {
+                Diagnopsis.Add();
+            }
 
 
 
@@ -329,6 +334,8 @@ namespace SorasToybox //Mod namespace
             ProcessedSludge.Add();
             FoodChain.Add();    
             LaughingGas.Add();
+            BrokenZipper.Add();
+            ExposureTherapy.Add();
             AtomSmasher.Add();
             VenzaFool.Add();
             FishOutOfWater.Add();
@@ -337,6 +344,7 @@ namespace SorasToybox //Mod namespace
             BadPublicity.Add();
             PassionlessSuffering.Add();
             FilmProjector.Add();
+            WeatherCycle.Add();
             Identitypolitik.Add();
             LucifersHead.Add();
 
@@ -344,7 +352,10 @@ namespace SorasToybox //Mod namespace
             //ST deathmatch unlocks
             MemoryOfGriyadin.Add();
             Setset.Add();
-
+            if (CrossMod.AApocrypha)
+            {
+                MemoryOfSyndomera.Add();
+            }
 
             //Sofanthiels Deathmatch Unlocks
             if (CrossMod.Sofanthiels)

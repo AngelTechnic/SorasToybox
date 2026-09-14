@@ -14,11 +14,9 @@ namespace SorasToybox.Items
             //Getting Red Color
             string redID = ColorUtility.ToHtmlStringRGB(Color.red);
 
-            //Burning (1) by retrieving from Firebird (salt enemies)
             ExtraPassiveAbility_Wearable_SMS iBleedFire = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
             iBleedFire._extraPassiveAbility = Passives.GetCustomPassive("Blazing_PA"); 
 
-            //Cold-Blooded
             ExtraPassiveAbility_Wearable_SMS butIllNeverBurn = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
             butIllNeverBurn._extraPassiveAbility = Passives.GetCustomPassive("MadeOfFire_PA");
 

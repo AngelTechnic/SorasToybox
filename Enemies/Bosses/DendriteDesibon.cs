@@ -166,7 +166,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(getRuptured, 1, Targeting.Slot_AllyRight),
                     Effects.GenerateEffect(hasRuptured, 1, Targeting.Slot_AllyRight),
                     Effects.GenerateEffect(makeRedSubAct, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(false, 1)),
-                    Effects.GenerateEffect(getRuptured, 2, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getRuptured, 1, Targeting.Slot_Front),
                 ],
                 Rarity = Rarity.Common,
             };
@@ -188,7 +188,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(getRuptured, 1, Targeting.Slot_AllyLeft),
                     Effects.GenerateEffect(hasRuptured, 1, Targeting.Slot_AllyLeft),
                     Effects.GenerateEffect(makeRedSubAct, 1, Targeting.Slot_AllyLeft, Effects.CheckPreviousEffectCondition(false, 1)),
-                    Effects.GenerateEffect(getRuptured, 2, Targeting.Slot_Front),
+                    Effects.GenerateEffect(getRuptured, 1, Targeting.Slot_Front),
                 ],
                 Rarity = Rarity.Common,
             };

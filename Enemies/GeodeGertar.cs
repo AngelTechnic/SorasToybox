@@ -37,7 +37,7 @@ namespace SorasToybox.Enemies
 
 
 
-            Ability gertar1 = new Ability("ST_geodeGertarReverseLL_A")
+            Ability gertar1 = new Ability("ST_GeodeGertarReverseLL_A")
             {
                 Name = "Reverse Life Leech",
                 Description = "Heals the Opposing party member. Inflicts Whiplash on them equal to twice the amount healed.\nIf no health was gained, moves the Opposing party member Left or Right.",
@@ -76,7 +76,7 @@ namespace SorasToybox.Enemies
             GenerateCasterHealthManaEffect spillBlood = ScriptableObject.CreateInstance<GenerateCasterHealthManaEffect>();
             
 
-            Ability gertar3 = new Ability("ST_geodeGertarSeeding_A")
+            Ability gertar3 = new Ability("ST_GeodeGertarSeeding_A")
             {
                 Rarity = Rarity.Impossible,
                 Name = "Explosive Seeding",
@@ -84,7 +84,7 @@ namespace SorasToybox.Enemies
                 Visuals = Visuals.Exsanguinate,
                 AnimationTarget = Targeting.Slot_SelfSlot,
                 Effects =
-                [
+                [   
                     Effects.GenerateEffect(fuckMyShitUpFam, 100, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(sayNoMore, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(spillBlood, 0, Targeting.Slot_SelfSlot),
@@ -102,10 +102,10 @@ namespace SorasToybox.Enemies
             AddPassiveEffect gainBonus = ScriptableObject.CreateInstance<AddPassiveEffect>();
             gainBonus._passiveToAdd = Passives.BonusAttackGenerator(gertarExtra);
 
-            Ability gertar2 = new Ability("ST_geodeGertarBlossom_A")
+            Ability gertar2 = new Ability("ST_G eodeGertarBlossom_A")
             {
                 Name = "Blossom",
-                Description = "This enemy loses Inanimate, becomes Blue, inflicts 2 Petrified to the Opposing party member, and learns \"Explosive Seeding\"as a Bonus Attack.",
+                Description = "This enemy loses Inanimate, becomes Blue, inflicts 2 Petrified to the Opposing party member, and learns \"Explosive Seeding\" as a Bonus Attack.",
                 AnimationTarget = Targeting.Slot_SelfAll,
                 Visuals = Visuals.ShedSkin,
                 Rarity = Rarity.AbsurdlyRare,

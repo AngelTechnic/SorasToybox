@@ -44,7 +44,7 @@ namespace SorasToybox.Fools
 
             AnimationVisualsEffect rebalanceVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             rebalanceVisuals._visuals = rebalanceAnim;
-            rebalanceVisuals._animationTarget = Targeting.Slot_SelfSlot;
+            rebalanceVisuals._animationTarget = Targeting.Slot_SelfAll;
 
             AnimationVisualsEffect goEffYourself = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             goEffYourself._visuals = Visuals.Insult;
