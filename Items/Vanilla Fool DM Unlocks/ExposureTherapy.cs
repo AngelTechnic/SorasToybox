@@ -26,18 +26,22 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
                 Name = "Exposure Therapy",
                 Flavour = "\"They're out to get you.\"",
                 Description = "On killing an enemy, make the highest health remaining enemies apply 8 Crosshairs to all slots they occupy.",
-                Item_ID = "ExposureTherapy_SW",
-                TriggerOn = TriggerCalls.OnTurnStart,
+                Item_ID = "ExposureTherapy_TW",
+                TriggerOn = TriggerCalls.OnKill,
                 Effects =
                 [
                     Effects.GenerateEffect(exposureSubAct, 1, Targeting.Spec_Unit_AllOpponents_Strongest),
                 ],
-                Icon = ResourceLoader.LoadSprite("item_zipper", null, 32, null),
+                Icon = ResourceLoader.LoadSprite("item_exposure", null, 32, null),
                 IsShopItem = false,
                 ShopPrice = 6,
                 StartsLocked = true,
-                OnUnlockUsesTHE = true,
+                OnUnlockUsesTHE = false,
             };
+            exposureTherapy.item._ItemTypeIDs =
+            [
+                ItemType_GameIDs.Magic.ToString(),
+            ];
 
             //Unlock this
             string achievementID = "SorasToybox_Fennec_Antagonist_ACH";
@@ -58,14 +62,14 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Fennec", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Broken Zipper", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Fennec", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(exposureTherapy.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Fennec", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("Fennec_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Broken Zipper.");
+                Debug.Log("Added Exposure Therapy.");
             }
         }
     }

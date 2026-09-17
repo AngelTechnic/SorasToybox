@@ -30,6 +30,10 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
                 IsShopItem = true,
                 OnUnlockUsesTHE = false,
             };
+            bloodyMask.item._ItemTypeIDs =
+                [
+                    ItemType_GameIDs.Face.ToString(),
+                ];
 
 
             //unlock this
@@ -51,7 +55,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Leviat", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Identitypolitik", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Leviat", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(bloodyMask.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Leviat", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("Leviat_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));

@@ -1,6 +1,7 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
 using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -59,10 +60,14 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("BlueSky_BOSS", ResourceLoader.LoadSprite("BlueSkyPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Memory of ARTRODUS", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_BlueSkies_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(goodSpaceStation.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_BlueSkies_Mercurie", null, 32, null), achievementID);
             unlockAchievement.IsSecret = true;
             unlockAchievement.SecretDescription = "Unlocked a new item.";
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BlueSky_BOSS", "The Dreamer");
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Memory of ARTRODUS.");
+            }
         }
     }
 }

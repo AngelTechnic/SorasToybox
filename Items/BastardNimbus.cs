@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
 
 namespace SorasToybox.Items
@@ -59,7 +60,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("DoulaBoss", ResourceLoader.LoadSprite("DoulaPearl", null, 32, null));
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Bastard Nimbus", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Karma", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(rrod.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AbstractionTitleLabel", "The Abstraction");
 
             if (SorasToybox.extradebug.Value)

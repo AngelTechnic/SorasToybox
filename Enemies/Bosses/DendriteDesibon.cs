@@ -28,8 +28,8 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("TimelineDesibonRevengeBoss.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDesibonRevengeBoss.png", new Vector2(0.5f, 0f), 32),
-                DamageSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").damageSound,
-                DeathSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").deathSound,
+                DamageSound = "event:/SorasSFX/Enemies/DendriteDesibon/DesibonHurt",
+                DeathSound = "event:/SorasSFX/Enemies/DendriteDesibon/DesibonDeath",
                 UnitTypes = ["FemaleID", "Robot", "Zoincaillan"],
             };
             desibonRevenge.PrepareEnemyPrefab("Assets/ToyboxEnemies/DesibonRevenge/DesibonRevenge Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
@@ -89,8 +89,8 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("TimelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("noCorpse.png", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineDesibonBoss.png", new Vector2(0.5f, 0f), 32),
-                DamageSound = LoadedAssetsHandler.GetEnemy("DarkYoung_BOSS").damageSound,
-                DeathSound = "event:/SorasSFX/Enemies/Crashout/CrashoutHurt",
+                DamageSound = "event:/SorasSFX/Enemies/DendriteDesibon/DesibonHurt",
+                DeathSound = "event:/SorasSFX/Enemies/DendriteDesibon/DesibonHurt",
                 UnitTypes = ["FemaleID", "Robot", "Zoincaillan"],
             };
             //prefab for this binch
@@ -155,7 +155,7 @@ namespace SorasToybox.Enemies
             Ability beep = new Ability("ST_DesibonBeep_A")
             {
                 Name = "BEEP BEEP",
-                Description = "Moves Left. Inflicts 1 Ruptured to the Right enemy. If that enemy then isn't Ruptured, force them to produce 2 Red pigment.\nInflicts 2 Ruptured to the Opposing party member.",
+                Description = "Moves Left. Inflicts 1 Ruptured to the Right enemy. If that enemy then isn't Ruptured, force them to produce 2 Red pigment.\nInflicts 1 Ruptured to the Opposing party member.",
                 Cost = [],
                 Priority = Priority.Fast,
                 AnimationTarget = Targeting.Slot_SelfAll,
@@ -177,7 +177,7 @@ namespace SorasToybox.Enemies
             Ability meep = new Ability("ST_DesibonMeep_A")
             {
                 Name = "MEEP MEEP",
-                Description = "Moves Right. Inflicts 1 Ruptured to the Left enemy. If that enemy then isn't Ruptured, force them to produce 2 Red pigment.\nInflicts 2 Ruptured to the Opposing party member.",
+                Description = "Moves Right. Inflicts 1 Ruptured to the Left enemy. If that enemy then isn't Ruptured, force them to produce 2 Red pigment.\nInflicts 1   Ruptured to the Opposing party member.",
                 Cost = [],
                 Priority = Priority.Fast,
                 AnimationTarget = Targeting.Slot_SelfAll,

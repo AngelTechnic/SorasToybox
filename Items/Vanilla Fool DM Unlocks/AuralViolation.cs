@@ -58,7 +58,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Anton", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Aural Violation", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Anton", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(heScreamLoudAsFuck.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Anton", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("Anton_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));

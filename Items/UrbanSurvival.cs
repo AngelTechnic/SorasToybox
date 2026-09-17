@@ -45,7 +45,10 @@ namespace SorasToybox.Items
             ];
 
             ItemUtils.AddItemToShopStatsCategoryAndGamePool(urbanSurvival.item, new ItemModdedUnlockInfo("UrbanSurvivalGuide_SW", ResourceLoader.LoadSprite("item_urbansurvival_locked", null, 32, null), "DeathmatchBoss_ACH"));
-
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Urban Survival Guide.");
+            }
         }
     }
 }

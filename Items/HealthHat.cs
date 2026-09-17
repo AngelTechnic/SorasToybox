@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
-using SorasToybox.CustomEffects;
 
 namespace SorasToybox.Items
 {
@@ -69,12 +70,12 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetUnlock_HeavenFinalBoss();
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Healthy Headwear", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Karma", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(dkyHat.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.DivineTitleLabel);
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Healthy Headwear.");
+                Debug.Log("Added the Healthy Headwear.");
             }
         }
     }

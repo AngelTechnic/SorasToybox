@@ -1,4 +1,5 @@
 ﻿using BrutalAPI.Items;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -53,7 +54,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Burnout", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Broken Zipper", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Burnout", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(brokenZipper.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Burnout", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("Burnout_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));

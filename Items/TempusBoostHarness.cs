@@ -53,8 +53,12 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetUnlock_HeavenFinalBoss();
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("TEMPUS Boost Harness", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(evilBirdSuit.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.DivineTitleLabel);
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the TEMPUS Boost Harness.");
+            }
         }
     }
 }

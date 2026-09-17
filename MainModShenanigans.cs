@@ -346,6 +346,7 @@ namespace SorasToybox //Mod namespace
             FilmProjector.Add();
             WeatherCycle.Add();
             Identitypolitik.Add();
+            Eternity.Add();
             LucifersHead.Add();
 
 

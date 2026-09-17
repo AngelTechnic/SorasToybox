@@ -27,9 +27,16 @@ namespace SorasToybox.Encounters
             };
 
             //Won't somebody please help me?
-            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN"); 
+            gearYinimroGardenMedium.SimpleAddEncounter(3, "GearYinimro_EN"); 
             gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "SkeweringHomunculus_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Iconograph_EN", 1, "Children6_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "ParkingSign_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "YieldSign_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "StopSign_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "HospitalSign_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "WildlifeSign_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "ExitSign_EN");
 
             gearYinimroGardenMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 9, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);

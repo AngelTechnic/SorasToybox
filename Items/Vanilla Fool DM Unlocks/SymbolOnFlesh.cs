@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
-using SorasToybox.CustomEffects;
 
 namespace SorasToybox.Items
 {
@@ -69,7 +70,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Gospel", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Symbol On Flesh", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Gospel", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(symbolOnFlesh.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Gospel", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("Gospel_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));

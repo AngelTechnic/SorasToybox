@@ -56,6 +56,7 @@ namespace SorasToybox.Items
                 ShopPrice = 9,
                 Icon = ResourceLoader.LoadSprite("item_worldofhassle"),
                 IsShopItem = true,
+                OnUnlockUsesTHE = false,
             };
 
             //Unlock this
@@ -77,8 +78,12 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Nobody_BOSS", ResourceLoader.LoadSprite("NobodyPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("World of Hassle", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Nobody_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(mickeyMilan.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Nobody_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("ForgottenTitleLabel", "The Forgotten");
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added World of Hassle.");
+            }
         }
     }
 }

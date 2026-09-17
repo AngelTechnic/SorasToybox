@@ -1,8 +1,9 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
 
 namespace SorasToybox.Items
@@ -47,9 +48,12 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetUnlock_OsmanFinalBoss();
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Gold-Flake Milkshake", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Osman_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(milkshake.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Osman_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.WitnessTitleLabel);
-
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Gold-Flake Milkshake.");
+            }
         }
     }
 }

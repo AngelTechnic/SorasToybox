@@ -16,6 +16,7 @@
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Bimini.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Burnout.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
@@ -60,6 +61,8 @@
     <None Remove="Assets\Enemies\Bosses\deathmatch_nameplate.png" />
     <None Remove="Assets\Enemies\Bosses\deathmatch_splash.png" />
     <None Remove="Assets\Enemies\Bosses\DesibonPortal.png" />
+    <None Remove="Assets\Enemies\Bosses\Desibon\DesibonSignature.png" />
+    <None Remove="Assets\Enemies\Bosses\Desibon\DesibonSplash.png" />
     <None Remove="Assets\Enemies\Bosses\Desibon\TreeArea.png" />
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
@@ -178,6 +181,8 @@
     <None Remove="Assets\Items\item_memoryofartrodus_locked.png" />
     <None Remove="Assets\Items\item_memoryofgriyadin.png" />
     <None Remove="Assets\Items\item_memoryofgriyadin_locked.png" />
+    <None Remove="Assets\Items\item_memoryofsyndomera.png" />
+    <None Remove="Assets\Items\item_memoryofsyndomera_locked.png" />
     <None Remove="Assets\Items\item_princess.png" />
     <None Remove="Assets\Items\item_princess_locked.png" />
     <None Remove="Assets\Items\item_quesadilla.png" />
@@ -204,6 +209,8 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_BSTRD_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_drive_locked.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_eternity.png" />
+    <None Remove="Assets\Items\Vanilla DM Unlocks\item_eternity_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_exposure.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_exposure_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_filmprojector.png" />
@@ -275,6 +282,7 @@
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Desibon.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Bimini.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Burnout.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Cranes.png" />
@@ -297,6 +305,8 @@
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\DesibonPortal.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\DesibonSignature.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\DesibonSplash.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\TimelineDesibonBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\TimelineDesibonRevengeBoss.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\TimelineGeodeGertarBoss.png" />
@@ -433,6 +443,8 @@
     <EmbeddedResource Include="Assets\Items\item_charybdis_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_diagnopsis.png" />
     <EmbeddedResource Include="Assets\Items\item_diagnopsis_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_memoryofsyndomera.png" />
+    <EmbeddedResource Include="Assets\Items\item_memoryofsyndomera_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_stonewateringcan.png" />
     <EmbeddedResource Include="Assets\Items\item_stonewateringcan_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_urbansurvival.png" />
@@ -477,6 +489,8 @@
     <EmbeddedResource Include="Assets\Items\item_worldofhassle.png" />
     <EmbeddedResource Include="Assets\Items\item_worldofhassle_locked.png" />
     <EmbeddedResource Include="Assets\Items\princess_feedingtime.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_eternity.png" />
+    <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_eternity_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_exposure.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_exposure_locked.png" />
     <EmbeddedResource Include="Assets\Items\Vanilla DM Unlocks\item_filmprojector.png" />

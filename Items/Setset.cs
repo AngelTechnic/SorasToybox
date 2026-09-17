@@ -61,8 +61,13 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Setset", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Karma", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(sufferingBuildsCharacter.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added Setset.");
+            }
         } 
     }
 }

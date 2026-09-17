@@ -62,7 +62,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Pearl", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Food Chain", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Pearl", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(sosigLink.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Pearl", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("Pearl_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));

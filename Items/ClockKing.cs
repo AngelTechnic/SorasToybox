@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
-using SorasToybox.CustomEffects;
 
 namespace SorasToybox.Items
 {
@@ -55,7 +56,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("March_BOSS", ResourceLoader.LoadSprite("MarchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Clock King", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_March_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(clockKing.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_March_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("InevitableTitleLabel", "The Inevitable");
 
             if (SorasToybox.extradebug.Value)

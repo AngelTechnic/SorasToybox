@@ -1,10 +1,11 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
-using SorasToybox.CustomEffects;
 using UnityEngine.UIElements;
 
 namespace SorasToybox.Items
@@ -63,7 +64,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Katalixi_BOSS", ResourceLoader.LoadSprite("KatalixiPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Lonely Hike", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Katalixi_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(lonelyHike.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Katalixi_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BoundaryTitleLabel", "The Boundary");
 
             if (SorasToybox.extradebug.Value)

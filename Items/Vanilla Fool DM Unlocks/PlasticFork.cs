@@ -69,7 +69,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("ShellyK", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Plastic Fork", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_ShellyK", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(plasticFork.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_ShellyK", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
 
             LoadedAssetsHandler.GetCharacter("ShellyK_CH").m_BossAchData.Add(new("Deathmatch_BOSS", achievementID));

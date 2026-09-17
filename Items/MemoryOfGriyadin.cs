@@ -1,6 +1,7 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
 using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -56,8 +57,13 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Deathmatch_BOSS", ResourceLoader.LoadSprite("DeathmatchPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Memory of Griyadin", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(evilSpaceStation.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Deathmatch_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AntagonistTitleLabel", "The Antagonist");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Memory of Griyadin.");
+            }
         }
     }
 }

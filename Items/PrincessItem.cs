@@ -96,8 +96,12 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("Katalixi_BOSS", ResourceLoader.LoadSprite("KatalixiPearl", null, 32, null));
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Princess", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Katalixi_Karma", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(princess.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Katalixi_Karma", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BoundaryTitleLabel", "The Boundary");
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added Princess.");
+            }
         }
     }
 }

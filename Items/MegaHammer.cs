@@ -1,11 +1,12 @@
-﻿using System;
+﻿using BrutalAPI;
+using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using BrutalAPI;
-using BrutalAPI.Items;
 using UnityEngine;
 using UnityEngine.UIElements.Experimental;
-using SorasToybox.CustomEffects;
 
 namespace SorasToybox.Items
 {
@@ -78,7 +79,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("BlueSky_BOSS", ResourceLoader.LoadSprite("BlueSkyPearl", null, 32, null));
             unlockCheck.AddUnlockData("Karma_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Mega Hammer", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_BlueSkies_Karma", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(mcHammer.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_BlueSkies_Karma", null, 32, null), achievementID);
             unlockAchievement.IsSecret = true;
             unlockAchievement.SecretDescription = "Unlocked a new item.";
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BlueSky_BOSS", "The Dreamer");

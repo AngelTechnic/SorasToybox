@@ -412,12 +412,12 @@ namespace SorasToybox.Fools
             TargetPerformEffectViaSubaction warp2SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             warp2SubAct.effects =
                 [
-                    Effects.GenerateEffect(getIrradiated, 1, Targeting.Slot_SelfAndSides),
+                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_SelfAndSides),
                 ];
 
             Ability warp2 = new Ability("Warp Matter", "ST_WhhvayWarp2_A")
             {
-                Description = "Deal 5 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them.\nMake them inflict 1 Irradiated to themselves and their Left and Right allies.",
+                Description = "Deal 5 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them.\nMake them inflict 2 Irradiated to themselves and their Left and Right allies.",
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = LoadedAssetsHandler.GetEnemyAbility("taneFavor_A").visuals,
                 AnimationTarget = Targeting.Slot_OpponentSides,
@@ -435,12 +435,12 @@ namespace SorasToybox.Fools
             TargetPerformEffectViaSubaction warp3SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             warp3SubAct.effects =
                 [
-                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_SelfAndSides),
+                    Effects.GenerateEffect(getIrradiated, 3, Targeting.Slot_SelfAndSides),
                 ];
 
             Ability warp3 = new Ability("Warp Energy", "ST_WhhvayWarp3_A")
             {
-                Description = "Deal 6 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them.\nMake them inflict 2 Irradiated to themselves and their Left and Right allies.",
+                Description = "Deal 6 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them.\nMake them inflict 3 Irradiated to themselves and their Left and Right allies.",
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = LoadedAssetsHandler.GetEnemyAbility("taneFavor_A").visuals,
                 AnimationTarget = Targeting.Slot_OpponentSides,
@@ -457,12 +457,12 @@ namespace SorasToybox.Fools
             TargetPerformEffectViaSubaction warp4SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             warp4SubAct.effects =
                 [
-                    Effects.GenerateEffect(getIrradiated, 3, Targeting.Slot_SelfAndSides),
+                    Effects.GenerateEffect(getIrradiated, 4, Targeting.Slot_SelfAndSides),
                 ];
 
             Ability warp4 = new Ability("Warp What Makes Them Real", "ST_WhhvayWarp4_A")
             {
-                Description = "Deal 7 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them.\nMake them inflict 3 Irradiated to themselves and their Left and Right allies.",
+                Description = "Deal 7 damage to the Left and Right enemies, boosted by their amount of Irradiated, then trim all excess health from them.\nMake them inflict 4 Irradiated to themselves and their Left and Right allies.",
                 Cost = [Pigments.Yellow, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = LoadedAssetsHandler.GetEnemyAbility("taneFavor_A").visuals,
                 AnimationTarget = Targeting.Slot_OpponentSides,

@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using BrutalAPI;
+﻿using BrutalAPI;
 using BrutalAPI.Items;
-using UnityEngine;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomOther;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
 
 namespace SorasToybox.Items
 {
@@ -120,7 +121,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetOrCreateUnlock_CustomFinalBoss("DoulaBoss", ResourceLoader.LoadSprite("DoulaPearl", null, 32, null));
             unlockCheck.AddUnlockData("Mercurie_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Forty-Proof", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Mercurie", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(fortyProof.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Mercurie", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AbstractionTitleLabel", "The Abstraction");
 
             if (SorasToybox.extradebug.Value)

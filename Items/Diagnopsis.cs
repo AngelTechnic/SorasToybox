@@ -1,4 +1,5 @@
 ﻿using BrutalAPI.Items;
+using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -56,7 +57,7 @@ namespace SorasToybox.Items
             FinalBossCharUnlockCheck unlockCheck = Unlocks.GetUnlock_HeavenFinalBoss();
             unlockCheck.AddUnlockData("Whhvay_CH", unlockData);
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Diagnopsis", "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Whhvay", null, 32, null), achievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements(diagnopsis.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Heaven_Whhvay", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.DivineTitleLabel);
 
             if (SorasToybox.extradebug.Value)

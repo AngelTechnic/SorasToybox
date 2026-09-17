@@ -50,6 +50,10 @@ namespace SorasToybox.Items
             };
             //adds to treasure pool, and other stuff related to unlocks (but it's unlocked by default so don't worry about it)
             ItemUtils.JustAddItemSoItCanBeLoaded(gayCrystal.item);
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("Added the Sentient Arcanite.");
+            }
         }
     }
 }
