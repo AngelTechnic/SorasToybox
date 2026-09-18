@@ -36,6 +36,10 @@ namespace SorasToybox.Items
                     Effects.GenerateEffect(makeBrokenPigment, 1, Targeting.Slot_SelfSlot),
                 ],
             };
+            lucifersHead.item._ItemTypeIDs =
+                [
+                    ItemType_GameIDs.Face.ToString(),
+                ];
 
 
             //unlock this
