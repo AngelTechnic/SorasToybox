@@ -22,7 +22,7 @@ namespace SorasToybox.Items
                 Flavour = "\"Who the hell puts GOLD in their milkshakes?\"",
                 Description = "On killing an enemy, gain 2 Overclock.",
                 IsShopItem = true,
-                ShopPrice = 15,
+                ShopPrice = 10,
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_goldmilkshake"),
                 TriggerOn = TriggerCalls.OnKill,

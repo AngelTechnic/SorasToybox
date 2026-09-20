@@ -283,6 +283,10 @@ namespace SorasToybox //Mod namespace
             //Osman Unlocks
             Milkshake.Add();
             Quesadilla.Add();
+            if (CrossMod.AApocrypha)
+            {
+                AstralHilt.Add();
+            }
 
             //Heaven unlocks
             TempusBoostHarness.Add();
@@ -319,6 +323,10 @@ namespace SorasToybox //Mod namespace
             {
                 LonelyHike.Add();
                 PrincessItem.Add();
+                if (CrossMod.AApocrypha)
+                {
+                    ExtrudedPolygon.Add();
+                }
             }
 
             //Blue Skies Unlocks

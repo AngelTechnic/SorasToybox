@@ -47,6 +47,7 @@
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Whhvay.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Karma.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Mercurie.png" />
+    <None Remove="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Whhvay.png" />
     <None Remove="Assets\Achievements\Katalixi Unlocks\KatalixiPearl.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Karma.png" />
     <None Remove="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
@@ -55,6 +56,7 @@
     <None Remove="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Mercurie.png" />
     <None Remove="Assets\Achievements\Nobody Unlocks\NobodyPearl.png" />
     <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
+    <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Whhvay.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPearl.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPortal.png" />
@@ -103,7 +105,6 @@
     <None Remove="Assets\Fools\Karma\karma_front.png" />
     <None Remove="Assets\Fools\Karma\karma_front_mad.png" />
     <None Remove="Assets\Fools\Karma\karma_menu.png" />
-    <None Remove="Assets\Fools\Karma\karma_menu_locked.png" />
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
     <None Remove="Assets\Fools\Karma\karma_rebalance.png" />
     <None Remove="Assets\Fools\Karma\karma_sauce.png" />
@@ -157,6 +158,8 @@
     <None Remove="Assets\Items\fortyproof_bottletoss.png" />
     <None Remove="Assets\Items\item_amsseveredhead.png" />
     <None Remove="Assets\Items\item_amsseveredhead_locked.png" />
+    <None Remove="Assets\Items\item_astralhilt.png" />
+    <None Remove="Assets\Items\item_astralhilt_locked.png" />
     <None Remove="Assets\Items\item_bastard_nimbus.png" />
     <None Remove="Assets\Items\item_bastard_nimbus_locked.png" />
     <None Remove="Assets\Items\item_charybdis.png" />
@@ -183,6 +186,8 @@
     <None Remove="Assets\Items\item_memoryofgriyadin_locked.png" />
     <None Remove="Assets\Items\item_memoryofsyndomera.png" />
     <None Remove="Assets\Items\item_memoryofsyndomera_locked.png" />
+    <None Remove="Assets\Items\item_polygon.png" />
+    <None Remove="Assets\Items\item_polygon_locked.png" />
     <None Remove="Assets\Items\item_princess.png" />
     <None Remove="Assets\Items\item_princess_locked.png" />
     <None Remove="Assets\Items\item_quesadilla.png" />
@@ -303,7 +308,9 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Whhvay.png" />
+    <EmbeddedResource Include="Assets\Achievements\Katalixi Unlocks\Ach_Katalixi_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Mercurie.png" />
+    <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Whhvay.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\DesibonPortal.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\DesibonSignature.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Desibon\DesibonSplash.png" />
@@ -354,6 +361,8 @@
     <EmbeddedResource Include="Assets\Fools\Whhvay\whhvay_overworld.png" />
     <EmbeddedResource Include="Assets\Intents\colophon_intent.png" />
     <EmbeddedResource Include="Assets\Intents\NewUnboundHealIntent.png" />
+    <EmbeddedResource Include="Assets\Items\item_astralhilt.png" />
+    <EmbeddedResource Include="Assets\Items\item_astralhilt_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking.png" />
     <EmbeddedResource Include="Assets\Items\item_clockking_locked.png" />
   </ItemGroup>
@@ -414,7 +423,6 @@
     <EmbeddedResource Include="Assets\Fools\Karma\karma_front.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_front_mad.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_menu.png" />
-    <EmbeddedResource Include="Assets\Fools\Karma\karma_menu_locked.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_overworld.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_rebalance.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sauce.png" />
@@ -445,6 +453,8 @@
     <EmbeddedResource Include="Assets\Items\item_diagnopsis_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_memoryofsyndomera.png" />
     <EmbeddedResource Include="Assets\Items\item_memoryofsyndomera_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_polygon.png" />
+    <EmbeddedResource Include="Assets\Items\item_polygon_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_stonewateringcan.png" />
     <EmbeddedResource Include="Assets\Items\item_stonewateringcan_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_urbansurvival.png" />
