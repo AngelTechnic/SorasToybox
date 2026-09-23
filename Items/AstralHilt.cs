@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Yarn.Analysis;
 
 namespace SorasToybox.Items
 {
@@ -19,7 +20,7 @@ namespace SorasToybox.Items
                 Item_ID = "AstralHilt_TW",
                 Name = "Astral Hilt",
                 Flavour = "\"Meet Potential Blade!\"",
-                Description = "This party member deals 20% more damage.\nThis party member instead deals 100% more damage if their target hails from the realm of twin suns.",
+                Description = "This party member deals 20% more damage.\nThis party member instead deals 100% more damage if their target hails from the realm of two suns.",
                 IsShopItem = true,
                 ShopPrice = 5,
                 DoesPopUpInfo = true,
@@ -31,12 +32,16 @@ namespace SorasToybox.Items
                 DefaultPercentageToModify = 20,
                 UnitTypeData = new UnitTypePercMod[] { unitTypePercMod },
             };
+            astralHilt.item._ItemTypeIDs =
+            [
+                ItemType_GameIDs.Knife.ToString()
+            ];
 
             //unlock this
             string achievementID = "SorasToybox_Whhvay_Witness_ACH";
             string unlockID = "SorasToybox_Whhvay_Witness_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(astralHilt.item, new ItemModdedUnlockInfo(astralHilt.Item_ID, ResourceLoader.LoadSprite("item_astralhilt_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(astralHilt.item, new ItemModdedUnlockInfo(astralHilt.Item_ID, ResourceLoader.LoadSprite("item_astralhilt_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, astralHilt.Item_ID);
 

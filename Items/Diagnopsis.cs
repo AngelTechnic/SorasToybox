@@ -38,6 +38,11 @@ namespace SorasToybox.Items
                 ],
             };
 
+            diagnopsis.item._ItemTypeIDs =
+            [
+                ItemType_GameIDs.Knife.ToString()
+            ];
+
             //unlock this
             string achievementID = "SorasToybox_Whhvay_Divine_ACH";
             string unlockID = "SorasToybox_Whhvay_Divine_Unlock";

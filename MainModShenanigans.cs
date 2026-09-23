@@ -310,6 +310,10 @@ namespace SorasToybox //Mod namespace
                 FriendlyGearYinimro.Add();
                 ClockKing.Add();
                 GhostPepper.Add();
+                if (CrossMod.AApocrypha)
+                {
+                    MurderersQuill.Add();
+                }
             }
 
             //Nobody Unlocks
@@ -317,6 +321,10 @@ namespace SorasToybox //Mod namespace
             {
                 WorldOfHassle.Add();
                 CharybdisItem.Add();
+                if (CrossMod.AApocrypha)
+                {
+                    SelfishHighHeels.Add();
+                }
             }
             //Katalixi Unlocks
             if (CrossMod.IntoTheAbyss && LoadedAssetsHandler.LoadedEnemies.ContainsKey("Nolocimes_Batretne_BOSS"))
@@ -345,17 +353,23 @@ namespace SorasToybox //Mod namespace
             BrokenZipper.Add();
             ExposureTherapy.Add();
             AtomSmasher.Add();
+            MyFace.Add();
+            PunchBowl.Add();
             VenzaFool.Add();
             FishOutOfWater.Add();
             PlasticFork.Add();
+            ToySaw.Add();
             DriveItem.Add();
             BadPublicity.Add();
             PassionlessSuffering.Add();
+            DivisionBell.Add();
             FilmProjector.Add();
             WeatherCycle.Add();
             Identitypolitik.Add();
             Eternity.Add();
             LucifersHead.Add();
+            SymbolOnFlesh.Add();
+            BSTRD.Add();
 
 
             //ST deathmatch unlocks

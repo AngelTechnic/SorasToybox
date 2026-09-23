@@ -1,13 +1,13 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
 using SorasToybox.CustomEffects;
-using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
+using SorasToybox.Items;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.UIElements.Experimental;
+
+
 
 namespace SorasToybox.Items
 {
@@ -73,12 +73,12 @@ namespace SorasToybox.Items
                 "FoodID",
             ];
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(ghostPepper.item, new ItemModdedUnlockInfo(ghostPepper.Item_ID, ResourceLoader.LoadSprite("item_ghostpepper_locked", null, 32, null), "SorasToybox_Karma_Inevitable_ACH"));
+
             //unlock this
             string achievementID = "SorasToybox_Karma_Inevitable_ACH";
             string unlockID = "SorasToybox_Karma_Inevitable_Unlock";
 
-
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(ghostPepper.item, new ItemModdedUnlockInfo(ghostPepper.Item_ID, ResourceLoader.LoadSprite("item_ghostpepper_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, ghostPepper.Item_ID);
 

@@ -486,7 +486,7 @@ namespace SorasToybox.Fools
             whhvay.AddFinalBossAchievementData(BossType_GameIDs.Heaven.ToString(), "SorasToybox_Whhvay_Divine_ACH");
             //if (SorasToybox.CrossMod.EnemyPack) { whhvay.AddFinalBossAchievementData("DoulaBoss", "SorasToybox_Whhvay_Abstraction_ACH"); }
             //if (SorasToybox.CrossMod.GlitchsFreaks) { whhvay.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Whhvay_Inevitable_ACH"); }
-            //if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Whhvay_Forgotten_ACH"); }
+            if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Whhvay_Forgotten_ACH"); }
             if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Whhvay_Boundary_ACH"); }
             //if (SorasToybox.CrossMod.SaltEnemies) { whhvay.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Whhvay_Dreamer_ACH"); }
             whhvay.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Whhvay_Antagonist_ACH");

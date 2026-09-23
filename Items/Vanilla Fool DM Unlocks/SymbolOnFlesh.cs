@@ -37,25 +37,27 @@ namespace SorasToybox.Items
                 Item_ID = "SymbolOnFlesh_TW",
                 Name = "Symbol On Flesh",
                 Flavour = "\"Your life could have been the most beautiful story ever told.\"",
-                Description = "If this party member were to die, if there is room for witnesses,  a jury of Shames emerges and their death is suspended.",
+                Description = "If this party member takes fatal damage, they will be given a second chance if there is room for Shame.",
                 ShopPrice = 10,
                 StartsLocked = true,
                 IsShopItem = false,
-                TriggerOn = TriggerCalls.CanDie,
+                TriggerOn = TriggerCalls.OnDamaged,
+                Conditions = [dead],
+                ConsumeOnUse = true,
                 Effects = 
                 [
                     Effects.GenerateEffect(countempty, 1, Targeting.Slot_OpponentAllSlots),
                     Effects.GenerateEffect(imsecretlyintothis, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(shameFollows, 1, Targeting.Slot_OpponentAllSlots, Effects.CheckMultiplePreviousEffectsCondition([true, true], [1, 2])),
+                    Effects.GenerateEffect(shameFollows, 5, Targeting.Slot_OpponentAllSlots, Effects.CheckMultiplePreviousEffectsCondition([true, true], [1, 2])),
                 ],
                 OnUnlockUsesTHE = true,
-                Icon = ResourceLoader.LoadSprite("item_laughinggas"),
+                Icon = ResourceLoader.LoadSprite("item_birthmark"),
             };
             //unlock this
             string achievementID = "SorasToybox_Gospel_Antagonist_ACH";
             string unlockID = "SorasToybox_Gospel_Antagonist_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(symbolOnFlesh.item, new ItemModdedUnlockInfo(symbolOnFlesh.Item_ID, ResourceLoader.LoadSprite("item_symbolonflesh_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(symbolOnFlesh.item, new ItemModdedUnlockInfo(symbolOnFlesh.Item_ID, ResourceLoader.LoadSprite("item_birthmark_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, symbolOnFlesh.Item_ID);
 

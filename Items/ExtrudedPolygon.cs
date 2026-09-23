@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Yarn.Analysis;
 
 namespace SorasToybox.Items
 {
@@ -28,8 +29,11 @@ namespace SorasToybox.Items
                 OnUnlockUsesTHE = true,
                 Icon = ResourceLoader.LoadSprite("item_polygon", null, 32, null),
                 DoesPopUpInfo = false,
-
             };
+            polygon.item._ItemTypeIDs =
+            [
+                ItemType_GameIDs.Knife.ToString()
+            ];
 
             //Unlock this
             string achievementID = "SorasToybox_Whhvay_Boundary_ACH";

@@ -7,8 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
-//using static A_Apocrypha.Encounters.Orph.H;
-//using static UnityEngine.GraphicsBuffer;
+
 
 namespace SorasToybox.Fools
 {
