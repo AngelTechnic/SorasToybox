@@ -112,6 +112,7 @@
     <None Remove="Assets\Fools\Karma\karma_front.png" />
     <None Remove="Assets\Fools\Karma\karma_front_mad.png" />
     <None Remove="Assets\Fools\Karma\karma_menu.png" />
+    <None Remove="Assets\Fools\Karma\karma_menu_locked.png" />
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
     <None Remove="Assets\Fools\Karma\karma_rebalance.png" />
     <None Remove="Assets\Fools\Karma\karma_sauce.png" />
@@ -286,6 +287,7 @@
     <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_family.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
+    <None Remove="Assets\Passives\passive_griyadin.png" />
     <None Remove="Assets\Passives\passive_hostile.png" />
     <None Remove="Assets\Passives\passive_itchy.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
@@ -305,6 +307,10 @@
     <None Remove="Assets\Statuses\status_overclock.png" />
     <None Remove="Assets\Statuses\status_regen.png" />
     <None Remove="Assets\Statuses\status_whiplash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Passives\passive_griyadin.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -360,6 +366,7 @@
     <EmbeddedResource Include="Assets\Fools\Journal Mode\malachai.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_front.png" />
     <EmbeddedResource Include="Assets\Fools\Journal Mode\realsoreka_frontserious.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_menu_locked.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercuriemain_talkscared.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontsad.png" />
     <EmbeddedResource Include="Assets\Fools\Mercurie\mercurie_frontwarded.png" />

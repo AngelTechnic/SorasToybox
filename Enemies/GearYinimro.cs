@@ -129,6 +129,30 @@ namespace SorasToybox.Enemies
 
             gearYinimro.AddPassives([Passives.GetCustomPassive("Houdini_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassives.CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient]);
             gearYinimro.AddEnemy(true, true, false);
+
+            Enemy gearYinimroSummon = new Enemy("Gear Yinimro", "GearYinimroSummon_EN")
+            {
+                Health = 18,
+                HealthColor = Pigments.Grey,
+                Size = 1,
+                CombatSprite = ResourceLoader.LoadSprite("TimelineGearYinimro", new Vector2(0.5f, 0f), 32),
+                OverworldDeadSprite = ResourceLoader.LoadSprite("DeadGearYinimro", new Vector2(0.5f, 0f), 32),
+                OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineGearYinimro", new Vector2(0.5f, 0f), 32),
+                DamageSound = "event:/Characters/Enemies/DLC_01/ChoirBoy/CHR_ENM_ChoirBoy_Dmg",
+                DeathSound = LoadedAssetsHandler.GetCharacter("Doll_CH").deathSound,
+                UnitTypes = ["Zoincaillan", "Robot"],
+            };
+            gearYinimroSummon.AddEnemyAbilities(
+                [
+                    escapement,
+                    evilBallisticGear,
+                ]);
+
+
+            gearYinimroSummon.AddPassives([Passives.GetCustomPassive("Houdini_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassives.CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient, Passives.Withering]);
+            gearYinimroSummon.AddEnemy(false, false, false);
+            gearYinimroSummon.enemy.enemyTemplate = gearYinimro.enemy.enemyTemplate;
+
             if (SorasToybox.extradebug.Value)
             {
                 UnityEngine.Debug.Log("Added Gear Yinimro.");

@@ -39,7 +39,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Mordrake_Antagonist_ACH";
             string unlockID = "SorasToybox_Mordrake_Antagonist_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(bstrd.item, new ItemModdedUnlockInfo(bstrd.Item_ID, ResourceLoader.LoadSprite("item_BSTRD_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(bstrd.item, new ItemModdedUnlockInfo(bstrd.Item_ID, ResourceLoader.LoadSprite("item_BSTRD_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, bstrd.Item_ID);
 

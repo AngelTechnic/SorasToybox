@@ -3,6 +3,7 @@ using SorasToybox.CustomOther;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using static SorasToybox.Encounters.Abyss.H;
 
 namespace SorasToybox.Enemies
 {
@@ -21,6 +22,7 @@ namespace SorasToybox.Enemies
                 DamageSound = "event:/SorasSFX/Enemies/Crashout/CrashoutHurt",
                 DeathSound = "event:/SorasSFX/Enemies/Crashout/CrashoutDeath",
             };
+            crashout.PrepareEnemyPrefab("Assets/ToyboxEnemies/Crashout/Crashout Enemy.prefab", SorasToybox.assetbundle, LoadedAssetsHandler.GetEnemy("Faceless_EN").enemyTemplate.m_Data.m_Gibs);
 
             PlayCustomSoundEffect getMadMFer = ScriptableObject.CreateInstance<PlayCustomSoundEffect>();
             getMadMFer._Sound = "event:/SorasSFX/Enemies/Crashout/CrashoutRoar";
@@ -209,7 +211,6 @@ namespace SorasToybox.Enemies
                 ]);
             crashout.AddPassives([CustomPassives.CustomPassive.SaltLockstepGenerator(1), Passives.Abomination1, Passives.GetCustomPassive("Erasure_PA"), Passives.GetCustomPassive("ST_Hostile_PA")]);
             crashout.AddEnemy(true, false, false);
-            LoadedAssetsHandler.GetEnemy("Crashout_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Faceless_EN").enemyTemplate;
         }
     }
 }

@@ -26,8 +26,8 @@ namespace SorasToybox //Mod namespace
     [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.7")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
-    //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
+    //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("TairbazPeep.EnemyPack", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.GlitchsFreaks", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.Siren", BepInDependency.DependencyFlags.SoftDependency)]
