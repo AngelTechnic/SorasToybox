@@ -1,10 +1,11 @@
 ﻿using BrutalAPI;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using UnityEngine;
 using SorasToybox.CustomEffects;
 using SorasToybox.CustomStatuses;
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Text;
+using UnityEngine;
 using Yarn;
 
 namespace SorasToybox.Fools
@@ -134,7 +135,36 @@ namespace SorasToybox.Fools
                 BasicAbility = rebalance,
                 UnitTypes = ["FemaleID", "Sandwich_Fire", "Angel", "Primal"],
             };
+
+            //setting up her unlock shit
+            ModUnlockInfo karmaMod = new ModUnlockInfo();
+            
+            //"karmaMod" will be her achievement in the Fools section. This is the graphical stuff
+            karmaMod.m_ModSPrite = ResourceLoader.LoadSprite("Ach_Fool_Karma", null, 32, null);
+            karmaMod.m_ModTitle = "The Dismal";
+            karmaMod.m_ModDescription = "Unlocked Karma.";
+
             karma.GenerateMenuCharacter(ResourceLoader.LoadSprite("karma_menu.png"), ResourceLoader.LoadSprite("karma_menu_locked.png"));
+
+
+            ModdedAchievements val2 = new ModdedAchievements("The Dismal", "Unlock Karma.", ResourceLoader.LoadSprite("Ach_Fool_Karma", null, 32, null), "Karma_Unlock_Achievement");
+            //this will add her achievement to the Fools achievement category
+            val2.AddNewAchievementToInGameCategory((AchievementCategoryIDs)2);
+
+            //cheevo related to unlocking her
+            UnlockableModData karmaData = new UnlockableModData("Karma");
+            karmaData.hasCharacterUnlock = true;
+            karmaData.character = "Karma_CH";
+            karmaData.hasQuestCompletion = true;
+            karmaData.questID = "Karma";
+            karmaData.hasModdedAchievementUnlock = true;
+            karmaData.moddedAchievementID = "Karma_Unlock_Achievement";
+            LoadedDBsHandler.UnlockablesDB.TryAddIDUnlock(karmaData);
+
+
+
+
+
             //add passives!
             karma.AddPassives([Passives.GetCustomPassive("Karmic_PA"), Passives.GetCustomPassive("Dismal_PA")]);
 
@@ -590,7 +620,8 @@ namespace SorasToybox.Fools
             if (SorasToybox.CrossMod.IntoTheAbyss) { karma.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Karma_Boundary_ACH"); }
             if (SorasToybox.CrossMod.SaltEnemies) { karma.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Karma_Dreamer_ACH"); }
             karma.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Karma_Antagonist_ACH");
-            karma.AddCharacter(true, false);
+            karma.AddCharacter(false, false);
+            karma.MenuCharacterTrackData = ScriptableObject.CreateInstance<KarmaUnlockTrackData>();
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("Added the Dismal.");

@@ -178,7 +178,7 @@ namespace SorasToybox //Mod namespace
             {
                 Dozer.Add();
                 ParadoxYinimro.Add();
-                Citygrazer.Add();
+                //Citygrazer.Add();
                 NowhereMan.Add();
             }
 
@@ -199,7 +199,7 @@ namespace SorasToybox //Mod namespace
 
             if (CrossMod.IntoTheAbyss)
             {
-                TestEncounter.Add();
+                //TestEncounter.Add();
                 LitanyEncounters.Add();
                 GearYinimroEncounters.Add();
                 CrashoutEncounters.Add();
@@ -220,7 +220,7 @@ namespace SorasToybox //Mod namespace
             {
                 DozerEncounters.Add();
                 ParadoxYinimroEncounters.Add();
-                GrazerEncounter.Add();
+                //GrazerEncounter.Add();
                 NowhereManEncounters.Add();
             }
 
@@ -371,6 +371,11 @@ namespace SorasToybox //Mod namespace
             SymbolOnFlesh.Add();
             BSTRD.Add();
 
+            //Siren deathmatch unlocks
+            if (CrossMod.Siren)
+            {
+                DeadbeatSummer.Add();
+            }
 
             //ST deathmatch unlocks
             MemoryOfGriyadin.Add();

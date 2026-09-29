@@ -206,6 +206,18 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(specialSceneEndingSetUpEffect, 1, Targeting.Slot_SelfSlot, null),
             ];
 
+
+
+            //Stuff for Karma's quest
+            GameBoolDataSetEffect setDeathmatchBool = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
+            setDeathmatchBool._VariableName = "DeathmatchKill";
+            setDeathmatchBool._ValueSet = true;
+
+            deathmatchEnemy.CombatExitEffects = new EffectInfo[]
+            {
+                Effects.GenerateEffect(setDeathmatchBool, 0, Targeting.Slot_SelfSlot),
+            };
+
             //deathmatch has no gibs rn
             deathmatchEnemy.PrepareEnemyPrefab("Assets/ToyboxEnemies/Deathmatch/Deathmatch Boss.prefab", SorasToybox.assetbundle, null);
 

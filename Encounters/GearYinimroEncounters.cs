@@ -30,7 +30,7 @@ namespace SorasToybox.Encounters
             gearYinimroGardenMedium.SimpleAddEncounter(3, "GearYinimro_EN"); 
             gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "SkeweringHomunculus_EN");
-            gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Iconograph_EN", 1, "Children6_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Icon_EN", 1, "Children6_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "ParkingSign_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "YieldSign_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "StopSign_EN");

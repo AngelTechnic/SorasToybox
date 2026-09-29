@@ -49,7 +49,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Agon_Antagonist_ACH";
             string unlockID = "SorasToybox_Agon_Antagonist_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(divisionBell.item, new ItemModdedUnlockInfo(divisionBell.Item_ID, ResourceLoader.LoadSprite("item_divisionbell_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(divisionBell.item, new ItemModdedUnlockInfo(divisionBell.Item_ID, ResourceLoader.LoadSprite("item_divisionbell_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, divisionBell.Item_ID);
 

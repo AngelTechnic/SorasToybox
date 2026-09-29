@@ -11,6 +11,7 @@
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Ach_Boss_Desibon.png" />
+    <None Remove="Assets\Achievements\Ach_Fool_Karma.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
@@ -26,6 +27,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Dimitri.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Fennec.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Formosus.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Gospel.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
@@ -116,6 +118,7 @@
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
     <None Remove="Assets\Fools\Karma\karma_rebalance.png" />
     <None Remove="Assets\Fools\Karma\karma_sauce.png" />
+    <None Remove="Assets\Fools\Karma\karma_sign.png" />
     <None Remove="Assets\Fools\Mercurie\mercuriemain_talk.png" />
     <None Remove="Assets\Fools\Mercurie\mercuriemain_talkmad.png" />
     <None Remove="Assets\Fools\Mercurie\mercuriemain_talkscared.png" />
@@ -217,6 +220,8 @@
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
     <None Remove="Assets\Items\quill_slasherfic.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_auralviolation.png" />
@@ -310,6 +315,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Ach_Fool_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_sign.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <EmbeddedResource Include="Assets\Passives\passive_griyadin.png" />
   </ItemGroup>
 

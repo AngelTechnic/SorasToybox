@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static UnityEngine.UIElements.UxmlAttributeDescription;
 
 namespace SorasToybox.Items
 {

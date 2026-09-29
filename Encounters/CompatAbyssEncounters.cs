@@ -22,7 +22,7 @@ namespace SorasToybox.Encounters
                 abyssAdd.SimpleAddGroup(1, "Faceless_EN", 1, "BurningShame_EN", 1, "Wug_EN");
                 abyssAdd.SimpleAddGroup(1, "Faceless_EN", 1, "GearYinimro_EN", 1, "Sycophant_EN");
 
-                abyssAdd = new AddTo(Abyss.H.Bear.Hard);
+                abyssAdd = new AddTo(Abyss.H.Bear.Med);
                 abyssAdd.SimpleAddGroup(2, "Bear_EN", 1, "BurningShame_EN", 1, "GearYinimro_EN");
 
                 if (SorasToybox.extradebug.Value)
