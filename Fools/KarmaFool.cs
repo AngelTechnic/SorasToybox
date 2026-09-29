@@ -145,7 +145,7 @@ namespace SorasToybox.Fools
             karmaMod.m_ModDescription = "Unlocked Karma.";
 
             karma.GenerateMenuCharacter(ResourceLoader.LoadSprite("karma_menu.png"), ResourceLoader.LoadSprite("karma_menu_locked.png"));
-
+            karma.MenuCharacterTrackData = ScriptableObject.CreateInstance<KarmaUnlockTrackData>();
 
             ModdedAchievements val2 = new ModdedAchievements("The Dismal", "Unlock Karma.", ResourceLoader.LoadSprite("Ach_Fool_Karma", null, 32, null), "Karma_Unlock_Achievement");
             //this will add her achievement to the Fools achievement category
@@ -621,7 +621,6 @@ namespace SorasToybox.Fools
             if (SorasToybox.CrossMod.SaltEnemies) { karma.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Karma_Dreamer_ACH"); }
             karma.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Karma_Antagonist_ACH");
             karma.AddCharacter(false, false);
-            karma.MenuCharacterTrackData = ScriptableObject.CreateInstance<KarmaUnlockTrackData>();
             if (SorasToybox.extradebug.Value)
             {
                 Debug.Log("Added the Dismal.");
