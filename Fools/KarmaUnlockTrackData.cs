@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SorasToybox.Fools
+namespace SorasToybox
 {
     public class KarmaUnlockTrackData : UnlockTrack_Data
     {
