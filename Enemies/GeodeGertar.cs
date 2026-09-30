@@ -25,14 +25,15 @@ namespace SorasToybox.Enemies
             geodeGertar.PrepareEnemyPrefab("Assets/ToyboxEnemies/GeodeGertar/GeodeGertar Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
             geodeGertar.AddPassives([Passives.InfantileGenerator(5), Passives.Forgetful, Passives.Inanimate]);
 
-            GameBoolDataSetEffect shutUpKarma = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
+            //the below was some debug stuff, i'm, leaving it in the code so people can see what i did
+            /*GameBoolDataSetEffect shutUpKarma = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
             shutUpKarma._VariableName = "TalkedKarma";
             shutUpKarma._ValueSet = false;
 
             geodeGertar.CombatExitEffects =
                 [
                     Effects.GenerateEffect(shutUpKarma, 0, Targeting.Slot_SelfSlot)
-                ];
+                ];*/
 
             HealEffect thisIsGoodNewsMark = ScriptableObject.CreateInstance<HealEffect>();
             thisIsGoodNewsMark._directHeal = true;
