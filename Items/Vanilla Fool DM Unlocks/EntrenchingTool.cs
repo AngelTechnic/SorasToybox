@@ -15,7 +15,6 @@ namespace SorasToybox.Items
             SwapToSidesEffect rocketJump = ScriptableObject.CreateInstance<SwapToSidesEffect>();
 
 
-
             DamagePercentModAndSecondaryEffect_Item bigSpoon = new DamagePercentModAndSecondaryEffect_Item("ST_EntrenchingTool_ID", 50, true, false, true)
             {
                 Item_ID = "EntrenchingTool_SW",
@@ -41,7 +40,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Boyle_Antagonist_ACH";
             string unlockID = "SorasToybox_Boyle_Antagonist_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(bigSpoon.item, new ItemModdedUnlockInfo(bigSpoon.Item_ID, ResourceLoader.LoadSprite("item_entrenchingtool_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(bigSpoon.item, new ItemModdedUnlockInfo(bigSpoon.Item_ID, ResourceLoader.LoadSprite("item_entrenchingtool_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, bigSpoon.Item_ID);
 

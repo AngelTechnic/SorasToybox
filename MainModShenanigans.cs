@@ -303,6 +303,10 @@ namespace SorasToybox //Mod namespace
             {
                 FortyProof.Add();
                 BastardNimbus.Add();
+                if (CrossMod.AApocrypha)
+                {
+                    Latchknife.Add();
+                }
             }
             //March Unlocks
             if (CrossMod.GlitchsFreaks)

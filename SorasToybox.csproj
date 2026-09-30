@@ -48,6 +48,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
+    <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Whhvay.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\DoulaPearl.png" />
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Karma.png" />
     <None Remove="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Mercurie.png" />
@@ -187,6 +188,8 @@
     <None Remove="Assets\Items\item_ghostpepper_locked.png" />
     <None Remove="Assets\Items\item_healthhat.png" />
     <None Remove="Assets\Items\item_healthhat_locked.png" />
+    <None Remove="Assets\Items\item_latchknife.png" />
+    <None Remove="Assets\Items\item_latchknife_locked.png" />
     <None Remove="Assets\Items\item_lonelyhike.png" />
     <None Remove="Assets\Items\item_lonelyhike_locked.png" />
     <None Remove="Assets\Items\item_megahammer.png" />
@@ -296,6 +299,7 @@
     <None Remove="Assets\Passives\passive_hostile.png" />
     <None Remove="Assets\Passives\passive_itchy.png" />
     <None Remove="Assets\Passives\passive_karmic.png" />
+    <None Remove="Assets\Passives\passive_locksmith.png" />
     <None Remove="Assets\Passives\passive_lockstep.png" />
     <None Remove="Assets\Passives\passive_overtuned.png" />
     <None Remove="Assets\Passives\passive_quicktempered.png" />
@@ -317,7 +321,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Ach_Fool_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
+    <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Whhvay.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sign.png" />
+    <EmbeddedResource Include="Assets\Items\item_latchknife.png" />
+    <EmbeddedResource Include="Assets\Items\item_latchknife_locked.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <EmbeddedResource Include="Assets\Passives\passive_griyadin.png" />
@@ -614,6 +621,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_hostile.png" />
     <EmbeddedResource Include="Assets\Passives\passive_itchy.png" />
     <EmbeddedResource Include="Assets\Passives\passive_karmic.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_locksmith.png" />
     <EmbeddedResource Include="Assets\Passives\passive_lockstep.png" />
     <EmbeddedResource Include="Assets\Passives\passive_overtuned.png" />
     <EmbeddedResource Include="Assets\Passives\passive_quicktempered.png" />
