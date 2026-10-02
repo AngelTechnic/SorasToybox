@@ -34,7 +34,7 @@ namespace SorasToybox.Items
             Ability slashfic = new Ability("ST_Slashfic_A")
             {
                 Name = "Slasherfic",
-                Description = "Remove Confusion and Obscured from the Opposing enemy.\nIf removal was successful, apply 3 Paranoia to the Opposing, Left, and Right enemies.\nDeal 6 indirect damage to the Opposing enemy.",
+                Description = "Remove Confusion and Obscured from the Opposing enemy.\nApply 3 Paranoia to the Opposing, Left, and Right enemies for each removed passive.\nDeal 6 indirect damage to the Opposing enemy.",
                 Cost = [Pigments.Red, Pigments.Red, Pigments.Blue],
                 Visuals = slashficVis,
                 AnimationTarget = Targeting.Slot_Front,
