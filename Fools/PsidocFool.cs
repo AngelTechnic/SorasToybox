@@ -20,6 +20,7 @@ namespace SorasToybox.Fools
             HealEffect getHeal = ScriptableObject.CreateInstance<HealEffect>();
 
             DamageEffect slapMyShit = ScriptableObject.CreateInstance<DamageEffect>();
+            slapMyShit._DeathTypeID = DeathType_GameIDs.Slap.ToString();
 
             Ability psidocBasic = new Ability("ST_PsidocBasic_A")
             {

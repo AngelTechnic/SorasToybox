@@ -441,7 +441,7 @@ namespace SorasToybox.Fools
 
             Ability agony4 = new Ability("Find Enlightenment in Agony", "ST_KarmaAgony4_A")
             {
-                Description = "Force the Opposing enemy to do the following:\nDeal 7 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to self and the Opposing, Left, and Right. This assumes the grid wraps around.",
+                Description = "Force the Opposing enemy to do the following:\nDeal 8 damage to the Opposing, then damage self for the total damage dealt.\nApply 1 Ante to self and the Opposing, Left, and Right. This assumes the grid wraps around.",
                 AbilitySprite = ResourceLoader.LoadSprite("karma_agony.png"),
                 Cost = [
                     Pigments.Red,

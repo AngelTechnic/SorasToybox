@@ -213,9 +213,12 @@ namespace SorasToybox.Enemies
             setDeathmatchBool._VariableName = "DeathmatchKill";
             setDeathmatchBool._ValueSet = true;
 
+            GameBoolDataEffectCondition haveIMetKarmaYet = ScriptableObject.CreateInstance<GameBoolDataEffectCondition>();
+            haveIMetKarmaYet._VariableName = "TalkedKarma";
+
             deathmatchEnemy.CombatExitEffects = new EffectInfo[]
             {
-                Effects.GenerateEffect(setDeathmatchBool, 0, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(setDeathmatchBool, 0, Targeting.Slot_SelfSlot, haveIMetKarmaYet),
             };
 
             //deathmatch has no gibs rn

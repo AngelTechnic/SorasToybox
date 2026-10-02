@@ -236,8 +236,8 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.AApocrypha)
             {
                 WhhvayFool.Add();
-                PsidocFool.Add();
             }
+
             JournalHandler.AddMiscSpeakers();
             if (journalmode.Value) 
             {
@@ -291,6 +291,7 @@ namespace SorasToybox //Mod namespace
             //Heaven unlocks
             TempusBoostHarness.Add();
             HealthHat.Add();
+            PsidocFool.Add();//psidoc's normally spawned by a specific crossmod item but who give a shit
             if (CrossMod.AApocrypha)
             {
                 Diagnopsis.Add();

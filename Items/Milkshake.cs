@@ -1,9 +1,11 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
+using SorasToybox.CustomEffects;
 using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Tools;
 using UnityEngine;
 
 namespace SorasToybox.Items
@@ -15,20 +17,31 @@ namespace SorasToybox.Items
             StatusEffect_Apply_Effect overclockMe = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             overclockMe._Status = StatusField.GetCustomStatusEffect("Overclock_ID");
 
-            PerformEffect_Item milkshake = new PerformEffect_Item("ST_Milkshake_ID", null, false)
+            MilkshakeSpawnEffect bringAllTheBoysToTheYard = ScriptableObject.CreateInstance<MilkshakeSpawnEffect>();
+            bringAllTheBoysToTheYard._permanentSpawn = false;
+            bringAllTheBoysToTheYard._rank = 1;
+            bringAllTheBoysToTheYard._nameAddition = NameAdditionLocID.NameAdditionNone;
+
+            DoublePerformEffect_Item milkshake = new DoublePerformEffect_Item("ST_Milkshake_ID", null, false)
             {
                 Item_ID = "GoldFlakeMilkshake_SW",
                 Name = "Gold-Flake Milkshake",
                 Flavour = "\"Who the hell puts GOLD in their milkshakes?\"",
-                Description = "On killing an enemy, gain 2 Overclock.",
+                Description = "On killing an enemy, gain 2 Overclock.\nMight attract attention.",
                 IsShopItem = true,
                 ShopPrice = 10,
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_goldmilkshake"),
                 TriggerOn = TriggerCalls.OnKill,
-                Effects = [Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot)], 
+                Effects = [Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot), Effects.GenerateEffect(bringAllTheBoysToTheYard, 1, null, Effects.ChanceCondition(33))], 
                    
             };
+
+            milkshake.item._ItemTypeIDs =
+            [
+                "FoodID",
+                "Drink",
+            ];
             //unlock this
             string achievementID = "SorasToybox_Mercurie_Witness_ACH";
             string unlockID = "SorasToybox_Mercurie_Witness_Unlock";

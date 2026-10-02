@@ -25,11 +25,13 @@ namespace SorasToybox.Encounters
             };
 
             searchEasy.SimpleAddEncounter(1, "SEARCH_EN", 3, "Mung_EN");
-            searchEasy.SimpleAddEncounter(2, "SEARCH_EN", 1, "MudLung_EN");
+            searchEasy.SimpleAddEncounter(1, "SEARCH_EN", 1, "MudLung_EN");
+            searchEasy.SimpleAddEncounter(1, "SEARCH_EN", 1, "JumbleGuts_Waning_EN");
+            searchEasy.SimpleAddEncounter(1, "SEARCH_EN", 1, "JumbleGuts_Clotted_EN");
 
 
             searchEasy.AddEncounterToDataBases();
-            EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Easy_EnemyBundle", 6, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Easy);
+            EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Easy_EnemyBundle", 11, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Easy);
 
 
             EnemyEncounter_API searchMedium = new(0, "H_Zone01_SEARCH_Medium_EnemyBundle", "SEARCH_Sign")
@@ -39,10 +41,11 @@ namespace SorasToybox.Encounters
             };
 
             searchMedium.SimpleAddEncounter(2, "SEARCH_EN", 1, "FlaMinGoa_EN");
-
+            searchMedium.SimpleAddEncounter(2, "SEARCH_EN", 1, "Mudlung_EN");
+            searchMedium.SimpleAddEncounter(2, "SEARCH_EN", 1, "Spoggle_Spitfire_EN", 1, "Spoggle_Ruminating_EN");
 
             searchMedium.AddEncounterToDataBases();
-            EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Medium_EnemyBundle", 6, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
+            EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Medium_EnemyBundle", 8, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
         }
     }
 }
