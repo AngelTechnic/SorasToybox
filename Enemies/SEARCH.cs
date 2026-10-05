@@ -48,7 +48,7 @@ namespace SorasToybox.Enemies
                 DamageSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHHurt",
                 DeathSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHDie",
             };
-            search.PrepareEnemyPrefab("Assets/ToyboxEnemies/SEARCH/SEARCH_Enemy.prefab", SorasToybox.assetbundle, null);
+            search.PrepareEnemyPrefab("Assets/ToyboxEnemies/SEARCH/SEARCH_Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/SEARCH/Ichor_Gibs.prefab").GetComponent<ParticleSystem>());
             search.AddPassives([Passives.GetCustomPassive("SearchParty_PA"), Passives.Absorb]);
 
             //Checking if still alive

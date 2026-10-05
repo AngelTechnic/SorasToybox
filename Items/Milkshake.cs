@@ -1,7 +1,6 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
 using SorasToybox.CustomEffects;
-using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,7 +21,7 @@ namespace SorasToybox.Items
             bringAllTheBoysToTheYard._rank = 1;
             bringAllTheBoysToTheYard._nameAddition = NameAdditionLocID.NameAdditionNone;
 
-            DoublePerformEffect_Item milkshake = new DoublePerformEffect_Item("ST_Milkshake_ID", null, false)
+            PerformEffect_Item milkshake = new PerformEffect_Item("ST_Milkshake_ID", null, false)
             {
                 Item_ID = "GoldFlakeMilkshake_SW",
                 Name = "Gold-Flake Milkshake",
@@ -33,7 +32,11 @@ namespace SorasToybox.Items
                 StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_goldmilkshake"),
                 TriggerOn = TriggerCalls.OnKill,
-                Effects = [Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot), Effects.GenerateEffect(bringAllTheBoysToTheYard, 1, null, Effects.ChanceCondition(33))], 
+                Effects = 
+                [
+                    Effects.GenerateEffect(overclockMe, 2, Targeting.Slot_SelfSlot), 
+                    Effects.GenerateEffect(bringAllTheBoysToTheYard, 1, null, Effects.ChanceCondition(33))
+                ], 
                    
             };
 

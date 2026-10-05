@@ -38,13 +38,13 @@ namespace SorasToybox.Items
                     Effects.GenerateEffect(getDeterminedMaybe, 2, Targeting.Slot_SelfSlot),
                 ],
             };
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(goodSpaceStation.item, new ItemModdedUnlockInfo(goodSpaceStation.Item_ID, ResourceLoader.LoadSprite("item_memoryofartrodus_locked", null, 32, null), "SorasToybox_Mercurie_Dreamer_ACH"));
+
 
             //unlock this
             string achievementID = "SorasToybox_Mercurie_Dreamer_ACH";
             string unlockID = "SorasToybox_Mercurie_Dreamer_Unlock";
 
-
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(goodSpaceStation.item, new ItemModdedUnlockInfo(goodSpaceStation.Item_ID, ResourceLoader.LoadSprite("item_memoryofartrodus_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, goodSpaceStation.Item_ID);
 

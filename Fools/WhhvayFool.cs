@@ -488,7 +488,7 @@ namespace SorasToybox.Fools
             if (SorasToybox.CrossMod.GlitchsFreaks) { whhvay.AddFinalBossAchievementData("March_BOSS", "SorasToybox_Whhvay_Inevitable_ACH"); }
             if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Nobody_BOSS", "SorasToybox_Whhvay_Forgotten_ACH"); }
             if (SorasToybox.CrossMod.IntoTheAbyss) { whhvay.AddFinalBossAchievementData("Katalixi_BOSS", "SorasToybox_Whhvay_Boundary_ACH"); }
-            //if (SorasToybox.CrossMod.SaltEnemies) { whhvay.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Whhvay_Dreamer_ACH"); }
+            if (SorasToybox.CrossMod.SaltEnemies) { whhvay.AddFinalBossAchievementData("BlueSky_BOSS", "SorasToybox_Whhvay_Dreamer_ACH"); }
             whhvay.AddFinalBossAchievementData("Deathmatch_BOSS", "SorasToybox_Whhvay_Antagonist_ACH");
             whhvay.AddCharacter(true, false);
             whhvay.SetMenuCharacterAsFullDPS();

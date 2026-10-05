@@ -545,6 +545,12 @@ namespace SorasToybox.Encounters
                 public static string Med => "H_Zone03_ParadoxYinimro_Medium_EnemyBundle";
                 public static string Hard => "H_Zone03_ParadoxYinimro_Hard_EnemyBundle";
             }
+
+            public static class TANGO
+            {
+                public static string Med => "H_Zone03_TANGO_Medium_EnemyBundle";
+                public static string Hard => "H_Zone03_TANGO_Hard_EnemyBundle";
+            }
         }
     }
 }

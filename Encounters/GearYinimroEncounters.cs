@@ -39,7 +39,7 @@ namespace SorasToybox.Encounters
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "ExitSign_EN");
 
             gearYinimroGardenMedium.AddEncounterToDataBases();
-            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 9, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
+            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 13, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
 
 
 
@@ -62,7 +62,7 @@ namespace SorasToybox.Encounters
 
 
                 gearYinimroAbyssMedium.AddEncounterToDataBases();
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Med, 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Med, 13, "TheAbyss_Zone3", BundleDifficulty.Medium);
 
                 EnemyEncounter_API gearYinimroAbyssHard = new EnemyEncounter_API(0, Abyss.H.YinimroG.Hard, "GearYinimro_Sign")
                 {
@@ -76,7 +76,7 @@ namespace SorasToybox.Encounters
                 gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Wug_EN", 1, "WRK_EN");
 
                 gearYinimroAbyssHard.AddEncounterToDataBases();
-                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Hard, 5, "TheAbyss_Zone3", BundleDifficulty.Hard);
+                EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Hard, 7, "TheAbyss_Zone3", BundleDifficulty.Hard);
                 if (SorasToybox.extradebug.Value)
                 {
                     UnityEngine.Debug.Log("Gear Yinimro Encounters loaded.");

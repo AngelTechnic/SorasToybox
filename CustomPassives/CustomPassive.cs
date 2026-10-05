@@ -12,6 +12,14 @@ using UnityEngine;
 
 namespace SorasToybox.CustomPassives
 {
+    //damage-to-status conditions
+    public class DissoluteCondition : EffectorConditionSO
+    {
+        public override bool MeetCondition(IEffectorChecks effector, object args)
+        {
+            return args is DamageReceivedValueChangeException ex && ex.damageTypeID != "Malfunction_Damage";
+        }
+    }
     public class CustomPassive
     {
         public static void Add()
@@ -233,6 +241,28 @@ namespace SorasToybox.CustomPassives
             LoadedDBsHandler.GlossaryDB.AddNewPassive(STFamilyInfo);
 
 
+            //Dissolute
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Dissolute_PA"))
+            {
+                DissolutePassiveAbility dissolute = ScriptableObject.CreateInstance<DissolutePassiveAbility>();
+                dissolute.name = "Dissolute_PA";
+                dissolute._passiveName = "Dissolute";
+                dissolute.m_PassiveID = "Dissolute_ID";
+                dissolute.passiveIcon = ResourceLoader.LoadSprite("passive_dissolute.png");
+                dissolute._characterDescription = "Instead of receiving damage, this party member receives equal Malfunction.";
+                dissolute._enemyDescription = "Instead of receiving damage, this enemy receives equal Malfunction.";
+                dissolute._triggerOn =
+                    [
+                        TriggerCalls.OnBeingDamaged,
+                ];
+                dissolute.conditions =
+                    [
+                        ScriptableObject.CreateInstance<DissoluteCondition>(),
+                ];
+                Passives.AddCustomPassiveToPool(dissolute.name, dissolute._passiveName, dissolute);
+                GlossaryPassives STDissoluteInfo = new GlossaryPassives("Dissolute", "Instead of receiving damage, this party member/enemy receives equal Malfunction.", ResourceLoader.LoadSprite("passive_dissolute"));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(STDissoluteInfo);
+            }
 
             //lifting suicidal from the not workshop build and testing my ability to parse ILSpy's bullshit
             if (!LoadedDBsHandler._PassiveDB._PassivesPool.Contains("ITA_Suicidal_PA"))
@@ -395,6 +425,32 @@ namespace SorasToybox.CustomPassives
             else
             {
                 Debug.Log("Broken-Blooded already exists, skipping...");
+            }
+
+            //broken blooded
+            if ((LoadedDBsHandler.PigmentDB.GetPigment("White") != null) && !LoadedDBsHandler.PassiveDB._PassivesPool.Contains("WhiteBlooded_1_PA"))
+            {
+                GenerateColorManaEffect GiveWhitePigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GiveWhitePigment.mana = LoadedDBsHandler.PigmentDB.GetPigment("White");
+
+                PerformEffectPassiveAbility whiteBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                whiteBlooded.name = "WhiteBlooded_1_PA";
+                whiteBlooded._passiveName = "White-Blooded (1)";
+                whiteBlooded.m_PassiveID = "PigmentBlooded";
+                whiteBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodWhite");
+                whiteBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional White pigment.";
+                whiteBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional White pigment.";
+                whiteBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                whiteBlooded.doesPassiveTriggerInformationPanel = true;
+                whiteBlooded.effects =
+                [
+                    Effects.GenerateEffect(GiveWhitePigment, 1, Targeting.Slot_SelfSlot),
+                ];
+                Passives.AddCustomPassiveToPool("WhiteBlooded_1_PA", "White-Blooded (1)", whiteBlooded);
+            }
+            else
+            {
+                Debug.Log("White-Blooded already exists, skipping...");
             }
         }
 

@@ -34,6 +34,7 @@ namespace SorasToybox.Enemies
             ChangeMusicEffect weUltrachurchNow = ScriptableObject.CreateInstance<ChangeMusicEffect>();
             weUltrachurchNow.musEvent = "event:/NewFacelessMusic";
 
+
             TargetPerformEffectViaSubaction combatEnterShit = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             combatEnterShit.effects =
                 [

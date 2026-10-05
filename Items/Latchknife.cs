@@ -7,7 +7,7 @@ namespace SorasToybox.Items
 {
     public class LocksmithPassiveAbility : BasePassiveAbilitySO
     {
-        string note = "based on dominance from greasy fools";
+
         public override bool IsPassiveImmediate
         {
             get
@@ -94,12 +94,11 @@ namespace SorasToybox.Items
                 ItemType_GameIDs.Knife.ToString(),
             ];
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(notKeyblade.item, new ItemModdedUnlockInfo(notKeyblade.Item_ID, ResourceLoader.LoadSprite("item_latchknife_locked", null, 32, null), "SorasToybox_Karma_Abstraction_ACH"));
-
             //unlock this
             string achievementID = "SorasToybox_Whhvay_Abstraction_ACH";
             string unlockID = "SorasToybox_Whhvay_Abstraction_Unlock";
 
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(notKeyblade.item, new ItemModdedUnlockInfo(notKeyblade.Item_ID, ResourceLoader.LoadSprite("item_latchknife_locked", null, 32, null), achievementID));
 
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, notKeyblade.Item_ID);

@@ -23,7 +23,7 @@ using System.Reflection;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.8")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.9")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
@@ -150,6 +150,7 @@ namespace SorasToybox //Mod namespace
 
             //Add enemies
             SEARCH.Add();
+            TANGO.Add();
             if (CrossMod.Sofanthiels)
             {
                 Slatecarnate.Add();
@@ -195,6 +196,7 @@ namespace SorasToybox //Mod namespace
             }
             //add encounters
             SEARCHEncounters.Add();
+            TANGOEncounters.Add();
 
 
             if (CrossMod.IntoTheAbyss)
@@ -347,6 +349,10 @@ namespace SorasToybox //Mod namespace
             {
                 MemoryOfArtrodus.Add();
                 MegaHammer.Add();
+                if (CrossMod.AApocrypha)
+                {
+                    Screwyoudriver.Add();
+                }
             }
             //DM Unlocks go here I think.
             EntrenchingTool.Add();
@@ -379,7 +385,11 @@ namespace SorasToybox //Mod namespace
             //Siren deathmatch unlocks
             if (CrossMod.Siren)
             {
+                //CapitalismInACan.Add();
                 DeadbeatSummer.Add();
+                DeadMansPartyHat.Add();
+                //ModernGiant.Add();
+                RottenKintsugi.Add();
             }
 
             //ST deathmatch unlocks

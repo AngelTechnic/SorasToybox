@@ -66,6 +66,8 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("DendriteDesibon_BOSS", "Desibon");
             targetListMercurie.Add("DesibonsRevenge_BOSS", "DesibonsRevenge");
             targetListMercurie.Add("GeodeGertar_EN", "GeodeGertar");
+            targetListMercurie.Add("TANGO_EN", "Tango");
+            targetListMercurie.Add("TANGOHostile_EN", "Tango2");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -134,6 +136,8 @@ namespace SorasToybox.Fools
             targetListKarma.Add("NowhereMan_EN", "NowhereMan");
             targetListKarma.Add("Fakeless_EN", "Fakeless");
             targetListKarma.Add("Crashout_EN", "Crashout");
+            targetListKarma.Add("TANGO_EN", "Tango");
+            targetListKarma.Add("TANGOHostile_EN", "Tango2");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 

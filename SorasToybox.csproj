@@ -15,6 +15,7 @@
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
+    <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Whhvay.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\BlueSkyPearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Agon.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
@@ -31,8 +32,10 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Gospel.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Izzy.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Lazarus.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Leviat.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_LongLiver.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Mercurie.png" />
@@ -87,6 +90,7 @@
     <None Remove="Assets\Enemies\deadNowhere.png" />
     <None Remove="Assets\Enemies\DeadParadoxYinimro.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
+    <None Remove="Assets\Enemies\tango_dead.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
     <None Remove="Assets\Enemies\timelineFacelessNoFace.png" />
@@ -208,6 +212,8 @@
     <None Remove="Assets\Items\item_quesadilla_locked.png" />
     <None Remove="Assets\Items\item_quill.png" />
     <None Remove="Assets\Items\item_quill_locked.png" />
+    <None Remove="Assets\Items\item_screwyoudriver.png" />
+    <None Remove="Assets\Items\item_screwyoudriver_locked.png" />
     <None Remove="Assets\Items\item_selfishhighheels.png" />
     <None Remove="Assets\Items\item_selfishhighheels_locked.png" />
     <None Remove="Assets\Items\item_sentient_arcanite.png" />
@@ -225,6 +231,10 @@
     <None Remove="Assets\Items\quill_slasherfic.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat_locked.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_rottenkintsugi.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_rottenkintsugi_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_auralviolation.png" />
@@ -288,10 +298,13 @@
     <None Remove="Assets\Passives\IconStonebloodBroken.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\IconStonebloodRed.png" />
+    <None Remove="Assets\Passives\IconStonebloodWhite.png" />
     <None Remove="Assets\Passives\IconStonebloodYellow.png" />
+    <None Remove="Assets\Passives\IconTransformPassive.png" />
     <None Remove="Assets\Passives\Instinct.png" />
     <None Remove="Assets\Passives\passive_deathbound.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
+    <None Remove="Assets\Passives\passive_dissolute.png" />
     <None Remove="Assets\Passives\passive_excess.png" />
     <None Remove="Assets\Passives\passive_family.png" />
     <None Remove="Assets\Passives\passive_godray.png" />
@@ -320,13 +333,28 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Ach_Fool_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Izzy.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Lazarus.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Whhvay.png" />
+    <EmbeddedResource Include="Assets\Enemies\tango_dead.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineTANGOEvil.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineTANGO.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sign.png" />
     <EmbeddedResource Include="Assets\Items\item_latchknife.png" />
     <EmbeddedResource Include="Assets\Items\item_latchknife_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_screwyoudriver.png" />
+    <EmbeddedResource Include="Assets\Items\item_screwyoudriver_locked.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_rottenkintsugi.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_rottenkintsugi_locked.png" />
+    <EmbeddedResource Include="Assets\Passives\IconStonebloodWhite.png" />
+    <EmbeddedResource Include="Assets\Passives\IconTransformPassive.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_dissolute.png" />
     <EmbeddedResource Include="Assets\Passives\passive_griyadin.png" />
   </ItemGroup>
 

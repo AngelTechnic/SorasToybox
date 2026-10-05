@@ -12,33 +12,28 @@ namespace SorasToybox.Items
     {
         public static void Add()
         {
-            ExtraPassiveAbility_Wearable_SMS getOvertuned = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
-            getOvertuned._extraPassiveAbility = Passives.GetCustomPassive("ST_Overtuned_PA");
+            StatusEffect_Apply_Effect getScars = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            getScars._Status = StatusField.Scars;
 
-            StatusEffect_ApplyRestrictor_Effect applyPermaMalfunction = ScriptableObject.CreateInstance<StatusEffect_ApplyRestrictor_Effect>();
-            applyPermaMalfunction._Status = StatusField.GetCustomStatusEffect("Malfunction_ID");
-
-            StatusEffect_Apply_Effect getCursed = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
-            getCursed._Status = StatusField.Cursed;
+            ExtraPassiveAbility_Wearable_SMS dissoluteWearable = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
+            dissoluteWearable._extraPassiveAbility = Passives.GetCustomPassive("Dissolute_PA");
 
             PerformEffect_Item amsServeredHead = new PerformEffect_Item("ST_AMsSeveredHead_ID", null, false)
             {
                 Name = "Extinction of Enmity",
                 Item_ID = "AMsSeveredHead_TW",
                 Flavour = "\"Let me tell you how much I've come to hate you...\"",
-                Description = "Gain Overtuned as a passive. On combat start, become Cursed and gain 1 permanent Malfunction. Running hot...",
+                Description = "This party member is now Dissolute.\nOn using wrong pigment to perform an ability, gain 1 Scar.",
                 IsShopItem = false,
                 ShopPrice = 47,
                 StartsLocked = true,
-                EquippedModifiers = [getOvertuned],
-                TriggerOn = TriggerCalls.OnCombatStart,
+                EquippedModifiers = [dissoluteWearable], 
                 Icon = ResourceLoader.LoadSprite("item_amsseveredhead"),
                 OnUnlockUsesTHE = true,
-                Effects =   
-                [
-                    Effects.GenerateEffect(getCursed, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(applyPermaMalfunction, 1, Targeting.Slot_SelfSlot),
-                ]
+                TriggerOn = TriggerCalls.OnWillReceiveCostDamage,
+                Effects = [
+                    Effects.GenerateEffect(getScars, 1, Targeting.Slot_SelfSlot),
+                    ]
             };
 
             ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(amsServeredHead.item, new ItemModdedUnlockInfo(amsServeredHead.Item_ID, ResourceLoader.LoadSprite("item_amsseveredhead_locked", null, 32, null), "SorasToybox_Deathmatch_Tragedy_ACH"));
