@@ -203,7 +203,7 @@ namespace SorasToybox.Enemies
 
 
             //ok now that we have the enemies and mercurial passives set up, let's do this.
-            tangoStatue.AddPassives([Passives.Inanimate, Passives.Infantile, Passives.GetCustomPassive("WhiteBlooded_1_PA"), mercurialTangoToHostile]);
+            tangoStatue.AddPassives([Passives.Inanimate, Passives.Infantile, Passives.Formless, Passives.GetCustomPassive("WhiteBlooded_1_PA"), mercurialTangoToHostile]);
             tangoHostile.AddPassives([Passives.Slippery, Passives.Infantile, Passives.Masochism1, mercurialTangoToStatue]);
 
 
