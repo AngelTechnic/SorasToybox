@@ -286,10 +286,14 @@ namespace SorasToybox.Enemies
             decimationEffect._visuals = Visuals.Decimate;
             decimationEffect._animationTarget = Targeting.Slot_Front;
 
+            AnimationVisualsEffect slapAnimation1 = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            slapAnimation1._visuals = Visuals.Slap;
+            slapAnimation1._animationTarget = Targeting.Slot_SelfAll;
+
             Ability tangoHostileAbilLeft = new Ability("ST_SLIDETOTHELEFT_A")
             {
                 Name = "SLIDE TO THE LEFT",
-                Description = "Moves Left.\nDeals a barely Painful amount of damage to the Opposing party member, boosted by the amount of Frail they have.\nAfter, if the Opponent is still Frail, take almost no damage.",
+                Description = "Moves Left.\nDeals a barely Painful amount of damage to the Opposing party member, boosted by the amount of Frail they have.\nAfter, if the Opponent is still Frail, take almost no indirect damage.",
                 Rarity = Rarity.Common,
                 Effects =
                 [
@@ -297,7 +301,8 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(decimationEffect, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damageFrailBonus, 3, Targeting.Slot_Front),
                     Effects.GenerateEffect(checkFrail, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(hitSelf, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(slapAnimation1, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(hitSelf, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
                 ],
             };
             tangoHostileAbilLeft.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Left)]);
@@ -307,7 +312,7 @@ namespace SorasToybox.Enemies
             Ability tangoHostileAbilRight = new Ability("ST_SLIDETOTHERIGHT_A")
             {
                 Name = "SLIDE TO THE RIGHT",
-                Description = "Moves Right.\nDeals a barely Painful amount of damage to the Opposing party member, boosted by the amount of Frail they have.\nAfter, if the Opponent is still Frail, take almost no damage.",
+                Description = "Moves Right.\nDeals a barely Painful amount of damage to the Opposing party member, boosted by the amount of Frail they have.\nAfter, if the Opponent is still Frail, take almost no indirect damage.",
                 Rarity = Rarity.Common,
                 Effects =
                 [
@@ -315,7 +320,8 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(decimationEffect, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damageFrailBonus, 3, Targeting.Slot_Front),
                     Effects.GenerateEffect(checkFrail, 1, Targeting.Slot_Front),
-                    Effects.GenerateEffect(hitSelf, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(slapAnimation1, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(hitSelf, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
                 ],
             };
             tangoHostileAbilRight.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Right)]);
@@ -325,17 +331,25 @@ namespace SorasToybox.Enemies
             RemoveStatusEffectEffect noFrail = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
             noFrail._status = StatusField.Frail;
 
+            DamageEffect hitOthers = ScriptableObject.CreateInstance<DamageEffect>();
+
+            AnimationVisualsEffect slapAnimation2 = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            slapAnimation2._visuals = Visuals.Slap;
+            slapAnimation2._animationTarget = Targeting.Slot_AllySides;
+
             Ability tangoHostileAbilFront = new Ability("ST_DANSEMACABRE_A")
             {
                 Name = "DANSE MACABRE",
-                Description = "Deals a Painful amount of damage to the Opposing party member, boosted by their amount of Frail. Survivors lose all Frail and get Focused.",
+                Description = "Deals a Painful amount of damage to the Opposing party member, boosted by their amount of Frail.\nSurvivors get Focused and lose all Frail.\nIf no Frail was removed, deal almost no damage to the Left and Right enemies.",
                 Visuals = Visuals.SliceAndDice,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(damageFrailBonus, 5, Targeting.Slot_Front),
-                    Effects.GenerateEffect(noFrail, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(doFocused, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(noFrail, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(slapAnimation2, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                    Effects.GenerateEffect(hitOthers, 1, Targeting.Slot_AllySides, Effects.CheckPreviousEffectCondition(false, 2)),
                 ]
             };
             tangoHostileAbilFront.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Damage_3_6), nameof(IntentType_GameIDs.Rem_Status_Frail), nameof(IntentType_GameIDs.Status_Focused)]);

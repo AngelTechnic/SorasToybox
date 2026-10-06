@@ -37,6 +37,7 @@ namespace SorasToybox.Encounters
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "HospitalSign_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "WildlifeSign_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "ExitSign_EN");
+            gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 2, "Attrition_EN");
 
             gearYinimroGardenMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 13, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);

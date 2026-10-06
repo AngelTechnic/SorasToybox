@@ -8,6 +8,10 @@ namespace SorasToybox.Encounters
     {
         public static void Add()
         {
+            //rules for TANGO fights:
+            //give the player initial usable pigment. I know the statues have whiteblooded but you can give them some extra juice.
+            //3 TANGO at most.
+
             //TANGO sign
             string tangoSign = "TANGO_Sign";
             Portals.AddPortalSign(tangoSign, ResourceLoader.LoadSprite("TimelineTANGO.png", new Vector2(0.5f, 0f), 32), Portals.EnemyIDColor);
@@ -26,6 +30,7 @@ namespace SorasToybox.Encounters
             tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 1, "GigglingMinister_EN");
             tangoMedium.SimpleAddEncounter(2, "TANGO_EN", 1, "Phobia_Phobias_EN");
             tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 1, "SomeoneSister_EN", 1, "NooneSister_EN");
+            tangoMedium.SimpleAddEncounter(2, "TANGO_EN", 2, "Git_EN");
 
             tangoMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.TANGO.Med, 12, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
@@ -44,6 +49,15 @@ namespace SorasToybox.Encounters
             tangoHard.SimpleAddEncounter(1, "TANGO_EN", 1, "InTheDark_EN", 1, "Lunoscope_EN");
             tangoHard.SimpleAddEncounter(2, "TANGO_EN", 2, "GigglingMinister_EN");
             tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "MachineGnomes_EN");
+            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 2, "SullenPrioress_EN");
+            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 1, "FrowningChancellor_EN", 1, "Vagabond_EN");
+            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 2, "Attrition_EN", 1, "WildlifeSign_EN");
+            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "StopSign_EN");
+            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "WildlifeSign_EN");
+            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "YieldSign_EN");
+            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "ParkingSign_EN");
+            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "HospitalSign_EN");
+            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "ExitSign_EN");
 
             tangoHard.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.TANGO.Hard, 8, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);
