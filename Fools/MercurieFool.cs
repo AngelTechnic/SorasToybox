@@ -161,13 +161,23 @@ namespace SorasToybox.Fools
             };
             accelerator4.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Atrophy", nameof(IntentType_GameIDs.Damage_11_15)]);
 
+            AttackVisualsSO dooranim2;
+            if (SorasToybox.CrossMod.SaltEnemies)
+            {
+                dooranim2 = LoadedAssetsHandler.GetEnemyAbility("TheClassic_A").visuals;
+            }
+            else
+            {
+                dooranim2 = Visuals.FingerGuns;
+            }
+
             //The End of Days/An Age/An Era/Time
             Ability theEnd1 = new Ability("The End of Days", "ST_MercurieTheEnd1_A")
             {
                 Description = "Deal 3 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
                 Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
-                Visuals = Visuals.FingerGuns,
+                Visuals = dooranim2,
                 AnimationTarget = Targeting.Slot_OpponentSides,
                 Effects =
                 [
@@ -183,7 +193,7 @@ namespace SorasToybox.Fools
                 Description = "Deal 4 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
                 Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
-                Visuals = Visuals.FingerGuns,
+                Visuals = dooranim2,
                 AnimationTarget = Targeting.Slot_OpponentSides,
                 Effects =
                 [
@@ -199,7 +209,7 @@ namespace SorasToybox.Fools
                 Description = "Deal 6 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
                 Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
-                Visuals = Visuals.FingerGuns,
+                Visuals = dooranim2,
                 AnimationTarget = Targeting.Slot_OpponentSides,
                 Effects =
                 [
@@ -215,7 +225,7 @@ namespace SorasToybox.Fools
                 Description = "Deal 7 damage to the Left and Right enemies, then apply Atrophy to all enemies equal to the amount of damage dealt.",
                 AbilitySprite = ResourceLoader.LoadSprite("mercurie_theend.png"),
                 Cost = [Pigments.Blue, Pigments.Yellow, Pigments.Yellow],
-                Visuals = Visuals.FingerGuns,
+                Visuals = dooranim2,
                 AnimationTarget = Targeting.Slot_OpponentSides,
                 Effects =
                 [

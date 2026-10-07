@@ -16,9 +16,16 @@ namespace SorasToybox.Fools
     {
         public static void Add()
         {
-            //Irradiated applicaiton
+            ExtraVariableForNextEffect blank = ScriptableObject.CreateInstance<ExtraVariableForNextEffect>();
+            
+
+            //Irradiated application
             StatusEffect_Apply_Effect getIrradiated = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getIrradiated._Status = StatusField.GetCustomStatusEffect("Irradiated_ID");
+
+            StatusEffect_Apply_Effect randomIrradiated = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            randomIrradiated._Status = StatusField.GetCustomStatusEffect("Irradiated_ID");
+            randomIrradiated._RandomBetweenPrevious = true;
 
             StatusEffect_Apply_Effect irradiatedByPrevious = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             irradiatedByPrevious._Status = StatusField.GetCustomStatusEffect("Irradiated_ID");
@@ -61,71 +68,75 @@ namespace SorasToybox.Fools
             //Detacher/Dismantler/Destabilizer/Devourer of Bonds: Reduce the Opposing enemy's health by 5/7/10/12, then deal 4/6/8/10 damage to them. Inflict 2/3/4/5 Irradiated on the Left and Right enemies.
             Ability bonds1 = new Ability("Detacher of Bonds", "ST_WhhvayBonds1_A")
             {
-                Description = "Reduce the Opposing enemy's max health by 5, then deal 4 damage to them.\nInflict 2 Irradiated on the Left and Right enemies.",
+                Description = "Reduce the max health the Opposing enemy by 5, then deal 4 damage to them.\nInflict 0-2 Irradiated to all enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(reduceHealth, 5, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 4, Targeting.Slot_Front),
-                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(blank, 0),
+                    Effects.GenerateEffect(randomIrradiated, 2, Targeting.Unit_AllOpponents),
                 ],
             };
             bonds1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Other_MaxHealth), nameof(IntentType_GameIDs.Damage_7_10)]);
-            bonds1.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Irradiated"]);
+            bonds1.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Irradiated"]);
 
             Ability bonds2 = new Ability("Dismantler of Bonds", "ST_WhhvayBonds2_A")
             {
-                Description = "Reduce the Opposing enemy's max health by 7, then deal 6 damage to them.\nInflict 3 Irradiated on the Left and Right enemies.",
+                Description = "Reduce the max health of the Opposing enemy by 7, then deal 6 damage to them.\nInflict 1-3 Irradiated to all enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(reduceHealth, 7, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 6, Targeting.Slot_Front),
-                    Effects.GenerateEffect(getIrradiated, 3, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(blank, 1),
+                    Effects.GenerateEffect(randomIrradiated, 3, Targeting.Unit_AllOpponents),
                 ],
             };
             bonds2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Other_MaxHealth), nameof(IntentType_GameIDs.Damage_11_15)]);
-            bonds2.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Irradiated"]);
+            bonds2.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Irradiated"]);
 
             Ability bonds3 = new Ability("Destabilizer of Bonds", "ST_WhhvayBonds3_A")
             {
-                Description = "Reduce the Opposing enemy's max health by 10, then deal 8 damage to them.\nInflict 4 Irradiated on the Left and Right enemies.",
+                Description = "Reduce the Opposing enemy's max health by 10, then deal 8 damage to them.\nInflict 2-4 Irradiated to all enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(reduceHealth, 10, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 8, Targeting.Slot_Front),
-                    Effects.GenerateEffect(getIrradiated, 4, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(blank, 2),
+                    Effects.GenerateEffect(randomIrradiated, 4, Targeting.Unit_AllOpponents),
                 ],
             };
             bonds3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Other_MaxHealth), nameof(IntentType_GameIDs.Damage_16_20)]);
-            bonds3.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Irradiated"]);
+            bonds3.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Irradiated"]);
 
             Ability bonds4 = new Ability("Devourer of Bonds", "ST_WhhvayBonds4_A")
             {
-                Description = "Reduce the Opposing enemy's max health by 12, then deal 10 damage to them.\nInflict 5 Irradiated on the Left and Right enemies.",
+                Description = "Reduce the Opposing enemy's max health by 12, then deal 10 damage to them.\nInflict 2-6 Irradiated on the Left and Right enemies.",
                 AbilitySprite = ResourceLoader.LoadSprite("whhvay_injection.png"),
-                Cost = [Pigments.Red, Pigments.Red, Pigments.Red],
+                Cost = [Pigments.Red, Pigments.Red, Pigments.Red, Pigments.Red],
                 Visuals = bondsVis,
                 AnimationTarget = Targeting.Slot_Front,
                 Effects =
                 [
                     Effects.GenerateEffect(reduceHealth, 12, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 10, Targeting.Slot_Front),
-                    Effects.GenerateEffect(getIrradiated, 5, Targeting.Slot_OpponentSides),
+                    Effects.GenerateEffect(blank, 2),
+                    Effects.GenerateEffect(randomIrradiated, 6, Targeting.Unit_AllOpponents),
                 ],
             };
             bonds4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Other_MaxHealth), nameof(IntentType_GameIDs.Damage_21)]);
-            bonds4.AddIntentsToTarget(Targeting.Slot_OpponentSides, ["Status_Irradiated"]);
+            bonds4.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Status_Irradiated"]);
             HealEffect heal = ScriptableObject.CreateInstance<HealEffect>();
 
             Sprite abilitySprite = LoadedAssetsHandler.GetEnemyAbility("Chomp_A").abilitySprite;
@@ -149,7 +160,7 @@ namespace SorasToybox.Fools
 
             Ability bonus1 = new Ability("Mutated Surface", "WhhvayBonus1_A")
             {
-                Description = "Heal the Opposing party member 3 health, and gain 1 Misery.\n40% Chance to inflict 2 Irradiated on the Left and Right enemies.",
+                Description = "Heal the Opposing party member 3 health, and gain 1 Misery.\n40% Chance to inflict 2 Irradiated on the Left and Right enemies.\nGain 2 Irradiated.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
                 Visuals = gazeVis,
@@ -159,17 +170,18 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(heal, 2, Targeting.Slot_Front),
                     Effects.GenerateEffect(getMisery, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides, Effects.ChanceCondition(40)),
+                    Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ImpossibleNoReroll,
                 Priority = Priority.VerySlow,
             };
             bonus1.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_1_4)]);
-            bonus1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus1.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery", "Status_Irradiated"]);
             bonus1.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
 
             Ability bonus2 = new Ability("Mutated Complexion", "WhhvayBonus2_A")
             {
-                Description = "Heal the Opposing party member 5 health, and gain 2 Misery.\n50% Chance to inflict 2 Irradiated on the Left and Right enemies.",
+                Description = "Heal the Opposing party member 5 health, and gain 2 Misery.\n50% Chance to inflict 2 Irradiated on the Left and Right enemies.\nGain 2-3 Irradiated.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
                 Visuals = gazeVis,
@@ -179,17 +191,19 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(heal, 5, Targeting.Slot_Front),
                     Effects.GenerateEffect(getMisery, 2, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides, Effects.ChanceCondition(50)),
+                    Effects.GenerateEffect(blank, 2),
+                    Effects.GenerateEffect(randomIrradiated, 3, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ImpossibleNoReroll,
                 Priority = Priority.VerySlow,
             };
             bonus2.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10)]);
-            bonus2.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus2.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery", "Status_Irradiated"]);
             bonus2.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
 
             Ability bonus3 = new Ability("Mutated Expression", "WhhvayBonus3_A")
             {
-                Description = "Heal the Opposing party member 7 health, and gain 3 Misery.\n66% Chance to inflict 2 Irradiated on the Left and Right enemies.",
+                Description = "Heal the Opposing party member 7 health, and gain 3 Misery.\n66% Chance to inflict 2 Irradiated on the Left and Right enemies.\nGain 2-4 Irradiated.",
                 Cost = [Pigments.Blue],
                 AbilitySprite = abilitySprite,
                 Visuals = gazeVis,
@@ -199,12 +213,14 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(heal, 7, Targeting.Slot_Front),
                     Effects.GenerateEffect(getMisery, 3, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides, Effects.ChanceCondition(66)),
+                    Effects.GenerateEffect(blank, 2),
+                    Effects.GenerateEffect(randomIrradiated, 4, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ImpossibleNoReroll,
                 Priority = Priority.VerySlow,
             };
             bonus3.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10)]);
-            bonus3.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus3.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery", "Status_Irradiated"]);
             bonus3.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
 
             Ability bonus4 = new Ability("Mutated Perspective", "WhhvayBonus4_A")
@@ -219,12 +235,14 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(heal, 9, Targeting.Slot_Front),
                     Effects.GenerateEffect(getMisery, 4, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getIrradiated, 2, Targeting.Slot_AllySides),
+                    Effects.GenerateEffect(blank, 3),
+                    Effects.GenerateEffect(randomIrradiated, 5, Targeting.Slot_SelfSlot),
                 ],
                 Rarity = Rarity.ImpossibleNoReroll,
                 Priority = Priority.VerySlow,
             };
             bonus4.AddIntentsToTarget(Targeting.Slot_Front, [nameof(IntentType_GameIDs.Heal_5_10)]);
-            bonus4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery"]);
+            bonus4.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Misery", "Status_Irradiated"]);
             bonus4.AddIntentsToTarget(Targeting.Slot_AllySides, [nameof(IntentType_GameIDs.Misc_Hidden), "Status_Irradiated"]);
 
             ExtraAbilityInfo extra1 = new()

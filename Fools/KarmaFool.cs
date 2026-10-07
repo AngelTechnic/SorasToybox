@@ -166,7 +166,7 @@ namespace SorasToybox.Fools
 
 
             //add passives!
-            karma.AddPassives([Passives.GetCustomPassive("Karmic_PA"), Passives.GetCustomPassive("Dismal_PA")]);
+            karma.AddPassives([Passives.GetCustomPassive("Karmic_PA"), Passives.GetCustomPassive("Dismal_PA"), Passives.Withering]);
 
 
             //Hot Sauce effect shenanigans

@@ -138,6 +138,9 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Crashout_EN", "Crashout");
             targetListKarma.Add("TANGO_EN", "Tango");
             targetListKarma.Add("TANGOHostile_EN", "Tango2");
+            targetListKarma.Add("TaMaGoa_EN", "TaMaGoa");
+            targetListKarma.Add("UnfinishedHeir_BOSS", "Heir");
+            targetListKarma.Add("Poser_EN", "Poser");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 
