@@ -39,7 +39,7 @@ namespace SorasToybox.Enemies
 
             Enemy search = new Enemy("SEARCH", "SEARCH_EN")
             {
-                Health = 8,
+                Health = 10,
                 HealthColor = Pigments.Red,
                 Size = 1,
                 CombatSprite = ResourceLoader.LoadSprite("timelineSEARCH.png", new Vector2(0.5f, 0f), 32),

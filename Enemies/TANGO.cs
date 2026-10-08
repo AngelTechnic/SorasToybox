@@ -171,8 +171,8 @@ namespace SorasToybox.Enemies
             mercurialTangoToHostile.m_PassiveID = "Mercurial";
             mercurialTangoToHostile.passiveIcon = ResourceLoader.LoadSprite("IconTransformPassive");
             mercurialTangoToHostile._characterDescription = "steal focus and you too can become the depressed polish man";
-            mercurialTangoToHostile._enemyDescription = "At the end of the timeline, this enemy will attempt to remove Focused from the Opposing party member. If that fails, it awakens.";
-            mercurialTangoToHostile._triggerOn = [TriggerCalls.TimelineEndReached];
+            mercurialTangoToHostile._enemyDescription = "At the end of the round, this enemy will attempt to remove Focused from the Opposing party member. If that fails, it awakens.";
+            mercurialTangoToHostile._triggerOn = [TriggerCalls.OnRoundFinished];
             mercurialTangoToHostile.doesPassiveTriggerInformationPanel = false;
             mercurialTangoToHostile.effects = [
                 Effects.GenerateEffect(MercurialPopup, 1, Targeting.Slot_SelfSlot),
@@ -189,8 +189,8 @@ namespace SorasToybox.Enemies
             mercurialTangoToStatue.m_PassiveID = "Mercurial";
             mercurialTangoToStatue.passiveIcon = ResourceLoader.LoadSprite("IconTransformPassive");
             mercurialTangoToStatue._characterDescription = "have no friends and you too can become the depressed polish man";
-            mercurialTangoToStatue._enemyDescription = "At the end of the timeline, if this enemy has no opponent, it sleeps.";
-            mercurialTangoToStatue._triggerOn = [TriggerCalls.TimelineEndReached];
+            mercurialTangoToStatue._enemyDescription = "At the end of the round, if this enemy has no opponent, it sleeps.";
+            mercurialTangoToStatue._triggerOn = [TriggerCalls.OnRoundFinished];
             mercurialTangoToStatue.doesPassiveTriggerInformationPanel = false;
             mercurialTangoToStatue.effects = [
                 Effects.GenerateEffect(MercurialPopup, 1, Targeting.Slot_SelfSlot),
