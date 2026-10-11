@@ -512,7 +512,7 @@ namespace SorasToybox.Fools
             whhvay.SetMenuCharacterAsFullDPS();
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Avenger.");
+                Debug.Log("[FOOLS] Added the Avenger.");
             }
 
             //yapshenanigans

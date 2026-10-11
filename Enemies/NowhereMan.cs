@@ -206,7 +206,7 @@ namespace SorasToybox.Enemies
 
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added the Nowhere Man.");
+                UnityEngine.Debug.Log("[ENEMIES] Added the Nowhere Man.");
             }
         }
     }

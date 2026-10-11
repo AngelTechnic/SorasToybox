@@ -328,7 +328,7 @@ namespace SorasToybox.Fools
             psidoc.AddCharacter(false, true);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Unbreaker.");
+                Debug.Log("[FOOLS] Added the Unbreaker.");
             }
         }
     }

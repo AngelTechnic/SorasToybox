@@ -100,13 +100,13 @@ namespace SorasToybox.Items
             ];
 
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(fortyProof.item, new ItemModdedUnlockInfo(fortyProof.Item_ID, ResourceLoader.LoadSprite("item_fortyproof_locked", null, 32, null), "SorasToybox_Mercurie_Abstraction_ACH"));
+
 
             //unlock this
             string achievementID = "SorasToybox_Mercurie_Abstraction_ACH";
             string unlockID = "SorasToybox_Mercurie_Abstraction_Unlock";
 
-
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(fortyProof.item, new ItemModdedUnlockInfo(fortyProof.Item_ID, ResourceLoader.LoadSprite("item_fortyproof_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, fortyProof.Item_ID);
 
@@ -126,7 +126,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Forty-Proof.");
+                Debug.Log("[ITEMS] Added Forty-Proof.");
             }
         }
     }

@@ -179,7 +179,7 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(gazeEffect, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(noFocus, 1, Targeting.Slot_Front),
                 Effects.GenerateEffect(becomeHostile, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
-                //Effects.GenerateEffect(ScriptableObject.CreateInstance<AddTurnCasterToTimelineEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 3)),
+                Effects.GenerateEffect(ScriptableObject.CreateInstance<FixCasterTimelineIntentsEffect>())
             ];
             Passives.AddCustomPassiveToPool("ST_Mercurial_TangoToHostile_PA", "Mercurial", mercurialTangoToHostile);
 
@@ -197,7 +197,7 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(gazeEffect, 1, Targeting.Slot_SelfSlot),
                 Effects.GenerateEffect(isThereAnybodyOutThere, 1, Targeting.Slot_Front),
                 Effects.GenerateEffect(becomeStatue, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
-                //Effects.GenerateEffect(ScriptableObject.CreateInstance<AddTurnCasterToTimelineEffect>(), 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 3)),
+                Effects.GenerateEffect(ScriptableObject.CreateInstance<FixCasterTimelineIntentsEffect>())
             ];
             Passives.AddCustomPassiveToPool("ST_Mercurial_TangoToStatue_PA", "Mercurial", mercurialTangoToStatue);
 

@@ -350,7 +350,7 @@ namespace SorasToybox.Fools
             mercurie.SetMenuCharacterAsFullDPS();
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Timewarped.");
+                Debug.Log("[FOOLS] Added the Timewarped.");
             }
 
             //SpeakerBundle nonsense

@@ -25,7 +25,7 @@ namespace SorasToybox.Items
                 ShopPrice = 10,
                 DoesPopUpInfo = false,
                 StartsLocked = true,
-                Icon = ResourceLoader.LoadSprite("item_entrenchingtool"),
+                Icon = ResourceLoader.LoadSprite("item_entrenchingtool.png"),
                 TriggerOn = TriggerCalls.OnWillApplyDamage,
                 OnUnlockUsesTHE = true,
                 SecondaryTriggerOn = [TriggerCalls.OnAbilityWillBeUsed],

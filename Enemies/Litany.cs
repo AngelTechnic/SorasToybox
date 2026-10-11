@@ -197,7 +197,7 @@ namespace SorasToybox.Enemies
             litany.AddEnemy(true, true, false);
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added Litany.");
+                UnityEngine.Debug.Log("[ENEMIES] Added Litany.");
             }
 
         }

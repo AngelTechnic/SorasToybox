@@ -235,6 +235,8 @@ namespace SorasToybox //Mod namespace
             //Add fools
             MercurieFool.Add();
             KarmaFool.Add();
+            SenekTasbeht.Add();
+            SenekFool.Add();
             if (CrossMod.AApocrypha)
             {
                 WhhvayFool.Add();
@@ -251,6 +253,7 @@ namespace SorasToybox //Mod namespace
             {
                 MercurieFreeEvent.Add();
                 KarmaFreeEvent.Add();
+                SenekFreeEvent.Add();
             }
             if (CrossMod.AApocrypha && CrossMod.Siren)
             {
@@ -264,8 +267,58 @@ namespace SorasToybox //Mod namespace
 
 
 
-            //Log enemies (Do config thing with it)
+            //The Buggening Cometh
+            TagCharIfExists("LongLiver_CH", "Bug");
+            TagCharIfExists("Bimini_CH", "Bug");
+            if (CrossMod.IntoTheAbyss)
+            {
+                TagCharIfExists("Chae_CH", "Bug");
+            }
+            if (CrossMod.MythosFriends)
+            {
+                TagCharIfExists("Wuz_CH", "Bug");
+                TagCharIfExists("992_CH", "Bug");
+            }
+            if (CrossMod.Siren)
+            {
+                TagCharIfExists("Izzy_CH", "Bug");
+                TagCharIfExists("ButterflySwarm_CH", "Bug");
+            }
+            TagCharIfExists("Lich_CH", "Bug");
 
+            TagEnemyIfExists("Keko_EN", "Bug");
+            TagEnemyIfExists("Kekastle_EN", "Bug");
+            TagEnemyIfExists("Kekingdom_EN", "Bug");
+            TagEnemyIfExists("Keklung_EN", "Bug");
+            if (CrossMod.EnemyPack)
+            {
+                TagEnemyIfExists("Kekapex_EN", "Bug");
+                TagEnemyIfExists("Lipbug_EN", "Bug");
+                TagEnemyIfExists("TheFountainofYouth_EN", "Bug");
+            }
+            if (CrossMod.MythosFriends)
+            {
+                TagEnemyIfExists("WormthatWalks_EN", "Bug");
+            }
+            if (CrossMod.Siren)
+            {
+                TagEnemyIfExists("Tumult_EN", "Bug");
+                TagEnemyIfExists("TumultShell_EN", "Bug");
+                TagEnemyIfExists("Scuttlebunk_EN", "Bug");
+                TagEnemyIfExists("PetrifiedPuker_EN", "Bug");
+                TagEnemyIfExists("Scuttlebunk_EN", "Bug");
+                TagEnemyIfExists("LivingPiscina_EN", "Bug");
+                TagEnemyIfExists("SwarmedSubfossil_BOSS", "Bug");
+            }
+            if (CrossMod.IntoTheAbyss)
+            {
+                TagEnemyIfExists("Mistaken_EN", "Bug");
+                TagEnemyIfExists("Mistake_EN", "Bug");
+                TagEnemyIfExists("Omission_EN", "Bug");
+                TagEnemyIfExists("Oversight_EN", "Bug");
+            }
+
+            Debug.Log("The buggening concludes.");
 
 
 
@@ -285,6 +338,7 @@ namespace SorasToybox //Mod namespace
             //Osman Unlocks
             Milkshake.Add();
             Quesadilla.Add();
+            Flyswatter.Add();
             if (CrossMod.AApocrypha)
             {
                 AstralHilt.Add();
@@ -306,15 +360,16 @@ namespace SorasToybox //Mod namespace
             {
                 FortyProof.Add();
                 BastardNimbus.Add();
+                ShootingGallery.Add();
                 if (CrossMod.AApocrypha)
                 {
                     Latchknife.Add();
                 }
             }
             //March Unlocks
+            FriendlyGearYinimro.Add();
             if (CrossMod.GlitchsFreaks)
             {
-                FriendlyGearYinimro.Add();
                 ClockKing.Add();
                 GhostPepper.Add();
                 if (CrossMod.AApocrypha)
@@ -429,6 +484,22 @@ namespace SorasToybox //Mod namespace
                // LoadedDBsHandler.GlossaryDB.AddNewKeyword(new GlossaryKeywords("Broken Pigment", "Broken Pigment is a mostly inert pigment type produced by specific enemies or party members. Broken Pigment is useless for abilities, serving only to clog your pigment tray; however, should Overflow trigger, all existing Broken Pigment will shatter into nothing."));
             //}
             
+        }
+        static void TagCharIfExists(string ID, string unitType)
+        {
+            if (LoadedAssetsHandler.LoadedCharacters.ContainsKey(ID))
+            {
+                LoadedAssetsHandler.GetCharacter(ID).unitTypes.Add(unitType);
+                Debug.Log($"Tags & Types | successfully tagged character {LoadedAssetsHandler.GetCharacter(ID)._characterName} ({ID}) as {unitType}");
+            }
+        }
+        static void TagEnemyIfExists(string ID, string unitType)
+        {
+            if (LoadedAssetsHandler.LoadedEnemies.ContainsKey(ID))
+            {
+                LoadedAssetsHandler.GetEnemy(ID).unitTypes.Add(unitType);
+                Debug.Log($"Tags & Types | successfully tagged enemy {LoadedAssetsHandler.GetEnemy(ID)._enemyName} ({ID}) as {unitType}");
+            }
         }
     }
 }

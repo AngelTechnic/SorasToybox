@@ -102,7 +102,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.WitnessTitleLabel);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Astral Hilt.");
+                Debug.Log("[ITEMS] Added the Astral Hilt.");
             }
 
         }

@@ -61,7 +61,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Clock King.");
+                Debug.Log("[ITEMS] Added Clock King.");
             }
         }
     }

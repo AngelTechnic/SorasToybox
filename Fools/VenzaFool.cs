@@ -117,7 +117,7 @@ namespace SorasToybox.Fools
             venza.AddCharacter(false, true);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Catharsis.");
+                Debug.Log("[FOOLS] Added the Catharsis.");
             }
         }
     }

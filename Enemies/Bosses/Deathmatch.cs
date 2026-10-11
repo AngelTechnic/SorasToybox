@@ -99,7 +99,7 @@ namespace SorasToybox.Enemies
             CasterInOneEdgeCheckEffect CheckRight = ScriptableObject.CreateInstance<CasterInOneEdgeCheckEffect>();
             CheckRight._right = true;
 
-
+            //i genuinely forgot why these were here but i think it has something to do with me copying the wrapping movement from asdfagi
             PreviousEffectCondition PreviousTrue = ScriptableObject.CreateInstance<PreviousEffectCondition>();
             PreviousTrue.wasSuccessful = true;
 

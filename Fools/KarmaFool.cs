@@ -125,6 +125,7 @@ namespace SorasToybox.Fools
                 UsesBasicAbility = true,
                 UsesAllAbilities = false,
                 MovesOnOverworld = false,
+                StartsLocked = true,
                 FrontSprite = ResourceLoader.LoadSprite("karma_front.png", new Vector2(0.5f, 0f), 32),
                 BackSprite = ResourceLoader.LoadSprite("karma_back.png", new Vector2(0.5f, 0f), 32),
                 OverworldSprite = ResourceLoader.LoadSprite("karma_overworld.png", new Vector2(0.5f, 0f), 32),
@@ -623,7 +624,7 @@ namespace SorasToybox.Fools
             karma.AddCharacter(false, false);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Dismal.");
+                Debug.Log("[FOOLS] Added the Dismal.");
             }
 
 

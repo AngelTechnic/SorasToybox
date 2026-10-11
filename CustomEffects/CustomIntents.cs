@@ -231,7 +231,8 @@ namespace SorasToybox.CustomEffects
                 Intents.AddCustom_Damage_IntentToPool("Damage_Random", Damage_Random);
             }
 
-            
+
+
 
             IntentInfoBasic nsint = new IntentInfoBasic
             {

@@ -321,8 +321,28 @@ namespace SorasToybox.CustomPassives
                 fireproofPassive._damageType = CombatType_GameIDs.Dmg_Fire.ToString();
             }
 
+            //Locksmith passive
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Locksmith_PA"))
+            {
+                LocksmithPassiveAbility locksmith = ScriptableObject.CreateInstance<LocksmithPassiveAbility>();
+                locksmith.name = "Locksmith_PA";
+                locksmith._passiveName = "Locksmith";
+                locksmith.passiveIcon = ResourceLoader.LoadSprite("passive_locksmith.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null);
+                locksmith.m_PassiveID = "Locksmith_ID";
+                locksmith._triggerOn = new TriggerCalls[]
+                {
+                TriggerCalls.OnWillApplyDamage
+                };
+                locksmith._enemyDescription = "This enemy feels an immense hatred for specific movement-impairing effects and deals 50% extra damage to Constricting targets, or when under the effects of Constricted.";
+                locksmith._characterDescription = "This party member feels an immense hatred for specific movement-impairing effects and deals 50% extra damage to Constricting targets, or when under the effects of Constricted.";
+                locksmith.doesPassiveTriggerInformationPanel = false;
+                Passives.AddCustomPassiveToPool("Locksmith_PA", "Locksmith", locksmith);
+                GlossaryPassives passiveInfo = new GlossaryPassives("Locksmith", "This character feels an immense hatred for specific movement-impairing effects and deals 50% extra damage to Constricting targets, or when under the effects of Constricted.", ResourceLoader.LoadSprite("passive_locksmith.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null));
+                LoadedDBsHandler.GlossaryDB.AddNewPassive(passiveInfo);
+            }
 
-            //BLooded Stuff
+
+            //Blooded Stuff
             //Red-blooded
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("RedBlooded_1_PA"))
             {

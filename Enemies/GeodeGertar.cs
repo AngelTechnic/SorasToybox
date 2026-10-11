@@ -26,13 +26,13 @@ namespace SorasToybox.Enemies
             geodeGertar.AddPassives([Passives.InfantileGenerator(5), Passives.Forgetful, Passives.Inanimate]);
 
             //the below was some debug stuff, i'm, leaving it in the code so people can see what i did
-            /*GameBoolDataSetEffect shutUpKarma = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
-            shutUpKarma._VariableName = "TalkedKarma";
-            shutUpKarma._ValueSet = false;
+            /*GameBoolDataSetEffect shutUpSenek = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
+            shutUpSenek._VariableName = "TalkedSenek";
+            shutUpSenek._ValueSet = false;
 
             geodeGertar.CombatExitEffects =
                 [
-                    Effects.GenerateEffect(shutUpKarma, 0, Targeting.Slot_SelfSlot)
+                    Effects.GenerateEffect(shutUpSenek, 1, Targeting.Slot_SelfSlot)
                 ];*/
 
             HealEffect thisIsGoodNewsMark = ScriptableObject.CreateInstance<HealEffect>();

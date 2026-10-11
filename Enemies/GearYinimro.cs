@@ -155,7 +155,7 @@ namespace SorasToybox.Enemies
 
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added Gear Yinimro.");
+                UnityEngine.Debug.Log("[ENEMIES] Added Gear Yinimro.");
             }
         }
     }

@@ -52,7 +52,7 @@ namespace SorasToybox.Items
             ItemUtils.JustAddItemSoItCanBeLoaded(gayCrystal.item);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Sentient Arcanite.");
+                Debug.Log("[ITEMS] Added the Sentient Arcanite.");
             }
         }
     }
