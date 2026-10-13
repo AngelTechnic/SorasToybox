@@ -66,7 +66,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Setset.");
+                Debug.Log("[ITEMS] Added Setset.");
             }
         } 
     }

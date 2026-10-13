@@ -67,7 +67,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Diagnopsis.");
+                Debug.Log("[ITEMS] Added the Diagnopsis.");
             }
         }
     }

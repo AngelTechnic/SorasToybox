@@ -101,6 +101,8 @@ namespace SorasToybox.Enemies
             //yeet clown, only baby now
             SpawnEnemyAnywhereEffect spawnGertar = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
             spawnGertar.enemy = LoadedAssetsHandler.GetEnemy("GeodeGertar_EN");
+            spawnGertar._spawnTypeID = CombatType_GameIDs.Spawn_Basic.ToString();
+            spawnGertar.givesExperience = false;
 
             AnimationVisualsEffect jumpscareHaha = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             jumpscareHaha._visuals = Visuals.Messiah;

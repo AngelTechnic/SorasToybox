@@ -53,7 +53,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Atom Smasher.");
+                Debug.Log("[ITEMS] Added the Atom Smasher.");
             }
         }
     }

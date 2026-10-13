@@ -82,7 +82,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToCUSTOMCategory("ForgottenTitleLabel", "The Forgotten");
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added World of Hassle.");
+                Debug.Log("[ITEMS] Added World of Hassle.");
             }
         }
     }

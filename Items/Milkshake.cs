@@ -68,7 +68,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.WitnessTitleLabel);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Gold-Flake Milkshake.");
+                Debug.Log("[ITEMS] Added the Gold-Flake Milkshake.");
             }
         }
     }

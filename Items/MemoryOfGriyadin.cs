@@ -62,7 +62,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Memory of Griyadin.");
+                Debug.Log("[ITEMS] Added the Memory of Griyadin.");
             }
         }
     }

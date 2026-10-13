@@ -65,7 +65,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Bastard Nimbus.");
+                Debug.Log("[ITEMS] Added the Bastard Nimbus.");
             }
         }
     }

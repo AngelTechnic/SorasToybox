@@ -97,7 +97,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Murderer's Quill.");
+                Debug.Log("[ITEMS] Added the Murderer's Quill.");
             }
         }
     }

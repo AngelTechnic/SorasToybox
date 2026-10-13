@@ -49,7 +49,7 @@ namespace SorasToybox.Fools
             }
             else
             {
-                acquireAnim = Visuals.Resolve;
+                acquireAnim = Visuals.Poke;
             }
 
             AnimationVisualsEffect TargetVisual = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
@@ -325,7 +325,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(randomBullshitGo, 5, Targeting.Unit_AllOpponents),
                 ]
             };
-            senekRicochet3.AddIntentsToTarget(TargeterTargeting, ["Swap_Left", "Damage_7_10", "Swap_Right"]);
+            senekRicochet3.AddIntentsToTarget(TargeterTargeting, ["Damage_7_10"]);
             senekRicochet3.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6", "Damage_3_6"]);
 
             Ability senekRicochet4 = new("ST_SenekRicochet4_A")
@@ -343,7 +343,7 @@ namespace SorasToybox.Fools
                     Effects.GenerateEffect(randomBullshitGo, 6, Targeting.Unit_AllOpponents),
                 ]
             };
-            senekRicochet4.AddIntentsToTarget(TargeterTargeting, ["Swap_Left", "Damage_11_15", "Swap_Right"]);
+            senekRicochet4.AddIntentsToTarget(TargeterTargeting, ["Damage_11_15"]);
             senekRicochet4.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6", "Damage_3_6"]);
 
             senek.AddLevelData(7, [senekRailgun1, senekTrickshot1, senekRicochet1]);

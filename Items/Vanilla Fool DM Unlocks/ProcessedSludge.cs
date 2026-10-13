@@ -73,7 +73,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Processed Sludge.");
+                Debug.Log("[ITEMS] Added Processed Sludge.");
             }
         }
     }

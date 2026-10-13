@@ -65,7 +65,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Weather Cycle.");  
+                Debug.Log("[ITEMS] Added the Weather Cycle.");  
             }
         }
     }

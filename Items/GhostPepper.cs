@@ -98,7 +98,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Ghost Pepper.");
+                Debug.Log("[ITEMS] Added the Ghost Pepper.");
             }
         }
     }

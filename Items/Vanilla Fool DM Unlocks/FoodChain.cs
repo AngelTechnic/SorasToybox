@@ -69,7 +69,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Food Chain.");
+                Debug.Log("[ITEMS] Added the Food Chain.");
             }
         }
     }

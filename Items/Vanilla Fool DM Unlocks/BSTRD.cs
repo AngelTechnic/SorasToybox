@@ -61,7 +61,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added OUTSIDE INTERFERENCE.");
+                Debug.Log("[ITEMS] Added OUTSIDE INTERFERENCE.");
             }
         }
     }

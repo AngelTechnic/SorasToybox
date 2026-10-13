@@ -60,7 +60,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Extruded Polygon.");
+                Debug.Log("[ITEMS] Added the Extruded Polygon.");
             }
         }
     }

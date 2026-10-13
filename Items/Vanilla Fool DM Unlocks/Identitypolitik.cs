@@ -62,7 +62,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Identitypolitik.");
+                Debug.Log("[ITEMS] Added Identitypolitik.");
             }
         }
     }

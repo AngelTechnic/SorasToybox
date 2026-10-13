@@ -72,7 +72,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Eternity.");
+                Debug.Log("[ITEMS] Added Eternity.");
             }
         }
     }

@@ -226,14 +226,14 @@ namespace SorasToybox.CustomPassives
 
             family.m_PassiveID = "Family_ID";
             family.passiveIcon = ResourceLoader.LoadSprite("passive_family.png");
-            family._triggerOn = [TriggerCalls.OnBeforeCombatStart, TriggerCalls.TimelineEndReached];
+            family._triggerOn = [TriggerCalls.OnBeforeCombatStart, TriggerCalls.OnPlayerTurnEnd_ForEnemy];
             family.effects =
                 [
                     Effects.GenerateEffect(whereBabies, 1, Targeting.Unit_OtherAllies),
                     Effects.GenerateEffect(giveMeMoreMoves, 1, Targeting.Slot_SelfSlot),
                 ];
             family._characterDescription = "This party member is adopted and gets a cool hat. Not really, sorry. But could you imagine?";
-            family._enemyDescription = "At the start of the fight and the end of the timeline, gain Alacrity equal to the amount of other Infantile enemies present.";
+            family._enemyDescription = "At the start of the fight and the end of the player's turn, gain Alacrity equal to the amount of other Infantile enemies present.";
             family.doesPassiveTriggerInformationPanel = true;
 
             Passives.AddCustomPassiveToPool("ST_Family_PA", "Family", family);
@@ -340,6 +340,24 @@ namespace SorasToybox.CustomPassives
                 GlossaryPassives passiveInfo = new GlossaryPassives("Locksmith", "This character feels an immense hatred for specific movement-impairing effects and deals 50% extra damage to Constricting targets, or when under the effects of Constricted.", ResourceLoader.LoadSprite("passive_locksmith.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(passiveInfo);
             }
+
+            //party member formless
+            PerformEffectPassiveAbility foolFormless = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            foolFormless.name = "ST_Formless_PA";
+            foolFormless._passiveName = Passives.Formless._passiveName;
+            foolFormless.passiveIcon = Passives.Formless.passiveIcon;
+            foolFormless.m_PassiveID = Passives.Formless.m_PassiveID;
+            foolFormless._triggerOn = [TriggerCalls.OnDirectDamaged];
+            foolFormless.effects =
+                [Effects.GenerateEffect(ScriptableObject.CreateInstance<ShiftCostsEffect>(), 1, Targeting.Slot_SelfSlot)];
+            foolFormless._characterDescription = "Upon receiving direct damage, reroll this party member's ability costs.";
+            foolFormless._enemyDescription = "THIS IS THE WRONG FORMLESS YOU BUFFOON";
+            foolFormless.doesPassiveTriggerInformationPanel = true;
+            Passives.AddCustomPassiveToPool("ST_Formless_PA", "Formless", foolFormless);
+
+            GlossaryPassives foolFormlessPassiveInfo = new GlossaryPassives("Formless (Sora's Toybox)", "Upon receiving direct damage, reroll this party member's ability costs.", Passives.Formless.passiveIcon);
+            LoadedDBsHandler.GlossaryDB.AddNewPassive(foolFormlessPassiveInfo);
+
 
 
             //Blooded Stuff

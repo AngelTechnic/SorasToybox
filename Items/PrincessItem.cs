@@ -100,7 +100,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BoundaryTitleLabel", "The Boundary");
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Princess.");
+                Debug.Log("[ITEMS] Added Princess.");
             }
         }
     }

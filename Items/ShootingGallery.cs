@@ -14,6 +14,8 @@ namespace SorasToybox.Items
             giveMeALLTheTargets._spawnTypeID = CombatType_GameIDs.Spawn_Basic.ToString();
             giveMeALLTheTargets.givesExperience = false;
 
+
+
             PerformEffect_Item shootingGallery = new PerformEffect_Item("ST_ShootingGallery_ID")
             {
                 Item_ID = "ShootingGallery_SW",
@@ -51,6 +53,11 @@ namespace SorasToybox.Items
 
             ModdedAchievements unlockAchievement = new ModdedAchievements(shootingGallery.item._itemName, "Unlocked a new item.", ResourceLoader.LoadSprite("Ach_Doula_Senek", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToCUSTOMCategory("AbstractionTitleLabel", "The Abstraction");
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("[ITEMS] Added the Shooting Gallery.");
+            }
         }
     }
 }

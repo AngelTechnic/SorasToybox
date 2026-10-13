@@ -67,7 +67,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Fish Out Of Water.");
+                Debug.Log("[ITEMS] Added the Fish Out Of Water.");
             }
         }
     }

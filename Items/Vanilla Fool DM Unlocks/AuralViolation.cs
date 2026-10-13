@@ -65,7 +65,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Aural Violation.");
+                Debug.Log("[ITEMS] Added Aural Violation.");
             }
         }
     }

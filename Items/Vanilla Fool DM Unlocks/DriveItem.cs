@@ -78,7 +78,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Drive.");
+                Debug.Log("[ITEMS] Added Drive.");
             }
         }
     }

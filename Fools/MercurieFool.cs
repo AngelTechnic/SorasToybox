@@ -460,7 +460,7 @@ namespace SorasToybox.Fools
             speakerBundleMercurieMainScared.dialogueSound = speakerBundleMercurie.dialogueSound;
             speakerBundleMercurieMainScared.portrait = ResourceLoader.LoadSprite("mercuriemain_talkscared", new Vector2(0.5f, 0f), 32);
 
-            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurie, false, false, new SpeakerEmote[6]
+            Dialogues.CreateAndAddCustom_SpeakerData("MercurieMain", speakerBundleMercurieMain, false, false, new SpeakerEmote[6]
             {
                 new SpeakerEmote
                 {

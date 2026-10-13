@@ -75,7 +75,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Healthy Headwear.");
+                Debug.Log("[ITEMS] Added the Healthy Headwear.");
             }
         }
     }

@@ -63,7 +63,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Rotten Kintsugi.");
+                Debug.Log("[ITEMS] Added Rotten Kintsugi.");
             }
         }
     }

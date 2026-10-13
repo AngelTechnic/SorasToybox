@@ -23,7 +23,7 @@ using System.Reflection;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.4.9")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.0")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
@@ -189,7 +189,7 @@ namespace SorasToybox //Mod namespace
                 HumorIrid.Add();
             }
 
-            if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends)
+            if (CrossMod.IntoTheAbyss && CrossMod.MythosFriends && CrossMod.SaltEnemies)
             {
                 Primus.Add();
                 SuspiciousMung.Add();
@@ -270,6 +270,7 @@ namespace SorasToybox //Mod namespace
             //The Buggening Cometh
             TagCharIfExists("LongLiver_CH", "Bug");
             TagCharIfExists("Bimini_CH", "Bug");
+            TagCharIfExists("GallGagger_CH", "Bug");
             if (CrossMod.IntoTheAbyss)
             {
                 TagCharIfExists("Chae_CH", "Bug");
@@ -288,6 +289,7 @@ namespace SorasToybox //Mod namespace
 
             TagEnemyIfExists("Keko_EN", "Bug");
             TagEnemyIfExists("Kekastle_EN", "Bug");
+            TagEnemyIfExists("Bronzo_Bananas_Friendly_EN", "Friendly");
             TagEnemyIfExists("Kekingdom_EN", "Bug");
             TagEnemyIfExists("Keklung_EN", "Bug");
             if (CrossMod.EnemyPack)
@@ -295,6 +297,7 @@ namespace SorasToybox //Mod namespace
                 TagEnemyIfExists("Kekapex_EN", "Bug");
                 TagEnemyIfExists("Lipbug_EN", "Bug");
                 TagEnemyIfExists("TheFountainofYouth_EN", "Bug");
+                TagEnemyIfExists("GigglingUsurper_EN", "Friendly"); 
             }
             if (CrossMod.MythosFriends)
             {
@@ -306,10 +309,37 @@ namespace SorasToybox //Mod namespace
                 TagEnemyIfExists("TumultShell_EN", "Bug");
                 TagEnemyIfExists("Scuttlebunk_EN", "Bug");
                 TagEnemyIfExists("PetrifiedPuker_EN", "Bug");
+                TagEnemyIfExists("RustedRetcher_EN", "Bug");
                 TagEnemyIfExists("Scuttlebunk_EN", "Bug");
                 TagEnemyIfExists("LivingPiscina_EN", "Bug");
                 TagEnemyIfExists("SwarmedSubfossil_BOSS", "Bug");
             }
+            //April's gang
+            TagEnemyIfExists("Patch_Assistant_1_Red_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_2_Red_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_3_Red_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_3_Red_EN", "Friendly");
+
+            TagEnemyIfExists("Patch_Assistant_1_Blue_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_2_Blue_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_3_Blue_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_4_Blue_EN", "Friendly");
+
+            TagEnemyIfExists("Patch_Assistant_1_Yellow_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_2_Yellow_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_3_Yellow_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_4_Yellow_EN", "Friendly");
+
+            TagEnemyIfExists("Patch_Assistant_1_Purple_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_2_Purple_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_3_Purple_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_4_Purple_EN", "Friendly");
+
+            TagEnemyIfExists("ScrapBomb_EN", "Friendly");
+            TagEnemyIfExists("ImmortalFigures_EN", "Friendly");
+            TagEnemyIfExists("TheSludge_EN", "Friendly");
+            TagEnemyIfExists("NeuronActivator_EN", "Friendly");
+
             if (CrossMod.IntoTheAbyss)
             {
                 TagEnemyIfExists("Mistaken_EN", "Bug");
@@ -347,6 +377,7 @@ namespace SorasToybox //Mod namespace
             //Heaven unlocks
             TempusBoostHarness.Add();
             HealthHat.Add();
+            CustomTooledCartridge.Add();
             PsidocFool.Add();//psidoc's normally spawned by a specific crossmod item but who give a shit
             if (CrossMod.AApocrypha)
             {
@@ -372,6 +403,7 @@ namespace SorasToybox //Mod namespace
             {
                 ClockKing.Add();
                 GhostPepper.Add();
+                CrumblingCookie.Add();
                 if (CrossMod.AApocrypha)
                 {
                     MurderersQuill.Add();
@@ -383,6 +415,7 @@ namespace SorasToybox //Mod namespace
             {
                 WorldOfHassle.Add();
                 CharybdisItem.Add();
+                UnlicensedTonic.Add();
                 if (CrossMod.AApocrypha)
                 {
                     SelfishHighHeels.Add();
@@ -393,6 +426,7 @@ namespace SorasToybox //Mod namespace
             {
                 LonelyHike.Add();
                 PrincessItem.Add();
+                RunicLens.Add();
                 if (CrossMod.AApocrypha)
                 {
                     ExtrudedPolygon.Add();
@@ -404,6 +438,7 @@ namespace SorasToybox //Mod namespace
             {
                 MemoryOfArtrodus.Add();
                 MegaHammer.Add();
+                BugSpray.Add();
                 if (CrossMod.AApocrypha)
                 {
                     Screwyoudriver.Add();
@@ -450,6 +485,8 @@ namespace SorasToybox //Mod namespace
             //ST deathmatch unlocks
             MemoryOfGriyadin.Add();
             Setset.Add();
+            InfinityTasbeht.Add();
+            Dartboard.Add();
             if (CrossMod.AApocrypha)
             {
                 MemoryOfSyndomera.Add();
@@ -490,7 +527,11 @@ namespace SorasToybox //Mod namespace
             if (LoadedAssetsHandler.LoadedCharacters.ContainsKey(ID))
             {
                 LoadedAssetsHandler.GetCharacter(ID).unitTypes.Add(unitType);
-                Debug.Log($"Tags & Types | successfully tagged character {LoadedAssetsHandler.GetCharacter(ID)._characterName} ({ID}) as {unitType}");
+                if (extradebug.Value)
+                {
+                    Debug.Log($"Tags & Types | successfully tagged character {LoadedAssetsHandler.GetCharacter(ID)._characterName} ({ID}) as {unitType}");
+                }
+
             }
         }
         static void TagEnemyIfExists(string ID, string unitType)
@@ -498,7 +539,11 @@ namespace SorasToybox //Mod namespace
             if (LoadedAssetsHandler.LoadedEnemies.ContainsKey(ID))
             {
                 LoadedAssetsHandler.GetEnemy(ID).unitTypes.Add(unitType);
-                Debug.Log($"Tags & Types | successfully tagged enemy {LoadedAssetsHandler.GetEnemy(ID)._enemyName} ({ID}) as {unitType}");
+                if (extradebug.Value)
+                {
+                    Debug.Log($"Tags & Types | successfully tagged enemy {LoadedAssetsHandler.GetEnemy(ID)._enemyName} ({ID}) as {unitType}");
+                }
+
             }
         }
     }

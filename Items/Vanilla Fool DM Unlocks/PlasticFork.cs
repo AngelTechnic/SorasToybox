@@ -75,7 +75,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Plastic Fork.");
+                Debug.Log("[ITEMS] Added the Plastic Fork.");
             }
         }
     }

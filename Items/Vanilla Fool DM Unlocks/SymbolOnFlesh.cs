@@ -78,7 +78,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Symbol On Flesh.");
+                Debug.Log("[ITEMS] Added the Symbol On Flesh.");
             }
         }
     }

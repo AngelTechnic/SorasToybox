@@ -66,7 +66,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToCUSTOMCategory("BlueSky_BOSS", "The Dreamer");
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Memory of ARTRODUS.");
+                Debug.Log("[ITEMS] Added the Memory of ARTRODUS.");
             }
         }
     }

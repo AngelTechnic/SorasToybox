@@ -69,7 +69,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Exposure Therapy.");
+                Debug.Log("[ITEMS] Added Exposure Therapy.");
             }
         }
     }

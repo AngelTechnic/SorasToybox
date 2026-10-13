@@ -57,7 +57,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.DivineTitleLabel);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the TEMPUS Boost Harness.");
+                Debug.Log("[ITEMS] Added the TEMPUS Boost Harness.");
             }
         }
     }

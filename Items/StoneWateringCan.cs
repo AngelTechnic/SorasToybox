@@ -46,7 +46,7 @@ namespace SorasToybox.Items
             ItemUtils.AddItemToShopStatsCategoryAndGamePool(wateringCan.item, new ItemModdedUnlockInfo(wateringCan.Item_ID, ResourceLoader.LoadSprite("item_stonewateringcan_locked", null, 32, null), "DesibonBoss_ACH"));
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Stone Watering Can.");
+                Debug.Log("[ITEMS] Added the Stone Watering Can.");
             }
         }
     }

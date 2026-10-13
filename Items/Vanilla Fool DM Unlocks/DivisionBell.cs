@@ -71,7 +71,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Division Bell.");
+                Debug.Log("[ITEMS] Added the Division Bell.");
             }
         }
     }

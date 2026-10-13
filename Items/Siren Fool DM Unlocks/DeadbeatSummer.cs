@@ -84,7 +84,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Deadbeat Summer.");
+                Debug.Log("[ITEMS] Added Deadbeat Summer.");
             }
         }
     }

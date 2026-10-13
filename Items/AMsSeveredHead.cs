@@ -61,7 +61,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Extinction of Enmity.");
+                Debug.Log("[ITEMS] Added the Extinction of Enmity.");
             }
         }
     }

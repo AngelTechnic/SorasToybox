@@ -62,7 +62,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Entrenching Tool.");
+                Debug.Log("[ITEMS] Added the Entrenching Tool.");
             }
         }
     }

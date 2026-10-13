@@ -1,12 +1,10 @@
 ﻿using BrutalAPI;
 using BrutalAPI.Items;
 using SorasToybox.CustomEffects;
-using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
-using UnityEngine.UIElements.Experimental;
 
 namespace SorasToybox.Items
 {
@@ -86,7 +84,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Mega Hammer.");
+                Debug.Log("[ITEMS] Added the Mega Hammer.");
             }
         }
     }

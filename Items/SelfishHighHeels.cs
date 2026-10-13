@@ -95,7 +95,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToCUSTOMCategory("ForgottenTitleLabel", "The Forgotten");
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Selfish High-Heels.");
+                Debug.Log("[ITEMS] Added the Selfish High-Heels.");
             }
         }
     }

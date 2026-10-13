@@ -75,7 +75,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Toy Saw.");
+                Debug.Log("[ITEMS] Added the Toy Saw.");
             }
 
         }

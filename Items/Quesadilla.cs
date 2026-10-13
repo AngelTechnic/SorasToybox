@@ -71,7 +71,7 @@ namespace SorasToybox.Items
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.WitnessTitleLabel);
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Slapdash Quesadilla.");
+                Debug.Log("[ITEMS] Added the Slapdash Quesadilla.");
             }
         }
     }

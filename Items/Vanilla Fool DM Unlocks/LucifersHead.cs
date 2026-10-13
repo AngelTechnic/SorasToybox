@@ -68,7 +68,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Lucifer's Severed Head.");
+                Debug.Log("[ITEMS] Added Lucifer's Severed Head.");
             }
         }
     }

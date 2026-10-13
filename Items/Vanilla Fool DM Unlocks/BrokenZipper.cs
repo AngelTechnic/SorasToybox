@@ -61,7 +61,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Broken Zipper.");
+                Debug.Log("[ITEMS] Added the Broken Zipper.");
             }
         }
     }

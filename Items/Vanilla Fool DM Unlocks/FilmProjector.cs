@@ -66,7 +66,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Film Projector.");
+                Debug.Log("[ITEMS] Added the Film Projector.");
             }
         }
     }

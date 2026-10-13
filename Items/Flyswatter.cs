@@ -16,10 +16,10 @@ namespace SorasToybox.Items
 
             DamageDealtPercentageModifierByUnitType_Item flyswatter = new DamageDealtPercentageModifierByUnitType_Item("ST_Flyswatter_ID")
             {
-                Item_ID = "Flyswatter_SW",
+                Item_ID = "ST_Flyswatter_SW",
                 Name = "Flyswatter",
                 Flavour = "\"They're coming to get meeeee!\"",
-                Description = "This party member deals 20% less damage.\nThis party member deals 125% more damage to bugs.",
+                Description = "This party member deals 33% less damage.\nThis party member deals 125% more damage to bugs.",
                 IsShopItem = true,
                 ShopPrice = 5,
                 DoesPopUpInfo = true,
@@ -28,7 +28,7 @@ namespace SorasToybox.Items
                 TriggerOn = TriggerCalls.OnWillApplyDamage,
                 OnUnlockUsesTHE = true,
                 DefaultDoesIncreaseDamage = false,
-                DefaultPercentageToModify = 20,
+                DefaultPercentageToModify = 33,
                 UnitTypeData = new UnitTypePercMod[] { unitTypePercMod },
             };
 
@@ -36,7 +36,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Senek_Witness_ACH";
             string unlockID = "SorasToybox_Senek_Witness_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(flyswatter.item, new ItemModdedUnlockInfo(flyswatter.Item_ID, ResourceLoader.LoadSprite("item_flyswatter_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(flyswatter.item, new ItemModdedUnlockInfo(flyswatter.Item_ID, ResourceLoader.LoadSprite("item_flyswatter_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, flyswatter.Item_ID);
 

@@ -52,7 +52,7 @@ namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Stretch Marks.");
+                Debug.Log("[ITEMS] Added Stretch Marks.");
             }
         }
     }

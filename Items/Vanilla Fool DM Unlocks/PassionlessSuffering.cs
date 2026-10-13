@@ -68,7 +68,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Passionless Suffering.");
+                Debug.Log("[ITEMS] Added Passionless Suffering.");
             }
         }
     }

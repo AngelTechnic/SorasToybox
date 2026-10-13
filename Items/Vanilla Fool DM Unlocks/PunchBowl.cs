@@ -68,7 +68,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Punch Bowl.");
+                Debug.Log("[ITEMS] Added the Punch Bowl.");
             }
 
         }

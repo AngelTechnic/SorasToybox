@@ -72,7 +72,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added My Face.");
+                Debug.Log("[ITEMS] Added My Face.");
             }
 
         }

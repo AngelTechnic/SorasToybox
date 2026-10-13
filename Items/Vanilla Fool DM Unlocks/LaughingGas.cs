@@ -119,7 +119,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the N2O Canister.");
+                Debug.Log("[ITEMS] Added the N2O Canister.");
             }
         }
     }

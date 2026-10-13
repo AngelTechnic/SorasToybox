@@ -76,7 +76,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Bad Publicity.");
+                Debug.Log("[ITEMS] Added Bad Publicity.");
             }
         }
     }

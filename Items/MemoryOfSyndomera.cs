@@ -67,7 +67,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added the Memory of Syndomera.");
+                Debug.Log("[ITEMS] Added the Memory of Syndomera.");
             }
         }
     }

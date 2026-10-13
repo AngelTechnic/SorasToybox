@@ -87,7 +87,7 @@ namespace SorasToybox.Items
 
             if (SorasToybox.extradebug.Value)
             {
-                Debug.Log("Added Charybdis.");
+                Debug.Log("[ITEMS] Added Charybdis.");
             }
         }
     }
