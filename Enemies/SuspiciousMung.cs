@@ -62,7 +62,7 @@ namespace SorasToybox.Enemies
             susMung.enemy.enemyTemplate = LoadedAssetsHandler.GetEnemy("Mung_EN").enemyTemplate;
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added Suspicious Mung.");
+                UnityEngine.Debug.Log("[ENEMIES] Added Mung.");
             }
         }
     }

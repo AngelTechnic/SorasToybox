@@ -30,7 +30,7 @@ namespace SorasToybox.Encounters
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Test Encounter loaded.");
+                UnityEngine.Debug.Log("[ENCOUNTERS] Test Encounter loaded.");
             }
         }
     }

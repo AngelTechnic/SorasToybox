@@ -76,10 +76,6 @@ namespace SorasToybox.Enemies
 
             desibonRevenge.AddEnemyAbilities([baa]);
             desibonRevenge.AddEnemy(true, false, false);
-            if (SorasToybox.extradebug.Value)
-            {
-                UnityEngine.Debug.Log("Sheep shenanigans.");
-            }
 
             Enemy desibon = new Enemy("Dendrite Desibon", "DendriteDesibon_BOSS")
             {
@@ -235,7 +231,7 @@ namespace SorasToybox.Enemies
 
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added the Dendrite Desibon.");
+                UnityEngine.Debug.Log("[BOSSES] Added the Dendrite Desibon.");
             }
 
             BackwardsUnlockCompatibility.TryLockItemBehindAchievement("DesibonBoss_ACH", "StoneWateringCan_SW");
@@ -255,7 +251,7 @@ namespace SorasToybox.Enemies
 
             string[] desibonTips =
             [
-                "Remember, Whiplash triggers on ANY damage received, even stuff from other statuses like Ruptured..",
+                "Remember, Whiplash triggers on ANY damage received, even stuff from other statuses like Ruptured.",
                 "The Petrification from the Gertars may be annoying, but it can temporarily make you immune to Ruptured.",
                 "Ok seriously who the hell made this boss?", // thanks stoat
             ];

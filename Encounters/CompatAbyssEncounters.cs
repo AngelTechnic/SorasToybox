@@ -27,7 +27,7 @@ namespace SorasToybox.Encounters
 
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Compat Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Compat Encounters loaded.");
                 }
             }
         }

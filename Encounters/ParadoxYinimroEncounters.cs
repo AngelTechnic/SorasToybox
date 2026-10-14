@@ -68,7 +68,7 @@ namespace SorasToybox.Encounters
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroP.Hard, 5, "TheAbyss_Zone3", BundleDifficulty.Hard);
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Paradox Yinimro Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Paradox Yinimro Encounters loaded.");
                 }
             }
         }

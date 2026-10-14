@@ -88,6 +88,7 @@ namespace SorasToybox.Enemies
 
             senekTasbeht.AddPassive(Passives.GetCustomPassive("Condense_PA"));
             senekTasbeht.AddPassive(Passives.Constricting);
+            senekTasbeht.AddPassive(Passives.Withering);
             senekTasbeht.AddEnemyAbilities([
                 senekTasbehtMoveLeft,
                 senekTasbehtMoveRight,

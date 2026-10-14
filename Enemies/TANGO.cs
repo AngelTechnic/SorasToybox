@@ -363,7 +363,7 @@ namespace SorasToybox.Enemies
 
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added TANGO.");
+                UnityEngine.Debug.Log("[ENEMIES] Added TANGO.");
             }
         }
     }

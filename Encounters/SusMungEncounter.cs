@@ -29,7 +29,7 @@ namespace SorasToybox.Encounters
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Mung_Easy_EnemyBundle", 1, "TheAbyss_Zone3", BundleDifficulty.Hard);
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Mung Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Mung Encounters loaded.");
                 }
             }
         }

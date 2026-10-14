@@ -70,6 +70,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("TANGOHostile_EN", "Tango2");
             targetListMercurie.Add("SenekTasbeht_EN", "SenekTasbeht");
             targetListMercurie.Add("InfinityTasbeht_EN", "InfinityTasbeht");
+            targetListMercurie.Add("Gammamite_EN", "Gammamite");
 
             Dictionary<string, Dictionary<string, string>> targetAltListMercurie = new Dictionary<string, Dictionary<string, string>>();
 
@@ -143,6 +144,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("TaMaGoa_EN", "TaMaGoa");
             targetListKarma.Add("UnfinishedHeir_BOSS", "Heir");
             targetListKarma.Add("Poser_EN", "Poser");
+            targetListKarma.Add("Chimpnologue_EN", "Chimpnologue");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 
@@ -331,15 +333,28 @@ namespace SorasToybox.Fools
             CharacterHasItemEffectorCondition EmptyHanded = ScriptableObject.CreateInstance<CharacterHasItemEffectorCondition>();
             EmptyHanded._passIfTrue = false;
 
+            CharacterHasItemEffectorCondition FullHanded = ScriptableObject.CreateInstance<CharacterHasItemEffectorCondition>();
+            FullHanded._passIfTrue = true;
+
             CasterSetItemEffect journalSet = ScriptableObject.CreateInstance<CasterSetItemEffect>();
             journalSet._item = item;
 
-            PerformEffectPassiveAbility journalPassive = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            SpecificOpponentsByJournalListTargeting journalTargeting = ScriptableObject.CreateInstance<SpecificOpponentsByJournalListTargeting>();
+            journalTargeting._journalList = targets;
+            journalTargeting.getAllUnitSelfSlots = false;
+            journalTargeting.targetUnitAllySlots = false;
+            journalTargeting.slotOffsets = [0];
+
+            DisplayMessageEffect journalReminder = ScriptableObject.CreateInstance<DisplayMessageEffect>();
+            journalReminder._text = "<color=#" + ColorUtility.ToHtmlStringRGB(new Color32(255, 240, 0, 255)) + ">Journal Entry found!</color>";
+
+            PerformDoubleEffectPassiveAbility journalPassive = ScriptableObject.CreateInstance<PerformDoubleEffectPassiveAbility>();
             journalPassive.name = "JournalMode_" + foolID + "_PA";
             journalPassive._passiveName = "Journal Mode";
             journalPassive.m_PassiveID = "JournalMode";
             journalPassive.passiveIcon = ResourceLoader.LoadSprite("IconJournalMode");
-            journalPassive._characterDescription = "If " + foolName + " has no item on combat start, " + pronouns[0] + " will receive a Journal, letting " + pronouns[1] + " provide information about certain enemies.";
+            journalPassive._characterDescription = "If " + foolName + " has no item on combat start, " + pronouns[0] + " will receive a Journal, letting " + pronouns[1] + " provide information about certain enemies." +
+                "\nIf \" + foolName + \" has an item equipped when a suitable enemy is encountered, a popup will appear to let you know about it.";
             journalPassive._enemyDescription = "This enemy is well-read, but I doubt that it will want to tell you anything.";
             journalPassive._triggerOn = [TriggerCalls.OnCombatStart];
             journalPassive.conditions = [IsCharacter, EmptyHanded];
@@ -348,6 +363,14 @@ namespace SorasToybox.Fools
             [
                 Effects.GenerateEffect(journalSet),
             ];
+            journalPassive._secondTriggerOn = [TriggerCalls.OnCombatStart];
+            journalPassive._secondPerformConditions = [IsCharacter, FullHanded];
+            journalPassive._secondDoesPerformPopUp = false;
+            journalPassive._secondEffects = [
+                Effects.GenerateEffect(ScriptableObject.CreateInstance<CheckHasAtLeastOneUnitEffect>(), 1, journalTargeting),
+                Effects.GenerateEffect(journalReminder, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+
+                ];
 
             return journalPassive;
         }

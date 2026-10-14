@@ -65,7 +65,7 @@ namespace SorasToybox.Encounters
 
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("TANGO Encounters loaded.");
+                UnityEngine.Debug.Log("[ENCOUNTERS] TANGO Encounters loaded.");
             }
         }
     }

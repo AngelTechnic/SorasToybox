@@ -46,7 +46,7 @@ namespace SorasToybox.Encounters
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Dozer_Medium_EnemyBundle", 9, "TheAbyss_Zone3", BundleDifficulty.Medium);
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Dozer Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Dozer Encounters loaded.");
                 }
             }
         }

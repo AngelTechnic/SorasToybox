@@ -179,7 +179,7 @@ namespace SorasToybox.Enemies
             LoadedAssetsHandler.GetEnemy("Primus_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("Supergiant_EN").enemyTemplate;
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added the Traces of Primus.");
+                UnityEngine.Debug.Log("[ENEMIES] Added the Traces of Primus.");
             }
         }
     }

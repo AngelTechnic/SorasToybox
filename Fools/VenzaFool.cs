@@ -17,6 +17,8 @@ namespace SorasToybox.Fools
             stfuNoOneLikesYou._obliterationDeath = true;
 
             UnboundedHealEffect unboundHeal = ScriptableObject.CreateInstance<UnboundedHealEffect>();
+            unboundHeal._repeatChance = 75;
+            unboundHeal._cycles = 1;
 
             StatusEffect_Apply_Effect getMiseryRandomly = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getMiseryRandomly._RandomBetweenPrevious = true;

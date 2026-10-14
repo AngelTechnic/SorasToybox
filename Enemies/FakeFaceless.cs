@@ -79,7 +79,7 @@ namespace SorasToybox.Enemies
             fakeless.enemy.enemyTemplate = LoadedAssetsHandler.GetEnemy("Faceless_EN").enemyTemplate;
             if (SorasToybox.extradebug.Value)
             {
-                UnityEngine.Debug.Log("Added Fakeless.");
+                UnityEngine.Debug.Log("[ENEMIES] Added Fakeless.");
             }
         }
     }

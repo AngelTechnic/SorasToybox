@@ -34,7 +34,7 @@ namespace SorasToybox.Encounters
 
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Faceless Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Faceless Encounters loaded.");
                 }
             }
         }

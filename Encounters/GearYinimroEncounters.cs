@@ -42,6 +42,10 @@ namespace SorasToybox.Encounters
             gearYinimroGardenMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 13, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
 
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("[ENCOUNTERS] Garden Gear Yinimro Encounters loaded.");
+            }
 
 
             if (Abyss.Exists)
@@ -68,7 +72,7 @@ namespace SorasToybox.Encounters
                 EnemyEncounter_API gearYinimroAbyssHard = new EnemyEncounter_API(0, Abyss.H.YinimroG.Hard, "GearYinimro_Sign")
                 {
                     MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
-                    RoarEvent = LoadedAssetsHandler.GetEnemyBundle("H_ZoneAbyss_Streetlight_Medium_EnemyBundle")._roarReference.roarEvent,
+                    RoarEvent = "event:/IntrusiveRoar",
                 };
 
                 gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 2, "BurningShame_EN", 1, "Sycophant_EN");
@@ -80,7 +84,7 @@ namespace SorasToybox.Encounters
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector(Abyss.H.YinimroG.Hard, 7, "TheAbyss_Zone3", BundleDifficulty.Hard);
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Gear Yinimro Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Abyss Gear Yinimro Encounters loaded.");
                 }
             }
         }

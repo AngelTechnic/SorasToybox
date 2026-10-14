@@ -46,7 +46,7 @@ namespace SorasToybox.Encounters
                 EnemyEncounterUtils.AddEncounterToCustomZoneSelector("H_ZoneAbyss_Litany_Medium_EnemyBundle", 10, "TheAbyss_Zone3", BundleDifficulty.Medium);
                 if (SorasToybox.extradebug.Value)
                 {
-                    UnityEngine.Debug.Log("Litany Encounters loaded.");
+                    UnityEngine.Debug.Log("[ENCOUNTERS] Litany Encounters loaded.");
                 }
             }
         }

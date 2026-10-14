@@ -127,7 +127,7 @@ namespace SorasToybox //Mod namespace
             journalmode = config.Bind("Gameplay - Misc", "Journal Mode", false, "EXPERIMENTAL - Set this to true to enable Journal Mode, giving certain fools the means to reveal more lore about themselves and their world of origin.");
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
             freefooltester = config.Bind("Meta", "Free Fool Event Tester", false, "Set this to true to enable the free fool event tester.");
-            gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
+            //gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
             altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
             altforgottenmusic = config.Bind("Cosmetic Changes", "Alternate Nobody Music", false, "Alternative music for Nobody, from another Nobody. This is a personal thing I added for my own sake. If true, uses \"MX\" by RENREN. If false, uses, uh, the default theme?");
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
@@ -207,10 +207,10 @@ namespace SorasToybox //Mod namespace
                 CrashoutEncounters.Add();
                 CompatAbyssEncounters.Add();
                 DeathmatchEncounter.Add();
-                if (gardenantagonist.Value)
+                /*if (gardenantagonist.Value)
                 {
                     GardenDeathmatchEncounter.Add();
-                }
+                }*/
             }
 
             if (CrossMod.Siren)
@@ -290,6 +290,7 @@ namespace SorasToybox //Mod namespace
             TagEnemyIfExists("Keko_EN", "Bug");
             TagEnemyIfExists("Kekastle_EN", "Bug");
             TagEnemyIfExists("Bronzo_Bananas_Friendly_EN", "Friendly");
+            
             TagEnemyIfExists("Kekingdom_EN", "Bug");
             TagEnemyIfExists("Keklung_EN", "Bug");
             if (CrossMod.EnemyPack)
@@ -302,6 +303,11 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.MythosFriends)
             {
                 TagEnemyIfExists("WormthatWalks_EN", "Bug");
+            }
+            if (CrossMod.GlitchsFreaks)
+            {
+                TagEnemyIfExists("Enno_EN", "Bug");
+                TagEnemyIfExists("NotAn_EN", "Bug");
             }
             if (CrossMod.Siren)
             {
@@ -318,7 +324,7 @@ namespace SorasToybox //Mod namespace
             TagEnemyIfExists("Patch_Assistant_1_Red_EN", "Friendly");
             TagEnemyIfExists("Patch_Assistant_2_Red_EN", "Friendly");
             TagEnemyIfExists("Patch_Assistant_3_Red_EN", "Friendly");
-            TagEnemyIfExists("Patch_Assistant_3_Red_EN", "Friendly");
+            TagEnemyIfExists("Patch_Assistant_4_Red_EN", "Friendly");
 
             TagEnemyIfExists("Patch_Assistant_1_Blue_EN", "Friendly");
             TagEnemyIfExists("Patch_Assistant_2_Blue_EN", "Friendly");
