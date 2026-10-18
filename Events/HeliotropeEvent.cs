@@ -46,13 +46,13 @@ namespace SorasToybox
         }
 
         // Token: 0x0600017E RID: 382 RVA: 0x0001D21C File Offset: 0x0001B41C
-        public static void AddHeliotropeEncounter(BasicEncounterSO BasicEncounter)
+        public static void AddHeliotropeEncounter(ConditionEncounterSO ConditionEncounter)
         {
-            BasicEncounterSO basicEncounterSO;
-            bool flag = !LoadedAssetsHandler.LoadedBasicEncounters.TryGetValue(BasicEncounter.name, out basicEncounterSO);
+            ConditionEncounterSO conditionEncounterSO;
+            bool flag = !LoadedAssetsHandler.LoadedConditionEncounters.TryGetValue(ConditionEncounter.name, out conditionEncounterSO);
             if (flag)
             {
-                LoadedAssetsHandler.LoadedBasicEncounters.Add(BasicEncounter.name, BasicEncounter);
+                LoadedAssetsHandler.LoadedConditionEncounters.Add(ConditionEncounter.name, ConditionEncounter);
             }
             CardTypeInfo cardTypeInfo = new CardTypeInfo();
             cardTypeInfo._cardInfo = default(CardInfo);
@@ -61,7 +61,7 @@ namespace SorasToybox
             cardTypeInfo._usePercentage = true;
             cardTypeInfo._percentage = 100;
             HeliotropeCardManager.HeliotropeCard = cardTypeInfo;
-            HeliotropeCardManager.HeliotropeEncounter = BasicEncounter;
+            HeliotropeCardManager.HeliotropeEncounter = ConditionEncounter;
             ZoneBGDataBaseSO zoneBGDataBaseSO = LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO;
             List<CardTypeInfo> list = zoneBGDataBaseSO._deckInfo._possibleCards.ToList<CardTypeInfo>();
             list.Add(cardTypeInfo);
@@ -147,9 +147,9 @@ namespace SorasToybox
             OverworldRooms.Prepare_NPC_RoomPrefab("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeRoom.prefab", text2, SorasToybox.assetbundle);
             YarnProgram yarnProgram = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeChoice.yarn", Array.Empty<object>()));
             Dialogues.AddCustom_DialogueProgram(text, yarnProgram);
-            Dialogues.CreateAndAddCustom_DialogueSO(text, yarnProgram, text, "title: SorasToybox.Heliotrope.Choose");
+            Dialogues.CreateAndAddCustom_DialogueSO(text, yarnProgram, text, "SorasToybox.Heliotrope.Choose");
             Portals.AddPortalSign(text3, ResourceLoader.LoadSprite("heliotrope_ow.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null), Portals.NPCIDColor);
-            BasicEncounterSO basicEncounterSO = ScriptableObject.CreateInstance<BasicEncounterSO>();
+            ConditionEncounterSO basicEncounterSO = ScriptableObject.CreateInstance<ConditionEncounterSO>();
             basicEncounterSO.encounterEntityIDs = new string[]
             {
                 "Heliotrope"
@@ -157,11 +157,10 @@ namespace SorasToybox
             basicEncounterSO.encounterRoom = text2;
             basicEncounterSO.signID = text3;
             basicEncounterSO._dialogue = text;
-            ModdedNPCs.AddCustom_BasicEncounter(text, basicEncounterSO);
+            basicEncounterSO.m_QuestsCompletedNeeded = ["Heliotrope"];
+            ModdedNPCs.AddCustom_ConditionEncounter(text, basicEncounterSO);
 
-            //karma's unlock yarn file uses a few branching if statements that check
-            //whether you've visited her in previous runs and if you've already spoken to her.
-            //it all starts at the following node
+            //i'm gonna be honest idk what i'm doing
             string text4 = "Heliotrope_Unlock_Dialogue";
             string text5 = "Heliotrope_Unlock_Room";
             string text6 = "Heliotrope_Unlock_Sign";

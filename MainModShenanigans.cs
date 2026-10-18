@@ -265,6 +265,10 @@ namespace SorasToybox //Mod namespace
                 FreeFoolEventTester.Add();
             }
 
+            //oh boy.
+            Heliotrope.Setup();
+            Heliotrope.HeliotropeRoom();
+
 
 
             //The Buggening Cometh
@@ -394,6 +398,7 @@ namespace SorasToybox //Mod namespace
             SentientArcanite.Add();
             UrbanSurvival.Add();
             AMsSeveredHead.Add();
+            Everpresence.Add();
 
             //remember character order is: Mercurie, Karma, Whhvay
             //Osman Unlocks
