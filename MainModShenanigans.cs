@@ -274,6 +274,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.IntoTheAbyss)
             {
                 TagCharIfExists("Chae_CH", "Bug");
+                TagCharIfExists("Soreka_CH", "Zoincaillan");
             }
             if (CrossMod.MythosFriends)
             {
@@ -319,6 +320,7 @@ namespace SorasToybox //Mod namespace
                 TagEnemyIfExists("Scuttlebunk_EN", "Bug");
                 TagEnemyIfExists("LivingPiscina_EN", "Bug");
                 TagEnemyIfExists("SwarmedSubfossil_BOSS", "Bug");
+                TagEnemyIfExists("TorporousTardigrade_BOSS", "Bug");
             }
             //April's gang
             TagEnemyIfExists("Patch_Assistant_1_Red_EN", "Friendly");
@@ -345,14 +347,37 @@ namespace SorasToybox //Mod namespace
             TagEnemyIfExists("ImmortalFigures_EN", "Friendly");
             TagEnemyIfExists("TheSludge_EN", "Friendly");
             TagEnemyIfExists("NeuronActivator_EN", "Friendly");
+            if (CrossMod.SaltEnemies)
+            {
+                TagEnemyIfExists("DeadPixel_EN", "Bug");
+                TagEnemyIfExists("Chiito_EN", "Bug");
+                TagEnemyIfExists("Spectre_EN", "Bug");
+                TagEnemyIfExists("RedBot_EN", "Bug");
+                TagEnemyIfExists("GreyBot_EN", "Bug");
+            }
+
 
             if (CrossMod.IntoTheAbyss)
             {
+                TagEnemyIfExists("ButterflyEffect_EN", "Bug");
                 TagEnemyIfExists("Mistaken_EN", "Bug");
                 TagEnemyIfExists("Mistake_EN", "Bug");
                 TagEnemyIfExists("Omission_EN", "Bug");
                 TagEnemyIfExists("Oversight_EN", "Bug");
+                TagEnemyIfExists("Lexem_EN", "Robot");
+                TagEnemyIfExists("Lexem_EN", "Zoincaillan");
+                TagEnemyIfExists("ContainmentBlock_EN", "Friendly");
             }
+            if (CrossMod.AApocrypha)
+            {
+                TagEnemyIfExists("ApatelosOrguis_EN", "Bug");
+            }
+
+            //Memento Mori enemies :]
+            TagEnemyIfExists("Keklets_EN", "Bug");
+            TagEnemyIfExists("Topkek_EN", "Bug");
+            TagEnemyIfExists("MaleDreamEater_EN", "Bug");
+            TagEnemyIfExists("FemaleDreamEater_EN", "Bug");
 
             Debug.Log("The buggening concludes.");
 

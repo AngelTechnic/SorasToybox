@@ -159,7 +159,7 @@ namespace SorasToybox.Fools
             {
 
                 Description = "Deal 8 damage to the Targeted position; this damage ignores Shield.\nGain 2 Constricted.",
-                Cost = [Pigments.Yellow, Pigments.Red, Pigments.Red],
+                Cost = [Pigments.Yellow, Pigments.Blue, Pigments.Red],
                 AbilitySprite = ResourceLoader.LoadSprite("senek_railgun.png"),
                 Visuals = railgunAnim,
                 AnimationTarget = TargeterTargeting,
@@ -233,15 +233,15 @@ namespace SorasToybox.Fools
 
             Ability senekTrickshot1 = new Ability("Idiotic Trickshot", "ST_SenekTrickshot1_A")
             {
-                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 5 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability.",
-                Cost = [Pigments.Purple, Pigments.Red, Pigments.Red],
+                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 3 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability.",
+                Cost = [Pigments.BluePurple, Pigments.Red, Pigments.Red],
                 AbilitySprite = ResourceLoader.LoadSprite("senek_trickshot.png"),
                 Effects =
                 [
                     Effects.GenerateEffect(summonClockGuy, 1),
                     Effects.GenerateEffect(trickshotVisual, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getDP, 1, allFriendlyEnemies),
-                    Effects.GenerateEffect(ricochetDamage, 5, allFriendlyEnemies),
+                    Effects.GenerateEffect(ricochetDamage, 3, allFriendlyEnemies),
                 ]
             };
             senekTrickshot1.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Other_Spawn)]);
@@ -251,25 +251,25 @@ namespace SorasToybox.Fools
             Ability senekTrickshot2 = new Ability(senekTrickshot1.ability, "ST_SenekTrickshot2_A", senekTrickshot1.Cost)
             {
                 Name = "Foolish Trickshot",
-                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 6 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability."
+                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 4 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability."
             };
-            senekTrickshot2.Effects[3].entryVariable = 6;
+            senekTrickshot2.Effects[3].entryVariable = 4;
 
 
             Ability senekTrickshot3 = new Ability(senekTrickshot2.ability, "ST_SenekTrickshot3_A", senekTrickshot2.Cost)
             {
                 Name = "Wicked Trickshot",
-                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 7 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability."
+                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 5 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability."
             };
-            senekTrickshot3.Effects[3].entryVariable = 7;
+            senekTrickshot3.Effects[3].entryVariable = 5;
             senekTrickshot3.EffectIntents[1].intents[1] = nameof(IntentType_GameIDs.Damage_7_10);
 
             Ability senekTrickshot4 = new Ability(senekTrickshot3.ability, "ST_SenekTrickshot4_A", senekTrickshot3.Cost)
             {
                 Name = "Totally Calculated Trickshot",
-                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 8 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability."
+                Description = "Apply 1 Divine Protection to all Friendly enemies, then deal 6 damage to them.\nAttempt to summon a hacked Tasbeht to act as a target for this ability."
             };
-            senekTrickshot4.Effects[3].entryVariable = 8;
+            senekTrickshot4.Effects[3].entryVariable = 6;
 
 
             DamageTargetRandomEffect randomBullshitGo = ScriptableObject.CreateInstance<DamageTargetRandomEffect>();
@@ -278,19 +278,19 @@ namespace SorasToybox.Fools
             
             Ability senekRicochet1 = new Ability("Focused Ricochet", "ST_SenekRicochet1_A")
             {
-                Cost = [Pigments.Red, Pigments.Blue, Pigments.Red],
-                Description = "Deal 5 damage to the Targeted position.\nDeal 4 damage to a random target.",
+                Cost = [Pigments.Purple, Pigments.Blue, Pigments.Red],
+                Description = "Deal 5 damage to the Targeted position.\nDeal 2 damage to a random target.",
                 AbilitySprite = ResourceLoader.LoadSprite("senek_ricochet.png"),
                 Visuals = Visuals.Intrusion,
                 AnimationTarget = TargeterTargeting,
                 Effects =
                 [
                     Effects.GenerateEffect(ricochetDamage, 5, TargeterTargeting),
-                    Effects.GenerateEffect(randomBullshitGo, 4, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(randomBullshitGo, 2, Targeting.Unit_AllOpponents),
                 ],
             };
             senekRicochet1.AddIntentsToTarget(TargeterTargeting, ["Damage_3_6"]);
-            senekRicochet1.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6"]);
+            senekRicochet1.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_1_2"]);
 
             Ability senekRicochet2 = new("ST_SenekRicochet2_A")
             {
@@ -298,16 +298,16 @@ namespace SorasToybox.Fools
                 AbilitySprite = ResourceLoader.LoadSprite("senek_ricochet.png"),
                 Visuals = Visuals.Intrusion,
                 AnimationTarget = TargeterTargeting,
-                Cost = [Pigments.Red, Pigments.Blue, Pigments.Red],
-                Description = "Deal 7 damage to the Targeted position.\nDeal 5 damage to a random target.",
+                Cost = [Pigments.Purple, Pigments.Blue, Pigments.Red],
+                Description = "Deal 6 damage to the Targeted position.\nDeal 4 damage to a random target.",
                 Effects =
                 [
-                    Effects.GenerateEffect(ricochetDamage, 7, TargeterTargeting),
-                    Effects.GenerateEffect(randomBullshitGo, 5, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(ricochetDamage, 6, TargeterTargeting),
+                    Effects.GenerateEffect(randomBullshitGo, 4, Targeting.Unit_AllOpponents),
 
                 ]
             };
-            senekRicochet2.AddIntentsToTarget(TargeterTargeting, ["Damage_7_10"]);
+            senekRicochet2.AddIntentsToTarget(TargeterTargeting, ["Damage_3_6"]);
             senekRicochet2.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6"]);
 
             Ability senekRicochet3 = new("ST_SenekRicochet3_A")
@@ -316,17 +316,17 @@ namespace SorasToybox.Fools
                 AbilitySprite = ResourceLoader.LoadSprite("senek_ricochet.png"),
                 Visuals = Visuals.Intrusion,
                 AnimationTarget = TargeterTargeting,
-                Cost = [Pigments.Red, Pigments.Blue, Pigments.Red],
-                Description = "Deal 9 damage to the Targeted position.\nDeal 5 damage to two random targets.",
+                Cost = [Pigments.Purple, Pigments.Blue, Pigments.Red],
+                Description = "Deal 7 damage to the Targeted position.\nDeal 4 damage to a random target.\nDeal 2 damage to another random target.",
                 Effects =
                 [
-                    Effects.GenerateEffect(ricochetDamage, 9, TargeterTargeting),
-                    Effects.GenerateEffect(randomBullshitGo, 5, Targeting.Unit_AllOpponents),
-                    Effects.GenerateEffect(randomBullshitGo, 5, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(ricochetDamage, 7, TargeterTargeting),
+                    Effects.GenerateEffect(randomBullshitGo, 4, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(randomBullshitGo, 2, Targeting.Unit_AllOpponents),
                 ]
             };
             senekRicochet3.AddIntentsToTarget(TargeterTargeting, ["Damage_7_10"]);
-            senekRicochet3.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6", "Damage_3_6"]);
+            senekRicochet3.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6", "Damage_1_2"]);
 
             Ability senekRicochet4 = new("ST_SenekRicochet4_A")
             {
@@ -334,16 +334,16 @@ namespace SorasToybox.Fools
                 AbilitySprite = ResourceLoader.LoadSprite("senek_ricochet.png"),
                 Visuals = Visuals.Intrusion,
                 AnimationTarget = TargeterTargeting,
-                Cost = [Pigments.Red, Pigments.Blue, Pigments.Red],
-                Description = "Deal 11 damage to the Targeted position.\nDeal 6 damage to two random targets.",
+                Cost = [Pigments.Purple, Pigments.Blue, Pigments.Red],
+                Description = "Deal 9 damage to the Targeted position.\nDeal 6 damage to a random target.\nDeal 4 damage to another random target.",
                 Effects =
                 [
-                    Effects.GenerateEffect(ricochetDamage, 11, TargeterTargeting),
+                    Effects.GenerateEffect(ricochetDamage, 9, TargeterTargeting),
                     Effects.GenerateEffect(randomBullshitGo, 6, Targeting.Unit_AllOpponents),
-                    Effects.GenerateEffect(randomBullshitGo, 6, Targeting.Unit_AllOpponents),
+                    Effects.GenerateEffect(randomBullshitGo, 4, Targeting.Unit_AllOpponents),
                 ]
             };
-            senekRicochet4.AddIntentsToTarget(TargeterTargeting, ["Damage_11_15"]);
+            senekRicochet4.AddIntentsToTarget(TargeterTargeting, ["Damage_7_10"]);
             senekRicochet4.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Misc_Hidden", "Damage_3_6", "Damage_3_6"]);
 
             senek.AddLevelData(7, [senekRailgun1, senekTrickshot1, senekRicochet1]);

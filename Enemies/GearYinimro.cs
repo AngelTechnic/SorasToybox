@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using SorasToybox.CustomPassives;
+using System.Dynamic;
 
 namespace SorasToybox.Enemies
 {
@@ -91,6 +92,28 @@ namespace SorasToybox.Enemies
             };
             escapement.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Status_Overclock"]);
 
+            StatusEffect_ApplyByMissingHealth_Effect phaseThroughCollapse = ScriptableObject.CreateInstance<StatusEffect_ApplyByMissingHealth_Effect>();
+            phaseThroughCollapse._Status = StatusField.GetCustomStatusEffect("Collapse_ID");
+
+            RemoveStatusEffectEffect noRuptured = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
+            noRuptured._status = StatusField.Ruptured;
+
+            Ability phaseThrough = new Ability("Phase-Through", "ST_PhaseThrough_A")
+            {
+                Description = "Inflicts Collapse to the Opposing party member equal to this enemy's missing health.\nRemoves all Ruptured from this enemy.",
+                Rarity = Rarity.Rare,
+                AnimationTarget = Targeting.Slot_Front,
+                Visuals = Visuals.Crush,
+                Effects =
+                [
+                    Effects.GenerateEffect(phaseThroughCollapse, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(noRuptured, 1, Targeting.Slot_SelfSlot),
+                ]
+            };
+            phaseThrough.AddIntentsToTarget(Targeting.Slot_Front, ["Status_Collapse"]);
+            phaseThrough.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Rem_Status_Ruptured)]);
+
+
             Ability evilBallisticGear = new Ability("Ballistic Gear", "ST_BallisticGear_A")
             {
                 Description = "Deals damage to the Opposing party member, boosted by the length of the timeline.",
@@ -124,6 +147,7 @@ namespace SorasToybox.Enemies
             gearYinimro.AddEnemyAbilities(
                 [
                     escapement,
+                    //phaseThrough,
                     evilBallisticGear,
                 ]);
 

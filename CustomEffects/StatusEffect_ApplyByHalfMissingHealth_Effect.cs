@@ -7,10 +7,10 @@ using UnityEngine;
 namespace SorasToybox.CustomEffects
 {
 
-    public class FieldEffect_ApplyByMissingHealth_Effect : EffectSO
+    public class StatusEffect_ApplyByHalfMissingHealth_Effect : EffectSO
     {
-        [Header("Field")]
-        public FieldEffect_SO _Field;
+        [Header("Status")]
+        public StatusEffect_SO _Status;
 
         [Header("Previous Random Option Data")]
         public bool _UseRandomBetweenPrevious;
@@ -23,24 +23,26 @@ namespace SorasToybox.CustomEffects
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {
             exitAmount = 0;
-            entryVariable = caster.MaximumHealth - caster.CurrentHealth;
-            for (int i = 0; i < targets.Length; i++)
+            entryVariable = (caster.MaximumHealth - caster.CurrentHealth) / 2;
+            if (entryVariable > 0)
             {
-                exitAmount += ApplyFieldEffect(stats, targets[i], entryVariable);
+                for (int i = 0; i < targets.Length; i++)
+                {
+                    exitAmount += ApplyStatusEffect(targets[i].Unit, entryVariable);
+                }
             }
-
             return exitAmount > 0;
         }
 
-        public int ApplyFieldEffect(CombatStats stats, TargetSlotInfo target, int entryVariable)
+        public int ApplyStatusEffect(IUnit unit, int entryVariable)
         {
             int num = _UseRandomBetweenPrevious ? UnityEngine.Random.Range(PreviousExitValue, entryVariable + 1) : entryVariable;
-            if (num < _Field.MinimumRequiredToApply)
+            if (num < _Status.MinimumRequiredToApply)
             {
                 return 0;
             }
 
-            if (!stats.combatSlots.ApplyFieldEffect(target.SlotID, target.IsTargetCharacterSlot, _Field, num))
+            if (!unit.ApplyStatusEffect(_Status, num))
             {
                 return 0;
             }

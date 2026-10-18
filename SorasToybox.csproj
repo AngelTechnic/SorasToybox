@@ -12,6 +12,7 @@
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Ach_Boss_Desibon.png" />
     <None Remove="Assets\Achievements\Ach_Fool_Karma.png" />
+    <None Remove="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
@@ -118,6 +119,9 @@
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Enemies\timelineSusMung.png" />
     <None Remove="Assets\Enemies\TimelineTasbeht.png" />
+    <None Remove="Assets\Fools\Heliotrope\heliotrope_alive.png" />
+    <None Remove="Assets\Fools\Heliotrope\heliotrope_dead.png" />
+    <None Remove="Assets\Fools\Heliotrope\heliotrope_ow.png" />
     <None Remove="Assets\Fools\Journal Mode\IconJournalMode.png" />
     <None Remove="Assets\Fools\Journal Mode\IconLaziestJournalModeIconEver.png" />
     <None Remove="Assets\Fools\Journal Mode\JournalItemKarma.png" />
@@ -218,6 +222,8 @@
     <None Remove="Assets\Items\item_diagnopsis_locked.png" />
     <None Remove="Assets\Items\item_entrenchingtool.png" />
     <None Remove="Assets\Items\item_entrenchingtool_locked.png" />
+    <None Remove="Assets\Items\item_everpresence.png" />
+    <None Remove="Assets\Items\item_everpresence_locked.png" />
     <None Remove="Assets\Items\item_flyswatter.png" />
     <None Remove="Assets\Items\item_flyswatter_locked.png" />
     <None Remove="Assets\Items\item_fortyproof.png" />
@@ -375,6 +381,7 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Ach_Fool_Karma.png" />
+    <EmbeddedResource Include="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Senek.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
@@ -395,6 +402,9 @@
     <EmbeddedResource Include="Assets\Enemies\TimelineTANGOEvil.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTANGO.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTasbeht.png" />
+    <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_alive.png" />
+    <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_dead.png" />
+    <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_ow.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sign.png" />
     <EmbeddedResource Include="Assets\Fools\Senek\Ach_Fool_Senek.png" />
     <EmbeddedResource Include="Assets\Fools\Senek\senek_acquire.png" />
@@ -416,6 +426,8 @@
     <EmbeddedResource Include="Assets\Items\item_cookie_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_dartboard.png" />
     <EmbeddedResource Include="Assets\Items\item_dartboard_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_everpresence.png" />
+    <EmbeddedResource Include="Assets\Items\item_everpresence_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_flyswatter.png" />
     <EmbeddedResource Include="Assets\Items\item_flyswatter_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_latchknife.png" />

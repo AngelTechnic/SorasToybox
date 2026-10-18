@@ -27,7 +27,6 @@ namespace SorasToybox.Encounters
             };
 
             //Won't somebody please help me?
-            gearYinimroGardenMedium.SimpleAddEncounter(3, "GearYinimro_EN"); 
             gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(2, "GearYinimro_EN", 1, "SkeweringHomunculus_EN");
             gearYinimroGardenMedium.SimpleAddEncounter(1, "GearYinimro_EN", 1, "Icon_EN", 1, "Children6_EN");
@@ -41,6 +40,18 @@ namespace SorasToybox.Encounters
 
             gearYinimroGardenMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Med, 13, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
+
+
+            EnemyEncounter_API gearYinimroGardenHard = new EnemyEncounter_API(0, Garden.H.YinimroG.Hard, "GearYinimro_Sign")
+            {
+                MusicEvent = "event:/SorasMusic/Enemies/YinimroMusic/Blackberry",
+                RoarEvent = "event:/IntrusiveRoar",
+            };
+            gearYinimroGardenHard.SimpleAddEncounter(3, "GearYinimro_EN");
+            gearYinimroGardenHard.SimpleAddEncounter(2, "GearYinimro_EN", 1, "Psychopomp_EN");
+
+            gearYinimroGardenHard.AddEncounterToDataBases();
+            EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.YinimroG.Hard, 7, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);
 
             if (SorasToybox.extradebug.Value)
             {
@@ -75,6 +86,7 @@ namespace SorasToybox.Encounters
                     RoarEvent = "event:/IntrusiveRoar",
                 };
 
+                gearYinimroAbyssHard.SimpleAddEncounter(3, "GearYinimro_EN");
                 gearYinimroAbyssHard.SimpleAddEncounter(1, "GearYinimro_EN", 2, "BurningShame_EN", 1, "Sycophant_EN");
                 gearYinimroAbyssHard.SimpleAddEncounter(2, "GearYinimro_EN", 2, "MachineGnomes_EN");
                 gearYinimroAbyssHard.SimpleAddEncounter(2, "GearYinimro_EN", 1, "WRK_EN", 1, "Streetlight_EN");

@@ -4,9 +4,9 @@ using SorasToybox.CustomEffects;
 using SorasToybox.CustomOther;
 using System;
 using System.Reflection;
+using FMOD;
 using UnityEngine;
 using SorasToybox.CustomPassives;
-using UnityEngine.SocialPlatforms.Impl;
 
 
 namespace SorasToybox.Enemies
@@ -213,12 +213,21 @@ namespace SorasToybox.Enemies
             setDeathmatchBool._VariableName = "DeathmatchKill";
             setDeathmatchBool._ValueSet = true;
 
+            GameBoolDataSetEffect setDeathmatchHTBool = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
+            setDeathmatchHTBool._VariableName = "DeathmatchKillForHeliotrope";
+            setDeathmatchHTBool._ValueSet = true;
+
             GameBoolDataEffectCondition haveIMetKarmaYet = ScriptableObject.CreateInstance<GameBoolDataEffectCondition>();
             haveIMetKarmaYet._VariableName = "TalkedKarma";
 
+            
+
+            FuckingDeadEffectCondition mdk = ScriptableObject.CreateInstance<FuckingDeadEffectCondition>();
+
             deathmatchEnemy.CombatExitEffects = new EffectInfo[]
             {
-                Effects.GenerateEffect(setDeathmatchBool, 0, Targeting.Slot_SelfSlot, haveIMetKarmaYet),
+                Effects.GenerateEffect(setDeathmatchBool, 1, Targeting.Slot_SelfSlot, haveIMetKarmaYet),
+                Effects.GenerateEffect(setDeathmatchHTBool, 1, Targeting.Slot_SelfSlot, mdk),
             };
 
             //deathmatch has no gibs rn

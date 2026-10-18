@@ -175,7 +175,7 @@ namespace SorasToybox.Enemies
             Ability meep = new Ability("ST_DesibonMeep_A")
             {
                 Name = "MEEP MEEP",
-                Description = "Moves Right. Inflicts 1 Ruptured to the Left enemy. If that enemy then isn't Ruptured, force them to produce 2 Red pigment.\nInflicts 1   Ruptured to the Opposing party member.",
+                Description = "Moves Right. Inflicts 1 Ruptured to the Left enemy. If that enemy then isn't Ruptured, force them to produce 2 Red pigment.\nInflicts 1 Ruptured to the Opposing party member.",
                 Cost = [],
                 Priority = Priority.Fast,
                 AnimationTarget = Targeting.Slot_SelfAll,
