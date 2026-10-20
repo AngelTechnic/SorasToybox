@@ -267,7 +267,7 @@ namespace SorasToybox //Mod namespace
 
             //oh boy.
             GazerFlavorEvent.Add();
-            AbyssBossEdits.Add();
+            //AbyssBossEdits.Add();
             Heliotrope.Setup();
             Heliotrope.HeliotropeRoom();
 
@@ -277,6 +277,8 @@ namespace SorasToybox //Mod namespace
             TagCharIfExists("LongLiver_CH", "Bug");
             TagCharIfExists("Bimini_CH", "Bug");
             TagCharIfExists("GallGagger_CH", "Bug");
+            TagCharIfExists("Eunice_CH", "Bug");
+            TagCharIfExists("DeathStealer_CH", "Bug");
             if (CrossMod.IntoTheAbyss)
             {
                 TagCharIfExists("Chae_CH", "Bug");
@@ -293,6 +295,12 @@ namespace SorasToybox //Mod namespace
                 TagCharIfExists("ButterflySwarm_CH", "Bug");
             }
             TagCharIfExists("Lich_CH", "Bug");
+            TagCharIfExists("Six_CH", "Bug");
+            if (CrossMod.Sofanthiels)
+            {
+                TagCharIfExists("Guwraso_CH", "Bug");
+                TagCharIfExists("Regali_CH", "Bug");
+            }
 
             TagEnemyIfExists("Keko_EN", "Bug");
             TagEnemyIfExists("Kekastle_EN", "Bug");

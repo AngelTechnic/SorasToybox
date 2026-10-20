@@ -147,6 +147,8 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Chimpnologue_EN", "Chimpnologue");
             targetListKarma.Add("Totenmaske_EN", "Totenmaske");
             targetListKarma.Add("SEARCH_EN", "SEARCH");
+            targetListKarma.Add("Errant_EN", "Errant");
+            targetListKarma.Add("Chthonian_EN", "Chthonian");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 
@@ -364,7 +366,7 @@ namespace SorasToybox.Fools
             journalPassive.m_PassiveID = "JournalMode";
             journalPassive.passiveIcon = ResourceLoader.LoadSprite("IconJournalMode");
             journalPassive._characterDescription = "If " + foolName + " has no item on combat start, " + pronouns[0] + " will receive a Journal, letting " + pronouns[1] + " provide information about certain enemies." +
-                "\nIf \" + foolName + \" has an item equipped when a suitable enemy is encountered, a popup will appear to let you know about it.";
+                "If " + foolName + " has an item equipped when a suitable enemy is encountered, a popup will appear to let you know about it.";
             journalPassive._enemyDescription = "This enemy is well-read, but I doubt that it will want to tell you anything.";
             journalPassive._triggerOn = [TriggerCalls.OnCombatStart];
             journalPassive.conditions = [IsCharacter, EmptyHanded];
@@ -438,6 +440,19 @@ namespace SorasToybox.Fools
                 if (SorasToybox.extradebug.Value)
                 {
                     UnityEngine.Debug.Log("Malachai yap.");
+                }
+            }
+
+            if (SorasToybox.CrossMod.MythosFriends && LoadedAssetsHandler.LoadedEnemies.ContainsKey("Chthonian_EN") == true)
+            {
+                SpeakerBundle speakerBundleSTChthonian = new SpeakerBundle();
+                speakerBundleSTChthonian.bundleTextColor = new Color32(255, 255, 255, 255);
+                speakerBundleSTChthonian.dialogueSound = "event:/Cthonian/WormRoar";
+                speakerBundleSTChthonian.portrait = ResourceLoader.LoadSprite("noCorpse", new Vector2(0.5f, 0f), 32);
+                Dialogues.CreateAndAddCustom_SpeakerData("STChthonian", speakerBundleSTChthonian, true, true, new SpeakerEmote[0]);
+                if (SorasToybox.extradebug.Value)
+                {
+                    UnityEngine.Debug.Log("Woerm yap.");
                 }
             }
 
