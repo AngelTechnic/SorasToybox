@@ -152,19 +152,18 @@ namespace SorasToybox
             HeliotropeCardManager.AddHeliotropeEncounter(basicEncounterSO);
 
             BackwardsUnlockCompatibility.TryLockItemBehindAchievement("SorasToybox_Strangers_Heliotrope_ACH", "Everpresence_TW");
-            UnlockableModData heliotropeUnlockData = new UnlockableModData("HeliotropeStranger");
+            UnlockableModData heliotropeUnlockData = new UnlockableModData("SorasToybox_Strangers_Heliotrope_Unlock");
             heliotropeUnlockData.hasModdedAchievementUnlock = true;
             heliotropeUnlockData.moddedAchievementID = "SorasToybox_Strangers_Heliotrope_ACH";
             heliotropeUnlockData.hasItemUnlock = true;
             heliotropeUnlockData.items = ["Everpresence_TW"];
 
             ListedUnlockCheck heliotropeUnlockCheck = ScriptableObject.CreateInstance<ListedUnlockCheck>();
-            heliotropeUnlockCheck.unlockID = "HeliotropeStranger";
+            heliotropeUnlockCheck.unlockID = "SorasToybox_Strangers_Heliotrope_Unlock";
             heliotropeUnlockCheck.unlockData = heliotropeUnlockData;
             Unlocks.AddUnlock_ByID(heliotropeUnlockData);
 
-            ModdedAchievements heliotropeAchievement = new ModdedAchievements("Godhead Perfect Sun", "Activate the Heliotrope.", ResourceLoader.LoadSprite("Ach_Quest_Heliotrope", null, 32, null), "SorasToybox_Strangers_Heliotrope_ACH");
-            heliotropeAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.StrangersTitleLabel);
+
         }
 
 

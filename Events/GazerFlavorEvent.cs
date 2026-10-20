@@ -16,7 +16,7 @@ namespace SorasToybox.Events
             };
             CardTypeInfo card = new CardTypeInfo();
             card._cardInfo = info;
-            card._minimumAmount = 1;
+            card._minimumAmount = 0;
             card._maximumAmount = 1;
             if (SorasToybox.CrossMod.IntoTheAbyss && LoadedDBsHandler.EnemyDB.DoesEncounterPoolExist("TheAbyss_Zone3")) { (LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO)._deckInfo._possibleCards = new List<CardTypeInfo>((LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO)._deckInfo._possibleCards) { card }.ToArray(); }
 

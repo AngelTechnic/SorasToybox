@@ -23,7 +23,7 @@ using System.Reflection;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.0")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.1")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
@@ -297,6 +297,7 @@ namespace SorasToybox //Mod namespace
             TagEnemyIfExists("Keko_EN", "Bug");
             TagEnemyIfExists("Kekastle_EN", "Bug");
             TagEnemyIfExists("Bronzo_Bananas_Friendly_EN", "Friendly");
+            TagEnemyIfExists("Ungod_Friendly_EN", "Friendly");
             
             TagEnemyIfExists("Kekingdom_EN", "Bug");
             TagEnemyIfExists("Keklung_EN", "Bug");
@@ -310,6 +311,7 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.MythosFriends)
             {
                 TagEnemyIfExists("WormthatWalks_EN", "Bug");
+                TagEnemyIfExists("Chthonian_EN", "Bug");
             }
             if (CrossMod.GlitchsFreaks)
             {

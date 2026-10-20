@@ -29,8 +29,29 @@ namespace SorasToybox.Items
                 IsShopItem = false,
                 Icon = ResourceLoader.LoadSprite("item_everpresence.png", null, 32, null),
             };
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(wateringCan.item, new ItemModdedUnlockInfo(wateringCan.Item_ID, ResourceLoader.LoadSprite("item_everpresence_locked", null, 32, null), "SorasToybox_Strangers_Heliotrope_ACH"));
+           
 
+            //
+            string achievementID = "SorasToybox_Strangers_Heliotrope_ACH";
+            string unlockID = "SorasToybox_Strangers_Heliotrope_Unlock";
+
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(wateringCan.item, new ItemModdedUnlockInfo(wateringCan.Item_ID, ResourceLoader.LoadSprite("item_everpresence_locked", null, 32, null), achievementID));
+
+
+            BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, wateringCan.Item_ID);
+
+            UnlockableModData unlockData = new UnlockableModData(unlockID)
+            {
+                hasModdedAchievementUnlock = true,
+                moddedAchievementID = achievementID,
+                hasItemUnlock = true,
+                items = [wateringCan.Item_ID],
+            };
+
+            ModdedAchievements heliotropeAchievement = new ModdedAchievements("Godhead Perfect Sun", "Activate the Heliotrope.", ResourceLoader.LoadSprite("Ach_Quest_Heliotrope", null, 32, null), achievementID);
+            heliotropeAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.StrangersTitleLabel);
+
+            Unlocks.AddUnlock_ByID(unlockData);
 
             if (SorasToybox.extradebug.Value)
             {
