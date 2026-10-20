@@ -145,7 +145,7 @@ namespace SorasToybox
             basicEncounterSO.encounterRoom = text2;
             basicEncounterSO.signID = text3;
             basicEncounterSO._dialogue = text;
-            basicEncounterSO.m_QuestsCompletedNeeded = ["Heliotrope"];
+            basicEncounterSO.m_QuestsCompletedNeeded = ["SorasToybox_Strangers_Heliotrope_ACH"];
             ModdedNPCs.AddCustom_ConditionEncounter(text, basicEncounterSO);
 
 
