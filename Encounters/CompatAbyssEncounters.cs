@@ -22,6 +22,27 @@ namespace SorasToybox.Encounters
                 abyssAdd.SimpleAddGroup(1, "Faceless_EN", 1, "BurningShame_EN", 1, "Wug_EN");
                 abyssAdd.SimpleAddGroup(1, "Faceless_EN", 1, "GearYinimro_EN", 1, "Sycophant_EN");
 
+                //adding gearyinimros and burningshames to sibling fights
+                abyssAdd = new AddTo(Abyss.H.Sibling.Red.Hard);
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "RedSibling_EN", 1, "Streetlight_EN");
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "RedSibling_EN", 1, "Wug_EN");
+                abyssAdd.SimpleAddGroup(2, "BurningShame_EN", 1, "RedSibling_EN", 1, "Streetlight_EN");
+
+                abyssAdd = new AddTo(Abyss.H.Sibling.Blue.Hard);
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "BlueSibling_EN", 1, "Streetlight_EN");
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "BlueSibling_EN", 1, "Wug_EN");
+                abyssAdd.SimpleAddGroup(2, "BurningShame_EN", 1, "BlueSibling_EN", 1, "Streetlight_EN");
+
+                abyssAdd = new AddTo(Abyss.H.Sibling.Yellow.Hard);
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "YellowSibling_EN", 1, "Streetlight_EN");
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "YellowSibling_EN", 1, "Wug_EN");
+                abyssAdd.SimpleAddGroup(2, "BurningShame_EN", 1, "YellowSibling_EN", 1, "Streetlight_EN");
+
+                abyssAdd = new AddTo(Abyss.H.Sibling.Purple.Hard);
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "PurpleSibling_EN", 1, "Streetlight_EN");
+                abyssAdd.SimpleAddGroup(1, "GearYinimro_EN", 1, "PurpleSibling_EN", 1, "Wug_EN");
+                abyssAdd.SimpleAddGroup(2, "BurningShame_EN", 1, "PurpleSibling_EN", 1, "Streetlight_EN");
+
                 abyssAdd = new AddTo(Abyss.H.Bear.Med);
                 abyssAdd.SimpleAddGroup(2, "Bear_EN", 1, "BurningShame_EN", 1, "GearYinimro_EN");
 

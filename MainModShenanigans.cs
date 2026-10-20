@@ -266,6 +266,8 @@ namespace SorasToybox //Mod namespace
             }
 
             //oh boy.
+            GazerFlavorEvent.Add();
+            AbyssBossEdits.Add();
             Heliotrope.Setup();
             Heliotrope.HeliotropeRoom();
 

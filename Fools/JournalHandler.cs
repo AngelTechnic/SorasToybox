@@ -145,6 +145,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("UnfinishedHeir_BOSS", "Heir");
             targetListKarma.Add("Poser_EN", "Poser");
             targetListKarma.Add("Chimpnologue_EN", "Chimpnologue");
+            targetListKarma.Add("Totenmaske_EN", "Totenmaske");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 
@@ -153,6 +154,14 @@ namespace SorasToybox.Fools
                 Dictionary<string, string> targetListKarmaVane = new Dictionary<string, string>();
                 targetListKarmaVane.Add("Home_EN", "HomeVane");
                 targetAltListKarma.Add("Vane_CH", targetListKarmaVane);
+            }
+
+
+            if (LoadedAssetsHandler.GetCharacter("Whitlock_CH") != null)
+            {
+                Dictionary<string, string> targetListKarmaWhitlock = new Dictionary<string, string>();
+                targetListKarmaWhitlock.Add("Totenmaske_EN", "TotenmaskeWhitlock");
+                targetAltListKarma.Add("Whitlock_CH", targetListKarmaWhitlock);
             }
 
             string karmaDiaID = "Karma_Journal_Dialogue";

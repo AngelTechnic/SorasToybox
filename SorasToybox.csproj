@@ -119,6 +119,10 @@
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Enemies\timelineSusMung.png" />
     <None Remove="Assets\Enemies\TimelineTasbeht.png" />
+    <None Remove="Assets\Fools\Gazer\GazerTalk1.png" />
+    <None Remove="Assets\Fools\Gazer\GazerTalk2.png" />
+    <None Remove="Assets\Fools\Gazer\GazerTalk3.png" />
+    <None Remove="Assets\Fools\Gazer\Gazer_OW.png" />
     <None Remove="Assets\Fools\Heliotrope\heliotrope_alive.png" />
     <None Remove="Assets\Fools\Heliotrope\heliotrope_dead.png" />
     <None Remove="Assets\Fools\Heliotrope\heliotrope_ow.png" />
@@ -402,6 +406,10 @@
     <EmbeddedResource Include="Assets\Enemies\TimelineTANGOEvil.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTANGO.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTasbeht.png" />
+    <EmbeddedResource Include="Assets\Fools\Gazer\GazerTalk1.png" />
+    <EmbeddedResource Include="Assets\Fools\Gazer\GazerTalk2.png" />
+    <EmbeddedResource Include="Assets\Fools\Gazer\GazerTalk3.png" />
+    <EmbeddedResource Include="Assets\Fools\Gazer\Gazer_OW.png" />
     <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_alive.png" />
     <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_dead.png" />
     <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_ow.png" />

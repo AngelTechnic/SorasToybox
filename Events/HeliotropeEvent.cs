@@ -1,14 +1,15 @@
 ﻿using BrutalAPI;
 using HarmonyLib;
-using SorasToybox.Encounters;
-using SorasToybox.CustomOther;
 using MonoMod.RuntimeDetour;
+using SorasToybox.CustomOther;
+using SorasToybox.Encounters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
+
 
 namespace SorasToybox
 {
@@ -30,7 +31,7 @@ namespace SorasToybox
             }
             else
             {
-                result = true; 
+                result = true;
             }
             return result;
         }
@@ -46,22 +47,23 @@ namespace SorasToybox
         }
 
         // Token: 0x0600017E RID: 382 RVA: 0x0001D21C File Offset: 0x0001B41C
-        public static void AddHeliotropeEncounter(ConditionEncounterSO ConditionEncounter)
+        public static void AddHeliotropeEncounter(BasicEncounterSO BasicEncounter)
         {
-            ConditionEncounterSO conditionEncounterSO;
-            bool flag = !LoadedAssetsHandler.LoadedConditionEncounters.TryGetValue(ConditionEncounter.name, out conditionEncounterSO);
+            BasicEncounterSO basicEncounterSO;
+            bool flag = !LoadedAssetsHandler.LoadedBasicEncounters.TryGetValue(BasicEncounter.name, out basicEncounterSO);
             if (flag)
             {
-                LoadedAssetsHandler.LoadedConditionEncounters.Add(ConditionEncounter.name, ConditionEncounter);
+                LoadedAssetsHandler.LoadedBasicEncounters.Add(BasicEncounter.name, BasicEncounter);
             }
             CardTypeInfo cardTypeInfo = new CardTypeInfo();
             cardTypeInfo._cardInfo = default(CardInfo);
             cardTypeInfo._cardInfo.cardType = HeliotropeCardManager.ForceAddType;
-            cardTypeInfo._cardInfo.pilePosition = PilePositionType.Last; 
+            cardTypeInfo._cardInfo.pilePosition = PilePositionType.Last;
             cardTypeInfo._usePercentage = true;
             cardTypeInfo._percentage = 100;
+
             HeliotropeCardManager.HeliotropeCard = cardTypeInfo;
-            HeliotropeCardManager.HeliotropeEncounter = ConditionEncounter;
+            HeliotropeCardManager.HeliotropeEncounter = BasicEncounter;
             ZoneBGDataBaseSO zoneBGDataBaseSO = LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO;
             List<CardTypeInfo> list = zoneBGDataBaseSO._deckInfo._possibleCards.ToList<CardTypeInfo>();
             list.Add(cardTypeInfo);
@@ -72,7 +74,8 @@ namespace SorasToybox
         // Token: 0x0600017F RID: 383 RVA: 0x0001D2D8 File Offset: 0x0001B4D8
         public static void GenerateHeliotropeCard(ZoneBGDataBaseSO zone, CardInfo info)
         {
-            if (zone == LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO)  {
+            if (zone == LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO)
+            {
                 string[] encounterEntityIDs = HeliotropeCardManager.HeliotropeEncounter.encounterEntityIDs;
                 foreach (string item in encounterEntityIDs)
                 {
@@ -106,36 +109,21 @@ namespace SorasToybox
 
         public static void HeliotropeRoom()
         {
-            FuckingDeadEffectCondition mdk = ScriptableObject.CreateInstance<FuckingDeadEffectCondition>();
-
-            GameBoolDataSetEffect setNobodyHTBool = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
-            setNobodyHTBool._VariableName = "NobodyKillForHeliotrope";
-            setNobodyHTBool._ValueSet = true;
-
-            LoadedAssetsHandler.GetEnemy("Nobody_BOSS").exitEffects.AddItem(Effects.GenerateEffect(setNobodyHTBool, 1, Targeting.Slot_SelfSlot, mdk));
-            LoadedAssetsHandler.GetEnemy("TrueNobody_BOSS").exitEffects.AddItem(Effects.GenerateEffect(setNobodyHTBool, 1, Targeting.Slot_SelfSlot, mdk));
-
-            GameBoolDataSetEffect setKatalixiHTBool = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
-            setKatalixiHTBool._VariableName = "KatalixiKillForHeliotrope";
-            setKatalixiHTBool._ValueSet = true;
-
-            LoadedAssetsHandler.GetEnemy("Nolocimes_Batretne_BOSS").exitEffects.AddItem(Effects.GenerateEffect(setKatalixiHTBool, 1, Targeting.Slot_SelfSlot, mdk));			
-			
             string text = "Heliotrope_Dialogue";
             string text2 = "Heliotrope_Room";
             string text3 = "Heliotrope_Sign";
 
-			SpeakerBundle speakerBundleHeliotrope = new SpeakerBundle();
-			speakerBundleHeliotrope.bundleTextColor = new Color32(0, 255, 255, 192);
-			speakerBundleHeliotrope.dialogueSound = "event:/SorasSFX/Fools/HeliotropeD";
-			speakerBundleHeliotrope.portrait = ResourceLoader.LoadSprite("heliotrope_alive.png", new Vector2(0.5f, 0f), 32);
+            SpeakerBundle speakerBundleHeliotrope = new SpeakerBundle();
+            speakerBundleHeliotrope.bundleTextColor = new Color32(0, 255, 255, 192);
+            speakerBundleHeliotrope.dialogueSound = "event:/SorasSFX/Fools/HeliotropeD";
+            speakerBundleHeliotrope.portrait = ResourceLoader.LoadSprite("heliotrope_alive.png", new Vector2(0.5f, 0f), 32);
 
-			SpeakerBundle speakerBundleHeliotropeDead = new SpeakerBundle();
+            SpeakerBundle speakerBundleHeliotropeDead = new SpeakerBundle();
             speakerBundleHeliotropeDead.bundleTextColor = new Color32(0, 255, 255, 64);
             speakerBundleHeliotropeDead.dialogueSound = "event:/SorasSFX/Fools/HeliotropeDie";
             speakerBundleHeliotropeDead.portrait = ResourceLoader.LoadSprite("heliotrope_dead", new Vector2(0.5f, 0f), 32);
 
-			Dialogues.CreateAndAddCustom_SpeakerData("Heliotrope", speakerBundleHeliotrope, true, true, new SpeakerEmote[1]
+            Dialogues.CreateAndAddCustom_SpeakerData("Heliotrope", speakerBundleHeliotrope, true, true, new SpeakerEmote[1]
             {
                 new SpeakerEmote
                 {
@@ -143,11 +131,11 @@ namespace SorasToybox
                     bundle = speakerBundleHeliotropeDead,
                 },
             });
-			
+
             OverworldRooms.Prepare_NPC_RoomPrefab("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeRoom.prefab", text2, SorasToybox.assetbundle);
-            YarnProgram yarnProgram = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeChoice.yarn", Array.Empty<object>()));
+            YarnProgram yarnProgram = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeUnlock.yarn", Array.Empty<object>()));
             Dialogues.AddCustom_DialogueProgram(text, yarnProgram);
-            Dialogues.CreateAndAddCustom_DialogueSO(text, yarnProgram, text, "SorasToybox.Heliotrope.Choose");
+            Dialogues.CreateAndAddCustom_DialogueSO(text, yarnProgram, text, "SorasToybox.Heliotrope.QuestStart");
             Portals.AddPortalSign(text3, ResourceLoader.LoadSprite("heliotrope_ow.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null), Portals.NPCIDColor);
             ConditionEncounterSO basicEncounterSO = ScriptableObject.CreateInstance<ConditionEncounterSO>();
             basicEncounterSO.encounterEntityIDs = new string[]
@@ -160,35 +148,10 @@ namespace SorasToybox
             basicEncounterSO.m_QuestsCompletedNeeded = ["Heliotrope"];
             ModdedNPCs.AddCustom_ConditionEncounter(text, basicEncounterSO);
 
-            //i'm gonna be honest idk what i'm doing
-            string text4 = "Heliotrope_Unlock_Dialogue";
-            string text5 = "Heliotrope_Unlock_Room";
-            string text6 = "Heliotrope_Unlock_Sign";
 
-            //both the free fool event and the unlock event use the same room prefab so we're calling that here, with room ID adjusted
-            OverworldRooms.Prepare_NPC_RoomPrefab("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeRoom.prefab", text4, SorasToybox.assetbundle);
-            //to keep stuff clean the unlock event will use a different yarn file
-            YarnProgram yarnProgram3 = SorasToybox.assetbundle.LoadAsset<YarnProgram>(string.Format("Assets/ToyboxRooms/HeliotropeRoom/HeliotropeUnlock.yarn"));
-            Dialogues.AddCustom_DialogueProgram(text5, yarnProgram3);
-
-            Dialogues.CreateAndAddCustom_DialogueSO(text5, yarnProgram3, text5, "SorasToybox.Heliotrope.QuestStart");
-            ConditionEncounterSO unlockRoom = ScriptableObject.CreateInstance<ConditionEncounterSO>();
-            unlockRoom.encounterEntityIDs = new string[]
-            {
-                "Heliotrope"
-            };
-            Portals.AddPortalSign(text6, ResourceLoader.LoadSprite("heliotrope_ow", new Vector2(0.5f, 0f), 32), Portals.NPCIDColor);
-            unlockRoom.signID = text6;
-            unlockRoom.m_QuestName = "Heliotrope";
-            unlockRoom.m_QuestsCompletedNeeded = [];
-            unlockRoom._dialogue = text5;
-            unlockRoom.encounterRoom = text4;
-            ModdedNPCs.AddCustom_ConditionEncounter(text4, unlockRoom);
-            ZoneBGDataBaseSO zoneBGDataBaseSO3 = LoadedAssetsHandler.GetZoneDB("TheAbyss") as ZoneBGDataBaseSO;
-            zoneBGDataBaseSO3._QuestPool.Add(text4);
             HeliotropeCardManager.AddHeliotropeEncounter(basicEncounterSO);
-			
-			BackwardsUnlockCompatibility.TryLockItemBehindAchievement("SorasToybox_Strangers_Heliotrope_ACH", "Everpresence_TW");
+
+            BackwardsUnlockCompatibility.TryLockItemBehindAchievement("SorasToybox_Strangers_Heliotrope_ACH", "Everpresence_TW");
             UnlockableModData heliotropeUnlockData = new UnlockableModData("HeliotropeStranger");
             heliotropeUnlockData.hasModdedAchievementUnlock = true;
             heliotropeUnlockData.moddedAchievementID = "SorasToybox_Strangers_Heliotrope_ACH";
@@ -217,57 +180,41 @@ namespace SorasToybox
         public static void InitializeHeliotropeDialogueFunctions(Action<InGameDataSO, DialogueRunner_BO> orig, InGameDataSO self, DialogueRunner_BO dialogueRunner)
         {
             orig(self, dialogueRunner);
-            dialogueRunner.AddCommandHandler("SetBossNobody", ChangeBossToNobody);
-            dialogueRunner.AddCommandHandler("SetBossKatalixi", ChangeBossToKatalixi);
-			dialogueRunner.AddCommandHandler("SetBossDeathmatch", ChangeBossToDeathmatch);
+            dialogueRunner.AddCommandHandler("ChangeCurrentBossST", SwapCurrentZoneBossByDialogue);
         }
 
-        public static void ChangeBossToNobody(string[] info)
+        public static void SwapCurrentZoneBossByDialogue(string[] info)
         {
-            var manager = UnityEngine.Object.FindObjectOfType<OverworldManagerBG>();
-            manager.GenerateZone(1, "TheAbyss");
-
-        }
-        public static void ChangeBossToKatalixi(string[] info)
-        {
-            var manager = UnityEngine.Object.FindObjectOfType<OverworldManagerBG>();
-            manager.GenerateZone(1, "TheAbyss");
-
-        }
-        public static void ChangeBossToDeathmatch(string[] info)
-        {
-            var manager = UnityEngine.Object.FindObjectOfType<OverworldManagerBG>();
-            manager.GenerateZone(1, "TheAbyss");
-
+            if (info.Length < 1)
+            {
+                return;
+            }
+            string text = info[0];
+            RunDataSO run = LoadedDBsHandler.InfoHolder.Run;
+            if (run.CurrentZoneID >= run.zoneData.Count)
+            {
+                return;
+            }
+            RunZoneData runZoneData = run.zoneData[run.CurrentZoneID];
+            ZoneDataBaseSO zoneDataBaseSO = runZoneData.LoadZoneDB();
+            if (zoneDataBaseSO == null || zoneDataBaseSO.Equals(null))
+            {
+                return;
+            }
+            EnemyCombatBundle[] bossBundleArray = runZoneData.BossBundleArray;
+            if (bossBundleArray.Length == 0)
+            {
+                return;
+            }
+            EnemyCombatBundle enemyCombatBundle = bossBundleArray[bossBundleArray.Length - 1];
+            if (!(text == enemyCombatBundle.BossID))
+            {
+                EnemyCombatBundle enemyCombatBundle2 = zoneDataBaseSO.TryGenerateBossBundle(text);
+                if (enemyCombatBundle2 != null)
+                {
+                    runZoneData.SwapBossBundle(bossBundleArray.Length - 1, enemyCombatBundle2);
+                }
+            }
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
