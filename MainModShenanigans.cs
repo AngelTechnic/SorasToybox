@@ -279,6 +279,7 @@ namespace SorasToybox //Mod namespace
             TagCharIfExists("GallGagger_CH", "Bug");
             TagCharIfExists("Eunice_CH", "Bug");
             TagCharIfExists("DeathStealer_CH", "Bug");
+            TagCharIfExists("Cross_CH", "Bug");
             if (CrossMod.IntoTheAbyss)
             {
                 TagCharIfExists("Chae_CH", "Bug");
@@ -526,7 +527,7 @@ namespace SorasToybox //Mod namespace
                 //CapitalismInACan.Add();
                 DeadbeatSummer.Add();
                 DeadMansPartyHat.Add();
-                //ModernGiant.Add();
+                ModernGiant.Add();
                 RottenKintsugi.Add();
             }
 

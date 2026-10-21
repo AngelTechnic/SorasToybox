@@ -22,6 +22,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Agon.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Arnold.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Barron.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Bimini.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Boyle.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Burnout.png" />
@@ -283,8 +284,11 @@
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat_locked.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_moderngiant.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_moderngiant_locked.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_rottenkintsugi.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_rottenkintsugi_locked.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\moderngiant_marchofprogress.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_atomsmasher_locked.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\item_auralviolation.png" />
@@ -388,6 +392,7 @@
     <EmbeddedResource Include="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Senek.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Whhvay.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Barron.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Izzy.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Lazarus.png" />
@@ -452,8 +457,11 @@
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_moderngiant.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_moderngiant_locked.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_rottenkintsugi.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_rottenkintsugi_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\moderngiant_marchofprogress.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodPrimary.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodWhite.png" />
     <EmbeddedResource Include="Assets\Passives\IconTargeter.png" />

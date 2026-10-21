@@ -146,7 +146,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Poser_EN", "Poser");
             targetListKarma.Add("Chimpnologue_EN", "Chimpnologue");
             targetListKarma.Add("Totenmaske_EN", "Totenmaske");
-            targetListKarma.Add("SEARCH_EN", "SEARCH");
+            targetListKarma.Add("SEARCH_EN", "Search");
             targetListKarma.Add("Errant_EN", "Errant");
             targetListKarma.Add("Chthonian_EN", "Chthonian");
 
