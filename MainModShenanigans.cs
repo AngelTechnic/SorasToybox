@@ -524,7 +524,7 @@ namespace SorasToybox //Mod namespace
             //Siren deathmatch unlocks
             if (CrossMod.Siren)
             {
-                //CapitalismInACan.Add();
+                CapitalismInACan.Add();
                 DeadbeatSummer.Add();
                 DeadMansPartyHat.Add();
                 ModernGiant.Add();

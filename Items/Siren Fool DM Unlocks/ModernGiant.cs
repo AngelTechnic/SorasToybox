@@ -33,9 +33,10 @@ namespace SorasToybox.Items
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_Strongest,
                 Effects =
                 [
-                    Effects.GenerateEffect(scienceMarchesOn, 0, Targeting.Spec_Unit_AllOpponents_Strongest),
+                    Effects.GenerateEffect(scienceMarchesOn, 1, Targeting.Spec_Unit_AllOpponents_Strongest),
                 ],
             };
+            modernGiantAbility.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_Strongest, ["Damage_Timeline"]);
 
             ModernGiantCondition modernGiantCondition = ScriptableObject.CreateInstance<ModernGiantCondition>();
 

@@ -35,6 +35,7 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Gospel.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Griffin.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Hans.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Igor.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Izzy.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Karma.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Kleiver.png" />
@@ -280,6 +281,8 @@
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
     <None Remove="Assets\Items\quill_slasherfic.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_capitalisminacan.png" />
+    <None Remove="Assets\Items\Siren DM Unlocks\item_capitalisminacan_locked.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat.png" />
@@ -394,6 +397,7 @@
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Barron.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Francis.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Igor.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Izzy.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Lazarus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Senek.png" />
@@ -453,6 +457,8 @@
     <EmbeddedResource Include="Assets\Items\item_shootinggallery_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_tonic.png" />
     <EmbeddedResource Include="Assets\Items\item_tonic_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_capitalisminacan.png" />
+    <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_capitalisminacan_locked.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadbeatsummer_locked.png" />
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\item_deadmanspartyhat.png" />
