@@ -1,5 +1,4 @@
 ﻿using BrutalAPI.Items;
-using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -14,7 +14,6 @@ using SorasToybox.Enemies;
 using SorasToybox.Events;
 using SorasToybox.Fools;
 using SorasToybox.Items;
-using SorasToybox.Items.Vanilla_Fool_DM_Unlocks;
 using SorasToybox.MiscPatches;
 using System;
 using System.Collections.Generic;
@@ -23,7 +22,7 @@ using System.Reflection;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.1")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.2")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
@@ -537,9 +536,9 @@ namespace SorasToybox //Mod namespace
                 Fishbones.Add();
                 //WaterBalloons.Add();
                 //WeatherBalloon.Add();
-                //PocketPlasm.Add();
+                PocketPlasm.Add();
                 HollowedFang.Add();
-                //whateverbullshiticomeupwithforyhaele.Add();
+                OtherworldlyReefer.Add();
                 TrickBible.Add();
                 NegativeSpaceWedgie.Add();
             }

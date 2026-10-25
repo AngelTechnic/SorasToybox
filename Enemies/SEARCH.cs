@@ -45,6 +45,7 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("timelineSEARCH.png", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("tango_dead.png", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("timelineSEARCH.png", new Vector2(0.5f, 0f), 32),
+                UnitTypes = ["Zoincaillan"],
                 DamageSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHHurt",
                 DeathSound = "event:/SorasSFX/Enemies/SEARCH/SEARCHDie",
             };

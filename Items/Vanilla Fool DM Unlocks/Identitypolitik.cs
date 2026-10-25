@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine.SocialPlatforms;
 
-namespace SorasToybox.Items.Vanilla_Fool_DM_Unlocks
+namespace SorasToybox.Items
 {
     public class Identitypolitik
     {

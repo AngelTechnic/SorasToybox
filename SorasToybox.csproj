@@ -51,12 +51,14 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Pearl.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Rags.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Senek.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Sggha.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_ShellyK.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_SmokeStacks.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Whhvay.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Xichlasa.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Yhaele.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Karma.png" />
     <None Remove="Assets\Achievements\Doula Unlocks\Ach_Doula_Mercurie.png" />
@@ -285,6 +287,10 @@
     <None Remove="Assets\Items\Mythos DM Unlocks\item_hollowedfang_locked.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_negativespace.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_negativespace_locked.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_pocketplasm.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_pocketplasm_locked.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_reefer.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_reefer_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
     <None Remove="Assets\Items\quill_slasherfic.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_capitalisminacan.png" />
@@ -411,7 +417,9 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Izzy.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Lazarus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Senek.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Sggha.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Xichlasa.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Yhaele.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Senek.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Whhvay.png" />
     <EmbeddedResource Include="Assets\Achievements\Heaven Unlocks\Ach_Heaven_Senek.png" />
@@ -450,6 +458,10 @@
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_hollowedfang_locked.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_negativespace.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_negativespace_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_pocketplasm.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_pocketplasm_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_reefer.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_reefer_locked.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_bugspray.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_bugspray_locked.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_cartridge.png" />

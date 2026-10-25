@@ -74,7 +74,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Barron_Antagonist_ACH";
             string unlockID = "SorasToybox_Barron_Antagonist_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(modernGiant.item, new ItemModdedUnlockInfo(modernGiant.Item_ID, ResourceLoader.LoadSprite("item_moderngiant_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(modernGiant.item, new ItemModdedUnlockInfo(modernGiant.Item_ID, ResourceLoader.LoadSprite("item_moderngiant_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, modernGiant.Item_ID);
 

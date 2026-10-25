@@ -41,7 +41,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Lazarus_Antagonist_ACH";
             string unlockID = "SorasToybox_Lazarus_Antagonist_Unlock";
 
-            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(rottenKintsugi.item, new ItemModdedUnlockInfo(rottenKintsugi.Item_ID, ResourceLoader.LoadSprite("item_rottenkintsugi_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToShopStatsCategoryAndGamePool(rottenKintsugi.item, new ItemModdedUnlockInfo(rottenKintsugi.Item_ID, ResourceLoader.LoadSprite("item_rottenkintsugi_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, rottenKintsugi.Item_ID);
 
