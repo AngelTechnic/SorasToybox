@@ -26,14 +26,14 @@ namespace SorasToybox.Items
             Ability modernGiantAbility = new("ST_MarchOfProgress_A")
             {
                 Name = "March Of Progress",
-                Description = "Deal damage to the highest health enemy or enemies, equal to the length of the timeline.",
+                Description = "Deal damage to the highest health enemy or enemies, equal to twice the length of the timeline.",
                 AbilitySprite = ResourceLoader.LoadSprite("moderngiant_marchofprogress"),
                 Cost = [Pigments.Yellow, Pigments.Yellow, Pigments.Red],
                 Visuals = ballisticGearVis._visuals,
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_Strongest,
                 Effects =
                 [
-                    Effects.GenerateEffect(scienceMarchesOn, 1, Targeting.Spec_Unit_AllOpponents_Strongest),
+                    Effects.GenerateEffect(scienceMarchesOn, 2, Targeting.Spec_Unit_AllOpponents_Strongest),
                 ],
             };
             modernGiantAbility.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_Strongest, ["Damage_Timeline"]);
@@ -54,7 +54,7 @@ namespace SorasToybox.Items
                 Name = "Modern Giant",
                 Item_ID = "ModernGiant_SW",
                 Flavour = "\"Where's Don Quixote when you need- DARGH!\"",
-                Description = "Apply 1 Alacrity to the targets of damage effects.\nReplaces this character's basic ability with \"March Of Progress\", punishing enemies who get too big for their britches.",
+                Description = "Apply 2 Celerity to the targets of damage effects.\nReplaces this character's basic ability with \"March Of Progress\", punishing enemies who get too big for their britches.",
                 TriggerOn = TriggerCalls.OnWillApplyDamage,
                 Conditions = [modernGiantCondition],
                 DoesPopUpInfo = false,
@@ -64,6 +64,11 @@ namespace SorasToybox.Items
                 StartsLocked = true,
                 OnUnlockUsesTHE = false,
             };
+
+            //Construct shenanigans i think
+            Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = LoadedAssetsHandler.GetCharacter("Doll_CH").passiveAbilities[0] as Connection_PerformEffectPassiveAbility;
+            CasterAddRandomExtraAbilityEffect casterAddRandomExtraAbilityEffect = connection_PerformEffectPassiveAbility.connectionEffects[1].effect as CasterAddRandomExtraAbilityEffect;
+            casterAddRandomExtraAbilityEffect._extraData = [.. casterAddRandomExtraAbilityEffect._extraData, modernGiantAbilityWearable];
 
             //Unlock this
             string achievementID = "SorasToybox_Barron_Antagonist_ACH";

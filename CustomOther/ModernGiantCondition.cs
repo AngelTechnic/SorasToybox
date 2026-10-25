@@ -13,7 +13,7 @@ namespace SorasToybox.CustomOther
                 if (reference.amount <= 0) { return false; }
                 if (reference.damagedUnit is IUnit damaged)
                 {
-                    damaged.ApplyStatusEffect(StatusField.GetCustomStatusEffect("Alacrity_ID"), 1);
+                    damaged.ApplyStatusEffect(StatusField.GetCustomStatusEffect("Celerity_ID"), 2);
                 }
             }
             return false;

@@ -1,5 +1,4 @@
-﻿using SorasToybox.Custom_Effects;
-using SorasToybox.CustomEffects;
+﻿using SorasToybox.CustomEffects;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SorasToybox.Custom_Effects
+namespace SorasToybox.CustomEffects
 {
     public class UnboundedHealEffect : EffectSO
     {

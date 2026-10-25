@@ -531,6 +531,18 @@ namespace SorasToybox //Mod namespace
                 RottenKintsugi.Add();
             }
 
+            //Mythos Friends deathmatch unlocks
+            if (CrossMod.MythosFriends)
+            {
+                Fishbones.Add();
+                //WaterBalloons.Add();
+                //WeatherBalloon.Add();
+                HollowedFang.Add();
+                //whateverbullshiticomeupwithforyhaele.Add();
+                TrickBible.Add();
+                NegativeSpaceWedgie.Add();
+            }
+
             //ST deathmatch unlocks
             MemoryOfGriyadin.Add();
             Setset.Add();

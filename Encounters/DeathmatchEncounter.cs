@@ -12,25 +12,8 @@ namespace SorasToybox.Encounters
         public static void Add()
         {
             Portals.AddPortalSign("Deathmatch_Sign", ResourceLoader.LoadSprite("TimelineDeathmatchBoss", null, 32, null), Portals.BossIDColor);
-            OverworldRooms.Prepare_Boss_RoomPrefab("Assets/ToyboxRooms/NewAbyssBossGate/AbyssBossRoom2.prefab", "AbyssBossGate2", SorasToybox.assetbundle);
 
-            string roomID = "AbyssBossGate2";
-
-            BaseRoomHandler room = LoadedAssetsHandler.GetRoomPrefab(CardType.Boss, roomID); //Get the room that just got prepared
-
-            Boss_RoomHandlerModData data = room.GetComponent<Boss_RoomHandlerModData>(); //Get the modded portal data
-
-
-
-            Material portalMaterial = LoadedDBsHandler.MiscDB.GetMaterial(Misc.MaterialIDs.Portal.ToString()); //Get the portal material
-
-
-
-            //THIS MIGHT BE POSSIBLY WRONG but you just have to navigate to get the portal Renderer and do something like this
-            data.m_BossPortalRenderer.material = portalMaterial;
-            data.m_ZonePortalRenderer.material = portalMaterial;
-
-
+            string roomID = "AbyssBossGate";
 
 
             EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")

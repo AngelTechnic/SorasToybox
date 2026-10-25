@@ -469,7 +469,7 @@ namespace SorasToybox.Fools
 
             //What's Coming effect shenanigans
             AnimationVisualsEffect whatsComingVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
-            whatsComingVisuals._visuals = Visuals.Misery;
+            whatsComingVisuals._visuals = Visuals.Decimate;
             whatsComingVisuals._animationTarget = Targeting.Slot_SelfAll;
 
             TargetPerformEffectViaSubaction whatsComing1Effects = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
