@@ -537,6 +537,7 @@ namespace SorasToybox //Mod namespace
                 Fishbones.Add();
                 //WaterBalloons.Add();
                 //WeatherBalloon.Add();
+                //PocketPlasm.Add();
                 HollowedFang.Add();
                 //whateverbullshiticomeupwithforyhaele.Add();
                 TrickBible.Add();

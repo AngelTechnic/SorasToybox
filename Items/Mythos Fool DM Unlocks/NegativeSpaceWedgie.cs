@@ -11,9 +11,9 @@ namespace SorasToybox.Items
         public static void Add()
         {
             UnboundedHealEffect unboundHeal = ScriptableObject.CreateInstance<UnboundedHealEffect>();
-            unboundHeal._repeatChance = 75;
+            unboundHeal._repeatChance = 66;
             unboundHeal._directHeal = true;
-            unboundHeal._cycles = 16;
+            unboundHeal._cycles = 2;
 
             GetRandomTargetFromSet randomPartyMember = GetRandomTargetFromSet.Create(Targeting.Unit_AllAllies);
 
@@ -25,7 +25,7 @@ namespace SorasToybox.Items
 
             UnboundedDamageEffect unboundDamage = ScriptableObject.CreateInstance<UnboundedDamageEffect>();
             unboundDamage._repeatChance = 66;
-            unboundDamage._cycles = 16;
+            unboundDamage._cycles = 2;
 
             GetRandomTargetFromSet randomEnemy = GetRandomTargetFromSet.Create(Targeting.Unit_AllOpponents);
 
