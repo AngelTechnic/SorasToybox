@@ -24,8 +24,9 @@ namespace SorasToybox.Items
             regenByPrevious._Status = StatusField.GetCustomStatusEffect("Regen_ID");
             regenByPrevious._MultPreviousExitValueForEntry = true;
 
-            SpecificOpponentSlotsByStatusTargeting allOppSlotsWithMadness = ScriptableObject.CreateInstance<SpecificOpponentSlotsByStatusTargeting>();
-            allOppSlotsWithMadness._statusEffectID = "Madness_ID";
+            StatusEffect_Apply_Effect doMadness = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            regenByPrevious._Status = StatusField.GetCustomStatusEffect("Madness_ID");
+
 
             StatusEffect_ApplyByHalfMissingHealth_Effect madnessByMissingHealth = ScriptableObject.CreateInstance<StatusEffect_ApplyByHalfMissingHealth_Effect>();
             madnessByMissingHealth._Status = StatusField.GetCustomStatusEffect("Madness_ID");
@@ -40,6 +41,7 @@ namespace SorasToybox.Items
             TargetPerformEffectViaSubaction fingerTrickSecondSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             fingerTrickSecondSubAct.effects =
                 [
+                Effects.GenerateEffect(doMadness, 3, Targeting.Slot_Front),
                     Effects.GenerateEffect(madnessByMissingHealth, 1, Targeting.Slot_Front),
                 ];
 
@@ -48,7 +50,7 @@ namespace SorasToybox.Items
                 Name = "The Finger Trick",
                 Description = "Make all enemies with Madness exchange it all for twice as much Regeneration to their Opponents.\nLeave the enemy in awe at your brilliance.",
                 Cost = [Pigments.BluePurple, Pigments.BluePurple, Pigments.BluePurple],
-                AnimationTarget = allOppSlotsWithMadness,
+                AnimationTarget = Targeting.Unit_AllOpponents,
                 Visuals = Visuals.FingerGuns,
                 AbilitySprite = ResourceLoader.LoadSprite("trickbible_fingertrick"),
                 Effects =

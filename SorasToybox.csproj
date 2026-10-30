@@ -55,8 +55,10 @@
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_ShellyK.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_SmokeStacks.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Splig.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_SWSID.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Thype.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Whhvay.png" />
+    <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Wuz.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Xichlasa.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Yhaele.png" />
     <None Remove="Assets\Achievements\Deathmatch Unlocks\deathmatch_template.png" />
@@ -123,6 +125,7 @@
     <None Remove="Assets\Enemies\timelineNowhere.png" />
     <None Remove="Assets\Enemies\TimelineParadoxShade.png" />
     <None Remove="Assets\Enemies\TimelineParadoxYinimro.png" />
+    <None Remove="Assets\Enemies\TimelineSeaMine.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Enemies\timelineSusMung.png" />
@@ -291,6 +294,10 @@
     <None Remove="Assets\Items\Mythos DM Unlocks\item_pocketplasm_locked.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_reefer.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_reefer_locked.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_waterballoons.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_waterballoons_locked.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_weatherballoon.png" />
+    <None Remove="Assets\Items\Mythos DM Unlocks\item_weatherballoon_locked.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
     <None Remove="Assets\Items\quill_slasherfic.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_capitalisminacan.png" />
@@ -418,6 +425,8 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Lazarus.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Senek.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Sggha.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_SWSID.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Wuz.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Xichlasa.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Yhaele.png" />
     <EmbeddedResource Include="Assets\Achievements\Doula Unlocks\Ach_Doula_Senek.png" />
@@ -431,6 +440,7 @@
     <EmbeddedResource Include="Assets\Enemies\tango_dead.png" />
     <EmbeddedResource Include="Assets\Enemies\TasbehtDead.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineInfinityTasbeht.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineSeaMine.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTANGOEvil.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTANGO.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineTasbeht.png" />
@@ -462,6 +472,10 @@
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_pocketplasm_locked.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_reefer.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_reefer_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_waterballoons.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_waterballoons_locked.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_weatherballoon.png" />
+    <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_weatherballoon_locked.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_bugspray.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_bugspray_locked.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_cartridge.png" />

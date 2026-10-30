@@ -412,7 +412,7 @@ namespace SorasToybox //Mod namespace
             AMsSeveredHead.Add();
             Everpresence.Add();
 
-            //remember character order is: Mercurie, Karma, Whhvay
+            //remember character order is: Mercurie, Karma, Senek, Whhvay
             //Osman Unlocks
             Milkshake.Add();
             Quesadilla.Add();
@@ -534,8 +534,9 @@ namespace SorasToybox //Mod namespace
             if (CrossMod.MythosFriends)
             {
                 Fishbones.Add();
-                //WaterBalloons.Add();
-                //WeatherBalloon.Add();
+                SeaMine.Add();
+                WaterBalloons.Add();
+                WeatherBalloon.Add();
                 PocketPlasm.Add();
                 HollowedFang.Add();
                 OtherworldlyReefer.Add();

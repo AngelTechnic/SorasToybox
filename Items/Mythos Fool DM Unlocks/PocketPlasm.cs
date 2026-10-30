@@ -35,7 +35,7 @@ namespace SorasToybox.Items
             string achievementID = "SorasToybox_Sggha_Antagonist_ACH";
             string unlockID = "SorasToybox_Sggha_Antagonist_Unlock";
 
-            ItemUtils.AddItemToShopStatsCategoryAndGamePool(pocketPlasm.item, new ItemModdedUnlockInfo(pocketPlasm.Item_ID, ResourceLoader.LoadSprite("item_pocketplasm_locked", null, 32, null), achievementID));
+            ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(pocketPlasm.item, new ItemModdedUnlockInfo(pocketPlasm.Item_ID, ResourceLoader.LoadSprite("item_pocketplasm_locked", null, 32, null), achievementID));
 
             BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, pocketPlasm.Item_ID);
 

@@ -234,11 +234,6 @@ namespace SorasToybox.Enemies
             deathmatchEnemy.PrepareEnemyPrefab("Assets/ToyboxEnemies/Deathmatch/Deathmatch Boss.prefab", SorasToybox.assetbundle, null);
 
 
-
-
-
-
-
             Ability judgement = new Ability("Judgement", "ST_DMJudgement_A")
             {
                 Description = "Makes the Opposing party member deal a little damage to their left party member, then gain Ante equal to the result. Moves Left, assuming the grid wraps around.",
@@ -351,8 +346,15 @@ namespace SorasToybox.Enemies
             }
             else
             {
-                dooranim2 = Visuals.Clobber_Left;
+                dooranim2 = Visuals.Connection;
             }
+
+            TargetPerformEffectViaSubaction hangingJudgeDumbfuckSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            hangingJudgeDumbfuckSubAct.effects =
+                [
+                    Effects.GenerateEffect(instinctPopup, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(instinctEffects, 1, Targeting.Slot_SelfSlot),
+                ];
 
 
             Ability hangingJudge = new Ability("Hanging Judge", "ST_DMHangingJudge_A")
@@ -368,33 +370,22 @@ namespace SorasToybox.Enemies
 
                 ]
             };
-            hangingJudge.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Passive_Instinct"]);
 
-
-            UseSpecificAbilityByEntryEffect queueHangingJudge = ScriptableObject.CreateInstance<UseSpecificAbilityByEntryEffect>();
-            queueHangingJudge.usePrev = false;
-
-            ExtraAbilityInfo executionQueue = new()
-            {
-                ability = hangingJudge.GenerateEnemyAbility().ability,
-                rarity = Rarity.Impossible,
-            };
-            queueHangingJudge._parentalAbility = executionQueue;
 
             Ability execution = new Ability("Death Row", "ST_DMExecution_A")
             {
-                Description = "If any party members have 15 or more Ante, the first against the wall gets what they deserve.\nQueues the ability \"Hanging Judge\".",
+                Description = "If any party members have 15 or more Ante, the first against the wall gets what they deserve.\nRepeats Instinct.",
                 Rarity = Rarity.Impossible,
                 Effects =
                 [
                     Effects.GenerateEffect(hasAnte, 15, Targeting.Unit_AllOpponents),
                     Effects.GenerateEffect(hangingVisEffect, 1, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(hangingEffects, 1, Targeting.Unit_AllOpponents),
-                    Effects.GenerateEffect(queueHangingJudge, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(hangingJudgeDumbfuckSubAct, 1, Targeting.Slot_SelfSlot),
                 ],
             };
             execution.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
-            execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Additional)]);
+            execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Passive_Instinct"]);
 
             //adding tragedy achievement.
             TryUnlockAchievementEffect deathmatchTragedyUnlock = ScriptableObject.CreateInstance<TryUnlockAchievementEffect>();
@@ -483,7 +474,6 @@ namespace SorasToybox.Enemies
                 trial,
                 error,
                 witness,
-                hangingJudge,
                 admission,
                 ]);
 
