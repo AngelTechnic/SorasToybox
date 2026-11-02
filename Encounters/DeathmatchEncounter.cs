@@ -13,7 +13,7 @@ namespace SorasToybox.Encounters
         {
             Portals.AddPortalSign("Deathmatch_Sign", ResourceLoader.LoadSprite("TimelineDeathmatchBoss", null, 32, null), Portals.BossIDColor);
 
-            string roomID = "AbyssBossGate";
+            string roomID = "AbyssBossPortalRoom";
 
 
             EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")

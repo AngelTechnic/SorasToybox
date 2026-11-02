@@ -22,7 +22,7 @@ using System.Reflection;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.2")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.3")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
@@ -44,6 +44,7 @@ namespace SorasToybox //Mod namespace
         public static ConfigEntry<bool> extradebug;
         public static ConfigEntry<bool> freefooltester;
         public static ConfigEntry<bool> gardenantagonist;
+        public static ConfigEntry<bool> altdivinemusic;
         public static ConfigEntry<bool> altboundarymusic;
         public static ConfigEntry<bool> altforgottenmusic;
 
@@ -127,6 +128,7 @@ namespace SorasToybox //Mod namespace
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
             freefooltester = config.Bind("Meta", "Free Fool Event Tester", false, "Set this to true to enable the free fool event tester.");
             //gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
+            altdivinemusic = config.Bind("Cosmetic Changes", "Alternate Heaven Music", false, "Alternative Music for Heaven. This is a personal thing I added for my own sake. If true, uses \"Terminator Down The River\" by MEGACHEB. If false, uses the default theme.");
             altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
             altforgottenmusic = config.Bind("Cosmetic Changes", "Alternate Nobody Music", false, "Alternative music for Nobody, from another Nobody. This is a personal thing I added for my own sake. If true, uses \"MX\" by RENREN. If false, uses, uh, the default theme?");
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
@@ -164,6 +166,7 @@ namespace SorasToybox //Mod namespace
             //ITA Crossmod
             if (CrossMod.IntoTheAbyss)
             {
+                Erebus.Add();
                 Litany.Add();
                 GearYinimro.Add();
                 BurningShame.Add();
@@ -200,6 +203,7 @@ namespace SorasToybox //Mod namespace
 
             if (CrossMod.IntoTheAbyss)
             {
+                ErebusEncounter.Add();
                 //TestEncounter.Add();
                 LitanyEncounters.Add();
                 GearYinimroEncounters.Add();
@@ -562,7 +566,11 @@ namespace SorasToybox //Mod namespace
 
             //Log items (Do config thing with it)
             Logger.LogInfo("New Items in inventory.");
+            if (SorasToybox.altdivinemusic.Value)
+            {
+                LoadedAssetsHandler.GetEnemyBundle("BOSS_Zone03_Heaven_EnemyBundle")._musicEventReference = "event:/SorasMusic/Enemies/Bosses/AltHeavenMusic/Terminator";
 
+            }
 
             if (SorasToybox.altboundarymusic.Value)
             {

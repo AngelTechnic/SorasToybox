@@ -16,15 +16,6 @@ namespace SorasToybox.Items
             ExtraPassiveAbility_Wearable_SMS getErasure = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
             getErasure._extraPassiveAbility = Passives.GetCustomPassive("Erasure_PA");
 
-            RemoveStatusEffectEffect noSpotlight = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
-            noSpotlight._status = StatusField.Spotlight;
-
-            StatusEffect_Apply_Effect getSpotlight = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
-            getSpotlight._Status = StatusField.Spotlight;
-
-            StatusEffectCheckerEffect hasSpotlight = ScriptableObject.CreateInstance<StatusEffectCheckerEffect>();
-            hasSpotlight._status = StatusField.Spotlight;
-
             StatusEffect_Apply_Effect getAnte = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             getAnte._Status = StatusField.GetCustomStatusEffect("Ante_ID");
 
@@ -48,7 +39,6 @@ namespace SorasToybox.Items
                 TriggerOn = TriggerCalls.OnDamaged,
                 Effects = 
                 [
-                    Effects.GenerateEffect(getSpotlight, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(getAnte, 1, Targeting.Slot_SelfSlot),
                 ],
                 EquippedModifiers = [getErasure],

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 
 namespace SorasToybox
@@ -151,18 +152,31 @@ namespace SorasToybox
 
             HeliotropeCardManager.AddHeliotropeEncounter(basicEncounterSO);
 
-            BackwardsUnlockCompatibility.TryLockItemBehindAchievement("SorasToybox_Strangers_Heliotrope_ACH", "Everpresence_TW");
-            UnlockableModData heliotropeUnlockData = new UnlockableModData("SorasToybox_Strangers_Heliotrope_Unlock");
+            //unlcok shit pleaseeeee
+            string achievementID = "SorasToybox_Strangers_Heliotrope_ACH";
+            string unlockID = "SorasToybox_Strangers_Heliotrope_Unlock";
+            string itemID = "Everpresence_TW";
+
+
+            BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, itemID);
+            UnlockableModData heliotropeUnlockData = new UnlockableModData(unlockID);
             heliotropeUnlockData.hasModdedAchievementUnlock = true;
-            heliotropeUnlockData.moddedAchievementID = "SorasToybox_Strangers_Heliotrope_ACH";
+            heliotropeUnlockData.moddedAchievementID = achievementID;
             heliotropeUnlockData.hasItemUnlock = true;
-            heliotropeUnlockData.items = ["Everpresence_TW"];
+            heliotropeUnlockData.items = [itemID];
 
             ListedUnlockCheck heliotropeUnlockCheck = ScriptableObject.CreateInstance<ListedUnlockCheck>();
-            heliotropeUnlockCheck.unlockID = "SorasToybox_Strangers_Heliotrope_Unlock";
+            heliotropeUnlockCheck.unlockID = unlockID;
             heliotropeUnlockCheck.unlockData = heliotropeUnlockData;
             Unlocks.AddUnlock_ByID(heliotropeUnlockData);
 
+            ModdedAchievements heliotropeAchievement = new ModdedAchievements("Godhead Perfect Sun", "Activate the Heliotrope.", ResourceLoader.LoadSprite("Ach_Quest_Heliotrope", null, 32, null), achievementID);
+            heliotropeAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.StrangersTitleLabel);
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("[EVENTS] Helio thing.");
+            }
 
         }
 

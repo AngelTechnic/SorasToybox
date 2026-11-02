@@ -3,7 +3,6 @@ using SorasToybox.CustomPassives;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static SorasToybox.Encounters.Garden.H;
 
 namespace SorasToybox.Enemies
 {

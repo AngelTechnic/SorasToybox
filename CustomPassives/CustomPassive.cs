@@ -1,4 +1,5 @@
 ﻿using BrutalAPI;
+using BrutalAPI.Items;
 using HarmonyLib;
 using SorasToybox.Custom_Passives;
 using SorasToybox.CustomEffects;
@@ -306,6 +307,22 @@ namespace SorasToybox.CustomPassives
                 GlossaryPassives STItchyInfo = new GlossaryPassives("Itchy", "This enemy can't wait to act. In response to any party member manually moving or using an ability, they will perform their next action, and then gain another to replace the one they just performed.", ResourceLoader.LoadSprite("passive_itchy"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STItchyInfo);
             }
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Shortwave_PA"))
+            {
+                PerformEffectPassiveAbility shortwave = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                shortwave.name = "Shortwave_PA";
+                shortwave._passiveName = "Shortwave";
+                shortwave.passiveIcon = ResourceLoader.LoadSprite("passive_shortwave.png");
+                shortwave._enemyDescription = "On receiving direct damage, this enemy prematurely performs their next ability.";
+                //ch desc
+                shortwave.m_PassiveID = "Shortwave_ID";
+                shortwave.doesPassiveTriggerInformationPanel = true;
+                shortwave._triggerOn = [TriggerCalls.OnDirectDamaged];
+                shortwave.effects = [Effects.GenerateEffect(ScriptableObject.CreateInstance<TargetForceFirstActionEffect>(), 1, Targeting.Slot_SelfSlot)];
+                shortwave.conditions = new List<EffectorConditionSO>(Passives.Slippery.conditions) { ScriptableObject.CreateInstance<HasTurnsCondition>() }.ToArray();
+                Passives.AddCustomPassiveToPool("Shortwave_PA", "Shortwave", shortwave);
+            }
+
 
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("MadeOfFire_PA"))
             {
@@ -400,7 +417,7 @@ namespace SorasToybox.CustomPassives
                 yellowBlooded.m_PassiveID = "PigmentBlooded";
                 yellowBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodYellow");
                 yellowBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Yellow pigment.";
-                yellowBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Iridescent pigment.";
+                yellowBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Yellow pigment.";
                 yellowBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
                 yellowBlooded.doesPassiveTriggerInformationPanel = true;
                 yellowBlooded.effects =
@@ -412,6 +429,32 @@ namespace SorasToybox.CustomPassives
             else
             {
                 Debug.Log("Yellow-Blooded already exists, skipping...");
+            }
+
+            //purple blooded
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("PurpleBlooded_1_PA"))
+            {
+                GenerateColorManaEffect GivePurplePigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GivePurplePigment.mana = Pigments.Purple;
+
+                PerformEffectPassiveAbility purpleBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                purpleBlooded.name = "PurpleBlooded_1_PA";
+                purpleBlooded._passiveName = "Purple-Blooded (1)";
+                purpleBlooded.m_PassiveID = "PigmentBlooded";
+                purpleBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodPurple");
+                purpleBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Purple pigment.";
+                purpleBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Purple pigment.";
+                purpleBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                purpleBlooded.doesPassiveTriggerInformationPanel = true;
+                purpleBlooded.effects =
+                [
+                    Effects.GenerateEffect(GivePurplePigment, 1, Targeting.Slot_SelfSlot),
+                ];
+                Passives.AddCustomPassiveToPool("PurpleBlooded_1_PA", "Purple-Blooded (1)", purpleBlooded);
+            }
+            else
+            {
+                Debug.Log("Purple-Blooded already exists, skipping...");
             }
 
             //irid blooded

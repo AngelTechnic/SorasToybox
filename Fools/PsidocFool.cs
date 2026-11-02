@@ -135,7 +135,7 @@ namespace SorasToybox.Fools
             Ability psi1 = new Ability("ST_PsidocPsi1_A")
             {
                 Name = "Psi-Scalpel",
-                Description = "Inflict 3 Whiplash to all enemy slots to the Right. Heal the Right party member 1 health for each valid target.",
+                Description = "Inflict 3 Whiplash to all enemy slots to the Right. Heal this and the Right party member 1 health for each valid target.",
                 Cost = [Pigments.Yellow, Pigments.BlueYellow, Pigments.Blue],
                 AnimationTarget = Targeting.Slot_OpponentAllRights,
                 Visuals = Visuals.InvadeTheVeins,
@@ -143,22 +143,22 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(getWhiplash, 3, Targeting.GenerateSlotTarget([1], false)),
-                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 3, Targeting.GenerateSlotTarget([2], false)),
-                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 3, Targeting.GenerateSlotTarget([3], false)),
-                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 3, Targeting.GenerateSlotTarget([4], false)),
-                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 1, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             psi1.AddIntentsToTarget(Targeting.Slot_OpponentAllRights, ["Status_Whiplash"]);
-            psi1.AddIntentsToTarget(Targeting.Slot_AllyRight, [nameof(IntentType_GameIDs.Heal_1_4)]);
+            psi1.AddIntentsToTarget(Targeting.Slot_SelfAndRight, [nameof(IntentType_GameIDs.Heal_1_4)]);
 
             Ability psi2 = new Ability("ST_PsidocPsi2_A")
             {
                 Name = "Psi-Scissors",
-                Description = "Inflict 5 Whiplash to all enemy slots to the Right. Heal the Right party member 2 health for each valid target.",
+                Description = "Inflict 5 Whiplash to all enemy slots to the Right. Heal this and the Right party member 2 health for each valid target.",
                 Cost = [Pigments.Yellow, Pigments.BlueYellow, Pigments.Blue],
                 AnimationTarget = Targeting.Slot_OpponentAllRights,
                 Visuals = Visuals.InvadeTheVeins,
@@ -166,22 +166,22 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(getWhiplash, 5, Targeting.GenerateSlotTarget([1], false)),
-                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 5, Targeting.GenerateSlotTarget([2], false)),
-                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 5, Targeting.GenerateSlotTarget([3], false)),
-                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 5, Targeting.GenerateSlotTarget([4], false)),
-                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 2, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             psi2.AddIntentsToTarget(Targeting.Slot_OpponentAllRights, ["Status_Whiplash"]);
-            psi2.AddIntentsToTarget(Targeting.Slot_AllyRight, [nameof(IntentType_GameIDs.Heal_5_10)]);
+            psi2.AddIntentsToTarget(Targeting.Slot_SelfAndRight, [nameof(IntentType_GameIDs.Heal_5_10)]);
 
             Ability psi3 = new Ability("ST_PsidocPsi3_A")
             {
                 Name = "Psi-Suture",
-                Description = "Inflict 7 Whiplash to all enemy slots to the Right. Heal the Right party member 3 health for each valid target.",
+                Description = "Inflict 7 Whiplash to all enemy slots to the Right. Heal this and the Right party member 3 health for each valid target.",
                 Cost = [Pigments.Yellow, Pigments.BlueYellow, Pigments.Blue],
                 AnimationTarget = Targeting.Slot_OpponentAllRights,
                 Visuals = Visuals.InvadeTheVeins,
@@ -189,22 +189,22 @@ namespace SorasToybox.Fools
                 Effects =
                 [
                     Effects.GenerateEffect(getWhiplash, 7, Targeting.GenerateSlotTarget([1], false)),
-                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 7, Targeting.GenerateSlotTarget([2], false)),
-                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 7, Targeting.GenerateSlotTarget([3], false)),
-                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(getWhiplash, 7, Targeting.GenerateSlotTarget([4], false)),
-                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_AllyRight, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(getHeal, 3, Targeting.Slot_SelfAndRight, Effects.CheckPreviousEffectCondition(true, 1)),
                 ],
             };
             psi3.AddIntentsToTarget(Targeting.Slot_OpponentAllRights, ["Status_Whiplash"]);
-            psi3.AddIntentsToTarget(Targeting.Slot_AllyRight, [nameof(IntentType_GameIDs.Heal_11_20)]);
+            psi3.AddIntentsToTarget(Targeting.Slot_SelfAndRight, [nameof(IntentType_GameIDs.Heal_11_20)]);
 
             Ability psi4 = new Ability("ST_PsidocPsi4_A")
             {
                 Name = "Psi-Stapler",
-                Description = "Inflict 9 Whiplash to all enemy slots to the Right. Heal the Right party member 4 health for each valid target.",
+                Description = "Inflict 9 Whiplash to all enemy slots to the Right. Heal this and the Right party member 4 health for each valid target.",
                 Cost = [Pigments.Yellow, Pigments.BlueYellow, Pigments.Blue],
                 AnimationTarget = Targeting.Slot_OpponentAllRights,
                 Visuals = Visuals.InvadeTheVeins,
@@ -222,7 +222,7 @@ namespace SorasToybox.Fools
                 ],
             };
             psi4.AddIntentsToTarget(Targeting.Slot_OpponentAllRights, ["Status_Whiplash"]);
-            psi4.AddIntentsToTarget(Targeting.Slot_AllyRight, [nameof(IntentType_GameIDs.Heal_11_20)]);
+            psi4.AddIntentsToTarget(Targeting.Slot_SelfAndRight, [nameof(IntentType_GameIDs.Heal_11_20)]);
 
 
             //First/Second/Extra/Final Opinion

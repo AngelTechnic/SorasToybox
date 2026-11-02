@@ -39,22 +39,22 @@ namespace SorasToybox.Items
             ItemUtils.AddItemToTreasureStatsCategoryAndGamePool(amsServeredHead.item, new ItemModdedUnlockInfo(amsServeredHead.Item_ID, ResourceLoader.LoadSprite("item_amsseveredhead_locked", null, 32, null), "SorasToybox_Deathmatch_Tragedy_ACH"));
 
             //unlock this
-            string AMachievementID = "SorasToybox_Deathmatch_Tragedy_ACH";
+            string achievementID = "SorasToybox_Deathmatch_Tragedy_ACH";
+            string unlockID = "SorasToybox_Deathmatch_Tragedy_Unlock";
 
 
+            BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, amsServeredHead.Item_ID);
 
-            BrutalAPI.BackwardsUnlockCompatibility.TryLockItemBehindAchievement(AMachievementID, amsServeredHead.Item_ID);
-
-            UnlockableModData unlockData = new UnlockableModData("SorasToybox_Deathmatch_Tragedy_Unlock")
+            UnlockableModData unlockData = new UnlockableModData(unlockID)
             {
                 hasModdedAchievementUnlock = true,
-                moddedAchievementID = AMachievementID,
+                moddedAchievementID = achievementID,
                 hasItemUnlock = true,
                 items = [amsServeredHead.Item_ID],
             };
 
 
-            ModdedAchievements unlockAchievement = new ModdedAchievements("Defiant To The End", "Do not give in and admit to the Antagonist.", ResourceLoader.LoadSprite("Ach_Tragedy_Deathmatch", null, 32, null), AMachievementID);
+            ModdedAchievements unlockAchievement = new ModdedAchievements("Defiant To The End", "Do not give in and admit to the Antagonist.", ResourceLoader.LoadSprite("Ach_Tragedy_Deathmatch", null, 32, null), achievementID);
             unlockAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.TragediesTitleLabel);
 
             Unlocks.AddUnlock_ByID(unlockData);

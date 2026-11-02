@@ -89,6 +89,9 @@
     <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Mercurie.png" />
     <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Senek.png" />
     <None Remove="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Whhvay.png" />
+    <None Remove="Assets\Enemies\Bosses\Angel\TimelineAmorphousAngel.png" />
+    <None Remove="Assets\Enemies\Bosses\Angel\TimelineAntipathAmalgam.png" />
+    <None Remove="Assets\Enemies\Bosses\Angel\TimelineWarpedWings.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchArenaIntroThingy.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPearl.png" />
     <None Remove="Assets\Enemies\Bosses\DeathmatchPortal.png" />
@@ -98,6 +101,7 @@
     <None Remove="Assets\Enemies\Bosses\Desibon\DesibonSignature.png" />
     <None Remove="Assets\Enemies\Bosses\Desibon\DesibonSplash.png" />
     <None Remove="Assets\Enemies\Bosses\Desibon\TreeArea.png" />
+    <None Remove="Assets\Enemies\Bosses\Erebus\TimelineErebus.png" />
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
@@ -375,6 +379,7 @@
     <None Remove="Assets\Passives\IconStonebloodBroken.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\IconStonebloodPrimary.png" />
+    <None Remove="Assets\Passives\IconStonebloodPurple.png" />
     <None Remove="Assets\Passives\IconStonebloodRed.png" />
     <None Remove="Assets\Passives\IconStonebloodWhite.png" />
     <None Remove="Assets\Passives\IconStonebloodYellow.png" />
@@ -397,6 +402,7 @@
     <None Remove="Assets\Passives\passive_quicktempered.png" />
     <None Remove="Assets\Passives\passive_riposte.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
+    <None Remove="Assets\Passives\passive_shortwave.png" />
     <None Remove="Assets\Passives\passive_suicidal.png" />
     <None Remove="Assets\Passives\ProductionPassive.png" />
     <None Remove="Assets\Pigments\Broken\BrokenMana.png" />
@@ -436,6 +442,10 @@
     <EmbeddedResource Include="Assets\Achievements\March Unlocks\Ach_March_Senek.png" />
     <EmbeddedResource Include="Assets\Achievements\Nobody Unlocks\Ach_Nobody_Senek.png" />
     <EmbeddedResource Include="Assets\Achievements\Osman Sinnoks Unlocks\Ach_Osman_Senek.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Angel\TimelineAmorphousAngel.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Angel\TimelineAntipathAmalgam.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Angel\TimelineWarpedWings.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Erebus\TimelineErebus.png" />
     <EmbeddedResource Include="Assets\Enemies\InfinityTasbehtDead.png" />
     <EmbeddedResource Include="Assets\Enemies\tango_dead.png" />
     <EmbeddedResource Include="Assets\Enemies\TasbehtDead.png" />
@@ -515,6 +525,7 @@
     <EmbeddedResource Include="Assets\Items\Siren DM Unlocks\moderngiant_marchofprogress.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\trickbible_fingertrick.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodPrimary.png" />
+    <EmbeddedResource Include="Assets\Passives\IconStonebloodPurple.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodWhite.png" />
     <EmbeddedResource Include="Assets\Passives\IconTargeter.png" />
     <EmbeddedResource Include="Assets\Passives\IconTransformPassive.png" />
@@ -819,6 +830,7 @@
     <EmbeddedResource Include="Assets\Passives\passive_quicktempered.png" />
     <EmbeddedResource Include="Assets\Passives\passive_riposte.png" />
     <EmbeddedResource Include="Assets\Passives\passive_searchparty.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_shortwave.png" />
     <EmbeddedResource Include="Assets\Passives\passive_suicidal.png" />
     <EmbeddedResource Include="Assets\Passives\ProductionPassive.png" />
     <EmbeddedResource Include="Assets\Pigments\Broken\BrokenMana.png" />
