@@ -14,7 +14,7 @@ namespace SorasToybox.Encounters
             {
                 MusicEvent = "event:/SorasMusic/Enemies/Bosses/ErebusMusic/ErebusMusic",
                 RoarEvent = "event:/SorasSFX/Enemies/Erebus/ErebusRoar",
-                BossID = "Erebus",
+                BossID = "Erebus_BOSS",
             };
             erebusBoss.SpecialEnvironmentID = LoadedAssetsHandler.GetEnemyBundle("BOSS_Zone01_Hickory_EnemyBundle")._specialCombatEnvironment;
             erebusBoss.UsesSpecialEnvironment = true;

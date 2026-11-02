@@ -1,4 +1,5 @@
-﻿using SorasToybox.CustomPassives;
+﻿using SorasToybox.CustomEffects;
+using SorasToybox.CustomPassives;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -26,16 +27,24 @@ namespace SorasToybox.Enemies
             strengthByPrevious._Status = StatusField.GetCustomStatusEffect("Strength_ID");
             strengthByPrevious._MultPreviousExitValueForEntry = true;
 
+            StatusEffect_Apply_Effect gimmeStrength = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+            gimmeStrength._Status = StatusField.GetCustomStatusEffect("Strength_ID");
+
             RemoveStatusEffectEffect noStrength = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
             noStrength._status = StatusField.GetCustomStatusEffect("Strength_ID");
 
             ConsumeAllColorManaEffect eatAllThePurples = ScriptableObject.CreateInstance<ConsumeAllColorManaEffect>();
             eatAllThePurples._consumeMana = Pigments.Purple;
 
+            DamageWithStatusBonusEffect strengthDamage = ScriptableObject.CreateInstance<DamageWithStatusBonusEffect>();
+            strengthDamage._status = StatusField.GetCustomStatusEffect("Strength_ID");
+            strengthDamage._bonusAmount = 1;
+            strengthDamage._bonusStacking = true;
+
 
             Enemy erebus = new Enemy("Erebus", "Erebus_BOSS")
             {
-                Health = 86,
+                Health = 66,
                 HealthColor = Pigments.Red,
                 Size = 1,
                 CombatSprite = ResourceLoader.LoadSprite("TimelineErebus.png", new Vector2(0.5f, 0f), 32),
@@ -46,12 +55,12 @@ namespace SorasToybox.Enemies
                 UnitTypes = ["MaleID", "Primal"],
             };
             erebus.PrepareEnemyPrefab("Assets/ToyboxEnemies/Erebus/Erebus Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
-            erebus.AddPassives([Passives.GetCustomPassive("Shortwave_PA"), Passives.GetCustomPassive("Forgotten_PA"), Passives.GetCustomPassive("PurpleBlooded_1_PA")]);
+            erebus.AddPassives([Passives.GetCustomPassive("Shortwave_PA"), Passives.GetCustomPassive("Forgotten_PA"), Passives.GetCustomPassive("PurpleBlooded_1_PA"), Passives.OverexertGenerator(9)]);
 
             Ability messWithTheBull = new("ST_ErebusBull_A")
             {
                 Name = "Mess With The Bull",
-                Description = "Moves Left or Right, then deals a Painful amount of damage to the Opposing party member.",
+                Description = "Moves Left or Right, then deals a Painful amount of damage to the Opposing party member.\nGrant them 2 Strength.",
                 Rarity = Rarity.Common,
                 Priority = Priority.Normal,
                 Visuals = Visuals.Writhe,
@@ -60,10 +69,11 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(moveSides, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(damage, 4, Targeting.Slot_Front),
+                    Effects.GenerateEffect(gimmeStrength, 2, Targeting.Slot_Front),
                 ]
             };
             messWithTheBull.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Sides"]);
-            messWithTheBull.AddIntentsToTarget(Targeting.Slot_Front, ["Damage_3_6"]);
+            messWithTheBull.AddIntentsToTarget(Targeting.Slot_Front, ["Damage_3_6", "Status_Strength"]);
 
             Ability getTheHorns = new("ST_ErebusHorns_A")
             {
@@ -102,7 +112,7 @@ namespace SorasToybox.Enemies
             Ability chargeHeadOn = new("ST_ErebusCharge_A")
             {
                 Name = "Charge Head On",
-                Description = "Moves Left Twice, then deals a Painful amount of damage to the Opposing party member and removes all Strength from them.",
+                Description = "Moves Left Twice, then deals damage to the Opposing party member equal to their amount of Strength.\nSiphon all Strength from the target.",
                 Visuals = Visuals.StompLeft,
                 AnimationTarget = Targeting.Slot_SelfAll,
                 Priority = Priority.Slow,
@@ -111,17 +121,19 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(moveLeft, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(moveLeft, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(damage, 3, Targeting.Slot_Front),
+                    Effects.GenerateEffect(strengthDamage, 0, Targeting.Slot_Front),
                     Effects.GenerateEffect(noStrength, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(strengthByPrevious, 1, Targeting.Slot_SelfSlot)
                 ]
             };
             chargeHeadOn.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Left", "Swap_Left", "Damage_3_6"]);
             chargeHeadOn.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Strength"]);
+            chargeHeadOn.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Status_Strength"]);
 
             Ability rushStraightForward = new("ST_ErebusRush_A")
             {
                 Name = "Rush Straight Forward",
-                Description = "Moves Right Twice, then deals a Painful amount of damage to the Opposing party member and removes all Strength from them.",
+                Description = "Moves Right Twice, then deals damage to the Opposing party member equal to their amount of Strength.\nSiphon all Strength from the target.",
                 Visuals = Visuals.StompRight,
                 AnimationTarget = Targeting.Slot_SelfAll,
                 Priority = Priority.Slow,
@@ -130,12 +142,14 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(moveRight, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(moveRight, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(damage, 3, Targeting.Slot_Front),
+                    Effects.GenerateEffect(strengthDamage, 0, Targeting.Slot_Front),
                     Effects.GenerateEffect(noStrength, 1, Targeting.Slot_Front),
+                    Effects.GenerateEffect(strengthByPrevious, 1, Targeting.Slot_SelfSlot)
                 ]
             };
             rushStraightForward.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Right", "Swap_Right", "Damage_3_6"]);
             rushStraightForward.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Strength"]);
+            rushStraightForward.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Status_Strength"]);
 
             erebus.AddEnemyAbilities([
                 messWithTheBull,
