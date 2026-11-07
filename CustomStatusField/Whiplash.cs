@@ -35,10 +35,34 @@ namespace SorasToybox.CustomStatusField
             ex = args as IntegerReference_Damage;
             if (!ex.damageTypeID.Equals("Whiplash_Damage"))
             {
-                int amount = holder.m_ContentMain + holder.Restrictor;
+                int amount = holder.m_ContentMain;
                 (sender as IUnit).Damage(amount, sender as IUnit, "", 0, true, true, false, "Whiplash_Damage");
             }
-            this.ZeroDuration(holder, sender as IStatusEffector);
+            bool remove = true;
+            CombatStats stats = CombatManager.Instance._stats;
+            foreach (var charcomb in stats.CharactersOnField.Values)
+            {
+                //Scourge_PA
+                if (charcomb.ContainsPassiveAbility("Scourge_PA"))
+                {
+                    CombatManager.Instance.AddUIAction(new ShowPassiveInformationUIAction(charcomb.ID, charcomb.IsUnitCharacter, "Scourge", ResourceLoader.LoadSprite("passive_scourge.png")));
+                    remove = false;
+                }
+            }
+
+            foreach (var charcomb in stats.EnemiesOnField.Values)
+            {
+                //Scourge_PA
+                if (charcomb.ContainsPassiveAbility("Scourge_PA"))
+                {
+                    CombatManager.Instance.AddUIAction(new ShowPassiveInformationUIAction(charcomb.ID, charcomb.IsUnitCharacter, "Scourge", ResourceLoader.LoadSprite("passive_scourge.png")));
+                    remove = false;
+                }
+            }
+            if (remove)
+            {
+                this.ZeroDuration(holder, sender as IStatusEffector);
+            }
         }
 
         // Token: 0x06000010 RID: 16 RVA: 0x00002753 File Offset: 0x00000953

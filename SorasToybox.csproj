@@ -410,6 +410,7 @@
     <None Remove="Assets\Passives\passive_overtuned.png" />
     <None Remove="Assets\Passives\passive_quicktempered.png" />
     <None Remove="Assets\Passives\passive_riposte.png" />
+    <None Remove="Assets\Passives\passive_scourge.png" />
     <None Remove="Assets\Passives\passive_searchparty.png" />
     <None Remove="Assets\Passives\passive_shortwave.png" />
     <None Remove="Assets\Passives\passive_suicidal.png" />
@@ -423,6 +424,10 @@
     <None Remove="Assets\Statuses\status_overclock.png" />
     <None Remove="Assets\Statuses\status_regen.png" />
     <None Remove="Assets\Statuses\status_whiplash.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Passives\passive_scourge.png" />
   </ItemGroup>
 
   <ItemGroup>

@@ -379,6 +379,22 @@ namespace SorasToybox.CustomPassives
             GlossaryPassives foolFormlessPassiveInfo = new GlossaryPassives("Formless (Sora's Toybox)", "Upon receiving damage, reroll this party member's ability costs.", Passives.Formless.passiveIcon);
             LoadedDBsHandler.GlossaryDB.AddNewPassive(foolFormlessPassiveInfo);
 
+            //scourge
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Scourge_PA"))
+            {
+                PerformEffectPassiveAbility scourge = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                scourge.m_PassiveID = "Scourge_PA";
+                scourge.passiveIcon = ResourceLoader.LoadSprite("passive_scourge.png");
+                scourge.doesPassiveTriggerInformationPanel = true;
+                scourge._triggerOn = [];
+                scourge.effects = [];
+                scourge._passiveName = "Scourge";
+                scourge._enemyDescription = "While this enemy lives, Whiplash will not be removed after it triggers.";
+                scourge._characterDescription = "While this party member lives, Whiplash will not be removed after it triggers.";
+                Passives.AddCustomPassiveToPool("Scourge_PA", "Scourge", scourge);
+                Glossary.CreateAndAddCustom_PassiveToGlossary("Scourge", "While this unit lives, Whiplash will not be removed after it triggers.", ResourceLoader.LoadSprite("passive_scourge.png"));
+            }
+
 
 
             //Blooded Stuff
