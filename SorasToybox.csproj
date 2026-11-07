@@ -11,6 +11,7 @@
     <None Remove="AssetBundles\sorastoybox.meta" />
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Ach_Boss_Desibon.png" />
+    <None Remove="Assets\Achievements\Ach_Boss_Erebus.png" />
     <None Remove="Assets\Achievements\Ach_Fool_Karma.png" />
     <None Remove="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
@@ -101,6 +102,10 @@
     <None Remove="Assets\Enemies\Bosses\Desibon\DesibonSignature.png" />
     <None Remove="Assets\Enemies\Bosses\Desibon\DesibonSplash.png" />
     <None Remove="Assets\Enemies\Bosses\Desibon\TreeArea.png" />
+    <None Remove="Assets\Enemies\Bosses\Erebus\ErebusPortal.png" />
+    <None Remove="Assets\Enemies\Bosses\Erebus\ErebusSignature.png" />
+    <None Remove="Assets\Enemies\Bosses\Erebus\ErebusSplash.png" />
+    <None Remove="Assets\Enemies\Bosses\Erebus\Hickory_Env.png" />
     <None Remove="Assets\Enemies\Bosses\Erebus\TimelineErebus.png" />
     <None Remove="Assets\Enemies\Bosses\overworldburningshame.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineBurningShameBoss.png" />
@@ -153,6 +158,7 @@
     <None Remove="Assets\Fools\Karma\karma_coming.png" />
     <None Remove="Assets\Fools\Karma\karma_front.png" />
     <None Remove="Assets\Fools\Karma\karma_front_mad.png" />
+    <None Remove="Assets\Fools\Karma\karma_front_sadist.png" />
     <None Remove="Assets\Fools\Karma\karma_menu.png" />
     <None Remove="Assets\Fools\Karma\karma_menu_locked.png" />
     <None Remove="Assets\Fools\Karma\karma_overworld.png" />
@@ -261,6 +267,8 @@
     <None Remove="Assets\Items\item_memoryofgriyadin_locked.png" />
     <None Remove="Assets\Items\item_memoryofsyndomera.png" />
     <None Remove="Assets\Items\item_memoryofsyndomera_locked.png" />
+    <None Remove="Assets\Items\item_narakaemblem.png" />
+    <None Remove="Assets\Items\item_narakaemblem_locked.png" />
     <None Remove="Assets\Items\item_polygon.png" />
     <None Remove="Assets\Items\item_polygon_locked.png" />
     <None Remove="Assets\Items\item_princess.png" />
@@ -302,6 +310,7 @@
     <None Remove="Assets\Items\Mythos DM Unlocks\item_waterballoons_locked.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_weatherballoon.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_weatherballoon_locked.png" />
+    <None Remove="Assets\Items\narakaemblem_bloodthirst.png" />
     <None Remove="Assets\Items\princess_feedingtime.png" />
     <None Remove="Assets\Items\quill_slasherfic.png" />
     <None Remove="Assets\Items\Siren DM Unlocks\item_capitalisminacan.png" />
@@ -417,6 +426,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Ach_Boss_Erebus.png" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Fool_Karma.png" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <EmbeddedResource Include="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Senek.png" />
@@ -445,6 +455,10 @@
     <EmbeddedResource Include="Assets\Enemies\Bosses\Angel\TimelineAmorphousAngel.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Angel\TimelineAntipathAmalgam.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Angel\TimelineWarpedWings.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Erebus\ErebusPortal.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Erebus\ErebusSignature.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Erebus\ErebusSplash.png" />
+    <EmbeddedResource Include="Assets\Enemies\Bosses\Erebus\Hickory_Env.png" />
     <EmbeddedResource Include="Assets\Enemies\Bosses\Erebus\TimelineErebus.png" />
     <EmbeddedResource Include="Assets\Enemies\InfinityTasbehtDead.png" />
     <EmbeddedResource Include="Assets\Enemies\tango_dead.png" />
@@ -461,6 +475,7 @@
     <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_alive.png" />
     <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_dead.png" />
     <EmbeddedResource Include="Assets\Fools\Heliotrope\heliotrope_ow.png" />
+    <EmbeddedResource Include="Assets\Fools\Karma\karma_front_sadist.png" />
     <EmbeddedResource Include="Assets\Fools\Karma\karma_sign.png" />
     <EmbeddedResource Include="Assets\Achievements\Ach_Fool_Senek.png" />
     <EmbeddedResource Include="Assets\Fools\Senek\senek_acquire.png" />
@@ -474,6 +489,8 @@
     <EmbeddedResource Include="Assets\Fools\Senek\senek_ricochet.png" />
     <EmbeddedResource Include="Assets\Fools\Senek\senek_talk.png" />
     <EmbeddedResource Include="Assets\Fools\Senek\senek_trickshot.png" />
+    <EmbeddedResource Include="Assets\Items\item_narakaemblem.png" />
+    <EmbeddedResource Include="Assets\Items\item_narakaemblem_locked.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_hollowedfang.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_hollowedfang_locked.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_negativespace.png" />
@@ -486,6 +503,7 @@
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_waterballoons_locked.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_weatherballoon.png" />
     <EmbeddedResource Include="Assets\Items\Mythos DM Unlocks\item_weatherballoon_locked.png" />
+    <EmbeddedResource Include="Assets\Items\narakaemblem_bloodthirst.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_bugspray.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_bugspray_locked.png" />
     <EmbeddedResource Include="Assets\Items\ST Fool Item Unlocks\item_cartridge.png" />

@@ -644,9 +644,13 @@ namespace SorasToybox.Fools
             speakerBundleKarmaMad.dialogueSound = LoadedAssetsHandler.GetCharacter("Karma_CH").damageSound;
             speakerBundleKarmaMad.portrait = ResourceLoader.LoadSprite("karma_front_mad", new Vector2(0.5f, 0f), 32);
 
+            SpeakerBundle speakerBundleKarmaEvil = new SpeakerBundle();
+            speakerBundleKarmaEvil.bundleTextColor = new Color32(255, 0, 0, 255);
+            speakerBundleKarmaEvil.dialogueSound = LoadedAssetsHandler.GetCharacter("Karma_CH").deathSound;
+            speakerBundleKarmaEvil.portrait = ResourceLoader.LoadSprite("karma_front_sadist", new Vector2(0.5f, 0f), 32);
 
 
-            Dialogues.CreateAndAddCustom_SpeakerData("Karma", speakerBundleKarma, true, true, new SpeakerEmote[2]
+            Dialogues.CreateAndAddCustom_SpeakerData("Karma", speakerBundleKarma, true, true, new SpeakerEmote[3]
             {
                 new SpeakerEmote
                 {
@@ -657,6 +661,12 @@ namespace SorasToybox.Fools
                 {
                     emotion = "Mad",
                     bundle = speakerBundleKarmaMad,
+                },
+
+                new SpeakerEmote
+                {
+                    emotion = "Evil",
+                    bundle = speakerBundleKarmaEvil,
                 },
             });
         }

@@ -121,13 +121,13 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(moveLeft, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(moveLeft, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(strengthDamage, 0, Targeting.Slot_Front),
+                    Effects.GenerateEffect(strengthDamage, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(noStrength, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(strengthByPrevious, 1, Targeting.Slot_SelfSlot)
                 ]
             };
-            chargeHeadOn.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Left", "Swap_Left", "Damage_3_6"]);
-            chargeHeadOn.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Strength"]);
+            chargeHeadOn.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Left", "Swap_Left"]);
+            chargeHeadOn.AddIntentsToTarget(Targeting.Slot_Front, ["Damage_3_6", "Rem_Status_Strength"]);
             chargeHeadOn.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Status_Strength"]);
 
             Ability rushStraightForward = new("ST_ErebusRush_A")
@@ -142,13 +142,13 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(moveRight, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(moveRight, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(strengthDamage, 0, Targeting.Slot_Front),
+                    Effects.GenerateEffect(strengthDamage, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(noStrength, 1, Targeting.Slot_Front),
                     Effects.GenerateEffect(strengthByPrevious, 1, Targeting.Slot_SelfSlot)
                 ]
             };
-            rushStraightForward.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Right", "Swap_Right", "Damage_3_6"]);
-            rushStraightForward.AddIntentsToTarget(Targeting.Slot_Front, ["Rem_Status_Strength"]);
+            rushStraightForward.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Right", "Swap_Right"]);
+            rushStraightForward.AddIntentsToTarget(Targeting.Slot_Front, ["Damage_3_6", "Rem_Status_Strength"]);
             rushStraightForward.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Status_Strength"]);
 
             erebus.AddEnemyAbilities([
@@ -160,6 +160,27 @@ namespace SorasToybox.Enemies
                 ]);
 
             erebus.AddEnemy(true, false, false);
+
+            //unlcok shit pleaseeeee
+            string achievementID = "ErebusBoss_ACH";
+            string unlockID = "Erebus_BOSS";
+            string itemID = "NarakaEmblem_TW";
+
+
+            BackwardsUnlockCompatibility.TryLockItemBehindAchievement(achievementID, itemID);
+            UnlockableModData unlockData = new UnlockableModData(unlockID);
+            unlockData.hasModdedAchievementUnlock = true;
+            unlockData.moddedAchievementID = achievementID;
+            unlockData.hasItemUnlock = true;
+            unlockData.items = [itemID];
+
+            ListedUnlockCheck unlockCheck = ScriptableObject.CreateInstance<ListedUnlockCheck>();
+            unlockCheck.unlockID = unlockID;
+            unlockCheck.unlockData = unlockData;
+            Unlocks.AddUnlock_BeatBoss(unlockCheck);
+
+            ModdedAchievements erebusAchievement = new ModdedAchievements("The Overlord", "Murder Erebus.", ResourceLoader.LoadSprite("Ach_Boss_Erebus", null, 32, null), achievementID);
+            erebusAchievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.BossesTitleLabel);
 
             if (SorasToybox.extradebug.Value)
             {

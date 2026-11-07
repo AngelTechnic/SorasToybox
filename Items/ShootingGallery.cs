@@ -24,6 +24,7 @@ namespace SorasToybox.Items
                 Flavour = "\"BREAK THE TARGETS!\"",
                 Description = "At the start of combat, summon as many of Senek's Tasbehts as possible!",
                 IsShopItem = true,
+                StartsLocked = true,
                 ShopPrice = 8,
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =

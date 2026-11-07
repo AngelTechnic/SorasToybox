@@ -156,7 +156,7 @@ namespace SorasToybox //Mod namespace
             {
                 Slatecarnate.Add();
             }
-
+            Erebus.Add();
             //Siren Crossmod
             if (CrossMod.Siren)
             {
@@ -166,7 +166,6 @@ namespace SorasToybox //Mod namespace
             //ITA Crossmod
             if (CrossMod.IntoTheAbyss)
             {
-                Erebus.Add();
                 Litany.Add();
                 GearYinimro.Add();
                 BurningShame.Add();
@@ -405,6 +404,7 @@ namespace SorasToybox //Mod namespace
 
 
             //Add items
+            NarakaEmblem.Add();
             //sirencrossmod check
             if (CrossMod.Siren)
             {

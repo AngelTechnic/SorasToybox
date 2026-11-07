@@ -35,7 +35,7 @@ namespace SorasToybox.CustomStatusField
             ex = args as IntegerReference_Damage;
             if (!ex.damageTypeID.Equals("Whiplash_Damage"))
             {
-                int amount = holder.m_ContentMain;
+                int amount = holder.m_ContentMain + holder.Restrictor;
                 (sender as IUnit).Damage(amount, sender as IUnit, "", 0, true, true, false, "Whiplash_Damage");
             }
             this.ZeroDuration(holder, sender as IStatusEffector);

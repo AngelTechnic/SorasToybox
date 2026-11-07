@@ -150,6 +150,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Errant_EN", "Errant");
             targetListKarma.Add("Chthonian_EN", "Chthonian");
             targetListKarma.Add("Pin_BOSS", "ReallyBigThumbtack");
+            targetListKarma.Add("Erebus_BOSS", "Erebus");
 
             Dictionary<string, Dictionary<string, string>> targetAltListKarma = new Dictionary<string, Dictionary<string, string>>();
 

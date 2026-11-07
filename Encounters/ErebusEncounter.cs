@@ -23,18 +23,18 @@ namespace SorasToybox.Encounters
                 "Erebus_BOSS",
             ], [2]);
             erebusBoss.AddEncounterToDataBases();
-            /*Misc.AddCustom_VSAnimationData("DendriteDesibon_BOSS", new VsBossData
+            Misc.AddCustom_VSAnimationData("Erebus_BOSS", new VsBossData
             {
-                animation = SorasToybox.assetbundle.LoadAsset<AnimationClip>("Assets/ToyboxEnemies/Desibon/vsBoss_PopUpDesibon.anim"),
-                roarTime = 7.25f,
-                arenaSprite = ResourceLoader.LoadSprite("TreeArea", null, 32, null),
+                animation = SorasToybox.assetbundle.LoadAsset<AnimationClip>("Assets/ToyboxEnemies/Erebus/vsBoss_PopUpErebus.anim"),
+                roarTime = 4f,
+                arenaSprite = ResourceLoader.LoadSprite("Hickory_Env", null, 32, null),
                 //extraArenaSprite = ResourceLoader.LoadSprite("AcolyteTimeline", null, 32, null),
-                bossSprite = ResourceLoader.LoadSprite("DesibonSplash", null, 32, null),
-                signatureSprite = ResourceLoader.LoadSprite("DesibonSignature", null, 32, null),
+                bossSprite = ResourceLoader.LoadSprite("ErebusSplash", null, 32, null),
+                signatureSprite = ResourceLoader.LoadSprite("ErebusSignature", null, 32, null),
                 //extraSignatureSprite = ResourceLoader.LoadSprite("AcolyteTimeline", null, 32, null)
-            });*/
+            });
 
-            //LoadedDBsHandler._PortalDB.AddBackgroundPortal("Erebus_BOSS", ResourceLoader.LoadSprite("DesibonPortal", new Vector2?(new Vector2(0.5f, 0f)), 50, null));
+            LoadedDBsHandler._PortalDB.AddBackgroundPortal("Erebus_BOSS", ResourceLoader.LoadSprite("ErebusPortal", new Vector2?(new Vector2(0.5f, 0f)), 50, null));
 
             EnemyEncounterUtils.AddEncounterToZoneSelector("Erebus_BOSS", 10, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Boss);
         }

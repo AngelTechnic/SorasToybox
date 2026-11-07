@@ -108,9 +108,13 @@ namespace SorasToybox.CustomPassives
                 hostile.effects = [Effects.GenerateEffect(getAnte, 1, Targeting.Slot_SelfSlot)];
 
 
-                Passives.AddCustomPassiveToPool("ST_Hostile_PA", "Hostile", hostile);
-                GlossaryPassives STHostileInfo = new GlossaryPassives("Hostile", "On receiving damage, gain 1 Ante.", ResourceLoader.LoadSprite("passive_hostile"));
-                LoadedDBsHandler.GlossaryDB.AddNewPassive(STHostileInfo);
+                if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Hostile_PA")) 
+                {
+                    Passives.AddCustomPassiveToPool("ST_Hostile_PA", "Hostile", hostile);
+                    GlossaryPassives STHostileInfo = new GlossaryPassives("Hostile", "On receiving damage, gain 1 Ante.", ResourceLoader.LoadSprite("passive_hostile"));
+                    LoadedDBsHandler.GlossaryDB.AddNewPassive(STHostileInfo);
+                }
+               
             }
 
 
@@ -367,12 +371,12 @@ namespace SorasToybox.CustomPassives
             foolFormless._triggerOn = [TriggerCalls.OnDirectDamaged];
             foolFormless.effects =
                 [Effects.GenerateEffect(ScriptableObject.CreateInstance<ShiftCostsEffect>(), 1, Targeting.Slot_SelfSlot)];
-            foolFormless._characterDescription = "Upon receiving direct damage, reroll this party member's ability costs.";
+            foolFormless._characterDescription = "Upon receiving damage, reroll this party member's ability costs.";
             foolFormless._enemyDescription = "THIS IS THE WRONG FORMLESS YOU BUFFOON";
             foolFormless.doesPassiveTriggerInformationPanel = true;
             Passives.AddCustomPassiveToPool("ST_Formless_PA", "Formless", foolFormless);
 
-            GlossaryPassives foolFormlessPassiveInfo = new GlossaryPassives("Formless (Sora's Toybox)", "Upon receiving direct damage, reroll this party member's ability costs.", Passives.Formless.passiveIcon);
+            GlossaryPassives foolFormlessPassiveInfo = new GlossaryPassives("Formless (Sora's Toybox)", "Upon receiving damage, reroll this party member's ability costs.", Passives.Formless.passiveIcon);
             LoadedDBsHandler.GlossaryDB.AddNewPassive(foolFormlessPassiveInfo);
 
 
