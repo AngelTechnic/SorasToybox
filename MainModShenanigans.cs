@@ -477,7 +477,7 @@ namespace SorasToybox //Mod namespace
                 }
             }
             //Katalixi Unlocks
-            if (CrossMod.IntoTheAbyss && LoadedAssetsHandler.LoadedEnemies.ContainsKey("Nolocimes_Batretne_BOSS"))
+            if (CrossMod.IntoTheAbyss && LoadedAssetsHandler.LoadedEnemies.ContainsKey("Katalixi_BOSS"))
             {
                 LonelyHike.Add();
                 PrincessItem.Add();
