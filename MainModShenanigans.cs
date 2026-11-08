@@ -47,6 +47,7 @@ namespace SorasToybox //Mod namespace
         public static ConfigEntry<bool> altdivinemusic;
         public static ConfigEntry<bool> altboundarymusic;
         public static ConfigEntry<bool> altforgottenmusic;
+        public static ConfigEntry<bool> altantagonistmusic;
 
         //i stole the following from ITA directly
         public static void PCall(Action call)
@@ -128,9 +129,11 @@ namespace SorasToybox //Mod namespace
             extradebug = config.Bind("Meta", "Extra Debug Logs", false, "Set this to true to fill the console with logs related to every small thing that gets added.");
             freefooltester = config.Bind("Meta", "Free Fool Event Tester", false, "Set this to true to enable the free fool event tester.");
             //gardenantagonist = config.Bind("Gameplay - Misc", "Garden Deathmatch Encounter", false, "Set this to true to add the Deathmatch to the Garden, in addition to the Abyss. Note that this is not the intended experience, and really should only be used for debugging and whatnot, or as a last resort if you're REALLY unlucky with Abyss spawns and still want to fight the Deathmatch.");
-            altdivinemusic = config.Bind("Cosmetic Changes", "Alternate Heaven Music", false, "Alternative Music for Heaven. This is a personal thing I added for my own sake. If true, uses \"Terminator Down The River\" by MEGACHEB. If false, uses the default theme.");
+            altdivinemusic = config.Bind("Cosmetic Changes", "Alternate Heaven Music", false, "Alternative music for Heaven. This is a personal thing I added for my own sake. If true, uses \"Terminator Down The River\" by MEGACHEB. If false, uses the default theme.");
             altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
             altforgottenmusic = config.Bind("Cosmetic Changes", "Alternate Nobody Music", false, "Alternative music for Nobody, from another Nobody. This is a personal thing I added for my own sake. If true, uses \"MX\" by RENREN. If false, uses, uh, the default theme?");
+            altantagonistmusic = config.Bind("Cosmetic Changes", "Alternate Deathmatch Music", false, "Alternative music for the Deathmatch, for those looking for a slightly less spooky vibe. This is a personal thing I added for my own sake. If true, uses \"When Nightmares Attack\" by NumberOneJenny. If false, uses, uh, the default theme?");
+            
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
             //CROSSMOD thank you

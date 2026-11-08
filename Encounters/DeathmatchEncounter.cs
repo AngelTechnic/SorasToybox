@@ -15,19 +15,28 @@ namespace SorasToybox.Encounters
 
             string roomID = "AbyssBossPortalRoom";
 
-
-
-
-            EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")
+            string deathmatchMusic = "";
+            if (SorasToybox.altantagonistmusic.Value)
             {
-                MusicEvent = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/In The Depths",
-                RoarEvent = "event:/SorasSFX/Enemies/Deathmatch/DeathmatchRoar",
-                UsesCustomOverworldRoom = true,
-                CustomOverworldRoomID = roomID,
-                BossID = "Deathmatch_BOSS",
-                SpecialEnvironmentID = "MinotaurEnv",
-                UsesSpecialEnvironment = true,
-            };
+                deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/AltDeathmatchMusic/When Nightmares Attack";
+            }
+            else
+            {
+                deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/In The Depths";
+            }
+
+
+
+                EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")
+                {
+                    MusicEvent = deathmatchMusic,
+                    RoarEvent = "event:/SorasSFX/Enemies/Deathmatch/DeathmatchRoar",
+                    UsesCustomOverworldRoom = true,
+                    CustomOverworldRoomID = roomID,
+                    BossID = "Deathmatch_BOSS",
+                    SpecialEnvironmentID = "MinotaurEnv",
+                    UsesSpecialEnvironment = true,
+                };
 
             deathmatchBoss.AddSpecialEnvironment("MinotaurEnv");
             deathmatchBoss.CreateNewEnemyEncounterData([
