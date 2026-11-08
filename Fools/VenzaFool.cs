@@ -83,7 +83,7 @@ namespace SorasToybox.Fools
                 Description = "Inflict 0-2 Misery to all enemy slots. Inflict 0-2 Ecstasy to all party member slots.",
                 AbilitySprite = ResourceLoader.LoadSprite("venza_watching.png"),
                 Cost = [Pigments.Yellow, Pigments.Yellow, Pigments.Grey, Pigments.Grey],
-                Visuals = LoadedAssetsHandler.GetEnemyAbility("NolocimesSpread_A").visuals,
+                Visuals = LoadedAssetsHandler.GetEnemyAbility("KatDefrag_A").visuals,
                 AnimationTarget = Targeting.AllUnits,
                 Effects =
                 [
