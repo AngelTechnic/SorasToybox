@@ -46,6 +46,12 @@ namespace SorasToybox.Encounters
 
             searchMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SEARCH_Medium_EnemyBundle", 8, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
+            
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("[ENCOUNTERS] SEARCH Encounters loaded.");
+            }
+
         }
     }
 }

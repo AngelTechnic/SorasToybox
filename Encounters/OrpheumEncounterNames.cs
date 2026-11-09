@@ -576,7 +576,7 @@ namespace SorasToybox.Encounters
             //toybox gang
             public static class SERVICE
             {
-                public static string Med => "SERVICEMedium";
+                public static string Med => "H_Zone02_SERVICE_Medium_EnemyBundle";
             }
 
         }
