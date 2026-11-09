@@ -59,7 +59,7 @@ namespace SorasToybox.Fools
             targetListMercurie.Add("Sign_PrizedCatch_EN", "PrizedCatchSign");
             targetListMercurie.Add("PrizedCatch_EN", "PrizedCatch");
             targetListMercurie.Add("RealisticTank_EN", "RealisticTank");
-            targetListMercurie.Add("Nolocimes_Batretne_BOSS", "Katalixi");
+            targetListMercurie.Add("Katalixi_BOSS", "Katalixi");
             targetListMercurie.Add("YNL_EN", "YourNewLife");
             targetListMercurie.Add("NowhereMan_EN", "NowhereMan");
             targetListMercurie.Add("BFElemental_EN", "Brainfuck");
@@ -79,7 +79,7 @@ namespace SorasToybox.Fools
                 Dictionary<string, string> targetListMercurieSoreka = new Dictionary<string, string>();
                 targetListMercurieSoreka.Add("AmalgamatedAssessor_BOSS", "AssessorSoreka");
                 targetListMercurieSoreka.Add("PrizedCatch_EN", "PrizedCatchSoreka");
-                targetListMercurieSoreka.Add("Nolocimes_Batretne_BOSS", "KatalixiSoreka");
+                targetListMercurieSoreka.Add("Katalixi_BOSS", "KatalixiSoreka");
                 targetAltListMercurie.Add("Soreka_CH", targetListMercurieSoreka);
             }
 
@@ -118,7 +118,7 @@ namespace SorasToybox.Fools
             targetListKarma.Add("Kookoo_EN", "Kookoo");
             targetListKarma.Add("Home_EN", "Home");
             targetListKarma.Add("Primus_EN", "Primus");
-            targetListKarma.Add("Nolocimes_Batretne_BOSS", "Katalixi");
+            targetListKarma.Add("Katalixi_BOSS", "Katalixi");
             targetListKarma.Add("SkullHermit_Hidden_EN", "Hermit1");
             targetListKarma.Add("RiftMiniboss_EN", "RiftMiniboss");
             targetListKarma.Add("ArtilleryWitch_EN", "ArtilleryWitch");
