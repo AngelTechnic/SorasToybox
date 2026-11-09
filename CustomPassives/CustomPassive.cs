@@ -451,6 +451,32 @@ namespace SorasToybox.CustomPassives
                 Debug.Log("Yellow-Blooded already exists, skipping...");
             }
 
+            //blue blooded
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("BlueBlooded_1_PA"))
+            {
+                GenerateColorManaEffect GiveBluePigment = ScriptableObject.CreateInstance<GenerateColorManaEffect>();
+                GiveBluePigment.mana = Pigments.Blue;
+
+                PerformEffectPassiveAbility blueBlooded = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+                blueBlooded.name = "BlueBlooded_1_PA";
+                blueBlooded._passiveName = "Blue-Blooded (1)";
+                blueBlooded.m_PassiveID = "PigmentBlooded";
+                blueBlooded.passiveIcon = ResourceLoader.LoadSprite("IconStonebloodBlue");
+                blueBlooded._characterDescription = "Upon receiving direct damage this party member produces 1 additional Blue pigment.";
+                blueBlooded._enemyDescription = "Upon receiving direct damage this enemy produces 1 additional Blue pigment.";
+                blueBlooded._triggerOn = [TriggerCalls.OnDirectDamaged];
+                blueBlooded.doesPassiveTriggerInformationPanel = true;
+                blueBlooded.effects =
+                [
+                    Effects.GenerateEffect(GiveBluePigment, 1, Targeting.Slot_SelfSlot),
+                ];
+                Passives.AddCustomPassiveToPool("BlueBlooded_1_PA", "Blue-Blooded (1)", blueBlooded);
+            }
+            else
+            {
+                Debug.Log("Blue-Blooded already exists, skipping...");
+            }
+
             //purple blooded
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("PurpleBlooded_1_PA"))
             {

@@ -3,7 +3,6 @@ using SorasToybox.CustomEffects;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using static SorasToybox.Enemies.ParadoxYinimro;
 
 namespace SorasToybox.Enemies
 {

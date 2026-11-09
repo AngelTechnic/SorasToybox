@@ -22,7 +22,7 @@ using System.Reflection;
 namespace SorasToybox //Mod namespace
 {
     //Mod Name! It's called this vvvvv
-    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.3")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
+    [BepInPlugin("Wavetamer.SorasToybox", "Sora's Toybox", "0.5.4")] //my name, the mod name, and THE mod name. amnd the version which i will forget to change lmao
     //HARD DEPENDENCIES: The following is a list of required dependencies:
     [BepInDependency("BrutalOrchestra.BrutalAPI", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
@@ -154,6 +154,7 @@ namespace SorasToybox //Mod namespace
 
             //Add enemies
             SEARCH.Add();
+            SERVICE.Add();
             TANGO.Add();
             if (CrossMod.Sofanthiels)
             {
@@ -200,13 +201,14 @@ namespace SorasToybox //Mod namespace
             }
             //add encounters
             SEARCHEncounters.Add();
+            SERVICEEncounters.Add();
             TANGOEncounters.Add();
 
 
             if (CrossMod.IntoTheAbyss)
             {
                 ErebusEncounter.Add();
-                //TestEncounter.Add();
+                TestEncounter.Add();
                 LitanyEncounters.Add();
                 GearYinimroEncounters.Add();
                 CrashoutEncounters.Add();

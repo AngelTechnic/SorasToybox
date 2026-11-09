@@ -136,6 +136,7 @@
     <None Remove="Assets\Enemies\TimelineParadoxYinimro.png" />
     <None Remove="Assets\Enemies\TimelineSeaMine.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
+    <None Remove="Assets\Enemies\TimelineSERVICE.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Enemies\timelineSusMung.png" />
     <None Remove="Assets\Enemies\TimelineTasbeht.png" />
@@ -385,6 +386,7 @@
     <None Remove="Assets\Passives\IconDeployment.png" />
     <None Remove="Assets\Passives\IconFireskull.png" />
     <None Remove="Assets\Passives\IconPatient.png" />
+    <None Remove="Assets\Passives\IconStonebloodBlue.png" />
     <None Remove="Assets\Passives\IconStonebloodBroken.png" />
     <None Remove="Assets\Passives\IconStonebloodIrid.png" />
     <None Remove="Assets\Passives\IconStonebloodPrimary.png" />
@@ -427,6 +429,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Enemies\TimelineSERVICE.png" />
+    <EmbeddedResource Include="Assets\Passives\IconStonebloodBlue.png" />
     <EmbeddedResource Include="Assets\Passives\passive_scourge.png" />
   </ItemGroup>
 

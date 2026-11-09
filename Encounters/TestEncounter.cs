@@ -14,17 +14,17 @@ namespace SorasToybox.Encounters
             Portals.AddPortalColor("SoraTestColor", Color.gray);
 
 
-            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("timeline_tango", new Vector2(0.5f, 0f), 32), "SoraTestColor");
+            Portals.AddPortalSign("SoraTest_Sign", ResourceLoader.LoadSprite("TimelineSERVICE", new Vector2(0.5f, 0f), 32), "SoraTestColor");
             String soraTestSign = "SoraTest_Sign";
 
             EnemyEncounter_API testMedium = new EnemyEncounter_API(0, "H_Zone01_SoraTest_Medium_EnemyBundle", soraTestSign)
             {
                 //Where would we be without good music?
-                MusicEvent = "event:/SorasMusic/Enemies/TANGOMusic/APartFalling",
-                RoarEvent = "event:/SorasSFX/Enemies/TANGO/TangoRoar",
+                MusicEvent = "event:/SorasMusic/Enemies/SERVICEMusic/TheWallsAreTryingToKillMe",
+                RoarEvent = "event:/SorasSFX/Enemies/SERVICE/ServiceRoar",
 
             };
-            testMedium.CreateNewEnemyEncounterData(["TANGO_EN", "TANGO_EN", "SkinningHomunculus_EN"], null);
+            testMedium.CreateNewEnemyEncounterData([Enemies.Service, Enemies.Service, "MusicMan_EN"], null);
 
             testMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);

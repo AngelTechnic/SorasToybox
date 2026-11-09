@@ -169,6 +169,10 @@ namespace SorasToybox.Enemies
 
             search.AddEnemy(true, true, true);
             //LoadedAssetsHandler.GetEnemy("SEARCH_EN").enemyTemplate = LoadedAssetsHandler.GetEnemy("JumbleGuts_Hollowing_EN").enemyTemplate;
+            if (SorasToybox.extradebug.Value)
+            {
+                UnityEngine.Debug.Log("[ENEMIES] Added SEARCH.");
+            }
         }
     }
 }

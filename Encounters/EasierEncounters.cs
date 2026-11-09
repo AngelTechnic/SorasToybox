@@ -352,6 +352,13 @@ namespace SorasToybox.Encounters
         public static string Grey => "GreyMartian_EN";
         public static string Gray => Grey;
     }
+    public static class Humor
+    {
+        public static string Yellow => "HumourCholeric_EN";
+        public static string Purple => "HumourMelancholy_EN";
+        public static string Red => "HumourSanguine_EN";
+        public static string Blue => "HumourPhlegmatic_EN";
+    }
     public static class Aggregates
     {
         public static string Red => "RedAggregate_EN";
@@ -368,6 +375,7 @@ namespace SorasToybox.Encounters
     }
     public static class Enemies
     {
+        public static string MusicMan => "MusicMan_EN";
         public static string Skinning => "SkinningHomunculus_EN";
         public static string Shivering => "ShiveringHomunculus_EN";
         public static string Minister => "GigglingMinister_EN";
@@ -380,11 +388,70 @@ namespace SorasToybox.Encounters
         public static string Mungling => "MunglingMudLung_EN";
         public static string Shooter => "SkeletonShooter_EN";
         public static string Shuffler => "Shawled_Shuffler_EN";
-        public static string Tane => "Tanehineri_EN";
-
         public static string Swine => "UnculturedSwine_EN";
         public static string Polyp => "SpectralPolyp_EN";
         public static string Puker => "PetrifiedPuker_EN";
         public static string Phalaris => "GreatPhalaris_EN";
+        public static string Foundling => "ProdigalFoundling_EN";
+        public static string Synod => "CadaverSynod_EN";
+        public static string Feaster => "FerrousFeaster_EN";
+        public static string Alchemist => "AluminumAlchemist_EN";
+        public static string Accelerator => "ArgonAccelerator_EN";
+        public static string MainSister
+        {
+            get
+            {
+                if (AddTo.BundleExist(Garden.H.Sisters.Med) && LoadedAssetsHandler.GetEnemyBundle(Garden.H.Sisters.Med) is RandomEnemyBundleSO bundle)
+                {
+                    foreach (string enemy in bundle._enemyBundles[0].EnemyNames)
+                    {
+                        if (enemy.Contains("Sister_EN")) return enemy;
+                    }
+                }
+                return "SomeoneSister_EN";
+            }
+        }
+        public static string SubSister
+        {
+            get
+            {
+                if (MainSister == "SomeoneSister_EN") return "NooneSister_EN";
+                return "SomeoneSister_EN";
+            }
+        }
+        public static string Phobia => "Phobia_Phobias_EN";
+        public static string Eclipse => "EclipseRising_EN";
+        public static string Shambler => "DimensionalShambler_EN";
+        public static string Vessel => "EnlightenedVessel_EN";
+        public static string Spirit => "EnlightenedSpirit_EN";
+        public static string Whalehead => "WhaleHeadFishy_EN";
+        public static string Zucchini => "ZucchiniFishy_EN";
+        public static string Prior => "MercifulPrior_EN";
+        public static string Prioress => "RelentlessPrioress_EN";
+        public static string Portrait => "PortraitLoss_EN";
+        public static string Penguin => "AlbinoPenguin_EN";
+
+        //abyss gang
+        public static string YesMan => "YesMan_EN";
+        public static string Wander => "WanderFellow_EN";
+        public static string Streetlight => "Streetlight_EN";
+        public static string Wug => "Wug_EN";
+
+
+        //toybox gang
+        public static string NowhereMan => "NowhereMan";
+        public static string Search => "SEARCH_EN";
+        public static string Service => "SERVICE_EN";
+        public static string Tango => "TANGO_EN";
+        public static class Yinimro
+        {
+            public static string Gear => "GearYinimro_EN";
+            public static string Paradox => "ParadoxYinimro_EN";
+        }
+
+        public static string Shame => "BurningShame_EN";
+        public static string Litany => "Litany_EN";
+        public static string Dozer => "Dozer_EN";
+
     }
 }
