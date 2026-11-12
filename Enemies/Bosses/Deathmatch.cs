@@ -215,27 +215,40 @@ namespace SorasToybox.Enemies
 
 
             //adding tragedy achievement.
-            GameBoolDataSetEffect defiantSetTrue = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
-            defiantSetTrue._VariableName = "DefiantCheevoChecker";
-            defiantSetTrue._ValueSet = true;
+            //Stored Values! dies.
+            UnitStoreData_ModIntSO defiantTracker = ScriptableObject.CreateInstance<UnitStoreData_ModIntSO>();
+            defiantTracker.m_Text = "";
+            defiantTracker._UnitStoreDataID = "DefiantSV";
+            defiantTracker.m_TextColor = new Color32(0, 0, 0, 0);
+            defiantTracker.m_CompareDataToThis = -1;
+            defiantTracker.m_ShowIfDataIsOver = false;
+            LoadedDBsHandler.MiscDB.AddNewUnitStoreData("DefiantSV", defiantTracker);
 
-            GameBoolDataSetEffect defiantSetFalse = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
-            defiantSetFalse._VariableName = "DefiantCheevoChecker";
-            defiantSetFalse._ValueSet = true;
+            CasterStoredValueChangeEffect defiantGoUp = ScriptableObject.CreateInstance<CasterStoredValueChangeEffect>();
+            defiantGoUp.m_unitStoredDataID = "DefiantSV";
+            defiantGoUp._minimumValue = 0;
+            defiantGoUp._exitValueIsChange = false;
+            defiantGoUp._increase = true;
+            defiantGoUp._randomBetweenPrevious = false;
+            defiantGoUp._usePreviousExitValue = false;
+            defiantGoUp._exitValueIsChange = false;
 
-            GameBoolDataEffectCondition defiantCheevoCheck = ScriptableObject.CreateInstance<GameBoolDataEffectCondition>();
-            defiantCheevoCheck._VariableName = "DefiantCheevoChecker";
-            defiantCheevoCheck._PassIfTrue = true;
+            CasterStoredValueSetEffect defiantReset = ScriptableObject.CreateInstance<CasterStoredValueSetEffect>();
+            defiantReset._valueName = "DefiantSV";
+
+            PreviousComparatorCheckEffect BelowOne = ScriptableObject.CreateInstance<PreviousComparatorCheckEffect>();
+            BelowOne._atOrAbove = true;
+            BelowOne._entryIsComparator = false;
+            BelowOne._fixedComparator = 1;
+
+            ExtraVariableForNext_SVEffect defiantGet = ScriptableObject.CreateInstance<ExtraVariableForNext_SVEffect>();
+            defiantGet.m_unitStoredDataID = "DefiantSV";
+           
 
 
             TryUnlockAchievementEffect deathmatchTragedyUnlock = ScriptableObject.CreateInstance<TryUnlockAchievementEffect>();
             deathmatchTragedyUnlock._unlockID = "SorasToybox_Deathmatch_Tragedy_Unlock";
 
-            TargetPerformEffectViaSubaction ANOTHERFUCKINGSUBACT = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
-            ANOTHERFUCKINGSUBACT.effects =
-                [
-                    Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot, defiantCheevoCheck),
-                ];
 
 
             FuckingDeadEffectCondition mdk = ScriptableObject.CreateInstance<FuckingDeadEffectCondition>();
@@ -247,7 +260,7 @@ namespace SorasToybox.Enemies
             deathmatchEnemy.CombatEnterEffects =
             [
                 Effects.GenerateEffect(specialSceneEndingSetUpEffect, 1, Targeting.Slot_SelfSlot, null),
-                Effects.GenerateEffect(defiantSetTrue, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(defiantReset, 1, Targeting.Slot_SelfSlot),
             ];
 
             deathmatchEnemy.CombatExitEffects = new EffectInfo[]
@@ -255,7 +268,9 @@ namespace SorasToybox.Enemies
                 Effects.GenerateEffect(setDeathmatchBool, 1, Targeting.Slot_SelfSlot, haveIMetKarmaYet),
                 Effects.GenerateEffect(setDeathmatchHTBool, 1, Targeting.Slot_SelfSlot, mdk),
                 Effects.GenerateEffect(ScriptableObject.CreateInstance<CheckIsBronzoThereEffect>(), 1, Targeting.Slot_SelfSlot, mdk),
-                Effects.GenerateEffect(ANOTHERFUCKINGSUBACT, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                Effects.GenerateEffect(defiantGet, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
+                Effects.GenerateEffect(BelowOne, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
             };
 
             //deathmatch has no gibs rn
@@ -426,7 +441,7 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(noAnte, 1, Targeting.Unit_AllOpponents),
                     Effects.GenerateEffect(anteByPrevious, 1, Targeting.Spec_Unit_AllOpponents_Weakest),
-                    Effects.GenerateEffect(defiantSetFalse, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(defiantGoUp, 1, Targeting.Slot_SelfSlot),
                 ]
             };
             admission.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Rem_Status_Ante"]);
