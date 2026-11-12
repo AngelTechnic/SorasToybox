@@ -20,7 +20,7 @@ namespace SorasToybox.Encounters
             EnemyEncounter_API serviceMedium = new EnemyEncounter_API(0, Orph.H.SERVICE.Med, serviceSign)
             {
                 MusicEvent = "event:/SorasMusic/Enemies/SERVICEMusic/TheWallsAreTryingToKillMe",
-                RoarEvent = "event:/SorasSFX/Enemies/TANGO/TangoRoar",
+                RoarEvent = "event:/SorasSFX/Enemies/SERVICE/ServiceRoar",
             };
 
             serviceMedium.SimpleAddEncounter(2, Enemies.Service, 2, Enemies.MusicMan);

@@ -197,14 +197,7 @@ namespace SorasToybox.Enemies
                 UnitTypes = ["FemaleID"],
             };
 
-            //making deathmatch end the game
-            SpecialSceneEndingSetUpEffect specialSceneEndingSetUpEffect = ScriptableObject.CreateInstance<SpecialSceneEndingSetUpEffect>();
-            specialSceneEndingSetUpEffect._shouldCombatEnd = false;
-            specialSceneEndingSetUpEffect._specialScene = SpecialSceneType.HardEnding;
-            deathmatchEnemy.CombatEnterEffects =
-            [
-                Effects.GenerateEffect(specialSceneEndingSetUpEffect, 1, Targeting.Slot_SelfSlot, null),
-            ];
+
 
 
 
@@ -220,14 +213,49 @@ namespace SorasToybox.Enemies
             GameBoolDataEffectCondition haveIMetKarmaYet = ScriptableObject.CreateInstance<GameBoolDataEffectCondition>();
             haveIMetKarmaYet._VariableName = "TalkedKarma";
 
-            
+
+            //adding tragedy achievement.
+            GameBoolDataSetEffect defiantSetTrue = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
+            defiantSetTrue._VariableName = "DefiantCheevoChecker";
+            defiantSetTrue._ValueSet = true;
+
+            GameBoolDataSetEffect defiantSetFalse = ScriptableObject.CreateInstance<GameBoolDataSetEffect>();
+            defiantSetFalse._VariableName = "DefiantCheevoChecker";
+            defiantSetFalse._ValueSet = true;
+
+            GameBoolDataEffectCondition defiantCheevoCheck = ScriptableObject.CreateInstance<GameBoolDataEffectCondition>();
+            defiantCheevoCheck._VariableName = "DefiantCheevoChecker";
+            defiantCheevoCheck._PassIfTrue = true;
+
+
+            TryUnlockAchievementEffect deathmatchTragedyUnlock = ScriptableObject.CreateInstance<TryUnlockAchievementEffect>();
+            deathmatchTragedyUnlock._unlockID = "SorasToybox_Deathmatch_Tragedy_Unlock";
+
+            TargetPerformEffectViaSubaction ANOTHERFUCKINGSUBACT = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            ANOTHERFUCKINGSUBACT.effects =
+                [
+                    Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot, defiantCheevoCheck),
+                ];
+
 
             FuckingDeadEffectCondition mdk = ScriptableObject.CreateInstance<FuckingDeadEffectCondition>();
+
+            //making deathmatch end the game
+            SpecialSceneEndingSetUpEffect specialSceneEndingSetUpEffect = ScriptableObject.CreateInstance<SpecialSceneEndingSetUpEffect>();
+            specialSceneEndingSetUpEffect._shouldCombatEnd = false;
+            specialSceneEndingSetUpEffect._specialScene = SpecialSceneType.HardEnding;
+            deathmatchEnemy.CombatEnterEffects =
+            [
+                Effects.GenerateEffect(specialSceneEndingSetUpEffect, 1, Targeting.Slot_SelfSlot, null),
+                Effects.GenerateEffect(defiantSetTrue, 1, Targeting.Slot_SelfSlot),
+            ];
 
             deathmatchEnemy.CombatExitEffects = new EffectInfo[]
             {
                 Effects.GenerateEffect(setDeathmatchBool, 1, Targeting.Slot_SelfSlot, haveIMetKarmaYet),
                 Effects.GenerateEffect(setDeathmatchHTBool, 1, Targeting.Slot_SelfSlot, mdk),
+                Effects.GenerateEffect(ScriptableObject.CreateInstance<CheckIsBronzoThereEffect>(), 1, Targeting.Slot_SelfSlot, mdk),
+                Effects.GenerateEffect(ANOTHERFUCKINGSUBACT, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
             };
 
             //deathmatch has no gibs rn
@@ -321,11 +349,21 @@ namespace SorasToybox.Enemies
 
             //THE FOLLOWING ABILITY USED TO BE NAMED HANGING IM SORRYYYYYYY
             AttackVisualsSO hangingVisuals = ScriptableObject.CreateInstance<AttackVisualsSO>();
-            hangingVisuals = Visuals.Headshot;
+
+            if (LoadedAssetsHandler.GetCharacterAbility("ValerieThe1_A") != null)
+            {
+                hangingVisuals = LoadedAssetsHandler.GetCharacterAbility("ValerieThe1_A").visuals;
+            }
+            else
+            {
+                hangingVisuals = Visuals.Headshot;
+            }
+            
 
 
             AnimationVisualsEffect hangingVisEffect = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
             hangingVisEffect._visuals = hangingVisuals;
+            hangingVisEffect._animationTarget = Targeting.Slot_SelfSlot;
 
 
             RemoveStatusEffectEffect noAnte = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>();
@@ -335,19 +373,11 @@ namespace SorasToybox.Enemies
             hangingEffects.effects =
             [
                     Effects.GenerateEffect(hasAnte, 15, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(noAnte, 1, Targeting.Unit_OtherAllies, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(hangingVisEffect, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(hangman, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 2)),
+                    Effects.GenerateEffect(noAnte, 1, Targeting.Unit_OtherAllies, Effects.CheckPreviousEffectCondition(true, 3)),
             ];
 
-            AttackVisualsSO dooranim2;
-            if (SorasToybox.CrossMod.SaltEnemies)
-            {
-                dooranim2 = LoadedAssetsHandler.GetEnemyAbility("Die4U_A").visuals;
-            }
-            else
-            {
-                dooranim2 = Visuals.Connection;
-            }
 
             TargetPerformEffectViaSubaction hangingJudgeDumbfuckSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             hangingJudgeDumbfuckSubAct.effects =
@@ -357,29 +387,12 @@ namespace SorasToybox.Enemies
                 ];
 
 
-            Ability hangingJudge = new Ability("Hanging Judge", "ST_DMHangingJudge_A")
-            {
-                Description = "Repeats Instinct.",
-                Rarity = Rarity.ImpossibleNoReroll,
-                AnimationTarget = Targeting.Slot_SelfSlot,
-                Visuals = dooranim2,
-                Effects =
-                [
-                    Effects.GenerateEffect(instinctPopup, 1, Targeting.Slot_SelfSlot),
-                    Effects.GenerateEffect(instinctEffects, 1, Targeting.Slot_SelfSlot),
-
-                ]
-            };
-
-
-            Ability execution = new Ability("Death Row", "ST_DMExecution_A")
+            Ability execution = new Ability("Death Rows", "ST_DMExecution_A")
             {
                 Description = "If any party members have 15 or more Ante, the first against the wall gets what they deserve.\nRepeats Instinct.",
                 Rarity = Rarity.Impossible,
                 Effects =
                 [
-                    Effects.GenerateEffect(hasAnte, 15, Targeting.Unit_AllOpponents),
-                    Effects.GenerateEffect(hangingVisEffect, 1, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(true, 1)),
                     Effects.GenerateEffect(hangingEffects, 1, Targeting.Unit_AllOpponents),
                     Effects.GenerateEffect(hangingJudgeDumbfuckSubAct, 1, Targeting.Slot_SelfSlot),
                 ],
@@ -387,41 +400,33 @@ namespace SorasToybox.Enemies
             execution.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
             execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Passive_Instinct"]);
 
-            //adding tragedy achievement.
-            TryUnlockAchievementEffect deathmatchTragedyUnlock = ScriptableObject.CreateInstance<TryUnlockAchievementEffect>();
-            deathmatchTragedyUnlock._unlockID = "SorasToybox_Deathmatch_Tragedy_Unlock";
 
-            PerformEffectPassiveAbility deathmatchDismal = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
-            deathmatchDismal.name = "ST_DismalDeathmatch_PA";
-            deathmatchDismal.m_PassiveID = "DismalDeathmatch";
-            deathmatchDismal._passiveName = "Dismal";
-            deathmatchDismal.passiveIcon = ResourceLoader.LoadSprite("passive_dismal.png");
-            deathmatchDismal._enemyDescription = "This enemy is looking for a reason to hurt you.";
-            deathmatchDismal._characterDescription = "This party member is looking for a reason to hurt you.";
-            deathmatchDismal._triggerOn = [TriggerCalls.OnDeath];
-            deathmatchDismal.doesPassiveTriggerInformationPanel = false;
-            deathmatchDismal.effects = 
-                [
-                    Effects.GenerateEffect(deathmatchTragedyUnlock, 1, Targeting.Slot_SelfSlot),
-                ];
 
-            Passives.AddCustomPassiveToPool("ST_DismalDeathmatch_PA", "Dismal", deathmatchDismal);
 
-            RemovePassiveEffect noDismalForYou = ScriptableObject.CreateInstance<RemovePassiveEffect>();
-            noDismalForYou.m_PassiveID = "DismalDeathmatch";
+            AttackVisualsSO admissVis = ScriptableObject.CreateInstance<AttackVisualsSO>();
+
+            if (LoadedAssetsHandler.GetCharacterAbility("ValeriePres1_A") != null)
+            {
+                admissVis = LoadedAssetsHandler.GetCharacterAbility("ValeriePres1_A").visuals;
+            }
+            else
+            {
+                admissVis = Visuals.Misery;
+            }
+
 
             //EXCESS
             Ability admission = new Ability("Admission", "ST_DMExcessAbility_A")
             {
                 Description = "Removes Ante from all party members, then applies the amount removed to the weakest party member.",
                 AnimationTarget = Targeting.Spec_Unit_AllOpponents_Weakest,
-                Visuals = Visuals.Misery,
+                Visuals = admissVis,
                 Rarity = Rarity.ImpossibleNoReroll, 
                 Effects =
                 [
                     Effects.GenerateEffect(noAnte, 1, Targeting.Unit_AllOpponents),
                     Effects.GenerateEffect(anteByPrevious, 1, Targeting.Spec_Unit_AllOpponents_Weakest),
-                    Effects.GenerateEffect(noDismalForYou, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(defiantSetFalse, 1, Targeting.Slot_SelfSlot),
                 ]
             };
             admission.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Rem_Status_Ante"]);
@@ -466,7 +471,7 @@ namespace SorasToybox.Enemies
 
 
 
-            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("Illegible_PA"), Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra), deathmatchDismal]);
+            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra)]);
 
             deathmatchEnemy.AddEnemyAbilities([
                 judgement,

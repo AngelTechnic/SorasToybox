@@ -18,11 +18,11 @@ namespace SorasToybox.Encounters
             string deathmatchMusic = "";
             if (SorasToybox.altantagonistmusic.Value)
             {
-                deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/AltDeathmatchMusic/When Nightmares Attack";
+                deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/In The Depths";
             }
             else
             {
-                deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/In The Depths";
+                deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/Jugular Nimbus"; 
             }
 
 

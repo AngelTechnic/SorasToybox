@@ -132,7 +132,7 @@ namespace SorasToybox //Mod namespace
             altdivinemusic = config.Bind("Cosmetic Changes", "Alternate Heaven Music", false, "Alternative music for Heaven. This is a personal thing I added for my own sake. If true, uses \"Terminator Down The River\" by MEGACHEB. If false, uses the default theme.");
             altboundarymusic = config.Bind("Cosmetic Changes", "Alternate Katalixi Music", false, "Alternative music for Katalixi, from Into The Abyss. This is a personal thing I added for my own sake. If true, uses \"Side Quest\" by Magic Sword. If false, uses \"The End Is Now\" by Besauce.");
             altforgottenmusic = config.Bind("Cosmetic Changes", "Alternate Nobody Music", false, "Alternative music for Nobody, from another Nobody. This is a personal thing I added for my own sake. If true, uses \"MX\" by RENREN. If false, uses, uh, the default theme?");
-            altantagonistmusic = config.Bind("Cosmetic Changes", "Alternate Deathmatch Music", false, "Alternative music for the Deathmatch, for those looking for a slightly less spooky vibe. This is a personal thing I added for my own sake. If true, uses \"When Nightmares Attack\" by NumberOneJenny. If false, uses, uh, the default theme?");
+            altantagonistmusic = config.Bind("Cosmetic Changes", "Classic Deathmatch Music", false, "Alternative music for the Deathmatch. This was added to preserve the old music. If true, uses \"Pathos Unearned\". If false, uses \"Jugular Nimbus\".");
             
             assetbundle = AssetBundle.LoadFromMemory(ResourceLoader.ResourceBinary("sorastoybox"));
 
