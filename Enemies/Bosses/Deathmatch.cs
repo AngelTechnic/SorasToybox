@@ -260,7 +260,7 @@ namespace SorasToybox.Enemies
             deathmatchEnemy.CombatEnterEffects =
             [
                 Effects.GenerateEffect(specialSceneEndingSetUpEffect, 1, Targeting.Slot_SelfSlot, null),
-                Effects.GenerateEffect(defiantReset, 1, Targeting.Slot_SelfSlot),
+                Effects.GenerateEffect(defiantReset, 0, Targeting.Slot_SelfSlot),
             ];
 
             deathmatchEnemy.CombatExitEffects = new EffectInfo[]

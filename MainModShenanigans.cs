@@ -164,6 +164,7 @@ namespace SorasToybox //Mod namespace
             //Siren Crossmod
             if (CrossMod.Siren)
             {
+                Freezer.Add();
                 GeodeGertar.Add();
                 DendriteDesibon.Add();
             }    
@@ -222,6 +223,7 @@ namespace SorasToybox //Mod namespace
 
             if (CrossMod.Siren)
             {
+                FreezerEncounters.Add();
                 DesibonEncounter.Add();
             }
 

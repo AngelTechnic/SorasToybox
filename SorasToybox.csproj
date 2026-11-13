@@ -112,6 +112,7 @@
     <None Remove="Assets\Enemies\Bosses\TimelineDeathmatchBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDesibonBoss.png" />
     <None Remove="Assets\Enemies\Bosses\TimelineDesibonRevengeBoss.png" />
+    <None Remove="Assets\Enemies\DeadCooler.png" />
     <None Remove="Assets\Enemies\deadDozer.png" />
     <None Remove="Assets\Enemies\DeadGearYinimro.png" />
     <None Remove="Assets\Enemies\deadLitany.png" />
@@ -121,11 +122,13 @@
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\tango_dead.png" />
     <None Remove="Assets\Enemies\TasbehtDead.png" />
+    <None Remove="Assets\Enemies\TimelineCooler.png" />
     <None Remove="Assets\Enemies\timelineDozer.png" />
     <None Remove="Assets\Enemies\timelineDozerWoke.png" />
     <None Remove="Assets\Enemies\timelineFacelessNoFace.png" />
     <None Remove="Assets\Enemies\timelineFakeFaceless.png" />
     <None Remove="Assets\Enemies\timelineFourNowheres.png" />
+    <None Remove="Assets\Enemies\TimelineFreezerRed.png" />
     <None Remove="Assets\Enemies\TimelineFriendlyGearYinimro.png" />
     <None Remove="Assets\Enemies\TimelineGearYinimro.png" />
     <None Remove="Assets\Enemies\timelineHumorIridescent.png" />
@@ -429,6 +432,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Enemies\DeadCooler.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineCooler.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineFreezerRed.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineSERVICE.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodBlue.png" />
     <EmbeddedResource Include="Assets\Passives\passive_scourge.png" />
