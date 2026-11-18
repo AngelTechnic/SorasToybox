@@ -27,6 +27,7 @@ namespace SorasToybox.Items
                 IsShopItem = true,
                 ShopPrice = 9,
                 OnUnlockUsesTHE = true,
+                StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_polygon", null, 32, null),
                 DoesPopUpInfo = false,
             };

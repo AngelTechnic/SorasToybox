@@ -115,11 +115,14 @@ namespace SorasToybox.Enemies
             paradoxYinimro.PrepareEnemyPrefab("Assets/ToyboxEnemies/Yinimro/Paradox Yinimro Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
 
 
+
             //effects set up
             SpawnEnemyAnywhereEffect makeShade = ScriptableObject.CreateInstance<SpawnEnemyAnywhereEffect>();
             makeShade.enemy = LoadedAssetsHandler.GetEnemy("ParadoxShade_EN");
             makeShade._spawnTypeID = CombatType_GameIDs.Spawn_Basic.ToString();
             makeShade.givesExperience = false;
+
+
 
             //music
             ParadoxMusicEffect add = ScriptableObject.CreateInstance<ParadoxMusicEffect>();
@@ -204,6 +207,12 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(getEntropy, 10, Targeting.Slot_Front, Effects.CheckPreviousEffectCondition(false, 1)),
                 ];
 
+            TargetPerformEffectViaSubaction paradoxGearSubSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
+            paradoxGearSubSubAct.effects =
+                [
+                    Effects.GenerateEffect(momentumBreakEffect, 1, Targeting.Unit_AllAllies),
+                ];
+
             SpecificEnemiesTargeting allShades = ScriptableObject.CreateInstance<SpecificEnemiesTargeting>();
             allShades._enemies = ["ParadoxShade_EN"];
             allShades.targetUnitAllySlots = true;
@@ -235,18 +244,18 @@ namespace SorasToybox.Enemies
             Ability paradoxGear = new Ability("ST_ParadoxGear_A")
             {
                 Name = "Paradox Gear",
-                Description = "Queues \"Momentum Break.\"\nMakes all Paradox Shades that aren't Dazed apply 10 Entropy to their Opposing party members.",
+                Description = "Makes all Paradox Shades that aren't Dazed apply 10 Entropy to their Opposing party members.\nShuffles all enemy positons.",
                 Rarity = Rarity.ImpossibleNoReroll,
                 Visuals = ballisticGearVis._visuals,
                 AnimationTarget = opposingShades,
                 Effects =
                 [
                     Effects.GenerateEffect(paradoxGearEffects, 1, allShades),
-                    Effects.GenerateEffect(dance, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(paradoxGearSubSubAct, 1, Targeting.Slot_SelfSlot),
                 ]
             };
             paradoxGear.AddIntentsToTarget(opposingShades, [nameof(IntentType_GameIDs.Misc), "Status_Salt_Entropy"]);
-            paradoxGear.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Misc_Additional)]);
+            paradoxGear.AddIntentsToTarget(Targeting.Unit_AllAllies, [nameof(IntentType_GameIDs.Swap_Mass)]);
 
             QueueTimelineAbilityByNameEffect shootTheShit = ScriptableObject.CreateInstance<QueueTimelineAbilityByNameEffect>();
             shootTheShit._abilityName = "Paradox Gear";

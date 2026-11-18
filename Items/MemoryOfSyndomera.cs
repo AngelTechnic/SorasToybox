@@ -32,6 +32,7 @@ namespace SorasToybox.Items
                 Description = "At the start of each turn, inflict 10 Irradiated to all enemies that aren't already Irradiated.",
                 TriggerOn = TriggerCalls.OnTurnStart,
                 IsShopItem = false,
+                StartsLocked = true,
                 ShopPrice = 7,
                 OnUnlockUsesTHE = true,
                 Icon = ResourceLoader.LoadSprite("item_memoryofsyndomera", null, 32, null),

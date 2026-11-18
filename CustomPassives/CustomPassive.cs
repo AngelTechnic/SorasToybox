@@ -379,6 +379,10 @@ namespace SorasToybox.CustomPassives
             GlossaryPassives foolFormlessPassiveInfo = new GlossaryPassives("Formless (Sora's Toybox)", "Upon receiving damage, reroll this party member's ability costs.", Passives.Formless.passiveIcon);
             LoadedDBsHandler.GlossaryDB.AddNewPassive(foolFormlessPassiveInfo);
 
+            //chilly real quick
+            GlossaryPassives chillyPassiveInfo = new GlossaryPassives("Chilly", "When damaged, inflict Petrified to opposing enemies/party members.", ResourceLoader.LoadSprite("passive_chilly.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null));
+            LoadedDBsHandler.GlossaryDB.AddNewPassive(chillyPassiveInfo);
+
             //scourge
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Scourge_PA"))
             {
@@ -726,6 +730,7 @@ namespace SorasToybox.CustomPassives
         }
 
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedBloat = [];
+        private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedChilly = [];
 
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedSaltLockstep = [];
         private static readonly Dictionary<int, BasePassiveAbilitySO> GeneratedSaltCadence = [];
@@ -826,6 +831,43 @@ namespace SorasToybox.CustomPassives
                 performEffectPassiveAbility._secondDoesPerformPopUp = false;
                 performEffectPassiveAbility.specialStoredData = LoadedDBsHandler.MiscDB.GetUnitStoreData("LockstepDir_SV");
                 return performEffectPassiveAbility;
+            });
+        }
+
+
+        public static BasePassiveAbilitySO ChillyGenerator(int amount)
+        {
+            return GetOrCreatePassive(GeneratedChilly, amount, delegate (int x)
+            {
+                //IntegerSetterByStoredValuePassiveAbility
+                //PercentageEffectCondition
+
+                StatusEffect_Apply_Effect petrifiesYou = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
+                petrifiesYou._Status = StatusField.GetCustomStatusEffect("Petrified_ID"
+                    );
+                CasterStoreValueSetterEffect chiInit = ScriptableObject.CreateInstance<CasterStoreValueSetterEffect>();
+                chiInit.m_unitStoredDataID = "Chilly_SV";
+                chiInit._ignoreIfContains = true;
+                PerformDoubleEffectPassiveAbility chillyGenPassive = ScriptableObject.CreateInstance<PerformDoubleEffectPassiveAbility>();
+                chillyGenPassive.name = $"Chilly_{x}_PA";
+                chillyGenPassive.m_PassiveID = "Chilly_ID";
+                chillyGenPassive._passiveName = $"Chilly ({x})";
+                chillyGenPassive._characterDescription = $"When damaged, inflict {x} Petrified to Opposing enemies.";
+                chillyGenPassive._enemyDescription = $"When damaged, inflict {x} Petrified to Opposing party members.";
+                chillyGenPassive.passiveIcon = ResourceLoader.LoadSprite("passive_chilly.png");
+                chillyGenPassive._triggerOn = [TriggerCalls.OnFirstTurnStart, TriggerCalls.OnRoundFinished];
+                chillyGenPassive.effects = [
+                    Effects.GenerateEffect(chiInit, amount, Targeting.Slot_SelfSlot),
+                ];
+                chillyGenPassive.conditions = new EffectorConditionSO[0] { };
+                chillyGenPassive._secondEffects =
+                [
+                    Effects.GenerateEffect(petrifiesYou, amount, Targeting.Slot_Front),
+                ];
+
+                chillyGenPassive._secondDoesPerformPopUp = true;
+                chillyGenPassive.specialStoredData = LoadedDBsHandler.MiscDB.GetUnitStoreData("Chilly_SV");
+                return chillyGenPassive;
             });
         }
     }

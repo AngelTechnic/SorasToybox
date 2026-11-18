@@ -25,18 +25,20 @@ namespace SorasToybox.Encounters
                 deathmatchMusic = "event:/SorasMusic/Enemies/Bosses/DeathmatchMusic/Jugular Nimbus"; 
             }
 
+            EnvironmentTools.PrepareCombatEnvPrefab("Assets/ToyboxEnvs/Deathmatch/Deathmatch_CombatEnv_Template.prefab", "DeathmatchEnv", SorasToybox.assetbundle);
 
 
-                EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")
-                {
-                    MusicEvent = deathmatchMusic,
-                    RoarEvent = "event:/SorasSFX/Enemies/Deathmatch/DeathmatchRoar",
-                    UsesCustomOverworldRoom = true,
-                    CustomOverworldRoomID = roomID,
-                    BossID = "Deathmatch_BOSS",
-                    SpecialEnvironmentID = "MinotaurEnv",
-                    UsesSpecialEnvironment = true,
-                };
+
+            EnemyEncounter_API deathmatchBoss = new EnemyEncounter_API(EncounterType.Specific, "Deathmatch_BOSS", "Deathmatch_Sign")
+            {
+                MusicEvent = deathmatchMusic,
+                RoarEvent = "event:/SorasSFX/Enemies/Deathmatch/DeathmatchRoar",
+                UsesCustomOverworldRoom = true,
+                CustomOverworldRoomID = roomID,
+                BossID = "Deathmatch_BOSS",
+                SpecialEnvironmentID = "DeathmatchEnv",
+                UsesSpecialEnvironment = true,
+            };
 
             deathmatchBoss.AddSpecialEnvironment("MinotaurEnv");
             deathmatchBoss.CreateNewEnemyEncounterData([

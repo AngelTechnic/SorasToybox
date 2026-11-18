@@ -110,12 +110,12 @@ namespace SorasToybox.Enemies
             StatusEffect_Apply_Effect anteUp = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             anteUp._Status = StatusField.GetCustomStatusEffect("Ante_ID");
 
-            IntentInfoBasic InstinctIntent = new IntentInfoBasic
+            IntentInfoBasic dismalIntent = new IntentInfoBasic
             {
                 _color = Color.white,
-                _sprite = ResourceLoader.LoadSprite("Instinct.png", null, 32, null),
+                _sprite = ResourceLoader.LoadSprite("passive_dismal.png", null, 32, null),
             };
-            LoadedDBsHandler.IntentDB.AddNewBasicIntent("Passive_Instinct", InstinctIntent);
+            LoadedDBsHandler.IntentDB.AddNewBasicIntent("Passive_Dismal", dismalIntent);
 
             DeathmatchPinchMusicEffect add = ScriptableObject.CreateInstance<DeathmatchPinchMusicEffect>();
             add.Add = true;
@@ -127,28 +127,27 @@ namespace SorasToybox.Enemies
             instinctEffects.effects = 
             [
                 Effects.GenerateEffect(add, 1, Targeting.Slot_SelfSlot, amIWeakEnough),
-                Effects.GenerateEffect(youAndMeBabyAintNothinButMammals, 1, Targeting.Unit_AllOpponents), 
                 Effects.GenerateEffect(anteUp, 1, Targeting.Unit_AllOpponents)
             ];
 
 
-            PerformEffectPassiveAbility deathmatchInstinct = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
-            deathmatchInstinct.name = "ST_InstinctDeathmatch_PA";
-            deathmatchInstinct._passiveName = "Instinct";
-            deathmatchInstinct.m_PassiveID = "DMInstinct";
-            deathmatchInstinct._characterDescription = "The fact that you have this means that I hate you.";
-            deathmatchInstinct._enemyDescription = "On entering combat, apply 1 Ante, and Mammal as a passive, to all party members.";
-            deathmatchInstinct.passiveIcon = ResourceLoader.LoadSprite("Instinct.png");
-            deathmatchInstinct._triggerOn = [TriggerCalls.OnCombatStart];
-            deathmatchInstinct.effects = 
+            PerformEffectPassiveAbility deathmatchDismal = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
+            deathmatchDismal.name = "ST_DismalDeathmatch_PA";
+            deathmatchDismal._passiveName = "Dismal";
+            deathmatchDismal.m_PassiveID = "DMDismal";
+            deathmatchDismal._characterDescription = "The fact that you have this means that I hate you.";
+            deathmatchDismal._enemyDescription = "On entering combat, apply 1 Ante, and Mammal as a passive, to all party members.";
+            deathmatchDismal.passiveIcon = ResourceLoader.LoadSprite("passive_dismal.png");
+            deathmatchDismal._triggerOn = [TriggerCalls.OnCombatStart];
+            deathmatchDismal.effects = 
                 [
                     Effects.GenerateEffect(instinctEffects, 1, Targeting.Slot_SelfSlot),
                 ];
-            Passives.AddCustomPassiveToPool("ST_InstinctDeathmatch_PA", "Instinct", deathmatchInstinct);
+            Passives.AddCustomPassiveToPool("ST_DismalDeathmatch_PA", "Dismal", deathmatchDismal);
 
             PassivePopUpOnTargetEffect instinctPopup = ScriptableObject.CreateInstance<PassivePopUpOnTargetEffect>();
-            instinctPopup._sprite = "Instinct";
-            instinctPopup._name = "Instinct";
+            instinctPopup._sprite = "passive_dismal";
+            instinctPopup._name = "Dismal";
 
             //Deployment passive
             ReturnValueComparatorEffectorCondition fifteenOrMore = ScriptableObject.CreateInstance<ReturnValueComparatorEffectorCondition>();
@@ -397,14 +396,13 @@ namespace SorasToybox.Enemies
             TargetPerformEffectViaSubaction hangingJudgeDumbfuckSubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             hangingJudgeDumbfuckSubAct.effects =
                 [
-                    Effects.GenerateEffect(instinctPopup, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(instinctEffects, 1, Targeting.Slot_SelfSlot),
                 ];
 
 
             Ability execution = new Ability("Death Rows", "ST_DMExecution_A")
             {
-                Description = "If any party members have 15 or more Ante, the first against the wall gets what they deserve.\nRepeats Instinct.",
+                Description = "If any party members have 15 or more Ante, the first against the wall gets what they deserve.\nApplies 1 Ante to all party members.",
                 Rarity = Rarity.Impossible,
                 Effects =
                 [
@@ -413,7 +411,7 @@ namespace SorasToybox.Enemies
                 ],
             };
             execution.AddIntentsToTarget(Targeting.Unit_AllOpponents, [nameof(IntentType_GameIDs.Misc_Hidden), nameof(IntentType_GameIDs.Damage_Death)]);
-            execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Passive_Instinct"]);
+            execution.AddIntentsToTarget(Targeting.Slot_SelfSlot, ["Passive_Dismal"]);
 
 
 
@@ -445,7 +443,7 @@ namespace SorasToybox.Enemies
                 ]
             };
             admission.AddIntentsToTarget(Targeting.Unit_AllOpponents, ["Rem_Status_Ante"]);
-            admission.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_Weakest, ["Status_Ante"]);
+            admission.AddIntentsToTarget(Targeting.Spec_Unit_AllOpponents_Weakest, ["Passive_Dismal"]);
 
 
 
@@ -486,7 +484,7 @@ namespace SorasToybox.Enemies
 
 
 
-            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchInstinct, deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra)]);
+            deathmatchEnemy.AddPassives([Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra)]);
 
             deathmatchEnemy.AddEnemyAbilities([
                 judgement,

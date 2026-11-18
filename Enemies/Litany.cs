@@ -6,7 +6,7 @@ using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
-using static UnityEngine.UI.CanvasScaler;
+
 
 
 //hey if yuou're seeing this make sure you change what's in the "using" list i'm gonna explodeeeeeee

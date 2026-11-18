@@ -33,7 +33,7 @@ namespace SorasToybox.Items
                 IsShopItem = false,
                 ShopPrice = 6,
                 DoesPopUpInfo = true,
-                StartsLocked = false, 
+                StartsLocked = true, 
                 Icon = ResourceLoader.LoadSprite("item_badpublicity"), //item goes here
                 TriggerOn = TriggerCalls.OnCombatStart,
                 Effects =

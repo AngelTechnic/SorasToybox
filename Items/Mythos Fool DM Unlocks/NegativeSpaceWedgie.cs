@@ -42,6 +42,7 @@ namespace SorasToybox.Items
                 Flavour = "\"Well, you got me. By all accounts, it doesn't make sense.\"",
                 Description = "On dealing damage, 44% chance a random party member heals at least 1 health.\nOn being healed, 66% chance a random enemy takes at least 1 damage.",
                 IsShopItem = false,
+                StartsLocked = true,
                 ShopPrice = 888,
                 DoesPopUpInfo = false,
                 TriggerOn = TriggerCalls.OnDidApplyDamage,

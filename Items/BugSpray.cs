@@ -39,6 +39,7 @@ namespace SorasToybox.Items
                 Name = "Bug Spray",
                 Icon = ResourceLoader.LoadSprite("item_bugspray"),
                 OnUnlockUsesTHE = false,
+                StartsLocked = true,
                 DoesPopUpInfo = true,
                 Flavour = "\"Repels bugs, or your money back!*\"",
                 Description = "At the start of each fight, attempt to spawn a random Humour, and then gain 3 coins if there is a bug.",

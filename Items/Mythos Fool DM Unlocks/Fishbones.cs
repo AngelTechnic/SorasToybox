@@ -27,7 +27,7 @@ namespace SorasToybox.Items
                 DoesPopUpInfo = false,
                 IsShopItem = false,
                 ShopPrice = 0,
-                StartsLocked = false,
+                StartsLocked = true,
                 OnUnlockUsesTHE = false,
                 Effects =
                 [

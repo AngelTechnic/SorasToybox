@@ -19,7 +19,7 @@ namespace SorasToybox.Items
                 IsShopItem = false,
                 ShopPrice = 6,
                 DoesPopUpInfo = true,
-                StartsLocked = false,
+                StartsLocked = true,
                 Icon = ResourceLoader.LoadSprite("item_stretchmarks"), //item goes here
                 TriggerOn = TriggerCalls.OnWillApplyHeal,
                 Conditions = [ScriptableObject.CreateInstance<StretchMarksCondition>()],

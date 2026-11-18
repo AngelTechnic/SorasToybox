@@ -43,6 +43,7 @@ namespace SorasToybox.Items
                 Item_ID = "ST_Dartboard_TW",
                 Icon = ResourceLoader.LoadSprite("item_dartboard"),
                 IsShopItem = false,
+                StartsLocked = true,
                 Name = "Dartboard",
                 Flavour = "\"Of many faces; usually the ones you hate most.\"",
                 Description = "This party member deals 100% more damage to Friendly targets.\nOn receiving damage, summon a friendly Infinity Tasbeht.",

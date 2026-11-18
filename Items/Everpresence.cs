@@ -25,6 +25,7 @@ namespace SorasToybox.Items
                 TriggerOn = TriggerCalls.Count,
                 EquippedModifiers = [revelatorWearable, witheringWearable],
                 OnUnlockUsesTHE = false,
+                StartsLocked = true,
                 ShopPrice = 4,
                 IsShopItem = false,
                 Icon = ResourceLoader.LoadSprite("item_everpresence.png", null, 32, null),

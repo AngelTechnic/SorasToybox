@@ -27,6 +27,7 @@ namespace SorasToybox.Items
                 IsShopItem = true,
                 ShopPrice = 8,
                 OnUnlockUsesTHE = true,
+                StartsLocked = true,
                 ConsumeOnTrigger = TriggerCalls.Count,
                 ConsumeOnUse = true,
                 Icon = ResourceLoader.LoadSprite("item_diagnopsis", null, 32, null),

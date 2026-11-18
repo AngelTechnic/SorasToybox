@@ -12,6 +12,7 @@
     <None Remove="Assets\Achievements\Ach_Boss_Deathmatch.png" />
     <None Remove="Assets\Achievements\Ach_Boss_Desibon.png" />
     <None Remove="Assets\Achievements\Ach_Boss_Erebus.png" />
+    <None Remove="Assets\Achievements\Ach_Comedy_Crashout.png" />
     <None Remove="Assets\Achievements\Ach_Fool_Karma.png" />
     <None Remove="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
@@ -247,6 +248,8 @@
     <None Remove="Assets\Items\item_dartboard_locked.png" />
     <None Remove="Assets\Items\item_diagnopsis.png" />
     <None Remove="Assets\Items\item_diagnopsis_locked.png" />
+    <None Remove="Assets\Items\item_dickhead.png" />
+    <None Remove="Assets\Items\item_dickhead_locked.png" />
     <None Remove="Assets\Items\item_entrenchingtool.png" />
     <None Remove="Assets\Items\item_entrenchingtool_locked.png" />
     <None Remove="Assets\Items\item_everpresence.png" />
@@ -400,6 +403,7 @@
     <None Remove="Assets\Passives\IconTargeter.png" />
     <None Remove="Assets\Passives\IconTransformPassive.png" />
     <None Remove="Assets\Passives\Instinct.png" />
+    <None Remove="Assets\Passives\passive_chilly.png" />
     <None Remove="Assets\Passives\passive_deathbound.png" />
     <None Remove="Assets\Passives\passive_dismal.png" />
     <None Remove="Assets\Passives\passive_dissolute.png" />
@@ -432,11 +436,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Assets\Achievements\Ach_Comedy_Crashout.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadCooler.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineCooler.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineFreezerRed.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineSERVICE.png" />
+    <EmbeddedResource Include="Assets\Items\item_dickhead.png" />
+    <EmbeddedResource Include="Assets\Items\item_dickhead_locked.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodBlue.png" />
+    <EmbeddedResource Include="Assets\Passives\passive_chilly.png" />
     <EmbeddedResource Include="Assets\Passives\passive_scourge.png" />
   </ItemGroup>
 
