@@ -382,6 +382,13 @@ namespace SorasToybox.CustomPassives
             //chilly real quick
             GlossaryPassives chillyPassiveInfo = new GlossaryPassives("Chilly", "When damaged, inflict Petrified to opposing enemies/party members.", ResourceLoader.LoadSprite("passive_chilly.png", new Vector2?(new Vector2(0.5f, 0f)), 32, null));
             LoadedDBsHandler.GlossaryDB.AddNewPassive(chillyPassiveInfo);
+            UnitStoreData_ModIntSO chilly = ScriptableObject.CreateInstance<UnitStoreData_ModIntSO>();
+            chilly.m_Text = "Chilly: +{0}";
+            chilly._UnitStoreDataID = "Chilly_SV";
+            chilly.m_TextColor = Color.cyan;
+            chilly.m_CompareDataToThis = 0;
+            chilly.m_ShowIfDataIsOver = true;
+            LoadedDBsHandler.MiscDB.AddNewUnitStoreData("Chilly_SV", chilly);
 
             //scourge
             if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Scourge_PA"))
