@@ -72,21 +72,21 @@ namespace SorasToybox.CustomPassives
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STEscapistInfo);
             }
 
-            //Houdini!
-            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Houdini_PA"))
+            //Diviner! Was Houdini but is now Diviner!
+            if (!LoadedDBsHandler.PassiveDB._PassivesPool.Contains("Diviner_PA"))
             {
                 PerformEffectPassiveAbility houdini = ScriptableObject.CreateInstance<PerformEffectPassiveAbility>();
-                houdini.name = "Houdini_PA";
-                houdini._passiveName = "Houdini";
-                houdini.passiveIcon = ResourceLoader.LoadSprite("HoudiniPassive.png");
-                houdini.m_PassiveID = "Houdini_PA";
-                houdini._enemyDescription = "On being directly damaged, move to a random unoccupied position.";
+                houdini.name = "Diviner_PA";
+                houdini._passiveName = "Diviner";
+                houdini.passiveIcon = ResourceLoader.LoadSprite("DivinerPassive.png");
+                houdini.m_PassiveID = "Diviner_PA";
+                houdini._enemyDescription = "On being directly damaged, even if the damage was fatal, move to a random unoccupied position if possible.";
                 houdini._characterDescription = houdini._enemyDescription;
                 houdini._triggerOn = [TriggerCalls.OnDirectDamaged];
                 houdini.conditions = [];
                 houdini.effects = [Effects.GenerateEffect(ScriptableObject.CreateInstance<MoveToRandomEmptyTileEffect>(), 1, Targeting.Slot_SelfSlot)];
-                Passives.AddCustomPassiveToPool("Houdini_PA", "Houdini", houdini);
-                GlossaryPassives STHoudiniInfo = new GlossaryPassives("Houdini", "On being directly damaged, move to a random unoccupied position.", ResourceLoader.LoadSprite("HoudiniPassive"));
+                Passives.AddCustomPassiveToPool("Diviner_PA", "Diviner", houdini);
+                GlossaryPassives STHoudiniInfo = new GlossaryPassives("Diviner", "On being directly damaged, even if the damage was fatal, move to a random unoccupied position if possible.\"", ResourceLoader.LoadSprite("DivinerPassive"));
                 LoadedDBsHandler.GlossaryDB.AddNewPassive(STHoudiniInfo);
             }
 

@@ -387,9 +387,9 @@
     <None Remove="Assets\Items\Vanilla DM Unlocks\n2ocan_coughingfit.png" />
     <None Remove="Assets\Items\Vanilla DM Unlocks\toysaw_hackoff.png" />
     <None Remove="Assets\Passives\bloatPassive.png" />
+    <None Remove="Assets\Passives\DivinerPassive.png" />
     <None Remove="Assets\Passives\EscapistPassive.png" />
     <None Remove="Assets\Passives\Fragile.png" />
-    <None Remove="Assets\Passives\HoudiniPassive.png" />
     <None Remove="Assets\Passives\IconBonusSuite.png" />
     <None Remove="Assets\Passives\IconBonusSuiteFormless.png" />
     <None Remove="Assets\Passives\IconBonusSuiteImmaterial.png" />
@@ -452,6 +452,7 @@
     <EmbeddedResource Include="Assets\Items\item_monsterbirdhouse.png" />
     <EmbeddedResource Include="Assets\Items\item_monsterbirdhouse_locked.png" />
     <EmbeddedResource Include="Assets\Items\monsterbirdhouse_reallyslowslap.png" />
+    <EmbeddedResource Include="Assets\Passives\DivinerPassive.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodBlue.png" />
     <EmbeddedResource Include="Assets\Passives\passive_chilly.png" />
     <EmbeddedResource Include="Assets\Passives\passive_scourge.png" />
@@ -853,7 +854,6 @@
     <EmbeddedResource Include="Assets\Passives\bloatPassive.png" />
     <EmbeddedResource Include="Assets\Passives\EscapistPassive.png" />
     <EmbeddedResource Include="Assets\Passives\Fragile.png" />
-    <EmbeddedResource Include="Assets\Passives\HoudiniPassive.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuite.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteFormless.png" />
     <EmbeddedResource Include="Assets\Passives\IconBonusSuiteImmaterial.png" />

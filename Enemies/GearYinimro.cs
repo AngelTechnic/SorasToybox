@@ -151,7 +151,7 @@ namespace SorasToybox.Enemies
                     evilBallisticGear,
                 ]);
 
-            gearYinimro.AddPassives([Passives.GetCustomPassive("Houdini_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassives.CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient]);
+            gearYinimro.AddPassives([Passives.GetCustomPassive("Diviner_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassives.CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient]);
             gearYinimro.AddEnemy(true, true, false);
 
             Enemy gearYinimroSummon = new Enemy("Gear Yinimro", "GearYinimroSummon_EN")

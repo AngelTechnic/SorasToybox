@@ -33,7 +33,7 @@ namespace SorasToybox.Enemies
             };
             seaMine.PrepareEnemyPrefab("Assets/ToyboxEnemies/Sea Mine/SeaMine_Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Sea Mine/SeaMine GIbs.prefab").GetComponent<ParticleSystem>());
 
-            seaMine.AddPassives([Passives.Withering, Passives.GetCustomPassive("Reflex_PA"), Passives.GetCustomPassive("Houdini_PA"), Passives.GetCustomPassive("Rugous_PA")]);
+            seaMine.AddPassives([Passives.Withering, Passives.GetCustomPassive("Reflex_PA"), Passives.GetCustomPassive("Diviner_PA"), Passives.GetCustomPassive("Rugous_PA")]);
 
             Ability prime = new("ST_SeaMinePrime_A")
             {
