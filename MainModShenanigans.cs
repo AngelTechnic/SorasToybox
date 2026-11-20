@@ -390,6 +390,11 @@ namespace SorasToybox //Mod namespace
                 TagEnemyIfExists("Lexem_EN", "Robot");
                 TagEnemyIfExists("Lexem_EN", "Zoincaillan");
                 TagEnemyIfExists("ContainmentBlock_EN", "Friendly");
+                TagEnemyIfExists("HumourCholeric_EN", "FemaleID");
+                TagEnemyIfExists("HumourPhlegmatic_EN", "FemaleID");
+                TagEnemyIfExists("HumourSanguine_EN", "FemaleID");
+                TagEnemyIfExists("HumourMelancholy_EN", "FemaleID");
+                TagEnemyIfExists("HumourMelancholy_EN", "Clown");
             }
             if (CrossMod.AApocrypha)
             {
