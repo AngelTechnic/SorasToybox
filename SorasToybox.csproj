@@ -16,6 +16,7 @@
     <None Remove="Assets\Achievements\Ach_Fool_Karma.png" />
     <None Remove="Assets\Achievements\Ach_Quest_Heliotrope.png" />
     <None Remove="Assets\Achievements\Ach_Tragedy_Deathmatch.png" />
+    <None Remove="Assets\Achievements\Ach_Tragedy_Paradox.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Karma.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Mercurie.png" />
     <None Remove="Assets\Achievements\Blue Skies Unlocks\Ach_BlueSkies_Senek.png" />
@@ -274,6 +275,8 @@
     <None Remove="Assets\Items\item_memoryofgriyadin_locked.png" />
     <None Remove="Assets\Items\item_memoryofsyndomera.png" />
     <None Remove="Assets\Items\item_memoryofsyndomera_locked.png" />
+    <None Remove="Assets\Items\item_monsterbirdhouse.png" />
+    <None Remove="Assets\Items\item_monsterbirdhouse_locked.png" />
     <None Remove="Assets\Items\item_narakaemblem.png" />
     <None Remove="Assets\Items\item_narakaemblem_locked.png" />
     <None Remove="Assets\Items\item_polygon.png" />
@@ -303,6 +306,7 @@
     <None Remove="Assets\Items\item_trickbible_locked.png" />
     <None Remove="Assets\Items\item_worldofhassle.png" />
     <None Remove="Assets\Items\item_worldofhassle_locked.png" />
+    <None Remove="Assets\Items\monsterbirdhouse_reallyslowslap.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_fishbones.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_fishbones_locked.png" />
     <None Remove="Assets\Items\Mythos DM Unlocks\item_hollowedfang.png" />
@@ -437,12 +441,17 @@
 
   <ItemGroup>
     <EmbeddedResource Include="Assets\Achievements\Ach_Comedy_Crashout.png" />
+    <EmbeddedResource Include="Assets\Achievements\Ach_Tragedy_Paradox.png" />
+    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Burnout.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadCooler.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineCooler.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineFreezerRed.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineSERVICE.png" />
     <EmbeddedResource Include="Assets\Items\item_dickhead.png" />
     <EmbeddedResource Include="Assets\Items\item_dickhead_locked.png" />
+    <EmbeddedResource Include="Assets\Items\item_monsterbirdhouse.png" />
+    <EmbeddedResource Include="Assets\Items\item_monsterbirdhouse_locked.png" />
+    <EmbeddedResource Include="Assets\Items\monsterbirdhouse_reallyslowslap.png" />
     <EmbeddedResource Include="Assets\Passives\IconStonebloodBlue.png" />
     <EmbeddedResource Include="Assets\Passives\passive_chilly.png" />
     <EmbeddedResource Include="Assets\Passives\passive_scourge.png" />
@@ -580,7 +589,6 @@
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Anton.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Arnold.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Bimini.png" />
-    <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Burnout.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Clive.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Cranes.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Dimitri.png" />

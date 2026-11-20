@@ -40,13 +40,10 @@ namespace SorasToybox.Items
 
             ModernGiantCondition modernGiantCondition = ScriptableObject.CreateInstance<ModernGiantCondition>();
 
-            //removing slap?
-            AbilitiesUsageChange_Wearable_SMS modernGiantNoSlapWearable = ScriptableObject.CreateInstance<AbilitiesUsageChange_Wearable_SMS>();
-            modernGiantNoSlapWearable._usesBasicAbility = false;
 
             //adding March of Progress?
-            ExtraAbility_Wearable_SMS modernGiantAbilityWearable = ScriptableObject.CreateInstance<ExtraAbility_Wearable_SMS>();
-            modernGiantAbilityWearable._extraAbility = modernGiantAbility.GenerateCharacterAbility();
+            BasicAbilityChange_Wearable_SMS modernGiantAbilityWearable = ScriptableObject.CreateInstance<BasicAbilityChange_Wearable_SMS>();
+            modernGiantAbilityWearable._basicAbility = modernGiantAbility.GenerateCharacterAbility();
 
             PerformEffect_Item modernGiant = new("ST_ModernGiant_ID")
             {
@@ -58,7 +55,7 @@ namespace SorasToybox.Items
                 TriggerOn = TriggerCalls.OnWillApplyDamage,
                 Conditions = [modernGiantCondition],
                 DoesPopUpInfo = false,
-                EquippedModifiers = [modernGiantAbilityWearable, modernGiantNoSlapWearable],
+                EquippedModifiers = [modernGiantAbilityWearable],
                 ShopPrice = 6,
                 IsShopItem = true,
                 StartsLocked = true,
@@ -66,9 +63,9 @@ namespace SorasToybox.Items
             };
 
             //Construct shenanigans i think
-            Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = LoadedAssetsHandler.GetCharacter("Doll_CH").passiveAbilities[0] as Connection_PerformEffectPassiveAbility;
+            Connection_PerformEffectPassiveAbility connection_PerformEffectPassiveAbility = Passives.Construct as Connection_PerformEffectPassiveAbility;
             CasterAddRandomExtraAbilityEffect casterAddRandomExtraAbilityEffect = connection_PerformEffectPassiveAbility.connectionEffects[1].effect as CasterAddRandomExtraAbilityEffect;
-            casterAddRandomExtraAbilityEffect._extraData = [.. casterAddRandomExtraAbilityEffect._extraData, modernGiantAbilityWearable];
+            casterAddRandomExtraAbilityEffect._slapData = [.. casterAddRandomExtraAbilityEffect._slapData, modernGiantAbilityWearable];
 
             //Unlock this
             string achievementID = "SorasToybox_Barron_Antagonist_ACH";

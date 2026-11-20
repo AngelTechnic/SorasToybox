@@ -416,6 +416,10 @@ namespace SorasToybox //Mod namespace
             }
 
             SentientArcanite.Add();
+            if (CrossMod.SaltEnemies)
+            {
+                Birdhouse.Add();
+            }
             DickheadInACan.Add();
             UrbanSurvival.Add();
             AMsSeveredHead.Add();

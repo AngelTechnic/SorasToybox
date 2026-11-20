@@ -54,6 +54,11 @@ namespace SorasToybox.Items
             achievement.AddNewAchievementToInGameCategory(AchievementCategoryIDs.ComediesTitleLabel);
 
             Unlocks.AddUnlock_EnemyDeath(deathUnlock);
+
+            if (SorasToybox.extradebug.Value)
+            {
+                Debug.Log("[ITEMS] Added the Dickhead In A Can.");
+            }
         }
     }
 }

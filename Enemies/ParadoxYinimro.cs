@@ -114,6 +114,37 @@ namespace SorasToybox.Enemies
             };
             paradoxYinimro.PrepareEnemyPrefab("Assets/ToyboxEnemies/Yinimro/Paradox Yinimro Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Yinimro/YinimroGibs.prefab").GetComponent<ParticleSystem>());
 
+            //Stored Values! dies.
+            UnitStoreData_ModIntSO tragedyTracker = ScriptableObject.CreateInstance<UnitStoreData_ModIntSO>();
+            tragedyTracker.m_Text = "Attacks performed this round: {0}";
+            tragedyTracker._UnitStoreDataID = "ParadoxTragedy_SV";
+            tragedyTracker.m_TextColor = new Color32(200, 200, 200, 255);
+            tragedyTracker.m_CompareDataToThis = -1;
+            tragedyTracker.m_ShowIfDataIsOver = true;
+            LoadedDBsHandler.MiscDB.AddNewUnitStoreData("ParadoxTragedy_SV", tragedyTracker);
+
+            CasterStoredValueChangeEffect paradoxGoUp = ScriptableObject.CreateInstance<CasterStoredValueChangeEffect>();
+            paradoxGoUp.m_unitStoredDataID = "ParadoxTragedy_SV";
+            paradoxGoUp._minimumValue = 0;
+            paradoxGoUp._exitValueIsChange = false;
+            paradoxGoUp._increase = true;
+            paradoxGoUp._randomBetweenPrevious = false;
+            paradoxGoUp._usePreviousExitValue = false;
+            paradoxGoUp._exitValueIsChange = false;
+
+            CasterStoredValueSetEffect paradoxSet = ScriptableObject.CreateInstance<CasterStoredValueSetEffect>();
+            paradoxSet._valueName = "ParadoxTragedy_SV";
+
+            PreviousComparatorCheckEffect TenPlus = ScriptableObject.CreateInstance<PreviousComparatorCheckEffect>();
+            TenPlus._atOrAbove = true;
+            TenPlus._entryIsComparator = false;
+            TenPlus._fixedComparator = 3;
+
+            ExtraVariableForNext_SVEffect paradoxGet = ScriptableObject.CreateInstance<ExtraVariableForNext_SVEffect>();
+            paradoxGet.m_unitStoredDataID = "ParadoxTragedy_SV";
+
+            TryUnlockAchievementEffect paradoxTragedyUnlock = ScriptableObject.CreateInstance<TryUnlockAchievementEffect>();
+            paradoxTragedyUnlock._unlockID = "SorasToybox_Tragedy_Paradox_Unlock";
 
 
             //effects set up
@@ -190,6 +221,7 @@ namespace SorasToybox.Enemies
                     Effects.GenerateEffect(tock, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(false, 1)),
                     Effects.GenerateEffect(inertiaBreakEffect, 1, Targeting.Slot_SelfSlot),
                     Effects.GenerateEffect(makeShade, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(paradoxGoUp, 1,Targeting.Slot_SelfSlot),
                 ],
             };
             flatCircle.AddIntentsToTarget(Targeting.Slot_SelfSlot, [nameof(IntentType_GameIDs.Swap_Mass), nameof(IntentType_GameIDs.Other_Spawn)]);
@@ -232,14 +264,10 @@ namespace SorasToybox.Enemies
                 Rarity = Rarity.AbsurdlyRare,
                 Effects = [
                     Effects.GenerateEffect(momentumBreakEffect, 1, Targeting.Unit_AllAllies),
+                    Effects.GenerateEffect(paradoxGoUp, 1,Targeting.Slot_SelfSlot),
                     ],
             };
             momentumBreak.AddIntentsToTarget(Targeting.Unit_AllAllies, [nameof(IntentType_GameIDs.Swap_Mass)]);
-
-
-
-            QueueTimelineAbilityByNameEffect dance = ScriptableObject.CreateInstance<QueueTimelineAbilityByNameEffect>();
-            dance._abilityName = "Momentum Break";
 
             Ability paradoxGear = new Ability("ST_ParadoxGear_A")
             {
@@ -252,6 +280,10 @@ namespace SorasToybox.Enemies
                 [
                     Effects.GenerateEffect(paradoxGearEffects, 1, allShades),
                     Effects.GenerateEffect(paradoxGearSubSubAct, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(paradoxGet, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(TenPlus, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(paradoxTragedyUnlock, 1, Targeting.Slot_SelfSlot, Effects.CheckPreviousEffectCondition(true, 1)),
+                    Effects.GenerateEffect(paradoxSet, 0, Targeting.Slot_SelfSlot),
                 ]
             };
             paradoxGear.AddIntentsToTarget(opposingShades, [nameof(IntentType_GameIDs.Misc), "Status_Salt_Entropy"]);
