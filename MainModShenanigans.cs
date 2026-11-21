@@ -155,6 +155,7 @@ namespace SorasToybox //Mod namespace
             SEARCH.Add();
             SERVICE.Add();
             TANGO.Add();
+
             if (CrossMod.Sofanthiels)
             {
                 Slatecarnate.Add();
@@ -173,6 +174,7 @@ namespace SorasToybox //Mod namespace
                 GearYinimro.Add();
                 BurningShame.Add();
                 Deathmatch.Add();
+                Sinful.Add();
                 Crashout.Add();
                 FakeFaceless.Add();
             }

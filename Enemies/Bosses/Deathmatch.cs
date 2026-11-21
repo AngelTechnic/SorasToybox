@@ -486,6 +486,7 @@ namespace SorasToybox.Enemies
 
             deathmatchEnemy.AddPassives([Passives.GetCustomPassive("BrokenBlooded_1_PA"), deathmatchDeployment, dmExcess, Passives.BonusAttackGenerator(deathmatchExtra)]);
 
+
             deathmatchEnemy.AddEnemyAbilities([
                 judgement,
                 prosecution,

@@ -120,6 +120,7 @@
     <None Remove="Assets\Enemies\deadLitany.png" />
     <None Remove="Assets\Enemies\deadNowhere.png" />
     <None Remove="Assets\Enemies\DeadParadoxYinimro.png" />
+    <None Remove="Assets\Enemies\DeadSinful.png" />
     <None Remove="Assets\Enemies\InfinityTasbehtDead.png" />
     <None Remove="Assets\Enemies\noCorpse.png" />
     <None Remove="Assets\Enemies\tango_dead.png" />
@@ -142,6 +143,7 @@
     <None Remove="Assets\Enemies\TimelineSeaMine.png" />
     <None Remove="Assets\Enemies\timelineSEARCH.png" />
     <None Remove="Assets\Enemies\TimelineSERVICE.png" />
+    <None Remove="Assets\Enemies\TimelineSinful.png" />
     <None Remove="Assets\Enemies\timelineSlatecarnate.png" />
     <None Remove="Assets\Enemies\timelineSusMung.png" />
     <None Remove="Assets\Enemies\TimelineTasbeht.png" />
@@ -444,9 +446,11 @@
     <EmbeddedResource Include="Assets\Achievements\Ach_Tragedy_Paradox.png" />
     <EmbeddedResource Include="Assets\Achievements\Deathmatch Unlocks\Ach_Deathmatch_Burnout.png" />
     <EmbeddedResource Include="Assets\Enemies\DeadCooler.png" />
+    <EmbeddedResource Include="Assets\Enemies\DeadSinful.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineCooler.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineFreezerRed.png" />
     <EmbeddedResource Include="Assets\Enemies\TimelineSERVICE.png" />
+    <EmbeddedResource Include="Assets\Enemies\TimelineSinful.png" />
     <EmbeddedResource Include="Assets\Items\item_dickhead.png" />
     <EmbeddedResource Include="Assets\Items\item_dickhead_locked.png" />
     <EmbeddedResource Include="Assets\Items\item_monsterbirdhouse.png" />
