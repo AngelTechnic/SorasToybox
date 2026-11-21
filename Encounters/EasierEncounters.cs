@@ -373,6 +373,17 @@ namespace SorasToybox.Encounters
         public static string Clusterfuck => "ClusterfuckAggregate_EN";
         public static string White => "WhiteAggregate_EN";
     }
+
+    public static class Reminder
+    {
+        public static string Osman => "Reminder_EN"; //red
+        public static string Nowak => "LingeringReminder_EN"; //purple
+        public static string Doula => "NauseatingReminder_EN"; //blue
+        public static string March => "DementedReminder_EN"; //yellow
+        public static string Heaven => "ConvertedReminder_EN"; //grey
+        public static string Nobody => "NeglectedReminder_EN"; //irid
+        public static string Deathmatch => "SinfulReminder_EN"; //red/broken
+    }
     public static class Enemies
     {
         public static string MusicMan => "MusicMan_EN";

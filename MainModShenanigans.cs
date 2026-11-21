@@ -28,12 +28,14 @@ namespace SorasToybox //Mod namespace
     [BepInDependency("millieamp.intoTheAbyss", BepInDependency.DependencyFlags.HardDependency)]
     //SOFT DEPENDENCIES: The following is a list of dependencies this mod CAN rely on, but does not require:
     [BepInDependency("TairbazPeep.EnemyPack", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("Marmo.MarmoEnemies", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.GlitchsFreaks", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("AnimatedGlitch.Siren", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("Tairbaz.MythosFriends", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("000.saltenemies", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("sofanthiel.sofanthielsfools", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("asdfagi.A_Apocrypha", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("Entra.FreaksFoes", BepInDependency.DependencyFlags.SoftDependency)]
 
     public class SorasToybox : BaseUnityPlugin
     {
@@ -92,12 +94,14 @@ namespace SorasToybox //Mod namespace
         {
             public static bool IntoTheAbyss = false;
             public static bool EnemyPack = false;
+            public static bool MarmoEnemies = false;
             public static bool GlitchsFreaks = false;
             public static bool Siren = false;
             public static bool MythosFriends = false;
             public static bool SaltEnemies = false;
             public static bool Sofanthiels = false;
             public static bool AApocrypha = false;
+            public static bool FreaksFoes = false;
             public static void Check()
             {
                 foreach (var plugin in Chainloader.PluginInfos)
@@ -107,11 +111,13 @@ namespace SorasToybox //Mod namespace
                     if (metadata.GUID == "000.saltenemies") { SaltEnemies = true; }
                     if (metadata.GUID == "millieamp.intoTheAbyss") { IntoTheAbyss = true; }
                     if (metadata.GUID == "TairbazPeep.EnemyPack") { EnemyPack = true; }
+                    if (metadata.GUID == "Marmo.MarmoEnemies") { MarmoEnemies = true;  }
                     if (metadata.GUID == "AnimatedGlitch.GlitchsFreaks") { GlitchsFreaks = true;  }
                     if (metadata.GUID == "AnimatedGlitch.Siren") { Siren = true; }
                     if (metadata.GUID == "Tairbaz.MythosFriends") { MythosFriends = true; }
                     if (metadata.GUID == "sofanthiel.sofanthielsfools") { Sofanthiels = true; }
                     if (metadata.GUID == "asdfagi.A_Apocrypha") { AApocrypha = true; }
+                    if (metadata.GUID == "Entra.FreaksFoes") { FreaksFoes = true; }
                 }
             }
         }
@@ -204,7 +210,7 @@ namespace SorasToybox //Mod namespace
             SEARCHEncounters.Add();
             SERVICEEncounters.Add();
             TANGOEncounters.Add();
-
+            SinfulEncounters.Add();
 
             if (CrossMod.IntoTheAbyss)
             {

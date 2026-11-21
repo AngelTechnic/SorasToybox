@@ -23,14 +23,14 @@ namespace SorasToybox.Encounters
                 RoarEvent = "event:/SorasSFX/Enemies/TANGO/TangoRoar",
             };
 
-            tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 3, "PawnA_EN");
-            tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 1, "InHerImage_EN", 1, "InHisImage_EN");
-            tangoMedium.SimpleAddEncounter(2, "TANGO_EN");
-            tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 1, "GearYinimro_EN", 2, "NextOfKin_EN");
-            tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 1, "GigglingMinister_EN");
-            tangoMedium.SimpleAddEncounter(2, "TANGO_EN", 1, "Phobia_Phobias_EN");
-            tangoMedium.SimpleAddEncounter(1, "TANGO_EN", 1, "SomeoneSister_EN", 1, "NooneSister_EN");
-            tangoMedium.SimpleAddEncounter(2, "TANGO_EN", 2, "Git_EN");
+            tangoMedium.SimpleAddEncounter(1, Enemies.Tango, 3, "PawnA_EN");
+            tangoMedium.SimpleAddEncounter(1, Enemies.Tango, 1, "InHerImage_EN", 1, "InHisImage_EN");
+            tangoMedium.SimpleAddEncounter(2, Enemies.Tango);
+            tangoMedium.SimpleAddEncounter(1, Enemies.Tango, 1, "GearYinimro_EN", 2, "NextOfKin_EN");
+            tangoMedium.SimpleAddEncounter(1, Enemies.Tango, 1, "GigglingMinister_EN");
+            tangoMedium.SimpleAddEncounter(2, Enemies.Tango, 1, "Phobia_Phobias_EN");
+            tangoMedium.SimpleAddEncounter(1, Enemies.Tango, 1, "SomeoneSister_EN", 1, "NooneSister_EN");
+            tangoMedium.SimpleAddEncounter(2, Enemies.Tango, 2, "Git_EN");
 
             tangoMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.TANGO.Med, 12, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
@@ -42,22 +42,23 @@ namespace SorasToybox.Encounters
                 MusicEvent = "event:/SorasMusic/Enemies/TANGOMusic/APartFalling",
                 RoarEvent = "event:/SorasSFX/Enemies/TANGO/TangoRoar",
             };
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 1, "SkinningHomunculus_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 1, "ParadoxYinimro_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 1, "Psychopomp_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 1, "SkeweringHomunculus_EN");
-            tangoHard.SimpleAddEncounter(1, "TANGO_EN", 1, "InTheDark_EN", 1, "Lunoscope_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 2, "GigglingMinister_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "MachineGnomes_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 2, "SullenPrioress_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 1, "FrowningChancellor_EN", 1, "Vagabond_EN");
-            tangoHard.SimpleAddEncounter(2, "TANGO_EN", 2, "Attrition_EN", 1, "WildlifeSign_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "StopSign_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "WildlifeSign_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "YieldSign_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "ParkingSign_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "HospitalSign_EN");
-            tangoHard.SimpleAddEncounter(3, "TANGO_EN", 1, "ExitSign_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 1, "SkinningHomunculus_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 1, "ParadoxYinimro_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 1, "Psychopomp_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 1, "SkeweringHomunculus_EN");
+            tangoHard.SimpleAddEncounter(1, Enemies.Tango, 1, "InTheDark_EN", 1, "Lunoscope_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 2, "GigglingMinister_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "MachineGnomes_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 2, "SullenPrioress_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 1, "FrowningChancellor_EN", 1, "Vagabond_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 2, "Attrition_EN", 1, "WildlifeSign_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "StopSign_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "WildlifeSign_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "YieldSign_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "ParkingSign_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "HospitalSign_EN");
+            tangoHard.SimpleAddEncounter(3, Enemies.Tango, 1, "ExitSign_EN");
+            tangoHard.SimpleAddEncounter(2, Enemies.Tango, 1, "Idiotware_EN");
 
             tangoHard.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.TANGO.Hard, 8, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);

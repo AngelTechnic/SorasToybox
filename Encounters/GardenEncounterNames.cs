@@ -395,7 +395,43 @@ namespace SorasToybox.Encounters
                 public static string Med => "H_Zone03_Plato_Medium_EnemyBundle";
                 public static string Hard => "H_Zone03_Plato_Hard_EnemyBundle";
             }
-
+            public static class Reminder
+            {
+                public static class Osman
+                {
+                    public static string Med => "H_Zone03_Reminder_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Reminder_Hard_EnemyBundle";
+                }
+                public static class Nowak
+                {
+                    public static string Med => "H_Zone03_Lingering_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Lingering_Hard_EnemyBundle";
+                }
+                public static class Doula
+                {
+                    public static string Med => "H_Zone03_Nauseating_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Nauseating_Hard_EnemyBundle";
+                }
+                public static class March
+                {
+                    public static string Med => "H_Zone03_Demented_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Demented_Hard_EnemyBundle";
+                }
+                public static class Heaven
+                {
+                    public static string Med => "H_Zone03_Converted_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Converted_Hard_EnemyBundle";
+                }
+                public static class Nobody
+                {
+                    public static string Med => "H_Zone03_Neglected_Medium_EnemyBundle";
+                    public static string Hard => "H_Zone03_Neglected_Hard_EnemyBundle";
+                }
+                public static class Deathmatch
+                {
+                    public static string Hard => "H_Zone03_Sinful_Hard_EnemyBundle";
+                }
+            }
 
             //marmo
             public static class Git

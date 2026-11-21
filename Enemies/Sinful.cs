@@ -159,7 +159,7 @@ namespace SorasToybox.Enemies
             Ability m3 = new("ST_SinfulM3_A")
             {
                 Name = "Fun Without You",
-                Description = "Exchanges all pigment that doesn't match this enemy's health with Broken pigment.\nTurns Red.",
+                Description = "Exchanges up to 10 pigment that doesn't match this enemy's health with Broken pigment.\nTurns Red.",
                 Cost = [Pigments.Yellow],
                 Visuals = Visuals.Lullaby,
                 AnimationTarget = Targeting.Slot_SelfAll,
