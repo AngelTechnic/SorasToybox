@@ -384,6 +384,15 @@ namespace SorasToybox.Encounters
         public static string Nobody => "NeglectedReminder_EN"; //irid
         public static string Deathmatch => "SinfulReminder_EN"; //red/broken
     }
+
+    public static class Grace
+    {
+        public static string Mime => "Mime_EN";
+        public static string Kookoo => "Kookoo_EN";
+        public static string Litany => "Litany_EN";
+        public static string Dozer => "Dozer_EN";
+    }
+
     public static class Enemies
     {
         public static string MusicMan => "MusicMan_EN";
@@ -461,8 +470,7 @@ namespace SorasToybox.Encounters
         }
 
         public static string Shame => "BurningShame_EN";
-        public static string Litany => "Litany_EN";
-        public static string Dozer => "Dozer_EN";
+
 
     }
 }

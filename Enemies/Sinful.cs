@@ -42,11 +42,11 @@ namespace SorasToybox.Enemies
 
 
             AnimationVisualsEffect hatchetVisuals =ScriptableObject.CreateInstance<AnimationVisualsEffect>();
-            hatchetVisuals._animationTarget = Targeting.Slot_AllyRight;
+            hatchetVisuals._animationTarget = Targeting.GenerateSlotTarget([1, 2, 3, 4], true, false);
             hatchetVisuals._visuals = Visuals.Extrusion;
 
             AnimationVisualsEffect bygonesVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
-            bygonesVisuals._animationTarget = Targeting.Slot_AllyLeft;
+            bygonesVisuals._animationTarget = Targeting.GenerateSlotTarget([-1, -2, -3, -4], true, false);
             bygonesVisuals._visuals = Visuals.Intrusion;
 
 
@@ -133,7 +133,8 @@ namespace SorasToybox.Enemies
             };
             m1.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Right"]);
             m1.AddIntentsToTarget(Targeting.Slot_AllyLeft, ["Damage_1_2"]);
-            m1.AddIntentsToTarget(Targeting.Slot_OpponentLeft, [nameof(IntentType_GameIDs.Misc), "Damage_3_6", "Swap_Right"]);
+            m1.AddIntentsToTarget(Targeting.Slot_OpponentLeft, [nameof(IntentType_GameIDs.Misc), "Damage_3_6"]);
+            m1.AddIntentsToTarget(Targeting.GenerateSlotTarget([0, 1, 2, 3, 4], false), ["Swap_Right"]);
 
             Ability m2 = new("ST_SinfulM2_A")
             {
@@ -154,7 +155,8 @@ namespace SorasToybox.Enemies
             };
             m2.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Swap_Left"]);
             m2.AddIntentsToTarget(Targeting.Slot_AllyRight, ["Damage_1_2"]);
-            m2.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Misc), "Damage_3_6", "Swap_Left"]);
+            m2.AddIntentsToTarget(Targeting.Slot_OpponentRight, [nameof(IntentType_GameIDs.Misc), "Damage_3_6"]);
+            m2.AddIntentsToTarget(Targeting.GenerateSlotTarget([0, -1, -2, -3, -4], false), ["Swap_Left"]);
 
             Ability m3 = new("ST_SinfulM3_A")
             {
@@ -175,10 +177,15 @@ namespace SorasToybox.Enemies
             m3.AddIntentsToTarget(Targeting.Slot_SelfAll, ["Mana_Consume", "Mana_Generate", "Mana_Modify"]);
 
             //bonus moves and the stuff for them.
+            AnimationVisualsEffect bonusVisuals = ScriptableObject.CreateInstance<AnimationVisualsEffect>();
+            bonusVisuals._animationTarget = Targeting.Slot_Front;
+            bonusVisuals._visuals = Visuals.Flay;
+
             TargetPerformEffectViaSubaction b1SubAct = ScriptableObject.CreateInstance<TargetPerformEffectViaSubaction>();
             b1SubAct.effects =
                 [
                     Effects.GenerateEffect(swapLeft, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(bonusVisuals),
                     Effects.GenerateEffect(damage, 8, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 1, Targeting.Slot_SelfSlot),
                 ];
@@ -204,6 +211,7 @@ namespace SorasToybox.Enemies
             b2SubAct.effects =
                 [
                     Effects.GenerateEffect(swapRight, 1, Targeting.Slot_SelfSlot),
+                    Effects.GenerateEffect(bonusVisuals),
                     Effects.GenerateEffect(damage, 8, Targeting.Slot_Front),
                     Effects.GenerateEffect(damage, 1, Targeting.Slot_SelfSlot),
                 ];
@@ -224,20 +232,19 @@ namespace SorasToybox.Enemies
             b2.AddIntentsToTarget(Targeting.Slot_AllyRight, ["Swap_Right", "Damage_1_2"]);
             b2.AddIntentsToTarget(Targeting.Slot_OpponentRight, ["Damage_7_10"]);
 
-            CheckEntryOrMoreEmptyManaSlotsEffect overflowCheck = ScriptableObject.CreateInstance<CheckEntryOrMoreEmptyManaSlotsEffect>();
+            HasOverflowCondition overflowCheck = ScriptableObject.CreateInstance<HasOverflowCondition>();
             
 
             Ability b3 = new("ST_SinfulB3_A")
-            {
+            {   
                 Name = "The Damage Is Done >)",
                 Description = "If the pigment tray is full, inflict 1 Ante to all party members.\nOtherwise, deal 1 damage to all other enemies.",
                 Visuals = Visuals.Flex,
                 AnimationTarget = Targeting.Slot_SelfAll,
                 Effects =
                 [
-                    Effects.GenerateEffect(overflowCheck, 0),
-                    Effects.GenerateEffect(gimmeAnte, 1, Targeting.Unit_AllOpponents, Effects.CheckPreviousEffectCondition(true, 1)),
-                    Effects.GenerateEffect(damage, 1, Targeting.Unit_OtherAllies, Effects.CheckPreviousEffectCondition(false, 2)),
+                    Effects.GenerateEffect(gimmeAnte, 1, Targeting.Unit_AllOpponents, overflowCheck),
+                    Effects.GenerateEffect(damage, 1, Targeting.Unit_OtherAllies, Effects.CheckPreviousEffectCondition(false, 1)),
                 ],
                 Priority = Priority.ExtremelySlow,
             };
@@ -270,7 +277,7 @@ namespace SorasToybox.Enemies
                 m1, m2, m3,
                 ]);
 
-            sinfulReminder.AddPassives([Passives.GetCustomPassive("Shortwave_PA"), sinfulDeployment, CustomPassives.CustomPassive.BonusSuiteGenerator([sinfulb1Extra, sinfulb2Extra, sinfulb3Extra])]);
+            sinfulReminder.AddPassives([Passives.GetCustomPassive("Shortwave_PA"), sinfulDeployment, CustomPassive.BonusSuiteGenerator([sinfulb1Extra, sinfulb2Extra, sinfulb3Extra])]);
 
 
             sinfulReminder.AddEnemy(true, true, false);

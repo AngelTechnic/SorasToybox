@@ -36,6 +36,14 @@ namespace SorasToybox.Encounters
             sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 1, Enemies.Phobia);
             sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 1, "Idiotware_EN", 1, "SkeweringHomunculus_EN");
 
+            sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 2, "Eater_Invis_EN");
+
+            //salt crossovers that i suggested
+            sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 2, "Vivarium_EN");
+            sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 3, "TortureMeNot_EN");
+
+            sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 1, "Marut_EN");
+
             sinfulHard.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector(Garden.H.Reminder.Deathmatch.Hard, 10, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Hard);
         }

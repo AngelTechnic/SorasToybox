@@ -1,12 +1,12 @@
 ﻿global using BrutalAPI;
 global using UnityEngine;
+global using SorasToybox.CustomPassives;
 using BepInEx;
 using BepInEx.Bootstrap;
 using BepInEx.Configuration;    
 using HarmonyLib;
 using MonoMod.RuntimeDetour;
 using SorasToybox.CustomEffects;
-using SorasToybox.CustomPassives;
 using SorasToybox.CustomPigment;
 using SorasToybox.CustomStatusField;
 using SorasToybox.Encounters;
@@ -149,7 +149,7 @@ namespace SorasToybox //Mod namespace
             //YourCharacter.Add(); //change this to whatever filename your fool's data is using. EX. TechCH.Add();
             //Add custom stuff
             CustomStatus.Add();
-            CustomPassives.CustomPassive.Add();
+            CustomPassive.Add();
             CustomPigments.Add();
             //Log custom stuff (Do config thing with it)
             SaltExcessPassive.Add();
@@ -168,11 +168,11 @@ namespace SorasToybox //Mod namespace
             }
             Erebus.Add();
             //Siren Crossmod
-            if (CrossMod.Siren)
+            /*if (CrossMod.Siren)
             {
                 GeodeGertar.Add();
                 DendriteDesibon.Add();
-            }    
+            }*/
             //ITA Crossmod
             if (CrossMod.IntoTheAbyss)
             {
@@ -207,8 +207,8 @@ namespace SorasToybox //Mod namespace
                 SuspiciousMung.Add();
             }
             //add encounters
-            SEARCHEncounters.Add();
-            SERVICEEncounters.Add();
+            //SEARCHEncounters.Add();
+            //SERVICEEncounters.Add();
             TANGOEncounters.Add();
             SinfulEncounters.Add();
 
@@ -229,7 +229,7 @@ namespace SorasToybox //Mod namespace
 
             if (CrossMod.Siren)
             {
-                DesibonEncounter.Add();
+                //DesibonEncounter.Add();
             }
 
             if (CrossMod.IntoTheAbyss && CrossMod.SaltEnemies)
@@ -425,7 +425,7 @@ namespace SorasToybox //Mod namespace
             //sirencrossmod check
             if (CrossMod.Siren)
             {
-                StoneWateringCan.Add();
+                //StoneWateringCan.Add();
             }
 
             SentientArcanite.Add();

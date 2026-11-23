@@ -15,7 +15,7 @@ namespace SorasToybox.Items
             vandalWearable._extraPassiveAbility = Passives.GetCustomPassive("Vandal_PA");
 
             ExtraPassiveAbility_Wearable_SMS chilly2Wearable = ScriptableObject.CreateInstance<ExtraPassiveAbility_Wearable_SMS>();
-            chilly2Wearable._extraPassiveAbility = CustomPassives.CustomPassive.ChillyGenerator(2);
+            chilly2Wearable._extraPassiveAbility = CustomPassive.ChillyGenerator(2);
 
             PerformEffect_Item dickhead = new("ST_Dickhead_ID")
             {

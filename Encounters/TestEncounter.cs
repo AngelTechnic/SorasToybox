@@ -28,6 +28,17 @@ namespace SorasToybox.Encounters
 
             testMedium.AddEncounterToDataBases();
             EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone01_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.FarShore_Hard, BundleDifficulty.Medium);
+
+
+            EnemyEncounter_API gardenTestMedium = new(0, "H_Zone03_SoraTest_Medium_EnemyBundle", soraTestSign)
+            {
+                MusicEvent = "event:/SorasMusic/Enemies/SinfulMusic/BassThrombosis",
+                RoarEvent = "event:/yBugRoar",
+            };
+            gardenTestMedium.SimpleAddEncounter(1, Reminder.Deathmatch, 3, "TortureMeNot_EN");
+            gardenTestMedium.AddEncounterToDataBases();
+            EnemyEncounterUtils.AddEncounterToZoneSelector("H_Zone03_SoraTest_Medium_EnemyBundle", 0, ZoneType_GameIDs.Garden_Hard, BundleDifficulty.Medium);
+
             if (SorasToybox.extradebug.Value)
             {
                 UnityEngine.Debug.Log("[ENCOUNTERS] Test Encounter loaded.");
