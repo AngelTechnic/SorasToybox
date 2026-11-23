@@ -201,7 +201,7 @@ namespace SorasToybox.Enemies
                 shoot6,
                 ]);
 
-            nowhereMan.AddPassives([Passives.GetCustomPassive("Itchy_PA"), Passives.Forgetful, CustomPassives.CustomPassive.SaltLockstepGenerator(3)]);
+            nowhereMan.AddPassives([Passives.GetCustomPassive("Itchy_PA"), Passives.Forgetful, CustomPassive.SaltLockstepGenerator(3)]);
             nowhereMan.AddEnemy(true, true, false);
 
             if (SorasToybox.extradebug.Value)
