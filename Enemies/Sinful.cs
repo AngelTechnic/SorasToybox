@@ -108,8 +108,8 @@ namespace SorasToybox.Enemies
                 CombatSprite = ResourceLoader.LoadSprite("TimelineSinful", new Vector2(0.5f, 0f), 32),
                 OverworldDeadSprite = ResourceLoader.LoadSprite("DeadSinful", new Vector2(0.5f, 0f), 32),
                 OverworldAliveSprite = ResourceLoader.LoadSprite("TimelineSinful", new Vector2(0.5f, 0f), 32),
-                DamageSound = "event:/yBugHurt",
-                DeathSound = "event:/yBugDie",
+                DamageSound = "event:/NemesisHurt",
+                DeathSound = "event:/NemesisDx",
                 UnitTypes = ["FemaleID", "Primal", "Bug"],
             };
             sinfulReminder.PrepareEnemyPrefab("Assets/ToyboxEnemies/Sinful/SinfulReminder Enemy.prefab", SorasToybox.assetbundle, SorasToybox.assetbundle.LoadAsset<GameObject>("Assets/ToyboxEnemies/Sea Mine/SeaMine GIbs.prefab").GetComponent<ParticleSystem>());

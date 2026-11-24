@@ -20,7 +20,7 @@ namespace SorasToybox.Encounters
             EnemyEncounter_API sinfulHard = new(0, Garden.H.Reminder.Deathmatch.Hard, sinfulSign)
             {
                 MusicEvent = "event:/SorasMusic/Enemies/SinfulMusic/BassThrombosis",
-                RoarEvent = "event:/yBugRoar",
+                RoarEvent = "event:/NemesisDx",
             };
 
             sinfulHard.SimpleAddEncounter(1, Reminder.Deathmatch, 2, "InHerImage_EN");

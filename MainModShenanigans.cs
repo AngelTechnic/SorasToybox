@@ -158,8 +158,8 @@ namespace SorasToybox //Mod namespace
  
 
             //Add enemies
-            SEARCH.Add();
-            SERVICE.Add();
+            //SEARCH.Add();
+            //SERVICE.Add();
             TANGO.Add();
 
             if (CrossMod.Sofanthiels)
