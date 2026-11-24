@@ -210,7 +210,7 @@ namespace SorasToybox.Enemies
                 patternSeeking,
                 kms,
                 ]);
-            crashout.AddPassives([CustomPassives.CustomPassive.SaltLockstepGenerator(1), Passives.Abomination1, Passives.GetCustomPassive("Erasure_PA"), Passives.GetCustomPassive("ST_Hostile_PA")]);
+            crashout.AddPassives([CustomPassive.SaltLockstepGenerator(1), Passives.Abomination1, Passives.GetCustomPassive("Erasure_PA"), Passives.GetCustomPassive("ST_Hostile_PA")]);
             crashout.AddEnemy(true, false, false);
         }
     }

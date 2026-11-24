@@ -173,7 +173,7 @@ namespace SorasToybox.Enemies
                 ]);
 
 
-            gearYinimroSummon.AddPassives([Passives.GetCustomPassive("Diviner_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassives.CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient, Passives.Withering]);
+            gearYinimroSummon.AddPassives([Passives.GetCustomPassive("Diviner_PA"), Passives.GetCustomPassive("RedBlooded_1_PA"), Passives.Masochism1, CustomPassive.SaltLockstepGenerator(1), gearYinimroPatient, Passives.Withering]);
             gearYinimroSummon.AddEnemy(false, false, false);
             gearYinimroSummon.enemy.enemyTemplate = gearYinimro.enemy.enemyTemplate;
 
